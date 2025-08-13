@@ -1,0 +1,57 @@
+/* Selection Card Styling */
+.logo-card {
+  display: flex;
+  background: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--card-shadow);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.logo-card .color-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  background: var(--background-color);
+  gap: 0.5rem;
+}
+
+.logo-card .color-list button {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+  padding: 0.6rem;
+  border-radius: 4px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.logo-card .color-list button:hover {
+  transform: translateY(-2px);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.logo-card .logo-display {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.logo-card .logo-display img {
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.logo-card .logo-display p {
+  font-size: 16px;
+  margin: 0;
+  text-align: center;
+}
