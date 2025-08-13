@@ -4,17 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SS Design System</title>
+    <meta name="description" content="SS Health Brand Guidelines - Complete design system for consistent brand expression across all platforms and touchpoints">
+    <meta name="keywords" content="SS Health, brand guidelines, design system, logo, typography, color palette, brand assets">
+    <meta name="author" content="SS Health">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://suamisihat.com/brand-guidelines/">
+    <meta property="og:title" content="SS Health Brand Guidelines">
+    <meta property="og:description" content="Complete design system for SS Health brand consistency">
+    <meta property="og:image" content="core-assets/icons/ss_icon_light.png">
 
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://suamisihat.com/brand-guidelines/">
+    <meta property="twitter:title" content="SS Health Brand Guidelines">
+    <meta property="twitter:description" content="Complete design system for SS Health brand consistency">
+    <meta property="twitter:image" content="core-assets/icons/ss_icon_light.png">
+
+    <title>SS Health Brand Guidelines - Design System</title>
+
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- DNS prefetch for additional performance -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="assets/css/style.css" as="style">
-    <link rel="preload" href="assets/css/ss_theme.css" as="style">
+    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/ss_theme.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="assets/js/main.js" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- Fallback for preload -->
+    <noscript>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/ss_theme.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap">
+    </noscript>
 
     <!-- Favicon with modern standards -->
     <link rel="icon" href="core-assets/favicon/favicon.ico" sizes="any">
@@ -22,14 +55,9 @@
     <link rel="apple-touch-icon" href="core-assets/favicon/apple-touch-icon.png">
     <link rel="manifest" href="core-assets/favicon/site.webmanifest">
 
-    <!-- CSS resources -->
+    <!-- CSS resources with integrity checks -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-
-    <!-- Combined Google Fonts request -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
-        rel="stylesheet">
 
     <!-- Font Awesome with integrity check -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -39,55 +67,63 @@
     <!-- Local CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/ss_theme.css">
-
-
 </head>
 
 <body>
-    <!-- Updated nav element -->
-    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top" role="navigation" aria-label="Main navigation">
         <div class="container">
-            <img src="core-assets/icons/ss_icon_light.png" alt="SS Health Logo" class="logo me-2"
-                style="height:50px;" />
-            <a class="navbar-brand" href="/">SS Design</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="fa-solid fa-bars"></span>
+            <img src="core-assets/icons/ss_icon_light.png" alt="SS Health Logo" class="logo me-2 logo-height"
+                loading="eager" />
+            <a class="navbar-brand" href="/" aria-label="SS Health Home">SS Design</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa-solid fa-bars" aria-hidden="true"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#introduction">Introduction</a>
+                        <a class="nav-link" href="#introduction" aria-label="Go to Introduction section">Introduction</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#logomark">Logomark</a>
+                        <a class="nav-link" href="#logomark" aria-label="Go to Logomark section">Logomark</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#colour">Color</a>
+                        <a class="nav-link" href="#colour" aria-label="Go to Color section">Color</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#typography">Typography</a>
+                        <a class="nav-link" href="#typography" aria-label="Go to Typography section">Typography</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#subrand">Subrand</a>
+                        <a class="nav-link" href="#subrand" aria-label="Go to Sub-brand section">Sub-brand</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#icons">Icons</a>
+                        <a class="nav-link" href="#icons" aria-label="Go to Icons section">Icons</a>
                     </li>
-                    <!-- Theme toggle button with only an icon -->
-                    <button id="themeToggle" class="btn btn-outline-secondary ms-auto">
-                        <i class="fa-solid fa-lightbulb"></i>
-                    </button>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#download" aria-label="Go to Download section">Download</a>
+                    </li>
+                    <!-- Theme toggle button with proper accessibility -->
+                    <li class="nav-item">
+                        <button id="themeToggle" class="btn btn-outline-secondary ms-auto" aria-label="Toggle dark mode" aria-pressed="false">
+                            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="hero py-5 text-center text-white" style="background-color:#043388;">
+    <!-- Hero Section -->
+    <section class="hero py-5 text-center text-white gradient-blue" role="banner">
         <div class="container">
-            <h1 class="display-4">
+            <h1 class="display-4 hero-text">
                 Welcome to the SS Health Brand Guidelines
             </h1>
-            <p class="lead">
+            <p class="lead subtitle">
                 This document provides a clear and structured framework to ensure consistency
                 across all brand touchpoints - while allowing for purposeful creative expression
                 where needed.
@@ -95,335 +131,340 @@
         </div>
     </section>
 
-    <main class="container">
-        <!-- New Sections -->
-        <section id="introduction">
-            <h2>Introduction</h2>
-            <p>
+    <!-- Main Content -->
+    <main id="main-content" class="container" role="main">
+        <!-- Introduction Section -->
+        <section id="introduction" class="my-5">
+            <h2 class="text-3xl text-semibold">Introduction</h2>
+            <p class="text-base">
                 Welcome to the SS Design System. This system is designed to ensure consistency and create
                 beautiful, user-friendly experiences.
             </p>
             <br>
-            <p>
-                Inside, you’ll find SS Health’s foundational brand elements: our logo system, typography,
+            <p class="text-base">
+                Inside, you'll find SS Health's foundational brand elements: our logo system, typography,
                 colour palette, and application principles. These guidelines are crafted to support brand alignment
                 across digital platforms, physical spaces, marketing materials, and packaging.
             </p>
             <br>
-            <p>
+            <p class="text-base">
                 While we encourage adherence to these standards, we understand that certain situations may
                 require tailored execution. For guidance on applying our brand identity beyond the scope of
                 this document, reach out to us at
-                <a href="mailto:branding@suamisihat.com" style="text-decoration:none;">branding[@]suamisihat.com</a>.
+                <a href="mailto:branding@suamisihat.com" class="text-accent hover:text-accent" aria-label="Email branding team">branding[@]suamisihat.com</a>.
             </p>
             <br>
-            <p>
-                Together, let’s build a brand that redefines men’s health - engineered with precision,
+            <p class="text-base">
+                Together, let's build a brand that redefines men's health - engineered with precision,
                 designed for impact.
             </p>
         </section>
 
-        <hr class="my-5" />
+        <hr class="my-5" aria-hidden="true" />
+        
+        <!-- Logomark Section -->
         <section id="logomark" class="my-5">
-            <h2>Logomark</h2>
-            <p>
+            <h2 class="text-3xl text-semibold">Logomark</h2>
+            <p class="text-base">
                 Our logomark represents the essence of our brand. Explore its variations, clear space,
                 and proper usage guidelines.
             </p>
             <br>
 
-            <!-- New Logo Cards Fullwidth -->
+            <!-- Primary Logo Cards -->
             <div class="container-fluid px-0 text-center">
                 <div class="row mt-12">
                     <!-- Card 1: Primary logo in SS Blue on White -->
                     <div class="col-md-4 mb-4">
-                        <div class="card border-0">
-                            <img style="padding: 15px;" src="logos/01_logo_ssHealth/logo_ssh_primary_light.svg"
-                                class="card-img-top" alt="Primary Logo" />
+                        <div class="card border-0 shadow-md">
+                            <img class="card-img-top logo-card-padding" src="logos/01_logo_ssHealth/logo_ssh_primary_light.svg"
+                                alt="Primary Logo Light" loading="lazy" />
                             <div class="card-body text-center">
-                                <p class="card-title">Primary Lighty Logo</p>
+                                <p class="card-title text-semibold">Primary Light Logo</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Card 2: Primary logo in SS Blue on White -->
                     <div class="col-md-4 mb-4">
-                        <div class="card border-0">
-                            <img style="padding: 15px; background-color: #022057;"
-                                src="logos/01_logo_ssHealth/logo_ssh_primary_dark.svg" class="card-img-top"
-                                alt="Secondary Logo" />
+                        <div class="card border-0 shadow-md">
+                            <img class="card-img-top logo-card-dark-bg"
+                                src="logos/01_logo_ssHealth/logo_ssh_primary_dark.svg"
+                                alt="Primary Logo Dark" loading="lazy" />
                             <div class="card-body text-center">
-                                <p class="card-title">Primary Dark Logo</p>
+                                <p class="card-title text-semibold">Primary Dark Logo</p>
                             </div>
                         </div>
                     </div>
                     <!-- Card 3: Primary logo in Greyscale on White -->
                     <div class="col-md-4 mb-4">
-                        <div class="card border-0">
-                            <img style="padding: 15px;" src="logos/01_logo_ssHealth/logo_ssh_primary_mono.svg"
-                                class="card-img-top" alt="Monotone Logo (Greyscale on White)" />
+                        <div class="card border-0 shadow-md">
+                            <img class="card-img-top logo-card-padding" src="logos/01_logo_ssHealth/logo_ssh_primary_mono.svg"
+                                alt="Primary Logo Monochrome" loading="lazy" />
                             <div class="card-body text-center">
-                                <p class="card-title">Primary Greyscale</p>
+                                <p class="card-title text-semibold">Primary Greyscale</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Secondary Logo Cards -->
             <div class="container-fluid px-0 text-center">
                 <div class="row mt-12">
                     <!-- Card 1: Secondary logo in SS Blue on White -->
                     <div class="col-md-4 mb-4">
-                        <div class="card border-0">
-                            <img style="padding: 15px;" src="logos/01_logo_ssHealth/logo_ssh_secondary_light.svg"
-                                class="card-img-top" alt="Secondary Logo" />
+                        <div class="card border-0 shadow-md">
+                            <img class="card-img-top logo-card-padding" src="logos/01_logo_ssHealth/logo_ssh_secondary_light.svg"
+                                alt="Secondary Logo Light" loading="lazy" />
                             <div class="card-body text-center">
-                                <p class="card-title">Secondary Lighty Logo</p>
+                                <p class="card-title text-semibold">Secondary Light Logo</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Card 2: Secondary logo in SS Blue on White -->
                     <div class="col-md-4 mb-4">
-                        <div class="card border-0">
-                            <img style="padding: 15px; background-color: #022057;"
-                                src="logos/01_logo_ssHealth/logo_ssh_secondary_dark.svg" class="card-img-top"
-                                alt="Secondary Logo" />
+                        <div class="card border-0 shadow-md">
+                            <img class="card-img-top logo-card-dark-bg"
+                                src="logos/01_logo_ssHealth/logo_ssh_secondary_dark.svg"
+                                alt="Secondary Logo Dark" loading="lazy" />
                             <div class="card-body text-center">
-                                <p class="card-title">Secondary Dark Logo</p>
+                                <p class="card-title text-semibold">Secondary Dark Logo</p>
                             </div>
                         </div>
                     </div>
                     <!-- Card 3: Secondary logo in Greyscale on White -->
                     <div class="col-md-4 mb-4">
-                        <div class="card border-0">
-                            <img style="padding: 15px;" src="logos/01_logo_ssHealth/logo_ssh_secondary_mono.svg"
-                                class="card-img-top" alt="Monotone Logo (Greyscale on White)" />
+                        <div class="card border-0 shadow-md">
+                            <img class="card-img-top logo-card-padding" src="logos/01_logo_ssHealth/logo_ssh_secondary_mono.svg"
+                                alt="Secondary Logo Monochrome" loading="lazy" />
                             <div class="card-body text-center">
-                                <p class="card-title">Secondary Greyscale</p>
+                                <p class="card-title text-semibold">Secondary Greyscale</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <br>
-            <!-- Card 3: Logo Mark to Type Proportions (Placeholder) -->
+            <!-- Logo Mark to Type Proportions -->
             <div class="row mt-12">
                 <div class="col-md-12 mb-12">
-                    <div class="card border-0">
-                        <img style="padding: 15px;" src="assets/images/ss_logo_proportions.svg" class="card-img-top"
-                            alt="Logo Mark to Type Proportions" />
+                    <div class="card border-0 shadow-md">
+                        <img class="card-img-top logo-card-padding" src="assets/images/ss_logo_proportions.svg"
+                            alt="Logo Mark to Type Proportions" loading="lazy" />
                         <div class="card-body text-center">
-                            <p class="card-title">Primary Logo Mark to Type Proportions</p>
+                            <p class="card-title text-semibold">Primary Logo Mark to Type Proportions</p>
                         </div>
                     </div>
                 </div>
             </div>
             <br>
-            <!-- Primary logo with background -->
+            <!-- Interactive Logo Preview -->
             <div class="row mt-12">
-                <div class="logo-card">
+                <div class="logo-card shadow-lg">
                     <!-- Left: Color list -->
-                    <div class="color-list">
+                    <div class="color-list" role="group" aria-label="Background color options">
                         <button data-color="#000000" data-img="logos/01_logo_ssHealth/logo_ssh_primary_dark.svg"
-                            style="background-color:#000000;">Black</button>
+                            class="logo-btn-black" aria-label="Black background">Black</button>
                         <button data-color="#022057" data-img="logos/01_logo_ssHealth/logo_ssh_primary_dark.svg"
-                            style="background-color:#022057;">SS Prussian Blue</button>
+                            class="logo-btn-prussian-blue" aria-label="SS Prussian Blue background">SS Prussian Blue</button>
                         <button data-color="#043388" data-img="logos/01_logo_ssHealth/logo_ssh_primary_dark.svg"
-                            style="background-color:#043388;">SS Blue</button>
+                            class="logo-btn-blue" aria-label="SS Blue background">SS Blue</button>
                         <button data-color="#21A1F7" data-img="logos/01_logo_ssHealth/logo_ssh_primary_alt.svg"
-                            style="background-color:#21A1F7;">Azure</button>
+                            class="logo-btn-azure" aria-label="Azure background">Azure</button>
                         <button data-color="#6DC6EC" data-img="logos/01_logo_ssHealth/logo_ssh_primary_alt.svg"
-                            style="background-color:#6DC6EC;">Malibu</button>
+                            class="logo-btn-malibu" aria-label="Malibu background">Malibu</button>
                         <button data-color="#ffffff" data-img="logos/01_logo_ssHealth/logo_ssh_primary_mono.svg"
-                            style="background-color:#CCCCCC; color:#000">Mono</button>
+                            class="logo-btn-mono" aria-label="Monochrome background">Mono</button>
                         <button data-color="#ffffff" data-img="logos/01_logo_ssHealth/logo_ssh_primary_light.svg"
-                            style="background-color:#ffffff; color:#000">White</button>
+                            class="logo-btn-white" aria-label="White background">White</button>
                     </div>
                     <!-- Right: Logo preview -->
-                    <div class="logo-display" id="logoDisplay">
-                        <img id="logoImg" src="logos/01_logo_ssHealth/logo_ssh_primary_dark.svg" alt="Primary Logo">
+                    <div class="logo-display" id="logoDisplay" aria-label="Logo preview area">
+                        <img id="logoImg" src="logos/01_logo_ssHealth/logo_ssh_primary_dark.svg" alt="Primary Logo" loading="eager">
                     </div>
                 </div>
                 <div class="card-body text-center">
-                    <p class="card-title">Primary Logo Mark based on background color</p>
+                    <p class="card-title text-semibold">Primary Logo Mark based on background color</p>
                 </div>
             </div>
 
         </section>
 
-
-
-        <hr class="my-5" />
+        <hr class="my-5" aria-hidden="true" />
+        
+        <!-- Colour Section -->
         <section id="colour" class="my-5">
-            <h2>Colour</h2>
-            <p>
+            <h2 class="text-3xl text-semibold">Colour</h2>
+            <p class="text-base">
                 Discover our primary, secondary, and neutral colour palettes that define our visual
                 language.
             </p>
             <br>
-            <!-- Changed color-grid to Bootstrap row -->
+            <!-- Primary Colours -->
             <div class="row">
-                <h4>Primary Colour</h4>
+                <h4 class="text-2xl text-medium">Primary Colour</h4>
                 <!-- Wrap each color card inside a Bootstrap column -->
                 <div class="col-md-3 mb-4">
-                    <div class="color-card" data-hex="#022057">
-                        <div class="color-swatch" style="background-color: #022057;"></div>
-                        <h4>SS Prussian Blue</h4>
-                        <p>HEX: #022057</p>
-                        <p>RGB: 2, 32, 87</p>
-                        <p>CMYK: 98, 63, 0, 66</p>
-                        <p>Pantone: 296 C</p>
+                    <div class="color-card" data-hex="#022057" tabindex="0" role="button" aria-label="SS Prussian Blue color card">
+                        <div class="color-swatch color-swatch-prussian-blue"></div>
+                        <h4 class="text-xl text-semibold">SS Prussian Blue</h4>
+                        <p class="text-sm">HEX: #022057</p>
+                        <p class="text-sm">RGB: 2, 32, 87</p>
+                        <p class="text-sm">CMYK: 98, 63, 0, 66</p>
+                        <p class="text-sm">Pantone: 296 C</p>
                     </div>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <div class="color-card" data-hex="#043388">
-                        <div class="color-swatch" style="background-color: #043388;"></div>
-                        <h4>SS Blue</h4>
-                        <p>HEX: #043388</p>
-                        <p>RGB: 4, 51, 136</p>
-                        <p>CMYK: 97, 63, 0, 47</p>
-                        <p>Pantone: 2935 C</p>
+                    <div class="color-card" data-hex="#043388" tabindex="0" role="button" aria-label="SS Blue color card">
+                        <div class="color-swatch color-swatch-blue"></div>
+                        <h4 class="text-xl text-semibold">SS Blue</h4>
+                        <p class="text-sm">HEX: #043388</p>
+                        <p class="text-sm">RGB: 4, 51, 136</p>
+                        <p class="text-sm">CMYK: 97, 63, 0, 47</p>
+                        <p class="text-sm">Pantone: 2935 C</p>
                     </div>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <div class="color-card" data-hex="#21A1F7">
-                        <div class="color-swatch" style="background-color: #21A1F7;"></div>
-                        <h4>Azure</h4>
-                        <p>HEX: #21A1F7</p>
-                        <p>RGB: 33, 161, 247</p>
-                        <p>CMYK: 87, 35, 0, 3</p>
-                        <p>Pantone: 2995 C</p>
+                    <div class="color-card" data-hex="#21A1F7" tabindex="0" role="button" aria-label="Azure color card">
+                        <div class="color-swatch color-swatch-azure"></div>
+                        <h4 class="text-xl text-semibold">Azure</h4>
+                        <p class="text-sm">HEX: #21A1F7</p>
+                        <p class="text-sm">RGB: 33, 161, 247</p>
+                        <p class="text-sm">CMYK: 87, 35, 0, 3</p>
+                        <p class="text-sm">Pantone: 2995 C</p>
                     </div>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <div class="color-card" data-hex="#6DC6EC">
-                        <div class="color-swatch" style="background-color: #6DC6EC;"></div>
-                        <h4>Malibu</h4>
-                        <p>HEX: #6DC6EC</p>
-                        <p>RGB: 109, 198, 236</p>
-                        <p>CMYK: 54, 16, 0, 7</p>
-                        <p>Pantone: 2925 C</p>
+                    <div class="color-card" data-hex="#6DC6EC" tabindex="0" role="button" aria-label="Malibu color card">
+                        <div class="color-swatch color-swatch-malibu"></div>
+                        <h4 class="text-xl text-semibold">Malibu</h4>
+                        <p class="text-sm">HEX: #6DC6EC</p>
+                        <p class="text-sm">RGB: 109, 198, 236</p>
+                        <p class="text-sm">CMYK: 54, 16, 0, 7</p>
+                        <p class="text-sm">Pantone: 2925 C</p>
                     </div>
                 </div>
             </div>
+            
+            <!-- Secondary Colours -->
             <div class="row">
-                <!-- Secondary Colours -->
-                <h4>Secondary Colour</h4>
+                <h4 class="text-2xl text-medium">Secondary Colour</h4>
                 <div class="col-md-3 mb-4">
-                    <div class="color-card" data-hex="#BD9A73">
-                        <div class="color-swatch" style="background-color: #BD9A73;"></div>
-                        <h3>Lion</h3>
-                        <p>HEX: #BD9A73</p>
-                        <p>RGB: 189, 154, 115</p>
-                        <p>CMYK: 0, 19, 39, 26</p>
-                        <p>Pantone: 7408 C</p>
+                    <div class="color-card" data-hex="#BD9A73" tabindex="0" role="button" aria-label="Lion color card">
+                        <div class="color-swatch color-swatch-lion"></div>
+                        <h3 class="text-xl text-semibold">Lion</h3>
+                        <p class="text-sm">HEX: #BD9A73</p>
+                        <p class="text-sm">RGB: 189, 154, 115</p>
+                        <p class="text-sm">CMYK: 0, 19, 39, 26</p>
+                        <p class="text-sm">Pantone: 7408 C</p>
                     </div>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <div class="color-card" data-hex="#CCAC8D">
-                        <div class="color-swatch" style="background-color: #CCAC8D;"></div>
-                        <h4>Fawn</h4>
-                        <p>HEX: #CCAC8D</p>
-                        <p>RGB: 204, 172, 141</p>
-                        <p>CMYK: 0, 16, 31, 20</p>
-                        <p>Pantone: 7527 C</p>
+                    <div class="color-card" data-hex="#CCAC8D" tabindex="0" role="button" aria-label="Fawn color card">
+                        <div class="color-swatch color-swatch-fawn"></div>
+                        <h4 class="text-xl text-semibold">Fawn</h4>
+                        <p class="text-sm">HEX: #CCAC8D</p>
+                        <p class="text-sm">RGB: 204, 172, 141</p>
+                        <p class="text-sm">CMYK: 0, 16, 31, 20</p>
+                        <p class="text-sm">Pantone: 7527 C</p>
                     </div>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <div class="color-card" data-hex="#E5D15C">
-                        <div class="color-swatch" style="background-color: #E5D15C;"></div>
-                        <h4>Arylide Yellow</h4>
-                        <p>HEX: #E5D15C</p>
-                        <p>RGB: 229, 209, 92</p>
-                        <p>CMYK: 0, 9, 60, 10</p>
-                        <p>Pantone: 108 C</p>
+                    <div class="color-card" data-hex="#E5D15C" tabindex="0" role="button" aria-label="Arylide Yellow color card">
+                        <div class="color-swatch color-swatch-arylide-yellow"></div>
+                        <h4 class="text-xl text-semibold">Arylide Yellow</h4>
+                        <p class="text-sm">HEX: #E5D15C</p>
+                        <p class="text-sm">RGB: 229, 209, 92</p>
+                        <p class="text-sm">CMYK: 0, 9, 60, 10</p>
+                        <p class="text-sm">Pantone: 108 C</p>
                     </div>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <div class="color-card" data-hex="#FCE53D">
-                        <div class="color-swatch" style="background-color: #FCE53D;"></div>
-                        <h4>Banana Yellow</h4>
-                        <p>HEX: #FCE53D</p>
-                        <p>RGB: 252, 229, 61</p>
-                        <p>CMYK: 0, 9, 76, 1</p>
-                        <p>Pantone: 102 C</p>
+                    <div class="color-card" data-hex="#FCE53D" tabindex="0" role="button" aria-label="Banana Yellow color card">
+                        <div class="color-swatch color-swatch-banana-yellow"></div>
+                        <h4 class="text-xl text-semibold">Banana Yellow</h4>
+                        <p class="text-sm">HEX: #FCE53D</p>
+                        <p class="text-sm">RGB: 252, 229, 61</p>
+                        <p class="text-sm">CMYK: 0, 9, 76, 1</p>
+                        <p class="text-sm">Pantone: 102 C</p>
                     </div>
                 </div>
             </div>
 
+            <!-- Neutrals Colour -->
             <div class="row">
-                <!-- Neutrals Colour -->
-                <h4>Neutrals Colour</h4>
+                <h4 class="text-2xl text-medium">Neutrals Colour</h4>
                 <div class="color-strip-container">
-                    <div class="color-strip large-label" style="background-color: #000000;"
-                        onclick="copyColor('#000000')">
-                        <h3>Black</h3>
-                        <p>HEX: #000000</p>
-                        <p>RGB: 0, 0, 0</p>
-                        <p>CMYK: 0, 0, 0, 100</p>
-                        <p>Pantone: Black C</p>
+                    <div class="color-strip large-label color-strip-black" tabindex="0" role="button" aria-label="Black color strip">
+                        <h3 class="text-xl text-semibold">Black</h3>
+                        <p class="text-sm">HEX: #000000</p>
+                        <p class="text-sm">RGB: 0, 0, 0</p>
+                        <p class="text-sm">CMYK: 0, 0, 0, 100</p>
+                        <p class="text-sm">Pantone: Black C</p>
                     </div>
-                    <div class="color-strip" style="background-color: #CCCCCC; color: #000;">
-                        <h3>Grey 20</h3>
-                        <p>HEX: #CCCCCC</p>
-                        <p>RGB: 204, 204, 204</p>
-                        <p>CMYK: 0, 0, 0, 20</p>
-                        <p>Pantone: Cool Gray 2 C</p>
+                    <div class="color-strip color-strip-grey-20" tabindex="0" role="button" aria-label="Grey 20 color strip">
+                        <h3 class="text-xl text-semibold">Grey 20</h3>
+                        <p class="text-sm">HEX: #CCCCCC</p>
+                        <p class="text-sm">RGB: 204, 204, 204</p>
+                        <p class="text-sm">CMYK: 0, 0, 0, 20</p>
+                        <p class="text-sm">Pantone: Cool Gray 2 C</p>
                     </div>
-                    <div class="color-strip" style="background-color: #999999;">
-                        <h3>Grey 40</h3>
-                        <p>HEX: #999999</p>
-                        <p>RGB: 153, 153, 153</p>
-                        <p>CMYK: 0, 0, 0, 40</p>
-                        <p>Pantone: Cool Gray 4 C</p>
+                    <div class="color-strip color-strip-grey-40" tabindex="0" role="button" aria-label="Grey 40 color strip">
+                        <h3 class="text-xl text-semibold">Grey 40</h3>
+                        <p class="text-sm">HEX: #999999</p>
+                        <p class="text-sm">RGB: 153, 153, 153</p>
+                        <p class="text-sm">CMYK: 0, 0, 0, 40</p>
+                        <p class="text-sm">Pantone: Cool Gray 4 C</p>
                     </div>
-                    <div class="color-strip" style="background-color: #666666;">
-                        <h3>Grey 60</h3>
-                        <p>HEX: #666666</p>
-                        <p>RGB: 102, 102, 102</p>
-                        <p>CMYK: 0, 0, 0, 60</p>
-                        <p>Pantone: 430 C</p>
+                    <div class="color-strip color-strip-grey-60" tabindex="0" role="button" aria-label="Grey 60 color strip">
+                        <h3 class="text-xl text-semibold">Grey 60</h3>
+                        <p class="text-sm">HEX: #666666</p>
+                        <p class="text-sm">RGB: 102, 102, 102</p>
+                        <p class="text-sm">CMYK: 0, 0, 0, 60</p>
+                        <p class="text-sm">Pantone: 430 C</p>
                     </div>
-                    <div class="color-strip" style="background-color: #575756;">
-                        <h3>Grey 80</h3>
-                        <p>HEX: #575756</p>
-                        <p>RGB: 87, 87, 86</p>
-                        <p>CMYK: 0, 0, 1, 66</p>
-                        <p>Pantone: 431 C</p>
+                    <div class="color-strip color-strip-grey-80" tabindex="0" role="button" aria-label="Grey 80 color strip">
+                        <h3 class="text-xl text-semibold">Grey 80</h3>
+                        <p class="text-sm">HEX: #575756</p>
+                        <p class="text-sm">RGB: 87, 87, 86</p>
+                        <p class="text-sm">CMYK: 0, 0, 1, 66</p>
+                        <p class="text-sm">Pantone: 431 C</p>
                     </div>
-                    <div class="color-strip" style="background-color: #3C3C3B;">
-                        <h3>Grey 90</h3>
-                        <p>HEX: #3C3C3B</p>
-                        <p>RGB: 60, 60, 59</p>
-                        <p>CMYK: 0, 0, 2, 76</p>
-                        <p>Pantone: 426 C</p>
+                    <div class="color-strip color-strip-grey-90" tabindex="0" role="button" aria-label="Grey 90 color strip">
+                        <h3 class="text-xl text-semibold">Grey 90</h3>
+                        <p class="text-sm">HEX: #3C3C3B</p>
+                        <p class="text-sm">RGB: 60, 60, 59</p>
+                        <p class="text-sm">CMYK: 0, 0, 2, 76</p>
+                        <p class="text-sm">Pantone: 426 C</p>
                     </div>
-                    <div class="color-strip large-label" style="background-color: #ffffff; color:#000000">
-                        <h3>White</h3>
-                        <p>HEX: #ffffff</p>
-                        <p>RGB: 255, 255, 255</p>
-                        <p>CMYK: 0, 0, 0, 0</p>
-                        <p>Pantone: White</p>
+                    <div class="color-strip large-label color-strip-white" tabindex="0" role="button" aria-label="White color strip">
+                        <h3 class="text-xl text-semibold">White</h3>
+                        <p class="text-sm">HEX: #ffffff</p>
+                        <p class="text-sm">RGB: 255, 255, 255</p>
+                        <p class="text-sm">CMYK: 0, 0, 0, 0</p>
+                        <p class="text-sm">Pantone: White</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <hr class="my-5" />
+        <hr class="my-5" aria-hidden="true" />
 
+        <!-- Typography Section -->
         <section id="typography" class="my-5">
-            <h2>Typography</h2>
-            <p class="lead">Precision, Clarity & Clinical Trust</p>
-            <p>Our typography harmonizes technical precision with human-centric warmth, reflecting SS Health's
+            <h2 class="text-3xl text-semibold">Typography</h2>
+            <p class="lead text-lg">Precision, Clarity & Clinical Trust</p>
+            <p class="text-base">Our typography harmonizes technical precision with human-centric warmth, reflecting SS Health's
                 commitment to evidence-based care.</p>
 
             <div class="border-top border-bottom py-3 my-4">
-                <h3 class="h5">Primary Typefaces</h3>
+                <h3 class="h5 text-xl text-medium">Primary Typefaces</h3>
                 <div class="row g-4 mt-2">
                     <!-- Poppins -->
                     <div class="col-sm-6 col-md-6 col-lg-3">
-                        <a href="https://fonts.google.com/specimen/Poppins" target="_blank" class="font-card poppins">
+                        <a href="https://fonts.google.com/specimen/Poppins" target="_blank" rel="noopener" class="font-card poppins" aria-label="Learn more about Poppins font">
                             <div class="font-name">Poppins</div>
                             <div class="font-preview">Brand Voice | Digital Excellence</div>
                             <div class="font-details">Primary typeface for interfaces & marketing</div>
@@ -432,8 +473,8 @@
 
                     <!-- Helvetica Neue -->
                     <div class="col-sm-6 col-md-6 col-lg-3">
-                        <a href="https://www.linotype.com/1308886/helvetica-neue-family.html" target="_blank"
-                            class="font-card helvetica">
+                        <a href="https://www.linotype.com/1308886/helvetica-neue-family.html" target="_blank" rel="noopener"
+                            class="font-card helvetica" aria-label="Learn more about Helvetica Neue font">
                             <div class="font-name">Helvetica Neue</div>
                             <div class="font-preview">Clinical Authority | Legibility</div>
                             <div class="font-details">For technical documents & forms</div>
@@ -443,12 +484,12 @@
             </div>
 
             <div class="border-bottom py-3 mb-4">
-                <h3 class="h5">Secondary Typefaces</h3>
+                <h3 class="h5 text-xl text-medium">Secondary Typefaces</h3>
                 <div class="row g-4 mt-2">
                     <!-- Calibri -->
                     <div class="col-sm-6 col-md-6 col-lg-3">
-                        <a href="https://www.microsoft.com/typography/fonts/family.aspx?FID=8" target="_blank"
-                            class="font-card calibri">
+                        <a href="https://www.microsoft.com/typography/fonts/family.aspx?FID=8" target="_blank" rel="noopener"
+                            class="font-card calibri" aria-label="Learn more about Calibri font">
                             <div class="font-name">Calibri</div>
                             <div class="font-preview">Operational Utility</div>
                             <div class="font-details">Internal systems & Office docs</div>
@@ -457,8 +498,8 @@
 
                     <!-- Helvetica Secondary -->
                     <div class="col-sm-6 col-md-6 col-lg-3">
-                        <a href="https://www.linotype.com/1308886/helvetica-neue-family.html" target="_blank"
-                            class="font-card helvetica">
+                        <a href="https://www.linotype.com/1308886/helvetica-neue-family.html" target="_blank" rel="noopener"
+                            class="font-card helvetica" aria-label="Learn more about Helvetica Neue font">
                             <div class="font-name">Helvetica Neue</div>
                             <div class="font-preview">Structured Content</div>
                             <div class="font-details">Long-form clinical materials</div>
@@ -468,12 +509,12 @@
             </div>
 
             <div class="pb-3">
-                <h3 class="h5">Tertiary Typeface</h3>
+                <h3 class="h5 text-xl text-medium">Tertiary Typeface</h3>
                 <div class="row g-4 mt-2">
                     <!-- Montserrat -->
                     <div class="col-sm-6 col-md-6 col-lg-3">
-                        <a href="https://fonts.google.com/specimen/Montserrat" target="_blank"
-                            class="font-card montserrat">
+                        <a href="https://fonts.google.com/specimen/Montserrat" target="_blank" rel="noopener"
+                            class="font-card montserrat" aria-label="Learn more about Montserrat font">
                             <div class="font-name">Montserrat</div>
                             <div class="font-preview">Strategic Emphasis</div>
                             <div class="font-details">Campaigns & high-impact contexts</div>
@@ -482,42 +523,41 @@
                 </div>
             </div>
 
-            <div class="bg-light p-4 rounded">
-                <h4 class="h6 text-uppercase">Why This System Works</h4>
-                <ul class="mb-0">
+            <div class="bg-light p-4 rounded shadow-sm">
+                <h4 class="h6 text-uppercase text-lg text-medium">Why This System Works</h4>
+                <ul class="mb-0 text-base">
                     <li><strong>Clinical + Human:</strong> Poppins softens Helvetica's rigor; Montserrat adds vitality
                     </li>
                     <li><strong>Adaptive Legibility:</strong> Optimized for EHRs to patient brochures</li>
                     <li><strong>Brand Synergy:</strong> Geometric foundations reflect engineered performance</li>
                 </ul>
             </div>
-            </div>
-            </div>
         </section>
 
-        <hr class="my-5" />
+        <hr class="my-5" aria-hidden="true" />
+        
+        <!-- Sub-brand Section -->
         <section id="subrand" class="my-5">
-            <h2>Sub-brand</h2>
-            <p>
+            <h2 class="text-3xl text-semibold">Sub-brand</h2>
+            <p class="text-base">
                 Our design system includes carefully crafted components such as buttons, cards, and modals to build
-                seamless
-                interfaces.
+                seamless interfaces.
             </p>
         </section>
 
-        <hr class="my-5" />
+        <hr class="my-5" aria-hidden="true" />
 
+        <!-- Icons Section -->
         <section id="icons" class="my-5">
-            <h2>Icons</h2>
-            Explore our icon library, featuring custom icons supplemented by FontAwesome, to enhance your designs.
-            </p>
+            <h2 class="text-3xl text-semibold">Icons</h2>
+            <p class="text-base">Explore our icon library, featuring custom icons supplemented by FontAwesome, to enhance your designs.</p>
 
             <div class="my-4">
-                <h3>How to Use Icons</h3>
-                <p>
+                <h3 class="text-2xl text-medium">How to Use Icons</h3>
+                <p class="text-base">
                     Our icons are designed to be simple and recognizable. When using icons:
                 </p>
-                <ul>
+                <ul class="text-base">
                     <li>Maintain adequate spacing around the icon (at least equal to the icon's width)</li>
                     <li>Use the appropriate color variant for your background (light or dark)</li>
                     <li>Ensure icons are clearly visible and not competing with other visual elements</li>
@@ -527,23 +567,23 @@
 
             <div class="row my-4">
                 <div class="col-md-6 mb-4">
-                    <div class="card">
+                    <div class="card shadow-md">
                         <div class="card-body text-center bg-light">
                             <img src="core-assets/icons/ss_icon_light.svg" alt="SS Health Light Icon"
-                                class="img-fluid mb-3" style="height: 100px;">
-                            <h6>Light Background Variant</h6>
-                            <p style="font-size: medium;">Use this version on dark or colored backgrounds for optimal
+                                class="img-fluid mb-3 icon-height-100" loading="lazy">
+                            <h6 class="text-lg text-semibold">Light Background Variant</h6>
+                            <p class="text-base">Use this version on dark or colored backgrounds for optimal
                                 visibility.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-4">
-                    <div class="card bg-dark text-white">
+                    <div class="card bg-dark text-white shadow-md">
                         <div class="card-body text-center">
                             <img src="core-assets/icons/ss_icon_dark.svg" alt="SS Health Dark Icon"
-                                class="img-fluid mb-3" style="height: 100px;">
-                            <h6>Dark Background Variant</h6>
-                            <p style="font-size: medium;">Use this version on light or white backgrounds for proper
+                                class="img-fluid mb-3 icon-height-100" loading="lazy">
+                            <h6 class="text-lg text-semibold">Dark Background Variant</h6>
+                            <p class="text-base">Use this version on light or white backgrounds for proper
                                 contrast.</p>
                         </div>
                     </div>
@@ -551,33 +591,31 @@
             </div>
 
             <div class="my-4">
-                <h3>Logo Usage</h3>
-                <p>
+                <h3 class="text-2xl text-medium">Logo Usage</h3>
+                <p class="text-base">
                     The SS Health logo is more than just a mark - it is a symbol of engineered trust, precision, and
                     professionalism. Its consistent application is critical to upholding the credibility and strength of
-                    our
-                    brand. Using the logo correctly ensures visual clarity, brand recognition, and alignment with our
+                    our brand. Using the logo correctly ensures visual clarity, brand recognition, and alignment with our
                     identity as a performance-driven health brand.
                 </p>
-                <p>
+                <p class="text-base">
                     To preserve its integrity, the logo must always be placed on clean, uncluttered backgrounds that
                     support strong contrast and visibility. Avoid placing it on visually noisy, overly complex, or
-                    distracting
-                    images that could interfere with legibility or diminish the logo's impact.
+                    distracting images that could interfere with legibility or diminish the logo's impact.
                 </p>
             </div>
             <div class="my-4 text-center">
-                <img src="assets\images\safe_zone.svg" alt="logo safe zones" class="img-fluid border rounded">
-                <p>Safe zone guide</p>
+                <img src="assets/images/safe_zone.svg" alt="logo safe zones" class="img-fluid border rounded shadow-sm" loading="lazy">
+                <p class="text-base">Safe zone guide</p>
             </div>
             <div class="my-4">
-                <p>
+                <p class="text-base">
                     Under no circumstance should the logo be modified, distorted, or altered in any way. This
                     includes changing its proportions, orientation, colour, or composition, as well as adding effects
                     such as shadows, gradients, strokes, or fades. The logo must only appear in its approved formats,
                     as provided in this guideline.
                 </p>
-                <p>
+                <p class="text-base">
                     Every aspect of the SS Health logo has been deliberately designed to express our identity with
                     clarity and confidence. Proper usage across all platforms—digital, print, spatial, and clinical -
                     ensures it remains a powerful and unmistakable symbol of who we are and what we stand for.
@@ -585,63 +623,77 @@
             </div>
 
             <div class="my-4">
-                <h4>Examples of Incorrect Usage</h4>
-                <img src="assets/images/dont.png" alt="Incorrect logo usage examples" class="img-fluid border rounded">
+                <h4 class="text-xl text-medium">Examples of Incorrect Usage</h4>
+                <img src="assets/images/dont.png" alt="Incorrect logo usage examples" class="img-fluid border rounded shadow-sm" loading="lazy">
             </div>
         </section>
+        
+        <!-- Download Section -->
         <section id="download" class="my-5">
-            <h2 class="mb-4">Brand Resources Download</h2>
+            <h2 class="mb-4 text-3xl text-semibold">Brand Resources Download</h2>
             <div class="list-group">
                 <a href="downloads/ss-app-icon.zip"
-                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                    <span>SS App Icon</span>
+                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center shadow-sm"
+                    aria-label="Download SS App Icon ZIP file">
+                    <span class="text-base">SS App Icon</span>
                     <span class="badge bg-primary rounded-pill">ZIP</span>
                 </a>
                 <a href="downloads/ss_colour_theme.zip"
-                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                    <span>SS Colour Palette</span>
+                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center shadow-sm"
+                    aria-label="Download SS Colour Palette ZIP file">
+                    <span class="text-base">SS Colour Palette</span>
                     <span class="badge bg-primary rounded-pill">ZIP</span>
                 </a>
                 <a href="downloads/ss_typeface_font.zip"
-                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                    <span>SS Typeface Kit</span>
+                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center shadow-sm"
+                    aria-label="Download SS Typeface Kit ZIP file">
+                    <span class="text-base">SS Typeface Kit</span>
                     <span class="badge bg-primary rounded-pill">ZIP</span>
                 </a>
                 <a href="downloads/01_logo_ssHealth.zip"
-                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                    <span>SS Health Brand Kit</span>
+                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center shadow-sm"
+                    aria-label="Download SS Health Brand Kit ZIP file">
+                    <span class="text-base">SS Health Brand Kit</span>
                     <span class="badge bg-primary rounded-pill">ZIP</span>
                 </a>
                 <a href="downloads/02_logo_ssClinic.zip"
-                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                    <span>SS Clinic Brand Kit</span>
+                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center shadow-sm"
+                    aria-label="Download SS Clinic Brand Kit ZIP file">
+                    <span class="text-base">SS Clinic Brand Kit</span>
                     <span class="badge bg-primary rounded-pill">ZIP</span>
                 </a>
                 <a href="downloads/03_logo_ssWellness.zip"
-                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                    <span>SS Wellness Brand Kit</span>
+                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center shadow-sm"
+                    aria-label="Download SS Wellness Brand Kit ZIP file">
+                    <span class="text-base">SS Wellness Brand Kit</span>
                     <span class="badge bg-primary rounded-pill">ZIP</span>
                 </a>
                 <a href="downloads/04_logo_ssEcom.zip"
-                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                    <span>SS Ecom Brand Kit</span>
+                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center shadow-sm"
+                    aria-label="Download SS Ecom Brand Kit ZIP file">
+                    <span class="text-base">SS Ecom Brand Kit</span>
                     <span class="badge bg-primary rounded-pill">ZIP</span>
                 </a>
                 <a href="downloads/05_logo_ssTech.zip"
-                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                    <span>SS Tech Brand Kit</span>
+                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center shadow-sm"
+                    aria-label="Download SS Tech Brand Kit ZIP file">
+                    <span class="text-base">SS Tech Brand Kit</span>
                     <span class="badge bg-primary rounded-pill">ZIP</span>
                 </a>
             </div>
         </section>
-        <footer class="footer">
-            <p>© 2025 SS Health. All rights reserved.</p>
-        </footer>
 
     </main>
-
-    <!-- Script -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <p class="text-base">© 2025 SS Health. All rights reserved.</p>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" 
+            crossorigin="anonymous"></script>
     <script src="assets/js/main.js" defer></script>
 </body>
 
