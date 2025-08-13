@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Error - SS Brand Assets</title>
+    <link rel="icon" href="../core-assets/favicon/favicon.ico">
+    <style>
+        body {
+            background-color: #043388;
+            width: 100vw;
+            height: 100vh;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2em;
+        }
+
+        .error-num {
+            font-size: 12em;
+            margin: 0;
+            line-height: 1;
+            color: #6DC6EC;
+        }
+
+        .eye {
+            background: #fff;
+            border-radius: 50%;
+            display: inline-block;
+            height: 100px;
+            position: relative;
+            width: 100px;
+            margin: 1em 0;
+        }
+
+        .eye::after {
+            background: #000;
+            border-radius: 50%;
+            bottom: 56.1px;
+            content: '';
+            height: 33px;
+            position: absolute;
+            right: 33px;
+            width: 33px;
+        }
+
+        p {
+            margin-bottom: 4em;
+            font-size: 1.2em;
+            max-width: 600px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: lightgray;
+            background-color: white;
+            color: rgb(51, 51, 51);
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 1em;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .error-num {
+                font-size: 6em;
+            }
+            
+            .eye {
+                height: 80px;
+                width: 80px;
+            }
+            
+            .eye::after {
+                height: 26px;
+                width: 26px;
+                bottom: 45px;
+                right: 26px;
+            }
+            
+            p {
+                font-size: 1em;
+                margin-bottom: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <img src="../core-assets/icons/ss_icon_dark.svg" alt="SS Health Light Icon"
+                                class="img-fluid mb-3 icon-height-250">
+        <h1 class="error-num">500</h1>
+        <div class="eye"></div>
+        <p>Something went wrong on our end. <br>The server encountered an error and couldn't complete your request.</p>
+        
+        <div class="error-actions">
+            <a href="/">Go Home</a>
+            <a href="javascript:location.reload()">Try Again</a>
+            <a href="mailto:branding@suamisihat.com">Contact Support</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('body').mousemove(function(event) {
+                var e = $('.eye');
+                var x = (e.offset().left) + (e.width() / 2);
+                var y = (e.offset().top) + (e.height() / 2);
+                var rad = Math.atan2(event.pageX - x, event.pageY - y);
+                var rot = (rad * (180 / Math.PI) * -1) + 180;
+                e.css({
+                    '-webkit-transform': 'rotate(' + rot + 'deg)',
+                    'transform': 'rotate(' + rot + 'deg)'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

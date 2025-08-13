@@ -1,13 +1,43 @@
-/* ===== Theme Variables ===== */
+/* ==========================================================================
+   SS Brand Assets - Main Stylesheet
+   ========================================================================== */
+
+/* ==========================================================================
+   CSS Variables & Theme Configuration
+   ========================================================================== */
+
 :root {
+    /* Theme Colors */
     --primary-color: #043388;
     --background-color: #f8f8f8;
-    --text-color: #333;
+    --text-color: #ccc;
     --card-background: #fff;
     --card-shadow: rgba(0, 0, 0, 0.05);
     --footer-background: #6DC6EC;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Border Radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 6px;
+    --border-radius-lg: 8px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Z-index */
+    --z-feedback: 1000;
+    --z-navbar: 1030;
 }
 
+/* Dark Mode Theme */
 .dark-mode {
     --primary-color: #021A40;
     --background-color: #222;
@@ -17,43 +47,50 @@
     --footer-background: #022057;
 }
 
-/* ===== Base Styles ===== */
+/* ==========================================================================
+   Base Styles & Typography
+   ========================================================================== */
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background: var(--background-color);
     color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
 p {
-    margin: 0 0 0.5rem;
+    margin: 0 0 var(--spacing-xs);
 }
 
-.header {
-    text-align: center;
-    background: var(--primary-color);
-    color: #fff;
-    padding: 2rem 1rem;
-}
+/* ==========================================================================
+   Layout Components
+   ========================================================================== */
 
 .container {
     max-width: 1200px;
     margin: auto;
-    padding: 2rem;
+    padding: var(--spacing-lg);
 }
 
 .footer {
     text-align: center;
-    padding: 1rem;
+    padding: var(--spacing-sm);
     font-size: 0.9rem;
     background: var(--footer-background);
-    margin-top: 2rem;
+    margin-top: var(--spacing-lg);
+    transition: background-color var(--transition-normal);
 }
 
-/* ===== Navbar ===== */
+/* ==========================================================================
+   Navigation Styles
+   ========================================================================== */
+
 .navbar.navbar-custom {
     background-color: #fff !important;
+    transition: background-color var(--transition-normal);
 }
 
 .navbar.navbar-custom .navbar-brand,
@@ -61,8 +98,10 @@ p {
 .navbar.navbar-custom .fa-bars,
 .navbar.navbar-custom .fa-lightbulb {
     color: var(--primary-color) !important;
+    transition: color var(--transition-normal);
 }
 
+/* Dark Mode Navigation */
 body.dark-mode .navbar.navbar-custom {
     background-color: #022057 !important;
 }
@@ -74,51 +113,70 @@ body.dark-mode .navbar.navbar-custom .fa-lightbulb {
     color: #fff !important;
 }
 
-/* ===== Card Styles ===== */
+/* ==========================================================================
+   Card Components
+   ========================================================================== */
+
+/* Base Card Styles */
 .color-card,
 .font-card,
 .logo-card {
     background: var(--card-background);
-    border-radius: 8px;
+    border-radius: var(--border-radius-lg);
     box-shadow: 0 2px 8px var(--card-shadow);
-    transition: transform 0.2s ease;
+    transition: all var(--transition-normal);
     cursor: pointer;
 }
 
 .color-card {
-    padding: 1rem;
+    padding: var(--spacing-sm);
 }
 
 .color-card:hover,
 .font-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--card-shadow);
 }
 
-/* ===== Color Grid ===== */
+/* ==========================================================================
+   Color System Components
+   ========================================================================== */
+
+/* Color Grid Layout */
 .color-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1.5rem;
+    gap: var(--spacing-md);
 }
 
+/* Color Swatch */
 .color-swatch {
     width: 100%;
     height: 100px;
-    border-radius: 4px;
-    margin-bottom: 1rem;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: var(--spacing-sm);
+    transition: transform var(--transition-fast);
+}
+
+.color-card:hover .color-swatch {
+    transform: scale(1.02);
 }
 
 .color-card p {
     font-size: 14px;
+    margin: 0.25rem 0;
 }
 
-/* ===== Color Strip ===== */
+/* Color Strip Container */
 .color-strip-container {
     display: flex;
     align-items: stretch;
     font-family: Arial, sans-serif;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
 }
 
+/* Individual Color Strips */
 .color-strip {
     flex: 1;
     color: #fff;
@@ -128,6 +186,12 @@ body.dark-mode .navbar.navbar-custom .fa-lightbulb {
     padding: 10px;
     box-sizing: border-box;
     min-height: 150px;
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+}
+
+.color-strip:hover {
+    transform: scale(1.02);
 }
 
 .color-strip h3 {
@@ -149,17 +213,23 @@ body.dark-mode .navbar.navbar-custom .fa-lightbulb {
     font-weight: bold;
 }
 
-/* ===== Logo Card ===== */
+/* ==========================================================================
+   Logo Interactive Components
+   ========================================================================== */
+
 .logo-card {
     display: flex;
     overflow: hidden;
+    border-radius: var(--border-radius-lg);
 }
 
+/* Color Selection List */
 .color-list {
     display: flex;
     flex-direction: column;
-    padding: 0.5rem;
+    padding: var(--spacing-xs);
     background: var(--background-color);
+    transition: background-color var(--transition-normal);
 }
 
 .color-list button {
@@ -167,34 +237,43 @@ body.dark-mode .navbar.navbar-custom .fa-lightbulb {
     color: #fff;
     font-size: 13px;
     padding: 0.6rem;
-    margin-bottom: 0.5rem;
-    border-radius: 6px;
+    margin-bottom: var(--spacing-xs);
+    border-radius: var(--border-radius-md);
     cursor: pointer;
     text-align: left;
-    transition: transform 0.2s, opacity 0.2s;
+    transition: all var(--transition-fast);
 }
 
 .color-list button:hover {
     transform: translateY(-2px);
     opacity: 0.9;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Logo Display Area */
 .logo-display {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: var(--spacing-lg);
     background-color: #043388;
-    border-radius: 6px;
+    border-radius: var(--border-radius-md);
     margin: 10px 0 15px;
+    transition: background-color var(--transition-normal);
 }
 
 .logo-display img {
     max-width: 80%;
     height: auto;
+    transition: transform var(--transition-fast);
 }
 
+.logo-display:hover img {
+    transform: scale(1.05);
+}
+
+/* Dark Mode Logo Components */
 body.dark-mode .color-list {
     background: var(--card-background);
 }
@@ -203,59 +282,89 @@ body.dark-mode .color-list button {
     color: var(--text-color);
 }
 
-/* ===== Font Cards ===== */
+/* ==========================================================================
+   Typography Components
+   ========================================================================== */
+
+/* Font Card Styles */
 .font-card {
     height: 100%;
-    padding: 1.5rem;
+    padding: var(--spacing-md);
     text-decoration: none;
     color: inherit;
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: white;
+    border-radius: var(--border-radius-lg);
+    transition: all var(--transition-normal);
 }
 
 .font-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     border-color: transparent;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .font-name {
     font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--spacing-xs);
 }
 
 .font-preview {
-    font-size: 1.5rem;
-    line-height: 1.3;
+    font-size: 1rem;
+    line-height: 1.4;
     flex-grow: 1;
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--spacing-xs);
+    opacity: 0.9;
 }
 
 .font-details {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #6c757d;
 }
 
-/* ===== Font Classes ===== */
-.poppins { font-family: 'Poppins', sans-serif; }
-.helvetica { font-family: 'Helvetica Neue', Arial, sans-serif; }
-.calibri { font-family: 'Calibri', 'Segoe UI', sans-serif; }
-.montserrat { font-family: 'Montserrat', sans-serif; }
+/* Font Family Classes */
+.poppins { 
+    font-family: 'Poppins', sans-serif; 
+}
 
-/* ===== Dark Mode Text ===== */
+.helvetica { 
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
+}
+
+.calibri { 
+    font-family: 'Calibri', 'Segoe UI', sans-serif; 
+}
+
+.montserrat { 
+    font-family: 'Montserrat', sans-serif; 
+}
+
+/* ==========================================================================
+   Dark Mode Text Overrides
+   ========================================================================== */
+
 body.dark-mode,
 body.dark-mode :is(p, h1, h2, h3, h4, h5, h6, li, a) {
     color: #ccc !important;
 }
 
-/* ===== Copy Feedback ===== */
+/* ==========================================================================
+   Interactive Feedback Components
+   ========================================================================== */
+
+/* Copy Feedback Animation */
 @keyframes fadeInOut {
-    0%, 100% { opacity: 0; bottom: 0; }
-    20%, 80% { opacity: 1; bottom: 20px; }
+    0%, 100% { 
+        opacity: 0; 
+        bottom: 0; 
+    }
+    20%, 80% { 
+        opacity: 1; 
+        bottom: 20px; 
+    }
 }
 
 .copy-feedback {
@@ -266,46 +375,222 @@ body.dark-mode :is(p, h1, h2, h3, h4, h5, h6, li, a) {
     background-color: #333;
     color: #fff;
     padding: 10px 20px;
-    border-radius: 5px;
-    z-index: 1000;
+    border-radius: var(--border-radius-sm);
+    z-index: var(--z-feedback);
     animation: fadeInOut 2s ease-in-out;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
- .font-card {
-        height: 100%;
-        border-radius: 8px;
-        padding: 1.25rem;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        color: inherit;
-        display: flex;
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .container {
+        padding: var(--spacing-sm);
+    }
+    
+    .color-strip-container {
         flex-direction: column;
-        border: 1px solid rgba(0,0,0,0.08);
-        background: white;
     }
-    .font-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        border-color: transparent;
+    
+    .color-strip {
+        min-height: 100px;
     }
-    .font-name {
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
+    
+    .color-strip.large-label {
+        font-size: 32px;
     }
-    .font-preview {
-        font-size: 1rem;
-        line-height: 1.4;
-        flex-grow: 1;
-        margin-bottom: 0.5rem;
-        opacity: 0.9;
+    
+    .logo-card {
+        flex-direction: column;
     }
-    .font-details {
-        font-size: 0.8rem;
-        color: #6c757d;
+    
+    .color-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-    /* Font families */
-    .poppins { font-family: 'Poppins', sans-serif; }
-    .helvetica { font-family: 'Helvetica Neue', Arial, sans-serif; }
-    .calibri { font-family: 'Calibri', 'Segoe UI', sans-serif; }
-    .montserrat { font-family: 'Montserrat', sans-serif; }
+    
+    .color-list button {
+        margin: 0.25rem;
+        min-width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .color-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .font-card {
+        padding: var(--spacing-sm);
+    }
+    
+    .copy-feedback {
+        left: 10px;
+        right: 10px;
+        transform: none;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Inline Style Replacements
+   ========================================================================== */
+
+/* Logo height */
+.logo-height {
+    height: 50px;
+}
+
+/* Logo card padding */
+.logo-card-padding {
+    padding: 15px;
+}
+
+/* Logo card dark background */
+.logo-card-dark-bg {
+    padding: 15px;
+    background-color: #022057;
+}
+
+/* Interactive logo button colors */
+.logo-btn-black {
+    background-color: #000000;
+}
+
+.logo-btn-prussian-blue {
+    background-color: #022057;
+}
+
+.logo-btn-blue {
+    background-color: #043388;
+}
+
+.logo-btn-azure {
+    background-color: #21A1F7;
+}
+
+.logo-btn-malibu {
+    background-color: #6DC6EC;
+}
+
+.logo-btn-mono {
+    background-color: #CCCCCC;
+    color: #000;
+}
+
+.logo-btn-white {
+    background-color: #ffffff;
+    color: #000;
+}
+
+/* Color swatch backgrounds */
+.color-swatch-prussian-blue {
+    background-color: #022057;
+}
+
+.color-swatch-blue {
+    background-color: #043388;
+}
+
+.color-swatch-azure {
+    background-color: #21A1F7;
+}
+
+.color-swatch-malibu {
+    background-color: #6DC6EC;
+}
+
+.color-swatch-lion {
+    background-color: #BD9A73;
+}
+
+.color-swatch-fawn {
+    background-color: #CCAC8D;
+}
+
+.color-swatch-arylide-yellow {
+    background-color: #E5D15C;
+}
+
+.color-swatch-banana-yellow {
+    background-color: #FCE53D;
+}
+
+/* Color strip backgrounds */
+.color-strip-black {
+    background-color: #000000;
+}
+
+.color-strip-grey-20 {
+    background-color: #CCCCCC;
+    color: #000;
+}
+
+.color-strip-grey-40 {
+    background-color: #999999;
+}
+
+.color-strip-grey-60 {
+    background-color: #666666;
+}
+
+.color-strip-grey-80 {
+    background-color: #575756;
+}
+
+.color-strip-grey-90 {
+    background-color: #3C3C3B;
+}
+
+.color-strip-white {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Icon heights */
+.icon-height-100 {
+    height: 100px;
+}
+
+.icon-height-250 {
+    height: 250px;
+}
+
+/* Button margin */
+.btn-margin-top {
+    margin-top: 15px;
+}
+
+/* Additional icon height for error pages */
+.icon-height-250 {
+    height: 250px;
+}
+
+@media print {
+    .navbar,
+    .copy-feedback,
+    .color-list button {
+        display: none !important;
+    }
+    
+    .color-card,
+    .font-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
