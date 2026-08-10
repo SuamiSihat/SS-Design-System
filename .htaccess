@@ -26,7 +26,24 @@
 # Performance
 # ============================================================================
 <IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+    # Compress text-based assets
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+    AddOutputFilterByType DEFLATE application/javascript application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE application/x-font-ttf font/woff font/woff2
+
+    # Compression level (1=fast, 9=best) — 6 is a good balance
+    DeflateCompressionLevel 6
+
+    # Don't compress if already compressed
+    SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|webp|gz|zip|bz2|rar)$ no-gzip dont-vary
+</IfModule>
+
+# Brotli compression (Synology DSM 7+ / Apache 2.4.26+)
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css
+    AddOutputFilterByType BROTLI_COMPRESS application/javascript application/json
+    AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
 </IfModule>
 
 <IfModule mod_expires.c>
@@ -34,10 +51,20 @@
     ExpiresByType image/jpg                      "access plus 1 year"
     ExpiresByType image/jpeg                     "access plus 1 year"
     ExpiresByType image/png                      "access plus 1 year"
+    ExpiresByType image/webp                     "access plus 1 year"
     ExpiresByType image/svg+xml                  "access plus 1 year"
     ExpiresByType text/css                       "access plus 1 month"
     ExpiresByType application/javascript         "access plus 1 month"
+    ExpiresByType font/woff                      "access plus 1 year"
     ExpiresByType font/woff2                     "access plus 1 year"
+    ExpiresByType application/font-woff2         "access plus 1 year"
+</IfModule>
+
+# PERF-01: Long-cache headers for CI-minified dist/ assets (fingerprinted via ?v= in HTML)
+<IfModule mod_headers.c>
+    <FilesMatch "^(assets/css/dist|assets/js/dist)/">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
 </IfModule>
 
 FileETag None

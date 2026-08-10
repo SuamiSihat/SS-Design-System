@@ -1,0 +1,17 @@
+{
+  "name": "ss-design-system",
+  "version": "3.3.0",
+  "description": "SuamiSihat™ Design System — static asset build pipeline",
+  "private": true,
+  "scripts": {
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "node scripts/minify-css.mjs",
+    "build:js": "node scripts/minify-js.mjs",
+    "watch": "node scripts/watch.mjs"
+  },
+  "devDependencies": {
+    "lightningcss": "^1.28.2",
+    "terser": "^5.36.0",
+    "chokidar": "^3.6.0"
+  }
+}
