@@ -4,6 +4,26 @@
 
 ---
 
+## v3.2 — August 2026
+
+**QA Audit & Production Hardening**
+
+Full independent QA audit conducted across all 14 audit domains. Two P2 defects identified and remediated before release declaration.
+
+### Bug Fixes
+
+- **INL-01 (P2)**: Removed an inline `classList.toggle('dark-mode')` event listener from `pages/components.html` (line 1212) that was duplicating and partially overriding `ThemeManager`. The inline handler bypassed logo variant swaps, `localStorage` persistence, `aria-pressed` state, and `FluentThemeSync.syncAllButtons()`. `ThemeManager` in `main.js` is now the sole theme handler on every page, as required by AGENTS.md.
+
+- **CSS-VER-01 (P2)**: Updated CSS cache-buster query string from `?v=8` to `?v=9` in all four product sub-pages (`products/Androlab`, `products/MENSS`, `products/Mensculine`, `products/Rejal`). These pages were inadvertently left on the previous version during the v3.1 release, causing browsers to serve stale stylesheet builds on those routes.
+
+### QA Documentation
+
+- 14 QA audit reports added to `/QA/` directory covering: Reconnaissance, Functional, Brand Assets, Design System, UI/UX, Accessibility, Responsive, Content, Navigation, Performance, Security, Deployment, Duplication, Fix Log.
+- `QA/FINAL-QA-REPORT.md` — formal **RELEASE READY** declaration.
+- `readme.md` — updated with QA status table and Roadmap section.
+
+---
+
 ## v3.1 — August 2026
 
 **Multi-Platform Token System + Expo React Native Foundation**

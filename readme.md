@@ -1,4 +1,4 @@
-# SuamiSihat Design System — v3.0
+# SuamiSihat Design System — v3.2
 
 ## 🎨 Project Overview
 
@@ -161,6 +161,55 @@ Alternatively, you can build and run the container manually:
   docker stop ss-assets
   docker rm ss-assets
   ```
+
+## ✅ QA & Release Status
+
+| Version | Status | Audit Date | Auditor |
+|---|---|---|---|
+| v3.2 | **RELEASE READY** | 2026-08-10 | Antigravity QA |
+
+### Release History
+
+| Defect | Severity | Fix | Version |
+|---|---|---|---|
+| INL-01 — Inline theme handler in `components.html` bypassed `ThemeManager` | P2 | Deleted duplicate `addEventListener` (1 line) | v3.2 |
+| CSS-VER-01 — Product sub-pages on stale `?v=8` CSS cache-buster | P2 | Updated all four product pages to `?v=9` | v3.2 |
+
+Full QA reports are in [`/QA/`](QA/) — 14 audit reports covering Functionality, Brand, Design System, Fluent 2, UI/UX, Accessibility, Responsive, Content, Navigation, Performance, Security, Deployment, Duplication, and Fix Log.
+
+---
+
+## 🗺️ Roadmap
+
+### Open (P3 — Post-Release)
+
+| ID | Description | Effort |
+|---|---|---|
+| BRAND-STATIC-01 | Sub-brand logos in homepage strip hard-coded to `_light.svg` — invisible on dark background. Add `.dark-mode .f-subbrand-item img { filter: brightness(0) invert(1); }` | XS |
+| BRAND-HERO-01 | Hero canvas preloads logomark via literal path `'public/brand/logos/ss-logomark-light.svg'` — replace with `LogoSelector.markForTheme('light')` | XS |
+| DS-01 to DS-05 | Hardcoded hex/shadow/radius values in `banner.css`, `onboarding.css`, `style.css` — migrate to Fluent tier-2 semantic tokens | S |
+| DUP-01 | Nav label "Brand Guidelines" too similar to "Brand System" — rename to "Guidelines & PDFs" | XS |
+| DUP-02 | Gallery JS helpers `formatAssetName` / `getAssetMeta` duplicated across all four product pages — extract to shared module | S |
+
+### Open (P4 — Enhancements)
+
+| ID | Description | Effort |
+|---|---|---|
+| ARCH-01 | Dead selectors `.navbar-logo` and `#headerLogo` in `ThemeManager` logo query — simplify to `.logo` | XS |
+| PERF-01 | No CSS/JS minification — add production build step (e.g. `lightningcss`, `esbuild`) | M |
+
+### Completed
+
+| Version | Feature |
+|---|---|
+| v3.2 | Full QA audit (14 reports) + 2 P2 bug fixes |
+| v3.1 | Multi-platform token system + Expo React Native foundation |
+| v3.0 | Fluent 2 design system overhaul |
+| v2.1 | Hub upgrade + Markdown documentation integration |
+| v2.0 | Interactive design system with dark mode |
+| v1.0 | Initial release |
+
+---
 
 ## 🤝 Support & Contact
 
