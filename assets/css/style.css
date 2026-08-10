@@ -130,7 +130,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
     background-color: rgba(255, 255, 255, 0.95) !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--f-shadow-8);
 }
 
 body.dark-mode .glass-navbar {
@@ -182,7 +182,7 @@ body.dark-mode .glass-navbar .fa-sun:hover {
     height: 2px;
     background-color: var(--accent); /* Celestial Blue */
     transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    border-radius: 2px;
+    border-radius: var(--f-radius-sm);
 }
 
 .glass-navbar .nav-link:hover::after,
@@ -336,7 +336,7 @@ body.dark-mode .glass-navbar .fa-sun:hover {
 .color-list button:hover {
     transform: translateY(-2px);
     opacity: 0.9;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--f-shadow-4);
 }
 
 /* Logo Display Area */
@@ -383,14 +383,14 @@ body.dark-mode .color-list button {
     color: var(--text-color);
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: var(--f-stroke-thin) solid var(--color-neutral-stroke-1);
     background: var(--card-background);
     border-radius: var(--border-radius-lg);
     transition: all var(--transition-normal);
 }
 
 .font-card:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--f-shadow-16);
     border-color: transparent;
 }
 
@@ -507,7 +507,7 @@ body.dark-mode .navbar-custom .nav-link:hover {
     animation: fadeInOut 2s ease-in-out;
     font-size: 14px;
     font-weight: 500;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--f-shadow-8);
 }
 
 /* ==========================================================================
@@ -896,7 +896,7 @@ body.dark-mode .scroll-to-top {
     font-size: 0.65rem;
     font-weight: 700;
     padding: 2px 8px;
-    border-radius: 20px;
+    border-radius: var(--f-radius-2xl);
     background-color: var(--accent);
     color: #fff;
     letter-spacing: 0.04em;
@@ -923,7 +923,7 @@ body.dark-mode .navbar-version-badge {
     font-size: 0.8rem;
     font-weight: 600;
     padding: 6px 16px;
-    border-radius: 30px;
+    border-radius: var(--f-radius-3xl);
     background-color: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: #fff;
@@ -1052,7 +1052,7 @@ body.dark-mode .intro-tagline {
     justify-content: center;
     width: 50px;
     height: 50px;
-    border-radius: 14px;
+    border-radius: var(--f-radius-lg);
 }
 
 .vision-card .vm-icon {
@@ -1097,7 +1097,7 @@ body.dark-mode .mission-card .vm-icon {
 .ss-dropdown {
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: var(--border-radius-lg);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--f-shadow-16);
     padding: 0.5rem;
     min-width: 210px;
 }
@@ -1123,7 +1123,7 @@ body.dark-mode .mission-card .vm-icon {
 body.dark-mode .ss-dropdown {
     background: var(--card-background);
     border-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--f-shadow-28);
 }
 
 body.dark-mode .ss-dropdown .dropdown-item {
@@ -1246,7 +1246,7 @@ body.dark-mode .intro-tagline {
     justify-content: center;
     width: 50px;
     height: 50px;
-    border-radius: 14px;
+    border-radius: var(--f-radius-lg);
 }
 
 .vision-card .vm-icon {
@@ -1291,7 +1291,7 @@ body.dark-mode .mission-card .vm-icon {
 .ss-dropdown {
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: var(--border-radius-lg);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--f-shadow-16);
     padding: 0.5rem;
     min-width: 210px;
 }
@@ -1317,7 +1317,7 @@ body.dark-mode .mission-card .vm-icon {
 body.dark-mode .ss-dropdown {
     background: var(--card-background);
     border-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--f-shadow-28);
 }
 
 body.dark-mode .ss-dropdown .dropdown-item {
@@ -1837,7 +1837,7 @@ body {
   color: #ffffff;
   font-weight: 600;
   font-size: 0.9rem;
-  border-radius: 0 0 0.5rem 0.5rem;
+  border-radius: 0 0 var(--f-radius-md) var(--f-radius-md);
   text-decoration: none;
   transition: top 0.15s ease;
 }
@@ -1851,7 +1851,7 @@ body {
 :focus-visible {
   outline: 3px solid var(--f-color-accent, #21a1f7);
   outline-offset: 3px;
-  border-radius: 3px;
+  border-radius: var(--f-radius-sm);
 }
 
 /* Override outline:none in favour of focus-visible only */
