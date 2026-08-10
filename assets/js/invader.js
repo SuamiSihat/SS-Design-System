@@ -24,7 +24,7 @@ class SSHealthDefender {
       
       // Load SS Health icon
       this.playerIcon = new Image();
-      this.playerIcon.src = '../core-assets/icons/ss_icon_dark.svg';
+      this.playerIcon.src = '../public/brand/logos/ss-logomark-dark.svg';
       
       // Bullets
       this.bullets = [];
@@ -233,7 +233,7 @@ class SSHealthDefender {
   gameOver() {
       this.gameRunning = false;
       alert(`Game Over! Final Score: ${this.score}\n\nSS Health defended against ${Math.floor(this.score/20)} threats!`);
-      this.resetGame();
+      this.reset();
   }
   
   updateStats() {

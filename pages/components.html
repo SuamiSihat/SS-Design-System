@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SuamiSihat Design System - Component Library. Live component showcase for web and Expo/React Native.">
+    <title>Components - SuamiSihat Design System</title>
+    <link rel="icon" href="../public/brand/favicon/favicon.ico" sizes="any">
+    <link rel="icon" href="../public/brand/logos/ss-logomark-light.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../public/brand/favicon/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@3/dist/iconify.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/fluent.css?v=9">
+    <link rel="stylesheet" href="../assets/css/ss_theme.css?v=9">
+    <link rel="stylesheet" href="../assets/css/style.css?v=9">
+    <style>
+        *{box-sizing:border-box}
+        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--color-neutral-bg-1);color:var(--color-neutral-fg-1);margin:0;-webkit-font-smoothing:antialiased}
+        .cl-topbar{position:sticky;top:0;z-index:100;background:var(--color-layer-acrylic);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--color-neutral-stroke-1);height:56px;display:flex;align-items:center;padding:0 var(--f-space-6);gap:var(--f-space-4)}
+        .cl-topbar-brand{display:flex;align-items:center;gap:var(--f-space-2);text-decoration:none;color:var(--color-neutral-fg-1);font-weight:600;font-size:.9rem}
+        .cl-topbar-brand img{height:28px}
+        .cl-topbar-sep{color:var(--color-neutral-stroke-2);font-size:1.2rem}
+        .cl-topbar-title{font-size:.9rem;color:var(--color-neutral-fg-2);font-weight:500}
+        .cl-topbar-right{margin-left:auto;display:flex;align-items:center;gap:var(--f-space-2)}
+        .cl-version-badge{font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:var(--f-radius-full);background:var(--color-brand-subtle);color:var(--color-brand-primary);letter-spacing:.04em;text-transform:uppercase}
+        .cl-theme-btn{width:32px;height:32px;border-radius:var(--f-radius-md);border:1px solid var(--color-neutral-stroke-1);background:var(--color-neutral-bg-3);color:var(--color-neutral-fg-2);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all var(--f-duration-fast) var(--f-curve-easy-ease)}
+        .cl-theme-btn:hover{background:var(--color-brand-subtle);color:var(--color-brand-primary)}
+        /* Sidebar inner styling remains */
+        .cl-sidebar-section{padding:0 var(--f-space-4) var(--f-space-2)}
+        .cl-sidebar-label{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-fg-3);padding:var(--f-space-3) var(--f-space-2) var(--f-space-1);display:block}
+        .cl-sidebar-link{display:flex;align-items:center;gap:var(--f-space-2);padding:var(--f-space-2) var(--f-space-3);border-radius:var(--f-radius-md);font-size:.875rem;font-weight:450;color:var(--color-neutral-fg-2);text-decoration:none;transition:all var(--f-duration-fast) var(--f-curve-easy-ease);margin-bottom:1px}
+        .cl-sidebar-link:hover{background:var(--color-neutral-bg-4);color:var(--color-neutral-fg-1)}
+        .cl-sidebar-link.active{background:var(--color-brand-subtle);color:var(--color-brand-primary);font-weight:600}
+        .cl-sidebar-link iconify-icon{font-size:14px;flex-shrink:0}
+        .cl-divider{height:1px;background:var(--color-neutral-stroke-1);margin:var(--f-space-2) var(--f-space-4)}
+        .cl-section{margin-bottom:var(--f-space-16);scroll-margin-top:80px}
+        .cl-section-eyebrow{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--color-brand-primary);margin-bottom:var(--f-space-1)}
+        .cl-section-title{font-size:1.75rem;font-weight:700;color:var(--color-neutral-fg-1);letter-spacing:-.02em;margin-bottom:var(--f-space-2)}
+        .cl-section-desc{font-size:.95rem;color:var(--color-neutral-fg-2);line-height:1.7;margin-bottom:var(--f-space-6);max-width:640px}
+        .cl-card{background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);overflow:hidden;margin-bottom:var(--f-space-5);box-shadow:var(--f-shadow-2)}
+        .cl-card-header{padding:var(--f-space-4) var(--f-space-5);border-bottom:1px solid var(--color-neutral-stroke-1);display:flex;align-items:center;justify-content:space-between}
+        .cl-card-title{font-size:.875rem;font-weight:600;color:var(--color-neutral-fg-1)}
+        .cl-card-subtitle{font-size:.78rem;color:var(--color-neutral-fg-3);margin-top:2px}
+        .cl-preview{padding:var(--f-space-8) var(--f-space-5);background:var(--color-neutral-bg-1);display:flex;flex-wrap:wrap;align-items:center;gap:var(--f-space-3)}
+        .cl-code-block{background:#0d1117;padding:var(--f-space-4) var(--f-space-5);font-family:'Cascadia Code','Fira Code',monospace;font-size:.78rem;line-height:1.7;color:#e6edf3;overflow-x:auto;position:relative;white-space:pre}
+        .cl-copy-btn{position:absolute;top:var(--f-space-3);right:var(--f-space-3);padding:3px 10px;border-radius:var(--f-radius-sm);background:rgba(255,255,255,.08);color:#8b949e;border:1px solid rgba(255,255,255,.12);font-size:.7rem;font-weight:600;cursor:pointer;transition:all var(--f-duration-fast) var(--f-curve-easy-ease)}
+        .cl-copy-btn:hover{background:rgba(255,255,255,.14);color:#fff}
+        .cl-copy-btn.copied{color:#3fb950;border-color:rgba(63,185,80,.3)}
+        .cl-swatch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:var(--f-space-3)}
+        .cl-swatch{border-radius:var(--f-radius-md);overflow:hidden;border:1px solid var(--color-neutral-stroke-1)}
+        .cl-swatch-color{height:64px}
+        .cl-swatch-info{padding:var(--f-space-2) var(--f-space-3);background:var(--color-neutral-bg-2)}
+        .cl-swatch-name{font-size:.72rem;font-weight:600;color:var(--color-neutral-fg-1)}
+        .cl-swatch-hex{font-size:.65rem;color:var(--color-neutral-fg-3);font-family:monospace}
+        .cl-swatch-token{font-size:.62rem;color:var(--color-neutral-fg-4);font-family:monospace;margin-top:1px}
+        .cl-type-row{display:flex;align-items:baseline;gap:var(--f-space-5);padding:var(--f-space-4) 0;border-bottom:1px solid var(--color-neutral-stroke-1)}
+        .cl-type-meta{width:130px;flex-shrink:0}
+        .cl-type-label{font-size:.65rem;font-weight:700;color:var(--color-neutral-fg-3);text-transform:uppercase;letter-spacing:.08em}
+        .cl-type-spec{font-size:.65rem;color:var(--color-neutral-fg-4);font-family:monospace}
+        .cl-space-row{display:flex;align-items:center;gap:var(--f-space-4);padding:var(--f-space-2) 0}
+        .cl-space-bar{background:var(--color-brand-subtle);border-left:3px solid var(--color-brand-primary);height:20px;border-radius:0 var(--f-radius-sm) var(--f-radius-sm) 0}
+        .cl-space-meta{font-size:.75rem;color:var(--color-neutral-fg-2);font-family:monospace;min-width:200px}
+        .cl-shadow-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:var(--f-space-5)}
+        .cl-shadow-card{height:80px;border-radius:var(--f-radius-lg);background:var(--color-neutral-bg-2);display:flex;flex-direction:column;align-items:center;justify-content:center}
+        .cl-shadow-name{font-size:.72rem;font-weight:600;color:var(--color-neutral-fg-1);margin-top:var(--f-space-3)}
+        .cl-shadow-token{font-size:.62rem;color:var(--color-neutral-fg-3);font-family:monospace}
+        .cl-radius-grid{display:flex;flex-wrap:wrap;gap:var(--f-space-5);align-items:flex-end}
+        .cl-radius-item{display:flex;flex-direction:column;align-items:center;gap:var(--f-space-2)}
+        .cl-radius-box{background:var(--color-brand-subtle);border:2px solid var(--color-brand-primary)}
+        .cl-icon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:var(--f-space-2)}
+        .cl-icon-item{display:flex;flex-direction:column;align-items:center;gap:6px;padding:var(--f-space-3) var(--f-space-2);border-radius:var(--f-radius-md);border:1px solid var(--color-neutral-stroke-1);cursor:pointer;transition:all var(--f-duration-fast) var(--f-curve-easy-ease);background:var(--color-neutral-bg-2)}
+        .cl-icon-item:hover{background:var(--color-brand-subtle);border-color:var(--color-brand-primary)}
+        .cl-icon-item iconify-icon{font-size:22px;color:var(--color-neutral-fg-1)}
+        .cl-icon-item:hover iconify-icon{color:var(--color-brand-primary)}
+        .cl-icon-name{font-size:.58rem;color:var(--color-neutral-fg-3);text-align:center;font-family:monospace}
+        .ss-btn{display:inline-flex;align-items:center;gap:var(--f-space-2);padding:10px var(--f-space-5);border-radius:var(--f-radius-md);font-size:.875rem;font-weight:600;border:none;cursor:pointer;transition:all var(--f-duration-gentle) var(--f-curve-spring);font-family:inherit;min-height:44px}
+        .ss-btn:active{transform:scale(.97)}
+        .ss-btn-primary{background:var(--color-brand-primary);color:#fff}
+        .ss-btn-primary:hover{background:var(--color-brand-dark);box-shadow:var(--f-shadow-brand-sm);color:#fff}
+        .ss-btn-secondary{background:var(--color-neutral-bg-3);color:var(--color-neutral-fg-1);border:1px solid var(--color-neutral-stroke-2)}
+        .ss-btn-secondary:hover{background:var(--color-neutral-bg-4)}
+        .ss-btn-ghost{background:transparent;color:var(--color-brand-primary)}
+        .ss-btn-ghost:hover{background:var(--color-brand-subtle)}
+        .ss-btn-danger{background:var(--color-error-bg);color:var(--color-error-fg);border:1px solid rgba(220,38,38,.18)}
+        .ss-btn-sm{padding:6px var(--f-space-3);font-size:.78rem;min-height:36px}
+        .ss-btn-lg{padding:var(--f-space-3) var(--f-space-6);font-size:1rem;min-height:52px}
+        .ss-btn:disabled{opacity:.38;cursor:not-allowed}
+        .ss-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 10px;border-radius:var(--f-radius-full);font-size:.72rem;font-weight:600}
+        .ss-badge-brand{background:var(--color-brand-subtle);color:var(--color-brand-primary)}
+        .ss-badge-success{background:var(--color-success-bg);color:var(--color-success-fg)}
+        .ss-badge-warning{background:var(--color-warning-bg);color:var(--color-warning-fg)}
+        .ss-badge-danger{background:var(--color-error-bg);color:var(--color-error-fg)}
+        .ss-badge-neutral{background:var(--color-neutral-bg-4);color:var(--color-neutral-fg-2)}
+        .ss-chip{display:inline-flex;align-items:center;gap:var(--f-space-1);padding:var(--f-space-1) var(--f-space-3);border-radius:var(--f-radius-full);border:1px solid var(--color-neutral-stroke-2);font-size:.8rem;font-weight:500;color:var(--color-neutral-fg-1);background:var(--color-neutral-bg-2);cursor:default;transition:all var(--f-duration-fast) var(--f-curve-easy-ease)}
+        .ss-chip:hover{background:var(--color-neutral-bg-4)}
+        .ss-chip-selected{background:var(--color-brand-subtle);border-color:var(--color-brand-primary);color:var(--color-brand-primary)}
+        .ss-input-group{display:flex;flex-direction:column;gap:var(--f-space-1);width:100%}
+        .ss-label{font-size:.825rem;font-weight:600;color:var(--color-neutral-fg-1)}
+        .ss-label-hint{font-size:.75rem;color:var(--color-neutral-fg-3)}
+        .ss-input{padding:10px var(--f-space-3);border-radius:var(--f-radius-md);border:1px solid var(--color-neutral-stroke-3);background:var(--color-neutral-bg-2);color:var(--color-neutral-fg-1);font-size:.9rem;font-family:inherit;transition:border-color var(--f-duration-fast),box-shadow var(--f-duration-fast);width:100%;min-height:44px}
+        .ss-input:focus{outline:none;border-color:var(--color-brand-primary);box-shadow:0 0 0 3px var(--color-brand-subtle)}
+        .ss-input::placeholder{color:var(--color-neutral-fg-3)}
+        .ss-input.error{border-color:var(--color-error-fg)}
+        .ss-input-error-msg{font-size:.75rem;color:var(--color-error-fg);display:flex;align-items:center;gap:4px}
+        .ss-toggle-wrap{display:flex;align-items:center;gap:var(--f-space-3);cursor:pointer}
+        .ss-toggle{width:40px;height:22px;border-radius:var(--f-radius-full);background:var(--color-neutral-stroke-3);position:relative;transition:background var(--f-duration-normal);flex-shrink:0}
+        .ss-toggle::after{content:'';position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:var(--f-shadow-4);transition:transform var(--f-duration-normal) var(--f-curve-spring)}
+        .ss-toggle.on{background:var(--color-brand-primary)}
+        .ss-toggle.on::after{transform:translateX(18px)}
+        .ss-toggle-label{font-size:.875rem;color:var(--color-neutral-fg-1);font-weight:500}
+        .ss-card{background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);padding:var(--f-space-5);box-shadow:var(--f-shadow-2);transition:transform var(--f-duration-gentle) var(--f-curve-spring),box-shadow var(--f-duration-gentle) var(--f-curve-spring);width:100%}
+        .ss-card:hover{transform:translateY(-3px);box-shadow:var(--f-shadow-brand-sm)}
+        .ss-card-icon{width:44px;height:44px;border-radius:var(--f-radius-lg);display:flex;align-items:center;justify-content:center;margin-bottom:var(--f-space-3)}
+        .ss-card-title{font-size:.95rem;font-weight:600;color:var(--color-neutral-fg-1);margin-bottom:var(--f-space-1)}
+        .ss-card-desc{font-size:.825rem;color:var(--color-neutral-fg-2);line-height:1.6}
+        .ss-alert{display:flex;gap:var(--f-space-3);padding:var(--f-space-3) var(--f-space-4);border-radius:var(--f-radius-md);font-size:.875rem;line-height:1.6;border-left:4px solid;width:100%}
+        .ss-alert-info{background:var(--color-info-bg);border-color:var(--color-brand-light)}
+        .ss-alert-success{background:var(--color-success-bg);border-color:var(--color-success-fg)}
+        .ss-alert-warning{background:var(--color-warning-bg);border-color:var(--color-warning-fg)}
+        .ss-alert-danger{background:var(--color-error-bg);border-color:var(--color-error-fg)}
+        .ss-alert iconify-icon{flex-shrink:0;margin-top:2px;font-size:16px}
+        .ss-avatar{width:40px;height:40px;border-radius:var(--f-radius-full);background:var(--color-brand-subtle);color:var(--color-brand-primary);display:flex;align-items:center;justify-content:center;font-size:.875rem;font-weight:700;flex-shrink:0}
+        .ss-avatar-sm{width:28px;height:28px;font-size:.7rem}
+        .ss-avatar-lg{width:56px;height:56px;font-size:1.1rem}
+        .ss-avatar-group{display:flex}
+        .ss-avatar-group .ss-avatar{border:2px solid var(--color-neutral-bg-2);margin-left:-8px}
+        .ss-avatar-group .ss-avatar:first-child{margin-left:0}
+        .ss-progress-wrap{width:100%}
+        .ss-progress-label{display:flex;justify-content:space-between;font-size:.78rem;color:var(--color-neutral-fg-2);margin-bottom:6px}
+        .ss-progress-track{height:6px;background:var(--color-neutral-bg-4);border-radius:var(--f-radius-full);overflow:hidden}
+        .ss-progress-bar{height:100%;background:var(--gradient-brand-horizontal);border-radius:var(--f-radius-full)}
+        .ss-skeleton{background:linear-gradient(90deg,var(--color-neutral-bg-3) 25%,var(--color-neutral-bg-4) 50%,var(--color-neutral-bg-3) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:var(--f-radius-md)}
+        @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+        .ss-tabs{display:flex;border-bottom:1px solid var(--color-neutral-stroke-1);gap:2px}
+        .ss-tab{padding:var(--f-space-2) var(--f-space-4);font-size:.875rem;font-weight:500;color:var(--color-neutral-fg-2);border:none;background:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all var(--f-duration-fast);font-family:inherit}
+        .ss-tab:hover{color:var(--color-neutral-fg-1)}
+        .ss-tab.active{color:var(--color-brand-primary);border-bottom-color:var(--color-brand-primary);font-weight:600}
+        /* ── Code Tabs (Web / Expo toggle) ── */
+        .cl-code-tabs{display:flex;border-bottom:1px solid rgba(255,255,255,.12);padding:0 var(--f-space-3);gap:2px;background:#0d1117}
+        .cl-code-tab{padding:var(--f-space-2) var(--f-space-3);font-size:.75rem;font-weight:600;color:#8b949e;border:none;background:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;font-family:inherit;display:flex;align-items:center;gap:6px;transition:color var(--f-duration-fast)}
+        .cl-code-tab:hover{color:#e6edf3}
+        .cl-code-tab.active{color:#e6edf3;border-bottom-color:var(--color-brand-light,#21A1F7)}
+        .cl-code-tab iconify-icon{font-size:14px}
+        /* ── Bottom Tab Bar Preview ── */
+        .ss-bottom-tab{display:flex;border-top:1px solid var(--color-neutral-stroke-1);background:var(--color-layer-acrylic);backdrop-filter:blur(20px);padding:8px 0 calc(8px + env(safe-area-inset-bottom,0px))}
+        .ss-tab-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 0;cursor:pointer;transition:opacity var(--f-duration-fast)}
+        .ss-tab-item iconify-icon{font-size:24px;color:var(--color-neutral-fg-3)}
+        .ss-tab-item span{font-size:.625rem;font-weight:500;color:var(--color-neutral-fg-3)}
+        .ss-tab-item.active iconify-icon{color:var(--color-brand-primary)}
+        .ss-tab-item.active span{color:var(--color-brand-primary);font-weight:600}
+        /* ── Modal ── */
+        .ss-modal-overlay{position:relative;background:rgba(0,0,0,.48);border-radius:var(--f-radius-lg);padding:var(--f-space-6);display:flex;align-items:flex-end;min-height:220px;width:100%}
+        .ss-modal{background:var(--color-neutral-bg-2);border-radius:var(--f-radius-xl) var(--f-radius-xl) var(--f-radius-none) var(--f-radius-none);padding:var(--f-space-5);width:100%;box-shadow:var(--f-shadow-28)}
+        .ss-modal-handle{width:36px;height:4px;background:var(--color-neutral-stroke-2);border-radius:var(--f-radius-full);margin:0 auto var(--f-space-4)}
+        .ss-modal-title{font-size:1.1rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:var(--f-space-2)}
+        .ss-modal-body{font-size:.875rem;color:var(--color-neutral-fg-2);line-height:1.6;margin-bottom:var(--f-space-5)}
+        .ss-modal-actions{display:flex;gap:var(--f-space-2);justify-content:flex-end}
+        /* ── Toast ── */
+        .ss-toast-stack{display:flex;flex-direction:column;gap:var(--f-space-2);width:100%}
+        .ss-toast{display:flex;align-items:center;gap:var(--f-space-3);padding:var(--f-space-3) var(--f-space-4);border-radius:var(--f-radius-lg);border:1px solid var(--color-neutral-stroke-1);background:var(--color-neutral-bg-2);box-shadow:var(--f-shadow-16);animation:toast-in var(--f-duration-slow) var(--f-curve-decelerate) both;width:100%}
+        @keyframes toast-in{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+        .ss-toast iconify-icon{font-size:20px;flex-shrink:0}
+        .ss-toast-content{flex:1}
+        .ss-toast-title{font-size:.875rem;font-weight:600;color:var(--color-neutral-fg-1)}
+        .ss-toast-msg{font-size:.78rem;color:var(--color-neutral-fg-2)}
+        .ss-toast-close{color:var(--color-neutral-fg-3);background:none;border:none;cursor:pointer;padding:2px;border-radius:var(--f-radius-sm)}
+        .ss-toast-success iconify-icon{color:var(--color-success-fg)}
+        .ss-toast-error iconify-icon{color:var(--color-error-fg)}
+        .ss-toast-warning iconify-icon{color:var(--color-warning-fg)}
+        .ss-toast-info iconify-icon{color:var(--color-brand-light)}
+        /* ── Empty State ── */
+        .ss-empty{display:flex;flex-direction:column;align-items:center;text-align:center;padding:var(--f-space-12) var(--f-space-6);width:100%}
+        .ss-empty-icon{width:72px;height:72px;border-radius:var(--f-radius-2xl);background:var(--color-brand-subtle);display:flex;align-items:center;justify-content:center;margin-bottom:var(--f-space-5)}
+        .ss-empty-icon iconify-icon{font-size:36px;color:var(--color-brand-primary)}
+        .ss-empty-title{font-size:1.1rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:var(--f-space-2)}
+        .ss-empty-desc{font-size:.875rem;color:var(--color-neutral-fg-2);line-height:1.6;max-width:480px;margin-bottom:var(--f-space-5)}
+        /* ── List Item ── */
+        .ss-list{border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);overflow:hidden;background:var(--color-neutral-bg-2);width:100%}neutral-stroke-1);border-radius:var(--f-radius-xl);overflow:hidden;background:var(--color-neutral-bg-2);max-width:400px}
+        .ss-list-item{display:flex;align-items:center;gap:var(--f-space-3);padding:var(--f-space-3) var(--f-space-4);border-bottom:1px solid var(--color-neutral-stroke-1);cursor:pointer;transition:background var(--f-duration-fast)}
+        .ss-list-item:last-child{border-bottom:none}
+        .ss-list-item:hover{background:var(--color-neutral-bg-4)}
+        .ss-list-icon{width:40px;height:40px;border-radius:var(--f-radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .ss-list-body{flex:1;min-width:0}
+        .ss-list-title{font-size:.9rem;font-weight:600;color:var(--color-neutral-fg-1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+        .ss-list-sub{font-size:.75rem;color:var(--color-neutral-fg-3)}
+        .ss-list-right{display:flex;align-items:center;gap:var(--f-space-2);flex-shrink:0}
+        /* â”€â”€ Stats Card â”€â”€ */
+        .ss-stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:var(--f-space-3)}
+        .ss-stat-card{background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);padding:var(--f-space-4);box-shadow:var(--f-shadow-2)}
+        .ss-stat-icon{width:36px;height:36px;border-radius:var(--f-radius-md);display:flex;align-items:center;justify-content:center;margin-bottom:var(--f-space-3)}
+        .ss-stat-value{font-size:1.75rem;font-weight:700;color:var(--color-neutral-fg-1);letter-spacing:-.03em;line-height:1}
+        .ss-stat-label{font-size:.75rem;color:var(--color-neutral-fg-3);margin-top:4px}
+        .ss-stat-delta{font-size:.72rem;font-weight:600;display:inline-flex;align-items:center;gap:2px;margin-top:var(--f-space-2)}
+        .ss-stat-up{color:var(--color-success-fg)}
+        .ss-stat-down{color:var(--color-error-fg)}
+        /* â”€â”€ Expo Setup card â”€â”€ */
+        .cl-install-step{display:flex;gap:var(--f-space-4);padding:var(--f-space-4) 0;border-bottom:1px solid var(--color-neutral-stroke-1)}
+        .cl-install-step:last-child{border-bottom:none}
+        .cl-install-num{width:28px;height:28px;border-radius:var(--f-radius-full);background:var(--color-brand-subtle);color:var(--color-brand-primary);font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+        .cl-install-title{font-size:.9rem;font-weight:600;color:var(--color-neutral-fg-1);margin-bottom:4px}
+        .cl-install-desc{font-size:.78rem;color:var(--color-neutral-fg-2);margin-bottom:var(--f-space-2);line-height:1.5}
+
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
+
+    <!-- Navbar -->
+    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-custom sticky-top glass-navbar transition-all" role="navigation" aria-label="Main navigation">
+        <div class="container-fluid px-4">
+            <img src="../public/brand/logos/ss-logomark-light.svg" alt="SuamiSihat Icon" class="logo me-2 logo-height" loading="eager"/>
+            <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html" aria-label="SuamiSihat Design System Home">
+                SuamiSihat DS <span class="navbar-version-badge">v3.0</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <iconify-icon icon="fluent:navigation-24-regular" style="font-size:1.2rem"></iconify-icon>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="brand-system.html">Brand System</a></li>
+                    <li class="nav-item"><a class="nav-link" href="brand-guidelines.html">Guidelines</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="components.html">Components</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="onboarding.html">Onboarding</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="docsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Docs</a>
+                        <ul class="dropdown-menu dropdown-menu-end ss-dropdown" aria-labelledby="docsDropdown">
+                            <li><a class="dropdown-item" href="doc.html?doc=changelog"><iconify-icon icon="fluent:clock-arrow-download-24-regular" class="me-2"></iconify-icon>What's New</a></li>
+                            <li><a class="dropdown-item" href="doc.html?doc=contribution-guide"><iconify-icon icon="fluent:heart-hand-24-regular" class="me-2"></iconify-icon>Contribution Guide</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="doc.html?doc=vision-mission"><iconify-icon icon="fluent:eye-24-regular" class="me-2"></iconify-icon>Vision &amp; Mission</a></li>
+                            <li><a class="dropdown-item" href="signature.html"><iconify-icon icon="fluent:mail-24-regular" class="me-2"></iconify-icon>Mail Signature</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <button id="themeToggle" class="btn ms-auto" aria-label="Toggle dark mode" aria-pressed="false">
+                            <iconify-icon icon="fluent:weather-moon-24-regular" style="font-size:1.1rem"></iconify-icon>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div class="f-page-layout">
+    <button class="f-sidebar-toggle" aria-label="Minimize sidebar">
+        <iconify-icon icon="fluent:chevron-left-16-regular"></iconify-icon>
+    </button>
+    <nav class="f-sidebar">
+        <div class="cl-sidebar-section">
+            <span class="cl-sidebar-label">Foundation</span>
+            <a href="#fluent2-guide" class="cl-sidebar-link"><iconify-icon icon="fluent:book-compass-24-regular"></iconify-icon> Fluent 2 Guide</a>
+            <a href="#colors" class="cl-sidebar-link active"><iconify-icon icon="fluent:color-24-regular"></iconify-icon> Color System</a>
+            <a href="#typography" class="cl-sidebar-link"><iconify-icon icon="fluent:text-font-24-regular"></iconify-icon> Typography</a>
+            <a href="#spacing" class="cl-sidebar-link"><iconify-icon icon="fluent:spacing-horizontal-24-regular"></iconify-icon> Spacing</a>
+            <a href="#elevation" class="cl-sidebar-link"><iconify-icon icon="fluent:layer-24-regular"></iconify-icon> Elevation</a>
+            <a href="#radius" class="cl-sidebar-link"><iconify-icon icon="fluent:border-radius-24-regular"></iconify-icon> Border Radius</a>
+            <a href="#motion" class="cl-sidebar-link"><iconify-icon icon="fluent:play-circle-24-regular"></iconify-icon> Motion</a>
+            <a href="#icons" class="cl-sidebar-link"><iconify-icon icon="fluent:icons-24-regular"></iconify-icon> Icons</a>
+        </div>
+        <div class="cl-divider"></div>
+        <div class="cl-sidebar-section">
+            <span class="cl-sidebar-label">Components</span>
+            <a href="#buttons" class="cl-sidebar-link"><iconify-icon icon="fluent:rectangle-24-regular"></iconify-icon> Buttons</a>
+            <a href="#badges" class="cl-sidebar-link"><iconify-icon icon="fluent:badge-24-regular"></iconify-icon> Badges &amp; Tags</a>
+            <a href="#inputs" class="cl-sidebar-link"><iconify-icon icon="fluent:text-field-24-regular"></iconify-icon> Inputs &amp; Forms</a>
+            <a href="#cards" class="cl-sidebar-link"><iconify-icon icon="fluent:card-ui-24-regular"></iconify-icon> Cards</a>
+            <a href="#alerts" class="cl-sidebar-link"><iconify-icon icon="fluent:alert-24-regular"></iconify-icon> Alerts</a>
+            <a href="#avatars" class="cl-sidebar-link"><iconify-icon icon="fluent:person-circle-24-regular"></iconify-icon> Avatars</a>
+            <a href="#progress" class="cl-sidebar-link"><iconify-icon icon="fluent:spinner-ios-20-regular"></iconify-icon> Progress</a>
+            <a href="#tabs" class="cl-sidebar-link"><iconify-icon icon="fluent:tab-24-regular"></iconify-icon> Tabs</a>
+            <a href="#navigation" class="cl-sidebar-link"><iconify-icon icon="fluent:navigation-24-regular"></iconify-icon> Navigation</a>
+            <a href="#modal" class="cl-sidebar-link"><iconify-icon icon="fluent:panel-right-24-regular"></iconify-icon> Modal &amp; Sheet</a>
+            <a href="#toast" class="cl-sidebar-link"><iconify-icon icon="fluent:alert-badge-24-regular"></iconify-icon> Toast</a>
+            <a href="#empty-state" class="cl-sidebar-link"><iconify-icon icon="fluent:box-24-regular"></iconify-icon> Empty State</a>
+            <a href="#list-item" class="cl-sidebar-link"><iconify-icon icon="fluent:list-24-regular"></iconify-icon> List Item</a>
+            <a href="#stats" class="cl-sidebar-link"><iconify-icon icon="fluent:data-bar-vertical-24-regular"></iconify-icon> Stats Card</a>
+        </div>
+        <div class="cl-divider"></div>
+        <div class="cl-sidebar-section">
+            <span class="cl-sidebar-label">Platform</span>
+            <a href="#tokens-json" class="cl-sidebar-link"><iconify-icon icon="fluent:document-data-24-regular"></iconify-icon> Token Export</a>
+            <a href="#expo-guide" class="cl-sidebar-link"><iconify-icon icon="fluent:phone-24-regular"></iconify-icon> Expo Guide</a>
+            <a href="#expo-install" class="cl-sidebar-link"><iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon> Expo Setup</a>
+        </div>
+    </nav>
+    <main class="f-main-content" id="main-content">
+        <div style="margin-bottom:var(--f-space-12)">
+            <div class="cl-section-eyebrow">SuamiSihat Design System</div>
+            <h1 style="font-size:2.25rem;font-weight:700;letter-spacing:-.03em;margin-bottom:var(--f-space-3)">Component Library</h1>
+            <p style="font-size:1rem;color:var(--color-neutral-fg-2);line-height:1.7;max-width:600px">The complete visual language of SuamiSihat. Fluent 2 architecture. One system for web, Expo/React Native, and all internal tools.</p>
+            <div style="display:flex;gap:var(--f-space-2);flex-wrap:wrap;margin-top:var(--f-space-4)">
+                <span class="ss-badge ss-badge-brand">Fluent 2</span>
+                <span class="ss-badge ss-badge-success">Expo Ready</span>
+                <span class="ss-badge ss-badge-neutral">WCAG AA</span>
+                <span class="ss-badge ss-badge-neutral">Dark Mode</span>
+            </div>
+        </div>
+
+        <!-- ================================================================
+             Fluent 2 Design Guidelines Section
+             ================================================================ -->
+        <section class="cl-section" id="fluent2-guide">
+            <div class="cl-section-eyebrow">Official Standard</div>
+            <h2 class="cl-section-title">Microsoft Fluent 2 Guidelines &amp; UX Framework</h2>
+            <p class="cl-section-desc">SuamiSihat's design system strictly adopts Microsoft's Fluent 2 design language adapted to our brand palette. Grounded in 4 core principles, 8 design dimensions, and a unified UX state framework.</p>
+
+            <!-- 4 Principles Grid -->
+            <div class="row g-4 mb-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="cl-card h-100 p-4" style="background:var(--color-neutral-bg-2);">
+                        <div class="tool-icon mb-3" style="background:var(--color-brand-subtle);color:var(--color-brand-primary);width:44px;height:44px;border-radius:var(--f-radius-lg);display:flex;align-items:center;justify-content:center;font-size:1.2rem;">
+                            <iconify-icon icon="fluent:leaf-two-24-regular"></iconify-icon>
+                        </div>
+                        <h4 style="font-size:1rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;">1. Natural</h4>
+                        <p style="font-size:.825rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Feels intuitive and responsive. Smooth spring motion curves, organic wave motion, and fluid interactive feedback matching human touch.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="cl-card h-100 p-4" style="background:var(--color-neutral-bg-2);">
+                        <div class="tool-icon mb-3" style="background:var(--color-brand-subtle);color:var(--color-brand-primary);width:44px;height:44px;border-radius:var(--f-radius-lg);display:flex;align-items:center;justify-content:center;font-size:1.2rem;">
+                            <iconify-icon icon="fluent:people-community-24-regular"></iconify-icon>
+                        </div>
+                        <h4 style="font-size:1rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;">2. Inclusive</h4>
+                        <p style="font-size:.825rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Built for everyone. Strict WCAG 2.1 AA/AAA contrast ratios, keyboard accessibility, focus rings, and high-contrast dark mode support.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="cl-card h-100 p-4" style="background:var(--color-neutral-bg-2);">
+                        <div class="tool-icon mb-3" style="background:var(--color-brand-subtle);color:var(--color-brand-primary);width:44px;height:44px;border-radius:var(--f-radius-lg);display:flex;align-items:center;justify-content:center;font-size:1.2rem;">
+                            <iconify-icon icon="fluent:flash-24-regular"></iconify-icon>
+                        </div>
+                        <h4 style="font-size:1rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;">3. Effortless</h4>
+                        <p style="font-size:.825rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Reduces cognitive load. Clean visual hierarchy, predictable component states, clear action targets (44px min), and contextual tokens.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="cl-card h-100 p-4" style="background:var(--color-neutral-bg-2);">
+                        <div class="tool-icon mb-3" style="background:var(--color-brand-subtle);color:var(--color-brand-primary);width:44px;height:44px;border-radius:var(--f-radius-lg);display:flex;align-items:center;justify-content:center;font-size:1.2rem;">
+                            <iconify-icon icon="fluent:target-24-regular"></iconify-icon>
+                        </div>
+                        <h4 style="font-size:1rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;">4. Intentional</h4>
+                        <p style="font-size:.825rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Every detail has a purpose. Single source-of-truth tokens across Web and Expo React Native, with consistent component contracts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fluent 2 Design Dimensions Card -->
+            <div class="cl-card mb-4">
+                <div class="cl-card-header">
+                    <div class="cl-card-title">Fluent 2 System Dimensions Summary</div>
+                    <span class="ss-badge ss-badge-brand">fluent2.microsoft.design</span>
+                </div>
+                <div class="cl-preview" style="display:block;padding:var(--f-space-6);">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <h5 style="font-size:.9rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;"><i class="fa-solid fa-layer-group text-primary me-2"></i>Material &amp; Surfaces</h5>
+                            <p style="font-size:.82rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Uses <b>Acrylic</b> (20px blur + 180% saturation) for floating navigation bars and modals, and <b>Mica</b> (base layer opacity) for subtle hierarchy layering without distracting reflections.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 style="font-size:.9rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;"><i class="fa-solid fa-cloud-sun text-primary me-2"></i>Elevation &amp; Depth</h5>
+                            <p style="font-size:.82rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">6 elevation tiers (2, 4, 8, 16, 28, 64) cast directional ambient shadows. Interactive elements elevate dynamically on hover (`translateY(-4px)` + brand shadow tint).</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 style="font-size:.9rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;"><i class="fa-solid fa-icons text-primary me-2"></i>Iconography</h5>
+                            <p style="font-size:.82rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Standardized on <b>Fluent UI System Icons</b> (Regular style). Standard sizes: 16px (inline), 20px (menu/button), 24px (nav/headers), 32px/48px (feature displays).</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 style="font-size:.9rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;"><i class="fa-solid fa-table-cells text-primary me-2"></i>Layout &amp; Grid</h5>
+                            <p style="font-size:.82rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Strict 4px base grid (`--f-space-1` to `--f-space-24`). All touchable interactive elements adhere to a <b>44px minimum hit target</b> for mobile accessibility.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 style="font-size:.9rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;"><i class="fa-solid fa-bezier-curve text-primary me-2"></i>Motion &amp; Curves</h5>
+                            <p style="font-size:.82rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Entering items use <b>Decelerate Curve</b> (`cubic-bezier(0.1, 0.9, 0.2, 1.0)`), exit items use <b>Accelerate</b>, and hover feedback uses tactile <b>Spring</b> easing.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 style="font-size:.9rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;"><i class="fa-solid fa-shapes text-primary me-2"></i>Shapes &amp; Radii</h5>
+                            <p style="font-size:.82rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">8 corner radius scale options: `sm` (4px), `md` (8px), `lg` (12px), `xl` (16px), `2xl` (20px), `3xl` (28px), and `full` (9999px pill). Radii are never mixed within a single component tree.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Component State Matrix Card -->
+            <div class="cl-card">
+                <div class="cl-card-header">
+                    <div class="cl-card-title">Fluent 2 Component State Matrix</div>
+                    <span class="ss-badge ss-badge-neutral">UX Framework</span>
+                </div>
+                <div class="cl-preview" style="display:block;padding:var(--f-space-5);">
+                    <div class="table-responsive">
+                        <table style="width:100%;font-size:.825rem;border-collapse:collapse;">
+                            <thead>
+                                <tr style="border-bottom:1px solid var(--color-neutral-stroke-1);">
+                                    <th style="text-align:left;padding:10px;color:var(--color-neutral-fg-3);font-size:.7rem;text-transform:uppercase;">State</th>
+                                    <th style="text-align:left;padding:10px;color:var(--color-neutral-fg-3);font-size:.7rem;text-transform:uppercase;">Visual Response</th>
+                                    <th style="text-align:left;padding:10px;color:var(--color-neutral-fg-3);font-size:.7rem;text-transform:uppercase;">Cursor &amp; Accessibility</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom:1px solid var(--color-neutral-stroke-1);">
+                                    <td style="padding:10px;font-weight:600;color:var(--color-neutral-fg-1);">Rest</td>
+                                    <td style="padding:10px;color:var(--color-neutral-fg-2);">Base surface background, `--f-shadow-2` elevation, standard border stroke.</td>
+                                    <td style="padding:10px;color:var(--color-neutral-fg-2);">Pointer / Default cursor.</td>
+                                </tr>
+                                <tr style="border-bottom:1px solid var(--color-neutral-stroke-1);">
+                                    <td style="padding:10px;font-weight:600;color:var(--color-neutral-fg-1);">Hover</td>
+                                    <td style="padding:10px;color:var(--color-neutral-fg-2);">Surface brightens to `--color-neutral-bg-4`, elevates with `--f-shadow-brand-sm` and `translateY(-2px)`.</td>
+                                    <td style="padding:10px;color:var(--color-neutral-fg-2);">Pointer cursor with spring motion transition.</td>
+                                </tr>
+                                <tr style="border-bottom:1px solid var(--color-neutral-stroke-1);">
+                                    <td style="padding:10px;font-weight:600;color:var(--color-neutral-fg-1);">Pressed / Active</td>
+                                    <td style="padding:10px;color:var(--color-neutral-fg-2);">Tactile scale down (`scale(0.97)`), background darkens, ripple animation triggers.</td>
+                                    <td style="padding:10px;color:var(--color-neutral-fg-2);">Active touch feedback.</td>
+                                </tr>
+                                <tr style="border-bottom:1px solid var(--color-neutral-stroke-1);">
+                                    <td style="padding:10px;font-weight:600;color:var(--color-neutral-fg-1);">Focused</td>
+                                    <td style="padding:10px;color:var(--color-neutral-fg-2);">2px dual-ring focus outline (`outline: 2px solid var(--color-brand-primary)` + offset).</td>
+                                    <td style="padding:10px;color:var(--color-neutral-fg-2);">Keyboard navigation indicator (`:focus-visible`).</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:10px;font-weight:600;color:var(--color-neutral-fg-1);">Disabled</td>
+                                    <td style="padding:10px;color:var(--color-neutral-fg-2);">Opacity reduced to `0.38`, background flattened, shadows removed.</td>
+                                    <td style="padding:10px;color:var(--color-neutral-fg-2);">`cursor: not-allowed;` with `aria-disabled="true"`.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cl-section" id="colors">
+            <div class="cl-section-eyebrow">Foundation</div>
+            <h2 class="cl-section-title">Color System</h2>
+            <p class="cl-section-desc">Three-tier token model in <code>fluent.css</code>: Global (raw hex) → Semantic (intent) → Component. Never use raw hex in components — this unlocks automatic dark mode on all platforms.</p>
+            <div class="cl-card">
+                <div class="cl-card-header"><div><div class="cl-card-title">SS Brand Palette</div><div class="cl-card-subtitle">Official brand colours — same values used in CSS, Flutter, and future native apps</div></div></div>
+                <div class="cl-preview" style="display:block;padding:var(--f-space-5)">
+                    <div class="cl-swatch-grid">
+                        <div class="cl-swatch"><div class="cl-swatch-color" style="background:#022057"></div><div class="cl-swatch-info"><div class="cl-swatch-name">Prussian Blue</div><div class="cl-swatch-hex">#022057</div><div class="cl-swatch-token">--ss-prussian-blue</div></div></div>
+                        <div class="cl-swatch"><div class="cl-swatch-color" style="background:#043388"></div><div class="cl-swatch-info"><div class="cl-swatch-name">SS Blue</div><div class="cl-swatch-hex">#043388</div><div class="cl-swatch-token">--ss-blue</div></div></div>
+                        <div class="cl-swatch"><div class="cl-swatch-color" style="background:#21A1F7"></div><div class="cl-swatch-info"><div class="cl-swatch-name">Azure</div><div class="cl-swatch-hex">#21A1F7</div><div class="cl-swatch-token">--ss-azure</div></div></div>
+                        <div class="cl-swatch"><div class="cl-swatch-color" style="background:#6DC6EC"></div><div class="cl-swatch-info"><div class="cl-swatch-name">Malibu</div><div class="cl-swatch-hex">#6DC6EC</div><div class="cl-swatch-token">--ss-malibu</div></div></div>
+                        <div class="cl-swatch"><div class="cl-swatch-color" style="background:#BD9A73"></div><div class="cl-swatch-info"><div class="cl-swatch-name">Lion</div><div class="cl-swatch-hex">#BD9A73</div><div class="cl-swatch-token">--ss-lion</div></div></div>
+                        <div class="cl-swatch"><div class="cl-swatch-color" style="background:#E5D15C"></div><div class="cl-swatch-info"><div class="cl-swatch-name">Arylide Yellow</div><div class="cl-swatch-hex">#E5D15C</div><div class="cl-swatch-token">--ss-arylide</div></div></div>
+                        <div class="cl-swatch"><div class="cl-swatch-color" style="background:#FCE53D"></div><div class="cl-swatch-info"><div class="cl-swatch-name">Banana Yellow</div><div class="cl-swatch-hex">#FCE53D</div><div class="cl-swatch-token">--ss-banana</div></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cl-card">
+                <div class="cl-card-header"><div class="cl-card-title">Semantic Backgrounds — Fluent Surface Model</div></div>
+                <div class="cl-preview" style="display:block;padding:var(--f-space-5)">
+                    <div class="cl-swatch-grid">
+                        <div class="cl-swatch"><div class="cl-swatch-color" style="background:var(--color-neutral-bg-1);border:1px solid var(--color-neutral-stroke-1)"></div><div class="cl-swatch-info"><div class="cl-swatch-name">Canvas BG-1</div><div class="cl-swatch-token">--color-neutral-bg-1</div></div></div>
+                        <div class="cl-swatch"><div class="cl-swatch-color" style="background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1)"></div><div class="cl-swatch-info"><div class="cl-swatch-name">Surface BG-2</div><div class="cl-swatch-token">--color-neutral-bg-2</div></div></div>
+                        <div class="cl-swatch"><div class="cl-swatch-color" style="background:var(--color-neutral-bg-3);border:1px solid var(--color-neutral-stroke-1)"></div><div class="cl-swatch-info"><div class="cl-swatch-name">Subtle BG-3</div><div class="cl-swatch-token">--color-neutral-bg-3</div></div></div>
+                        <div class="cl-swatch"><div class="cl-swatch-color" style="background:var(--color-neutral-bg-4);border:1px solid var(--color-neutral-stroke-1)"></div><div class="cl-swatch-info"><div class="cl-swatch-name">Hover BG-4</div><div class="cl-swatch-token">--color-neutral-bg-4</div></div></div>
+                        <div class="cl-swatch"><div class="cl-swatch-color" style="background:var(--color-brand-subtle)"></div><div class="cl-swatch-info"><div class="cl-swatch-name">Brand Subtle</div><div class="cl-swatch-token">--color-brand-subtle</div></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cl-card">
+                <div class="cl-card-header"><div class="cl-card-title">Status Colours</div></div>
+                <div class="cl-preview" style="display:block;padding:var(--f-space-5)">
+                    <div class="cl-swatch-grid">
+                        <div class="cl-swatch"><div class="cl-swatch-color" style="background:var(--color-success-bg)"></div><div class="cl-swatch-info"><div class="cl-swatch-name" style="color:var(--color-success-fg)">Success</div><div class="cl-swatch-token">--color-success-*</div></div></div>
+                        <div class="cl-swatch"><div class="cl-swatch-color" style="background:var(--color-warning-bg)"></div><div class="cl-swatch-info"><div class="cl-swatch-name" style="color:var(--color-warning-fg)">Warning</div><div class="cl-swatch-token">--color-warning-*</div></div></div>
+                        <div class="cl-swatch"><div class="cl-swatch-color" style="background:var(--color-error-bg)"></div><div class="cl-swatch-info"><div class="cl-swatch-name" style="color:var(--color-error-fg)">Error</div><div class="cl-swatch-token">--color-error-*</div></div></div>
+                        <div class="cl-swatch"><div class="cl-swatch-color" style="background:var(--color-info-bg)"></div><div class="cl-swatch-info"><div class="cl-swatch-name" style="color:var(--color-info-fg)">Info</div><div class="cl-swatch-token">--color-info-*</div></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cl-section" id="typography">
+            <div class="cl-section-eyebrow">Foundation</div>
+            <h2 class="cl-section-title">Typography</h2>
+            <p class="cl-section-desc">Inter — Fluent 2-compatible typeface. 8-level scale from Display to Label. Identical naming in Flutter TextTheme.</p>
+            <div class="cl-card">
+                <div class="cl-preview" style="flex-direction:column;gap:0;padding:var(--f-space-5)">
+                    <div class="cl-type-row"><div class="cl-type-meta"><div class="cl-type-label">Display</div><div class="cl-type-spec">48px 700 -0.03em</div></div><div style="font-size:3rem;font-weight:700;letter-spacing:-.03em;line-height:1.1">SuamiSihat</div></div>
+                    <div class="cl-type-row"><div class="cl-type-meta"><div class="cl-type-label">Title L</div><div class="cl-type-spec">32px 700 -0.02em</div></div><div style="font-size:2rem;font-weight:700;letter-spacing:-.02em">Brand System</div></div>
+                    <div class="cl-type-row"><div class="cl-type-meta"><div class="cl-type-label">Title</div><div class="cl-type-spec">24px 600</div></div><div style="font-size:1.5rem;font-weight:600">Component Library</div></div>
+                    <div class="cl-type-row"><div class="cl-type-meta"><div class="cl-type-label">Subtitle</div><div class="cl-type-spec">18px 600</div></div><div style="font-size:1.125rem;font-weight:600">Design Tokens</div></div>
+                    <div class="cl-type-row"><div class="cl-type-meta"><div class="cl-type-label">Body L</div><div class="cl-type-spec">16px 400 1.7lh</div></div><div style="font-size:1rem;line-height:1.7">The quick brown fox jumps over the lazy dog.</div></div>
+                    <div class="cl-type-row"><div class="cl-type-meta"><div class="cl-type-label">Body</div><div class="cl-type-spec">14px 400 1.6lh</div></div><div style="font-size:.875rem;line-height:1.6">The quick brown fox jumps over the lazy dog.</div></div>
+                    <div class="cl-type-row"><div class="cl-type-meta"><div class="cl-type-label">Caption</div><div class="cl-type-spec">12px 500</div></div><div style="font-size:.75rem;font-weight:500;color:var(--color-neutral-fg-2)">Timestamps, hints, secondary info</div></div>
+                    <div class="cl-type-row" style="border-bottom:none"><div class="cl-type-meta"><div class="cl-type-label">Label</div><div class="cl-type-spec">11px 700 UPPER</div></div><div style="font-size:.688rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--color-neutral-fg-3)">Section Label</div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cl-section" id="spacing">
+            <div class="cl-section-eyebrow">Foundation</div>
+            <h2 class="cl-section-title">Spacing Scale</h2>
+            <p class="cl-section-desc">4px base grid. All values via <code>--f-space-*</code> on web, <code>SSSpacing.*</code> in Flutter. Touch minimum: 44px (WCAG + iOS HIG).</p>
+            <div class="cl-card">
+                <div class="cl-preview" style="flex-direction:column;gap:var(--f-space-1);padding:var(--f-space-5)">
+                    <div class="cl-space-row"><div class="cl-space-bar" style="width:4px"></div><div class="cl-space-meta">--f-space-1 = 4px</div></div>
+                    <div class="cl-space-row"><div class="cl-space-bar" style="width:8px"></div><div class="cl-space-meta">--f-space-2 = 8px</div></div>
+                    <div class="cl-space-row"><div class="cl-space-bar" style="width:12px"></div><div class="cl-space-meta">--f-space-3 = 12px</div></div>
+                    <div class="cl-space-row"><div class="cl-space-bar" style="width:16px"></div><div class="cl-space-meta">--f-space-4 = 16px &nbsp;(default padding)</div></div>
+                    <div class="cl-space-row"><div class="cl-space-bar" style="width:24px"></div><div class="cl-space-meta">--f-space-6 = 24px &nbsp;(card padding)</div></div>
+                    <div class="cl-space-row"><div class="cl-space-bar" style="width:32px"></div><div class="cl-space-meta">--f-space-8 = 32px &nbsp;(section gap)</div></div>
+                    <div class="cl-space-row"><div class="cl-space-bar" style="width:48px"></div><div class="cl-space-meta">--f-space-12 = 48px</div></div>
+                    <div class="cl-space-row"><div class="cl-space-bar" style="width:64px"></div><div class="cl-space-meta">--f-space-16 = 64px &nbsp;(page top)</div></div>
+                    <div class="cl-space-row"><div class="cl-space-bar" style="width:80px"></div><div class="cl-space-meta">--f-space-20 = 80px &nbsp;(hero)</div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cl-section" id="elevation">
+            <div class="cl-section-eyebrow">Foundation</div>
+            <h2 class="cl-section-title">Elevation &amp; Shadows</h2>
+            <p class="cl-section-desc">Six Fluent 2 elevation levels. Brand-tinted shadows for interactive components. Flutter: custom BoxShadow using same values.</p>
+            <div class="cl-card">
+                <div class="cl-preview" style="background:var(--color-neutral-bg-3);padding:var(--f-space-8) var(--f-space-5)">
+                    <div class="cl-shadow-grid" style="width:100%">
+                        <div><div class="cl-shadow-card" style="box-shadow:var(--f-shadow-2)"></div><div class="cl-shadow-name">Level 2</div><div class="cl-shadow-token">--f-shadow-2</div></div>
+                        <div><div class="cl-shadow-card" style="box-shadow:var(--f-shadow-4)"></div><div class="cl-shadow-name">Level 4</div><div class="cl-shadow-token">--f-shadow-4</div></div>
+                        <div><div class="cl-shadow-card" style="box-shadow:var(--f-shadow-8)"></div><div class="cl-shadow-name">Level 8</div><div class="cl-shadow-token">--f-shadow-8</div></div>
+                        <div><div class="cl-shadow-card" style="box-shadow:var(--f-shadow-16)"></div><div class="cl-shadow-name">Level 16</div><div class="cl-shadow-token">--f-shadow-16</div></div>
+                        <div><div class="cl-shadow-card" style="box-shadow:var(--f-shadow-brand-sm)"></div><div class="cl-shadow-name">Brand SM</div><div class="cl-shadow-token">--f-shadow-brand-sm</div></div>
+                        <div><div class="cl-shadow-card" style="box-shadow:var(--f-shadow-brand-md)"></div><div class="cl-shadow-name">Brand MD</div><div class="cl-shadow-token">--f-shadow-brand-md</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cl-section" id="radius">
+            <div class="cl-section-eyebrow">Foundation</div>
+            <h2 class="cl-section-title">Border Radius</h2>
+            <p class="cl-section-desc">Larger radius = more approachable. Web: <code>--f-radius-*</code>. Flutter: <code>SSRadius.*</code>. Never mix radii within one component.</p>
+            <div class="cl-card">
+                <div class="cl-preview" style="justify-content:center">
+                    <div class="cl-radius-grid">
+                        <div class="cl-radius-item"><div class="cl-radius-box" style="border-radius:4px;width:40px;height:40px"></div><div class="cl-shadow-name">sm 4px</div></div>
+                        <div class="cl-radius-item"><div class="cl-radius-box" style="border-radius:8px;width:48px;height:48px"></div><div class="cl-shadow-name">md 8px</div></div>
+                        <div class="cl-radius-item"><div class="cl-radius-box" style="border-radius:12px;width:56px;height:56px"></div><div class="cl-shadow-name">lg 12px</div></div>
+                        <div class="cl-radius-item"><div class="cl-radius-box" style="border-radius:16px;width:64px;height:64px"></div><div class="cl-shadow-name">xl 16px</div></div>
+                        <div class="cl-radius-item"><div class="cl-radius-box" style="border-radius:20px;width:72px;height:72px"></div><div class="cl-shadow-name">2xl 20px</div></div>
+                        <div class="cl-radius-item"><div class="cl-radius-box" style="border-radius:28px;width:80px;height:80px"></div><div class="cl-shadow-name">3xl 28px</div></div>
+                        <div class="cl-radius-item"><div class="cl-radius-box" style="border-radius:9999px;width:56px;height:56px"></div><div class="cl-shadow-name">full</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cl-section" id="motion">
+            <div class="cl-section-eyebrow">Foundation</div>
+            <h2 class="cl-section-title">Motion</h2>
+            <p class="cl-section-desc">Purposeful, not decorative. Four curves map 1:1 to Flutter Curves. Duration scale from 50ms (micro) to 400ms (large transitions).</p>
+            <div class="cl-card">
+                <div class="cl-preview" style="flex-direction:column;align-items:flex-start;gap:var(--f-space-4)">
+                    <div style="display:flex;gap:var(--f-space-2);flex-wrap:wrap">
+                        <span class="ss-badge ss-badge-neutral">ultra-fast 50ms</span>
+                        <span class="ss-badge ss-badge-neutral">fast 150ms</span>
+                        <span class="ss-badge ss-badge-brand">normal 200ms</span>
+                        <span class="ss-badge ss-badge-brand">gentle 250ms</span>
+                        <span class="ss-badge ss-badge-neutral">slow 300ms</span>
+                        <span class="ss-badge ss-badge-neutral">slower 400ms</span>
+                    </div>
+                    <table style="width:100%;font-size:.825rem;border-collapse:collapse">
+                        <thead><tr style="border-bottom:1px solid var(--color-neutral-stroke-1)"><th style="text-align:left;padding:8px;color:var(--color-neutral-fg-3);font-size:.7rem;text-transform:uppercase">CSS Token</th><th style="text-align:left;padding:8px;color:var(--color-neutral-fg-3);font-size:.7rem;text-transform:uppercase">Flutter</th><th style="text-align:left;padding:8px;color:var(--color-neutral-fg-3);font-size:.7rem;text-transform:uppercase">Use for</th></tr></thead>
+                        <tbody>
+                            <tr style="border-bottom:1px solid var(--color-neutral-stroke-1)"><td style="padding:8px;font-family:monospace;color:var(--color-brand-primary)">--f-curve-easy-ease</td><td style="padding:8px;font-family:monospace">Curves.easeInOut</td><td style="padding:8px;color:var(--color-neutral-fg-2)">Hover, colour</td></tr>
+                            <tr style="border-bottom:1px solid var(--color-neutral-stroke-1)"><td style="padding:8px;font-family:monospace;color:var(--color-brand-primary)">--f-curve-decelerate</td><td style="padding:8px;font-family:monospace">Curves.easeOut</td><td style="padding:8px;color:var(--color-neutral-fg-2)">Entering elements</td></tr>
+                            <tr style="border-bottom:1px solid var(--color-neutral-stroke-1)"><td style="padding:8px;font-family:monospace;color:var(--color-brand-primary)">--f-curve-accelerate</td><td style="padding:8px;font-family:monospace">Curves.easeIn</td><td style="padding:8px;color:var(--color-neutral-fg-2)">Exiting elements</td></tr>
+                            <tr><td style="padding:8px;font-family:monospace;color:var(--color-brand-primary)">--f-curve-spring</td><td style="padding:8px;font-family:monospace">Curves.elasticOut</td><td style="padding:8px;color:var(--color-neutral-fg-2)">Button press, card hover</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="cl-section" id="icons">
+            <div class="cl-section-eyebrow">Foundation</div>
+            <h2 class="cl-section-title">Fluent UI System Icons</h2>
+            <p class="cl-section-desc">Microsoft's official 2,500+ Fluent 2 icon set. Regular = default state. Filled = active/selected. Web: Iconify CDN. Flutter: <code>fluentui_system_icons</code>. Click any icon to copy the HTML snippet.</p>
+            <div class="cl-card">
+                <div class="cl-card-header"><div class="cl-card-title">Icon Showcase — Regular + Filled</div></div>
+                <div class="cl-preview" style="display:block;padding:var(--f-space-5)">
+                    <p style="font-size:.8rem;color:var(--color-neutral-fg-3);margin-bottom:12px">Regular — default state</p>
+                    <div class="cl-icon-grid">
+                        <div class="cl-icon-item" data-icon="fluent:home-24-regular"><iconify-icon icon="fluent:home-24-regular"></iconify-icon><span class="cl-icon-name">home</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:person-24-regular"><iconify-icon icon="fluent:person-24-regular"></iconify-icon><span class="cl-icon-name">person</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:settings-24-regular"><iconify-icon icon="fluent:settings-24-regular"></iconify-icon><span class="cl-icon-name">settings</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:search-24-regular"><iconify-icon icon="fluent:search-24-regular"></iconify-icon><span class="cl-icon-name">search</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:alert-24-regular"><iconify-icon icon="fluent:alert-24-regular"></iconify-icon><span class="cl-icon-name">alert</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:mail-24-regular"><iconify-icon icon="fluent:mail-24-regular"></iconify-icon><span class="cl-icon-name">mail</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:calendar-24-regular"><iconify-icon icon="fluent:calendar-24-regular"></iconify-icon><span class="cl-icon-name">calendar</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:document-24-regular"><iconify-icon icon="fluent:document-24-regular"></iconify-icon><span class="cl-icon-name">document</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:heart-24-regular"><iconify-icon icon="fluent:heart-24-regular"></iconify-icon><span class="cl-icon-name">heart</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:star-24-regular"><iconify-icon icon="fluent:star-24-regular"></iconify-icon><span class="cl-icon-name">star</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:delete-24-regular"><iconify-icon icon="fluent:delete-24-regular"></iconify-icon><span class="cl-icon-name">delete</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:edit-24-regular"><iconify-icon icon="fluent:edit-24-regular"></iconify-icon><span class="cl-icon-name">edit</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:add-24-regular"><iconify-icon icon="fluent:add-24-regular"></iconify-icon><span class="cl-icon-name">add</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:dismiss-24-regular"><iconify-icon icon="fluent:dismiss-24-regular"></iconify-icon><span class="cl-icon-name">dismiss</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:checkmark-24-regular"><iconify-icon icon="fluent:checkmark-24-regular"></iconify-icon><span class="cl-icon-name">check</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:arrow-right-24-regular"><iconify-icon icon="fluent:arrow-right-24-regular"></iconify-icon><span class="cl-icon-name">arrow-right</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:filter-24-regular"><iconify-icon icon="fluent:filter-24-regular"></iconify-icon><span class="cl-icon-name">filter</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:heart-pulse-24-regular"><iconify-icon icon="fluent:heart-pulse-24-regular"></iconify-icon><span class="cl-icon-name">heart-pulse</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:doctor-24-regular"><iconify-icon icon="fluent:doctor-24-regular"></iconify-icon><span class="cl-icon-name">doctor</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:pill-24-regular"><iconify-icon icon="fluent:pill-24-regular"></iconify-icon><span class="cl-icon-name">pill</span></div>
+                    </div>
+                    <p style="font-size:.8rem;color:var(--color-neutral-fg-3);margin:16px 0 12px">Filled — active/selected state</p>
+                    <div class="cl-icon-grid">
+                        <div class="cl-icon-item" data-icon="fluent:home-24-filled"><iconify-icon icon="fluent:home-24-filled" style="color:var(--color-brand-primary)"></iconify-icon><span class="cl-icon-name">home</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:person-24-filled"><iconify-icon icon="fluent:person-24-filled" style="color:var(--color-brand-primary)"></iconify-icon><span class="cl-icon-name">person</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:heart-24-filled"><iconify-icon icon="fluent:heart-24-filled" style="color:#DC2626"></iconify-icon><span class="cl-icon-name">heart</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:star-24-filled"><iconify-icon icon="fluent:star-24-filled" style="color:#CA8A04"></iconify-icon><span class="cl-icon-name">star</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:alert-24-filled"><iconify-icon icon="fluent:alert-24-filled" style="color:var(--color-brand-primary)"></iconify-icon><span class="cl-icon-name">alert</span></div>
+                        <div class="cl-icon-item" data-icon="fluent:settings-24-filled"><iconify-icon icon="fluent:settings-24-filled" style="color:var(--color-brand-primary)"></iconify-icon><span class="cl-icon-name">settings</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cl-section" id="buttons">
+            <div class="cl-section-eyebrow">Components</div>
+            <h2 class="cl-section-title">Buttons</h2>
+            <p class="cl-section-desc">One Primary per view. Secondary for supporting actions. Ghost for inline. Danger for destructive. Min height 44px touch target.</p>
+            <div class="cl-card">
+                <div class="cl-card-header"><div class="cl-card-title">Variants &amp; States</div></div>
+                <div class="cl-preview">
+                    <button class="ss-btn ss-btn-primary"><iconify-icon icon="fluent:checkmark-24-regular"></iconify-icon> Primary</button>
+                    <button class="ss-btn ss-btn-secondary"><iconify-icon icon="fluent:add-24-regular"></iconify-icon> Secondary</button>
+                    <button class="ss-btn ss-btn-ghost">Ghost</button>
+                    <button class="ss-btn ss-btn-danger"><iconify-icon icon="fluent:delete-24-regular"></iconify-icon> Danger</button>
+                    <button class="ss-btn ss-btn-primary" disabled>Disabled</button>
+                </div>
+                <div class="cl-card-header" style="border-top:1px solid var(--color-neutral-stroke-1)"><div class="cl-card-title">Sizes</div></div>
+                <div class="cl-preview">
+                    <button class="ss-btn ss-btn-primary ss-btn-sm">Small</button>
+                    <button class="ss-btn ss-btn-primary">Medium</button>
+                    <button class="ss-btn ss-btn-primary ss-btn-lg">Large</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="cl-section" id="badges">
+            <div class="cl-section-eyebrow">Components</div>
+            <h2 class="cl-section-title">Badges &amp; Chips</h2>
+            <div class="cl-card">
+                <div class="cl-card-header"><div class="cl-card-title">Badge Variants</div></div>
+                <div class="cl-preview">
+                    <span class="ss-badge ss-badge-brand">Brand</span>
+                    <span class="ss-badge ss-badge-success"><iconify-icon icon="fluent:checkmark-circle-24-regular" style="font-size:12px"></iconify-icon> Active</span>
+                    <span class="ss-badge ss-badge-warning"><iconify-icon icon="fluent:warning-24-regular" style="font-size:12px"></iconify-icon> Pending</span>
+                    <span class="ss-badge ss-badge-danger">Inactive</span>
+                    <span class="ss-badge ss-badge-neutral">Draft</span>
+                </div>
+                <div class="cl-card-header" style="border-top:1px solid var(--color-neutral-stroke-1)"><div class="cl-card-title">Filter Chips</div></div>
+                <div class="cl-preview">
+                    <span class="ss-chip ss-chip-selected"><iconify-icon icon="fluent:checkmark-24-regular" style="font-size:12px"></iconify-icon> All</span>
+                    <span class="ss-chip">Web</span>
+                    <span class="ss-chip">Mobile</span>
+                    <span class="ss-chip">Flutter</span>
+                    <span class="ss-chip">Tools</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="cl-section" id="inputs">
+            <div class="cl-section-eyebrow">Components</div>
+            <h2 class="cl-section-title">Inputs &amp; Forms</h2>
+            <div class="cl-card">
+                <div class="cl-preview" style="flex-direction:column;align-items:stretch;gap:20px;width:100%">
+                    <div class="ss-input-group"><label class="ss-label" for="d1">Full Name</label><input class="ss-input" id="d1" type="text" placeholder="Ahmad bin Abdullah"></div>
+                    <div class="ss-input-group"><label class="ss-label" for="d2">Email Address</label><input class="ss-input" id="d2" type="email" placeholder="ahmad@suamisihat.com"><span class="ss-label-hint">Use your SuamiSihat work email</span></div>
+                    <div class="ss-input-group"><label class="ss-label" for="d3">Staff ID</label><input class="ss-input error" id="d3" type="text" value="SS-0000"><span class="ss-input-error-msg"><iconify-icon icon="fluent:error-circle-24-regular" style="font-size:14px"></iconify-icon> Invalid format. Use SS-XXXX.</span></div>
+                    <div class="ss-input-group"><label class="ss-label">Notifications</label>
+                        <div style="display:flex;flex-direction:column;gap:8px">
+                            <label class="ss-toggle-wrap" onclick="document.getElementById('t1').classList.toggle('on')"><div class="ss-toggle" id="t1"></div><span class="ss-toggle-label">Email alerts</span></label>
+                            <label class="ss-toggle-wrap" onclick="document.getElementById('t2').classList.toggle('on')"><div class="ss-toggle on" id="t2"></div><span class="ss-toggle-label">Push notifications</span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cl-section" id="cards">
+            <div class="cl-section-eyebrow">Components</div>
+            <h2 class="cl-section-title">Cards</h2>
+            <div class="cl-card">
+                <div class="cl-preview" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--f-space-4);width:100%">
+                    <div class="ss-card"><div class="ss-card-icon" style="background:var(--color-brand-subtle);color:var(--color-brand-primary)"><iconify-icon icon="fluent:heart-pulse-24-regular" style="font-size:22px"></iconify-icon></div><div class="ss-card-title">SS Health</div><div class="ss-card-desc">Telehealth, health records, care coordination.</div></div>
+                    <div class="ss-card"><div class="ss-card-icon" style="background:rgba(33,161,247,0.08);color:#21A1F7"><iconify-icon icon="fluent:store-microsoft-24-regular" style="font-size:22px"></iconify-icon></div><div class="ss-card-title">SS Ecom</div><div class="ss-card-desc">Wellness products e-commerce platform.</div></div>
+                    <div class="ss-card"><div class="ss-card-icon" style="background:rgba(189,154,115,0.10);color:#BD9A73"><iconify-icon icon="fluent:sport-24-regular" style="font-size:22px"></iconify-icon></div><div class="ss-card-title">SS Wellness</div><div class="ss-card-desc">Holistic wellness and coaching programs.</div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cl-section" id="alerts">
+            <div class="cl-section-eyebrow">Components</div>
+            <h2 class="cl-section-title">Alerts &amp; Banners</h2>
+            <div class="cl-card">
+                <div class="cl-preview" style="flex-direction:column;gap:12px;width:100%">
+                    <div class="ss-alert ss-alert-info" style="width:100%"><iconify-icon icon="fluent:info-24-regular" style="color:#21A1F7"></iconify-icon><div><strong>Info:</strong> Your onboarding checklist is 80% complete.</div></div>
+                    <div class="ss-alert ss-alert-success" style="width:100%"><iconify-icon icon="fluent:checkmark-circle-24-regular" style="color:#16A34A"></iconify-icon><div><strong>Success:</strong> Brand assets exported successfully.</div></div>
+                    <div class="ss-alert ss-alert-warning" style="width:100%"><iconify-icon icon="fluent:warning-24-regular" style="color:#CA8A04"></iconify-icon><div><strong>Warning:</strong> Token values updated. Clear cache and redeploy.</div></div>
+                    <div class="ss-alert ss-alert-danger" style="width:100%"><iconify-icon icon="fluent:error-circle-24-regular" style="color:#DC2626"></iconify-icon><div><strong>Error:</strong> Upload failed. File exceeds 10MB limit.</div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cl-section" id="avatars">
+            <div class="cl-section-eyebrow">Components</div>
+            <h2 class="cl-section-title">Avatars</h2>
+            <div class="cl-card">
+                <div class="cl-preview">
+                    <div class="ss-avatar ss-avatar-sm">AH</div>
+                    <div class="ss-avatar">AH</div>
+                    <div class="ss-avatar ss-avatar-lg">AH</div>
+                    <div style="width:1px;height:40px;background:var(--color-neutral-stroke-1)"></div>
+                    <div class="ss-avatar-group">
+                        <div class="ss-avatar" style="background:rgba(33,161,247,.12);color:#21A1F7">AH</div>
+                        <div class="ss-avatar" style="background:rgba(189,154,115,.12);color:#BD9A73">RK</div>
+                        <div class="ss-avatar" style="background:rgba(22,163,74,.1);color:#16A34A">NI</div>
+                        <div class="ss-avatar" style="background:var(--color-neutral-bg-4);color:var(--color-neutral-fg-2);font-size:.72rem">+5</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cl-section" id="progress">
+            <div class="cl-section-eyebrow">Components</div>
+            <h2 class="cl-section-title">Progress &amp; Skeleton</h2>
+            <div class="cl-card">
+                <div class="cl-preview" style="flex-direction:column;gap:20px">
+                    <div class="ss-progress-wrap"><div class="ss-progress-label"><span>Onboarding</span><span>80%</span></div><div class="ss-progress-track"><div class="ss-progress-bar" style="width:80%"></div></div></div>
+                    <div class="ss-progress-wrap"><div class="ss-progress-label"><span>Brand Assets</span><span>45%</span></div><div class="ss-progress-track"><div class="ss-progress-bar" style="width:45%"></div></div></div>
+                    <div style="display:flex;flex-direction:column;gap:8px;width:220px">
+                        <div class="ss-skeleton" style="height:14px;width:60%"></div>
+                        <div class="ss-skeleton" style="height:12px;width:100%"></div>
+                        <div class="ss-skeleton" style="height:12px;width:80%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cl-section" id="tabs">
+            <div class="cl-section-eyebrow">Components</div>
+            <h2 class="cl-section-title">Tabs</h2>
+            <div class="cl-card">
+                <div class="cl-preview" style="flex-direction:column;align-items:stretch;gap:0;padding:0">
+                    <div style="padding:16px 20px 0">
+                        <div class="ss-tabs">
+                            <button class="ss-tab active" onclick="activateTab(this)">Overview</button>
+                            <button class="ss-tab" onclick="activateTab(this)">Guidelines</button>
+                            <button class="ss-tab" onclick="activateTab(this)">Code</button>
+                            <button class="ss-tab" onclick="activateTab(this)">Accessibility</button>
+                        </div>
+                    </div>
+                    <div style="padding:20px;font-size:.875rem;color:var(--color-neutral-fg-2)">Use tabs to organise related content within the same context. Not for primary navigation.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cl-section" id="tokens-json">
+            <div class="cl-section-eyebrow">Platform</div>
+            <h2 class="cl-section-title">Token Export — JSON</h2>
+            <p class="cl-section-desc"><code>design-tokens.json</code> is the single source of truth consumed by all platforms without duplication.</p>
+            <div class="cl-card">
+                <div class="cl-code-block" style="position:relative"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>{
+  "color": {
+    "brand": {
+      "primary": { "value": "#043388", "type": "color" },
+      "dark":    { "value": "#022057", "type": "color" },
+      "light":   { "value": "#21A1F7", "type": "color" }
+    },
+    "neutral": {
+      "fg1": { "value": "#1A1A1A", "type": "color" },
+      "fg2": { "value": "#525252", "type": "color" },
+      "fg3": { "value": "#616161", "type": "color" }
+    }
+  },
+  "spacing": {
+    "1": { "value": "4",  "type": "spacing" },
+    "4": { "value": "16", "type": "spacing" },
+    "6": { "value": "24", "type": "spacing" }
+  },
+  "radius": {
+    "md":   { "value": "8",    "type": "borderRadius" },
+    "xl":   { "value": "16",   "type": "borderRadius" },
+    "full": { "value": "9999", "type": "borderRadius" }
+  }
+}</div>
+            </div>
+        </section>
+
+        <section class="cl-section" id="flutter">
+            <div class="cl-section-eyebrow">Platform</div>
+            <h2 class="cl-section-title">Flutter Integration</h2>
+            <p class="cl-section-desc">Token names mirror CSS variables. Same language, different syntax. One designer, one token file, all platforms.</p>
+            <div class="cl-card">
+                <div class="cl-code-block" style="position:relative"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>// pubspec.yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  fluentui_system_icons: ^1.1.195
+
+// ss_tokens.dart (auto-generated from design-tokens.json)
+import 'package:flutter/material.dart';
+
+abstract class SSColors {
+  static const prussianBlue = Color(0xFF022057);
+  static const ssBlue       = Color(0xFF043388);
+  static const azure        = Color(0xFF21A1F7);
+  static const malibu       = Color(0xFF6DC6EC);
+  static const lion         = Color(0xFFBD9A73);
+  static const fgPrimary    = Color(0xFF1A1A1A);
+  static const fgSecondary  = Color(0xFF525252);
+  static const success      = Color(0xFF16A34A);
+  static const error        = Color(0xFFDC2626);
+}
+
+abstract class SSSpacing {
+  static const s1  = 4.0;   static const s2  = 8.0;
+  static const s4  = 16.0;  static const s6  = 24.0;
+  static const s8  = 32.0;  static const s12 = 48.0;
+  static const touchMin = 44.0;
+}
+
+abstract class SSRadius {
+  static const sm   = BorderRadius.all(Radius.circular(4));
+  static const md   = BorderRadius.all(Radius.circular(8));
+  static const lg   = BorderRadius.all(Radius.circular(12));
+  static const xl   = BorderRadius.all(Radius.circular(16));
+  static const full = BorderRadius.all(Radius.circular(9999));
+}
+
+ThemeData buildSSTheme({bool isDark = false}) =&gt; ThemeData(
+  useMaterial3: true,
+  fontFamily: 'Inter',
+  colorScheme: isDark
+    ? ColorScheme.dark(primary: SSColors.azure)
+    : ColorScheme.light(primary: SSColors.ssBlue),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      minimumSize: const Size(0, SSSpacing.touchMin),
+      shape: const RoundedRectangleBorder(borderRadius: SSRadius.md),
+    ),
+  ),
+);
+
+// Usage
+Icon(FluentIcons.home_24_regular)
+Icon(FluentIcons.home_24_filled)</div>
+            </div>
+        </section>
+        <!-- NAVIGATION -->
+        <section class="cl-section" id="navigation">
+            <div class="cl-section-eyebrow">Components</div>
+            <h2 class="cl-section-title">Navigation</h2>
+            <p class="cl-section-desc">Bottom Tab Bar is the primary navigation pattern for Expo apps. Fluent 2 icon rule: Regular = inactive, Filled = active. 44px min touch target always.</p>
+            <div class="cl-card">
+                <div class="cl-card-header"><div><div class="cl-card-title">Bottom Tab Bar</div><div class="cl-card-subtitle">Primary mobile nav â€” Fluent icons Regular â†’ Filled on active state</div></div></div>
+                <div class="cl-preview" style="display:block;padding:0;background:var(--color-neutral-bg-3)">
+                    <div style="max-width:375px;margin:var(--f-space-5) auto;background:var(--color-neutral-bg-2);border-radius:var(--f-radius-xl);overflow:hidden;border:1px solid var(--color-neutral-stroke-1)">
+                        <div style="padding:var(--f-space-5);height:180px;display:flex;align-items:center;justify-content:center;color:var(--color-neutral-fg-3);font-size:.875rem">Screen Content Area</div>
+                        <div class="ss-bottom-tab">
+                            <div class="ss-tab-item active"><iconify-icon icon="fluent:home-24-filled"></iconify-icon><span>Home</span></div>
+                            <div class="ss-tab-item"><iconify-icon icon="fluent:heart-pulse-24-regular"></iconify-icon><span>Health</span></div>
+                            <div class="ss-tab-item"><iconify-icon icon="fluent:calendar-24-regular"></iconify-icon><span>Schedule</span></div>
+                            <div class="ss-tab-item"><iconify-icon icon="fluent:chat-24-regular"></iconify-icon><span>Messages</span></div>
+                            <div class="ss-tab-item"><iconify-icon icon="fluent:person-24-regular"></iconify-icon><span>Profile</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cl-code-tabs">
+                    <button class="cl-code-tab active" onclick="switchCodeTab(this,'nav-web')"><iconify-icon icon="fluent:globe-24-regular"></iconify-icon> Web</button>
+                    <button class="cl-code-tab" onclick="switchCodeTab(this,'nav-expo')"><iconify-icon icon="fluent:phone-24-regular"></iconify-icon> Expo</button>
+                </div>
+                <div id="nav-web" class="cl-code-block" style="position:relative"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>&lt;div class="ss-bottom-tab"&gt;
+  &lt;div class="ss-tab-item active"&gt;
+    &lt;iconify-icon icon="fluent:home-24-filled"&gt;&lt;/iconify-icon&gt;&lt;span&gt;Home&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="ss-tab-item"&gt;
+    &lt;iconify-icon icon="fluent:heart-pulse-24-regular"&gt;&lt;/iconify-icon&gt;&lt;span&gt;Health&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+                <div id="nav-expo" class="cl-code-block" style="position:relative;display:none"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button">// npx expo install @react-navigation/bottom-tabs @fluentui/react-native-icons react-native-svg
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Home24Filled, Home24Regular, HeartPulse24Regular } from '@fluentui/react-native-icons';
+import { SSColors, SSIcon } from './ss_tokens';
+const Tab = createBottomTabNavigator();
+export function AppTabs() {
+  return (
+    &lt;Tab.Navigator screenOptions={({ route }) => ({
+      tabBarIcon: ({ focused, color }) => {
+        if (route.name === 'Home')
+          return focused
+            ? &lt;Home24Filled  width={SSIcon.lg} height={SSIcon.lg} color={color} /&gt;
+            : &lt;Home24Regular width={SSIcon.lg} height={SSIcon.lg} color={color} /&gt;;
+      },
+      tabBarActiveTintColor:   SSColors.ssBlue,
+      tabBarInactiveTintColor: SSColors.fgPlaceholder,
+      tabBarStyle: { backgroundColor: SSColors.bgSurface, borderTopColor: SSColors.stroke1, height: 60 },
+      tabBarLabelStyle: { fontSize: 10, fontWeight: '600' },
+    })}&gt;
+      &lt;Tab.Screen name="Home"    component={HomeScreen} /&gt;
+      &lt;Tab.Screen name="Health"  component={HealthScreen} /&gt;
+      &lt;Tab.Screen name="Profile" component={ProfileScreen} /&gt;
+    &lt;/Tab.Navigator&gt;
+  );
+}</div>
+            </div>
+        </section>
+
+        <!-- MODAL & SHEET -->
+        <section class="cl-section" id="modal">
+            <div class="cl-section-eyebrow">Components</div>
+            <h2 class="cl-section-title">Modal &amp; Bottom Sheet</h2>
+            <div class="cl-card">
+                <div class="cl-card-header"><div class="cl-card-title">Bottom Sheet</div></div>
+                <div class="cl-preview" style="padding:var(--f-space-5);width:100%">
+                    <div class="ss-modal-overlay" style="width:100%">
+                        <div class="ss-modal">
+                            <div class="ss-modal-handle"></div>
+                            <div class="ss-modal-title">Book Appointment</div>
+                            <div class="ss-modal-body">Select your preferred date and time with Dr. Ahmad. A confirmation will be sent to your registered number.</div>
+                            <div class="ss-modal-actions">
+                                <button class="ss-btn ss-btn-secondary ss-btn-sm">Cancel</button>
+                                <button class="ss-btn ss-btn-primary ss-btn-sm"><iconify-icon icon="fluent:checkmark-circle-24-regular"></iconify-icon> Confirm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cl-code-tabs">
+                    <button class="cl-code-tab active" onclick="switchCodeTab(this,'modal-web')"><iconify-icon icon="fluent:globe-24-regular"></iconify-icon> Web</button>
+                    <button class="cl-code-tab" onclick="switchCodeTab(this,'modal-expo')"><iconify-icon icon="fluent:phone-24-regular"></iconify-icon> Expo</button>
+                </div>
+                <div id="modal-web" class="cl-code-block" style="position:relative"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>&lt;div class="ss-modal-overlay"&gt;
+  &lt;div class="ss-modal"&gt;
+    &lt;div class="ss-modal-handle"&gt;&lt;/div&gt;
+    &lt;div class="ss-modal-title"&gt;Book Appointment&lt;/div&gt;
+    &lt;div class="ss-modal-body"&gt;Select your preferred date and time.&lt;/div&gt;
+    &lt;div class="ss-modal-actions"&gt;
+      &lt;button class="ss-btn ss-btn-secondary ss-btn-sm"&gt;Cancel&lt;/button&gt;
+      &lt;button class="ss-btn ss-btn-primary ss-btn-sm"&gt;Confirm&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+                <div id="modal-expo" class="cl-code-block" style="position:relative;display:none"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>// npx expo install @gorhom/bottom-sheet react-native-reanimated react-native-gesture-handler
+import BottomSheet, { BottomSheetView } from '@gorhom/bottom-sheet';
+import { SSColors, SSSpacing, SSRadius, SSFont, SSBase } from './ss_tokens';
+export function AppointmentSheet({ snapPoints = ['50%'] }) {
+  return (
+    &lt;BottomSheet snapPoints={snapPoints}
+      handleIndicatorStyle={{ backgroundColor: SSColors.stroke2, width: 36, height: 4 }}
+      backgroundStyle={{ backgroundColor: SSColors.bgSurface,
+        borderTopLeftRadius: SSRadius.xl, borderTopRightRadius: SSRadius.xl }}&gt;
+      &lt;BottomSheetView style={{ padding: SSSpacing.s5 }}&gt;
+        &lt;Text style={[SSFont.scale.title, { color: SSColors.fgPrimary }]}&gt;Book Appointment&lt;/Text&gt;
+        &lt;Text style={[SSFont.scale.body, { color: SSColors.fgSecondary, marginTop: SSSpacing.s2 }]}&gt;
+          Select your preferred date and time.
+        &lt;/Text&gt;
+        &lt;View style={{ flexDirection:'row', gap: SSSpacing.s2, marginTop: SSSpacing.s5 }}&gt;
+          &lt;Pressable style={[SSBase.btnBase, SSBase.btnSecondary]}&gt;
+            &lt;Text style={SSBase.btnTextSecondary}&gt;Cancel&lt;/Text&gt;
+          &lt;/Pressable&gt;
+          &lt;Pressable style={[SSBase.btnBase, SSBase.btnPrimary, { flex: 1 }]}&gt;
+            &lt;Text style={SSBase.btnTextPrimary}&gt;Confirm&lt;/Text&gt;
+          &lt;/Pressable&gt;
+        &lt;/View&gt;
+      &lt;/BottomSheetView&gt;
+    &lt;/BottomSheet&gt;
+  );
+}</div>
+            </div>
+        </section>
+        <!-- TOAST -->
+        <section class="cl-section" id="toast">
+            <div class="cl-section-eyebrow">Components</div>
+            <h2 class="cl-section-title">Toast &amp; Snackbar</h2>
+            <p class="cl-section-desc">Auto-dismiss feedback messages. 4-second default. Stack from top on web, bottom on Expo. Always pair an icon with text — never rely on colour alone (WCAG).</p>
+            <div class="cl-card">
+                <div class="cl-card-header"><div class="cl-card-title">Toast Variants</div></div>
+                <div class="cl-preview" style="flex-direction:column;align-items:stretch;width:100%">
+                    <div class="ss-toast-stack">
+                        <div class="ss-toast ss-toast-success"><iconify-icon icon="fluent:checkmark-circle-24-filled"></iconify-icon><div class="ss-toast-content"><div class="ss-toast-title">Appointment confirmed</div><div class="ss-toast-msg">Dr. Ahmad Â· 14 Aug at 10:00 AM</div></div><button class="ss-toast-close"><iconify-icon icon="fluent:dismiss-16-regular"></iconify-icon></button></div>
+                        <div class="ss-toast ss-toast-error" style="animation-delay:80ms"><iconify-icon icon="fluent:error-circle-24-filled"></iconify-icon><div class="ss-toast-content"><div class="ss-toast-title">Sync failed</div><div class="ss-toast-msg">Check connection and try again</div></div><button class="ss-toast-close"><iconify-icon icon="fluent:dismiss-16-regular"></iconify-icon></button></div>
+                        <div class="ss-toast ss-toast-warning" style="animation-delay:160ms"><iconify-icon icon="fluent:warning-24-filled"></iconify-icon><div class="ss-toast-content"><div class="ss-toast-title">Low storage</div><div class="ss-toast-msg">Free up space to continue</div></div><button class="ss-toast-close"><iconify-icon icon="fluent:dismiss-16-regular"></iconify-icon></button></div>
+                        <div class="ss-toast ss-toast-info" style="animation-delay:240ms"><iconify-icon icon="fluent:info-24-filled"></iconify-icon><div class="ss-toast-content"><div class="ss-toast-title">Update available</div><div class="ss-toast-msg">SuamiSihat v3.1 is ready</div></div><button class="ss-toast-close"><iconify-icon icon="fluent:dismiss-16-regular"></iconify-icon></button></div>
+                    </div>
+                </div>
+                <div class="cl-code-tabs">
+                    <button class="cl-code-tab active" onclick="switchCodeTab(this,'toast-web')"><iconify-icon icon="fluent:globe-24-regular"></iconify-icon> Web</button>
+                    <button class="cl-code-tab" onclick="switchCodeTab(this,'toast-expo')"><iconify-icon icon="fluent:phone-24-regular"></iconify-icon> Expo</button>
+                </div>
+                <div id="toast-web" class="cl-code-block" style="position:relative"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>&lt;div class="ss-toast ss-toast-success"&gt;
+  &lt;iconify-icon icon="fluent:checkmark-circle-24-filled"&gt;&lt;/iconify-icon&gt;
+  &lt;div class="ss-toast-content"&gt;
+    &lt;div class="ss-toast-title"&gt;Appointment confirmed&lt;/div&gt;
+    &lt;div class="ss-toast-msg"&gt;Dr. Ahmad Â· 14 Aug at 10:00 AM&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="ss-toast-close"&gt;
+    &lt;iconify-icon icon="fluent:dismiss-16-regular"&gt;&lt;/iconify-icon&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</div>
+                <div id="toast-expo" class="cl-code-block" style="position:relative;display:none"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button">// npx expo install react-native-toast-message
+import Toast from 'react-native-toast-message';
+import { SSColors, SSFont, SSRadius, SSSpacing, SSShadow } from './ss_tokens';
+// Trigger (call anywhere):
+Toast.show({
+  type: 'success', // 'success'|'error'|'info'|'warning'
+  text1: 'Appointment confirmed',
+  text2: 'Dr. Ahmad Â· 14 Aug at 10:00 AM',
+  position: 'bottom',
+  visibilityTime: 4000,
+});
+// Root &lt;Toast /&gt; required once in App.tsx
+// Custom SS config:
+const ssToastConfig = {
+  success: ({ text1, text2 }) =&gt; (
+    &lt;View style={{
+      backgroundColor: SSColors.bgSurface,
+      borderRadius: SSRadius.lg,
+      borderLeftWidth: 4, borderLeftColor: SSColors.successFg,
+      padding: SSSpacing.s4, marginHorizontal: SSSpacing.s4,
+      ...SSShadow.level16,
+    }}&gt;
+      &lt;Text style={[SSFont.scale.body, { fontWeight:'600', color: SSColors.fgPrimary }]}&gt;{text1}&lt;/Text&gt;
+      &lt;Text style={[SSFont.scale.caption, { color: SSColors.fgSecondary }]}&gt;{text2}&lt;/Text&gt;
+    &lt;/View&gt;
+  ),
+};</div>
+            </div>
+        </section>
+
+        <!-- EMPTY STATE -->
+        <section class="cl-section" id="empty-state">
+            <div class="cl-section-eyebrow">Components</div>
+            <h2 class="cl-section-title">Empty State</h2>
+            <p class="cl-section-desc">When a list or screen has no content. Always: icon â†’ title â†’ description â†’ single primary action. Never leave a screen blank.</p>
+            <div class="cl-card">
+                <div class="cl-card-header"><div class="cl-card-title">Standard Empty State</div></div>
+                <div class="cl-preview" style="justify-content:center">
+                    <div class="ss-empty" style="width:100%">
+                        <div class="ss-empty-icon"><iconify-icon icon="fluent:calendar-empty-24-regular"></iconify-icon></div>
+                        <div class="ss-empty-title">No appointments yet</div>
+                        <div class="ss-empty-desc">Book your first appointment with a SuamiSihat clinic. We'll send a reminder 24 hours before.</div>
+                        <button class="ss-btn ss-btn-primary"><iconify-icon icon="fluent:add-circle-24-regular"></iconify-icon> Book Appointment</button>
+                    </div>
+                </div>
+                <div class="cl-code-tabs">
+                    <button class="cl-code-tab active" onclick="switchCodeTab(this,'empty-web')"><iconify-icon icon="fluent:globe-24-regular"></iconify-icon> Web</button>
+                    <button class="cl-code-tab" onclick="switchCodeTab(this,'empty-expo')"><iconify-icon icon="fluent:phone-24-regular"></iconify-icon> Expo</button>
+                </div>
+                <div id="empty-web" class="cl-code-block" style="position:relative"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>&lt;div class="ss-empty"&gt;
+  &lt;div class="ss-empty-icon"&gt;
+    &lt;iconify-icon icon="fluent:calendar-empty-24-regular"&gt;&lt;/iconify-icon&gt;
+  &lt;/div&gt;
+  &lt;div class="ss-empty-title"&gt;No appointments yet&lt;/div&gt;
+  &lt;div class="ss-empty-desc"&gt;Book your first appointment.&lt;/div&gt;
+  &lt;button class="ss-btn ss-btn-primary"&gt;Book Appointment&lt;/button&gt;
+&lt;/div&gt;</div>
+                <div id="empty-expo" class="cl-code-block" style="position:relative;display:none"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button">import { View, Text, Pressable } from 'react-native';
+import { Calendar24Regular } from '@fluentui/react-native-icons';
+import { SSColors, SSSpacing, SSRadius, SSFont, SSBase, SSIcon } from './ss_tokens';
+export function EmptyState({ icon: Icon, title, description, actionLabel, onAction }) {
+  return (
+    &lt;View style={{ alignItems:'center', padding: SSSpacing.s12 }}&gt;
+      &lt;View style={{ width:72, height:72, borderRadius: SSRadius.xl2,
+        backgroundColor: SSColors.brandSubtle, alignItems:'center',
+        justifyContent:'center', marginBottom: SSSpacing.s5 }}&gt;
+        &lt;Icon width={SSIcon.xl} height={SSIcon.xl} color={SSColors.ssBlue} /&gt;
+      &lt;/View&gt;
+      &lt;Text style={[SSFont.scale.subtitle, { color: SSColors.fgPrimary, marginBottom: SSSpacing.s2 }]}&gt;
+        {title}&lt;/Text&gt;
+      &lt;Text style={[SSFont.scale.body, { color: SSColors.fgSecondary, textAlign:'center',
+        maxWidth: 280, marginBottom: SSSpacing.s5 }]}&gt;{description}&lt;/Text&gt;
+      &lt;Pressable style={[SSBase.btnBase, SSBase.btnPrimary]} onPress={onAction}&gt;
+        &lt;Text style={SSBase.btnTextPrimary}&gt;{actionLabel}&lt;/Text&gt;
+      &lt;/Pressable&gt;
+    &lt;/View&gt;
+  );
+}</div>
+            </div>
+        </section>
+        <!-- LIST ITEM -->
+        <section class="cl-section" id="list-item">
+            <div class="cl-section-eyebrow">Components</div>
+            <h2 class="cl-section-title">List Item</h2>
+            <p class="cl-section-desc">Standard row: leading icon + title/subtitle + trailing action. Used in health records, settings, messages, and navigation menus.</p>
+            <div class="cl-card">
+                <div class="cl-card-header"><div class="cl-card-title">List Rows</div></div>
+                <div class="cl-preview" style="justify-content:center">
+                    <div class="ss-list">
+                        <div class="ss-list-item">
+                            <div class="ss-list-icon" style="background:rgba(33,161,247,0.1)"><iconify-icon icon="fluent:heart-pulse-24-filled" style="color:#21A1F7;font-size:20px"></iconify-icon></div>
+                            <div class="ss-list-body"><div class="ss-list-title">Blood Pressure</div><div class="ss-list-sub">Last recorded 2h ago</div></div>
+                            <div class="ss-list-right"><span class="ss-badge ss-badge-success">Normal</span><iconify-icon icon="fluent:chevron-right-16-regular" style="color:var(--color-neutral-fg-3)"></iconify-icon></div>
+                        </div>
+                        <div class="ss-list-item">
+                            <div class="ss-list-icon" style="background:rgba(229,209,92,0.15)"><iconify-icon icon="fluent:pill-24-filled" style="color:#CA8A04;font-size:20px"></iconify-icon></div>
+                            <div class="ss-list-body"><div class="ss-list-title">Medication Reminder</div><div class="ss-list-sub">8:00 AM Â· Daily</div></div>
+                            <div class="ss-list-right"><span style="font-size:.72rem;color:var(--color-neutral-fg-3)">2 pills</span><iconify-icon icon="fluent:chevron-right-16-regular" style="color:var(--color-neutral-fg-3)"></iconify-icon></div>
+                        </div>
+                        <div class="ss-list-item">
+                            <div class="ss-list-icon" style="background:rgba(4,51,136,0.06)"><iconify-icon icon="fluent:person-24-filled" style="color:#043388;font-size:20px"></iconify-icon></div>
+                            <div class="ss-list-body"><div class="ss-list-title">Dr. Ahmad Zaki</div><div class="ss-list-sub">Cardiologist Â· KLCC Medical</div></div>
+                            <div class="ss-list-right"><iconify-icon icon="fluent:call-24-regular" style="color:var(--color-brand-primary);font-size:20px"></iconify-icon><iconify-icon icon="fluent:chevron-right-16-regular" style="color:var(--color-neutral-fg-3)"></iconify-icon></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cl-code-tabs">
+                    <button class="cl-code-tab active" onclick="switchCodeTab(this,'list-web')"><iconify-icon icon="fluent:globe-24-regular"></iconify-icon> Web</button>
+                    <button class="cl-code-tab" onclick="switchCodeTab(this,'list-expo')"><iconify-icon icon="fluent:phone-24-regular"></iconify-icon> Expo</button>
+                </div>
+                <div id="list-web" class="cl-code-block" style="position:relative"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>&lt;div class="ss-list"&gt;
+  &lt;div class="ss-list-item"&gt;
+    &lt;div class="ss-list-icon" style="background:rgba(33,161,247,0.1)"&gt;
+      &lt;iconify-icon icon="fluent:heart-pulse-24-filled" style="color:#21A1F7;font-size:20px"&gt;&lt;/iconify-icon&gt;
+    &lt;/div&gt;
+    &lt;div class="ss-list-body"&gt;
+      &lt;div class="ss-list-title"&gt;Blood Pressure&lt;/div&gt;
+      &lt;div class="ss-list-sub"&gt;Last recorded 2h ago&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="ss-list-right"&gt;
+      &lt;span class="ss-badge ss-badge-success"&gt;Normal&lt;/span&gt;
+      &lt;iconify-icon icon="fluent:chevron-right-16-regular"&gt;&lt;/iconify-icon&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+                <div id="list-expo" class="cl-code-block" style="position:relative;display:none"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button">import { View, Text, Pressable } from 'react-native';
+import { HeartPulse24Filled, ChevronRight16Regular } from '@fluentui/react-native-icons';
+import { SSColors, SSSpacing, SSRadius, SSFont } from './ss_tokens';
+export function SSListItem({ icon: Icon, iconBg, iconColor, title, subtitle, trailing, onPress }) {
+  return (
+    &lt;Pressable onPress={onPress}
+      style={({ pressed }) =&gt; [{
+        flexDirection:'row', alignItems:'center', gap: SSSpacing.s3,
+        padding: SSSpacing.s3, paddingHorizontal: SSSpacing.s4,
+        backgroundColor: pressed ? SSColors.bgHover : SSColors.bgSurface,
+      }]}&gt;
+      &lt;View style={{ width:40, height:40, borderRadius: SSRadius.md,
+        backgroundColor: iconBg ?? SSColors.brandSubtle,
+        alignItems:'center', justifyContent:'center' }}&gt;
+        &lt;Icon width={20} height={20} color={iconColor ?? SSColors.ssBlue} /&gt;
+      &lt;/View&gt;
+      &lt;View style={{ flex:1 }}&gt;
+        &lt;Text style={[SSFont.scale.body, { fontWeight:'600', color: SSColors.fgPrimary }]}&gt;{title}&lt;/Text&gt;
+        {subtitle &amp;&amp; &lt;Text style={[SSFont.scale.caption, { color: SSColors.fgPlaceholder }]}&gt;{subtitle}&lt;/Text&gt;}
+      &lt;/View&gt;
+      {trailing}
+      &lt;ChevronRight16Regular width={16} height={16} color={SSColors.fgPlaceholder} /&gt;
+    &lt;/Pressable&gt;
+  );
+}</div>
+            </div>
+        </section>
+
+        <!-- STATS CARD -->
+        <section class="cl-section" id="stats">
+            <div class="cl-section-eyebrow">Components</div>
+            <h2 class="cl-section-title">Stats Card</h2>
+            <p class="cl-section-desc">Health metric cards for dashboards. Coloured icon, large value, trend delta. Grid: 2-up on mobile, 4-up on desktop/iPad.</p>
+            <div class="cl-card">
+                <div class="cl-card-header"><div class="cl-card-title">Health Metrics Grid</div></div>
+                <div class="cl-preview" style="display:block;padding:var(--f-space-5)">
+                    <div class="ss-stats-grid">
+                        <div class="ss-stat-card"><div class="ss-stat-icon" style="background:rgba(33,161,247,0.1)"><iconify-icon icon="fluent:heart-pulse-24-filled" style="color:#21A1F7;font-size:20px"></iconify-icon></div><div class="ss-stat-value">118<span style="font-size:1rem;font-weight:500">/76</span></div><div class="ss-stat-label">Blood Pressure (mmHg)</div><div class="ss-stat-delta ss-stat-up"><iconify-icon icon="fluent:arrow-trending-up-24-regular"></iconify-icon> +2 this week</div></div>
+                        <div class="ss-stat-card"><div class="ss-stat-icon" style="background:rgba(22,163,74,0.1)"><iconify-icon icon="fluent:steps-24-filled" style="color:#16A34A;font-size:20px"></iconify-icon></div><div class="ss-stat-value">7,842</div><div class="ss-stat-label">Steps Today</div><div class="ss-stat-delta ss-stat-up"><iconify-icon icon="fluent:arrow-trending-up-24-regular"></iconify-icon> 78% of goal</div></div>
+                        <div class="ss-stat-card"><div class="ss-stat-icon" style="background:rgba(229,209,92,0.15)"><iconify-icon icon="fluent:food-24-filled" style="color:#CA8A04;font-size:20px"></iconify-icon></div><div class="ss-stat-value">1,820</div><div class="ss-stat-label">Calories (kcal)</div><div class="ss-stat-delta ss-stat-down"><iconify-icon icon="fluent:arrow-trending-down-24-regular"></iconify-icon> 180 under target</div></div>
+                        <div class="ss-stat-card"><div class="ss-stat-icon" style="background:rgba(4,51,136,0.06)"><iconify-icon icon="fluent:sleep-24-filled" style="color:#043388;font-size:20px"></iconify-icon></div><div class="ss-stat-value">7.2<span style="font-size:1rem;font-weight:500">h</span></div><div class="ss-stat-label">Sleep Duration</div><div class="ss-stat-delta ss-stat-up"><iconify-icon icon="fluent:checkmark-circle-24-regular"></iconify-icon> On target</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPO SETUP -->
+        <section class="cl-section" id="expo-install">
+            <div class="cl-section-eyebrow">Platform</div>
+            <h2 class="cl-section-title">Expo Setup</h2>
+            <p class="cl-section-desc">Bootstrap a new SuamiSihat Expo app with all design system dependencies. Copy this checklist to get to first screen in under 10 minutes.</p>
+            <div class="cl-card">
+                <div class="cl-card-header"><div><div class="cl-card-title">New Project Checklist</div><div class="cl-card-subtitle">Expo SDK 51+ Â· TypeScript Â· Managed Workflow</div></div></div>
+                <div style="padding:var(--f-space-5)">
+                    <div class="cl-install-step"><div class="cl-install-num">1</div><div><div class="cl-install-title">Create Expo app</div><div class="cl-install-desc">Blank TypeScript template.</div><div class="cl-code-block" style="position:relative;border-radius:var(--f-radius-md)"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>npx create-expo-app@latest ss-health --template blank-typescript</div></div></div>
+                    <div class="cl-install-step"><div class="cl-install-num">2</div><div><div class="cl-install-title">Install Inter font</div><div class="cl-install-desc">Matches web portal typography exactly.</div><div class="cl-code-block" style="position:relative;border-radius:var(--f-radius-md)"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>npx expo install expo-font @expo-google-fonts/inter</div></div></div>
+                    <div class="cl-install-step"><div class="cl-install-num">3</div><div><div class="cl-install-title">Install Fluent icons</div><div class="cl-install-desc">Same icon vocabulary as web: <code>fluent:home-24-regular</code> â†’ <code>Home24Regular</code></div><div class="cl-code-block" style="position:relative;border-radius:var(--f-radius-md)"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>npx expo install @fluentui/react-native-icons react-native-svg</div></div></div>
+                    <div class="cl-install-step"><div class="cl-install-num">4</div><div><div class="cl-install-title">Copy SS token file</div><div class="cl-install-desc">Drop <code>ss_tokens.ts</code> into your project.</div><div class="cl-code-block" style="position:relative;border-radius:var(--f-radius-md)"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>cp ssDesignSystem/assets/tokens/ss_tokens.ts src/theme/ss_tokens.ts</div></div></div>
+                    <div class="cl-install-step"><div class="cl-install-num">5</div><div><div class="cl-install-title">Navigation + Bottom Sheet</div><div class="cl-install-desc">For tab navigation and interactive sheets.</div><div class="cl-code-block" style="position:relative;border-radius:var(--f-radius-md)"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>npx expo install @react-navigation/native @react-navigation/bottom-tabs react-native-screens react-native-safe-area-context @gorhom/bottom-sheet react-native-reanimated react-native-gesture-handler</div></div></div>
+                    <div class="cl-install-step"><div class="cl-install-num">6</div><div><div class="cl-install-title">Load fonts in App root</div><div class="cl-install-desc">Prevent flash of wrong font on startup.</div><div class="cl-code-block" style="position:relative;border-radius:var(--f-radius-md)"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button">import { useFonts, Inter_400Regular, Inter_500Medium,
+  Inter_600SemiBold, Inter_700Bold } from '@expo-google-fonts/inter';
+import * as SplashScreen from 'expo-splash-screen';
+import { SSBase, SSColors } from './src/theme/ss_tokens';
+SplashScreen.preventAutoHideAsync();
+export default function App() {
+  const [fontsLoaded] = useFonts({
+    Inter_400Regular, Inter_500Medium, Inter_600SemiBold, Inter_700Bold,
+  });
+  if (!fontsLoaded) return null;
+  return (
+    &lt;View style={SSBase.screenContainer}&gt;
+      &lt;NavigationContainer&gt;&lt;AppTabs /&gt;&lt;/NavigationContainer&gt;
+    &lt;/View&gt;
+  );
+}</div></div></div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script>
+    document.getElementById('themeToggle')?.addEventListener('click',()=>document.body.classList.toggle('dark-mode'));
+    const obs = new IntersectionObserver(entries=>{
+        entries.forEach(e=>{
+            if(e.isIntersecting){
+                document.querySelectorAll('.cl-sidebar-link').forEach(l=>l.classList.remove('active'));
+                document.querySelector(`.cl-sidebar-link[href="#${e.target.id}"]`)?.classList.add('active');
+            }
+        });
+    },{threshold:0.3,rootMargin:'-5% 0px -65% 0px'});
+    document.querySelectorAll('.cl-section[id]').forEach(s=>obs.observe(s));
+    function copyCode(btn){
+        const block=btn.closest('.cl-code-block');
+        const text=[...block.childNodes].filter(n=>n.nodeName!=='BUTTON').map(n=>n.textContent||'').join('').trim();
+        navigator.clipboard.writeText(text).then(()=>{
+            btn.textContent='Copied!';btn.classList.add('copied');
+            setTimeout(()=>{btn.textContent='Copy';btn.classList.remove('copied');},2000);
+        });
+    }
+    document.querySelectorAll('.cl-icon-item').forEach(item=>{
+        item.addEventListener('click',()=>{
+            const icon=item.dataset.icon;
+            navigator.clipboard.writeText(`<iconify-icon icon="${icon}"></iconify-icon>`);
+            const name=item.querySelector('.cl-icon-name');const orig=name.textContent;
+            name.textContent='Copied!';setTimeout(()=>name.textContent=orig,1500);
+        });
+    });
+    function activateTab(el){
+        el.closest('.ss-tabs').querySelectorAll('.ss-tab').forEach(t=>t.classList.remove('active'));
+        el.classList.add('active');
+    }
+    /**
+     * switchCodeTab — toggles Web / Expo code panels.
+     * @param {HTMLElement} btn  — the tab button clicked
+     * @param {string}      panelId — id of the panel to show
+     */
+    function switchCodeTab(btn, panelId){
+        // Deactivate sibling tab buttons
+        btn.closest('.cl-code-tabs').querySelectorAll('.cl-code-tab').forEach(t=>t.classList.remove('active'));
+        btn.classList.add('active');
+        // Find the card that contains this tab group
+        const card = btn.closest('.cl-card');
+        // Hide all code panels inside this card
+        card.querySelectorAll('.cl-code-block').forEach(p=>p.style.display='none');
+        // Show the target panel
+        const target = document.getElementById(panelId);
+        if(target) target.style.display='block';
+    }
+    // Wire up toast dismiss buttons
+    document.querySelectorAll('.ss-toast-close').forEach(btn=>{
+        btn.addEventListener('click',()=>btn.closest('.ss-toast')?.remove());
+    });
+    // Wire up bottom tab preview
+    document.querySelectorAll('.ss-tab-item').forEach(item=>{
+        item.addEventListener('click',()=>{
+            item.closest('.ss-bottom-tab').querySelectorAll('.ss-tab-item').forEach(t=>t.classList.remove('active'));
+            item.classList.add('active');
+        });
+    });
+</script>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand-col">
+                    <img src="../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg" alt="SuamiSihat" class="footer-logo" loading="lazy">
+                    <p class="footer-tagline">The single source of truth for the SuamiSihat design ecosystem.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Site</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="brand-system.html">Brand System</a></li>
+                        <li><a href="brand-guidelines.html">Guidelines</a></li>
+                        <li><a href="products.html">Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Staff</h4>
+                    <ul class="footer-links">
+                        <li><a href="onboarding.html">Onboarding</a></li>
+                        <li><a href="signature.html">Mail Signature</a></li>
+                        <li><a href="tools.html">SS CAM &amp; Tools</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="text-base">&copy; 2026 SuamiSihat. All rights reserved. &nbsp;&middot;&nbsp; SuamiSihat Design System v3.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="../assets/js/main.js?v=10" defer></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

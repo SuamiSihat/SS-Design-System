@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="New to SuamiSihat? Your complete onboarding guide - brand orientation, team structure, tools, and first-week checklist.">
+    <title>Staff Onboarding - SuamiSihat Design System</title>
+    <link rel="icon" href="../public/brand/favicon/favicon.ico" sizes="any">
+    <link rel="icon" href="../public/brand/logos/ss-logomark-light.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../public/brand/favicon/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="../assets/css/fluent.css?v=9">
+    <link rel="stylesheet" href="../assets/css/ss_theme.css?v=9">
+    <link rel="stylesheet" href="../assets/css/style.css?v=9">
+    <link rel="stylesheet" href="../assets/css/onboarding.css?v=9">
+    <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@3/dist/iconify.min.js" defer></script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
+
+    <!-- Navbar -->
+    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-custom sticky-top glass-navbar transition-all" role="navigation" aria-label="Main navigation">
+        <div class="container-fluid px-4">
+            <img src="../public/brand/logos/ss-logomark-light.svg" alt="SuamiSihat Icon" class="logo me-2 logo-height" loading="eager"/>
+            <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html" aria-label="SuamiSihat Design System Home">
+                SuamiSihat DS <span class="navbar-version-badge">v3.0</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <iconify-icon icon="fluent:navigation-24-regular" style="font-size:1.2rem"></iconify-icon>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="brand-system.html">Brand System</a></li>
+                    <li class="nav-item"><a class="nav-link" href="brand-guidelines.html">Guidelines</a></li>
+                    <li class="nav-item"><a class="nav-link" href="components.html">Components</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="onboarding.html">Onboarding</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="docsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Docs</a>
+                        <ul class="dropdown-menu dropdown-menu-end ss-dropdown" aria-labelledby="docsDropdown">
+                            <li><a class="dropdown-item" href="doc.html?doc=changelog"><i class="fa-solid fa-clock-rotate-left me-2"></i>What's New</a></li>
+                            <li><a class="dropdown-item" href="doc.html?doc=contribution-guide"><i class="fa-solid fa-hand-holding-heart me-2"></i>Contribution Guide</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="doc.html?doc=vision-mission"><i class="fa-solid fa-eye me-2"></i>Vision &amp; Mission</a></li>
+                            <li><a class="dropdown-item" href="signature.html"><i class="fa-solid fa-envelope-open-text me-2"></i>Mail Signature</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <button id="themeToggle" class="btn ms-auto" aria-label="Toggle dark mode" aria-pressed="false">
+                            <iconify-icon icon="fluent:weather-moon-24-regular" style="font-size:1.1rem"></iconify-icon>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="ob-hero">
+        <div class="ob-hero-inner f-animate-up">
+            <div class="ob-hero-welcome"><i class="fa-solid fa-hand-wave me-1"></i>Welcome to the team</div>
+            <h1 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:700;color:#fff;letter-spacing:-.02em;margin:0 0 var(--f-space-3);">Your First Stop at SuamiSihat</h1>
+            <p style="font-size:1rem;color:rgba(255,255,255,.75);line-height:1.7;max-width:560px;margin:0 auto;">Everything you need to get up to speed. Brand orientation, tools, team structure, and a first-week checklist all in one place.</p>
+            <div class="ob-hero-ctas">
+                <a href="#checklist" class="btn-hero-w" id="hero-jump-checklist"><i class="fa-solid fa-list-check"></i> Jump to Checklist</a>
+                <a href="#brand" class="btn-hero-ghost" id="hero-jump-brand"><i class="fa-solid fa-palette"></i> Brand Orientation</a>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content" class="f-page-layout">
+        <button class="f-sidebar-toggle" aria-label="Minimize sidebar">
+            <iconify-icon icon="fluent:chevron-left-16-regular"></iconify-icon>
+        </button>
+        <nav class="f-sidebar" aria-label="Onboarding sections">
+                <div class="ob-progress">
+                    <p class="ob-progress-label">Progress &mdash; <span id="progressPct">0</span>% complete</p>
+                    <div class="ob-progress-bar"><div class="ob-progress-fill" id="progressFill" style="width:0%"></div></div>
+                </div>
+                <p class="ob-nav-label">Sections</p>
+                <ul class="ob-nav-list" id="obNavList">
+                    <li class="ob-nav-item active" data-section="welcome"><a href="#welcome"><span class="ob-nav-step">1</span>Welcome</a></li>
+                    <li class="ob-nav-item" data-section="brand"><a href="#brand"><span class="ob-nav-step">2</span>Brand &amp; Identity</a></li>
+                    <li class="ob-nav-item" data-section="ecosystem"><a href="#ecosystem"><span class="ob-nav-step">3</span>Our Ecosystem</a></li>
+                    <li class="ob-nav-item" data-section="tools-sec"><a href="#tools-sec"><span class="ob-nav-step">4</span>Tools &amp; Systems</a></li>
+                    <li class="ob-nav-item" data-section="checklist"><a href="#checklist"><span class="ob-nav-step">5</span>First Week Checklist</a></li>
+                </ul>
+            </nav>
+            <div class="f-main-content">
+
+                <section id="welcome" class="ob-section f-animate-up">
+                    <div class="ob-section-header">
+                        <div class="ob-section-icon" style="background:rgba(4,51,136,.08);color:#043388;"><i class="fa-solid fa-handshake"></i></div>
+                        <div><h2 class="ob-section-title">Welcome to SuamiSihat</h2><p class="ob-section-subtitle">A note to get you started</p></div>
+                    </div>
+                    <p class="ob-prose">We are Southeast Asia's fastest-growing men's health brand, built on the belief that every man deserves clear, dignified, and accessible healthcare. You're now part of that mission. This guide covers your brand orientation, daily tools, and a first-week checklist.</p>
+                    <p class="ob-prose">If you have questions not answered here, your line manager or <a href="mailto:hr@suamisihat.com" style="color:var(--color-brand-primary);">hr@suamisihat.com</a> is your first stop.</p>
+                    <div class="ob-cards">
+                        <div class="ob-card"><div class="ob-card-icon" style="color:#043388;"><i class="fa-solid fa-eye"></i></div><p class="ob-card-title">Our Vision</p><p class="ob-card-text">To be the most trusted men's health brand in Southeast Asia.</p></div>
+                        <div class="ob-card"><div class="ob-card-icon" style="color:#043388;"><i class="fa-solid fa-bullseye"></i></div><p class="ob-card-title">Our Mission</p><p class="ob-card-text">Empower every touchpoint with a design language that is consistent, accessible, and purposefully built.</p></div>
+                        <div class="ob-card"><div class="ob-card-icon" style="color:#BD9A73;"><i class="fa-solid fa-star"></i></div><p class="ob-card-title">Our Values</p><p class="ob-card-text">Clinical precision, human-first design, and the courage to redefine what healthcare looks like.</p></div>
+                    </div>
+                </section>
+
+                <hr class="ob-divider">
+
+                <section id="brand" class="ob-section f-animate-up f-delay-1">
+                    <div class="ob-section-header">
+                        <div class="ob-section-icon" style="background:rgba(4,51,136,.08);color:#043388;"><i class="fa-solid fa-palette"></i></div>
+                        <div><h2 class="ob-section-title">Brand &amp; Identity</h2><p class="ob-section-subtitle">How we look and sound</p></div>
+                    </div>
+                    <p class="ob-prose">Our brand centres on SS Prussian Blue (#022057) and SS Blue (#043388), accented by Azure (#21A1F7). Warm gold tones (Lion #BD9A73, Arylide #E5D15C) are used for premium accents. Never use off-brand colours in external materials.</p>
+                    <div class="colour-row">
+                        <div class="colour-swatch"><div class="swatch-block" style="background:#022057;"></div><span>Prussian</span></div>
+                        <div class="colour-swatch"><div class="swatch-block" style="background:#043388;"></div><span>SS Blue</span></div>
+                        <div class="colour-swatch"><div class="swatch-block" style="background:#21A1F7;"></div><span>Azure</span></div>
+                        <div class="colour-swatch"><div class="swatch-block" style="background:#6DC6EC;"></div><span>Malibu</span></div>
+                        <div class="colour-swatch"><div class="swatch-block" style="background:#BD9A73;"></div><span>Lion</span></div>
+                        <div class="colour-swatch"><div class="swatch-block" style="background:#E5D15C;"></div><span>Arylide</span></div>
+                        <div class="colour-swatch"><div class="swatch-block" style="background:#FCE53D;"></div><span>Banana</span></div>
+                    </div>
+                    <div class="ob-links">
+                        <a href="brand-system.html" class="ob-link-card" id="link-ob-brand-system"><div class="ob-link-icon"><i class="fa-solid fa-palette"></i></div><div class="ob-link-body"><p class="ob-link-title">Brand System</p><p class="ob-link-desc">Full interactive reference - logo rules, tokens, sub-brands, download kits</p></div><i class="fa-solid fa-arrow-right ob-link-arrow"></i></a>
+                        <a href="brand-guidelines.html" class="ob-link-card" id="link-ob-guidelines"><div class="ob-link-icon"><i class="fa-solid fa-book-open"></i></div><div class="ob-link-body"><p class="ob-link-title">Brand Guidelines PDF</p><p class="ob-link-desc">Interior Design and Logo & Concept booklets</p></div><i class="fa-solid fa-arrow-right ob-link-arrow"></i></a>
+                        <a href="https://suamisihat.com.my/brand-assets/" class="ob-link-card" target="_blank" rel="noopener noreferrer" id="link-ob-assets"><div class="ob-link-icon"><i class="fa-solid fa-download"></i></div><div class="ob-link-body"><p class="ob-link-title">Official Brand Assets</p><p class="ob-link-desc">Download logo files, colour swatches and typography packs</p></div><i class="fa-solid fa-arrow-up-right-from-square ob-link-arrow"></i></a>
+                    </div>
+                </section>
+
+                <hr class="ob-divider">
+
+                <section id="ecosystem" class="ob-section f-animate-up f-delay-2">
+                    <div class="ob-section-header">
+                        <div class="ob-section-icon" style="background:rgba(33,161,247,.08);color:#21A1F7;"><i class="fa-solid fa-sitemap"></i></div>
+                        <div><h2 class="ob-section-title">Our Ecosystem</h2><p class="ob-section-subtitle">One master brand, one parent company and four operating subsidiaries</p></div>
+                    </div>
+                    <p class="ob-prose">SuamiSihat is the public-facing master brand. Operations are governed by the parent company (SuamiSihat Holding Sdn. Bhd. / SS Health) and executed across four operating subsidiaries.</p>
+                    <div class="arch-block">
+                        <div class="arch-master"><p class="arch-master-name">SuamiSihat (Master Brand)</p><p class="arch-master-sub">Public-facing master brand &amp; ecosystem</p></div>
+                        <div class="arch-connector"></div>
+                        <div class="arch-sub-grid">
+                            <div class="arch-card"><strong>SS Health</strong><span>SuamiSihat Holding Sdn. Bhd.</span></div>
+                            <div class="arch-card"><strong>SS Clinic</strong><span>SuamiSihat Clinic Sdn. Bhd.</span></div>
+                            <div class="arch-card"><strong>SS Wellness</strong><span>SuamiSihat Wellness Sdn. Bhd.</span></div>
+                            <div class="arch-card"><strong>SS Ecommerce</strong><span>SuamiSihat Ecommerce Sdn. Bhd.</span></div>
+                            <div class="arch-card"><strong>SS Technology</strong><span>SuamiSihat Technology Sdn. Bhd.</span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="ob-divider">
+
+                <section id="tools-sec" class="ob-section f-animate-up f-delay-3">
+                    <div class="ob-section-header">
+                        <div class="ob-section-icon" style="background:rgba(189,154,115,.12);color:#BD9A73;"><i class="fa-solid fa-toolbox"></i></div>
+                        <div><h2 class="ob-section-title">Tools &amp; Systems</h2><p class="ob-section-subtitle">What you will use every day</p></div>
+                    </div>
+                    <div class="ob-links">
+                        <a href="https://suamisihat.myds.me/" class="ob-link-card" target="_blank" rel="noopener noreferrer" id="link-ob-nas"><div class="ob-link-icon"><i class="fa-solid fa-gauge-high"></i></div><div class="ob-link-body"><p class="ob-link-title">SSNAS Dashboard</p><p class="ob-link-desc">Main internal launchpad - shared drives, apps, and tools</p></div><i class="fa-solid fa-arrow-up-right-from-square ob-link-arrow"></i></a>
+                        <a href="signature.html" class="ob-link-card" id="link-ob-sig"><div class="ob-link-icon"><i class="fa-solid fa-envelope-open-text"></i></div><div class="ob-link-body"><p class="ob-link-title">Mail Signature Generator</p><p class="ob-link-desc">Set up your official email signature on day one</p></div><i class="fa-solid fa-arrow-right ob-link-arrow"></i></a>
+                        <a href="tools.html" class="ob-link-card" id="link-ob-tools"><div class="ob-link-icon"><i class="fa-solid fa-camera"></i></div><div class="ob-link-body"><p class="ob-link-title">SS CAM &amp; Creative Tools</p><p class="ob-link-desc">Download SS CAM and other approved staff utilities</p></div><i class="fa-solid fa-arrow-right ob-link-arrow"></i></a>
+                    </div>
+                </section>
+
+                <hr class="ob-divider">
+
+                <section id="checklist" class="ob-section f-animate-up f-delay-4">
+                    <div class="ob-section-header">
+                        <div class="ob-section-icon" style="background:rgba(22,163,74,.08);color:#16A34A;"><i class="fa-solid fa-list-check"></i></div>
+                        <div><h2 class="ob-section-title">First Week Checklist</h2><p class="ob-section-subtitle">Click each item to mark it done. Progress is saved in your browser.</p></div>
+                    </div>
+                    <p class="ob-cl-label">Day 1</p>
+                    <ul class="checklist" style="margin-bottom:var(--f-space-5);">
+                        <li class="checklist-item" data-id="d1-1" role="checkbox" aria-checked="false" tabindex="0"><div class="checklist-cb"></div><span class="checklist-text">Receive and set up your work laptop / device</span></li>
+                        <li class="checklist-item" data-id="d1-2" role="checkbox" aria-checked="false" tabindex="0"><div class="checklist-cb"></div><span class="checklist-text">Set up your @suamisihat.com work email</span></li>
+                        <li class="checklist-item" data-id="d1-3" role="checkbox" aria-checked="false" tabindex="0"><div class="checklist-cb"></div><span class="checklist-text">Generate your mail signature using the <a href="signature.html" style="color:var(--color-brand-primary);">Signature Generator</a></span></li>
+                        <li class="checklist-item" data-id="d1-4" role="checkbox" aria-checked="false" tabindex="0"><div class="checklist-cb"></div><span class="checklist-text">Log into the <a href="https://suamisihat.myds.me/" target="_blank" rel="noopener noreferrer" style="color:var(--color-brand-primary);">SSNAS Dashboard</a> and bookmark it</span></li>
+                        <li class="checklist-item" data-id="d1-5" role="checkbox" aria-checked="false" tabindex="0"><div class="checklist-cb"></div><span class="checklist-text">Complete HR paperwork and emergency contact form</span></li>
+                    </ul>
+                    <p class="ob-cl-label">Days 2-3</p>
+                    <ul class="checklist" style="margin-bottom:var(--f-space-5);">
+                        <li class="checklist-item" data-id="d2-1" role="checkbox" aria-checked="false" tabindex="0"><div class="checklist-cb"></div><span class="checklist-text">Read through the <a href="brand-system.html" style="color:var(--color-brand-primary);">Brand System</a> - especially Logo Rules and Colour Tokens</span></li>
+                        <li class="checklist-item" data-id="d2-2" role="checkbox" aria-checked="false" tabindex="0"><div class="checklist-cb"></div><span class="checklist-text">Review the <a href="brand-guidelines.html" style="color:var(--color-brand-primary);">Brand Guidelines PDF</a> booklets</span></li>
+                        <li class="checklist-item" data-id="d2-3" role="checkbox" aria-checked="false" tabindex="0"><div class="checklist-cb"></div><span class="checklist-text">Download <a href="tools.html" style="color:var(--color-brand-primary);">SS CAM</a> and tools relevant to your role</span></li>
+                        <li class="checklist-item" data-id="d2-4" role="checkbox" aria-checked="false" tabindex="0"><div class="checklist-cb"></div><span class="checklist-text">Meet your team and schedule a 1-to-1 with your manager</span></li>
+                    </ul>
+                    <p class="ob-cl-label">Week 1</p>
+                    <ul class="checklist">
+                        <li class="checklist-item" data-id="w1-1" role="checkbox" aria-checked="false" tabindex="0"><div class="checklist-cb"></div><span class="checklist-text">Understand your KPIs and your department OKRs</span></li>
+                        <li class="checklist-item" data-id="w1-2" role="checkbox" aria-checked="false" tabindex="0"><div class="checklist-cb"></div><span class="checklist-text">Familiarise yourself with our products (<a href="products.html" style="color:var(--color-brand-primary);">Product Catalogue</a>)</span></li>
+                        <li class="checklist-item" data-id="w1-3" role="checkbox" aria-checked="false" tabindex="0"><div class="checklist-cb"></div><span class="checklist-text">Complete the data privacy and confidentiality briefing</span></li>
+                        <li class="checklist-item" data-id="w1-4" role="checkbox" aria-checked="false" tabindex="0"><div class="checklist-cb"></div><span class="checklist-text">Join relevant team channels (WhatsApp / email groups)</span></li>
+                        <li class="checklist-item" data-id="w1-5" role="checkbox" aria-checked="false" tabindex="0"><div class="checklist-cb"></div><span class="checklist-text">Share your first-week reflections with your manager</span></li>
+                    </ul>
+                    <div class="ob-save-notice"><i class="fa-solid fa-circle-check" style="color:#16A34A;font-size:1.2rem;"></i><p>Your checklist is automatically saved in your browser. Come back anytime to pick up where you left off.</p></div>
+                </section>
+
+            </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand-col">
+                    <img src="../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg" alt="SuamiSihat" class="footer-logo" loading="lazy">
+                    <p class="footer-tagline">The single source of truth for the SuamiSihat design ecosystem.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Site</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="brand-system.html">Brand System</a></li>
+                        <li><a href="brand-guidelines.html">Guidelines</a></li>
+                        <li><a href="products.html">Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Staff</h4>
+                    <ul class="footer-links">
+                        <li><a href="onboarding.html">Onboarding</a></li>
+                        <li><a href="signature.html">Mail Signature</a></li>
+                        <li><a href="tools.html">SS CAM &amp; Tools</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="text-base">&copy; 2026 SuamiSihat. All rights reserved. &nbsp;&middot;&nbsp; SuamiSihat Design System v3.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="../assets/js/main.js?v=10" defer></script>
+    <script>
+    (function(){
+        var STORE='ss-onboarding-v1';
+        var saved={};try{saved=JSON.parse(localStorage.getItem(STORE)||'{}');}catch(e){}
+        var items=document.querySelectorAll('.checklist-item');
+        function countChecked(){var n=0;items.forEach(function(el){if(el.classList.contains('checked'))n++;});return n;}
+        function updateProgress(){
+            var pct=items.length?Math.round((countChecked()/items.length)*100):0;
+            document.getElementById('progressPct').textContent=pct;
+            document.getElementById('progressFill').style.width=pct+'%';
+        }
+        function toggle(el){
+            var id=el.dataset.id,checked=!el.classList.contains('checked');
+            el.classList.toggle('checked',checked);el.setAttribute('aria-checked',checked?'true':'false');
+            saved[id]=checked;try{localStorage.setItem(STORE,JSON.stringify(saved));}catch(e){}
+            updateProgress();
+        }
+        items.forEach(function(el){
+            if(saved[el.dataset.id]){el.classList.add('checked');el.setAttribute('aria-checked','true');}
+            el.addEventListener('click',function(e){if(e.target.tagName==='A')return;toggle(el);});
+            el.addEventListener('keydown',function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();toggle(el);}});
+        });
+        updateProgress();
+        var sections=document.querySelectorAll('.ob-section'),navItems=document.querySelectorAll('#obNavList .ob-nav-item');
+        function onScroll(){var y=window.scrollY+120;sections.forEach(function(s){if(s.offsetTop<=y){var id=s.id;navItems.forEach(function(n){n.classList.toggle('active',n.dataset.section===id);});}});}
+        window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+    })();
+    </script>
+</body>
+</html>
+
+
+
+
+
+

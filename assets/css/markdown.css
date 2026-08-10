@@ -1,0 +1,431 @@
+/* ==========================================================================
+   SS Design System — Markdown Prose Styles (markdown.css)
+   Applied to .md-content rendered by markdown-loader.js
+   ========================================================================== */
+
+.md-content {
+    max-width: 700px; /* Optimized line length (measure) for comfortable reading */
+    margin: 0 auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: var(--text-base, 1rem);
+    line-height: var(--leading-relaxed, 1.75);
+    color: var(--text-color, #3C3C3B);
+}
+
+/* Headings */
+.md-content h1,
+.md-content h2,
+.md-content h3,
+.md-content h4 {
+    font-family: 'Segoe UI Variable', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.md-content h1 {
+    font-size: var(--text-4xl, 2.25rem);
+    font-weight: var(--font-weight-bold, 700);
+    color: var(--heading-color, #022057);
+    line-height: 1.2;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border, rgba(0,0,0,0.08));
+}
+
+.md-content h2 {
+    font-size: var(--text-2xl, 1.5rem);
+    font-weight: var(--font-weight-semibold, 600);
+    color: var(--heading-color, #022057);
+    margin: 2rem 0 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--border, rgba(0,0,0,0.06));
+}
+
+.md-content h3 {
+    font-size: var(--text-xl, 1.25rem);
+    font-weight: var(--font-weight-semibold, 600);
+    color: var(--heading-color, #022057);
+    margin: 1.75rem 0 0.6rem;
+}
+
+.md-content h4 {
+    font-size: var(--text-lg, 1.125rem);
+    font-weight: var(--font-weight-medium, 500);
+    color: var(--heading-color, #022057);
+    margin: 1.5rem 0 0.5rem;
+}
+
+.md-content p { margin: 0 0 1.25rem; color: var(--text-color); }
+
+.md-content ul, .md-content ol {
+    padding-left: 1.6rem;
+    margin-bottom: 1.25rem;
+}
+
+.md-content li { margin-bottom: 0.4rem; color: var(--text-color); }
+
+.md-content a {
+    color: var(--accent, #21a1f7);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.md-content a:hover { border-bottom-color: var(--accent, #21a1f7); }
+
+.md-content blockquote {
+    border-left: 4px solid var(--accent, #21a1f7);
+    background: rgba(33, 161, 247, 0.05);
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: var(--text-color);
+    opacity: 0.9;
+}
+
+.md-content blockquote p:last-child { margin-bottom: 0; }
+
+.md-content code {
+    font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+    font-size: 0.875em;
+    background: rgba(4, 51, 136, 0.07);
+    color: var(--egyptian-blue, #043388);
+    padding: 0.15em 0.45em;
+    border-radius: 4px;
+    border: 1px solid rgba(4, 51, 136, 0.1);
+}
+
+.md-content pre {
+    background: var(--royal-blue-traditional, #022057);
+    color: var(--baby-blue, #6DC6EC);
+    border-radius: 10px;
+    padding: 1.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    font-size: var(--text-sm, 0.875rem);
+    line-height: 1.7;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.md-content pre code {
+    background: none; color: inherit; border: none; padding: 0; font-size: inherit;
+}
+
+.md-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: var(--text-sm, 0.875rem);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.md-content th {
+    background: var(--royal-blue-traditional, #022057);
+    color: #fff;
+    font-weight: var(--font-weight-semibold, 600);
+    padding: 0.8rem 1rem;
+    text-align: left;
+    letter-spacing: 0.02em;
+}
+
+.md-content td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--border, rgba(0,0,0,0.06));
+    color: var(--text-color);
+}
+
+.md-content tr:last-child td { border-bottom: none; }
+.md-content tr:nth-child(even) td { background: rgba(4, 51, 136, 0.02); }
+.md-content hr { border: none; border-top: 1px solid var(--border, rgba(0,0,0,0.1)); margin: 2rem 0; }
+
+.md-content img {
+    max-width: 100%; height: auto; border-radius: 8px;
+    margin: 1rem 0; box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.md-content strong { font-weight: var(--font-weight-semibold, 600); color: var(--heading-color, #022057); }
+.md-content em { color: var(--text-color); opacity: 0.85; }
+
+/* Dark Mode */
+body.dark-mode .md-content h1,
+body.dark-mode .md-content h2,
+body.dark-mode .md-content h3,
+body.dark-mode .md-content h4,
+body.dark-mode .md-content strong { color: var(--heading-color); }
+
+body.dark-mode .md-content code {
+    background: rgba(109, 198, 236, 0.1);
+    color: var(--baby-blue, #6DC6EC);
+    border-color: rgba(109, 198, 236, 0.2);
+}
+
+body.dark-mode .md-content pre { background: #0a1128; color: #6DC6EC; }
+
+body.dark-mode .md-content blockquote {
+    background: rgba(33, 161, 247, 0.08);
+    border-left-color: var(--baby-blue, #6DC6EC);
+}
+
+body.dark-mode .md-content th { background: var(--egyptian-blue, #043388); }
+body.dark-mode .md-content tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
+
+/* Loading Skeleton */
+.md-skeleton {
+    height: 18px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.06) 25%, rgba(0,0,0,0.12) 50%, rgba(0,0,0,0.06) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    margin-bottom: 0.85rem;
+}
+
+.md-skeleton.title { height: 36px; width: 55%; margin-bottom: 1rem; }
+.md-skeleton.wide  { width: 100%; }
+.md-skeleton.mid   { width: 80%; }
+.md-skeleton.short { width: 45%; }
+
+@keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+body.dark-mode .md-skeleton {
+    background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.04) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Table of Contents Sidebar */
+.doc-toc {
+    position: sticky;
+    top: 90px;
+    font-size: var(--text-sm, 0.875rem);
+}
+
+.doc-toc-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-color);
+    opacity: 0.5;
+    margin-bottom: 0.75rem;
+}
+
+.doc-toc-list { list-style: none; padding: 0; margin: 0; }
+.doc-toc-list li { margin-bottom: 0.35rem; }
+
+.doc-toc-list a {
+    color: var(--text-color);
+    text-decoration: none;
+    opacity: 0.7;
+    display: block;
+    padding: 2px 0 2px 0.75rem;
+    border-left: 2px solid transparent;
+    transition: all 0.2s ease;
+    line-height: 1.4;
+}
+
+.doc-toc-list a:hover, .doc-toc-list a.active {
+    opacity: 1;
+    color: var(--accent, #21a1f7);
+    border-left-color: var(--accent, #21a1f7);
+}
+
+.doc-toc-list .toc-h3 a { font-size: 0.8rem; padding-left: 1.5rem; }
+
+/* ==========================================================================
+   Fluent 2 Upgrade Layer — appended to markdown.css
+   Re-tokens all prose styles to use Fluent 2 semantic variables.
+   ========================================================================== */
+
+/* ---- Container ---- */
+.md-content {
+    font-family: 'Inter', 'Segoe UI Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--color-neutral-fg-2);
+    max-width: 72ch;
+}
+
+/* ---- Headings ---- */
+.md-content h1,
+.md-content h2,
+.md-content h3,
+.md-content h4 {
+    font-family: 'Inter', 'Segoe UI Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--color-neutral-fg-1);
+    letter-spacing: -0.02em;
+}
+
+.md-content h1 {
+    border-bottom: 1px solid var(--color-neutral-stroke-1);
+    padding-bottom: 0.5rem;
+}
+
+.md-content h2 {
+    border-bottom: 1px solid var(--color-neutral-stroke-1);
+}
+
+/* ---- Body text ---- */
+.md-content p    { color: var(--color-neutral-fg-2); }
+.md-content li   { color: var(--color-neutral-fg-2); }
+.md-content em   { color: var(--color-neutral-fg-2); opacity: 1; }
+.md-content strong { color: var(--color-neutral-fg-1); }
+
+/* ---- Links ---- */
+.md-content a {
+    color: var(--color-brand-primary);
+    border-bottom: 1px solid transparent;
+    transition: border-color var(--f-duration-fast) var(--f-curve-easy-ease),
+                color var(--f-duration-fast) var(--f-curve-easy-ease);
+}
+.md-content a:hover {
+    color: var(--color-brand-dark);
+    border-bottom-color: var(--color-brand-primary);
+}
+
+/* ---- Blockquote ---- */
+.md-content blockquote {
+    border-left: 3px solid var(--color-brand-light);
+    background: var(--color-brand-subtle);
+    border-radius: 0 var(--f-radius-md) var(--f-radius-md) 0;
+    color: var(--color-neutral-fg-2);
+    margin: 1.5rem 0;
+    padding: 0.9rem 1.25rem;
+    font-style: normal;
+    opacity: 1;
+}
+
+/* ---- Inline code ---- */
+.md-content code {
+    font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+    background: var(--color-brand-subtle);
+    color: var(--color-brand-primary);
+    border: 1px solid var(--color-neutral-stroke-2);
+    border-radius: var(--f-radius-sm);
+    padding: 0.12em 0.45em;
+    font-size: 0.875em;
+}
+
+/* ---- Code block ---- */
+.md-content pre {
+    background: var(--color-brand-dark);
+    color: var(--color-brand-malibu);
+    border-radius: var(--f-radius-lg);
+    box-shadow: var(--f-shadow-8);
+    padding: var(--f-space-5);
+    margin: var(--f-space-5) 0;
+    font-size: var(--text-sm, 0.875rem);
+    line-height: 1.7;
+    overflow-x: auto;
+}
+.md-content pre code { background: none; color: inherit; border: none; padding: 0; }
+
+/* ---- Table ---- */
+.md-content table {
+    border-radius: var(--f-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--f-shadow-4);
+    border: 1px solid var(--color-neutral-stroke-1);
+}
+.md-content th {
+    background: var(--gradient-brand-vertical);
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+    padding: 0.75rem 1rem;
+}
+.md-content td {
+    color: var(--color-neutral-fg-2);
+    border-bottom: 1px solid var(--color-neutral-stroke-1);
+    padding: 0.65rem 1rem;
+}
+.md-content tr:last-child td { border-bottom: none; }
+.md-content tr:nth-child(even) td { background: var(--color-neutral-bg-3); }
+
+/* ---- HR ---- */
+.md-content hr { border-top: 1px solid var(--color-neutral-stroke-1); }
+
+/* ---- Images ---- */
+.md-content img {
+    border-radius: var(--f-radius-lg);
+    box-shadow: var(--f-shadow-8);
+}
+
+/* ---- Dark mode overrides ---- */
+body.dark-mode .md-content h1,
+body.dark-mode .md-content h2,
+body.dark-mode .md-content h3,
+body.dark-mode .md-content h4,
+body.dark-mode .md-content strong {
+    color: var(--color-neutral-fg-1);
+}
+body.dark-mode .md-content p,
+body.dark-mode .md-content li,
+body.dark-mode .md-content em { color: var(--color-neutral-fg-2); }
+body.dark-mode .md-content a { color: var(--color-brand-primary); }
+body.dark-mode .md-content blockquote {
+    background: var(--color-brand-subtle);
+    border-left-color: var(--color-brand-primary);
+}
+body.dark-mode .md-content code {
+    background: var(--color-brand-subtle);
+    color: var(--color-brand-primary);
+    border-color: var(--color-neutral-stroke-2);
+}
+body.dark-mode .md-content pre {
+    background: var(--color-neutral-bg-3);
+    color: var(--color-brand-malibu);
+    box-shadow: var(--f-shadow-16);
+}
+body.dark-mode .md-content td { color: var(--color-neutral-fg-2); }
+body.dark-mode .md-content tr:nth-child(even) td { background: var(--color-neutral-bg-4); }
+body.dark-mode .md-content hr { border-top-color: var(--color-neutral-stroke-1); }
+
+/* ---- Skeleton ---- */
+.md-skeleton {
+    background: var(--color-neutral-bg-3);
+    background: linear-gradient(90deg,
+        var(--color-neutral-bg-3) 25%,
+        var(--color-neutral-bg-4) 50%,
+        var(--color-neutral-bg-3) 75%);
+    background-size: 200% 100%;
+    border-radius: var(--f-radius-md);
+    animation: f-shimmer 1.5s infinite;
+}
+/* Reuse Fluent shimmer keyframe (already defined in fluent.css as f-shimmer) */
+body.dark-mode .md-skeleton {
+    background: linear-gradient(90deg,
+        var(--color-neutral-bg-3) 25%,
+        var(--color-neutral-bg-4) 50%,
+        var(--color-neutral-bg-3) 75%);
+    background-size: 200% 100%;
+    animation: f-shimmer 1.5s infinite;
+}
+
+/* ---- TOC Sidebar ---- */
+.doc-toc { font-size: 0.82rem; }
+.doc-toc-title {
+    color: var(--color-neutral-fg-3);
+    opacity: 1;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+.doc-toc-list a {
+    color: var(--color-neutral-fg-2);
+    border-left: 2px solid transparent;
+    border-radius: 0 var(--f-radius-sm) var(--f-radius-sm) 0;
+    transition: all var(--f-duration-fast) var(--f-curve-easy-ease);
+    opacity: 1;
+    padding: 3px 0 3px 0.75rem;
+}
+.doc-toc-list a:hover,
+.doc-toc-list a.active {
+    color: var(--color-brand-primary);
+    border-left-color: var(--color-brand-primary);
+    background: var(--color-brand-subtle);
+    padding-left: 1rem;
+}

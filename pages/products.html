@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SuamiSihat Product Catalogue — A comprehensive directory of all SuamiSihat ecosystem brands and partner products.">
+    <title>Products — SuamiSihat Design System</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="../public/brand/favicon/favicon.ico" sizes="any">
+    <link rel="icon" href="../public/brand/logos/ss-logomark-light.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../public/brand/favicon/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        /* ============================================================
+           FLUENT 2 CATALOGUE LAYOUT & LOGO CONTRAST SYSTEM
+           ============================================================ */
+
+        body {
+            font-family: 'Segoe UI Variable', 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--color-neutral-bg-1);
+            color: var(--color-neutral-fg-1);
+        }
+
+
+        .cat-sidebar-section { margin-bottom: var(--f-space-6); }
+
+        .cat-sidebar-heading {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-neutral-fg-2);
+            padding: 0 var(--f-space-5);
+            margin-bottom: var(--f-space-2);
+        }
+
+        .cat-nav { list-style: none; padding: 0; margin: 0; }
+
+        .cat-nav a {
+            display: flex;
+            align-items: center;
+            gap: var(--f-space-3);
+            padding: var(--f-space-2) var(--f-space-5);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-neutral-fg-2);
+            text-decoration: none;
+            border-left: 3px solid transparent;
+            transition: all var(--f-duration-fast) var(--f-curve-easy-ease);
+        }
+
+        .cat-nav a:hover, .cat-nav a.active {
+            color: var(--color-brand-primary);
+            border-left-color: var(--color-brand-primary);
+            background: var(--color-brand-subtle);
+        }
+
+        .cat-nav .cat-icon { width: 20px; text-align: center; font-size: 0.8rem; opacity: 0.85; flex-shrink: 0; }
+
+        .cat-count {
+            margin-left: auto;
+            font-size: 0.7rem;
+            background: var(--color-brand-subtle);
+            color: var(--color-brand-primary);
+            padding: 2px 8px;
+            border-radius: var(--f-radius-full);
+            font-weight: 600;
+        }
+
+        /* ---- Main Content ---- */
+        .cat-main {
+            padding: var(--f-space-8) var(--f-space-10);
+            min-width: 0;
+            width: 100%;
+        }
+
+        /* ---- Page Header ---- */
+        .cat-page-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: var(--f-space-4);
+            margin-bottom: var(--f-space-8);
+            flex-wrap: wrap;
+        }
+
+        .cat-page-title {
+            font-family: 'Segoe UI Variable', 'Inter', system-ui, sans-serif;
+            font-size: 2.25rem;
+            font-weight: 600;
+            color: var(--color-neutral-fg-1);
+            margin: 0 0 var(--f-space-1);
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .cat-page-subtitle {
+            font-size: 0.95rem;
+            color: var(--color-neutral-fg-2);
+            margin: 0;
+        }
+
+        /* ---- Search Bar (Fluent 2 Input) ---- */
+        .cat-search-wrap {
+            position: relative;
+            min-width: 280px;
+        }
+
+        .cat-search {
+            width: 100%;
+            padding: var(--f-space-2) var(--f-space-4) var(--f-space-2) var(--f-space-10);
+            border-radius: var(--f-radius-md);
+            border: 1px solid var(--color-neutral-stroke-1);
+            background: var(--color-neutral-bg-2);
+            color: var(--color-neutral-fg-1);
+            font-size: 0.875rem;
+            font-family: 'Segoe UI Variable', 'Inter', system-ui, sans-serif;
+            transition: all var(--f-duration-fast) var(--f-curve-easy-ease);
+            outline: none;
+        }
+
+        .cat-search:focus {
+            border-color: var(--color-focus-ring);
+            box-shadow: 0 0 0 2px var(--color-focus-ring);
+        }
+
+        .cat-search-icon {
+            position: absolute;
+            left: var(--f-space-4);
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-neutral-fg-2);
+            font-size: 0.85rem;
+            pointer-events: none;
+        }
+
+        /* ---- Category Section ---- */
+        .product-section { margin-bottom: var(--f-space-12); }
+
+        .product-section-header {
+            display: flex;
+            align-items: center;
+            gap: var(--f-space-3);
+            margin-bottom: var(--f-space-5);
+            padding-bottom: var(--f-space-3);
+            border-bottom: 1px solid var(--color-neutral-stroke-1);
+        }
+
+        .product-section-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--f-radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+
+        .ps-icon-ss { background: var(--color-brand-subtle); color: var(--color-brand-primary); }
+        .ps-icon-partner { background: rgba(189,154,115,0.12); color: var(--ss-lion); }
+
+        .product-section-title {
+            font-family: 'Segoe UI Variable', 'Inter', system-ui, sans-serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--color-neutral-fg-1);
+            margin: 0;
+        }
+
+        .product-section-desc {
+            font-size: 0.85rem;
+            color: var(--color-neutral-fg-2);
+            margin: 0;
+        }
+
+        .product-section-count {
+            margin-left: auto;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--color-neutral-fg-2);
+            flex-shrink: 0;
+        }
+
+        /* ---- Product Card Grid ---- */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--f-space-5);
+        }
+
+        /* ---- Fluent 2 Product Card ---- */
+        .product-card {
+            background: var(--color-neutral-bg-2);
+            border: 1px solid var(--color-neutral-stroke-1);
+            border-radius: var(--f-radius-xl);
+            padding: var(--f-space-5);
+            display: flex;
+            flex-direction: column;
+            gap: var(--f-space-3);
+            box-shadow: var(--f-shadow-2);
+            transition: box-shadow var(--f-duration-gentle) var(--f-curve-spring),
+                        border-color var(--f-duration-fast) var(--f-curve-easy-ease);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            box-shadow: var(--f-shadow-brand-md);
+            border-color: var(--color-brand-subtle-hover);
+        }
+
+        /* High Contrast Standardized White Logo Tile Container */
+        .product-logo-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 96px;
+            border-radius: var(--f-radius-lg);
+            padding: var(--f-space-3) var(--f-space-5);
+            background: #FFFFFF !important;
+            border: 1px solid rgba(0, 0, 0, 0.08) !important;
+            box-shadow: var(--f-shadow-2);
+            transition: all var(--f-duration-fast) var(--f-curve-easy-ease);
+        }
+
+        body.dark-mode .product-logo-area {
+            background: #FFFFFF !important; /* Standardized white tile for 100% contrast in dark mode */
+            border-color: rgba(255, 255, 255, 0.2) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .product-logo-area img {
+            max-height: 54px;
+            max-width: 100%;
+            object-fit: contain;
+            transition: transform var(--f-duration-gentle) var(--f-curve-spring);
+        }
+
+        .product-card:hover .product-logo-area img { transform: scale(1.05); }
+
+        /* Product Info */
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-neutral-fg-1);
+            margin: 0;
+            font-family: 'Segoe UI Variable', 'Inter', system-ui, sans-serif;
+            letter-spacing: -0.01em;
+        }
+
+        .product-desc {
+            font-size: 0.85rem;
+            line-height: 1.55;
+            color: var(--color-neutral-fg-2);
+            margin: 0;
+            flex: 1;
+        }
+
+        /* Tags Row (Fluent 2 Badges) */
+        .product-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--f-space-2);
+            margin-top: auto;
+        }
+
+        .product-tag {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 2px var(--f-space-3);
+            border-radius: var(--f-radius-full);
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            border: 1px solid var(--color-neutral-stroke-1);
+        }
+
+        .tag-ss { background: var(--color-brand-subtle); color: var(--color-brand-primary); }
+        .tag-wellness { background: rgba(33,161,247,0.1); color: var(--color-brand-light); }
+        .tag-clinic { background: var(--color-brand-subtle); color: var(--color-brand-primary); }
+        .tag-ecom { background: rgba(189,154,115,0.12); color: var(--ss-lion); }
+        .tag-partner { background: rgba(189,154,115,0.12); color: var(--ss-lion); }
+        .tag-women { background: rgba(220,100,150,0.1); color: #c04f88; }
+
+        body.dark-mode .tag-women { background: rgba(220,100,150,0.15); color: #e895c0; }
+
+        /* Card Footer Actions */
+        .product-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: var(--f-space-3);
+            border-top: 1px solid var(--color-neutral-stroke-1);
+            margin-top: var(--f-space-1);
+        }
+
+        .product-subbrand {
+            font-size: 0.72rem;
+            color: var(--color-neutral-fg-2);
+            font-weight: 500;
+        }
+
+        .product-assets-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--f-space-1);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: var(--f-space-1) var(--f-space-3);
+            border-radius: var(--f-radius-md);
+            background: var(--color-brand-subtle);
+            color: var(--color-brand-primary);
+            text-decoration: none;
+            border: 1px solid var(--color-neutral-stroke-1);
+            transition: all var(--f-duration-fast) var(--f-curve-easy-ease);
+        }
+
+        .product-assets-btn:hover {
+            background: var(--color-brand-primary);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        /* Search Filter Hidden Class */
+        .product-card.hidden { display: none; }
+
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: var(--f-space-12);
+            color: var(--color-neutral-fg-2);
+            display: none;
+        }
+
+        .no-results.visible { display: block; }
+
+        /* Mobile Responsive */
+        @media (max-width: 900px) {
+            .catalogue-layout { grid-template-columns: 1fr; }
+            .cat-sidebar { position: relative; top: auto; height: auto; border-right: none; border-bottom: 1px solid var(--color-neutral-stroke-1); padding: var(--f-space-3) 0; display: flex; overflow-x: auto; }
+            .cat-sidebar-heading { display: none; }
+            .cat-sidebar-section { margin: 0; }
+            .cat-nav { display: flex; flex-direction: row; }
+            .cat-nav a { border-left: none; border-bottom: 3px solid transparent; padding: var(--f-space-2) var(--f-space-4); white-space: nowrap; }
+            .cat-nav a:hover, .cat-nav a.active { border-bottom-color: var(--color-brand-primary); border-left: none; background: none; }
+            .cat-count { display: none; }
+            .cat-main { padding: var(--f-space-5) var(--f-space-4); }
+        }
+
+        @media (max-width: 640px) {
+            .product-grid { grid-template-columns: 1fr; }
+            .cat-page-header { flex-direction: column; }
+            .cat-search-wrap { width: 100%; }
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/css/fluent.css?v=9">
+    <link rel="stylesheet" href="../assets/css/ss_theme.css?v=9">
+    <link rel="stylesheet" href="../assets/css/style.css?v=9">
+    <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@3/dist/iconify.min.js" defer></script>
+
+</head>
+
+<body>
+    <a href="#cat-main" class="skip-link visually-hidden-focusable">Skip to main content</a>
+
+    <!-- Navbar -->
+    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-custom sticky-top glass-navbar transition-all" role="navigation" aria-label="Main navigation">
+        <div class="container-fluid px-4">
+            <img src="../public/brand/logos/ss-logomark-light.svg" alt="SuamiSihat Icon" class="logo me-2 logo-height" loading="eager"/>
+            <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html" aria-label="SuamiSihat Design System Home">
+                SuamiSihat DS <span class="navbar-version-badge">v3.0</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <iconify-icon icon="fluent:navigation-24-regular" style="font-size:1.2rem"></iconify-icon>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="brand-system.html">Brand System</a></li>
+                    <li class="nav-item"><a class="nav-link" href="brand-guidelines.html">Guidelines</a></li>
+                    <li class="nav-item"><a class="nav-link" href="components.html">Components</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="onboarding.html" aria-label="Staff Onboarding">Onboarding</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="docsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Docs</a>
+                        <ul class="dropdown-menu dropdown-menu-end ss-dropdown" aria-labelledby="docsDropdown">
+                            <li><a class="dropdown-item" href="doc.html?doc=changelog"><i class="fa-solid fa-clock-rotate-left me-2"></i>What's New</a></li>
+                            <li><a class="dropdown-item" href="doc.html?doc=contribution-guide"><i class="fa-solid fa-hand-holding-heart me-2" aria-hidden="true"></i>Contribution Guide</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="doc.html?doc=vision-mission"><i class="fa-solid fa-eye me-2"></i>Vision &amp; Mission</a></li>
+                            <li><a class="dropdown-item" href="signature.html"><i class="fa-solid fa-envelope-open-text me-2" aria-hidden="true"></i>Mail Signature</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <button id="themeToggle" class="btn ms-auto" aria-label="Toggle dark mode" aria-pressed="false">
+                            <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Catalogue Layout -->
+    <div class="f-page-layout" id="pageLayout">
+        <button class="f-sidebar-toggle" aria-label="Minimize sidebar">
+            <iconify-icon icon="fluent:chevron-left-16-regular"></iconify-icon>
+        </button>
+
+        <!-- Left Sidebar -->
+        <aside class="f-sidebar acrylic" id="pageSidebar" aria-label="Product catalogue navigation">
+            <div class="cat-sidebar-section">
+                <p class="cat-sidebar-heading">All Products</p>
+                <ul class="cat-nav">
+                    <li><a href="#section-ss" class="active"><span class="cat-icon"><i class="fa-solid fa-star"></i></span>SS Products<span class="cat-count">4</span></a></li>
+                    <li><a href="#section-partners"><span class="cat-icon"><i class="fa-solid fa-handshake"></i></span>Partner Brands<span class="cat-count">4</span></a></li>
+                </ul>
+            </div>
+            <div class="cat-sidebar-section">
+                <p class="cat-sidebar-heading">By Category</p>
+                <ul class="cat-nav">
+                    <li><a href="#" data-filter="supplements"><span class="cat-icon"><i class="fa-solid fa-capsules"></i></span>Supplements</a></li>
+                    <li><a href="#" data-filter="clinical"><span class="cat-icon"><i class="fa-solid fa-stethoscope"></i></span>Clinical</a></li>
+                    <li><a href="#" data-filter="lifestyle"><span class="cat-icon"><i class="fa-solid fa-heart-pulse"></i></span>Lifestyle</a></li>
+                    <li><a href="#" data-filter="womens"><span class="cat-icon"><i class="fa-solid fa-venus"></i></span>Women's Health</a></li>
+                    <li><a href="#" data-filter="programme"><span class="cat-icon"><i class="fa-solid fa-list-check"></i></span>Health Programmes</a></li>
+                </ul>
+            </div>
+            <div class="cat-sidebar-section">
+                <p class="cat-sidebar-heading">Navigate</p>
+                <ul class="cat-nav">
+                    <li><a href="../index.html"><span class="cat-icon"><i class="fa-solid fa-house"></i></span>Home</a></li>
+                    <li><a href="brand-system.html"><span class="cat-icon"><i class="fa-solid fa-palette"></i></span>Brand System</a></li>
+                    <li><a href="brand-guidelines.html"><span class="cat-icon"><i class="fa-solid fa-book-open"></i></span>Guidelines PDF</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="main-content" class="f-main-content" role="main">
+
+            <!-- Page Header + Search -->
+            <div class="cat-page-header">
+                <div>
+                    <h1 class="cat-page-title">Product Catalogue</h1>
+                    <p class="cat-page-subtitle">All SS Health brands and partner products — in one place.</p>
+                </div>
+                <div class="cat-search-wrap">
+                    <i class="fa-solid fa-search cat-search-icon" aria-hidden="true"></i>
+                    <input type="search" class="cat-search" id="productSearch"
+                        placeholder="Search products…" aria-label="Search products">
+                </div>
+            </div>
+
+            <div id="no-results" class="no-results" aria-live="polite">
+                <i class="fa-solid fa-magnifying-glass" style="font-size:2rem;margin-bottom:0.75rem;display:block;"></i>
+                No products match your search.
+            </div>
+
+            <!-- ===================================================
+                 SECTION: SS Products
+                 =================================================== -->
+            <section class="product-section" id="section-ss">
+                <div class="product-section-header">
+                    <div class="product-section-icon ps-icon-ss">
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h2 class="product-section-title">SS Products</h2>
+                        <p class="product-section-desc">Brands owned and operated under the SS Health ecosystem</p>
+                    </div>
+                    <span class="product-section-count">4 brands</span>
+                </div>
+
+                <div class="product-grid">
+
+                    <!-- Androlab -->
+                    <article class="product-card" data-name="androlab" data-tags="supplements clinical ss"
+                        style="--card-accent: linear-gradient(135deg, #022057, #043388);">
+                        <div class="product-logo-area">
+                            <img src="../products/Androlab/logo_androlab_primary.svg" alt="Androlab logo" loading="lazy">
+                        </div>
+                        <h3 class="product-name">Androlab</h3>
+                        <p class="product-desc">
+                            Precision-formulated men's health supplements backed by clinical research.
+                            Androlab delivers evidence-based supplementation for testosterone support,
+                            metabolic health, and peak male performance.
+                        </p>
+                        <div class="product-tags">
+                            <span class="product-tag tag-ss">SS Health</span>
+                            <span class="product-tag tag-clinic">Clinical</span>
+                            <span class="product-tag tag-wellness">Supplements</span>
+                        </div>
+                        <div class="product-actions">
+                            <span class="product-subbrand"><i class="fa-solid fa-circle-nodes me-1"></i>SS Clinic · SS Wellness</span>
+                            <a href="../products/Androlab/" class="product-assets-btn" aria-label="View Androlab brand assets">
+                                <i class="fa-solid fa-folder-open" aria-hidden="true"></i>Assets
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- MENSS -->
+                    <article class="product-card" data-name="menss men's health" data-tags="lifestyle wellness ss"
+                        style="--card-accent: linear-gradient(135deg, #043388, #21A1F7);">
+                        <div class="product-logo-area">
+                            <img src="../products/MENSS/logo_menss.svg" alt="MENSS logo" loading="lazy">
+                        </div>
+                        <h3 class="product-name">MENSS</h3>
+                        <p class="product-desc">
+                            A men's health platform designed around modern masculinity —
+                            combining lifestyle guidance, community health tracking, and personalised
+                            wellness programmes tailored to the modern Malaysian man.
+                        </p>
+                        <div class="product-tags">
+                            <span class="product-tag tag-ss">SS Health</span>
+                            <span class="product-tag tag-wellness">Lifestyle</span>
+                        </div>
+                        <div class="product-actions">
+                            <span class="product-subbrand"><i class="fa-solid fa-circle-nodes me-1"></i>SS Wellness</span>
+                            <a href="../products/MENSS/" class="product-assets-btn" aria-label="View MENSS brand assets">
+                                <i class="fa-solid fa-folder-open" aria-hidden="true"></i>Assets
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Mensculine -->
+                    <article class="product-card" data-name="mensculine masculine" data-tags="lifestyle supplements ecom ss"
+                        style="--card-accent: linear-gradient(135deg, #BD9A73, #CCAC8D);">
+                        <div class="product-logo-area">
+                            <img src="../products/Mensculine/logo_mensculine_primary.svg" alt="Mensculine logo" loading="lazy">
+                        </div>
+                        <h3 class="product-name">Mensculine</h3>
+                        <p class="product-desc">
+                            Premium men's lifestyle and personal care range. Mensculine bridges clinical
+                            efficacy with everyday grooming and wellness — products designed for the
+                            man who takes his health seriously.
+                        </p>
+                        <div class="product-tags">
+                            <span class="product-tag tag-ss">SS Health</span>
+                            <span class="product-tag tag-ecom">Lifestyle</span>
+                            <span class="product-tag tag-wellness">Wellness</span>
+                        </div>
+                        <div class="product-actions">
+                            <span class="product-subbrand"><i class="fa-solid fa-circle-nodes me-1"></i>SS Ecom</span>
+                            <a href="../products/Mensculine/" class="product-assets-btn" aria-label="View Mensculine brand assets">
+                                <i class="fa-solid fa-folder-open" aria-hidden="true"></i>Assets
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Rejal -->
+                    <article class="product-card" data-name="rejal rejuvenation aesthetics" data-tags="clinical aesthetic ss"
+                        style="--card-accent: linear-gradient(135deg, #022057, #6DC6EC);">
+                        <div class="product-logo-area">
+                            <img src="../products/Rejal/logo_rejal.svg" alt="Rejal logo" loading="lazy">
+                        </div>
+                        <h3 class="product-name">Rejal</h3>
+                        <p class="product-desc">
+                            Clinical aesthetic and rejuvenation treatments for men. Rejal offers
+                            science-backed solutions for skin health, anti-ageing, and physical
+                            restoration — delivered in a clinical setting.
+                        </p>
+                        <div class="product-tags">
+                            <span class="product-tag tag-ss">SS Health</span>
+                            <span class="product-tag tag-clinic">Clinical</span>
+                        </div>
+                        <div class="product-actions">
+                            <span class="product-subbrand"><i class="fa-solid fa-circle-nodes me-1"></i>SS Clinic</span>
+                            <a href="../products/Rejal/" class="product-assets-btn" aria-label="View Rejal brand assets">
+                                <i class="fa-solid fa-folder-open" aria-hidden="true"></i>Assets
+                            </a>
+                        </div>
+                    </article>
+
+                </div><!-- /.product-grid -->
+            </section>
+
+            <!-- ===================================================
+                 SECTION: Partner Brands
+                 =================================================== -->
+            <section class="product-section" id="section-partners">
+                <div class="product-section-header">
+                    <div class="product-section-icon ps-icon-partner">
+                        <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h2 class="product-section-title">Partner Brands</h2>
+                        <p class="product-section-desc">Associated brands within the broader Suamisihat healthcare network</p>
+                    </div>
+                    <span class="product-section-count">4 brands</span>
+                </div>
+
+                <div class="product-grid">
+
+                    <!-- Husband Clinic -->
+                    <article class="product-card" data-name="husband clinic men health" data-tags="clinical partner"
+                        style="--card-accent: linear-gradient(135deg, #022057, #043388);">
+                        <div class="product-logo-area">
+                            <img src="../products/logo_husbandclinic.svg" alt="Husband Clinic logo" loading="lazy">
+                        </div>
+                        <h3 class="product-name">Husband Clinic</h3>
+                        <p class="product-desc">
+                            A dedicated men's health clinic network providing comprehensive consultations,
+                            diagnostics, and treatment — with a focus on making healthcare accessible
+                            and non-intimidating for men.
+                        </p>
+                        <div class="product-tags">
+                            <span class="product-tag tag-partner">Partner</span>
+                            <span class="product-tag tag-clinic">Clinical</span>
+                        </div>
+                        <div class="product-actions">
+                            <span class="product-subbrand"><i class="fa-solid fa-handshake me-1"></i>Partner Network</span>
+                            <a href="../products/logo_husbandclinic.svg" class="product-assets-btn" aria-label="View Husband Clinic assets">
+                                <i class="fa-solid fa-folder-open" aria-hidden="true"></i>Assets
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Isteri Sihat -->
+                    <article class="product-card" data-name="isteri sihat women health" data-tags="womens clinical partner"
+                        style="--card-accent: linear-gradient(135deg, #c04f88, #e895c0);">
+                        <div class="product-logo-area">
+                            <img src="../products/logo_isterisihat.svg" alt="Isteri Sihat logo" loading="lazy">
+                        </div>
+                        <h3 class="product-name">Isteri Sihat</h3>
+                        <p class="product-desc">
+                            Women's health platform complementing the SS Health ecosystem. Isteri Sihat
+                            provides holistic healthcare resources and community support for women —
+                            completing the family health picture.
+                        </p>
+                        <div class="product-tags">
+                            <span class="product-tag tag-partner">Partner</span>
+                            <span class="product-tag tag-women">Women's Health</span>
+                        </div>
+                        <div class="product-actions">
+                            <span class="product-subbrand"><i class="fa-solid fa-handshake me-1"></i>Partner Network</span>
+                            <a href="../products/logo_isterisihat.svg" class="product-assets-btn" aria-label="View Isteri Sihat assets">
+                                <i class="fa-solid fa-folder-open" aria-hidden="true"></i>Assets
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Pertabi -->
+                    <article class="product-card" data-name="pertabi health programme" data-tags="programme partner lifestyle"
+                        style="--card-accent: linear-gradient(135deg, #BD9A73, #022057);">
+                        <div class="product-logo-area">
+                            <img src="../products/logo_pertabi_horizontal.svg" alt="Pertabi logo" loading="lazy">
+                        </div>
+                        <h3 class="product-name">Pertabi</h3>
+                        <p class="product-desc">
+                            A structured men's health programme combining fitness, nutrition, and clinical
+                            monitoring. Pertabi guides participants through a comprehensive transformation
+                            journey with accountability built in.
+                        </p>
+                        <div class="product-tags">
+                            <span class="product-tag tag-partner">Partner</span>
+                            <span class="product-tag tag-wellness">Programme</span>
+                            <span class="product-tag tag-ecom">Lifestyle</span>
+                        </div>
+                        <div class="product-actions">
+                            <span class="product-subbrand"><i class="fa-solid fa-handshake me-1"></i>Partner Network</span>
+                            <a href="../products/logo_pertabi_horizontal.svg" class="product-assets-btn" aria-label="View Pertabi assets">
+                                <i class="fa-solid fa-folder-open" aria-hidden="true"></i>Assets
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Sifu Sex -->
+                    <article class="product-card" data-name="sifu sex sexual health" data-tags="clinical lifestyle partner"
+                        style="--card-accent: linear-gradient(135deg, #BD9A73, #CCAC8D);">
+                        <div class="product-logo-area">
+                            <img src="../products/logo_sifusex.svg" alt="Sifu Sex logo" loading="lazy">
+                        </div>
+                        <h3 class="product-name">Sifu Sex</h3>
+                        <p class="product-desc">
+                            Malaysia's trusted resource for men's sexual health education, treatment guidance,
+                            and clinical referrals. Sifu Sex breaks the stigma around sexual wellness with
+                            evidence-based information and professional support.
+                        </p>
+                        <div class="product-tags">
+                            <span class="product-tag tag-partner">Partner</span>
+                            <span class="product-tag tag-clinic">Sexual Health</span>
+                        </div>
+                        <div class="product-actions">
+                            <span class="product-subbrand"><i class="fa-solid fa-handshake me-1"></i>Partner Network</span>
+                            <a href="../products/logo_sifusex.svg" class="product-assets-btn" aria-label="View Sifu Sex assets">
+                                <i class="fa-solid fa-folder-open" aria-hidden="true"></i>Assets
+                            </a>
+                        </div>
+                    </article>
+
+                </div><!-- /.product-grid -->
+            </section>
+
+        </main>
+    </div><!-- /.catalogue-layout -->
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand-col">
+                    <img src="../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg" alt="SuamiSihat" class="footer-logo" loading="lazy">
+                    <p class="footer-tagline">The single source of truth for the SuamiSihat design ecosystem.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Site</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="brand-system.html">Brand System</a></li>
+                        <li><a href="brand-guidelines.html">Guidelines</a></li>
+                        <li><a href="products.html">Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Docs</h4>
+                    <ul class="footer-links">
+                        <li><a href="doc.html?doc=changelog">What's New</a></li>
+                        <li><a href="doc.html?doc=contribution-guide">Contribution Guide</a></li>
+                        <li><a href="doc.html?doc=vision-mission">Vision &amp; Mission</a></li>
+                    </ul>
+                    <h4 class="footer-heading mt-4">Contact</h4>
+                    <p class="footer-contact"><i class="fa-solid fa-envelope me-2"></i><a href="mailto:branding@suamisihat.com">branding@suamisihat.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SuamiSihat. All rights reserved. &nbsp;&middot;&nbsp; SuamiSihat Design System v3.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="../assets/js/main.js?v=10" defer></script>
+    <script>
+    (function(){
+        'use strict';
+
+        // ── Search ──────────────────────────────────────
+        const searchInput = document.getElementById('productSearch');
+        const cards       = document.querySelectorAll('.product-card');
+        const noResults   = document.getElementById('no-results');
+
+        searchInput.addEventListener('input', () => {
+            const q = searchInput.value.trim().toLowerCase();
+            let visible = 0;
+
+            cards.forEach(card => {
+                const name = (card.dataset.name || '').toLowerCase();
+                const tags = (card.dataset.tags || '').toLowerCase();
+                const title = card.querySelector('.product-name')?.textContent.toLowerCase() || '';
+                const desc  = card.querySelector('.product-desc')?.textContent.toLowerCase() || '';
+                const match = !q || name.includes(q) || tags.includes(q) || title.includes(q) || desc.includes(q);
+                card.classList.toggle('hidden', !match);
+                if (match) visible++;
+            });
+
+            noResults.classList.toggle('visible', visible === 0 && q.length > 0);
+        });
+
+        // ── Category filter sidebar ──────────────────────
+        document.querySelectorAll('[data-filter]').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const f = link.dataset.filter;
+                document.querySelectorAll('[data-filter]').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+
+                let visible = 0;
+                cards.forEach(card => {
+                    const tags = (card.dataset.tags || '').toLowerCase();
+                    const match = tags.includes(f);
+                    card.classList.toggle('hidden', !match);
+                    if (match) visible++;
+                });
+                noResults.classList.toggle('visible', visible === 0);
+                searchInput.value = '';
+            });
+        });
+
+        // Clear filter on section nav
+        document.querySelectorAll('.cat-nav a[href^="#section"]').forEach(link => {
+            link.addEventListener('click', () => {
+                cards.forEach(c => c.classList.remove('hidden'));
+                noResults.classList.remove('visible');
+                document.querySelectorAll('[data-filter]').forEach(l => l.classList.remove('active'));
+                searchInput.value = '';
+            });
+        });
+
+        // ── Sidebar active on scroll ─────────────────────
+        const sectionEls = document.querySelectorAll('.product-section');
+        const sideLinks  = document.querySelectorAll('.cat-nav a[href^="#section"]');
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                const link = document.querySelector('.cat-nav a[href="#'+e.target.id+'"]');
+                if (link) link.classList.toggle('active', e.isIntersecting);
+            });
+        }, { rootMargin: '-20% 0px -70% 0px' });
+        sectionEls.forEach(s => obs.observe(s));
+
+        // ── Sidebar Minimize Toggle
+
+    })();
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

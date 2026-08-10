@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate your official SuamiSihat email signature - always on-brand, ready to paste.">
+    <title>Mail Signature Generator - SuamiSihat Design System</title>
+    <link rel="icon" href="../public/brand/favicon/favicon.ico" sizes="any">
+    <link rel="icon" href="../public/brand/logos/ss-logomark-light.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../public/brand/favicon/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@3/dist/iconify.min.js" defer></script>
+    <link rel="stylesheet" href="../assets/css/fluent.css?v=9">
+    <link rel="stylesheet" href="../assets/css/ss_theme.css?v=9">
+    <link rel="stylesheet" href="../assets/css/style.css?v=9">
+    <style>
+        .sig-shell{display:grid;grid-template-columns:380px 1fr;gap:var(--f-space-6);max-width:1200px;margin:0 auto;padding:var(--f-space-8) var(--f-space-6);align-items:start;}
+        @media(max-width:900px){.sig-shell{grid-template-columns:1fr;padding:var(--f-space-6) var(--f-space-4);}}
+        .sig-form-panel{background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);padding:var(--f-space-6);box-shadow:var(--f-shadow-4);position:sticky;top:76px;}
+        .sig-form-panel h2{font-size:1rem;font-weight:700;color:var(--color-neutral-fg-1);margin:0 0 var(--f-space-5);letter-spacing:-.01em;}
+        .f-field{margin-bottom:var(--f-space-4);}
+        .f-label{display:block;font-size:.78rem;font-weight:600;color:var(--color-neutral-fg-2);margin-bottom:var(--f-space-1);letter-spacing:.03em;}
+        .f-input{width:100%;padding:var(--f-space-2) var(--f-space-3);border-radius:var(--f-radius-md);border:1px solid var(--color-neutral-stroke-3);background:var(--color-neutral-bg-1);color:var(--color-neutral-fg-1);font-family:inherit;font-size:.9rem;transition:border-color var(--f-duration-fast) var(--f-curve-easy-ease),box-shadow var(--f-duration-fast) var(--f-curve-easy-ease);}
+        .f-input:focus{outline:none;border-color:var(--color-brand-primary);box-shadow:0 0 0 3px var(--color-brand-subtle);}
+        .entity-chips{display:flex;flex-wrap:wrap;gap:var(--f-space-2);margin-top:var(--f-space-2);}
+        .entity-chip{padding:5px 14px;border-radius:var(--f-radius-full);border:1px solid var(--color-neutral-stroke-2);background:var(--color-neutral-bg-3);color:var(--color-neutral-fg-2);font-size:.78rem;font-weight:600;cursor:pointer;transition:all var(--f-duration-fast) var(--f-curve-easy-ease);user-select:none;}
+        .entity-chip:hover{border-color:var(--color-brand-primary);color:var(--color-brand-primary);}
+        .entity-chip.active{background:var(--color-brand-subtle);border-color:var(--color-brand-primary);color:var(--color-brand-primary);}
+        .sig-preview-panel{display:flex;flex-direction:column;gap:var(--f-space-4);}
+        .preview-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--f-space-3);}
+        .preview-header h2{font-size:1rem;font-weight:700;color:var(--color-neutral-fg-1);margin:0;}
+        .copy-btn{display:inline-flex;align-items:center;gap:var(--f-space-2);padding:var(--f-space-2) var(--f-space-5);border-radius:var(--f-radius-md);background:var(--color-brand-primary);color:#fff;font-size:.875rem;font-weight:600;border:none;cursor:pointer;transition:all var(--f-duration-gentle) var(--f-curve-spring);box-shadow:var(--f-shadow-4);}
+        .copy-btn:hover{background:var(--color-brand-dark);transform:translateY(-1px);box-shadow:var(--f-shadow-8);}
+        .copy-btn.copied{background:#16A34A;}
+        .sig-canvas{background:#fff;border:1px solid var(--color-neutral-stroke-2);border-radius:var(--f-radius-xl);padding:var(--f-space-6);box-shadow:var(--f-shadow-4);overflow:auto;}
+        .usage-card{background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);padding:var(--f-space-5) var(--f-space-6);}
+        .usage-card h3{font-size:.875rem;font-weight:700;color:var(--color-neutral-fg-1);margin:0 0 var(--f-space-3);}
+        .usage-steps{display:flex;flex-direction:column;gap:var(--f-space-2);list-style:none;padding:0;margin:0;}
+        .usage-steps li{display:flex;align-items:flex-start;gap:var(--f-space-3);font-size:.8rem;color:var(--color-neutral-fg-2);line-height:1.5;}
+        .usage-step-num{flex-shrink:0;width:20px;height:20px;border-radius:var(--f-radius-full);background:var(--color-brand-subtle);color:var(--color-brand-primary);font-size:.68rem;font-weight:700;display:flex;align-items:center;justify-content:center;}
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
+
+    <!-- Navbar -->
+    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-custom sticky-top glass-navbar transition-all" role="navigation" aria-label="Main navigation">
+        <div class="container-fluid px-4">
+            <img src="../public/brand/logos/ss-logomark-light.svg" alt="SuamiSihat Icon" class="logo me-2 logo-height" loading="eager"/>
+            <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html" aria-label="SuamiSihat Design System Home">
+                SuamiSihat DS <span class="navbar-version-badge">v3.0</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <iconify-icon icon="fluent:navigation-24-regular" style="font-size:1.2rem"></iconify-icon>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="brand-system.html">Brand System</a></li>
+                    <li class="nav-item"><a class="nav-link" href="brand-guidelines.html">Guidelines</a></li>
+                    <li class="nav-item"><a class="nav-link" href="components.html">Components</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="onboarding.html">Onboarding</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="docsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Docs</a>
+                        <ul class="dropdown-menu dropdown-menu-end ss-dropdown" aria-labelledby="docsDropdown">
+                            <li><a class="dropdown-item" href="doc.html?doc=changelog"><iconify-icon icon="fluent:clock-arrow-download-24-regular" class="me-2"></iconify-icon>What's New</a></li>
+                            <li><a class="dropdown-item" href="doc.html?doc=contribution-guide"><iconify-icon icon="fluent:heart-hand-24-regular" class="me-2"></iconify-icon>Contribution Guide</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="doc.html?doc=vision-mission"><iconify-icon icon="fluent:eye-24-regular" class="me-2"></iconify-icon>Vision &amp; Mission</a></li>
+                            <li><a class="dropdown-item" href="signature.html"><iconify-icon icon="fluent:mail-24-regular" class="me-2"></iconify-icon>Mail Signature</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <button id="themeToggle" class="btn ms-auto" aria-label="Toggle dark mode" aria-pressed="false">
+                            <iconify-icon icon="fluent:weather-moon-24-regular" style="font-size:1.1rem"></iconify-icon>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div style="background:var(--gradient-brand-vertical);padding:var(--f-space-8) var(--f-space-6);text-align:center;">
+        <p style="font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);margin:0 0 var(--f-space-2);">Tool</p>
+        <h1 style="font-size:clamp(1.5rem,4vw,2.5rem);font-weight:700;color:#fff;letter-spacing:-.02em;margin:0 0 var(--f-space-2);">Mail Signature Generator</h1>
+        <p style="font-size:.95rem;color:rgba(255,255,255,.72);margin:0;">Fill in your details and get an on-brand email signature in seconds.</p>
+    </div>
+
+    <main id="main-content">
+        <div class="sig-shell">
+            <aside class="sig-form-panel f-animate-up" aria-label="Signature form">
+                <h2><i class="fa-solid fa-sliders me-2" aria-hidden="true"></i>Your Details</h2>
+                <div class="f-field"><label class="f-label" for="sig-name">Full Name</label><input class="f-input" id="sig-name" type="text" placeholder="e.g. Ahmad Syazwan" autocomplete="name"></div>
+                <div class="f-field"><label class="f-label" for="sig-title">Job Title</label><input class="f-input" id="sig-title" type="text" placeholder="e.g. Brand Designer"></div>
+                <div class="f-field">
+                    <label class="f-label">Entity / Sub-brand</label>
+                    <div class="entity-chips" role="group" aria-label="Select your entity">
+                        <button class="entity-chip active" data-entity="SuamiSihat" data-color="#043388" type="button">SuamiSihat</button>
+                        <button class="entity-chip" data-entity="SS Health (Holding)" data-color="#022057" type="button">SS Health</button>
+                        <button class="entity-chip" data-entity="SS Clinic" data-color="#043388" type="button">SS Clinic</button>
+                        <button class="entity-chip" data-entity="SS Wellness" data-color="#21A1F7" type="button">SS Wellness</button>
+                        <button class="entity-chip" data-entity="SS Ecommerce" data-color="#BD9A73" type="button">SS Ecommerce</button>
+                        <button class="entity-chip" data-entity="SS Technology" data-color="#6DC6EC" type="button">SS Technology</button>
+                    </div>
+                </div>
+                <div class="f-field"><label class="f-label" for="sig-phone">Phone / WhatsApp</label><input class="f-input" id="sig-phone" type="tel" placeholder="e.g. +60 12-345 6789" autocomplete="tel"></div>
+                <div class="f-field"><label class="f-label" for="sig-email">Work Email</label><input class="f-input" id="sig-email" type="email" placeholder="e.g. name@suamisihat.com" autocomplete="email"></div>
+                <div class="f-field"><label class="f-label" for="sig-website">Website (optional)</label><input class="f-input" id="sig-website" type="url" placeholder="https://suamisihat.com.my"></div>
+                <div class="f-field"><label class="f-label" for="sig-tagline">Tagline (optional)</label><input class="f-input" id="sig-tagline" type="text" placeholder="e.g. Dedicated to men's health excellence" maxlength="80"></div>
+            </aside>
+
+            <section class="sig-preview-panel f-animate-up f-delay-2" aria-label="Signature preview">
+                <div class="preview-header">
+                    <h2><i class="fa-solid fa-eye me-2" aria-hidden="true"></i>Live Preview</h2>
+                    <button class="copy-btn" id="copyBtn" aria-label="Copy signature to clipboard"><i class="fa-regular fa-copy" aria-hidden="true"></i> Copy Signature</button>
+                </div>
+                <div class="sig-canvas" id="sigCanvas" aria-live="polite">
+                    <div id="sigOutput"></div>
+                </div>
+                <div class="usage-card">
+                    <h3><i class="fa-solid fa-circle-info me-2" aria-hidden="true"></i>How to use your signature</h3>
+                    <ol class="usage-steps">
+                        <li><span class="usage-step-num">1</span>Fill in your details above - the preview updates live.</li>
+                        <li><span class="usage-step-num">2</span>Click <strong>Copy Signature</strong>. The formatted HTML is on your clipboard.</li>
+                        <li><span class="usage-step-num">3</span><strong>Gmail:</strong> Settings > See all settings > General > Signature > paste. <strong>Outlook:</strong> New Email > Insert > Signature > Edit Signatures > paste into the rich-text editor.</li>
+                        <li><span class="usage-step-num">4</span>Do not change the colours, fonts, or logo. Contact branding@suamisihat.com for exceptions.</li>
+                    </ol>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <script>
+    (function(){
+        var state={name:'',title:'',entity:'SuamiSihat',color:'#043388',phone:'',email:'',website:'https://suamisihat.com.my',tagline:''};
+        var LOGO='https://suamisihat.com.my/wp-content/uploads/2024/10/logo_ss_primary_white.png';
+        function buildSig(){
+            var n=state.name||'Your Name',t=state.title||'Your Title',e=state.entity,c=state.color;
+            var p=state.phone||'+60 XX-XXX XXXX',em=state.email||'name@suamisihat.com';
+            var w=state.website||'https://suamisihat.com.my',tg=state.tagline;
+            return '<table cellpadding="0" cellspacing="0" border="0" style="font-family:\'Segoe UI\',Arial,sans-serif;font-size:13px;color:#3c3c3b;border-collapse:collapse;max-width:520px;">'
+                +'<tr>'
+                +'<td style="background:'+c+';width:6px;">&nbsp;</td>'
+                +'<td style="width:12px;">&nbsp;</td>'
+                +'<td style="padding:16px 16px 16px 0;vertical-align:top;">'
+                  +'<p style="margin:0 0 2px 0;font-size:16px;font-weight:700;color:#022057;letter-spacing:-0.3px;">'+n+'</p>'
+                  +'<p style="margin:0 0 2px 0;font-size:12px;font-weight:500;color:#043388;">'+t+'</p>'
+                  +'<p style="margin:0 0 10px 0;font-size:11px;color:#999;text-transform:uppercase;letter-spacing:0.05em;">'+e+'</p>'
+                  +'<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">'
+                    +'<tr><td style="padding-bottom:3px;"><span style="display:inline-block;width:14px;text-align:center;">&#128222;</span> <a href="tel:'+p.replace(/\s/g,'')+'" style="color:#043388;text-decoration:none;font-size:12px;">'+p+'</a></td></tr>'
+                    +'<tr><td style="padding-bottom:3px;"><span style="display:inline-block;width:14px;text-align:center;">&#9993;</span> <a href="mailto:'+em+'" style="color:#043388;text-decoration:none;font-size:12px;">'+em+'</a></td></tr>'
+                    +'<tr><td><span style="display:inline-block;width:14px;text-align:center;">&#127760;</span> <a href="'+w+'" style="color:#043388;text-decoration:none;font-size:12px;">'+w.replace(/^https?:\/\//,'')+'</a></td></tr>'
+                  +'</table>'
+                  +(tg?'<p style="margin:10px 0 0;font-size:10.5px;font-style:italic;color:#999;">'+tg+'</p>':'')
+                +'</td>'
+                +'<td style="padding:16px;vertical-align:middle;background:'+c+';border-radius:0 8px 8px 0;">'
+                  +'<img src="'+LOGO+'" alt="SuamiSihat" width="90" style="display:block;width:90px;height:auto;">'
+                +'</td>'
+                +'</tr>'
+                +'<tr><td colspan="4" style="padding-top:10px;font-size:9px;color:#bbb;line-height:1.4;">This email and any attachments are confidential and intended solely for the addressee.<br>SuamiSihat Holding Sdn. Bhd. &nbsp;|&nbsp; Registered in Malaysia</td></tr>'
+                +'</table>';
+        }
+        var out=document.getElementById('sigOutput');
+        function render(){out.innerHTML=buildSig();}
+        var fields=[['sig-name','name'],['sig-title','title'],['sig-phone','phone'],['sig-email','email'],['sig-website','website'],['sig-tagline','tagline']];
+        fields.forEach(function(f){var el=document.getElementById(f[0]);if(el)el.addEventListener('input',function(){state[f[1]]=el.value.trim();render();});});
+        document.querySelectorAll('.entity-chip').forEach(function(b){
+            b.addEventListener('click',function(){
+                document.querySelectorAll('.entity-chip').forEach(function(x){x.classList.remove('active');});
+                b.classList.add('active');state.entity=b.dataset.entity;state.color=b.dataset.color;render();
+            });
+        });
+        var copyBtn=document.getElementById('copyBtn');
+        copyBtn.addEventListener('click',function(){
+            var html=buildSig();
+            try{
+                var blob=new Blob([html],{type:'text/html'});
+                navigator.clipboard.write([new ClipboardItem({'text/html':blob})]).catch(function(){navigator.clipboard.writeText(html);});
+            }catch(e){navigator.clipboard.writeText(html);}
+            copyBtn.classList.add('copied');copyBtn.innerHTML='<i class="fa-solid fa-check"></i> Copied!';
+            setTimeout(function(){copyBtn.classList.remove('copied');copyBtn.innerHTML='<i class="fa-regular fa-copy"></i> Copy Signature';},2500);
+        });
+        render();
+    })();
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand-col">
+                    <img src="../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg" alt="SuamiSihat" class="footer-logo" loading="lazy">
+                    <p class="footer-tagline">The single source of truth for the SuamiSihat design ecosystem.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Site</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="brand-system.html">Brand System</a></li>
+                        <li><a href="brand-guidelines.html">Guidelines</a></li>
+                        <li><a href="products.html">Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Staff</h4>
+                    <ul class="footer-links">
+                        <li><a href="onboarding.html">Onboarding</a></li>
+                        <li><a href="signature.html">Mail Signature</a></li>
+                        <li><a href="tools.html">SS CAM &amp; Tools</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="text-base">&copy; 2026 SuamiSihat. All rights reserved. &nbsp;&middot;&nbsp; SuamiSihat Design System v3.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="../assets/js/main.js?v=10" defer></script>
+</body>
+</html>
+
+
+
+
+
+
