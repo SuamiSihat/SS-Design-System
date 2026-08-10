@@ -1,0 +1,16 @@
+{
+  "name": "Mensculine",
+  "tagline": "Premium Everyday Grooming & Personal Care",
+  "logo": "logo_mensculine_primary.svg",
+  "banner": "banner.svg",
+  "heroGradient": "linear-gradient(135deg, #BD9A73 0%, #CCAC8D 100%)",
+  "ownership": {
+    "tags": ["SS Health Owned", "SS Ecom"],
+    "text": "Mensculine is an in-house lifestyle brand operated under the SS Ecom sub-brand."
+  },
+  "assets": [
+    "logo_mensculine_primary.svg",
+    "logo_mensculine_secondary.svg",
+    "logo_mensculine_text.svg"
+  ]
+}

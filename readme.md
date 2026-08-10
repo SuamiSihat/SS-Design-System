@@ -1,29 +1,38 @@
-# SS Brand Assets - Design System
+# SuamiSihat Design System — v3.0
 
 ## 🎨 Project Overview
 
-The SS Brand Assets is a comprehensive design system and brand toolkit for SS Health. It provides designers, developers, and stakeholders with all necessary assets, guidelines, and interactive tools to maintain consistent brand expression across all platforms and touchpoints.
+The SuamiSihat Design System is a comprehensive, interactive brand toolkit for SuamiSihat and its operating sub-brands, built on **Microsoft Fluent 2** design language adapted to the SuamiSihat brand palette. It provides designers, developers, and stakeholders with all necessary assets, guidelines, and interactive tools to maintain a consistent, premium brand expression across all platforms and touchpoints.
 
 ### Key Features
 
-- **Interactive Brand Guidelines**: Live web-based design system with interactive color picker and theme toggle
-- **Complete Asset Library**: High-resolution logos, icons, and brand elements for all sub-brands
-- **Design Tokens**: CSS custom properties and utility classes for consistent implementation
-- **Responsive Design**: Mobile-first approach with accessibility best practices
-- **Dark Mode Support**: Complete theme switching functionality
+- **Fluent 2 Design Tokens**: Three-tier token system (`fluent.css`) — global raw tokens → semantic intent tokens → component atoms. Single source of truth for all colour, spacing, radius, shadow, and motion.
+- **Acrylic Glassmorphic Navigation**: `blur(20px) saturate(180%)` navbar with Fluent motion curves, active-link detection, and scroll shadow.
+- **Dynamic Scroll Animations**: Elements fade and slide into view using `IntersectionObserver` with Fluent decelerate/spring easing.
+- **Mail Signature Generator**: Live-preview HTML email signature builder for all SS entities.
+- **SS CAM Download Hub**: Centralised download page for SS CAM desktop app + SSNAS dashboard launchpad.
+- **Staff Onboarding Guide**: Interactive checklist with localStorage persistence, sticky sidebar navigation.
+- **Sub-Brand Gallery**: Explore Brand Hierarchy Model with logo variants and background toggles for all SS sub-brands.
+- **Full Dark Mode**: Fluent semantic tokens flip automatically — backgrounds, text, strokes, shadows, and gradients all tokenised.
+- **Responsive & Accessible**: Bootstrap 5 grid, ARIA roles, focus-visible ring, keyboard-navigable.
 
 ## 📁 Project Structure
 
 ```text
 SS-Design
-├── index.html                    # Main interactive brand guidelines page
+├── index.html                    # Hub homepage — Fluent 2 portal with 8 cards
 ├── assets/
 │   ├── css/
-│   │   ├── style.css            # Main stylesheet with interactive components
-│   │   └── ss_theme.css         # Design tokens and utility classes
+│   │   ├── fluent.css           # ★ NEW: Fluent 2 token foundation (load first)
+│   │   ├── ss_theme.css         # Bridge: re-aliases legacy vars to Fluent tokens
+│   │   ├── style.css            # Main stylesheet + Fluent 2 override layer
+│   │   ├── markdown.css         # Prose styles for rendered markdown + Fluent layer
+│   │   ├── onboarding.css       # ★ NEW: onboarding checklist component styles
+│   │   └── banner.css           # Advanced hero animations & geometric shapes
 │   ├── js/
-│   │   └── main.js              # Interactive functionality (theme toggle, color copying)
-│   ├── fonts/                   # Local font files (Poppins)
+│   │   ├── main.js              # Core logic (ThemeManager, FluentNavManager, Animations)
+│   │   └── markdown-loader.js   # Fetch + render .md files via marked.js
+│   ├── fonts/                   # Local font files
 │   └── images/                  # Brand architecture and guideline images
 ├── brand-guidelines/            # PDF guidelines and reference materials
 ├── core-assets/
@@ -57,7 +66,7 @@ SS-Design
    python -m http.server 8000
    
    # Using Node.js
-   npx serve .
+   npx serve -p 8000
    
    # Using PHP
    php -S localhost:8000
@@ -69,198 +78,96 @@ SS-Design
    http://localhost:8000
    ```
 
-### Production Deployment
-
-The project is designed to work as a static website. Deploy to any static hosting service:
-
-- **Netlify**: Drag and drop the folder
-- **Vercel**: Connect your repository
-- **GitHub Pages**: Enable in repository settings
-- **AWS S3**: Upload files to S3 bucket
-
 ## 🎯 Interactive Features
 
+### UI & Animations
+- **Staggered Scrolling**: Cards and sections cascade smoothly into view via Javascript `IntersectionObservers`.
+- **Hover Micro-Interactions**: Tactile transform scales and deep box-shadows react to mouse hover states across all interactive elements.
+- **Hero Banner**: Features an animated gradient background with floating geometric brand primitives and delayed fade-in typography.
+
 ### Color System
+- **Interactive Color Cards**: Click any color card to instantly copy the exact HEX value to your clipboard.
+- **Visual Feedback**: Satisfying, animated toast feedback confirming color copies.
 
-- **Interactive Color Cards**: Click any color card to copy the HEX value to clipboard
-- **Color Strips**: Click neutral color strips to copy color values
-- **Visual Feedback**: Animated feedback when colors are copied
-
-### Logo System
-
-- **Interactive Logo Preview**: Change background colors to see logo variants
-- **Multiple Formats**: SVG, PNG, and PDF formats available
-- **Sub-brand Support**: Complete logo sets for all SS sub-brands
+### Sub-Brand Gallery
+- **Brand Hierarchy**: An educational breakdown of the SS Branded House structure.
+- **Interactive Toggles**: "Toggle Bg" buttons allow testing sub-brand logos against different background extremes, dynamically swapping the SVG assets.
 
 ### Theme Toggle
+- **Dark/Light Mode**: Easily toggle between vibrant light mode and a deep, immersive navy dark mode.
+- **System Preference**: Automatically matches your OS-level dark mode preference.
 
-- **Dark/Light Mode**: Toggle between light and dark themes
-- **Persistent Settings**: Theme preference saved in localStorage
-- **System Preference**: Automatically detects user's system preference
-
-### Typography
-
-- **Font Showcase**: Interactive font cards with previews
-- **Responsive Typography**: Modular scale system
-- **Web Font Loading**: Optimized font loading with preload directives
-
-## 🎨 Design System
+## 🎨 Design System Specifications
 
 ### Color Palette
+- **Primary Colors**: SS Prussian Blue (`#022057`), SS Blue (`#043388`), Azure (`#21A1F7`), Malibu (`#6DC6EC`)
+- **Secondary Colors**: Lion (`#BD9A73`), Fawn (`#CCAC8D`), Arylide Yellow (`#E5D15C`), Banana Yellow (`#FCE53D`)
+- **Neutrals**: True Black (`#000000`), True White (`#FFFFFF`), and Greys 20 through 90.
 
-#### Primary Colors
+*(Note: CSS Variables in `ss_theme.css` strictly mirror these exact HEX values to ensure 100% brand compliance).*
 
-- **SS Prussian Blue**: `#022057` - Primary brand color
-- **SS Blue**: `#043388` - Main brand blue
-- **Azure**: `#21A1F7` - Accent blue
-- **Malibu**: `#6DC6EC` - Light blue
-
-#### Secondary Colors
-
-- **Lion**: `#BD9A73` - Warm accent
-- **Fawn**: `#CCAC8D` - Light warm
-- **Arylide Yellow**: `#E5D15C` - Warning yellow
-- **Banana Yellow**: `#FCE53D` - Bright yellow
-
-#### Neutral Colors
-
-- **Black**: `#000000`
-- **Grey 20**: `#CCCCCC`
-- **Grey 40**: `#999999`
-- **Grey 60**: `#666666`
-- **Grey 80**: `#575756`
-- **Grey 90**: `#3C3C3B`
-- **White**: `#FFFFFF`
-
-### Typeface
-
-#### Primary Typefaces
-
-- **Poppins**: Primary brand typeface for interfaces & marketing
-- **Helvetica Neue**: Clinical authority & legibility
-
-#### Secondary Typefaces
-
-- **Calibri**: Operational utility for internal systems
-- **Montserrat**: Strategic emphasis for campaigns
-
-### Logo Guidelines
-
-#### Usage Rules
-
-- Maintain clear space around logos (minimum 1x logo height)
-- Use appropriate color variants for background contrast
-- Never modify, distort, or alter logo proportions
-- Ensure high contrast and visibility
-
-#### Available Formats
-
-- **SVG**: Vector format for web and digital use
-- **PNG**: Raster format with transparency
-- **PDF**: Print-ready vector format
+### Typography
+- **Primary Typefaces**: Poppins (Interfaces & Marketing), Helvetica Neue (Clinical authority)
+- **Secondary Typefaces**: Calibri (Operational utility), Montserrat (Strategic emphasis)
 
 ## 💻 Technical Implementation
 
 ### CSS Architecture
-
-- **Design Tokens**: CSS custom properties in `ss_theme.css`
-- **Utility Classes**: Responsive typography and spacing utilities
-- **Component Styles**: Interactive elements and cards in `style.css`
-- **Dark Mode**: CSS variables for theme switching
+- **Design Tokens**: Centralized CSS custom properties in `ss_theme.css`.
+- **Component Styles**: Glassmorphism navbar, sub-brand cards, and hover states defined in `style.css`.
+- **Adaptive Neutrals Swatches**: Employs an auto-fit CSS Grid layout in `style.css` to prevent text-wrapping on color code data and ensure clean columns wrapping on smaller viewports.
+- **Dark Mode Engine**: The `.dark-mode` CSS class recursively updates CSS `--variables` rather than heavily relying on `!important` tags, resulting in clean, predictable theme switching.
 
 ### JavaScript Features
+- **ThemeManager**: Handles initialization, system preference listening, and DOM toggling.
+- **NavigationManager**: Operates the mobile collapse logic, ScrollSpy section tracking, and glass-navbar scroll behaviors.
+- **SubBrandSystem**: Mounts event listeners onto interactive logo cards to handle background color swaps and image source toggling.
+- **PerformanceEnhancer**: Operates the advanced `IntersectionObserver` that powers the scroll-based animation engine.
+- **MarkdownLoader**: Dynamically parses the URL search parameter `doc` (e.g. `doc.html?doc=changelog`) to fetch, parse, and render markdown files from `/content/`, bypassing server rewrite dependency and ensuring total deployment portability (supports Apache, Nginx, and Synology Web Station out-of-the-box).
 
-- **Color Copying**: Clipboard API with fallback support
-- **Theme Management**: localStorage persistence and system preference detection
-- **Interactive Elements**: Event handling for color cards and logo previews
-- **Accessibility**: ARIA labels and keyboard navigation support
+## 🐳 Docker Deployment
 
-### Performance Optimizations
+The project includes containerization support using Docker and Docker Compose. Because it uses Apache (`httpd:alpine`), it natively supports `.htaccess` URL rewrites and custom error mappings.
 
-- **Resource Preloading**: Critical CSS and JS files preloaded
-- **Font Optimization**: WOFF2 format with font-display: swap
-- **Image Optimization**: SVG for logos, optimized PNG for icons
-- **Lazy Loading**: Deferred JavaScript loading
+### Prerequisites
+Make sure you have [Docker](https://www.docker.com/) installed on your machine.
 
-## 📱 Responsive Design
+### Build and Run with Docker Compose (Recommended)
+To build the image and start the container, run the following command in the project root:
+```bash
+docker compose up --build -d
+```
+The site will be compiled, containerized, and served at **`http://localhost:8080`**.
 
-The design system is built with a mobile-first approach:
+### Build and Run with Docker CLI
+Alternatively, you can build and run the container manually:
 
-- **Breakpoints**: Bootstrap 5 responsive grid system
-- **Typography**: Fluid typography scale
-- **Navigation**: Collapsible mobile navigation
-- **Touch Targets**: Minimum 44px touch targets for mobile
+1. **Build the image**:
+   ```bash
+   docker build -t ss-assets-hub .
+   ```
+2. **Run the container**:
+   ```bash
+   docker run -d -p 8080:80 --name ss-assets ss-assets-hub
+   ```
 
-## ♿ Accessibility
+### Stopping the Container
+* If running with Docker Compose:
+  ```bash
+  docker compose down
+  ```
+* If running with Docker CLI:
+  ```bash
+  docker stop ss-assets
+  docker rm ss-assets
+  ```
 
-- **WCAG 2.1 AA Compliance**: Color contrast ratios meet accessibility standards
-- **Keyboard Navigation**: All interactive elements keyboard accessible
-- **Screen Reader Support**: Proper ARIA labels and semantic HTML
-- **Focus Management**: Visible focus indicators
-- **Alternative Text**: Descriptive alt text for all images
-
-## 📦 Asset Downloads
-
-### Available Packages
-
-- **SS App Icon**: Complete app icon set for all platforms
-- **SS Colour Palette**: Color swatches and specifications
-- **SS Typeface Kit**: Font files and usage guidelines
-- **Brand Kits**: Complete logo sets for each sub-brand
-
-### Download Instructions
-
-1. Navigate to the "Brand Resources Download" section
-2. Click on the desired package
-3. Extract the ZIP file
-4. Follow included usage guidelines
-
-## 🤝 Contributing
-
-### Development Guidelines
-
-- Follow the established folder structure
-- Use semantic HTML and accessible markup
-- Maintain consistent naming conventions
-- Test across different browsers and devices
-- Update documentation for any changes
-
-### Adding New Assets
-
-1. Place assets in appropriate folders
-2. Update the download section if needed
-3. Ensure proper file naming conventions
-4. Test asset loading and display
-
-## 📞 Support & Contact
-
-### Brand Inquiries
+## 🤝 Support & Contact
 
 For questions about brand usage, guidelines, or asset requests:
-
 - **Email**: [branding@suamisihat.com](mailto:branding@suamisihat.com)
 - **Response Time**: Within 24-48 hours
 
-### Technical Support
-
-For technical issues or implementation questions:
-
-- **Repository Issues**: Create an issue in the repository
-- **Documentation**: Check this README and inline code comments
-
 ## 📄 License
+This design system and all assets are proprietary to SuamiSihat Holding Sdn. Bhd. All rights reserved.
 
-This design system and all assets are proprietary to SS Health. All rights reserved.
-
-### Usage Rights
-
-- **Internal Use**: Unlimited use for SS Health projects
-- **External Use**: Requires written permission
-- **Modification**: Not permitted without approval
-- **Distribution**: Not permitted without approval
-
----
-
-**Last Updated**: January 2025  
-**Version**: 1.0.0  
-**Maintained by**: SS Health Brand Team

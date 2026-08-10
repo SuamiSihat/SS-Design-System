@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="SuamiSihat Brand Guidelines — Read the full brand guideline documents in an interactive booklet view.">
+    <title>Brand Guidelines — SuamiSihat Design System</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="../public/brand/favicon/favicon.ico" sizes="any">
+    <link rel="icon" href="../public/brand/logos/ss-logomark-light.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../public/brand/favicon/apple-touch-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        /* =====================================================
+           PAGE FOUNDATIONS
+           ===================================================== */
+        :root {
+            --viewer-bg: #0d1117;
+            --cover-height: 420px;
+        }
+
+        html, body { height: 100%; overflow: hidden; }
+
+        /* =====================================================
+           SELECTION SCREEN
+           ===================================================== */
+        #selection-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            background: var(--background-color, #f8f8f8);
+            overflow-y: auto;
+            transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16,1,0.3,1);
+        }
+
+        #selection-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0.97);
+        }
+
+        .selection-hero {
+            padding: 3.5rem 0 2rem;
+            text-align: center;
+        }
+
+        .selection-eyebrow {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #21a1f7;
+            margin-bottom: 0.55rem;
+        }
+
+        .selection-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.75rem);
+            font-weight: 700;
+            color: var(--heading-color, #022057);
+            margin-bottom: 0.55rem;
+            line-height: 1.15;
+        }
+
+        .selection-subtitle {
+            font-size: 0.98rem;
+            color: var(--text-color, #3C3C3B);
+            opacity: 0.68;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* ---- Book Cover Cards ---- */
+        .covers-grid {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 3rem;
+            padding: 2.5rem 2rem 3.5rem;
+            flex-wrap: wrap;
+        }
+
+        .book-cover-card {
+            position: relative;
+            width: 290px;
+            cursor: pointer;
+            outline: none;
+            transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+        }
+
+        .book-cover-card:hover { transform: translateY(-14px) rotateY(-5deg); }
+        .book-cover-card:focus-visible { outline: 2px solid #21a1f7; outline-offset: 6px; border-radius: 8px; }
+
+        .book-spine {
+            position: absolute;
+            left: -16px;
+            top: 3px;
+            bottom: 3px;
+            width: 16px;
+            background: linear-gradient(to right, rgba(0,0,0,0.45), rgba(0,0,0,0.18));
+            border-radius: 3px 0 0 3px;
+            transform: scaleX(0.88);
+            transform-origin: right;
+            transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+        }
+
+        .book-cover-card:hover .book-spine { transform: scaleX(1); }
+
+        .book-cover-card::after {
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            left: 8px;
+            right: -4px;
+            height: 14px;
+            background: rgba(0,0,0,0.1);
+            filter: blur(8px);
+            border-radius: 50%;
+            transition: all 0.5s ease;
+        }
+
+        .book-cover-card:hover::after {
+            bottom: -20px;
+            filter: blur(14px);
+            opacity: 0.7;
+        }
+
+        .book-cover-inner {
+            border-radius: 3px 8px 8px 3px;
+            overflow: hidden;
+            height: var(--cover-height);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow:
+                -4px 0 10px rgba(0,0,0,0.25),
+                4px 6px 24px rgba(0,0,0,0.18),
+                0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .book-cover-inner::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.18), rgba(255,255,255,0.04));
+            z-index: 5;
+        }
+
+        .cover-image-area {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover-image-area img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .book-cover-card:hover .cover-image-area img { transform: scale(1.04); }
+
+        .cover-image-area::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 35%, rgba(2,32,87,0.88) 100%);
+        }
+
+        .cover-info {
+            background: #022057;
+            padding: 1.1rem 1.3rem 1rem;
+            flex-shrink: 0;
+        }
+
+        .cover-series {
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: #6DC6EC;
+            margin-bottom: 0.2rem;
+        }
+
+        .cover-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.22;
+            margin-bottom: 0.55rem;
+        }
+
+        .cover-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cover-size {
+            font-size: 0.67rem;
+            color: rgba(255,255,255,0.38);
+        }
+
+        .cover-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #fff;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 20px;
+            padding: 4px 11px;
+            transition: background 0.2s ease;
+        }
+
+        .book-cover-card:hover .cover-cta { background: rgba(255,255,255,0.2); }
+
+        /* =====================================================
+           READER SCREEN
+           ===================================================== */
+        #reader-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            display: flex;
+            flex-direction: column;
+            background: var(--viewer-bg);
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(1.025);
+            transition: opacity 0.42s ease, transform 0.42s cubic-bezier(0.16,1,0.3,1);
+        }
+
+        #reader-screen.active {
+            opacity: 1;
+            pointer-events: auto;
+            transform: scale(1);
+        }
+
+        /* ---- Toolbar ---- */
+        .reader-toolbar {
+            height: 52px;
+            background: rgba(8,13,30,0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            padding: 0 1.1rem;
+            gap: 0.9rem;
+            flex-shrink: 0;
+            z-index: 10;
+        }
+
+        .toolbar-logo { height: 26px; opacity: 0.8; filter: brightness(0) invert(1); }
+
+        .tb-sep {
+            width: 1px;
+            height: 20px;
+            background: rgba(255,255,255,0.1);
+            flex-shrink: 0;
+        }
+
+        .doc-tabs { display: flex; gap: 0.2rem; flex: 1; overflow: hidden; }
+
+        .doc-tab {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 5px 13px;
+            border-radius: 6px;
+            font-size: 0.77rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.45);
+            border: 1px solid transparent;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .doc-tab:hover { color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.05); }
+
+        .doc-tab.active {
+            color: #fff;
+            background: rgba(33,161,247,0.14);
+            border-color: rgba(33,161,247,0.22);
+        }
+
+        .tb-actions { display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0; }
+
+        .tb-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px; height: 34px;
+            border-radius: 8px;
+            color: rgba(255,255,255,0.55);
+            background: transparent;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.82rem;
+            text-decoration: none;
+        }
+
+        .tb-btn:hover { color: #fff; background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.1); }
+        .tb-btn.danger:hover { color: #ff6b6b; background: rgba(255,107,107,0.09); border-color: rgba(255,107,107,0.18); }
+
+        /* ---- Stage ---- */
+        .reader-stage {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+            background: var(--viewer-bg);
+            padding: 24px 28px 20px;
+            align-items: stretch;
+            justify-content: center;
+        }
+
+        .reader-stage::before {
+            content: '';
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 55%;
+            height: 45%;
+            background: radial-gradient(ellipse, rgba(33,161,247,0.07) 0%, transparent 68%);
+            pointer-events: none;
+        }
+
+        .booklet-wrap {
+            position: relative;
+            width: 100%;
+            max-width: 1120px;
+            border-radius: 4px 8px 8px 4px;
+            overflow: hidden;
+            box-shadow:
+                -10px 0 20px rgba(0,0,0,0.55),
+                0 0 0 1px rgba(255,255,255,0.04),
+                0 24px 72px rgba(0,0,0,0.7);
+        }
+
+        .booklet-wrap::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 5px;
+            background: linear-gradient(to right, rgba(0,0,0,0.5), transparent);
+            z-index: 5;
+        }
+
+        .booklet-wrap::after {
+            content: '';
+            position: absolute;
+            right: 0; top: 0; bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.05), rgba(255,255,255,0.02), rgba(255,255,255,0.05));
+            z-index: 5;
+        }
+
+        #pdf-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+            background: #fff;
+        }
+
+        /* ---- Loading overlay ---- */
+        .pdf-loading {
+            position: absolute;
+            inset: 0;
+            background: rgba(8,13,30,0.92);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.1rem;
+            z-index: 20;
+            transition: opacity 0.4s ease;
+        }
+
+        .pdf-loading.gone { opacity: 0; pointer-events: none; }
+
+        .spin-ring {
+            width: 42px; height: 42px;
+            border: 3px solid rgba(33,161,247,0.18);
+            border-top-color: #21a1f7;
+            border-radius: 50%;
+            animation: spin 0.75s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .loading-text { font-size: 0.8rem; color: rgba(255,255,255,0.4); letter-spacing: 0.04em; }
+
+        /* ---- Status bar ---- */
+        .reader-statusbar {
+            height: 30px;
+            background: rgba(5,9,22,0.95);
+            border-top: 1px solid rgba(255,255,255,0.04);
+            display: flex;
+            align-items: center;
+            padding: 0 1.4rem;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+
+        .sb-name { font-size: 0.68rem; color: rgba(255,255,255,0.3); flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .sb-hint { font-size: 0.65rem; color: rgba(255,255,255,0.18); flex-shrink: 0; }
+
+        /* ---- Fullscreen auto-hide ---- */
+        #reader-screen.fs .reader-toolbar { transform: translateY(-100%); opacity: 0; transition: 0.3s ease; pointer-events: none; }
+        #reader-screen.fs .reader-statusbar { transform: translateY(100%); opacity: 0; transition: 0.3s ease; pointer-events: none; }
+        #reader-screen.fs:hover .reader-toolbar,
+        #reader-screen.fs:hover .reader-statusbar { transform: translateY(0); opacity: 1; pointer-events: auto; }
+
+        /* ---- Responsive ---- */
+        @media (max-width: 640px) {
+            .covers-grid { gap: 2rem; padding: 1.5rem 1rem 3rem; }
+            .book-cover-card { width: 260px; }
+            :root { --cover-height: 360px; }
+            .reader-stage { padding: 10px; }
+            .doc-tab .tab-label { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            .doc-tabs { display: none; }
+        }
+
+        /* dark-mode selection screen */
+        body.dark-mode #selection-screen { background: var(--background-color); }
+        body.dark-mode .selection-title { color: var(--heading-color); }
+    </style>
+    <link rel="stylesheet" href="../assets/css/fluent.css?v=9">
+    <link rel="stylesheet" href="../assets/css/ss_theme.css?v=9">
+    <link rel="stylesheet" href="../assets/css/style.css?v=9">
+    <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@3/dist/iconify.min.js" defer></script>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     SELECTION SCREEN
+     ===================================================== -->
+<div id="selection-screen">
+
+    <!-- Navbar -->
+    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-custom sticky-top glass-navbar transition-all" role="navigation" aria-label="Main navigation">
+        <div class="container-fluid px-4">
+            <img src="../public/brand/logos/ss-logomark-light.svg" alt="SuamiSihat Icon" class="logo me-2 logo-height" loading="eager"/>
+            <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html" aria-label="SuamiSihat Design System Home">
+                SuamiSihat DS <span class="navbar-version-badge">v3.0</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <iconify-icon icon="fluent:navigation-24-regular" style="font-size:1.2rem"></iconify-icon>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="brand-system.html">Brand System</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="brand-guidelines.html">Guidelines</a></li>
+                    <li class="nav-item"><a class="nav-link" href="components.html">Components</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="onboarding.html" aria-label="Staff Onboarding">Onboarding</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="docsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Docs</a>
+                        <ul class="dropdown-menu dropdown-menu-end ss-dropdown" aria-labelledby="docsDropdown">
+                            <li><a class="dropdown-item" href="doc.html?doc=changelog"><i class="fa-solid fa-clock-rotate-left me-2"></i>What's New</a></li>
+                            <li><a class="dropdown-item" href="doc.html?doc=contribution-guide"><i class="fa-solid fa-hand-holding-heart me-2"></i>Contribution Guide</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="doc.html?doc=vision-mission"><i class="fa-solid fa-eye me-2"></i>Vision &amp; Mission</a></li>
+                            <li><a class="dropdown-item" href="signature.html"><i class="fa-solid fa-envelope-open-text me-2" aria-hidden="true"></i>Mail Signature</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <button id="themeToggle" class="btn ms-auto" aria-label="Toggle dark mode" aria-pressed="false">
+                            <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="selection-hero container">
+        <p class="selection-eyebrow">
+            <i class="fa-solid fa-book-open me-1" aria-hidden="true"></i> Brand Guidelines
+        </p>
+        <h1 class="selection-title">Choose a Guideline to Read</h1>
+        <p class="selection-subtitle">
+            Our full brand guidelines, presented in an interactive reading view. Select a document below.
+        </p>
+    </div>
+
+    <!-- Covers -->
+    <div class="covers-grid">
+
+        <!-- Logo & Concept -->
+        <div class="book-cover-card"
+            data-pdf="../brand-guidelines/Brand%20Guideline%20-%20Logo%20%26%20Concept.pdf"
+            data-title="Logo &amp; Concept"
+            data-tabid="logo"
+            role="button" tabindex="0"
+            aria-label="Open Logo and Concept Brand Guideline">
+            <div class="book-spine"></div>
+            <div class="book-cover-inner">
+                <div class="cover-image-area">
+                    <img src="../brand-guidelines/SS Health Primary.png" alt="SS Health Primary" loading="lazy">
+                </div>
+                <div class="cover-info">
+                    <p class="cover-series">SuamiSihat Design System</p>
+                    <h2 class="cover-title">Logo &amp; Concept</h2>
+                    <div class="cover-footer">
+                        <span class="cover-size">1.4 MB &nbsp;&middot;&nbsp; PDF</span>
+                        <span class="cover-cta">
+                            <i class="fa-solid fa-book-open" aria-hidden="true"></i> Read
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interior Design -->
+        <div class="book-cover-card"
+            data-pdf="../brand-guidelines/Brand%20Guideline%20-%20Interior%20Design.pdf"
+            data-title="Interior Design"
+            data-tabid="interior"
+            role="button" tabindex="0"
+            aria-label="Open Interior Design Brand Guideline">
+            <div class="book-spine"></div>
+            <div class="book-cover-inner">
+                <div class="cover-image-area">
+                    <img src="../brand-guidelines/SS Health Secondary.png" alt="SS Health Secondary" loading="lazy">
+                </div>
+                <div class="cover-info">
+                    <p class="cover-series">SuamiSihat Design System</p>
+                    <h2 class="cover-title">Interior Design</h2>
+                    <div class="cover-footer">
+                        <span class="cover-size">2.0 MB &nbsp;&middot;&nbsp; PDF</span>
+                        <span class="cover-cta">
+                            <i class="fa-solid fa-book-open" aria-hidden="true"></i> Read
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /.covers-grid -->
+
+    <p style="text-align:center;font-size:0.73rem;color:var(--text-color);opacity:0.38;padding-bottom:2.5rem;">
+        <i class="fa-regular fa-hand-pointer me-1" aria-hidden="true"></i>
+        Click a guideline to open it in full reading view
+    </p>
+
+</div><!-- /#selection-screen -->
+
+
+<!-- =====================================================
+     READER SCREEN
+     ===================================================== -->
+<div id="reader-screen" role="dialog" aria-label="Brand Guideline Reader" aria-modal="true">
+
+    <!-- Toolbar -->
+    <div class="reader-toolbar">
+        <img src="../public/brand/logos/ss-logomark-light.svg" alt="SuamiSihat" class="toolbar-logo" loading="eager">
+        <div class="tb-sep"></div>
+
+        <!-- Tabs -->
+        <div class="doc-tabs" role="tablist">
+            <button class="doc-tab" id="tab-logo" role="tab" aria-selected="false"
+                data-pdf="../brand-guidelines/Brand%20Guideline%20-%20Logo%20%26%20Concept.pdf"
+                data-title="Logo &amp; Concept">
+                <i class="fa-solid fa-copyright" style="font-size:0.7rem" aria-hidden="true"></i>
+                <span class="tab-label">Logo &amp; Concept</span>
+            </button>
+            <button class="doc-tab" id="tab-interior" role="tab" aria-selected="false"
+                data-pdf="../brand-guidelines/Brand%20Guideline%20-%20Interior%20Design.pdf"
+                data-title="Interior Design">
+                <i class="fa-solid fa-paintbrush" style="font-size:0.7rem" aria-hidden="true"></i>
+                <span class="tab-label">Interior Design</span>
+            </button>
+        </div>
+
+        <!-- Actions -->
+        <div class="tb-actions">
+            <a id="dl-btn" href="#" download class="tb-btn" title="Download PDF" aria-label="Download current PDF">
+                <i class="fa-solid fa-download" aria-hidden="true"></i>
+            </a>
+            <button id="fs-btn" class="tb-btn" title="Fullscreen" aria-label="Toggle fullscreen">
+                <i class="fa-solid fa-expand" aria-hidden="true"></i>
+            </button>
+            <div class="tb-sep"></div>
+            <button id="close-btn" class="tb-btn danger" title="Close" aria-label="Close reader">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Stage -->
+    <div class="reader-stage">
+        <div class="booklet-wrap">
+            <div class="pdf-loading" id="pdf-loading">
+                <div class="spin-ring"></div>
+                <span class="loading-text">Opening guideline&hellip;</span>
+            </div>
+            <iframe id="pdf-iframe" title="Brand Guideline Document" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Status bar -->
+    <div class="reader-statusbar">
+        <span class="sb-name" id="sb-name">SuamiSihat Design System &mdash; Brand Guidelines</span>
+        <span class="sb-hint"><i class="fa-solid fa-keyboard me-1" aria-hidden="true"></i>Esc to close &nbsp;&middot;&nbsp; Scroll inside to navigate pages</span>
+    </div>
+
+</div><!-- /#reader-screen -->
+
+
+<!-- Scripts -->
+
+<script>
+(function(){
+    'use strict';
+    const sel       = document.getElementById('selection-screen');
+    const reader    = document.getElementById('reader-screen');
+    const iframe    = document.getElementById('pdf-iframe');
+    const loading   = document.getElementById('pdf-loading');
+    const dlBtn     = document.getElementById('dl-btn');
+    const fsBtn     = document.getElementById('fs-btn');
+    const closeBtn  = document.getElementById('close-btn');
+    const sbName    = document.getElementById('sb-name');
+    const tabs      = document.querySelectorAll('.doc-tab');
+    let current = '';
+
+    function openReader(url, title, tabId) {
+        current = url;
+        loading.classList.remove('gone');
+        iframe.src = '';
+        tabs.forEach(t => {
+            const on = t.id === 'tab-' + tabId;
+            t.classList.toggle('active', on);
+            t.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        dlBtn.href = url;
+        dlBtn.setAttribute('download', title + '.pdf');
+        sbName.textContent = 'SuamiSihat Design System \u2014 ' + title;
+        document.title = title + ' \u2014 SuamiSihat Design System';
+        sel.classList.add('hidden');
+        reader.classList.add('active');
+        setTimeout(() => {
+            iframe.src = url;
+            iframe.onload = () => setTimeout(() => loading.classList.add('gone'), 450);
+        }, 300);
+    }
+
+    function closeReader() {
+        reader.classList.remove('active', 'fs');
+        sel.classList.remove('hidden');
+        document.title = 'Brand Guidelines \u2014 SuamiSihat Design System';
+        fsBtn.querySelector('i').className = 'fa-solid fa-expand';
+        if (document.fullscreenElement) document.exitFullscreen();
+        setTimeout(() => { iframe.src = ''; }, 500);
+    }
+
+    document.querySelectorAll('.book-cover-card').forEach(card => {
+        const go = () => openReader(
+            card.dataset.pdf,
+            card.dataset.title.replace(/&amp;/g, '&'),
+            card.dataset.tabid
+        );
+        card.addEventListener('click', go);
+        card.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); go(); } });
+    });
+
+    tabs.forEach(tab => tab.addEventListener('click', () => {
+        if (tab.dataset.pdf === current) return;
+        openReader(tab.dataset.pdf, tab.getAttribute('data-title').replace(/&amp;/g, '&'), tab.id.replace('tab-',''));
+    }));
+
+    closeBtn.addEventListener('click', closeReader);
+
+    fsBtn.addEventListener('click', () => {
+        const isFs = !!document.fullscreenElement;
+        if (!isFs) { reader.requestFullscreen?.(); reader.classList.add('fs'); }
+        else { document.exitFullscreen?.(); reader.classList.remove('fs'); }
+        fsBtn.querySelector('i').className = isFs ? 'fa-solid fa-expand' : 'fa-solid fa-compress';
+    });
+
+    document.addEventListener('fullscreenchange', () => {
+        if (!document.fullscreenElement) {
+            reader.classList.remove('fs');
+            fsBtn.querySelector('i').className = 'fa-solid fa-expand';
+        }
+    });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && reader.classList.contains('active')) {
+            if (document.fullscreenElement) document.exitFullscreen();
+            else closeReader();
+        }
+    });
+
+    // ?open=logo or ?open=interior
+    const p = new URLSearchParams(location.search).get('open');
+    if (p === 'logo') openReader('../brand-guidelines/Brand%20Guideline%20-%20Logo%20%26%20Concept.pdf', 'Logo & Concept', 'logo');
+    if (p === 'interior') openReader('../brand-guidelines/Brand%20Guideline%20-%20Interior%20Design.pdf', 'Interior Design', 'interior');
+})();
+</script>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer-container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand-col">
+                    <img src="../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg" alt="SuamiSihat" class="footer-logo" loading="lazy">
+                    <p class="footer-tagline">The single source of truth for the SuamiSihat design ecosystem.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Site</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="brand-system.html">Brand System</a></li>
+                        <li><a href="brand-guidelines.html">Guidelines</a></li>
+                        <li><a href="products.html">Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-heading">Staff</h4>
+                    <ul class="footer-links">
+                        <li><a href="onboarding.html">Onboarding</a></li>
+                        <li><a href="signature.html">Mail Signature</a></li>
+                        <li><a href="tools.html">SS CAM &amp; Tools</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="text-base">&copy; 2026 SuamiSihat. All rights reserved. &nbsp;&middot;&nbsp; SuamiSihat Design System v3.0</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="../assets/js/main.js?v=10" defer></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

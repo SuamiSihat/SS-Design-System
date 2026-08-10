@@ -1,0 +1,14 @@
+{
+  "name": "Rejal",
+  "tagline": "Clinical Aesthetic & Rejuvenation Treatments",
+  "logo": "logo_rejal.svg",
+  "banner": "banner.svg",
+  "heroGradient": "linear-gradient(135deg, #022057 0%, #6DC6EC 100%)",
+  "ownership": {
+    "tags": ["SS Health Owned", "SS Clinic"],
+    "text": "Rejal is an in-house aesthetic brand operated entirely under the SS Clinic sub-brand."
+  },
+  "assets": [
+    "logo_rejal.svg"
+  ]
+}
