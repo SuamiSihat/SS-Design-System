@@ -10,7 +10,8 @@ The SuamiSihat™ Design System is a comprehensive, interactive brand toolkit fo
 - **Acrylic Glassmorphic Navigation**: `blur(20px) saturate(180%)` navbar with Fluent motion curves, active-link detection, and scroll shadow.
 - **Dynamic Scroll Animations**: Elements fade and slide into view using `IntersectionObserver` with Fluent decelerate/spring easing.
 - **Mail Signature Generator**: Live-preview HTML email signature builder for all SS entities.
-- **SS CAM Download Hub**: Centralised download page for SS CAM desktop app + SSNAS dashboard launchpad.
+- **SS CAM Download Hub**: Centralised download hub for SS CAM (SuamiSihat™ Creative Assets Management) Windows WPF desktop app + official GitHub repository releases (`github.com/SuamiSihat/ss_cam`), source code, and SSNAS launchpad.
+- **Interactive Roadmap & Docs**: Live Markdown documentation engine (`doc.html`) rendering interactive Mermaid.js diagrams, project roadmap (`doc.html?doc=roadmap`), contribution guide, vision & mission, and versioned changelog.
 - **Staff Onboarding Guide**: Interactive checklist with localStorage persistence, sticky sidebar navigation.
 - **Sub-Brand Gallery**: Explore Brand Hierarchy Model with logo variants and background toggles for all SS sub-brands.
 - **Full Dark Mode**: Fluent semantic tokens flip automatically — backgrounds, text, strokes, shadows, and gradients all tokenised.

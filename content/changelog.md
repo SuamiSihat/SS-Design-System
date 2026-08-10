@@ -16,6 +16,15 @@ Full independent QA audit conducted across all 14 audit domains. Two P2 defects 
 
 - **CSS-VER-01 (P2)**: Updated CSS cache-buster query string from `?v=8` to `?v=9` in all four product sub-pages (`products/Androlab`, `products/MENSS`, `products/Mensculine`, `products/Rejal`). These pages were inadvertently left on the previous version during the v3.1 release, causing browsers to serve stale stylesheet builds on those routes.
 
+- **FOOTER-LOGO-01**: Fixed `--footer-background` token override in `style.css` which was overriding light mode `#6DC6EC` with dark navy `#022057`. Updated all footer logo images to default to `logo_suamisihat_primary_light.svg` on light backgrounds as per AGENTS.md Rule 2.
+
+### Feature Additions & Documentation Updates
+
+- **Interactive Roadmap Page**: Added `content/roadmap.md` and integrated interactive Mermaid milestone diagrams in `doc.html?doc=roadmap` and navbar dropdown links across all pages.
+- **SSCAM WPF Windows App Integration**: Updated `pages/tools.html` with official WPF Windows app screenshots from `github.com/SuamiSihat/ss_cam`, added GitHub repository release and source code links.
+- **Logo Preview Scaling**: Increased logo preview sizes in `pages/brand-system.html` (variant cards 56px → 96px, color picker display 64px → 110px, background preview 80px → 160px) for improved visual clarity.
+- **Trademark Standardization**: Standardized all text occurrences of "SuamiSihat" to trademark "SuamiSihat™" across all HTML files and documentation.
+
 ### QA Documentation
 
 - 14 QA audit reports added to `/QA/` directory covering: Reconnaissance, Functional, Brand Assets, Design System, UI/UX, Accessibility, Responsive, Content, Navigation, Performance, Security, Deployment, Duplication, Fix Log.
@@ -145,7 +154,7 @@ pages/
 
 **Hub Upgrade & Markdown Integration**
 
-This release transforms the design system homepage into the core hub of the Suamisihat design ecosystem, and introduces dynamic markdown-powered documentation.
+This release transforms the design system homepage into the core hub of the SuamiSihat™ design ecosystem, and introduces dynamic markdown-powered documentation.
 
 ### What Changed
 
