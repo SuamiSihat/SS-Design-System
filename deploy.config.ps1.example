@@ -1,0 +1,8 @@
+# Local Deployment Configuration Example
+# Copy this file to 'deploy.config.ps1' and fill in your connection details.
+# 'deploy.config.ps1' is ignored by git to protect private infrastructure info.
+
+$global:DEPLOY_NAS_HOST = "your-server-domain-or-ip"
+$global:DEPLOY_NAS_PORT = "22"
+$global:DEPLOY_NAS_USER = "your-username"
+$global:DEPLOY_NAS_PATH = "/path/to/web/root"

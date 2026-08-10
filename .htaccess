@@ -104,10 +104,10 @@ FileETag None
 </FilesMatch>
 
 # Password-protect a directory (uncomment if needed)
-# <Directory "/volume1/web/ss_assets/brand-guidelines">
+# <Directory "/var/www/html/brand-guidelines">
 #     AuthType Basic
 #     AuthName "Restricted"
-#     AuthUserFile "/volume1/web/ss_assets/.htpasswd"
+#     AuthUserFile "/var/www/html/.htpasswd"
 #     Require valid-user
 # </Directory>
 
