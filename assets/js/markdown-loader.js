@@ -22,6 +22,7 @@
         'introduction',
         'changelog',
         'contribution-guide',
+        'roadmap',
         'sub-brands/ss-health',
         'sub-brands/ss-clinic',
         'sub-brands/ss-wellness',
@@ -179,6 +180,15 @@
             // Build ToC after render
             const tocList = document.getElementById(TOC_ELEMENT_ID);
             buildTOC(contentEl, tocList);
+
+            // Render Mermaid diagrams if present
+            if (window.mermaid) {
+                try {
+                    mermaid.run({ nodes: contentEl.querySelectorAll('.language-mermaid, .mermaid') });
+                } catch (mErr) {
+                    console.warn('[SS Markdown Loader] Mermaid render warning:', mErr);
+                }
+            }
 
         } catch (err) {
             console.error('[SS Markdown Loader] Failed to load:', url, err);
