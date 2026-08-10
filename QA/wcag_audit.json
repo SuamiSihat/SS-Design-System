@@ -1,0 +1,74 @@
+﻿[
+    {
+        "Page":  "pages\\brand-guidelines.html",
+        "Severity":  "WARN",
+        "Rule":  "WCAG 2.4.7 Focus",
+        "Detail":  "outline:none found inline - may kill focus ring"
+    },
+    {
+        "Page":  "pages\\brand-system.html",
+        "Severity":  "WARN",
+        "Rule":  "WCAG 2.4.7 Focus",
+        "Detail":  "outline:none found inline - may kill focus ring"
+    },
+    {
+        "Page":  "pages\\components.html",
+        "Severity":  "WARN",
+        "Rule":  "WCAG 2.4.7 Focus",
+        "Detail":  "outline:none found inline - may kill focus ring"
+    },
+    {
+        "Page":  "pages\\products.html",
+        "Severity":  "WARN",
+        "Rule":  "WCAG 2.4.7 Focus",
+        "Detail":  "outline:none found inline - may kill focus ring"
+    },
+    {
+        "Page":  "pages\\signature.html",
+        "Severity":  "WARN",
+        "Rule":  "WCAG 2.4.7 Focus",
+        "Detail":  "outline:none found inline - may kill focus ring"
+    },
+    {
+        "Page":  "pages\\403.html",
+        "Severity":  "WARN",
+        "Rule":  "DS Rule Theme",
+        "Detail":  "No theme toggle or data-theme attribute found"
+    },
+    {
+        "Page":  "pages\\404.html",
+        "Severity":  "WARN",
+        "Rule":  "WCAG 2.4.7 Focus",
+        "Detail":  "outline:none found inline - may kill focus ring"
+    },
+    {
+        "Page":  "pages\\404.html",
+        "Severity":  "WARN",
+        "Rule":  "DS Rule Theme",
+        "Detail":  "No theme toggle or data-theme attribute found"
+    },
+    {
+        "Page":  "pages\\500.html",
+        "Severity":  "WARN",
+        "Rule":  "DS Rule Theme",
+        "Detail":  "No theme toggle or data-theme attribute found"
+    },
+    {
+        "Page":  "pages\\maintenance.html",
+        "Severity":  "WARN",
+        "Rule":  "DS Rule Theme",
+        "Detail":  "No theme toggle or data-theme attribute found"
+    },
+    {
+        "Page":  "assets/css/style.css",
+        "Severity":  "WARN",
+        "Rule":  "Token Drift",
+        "Detail":  "Many hardcoded hex colors: 74 (prefer CSS vars)"
+    },
+    {
+        "Page":  "assets/css/style.css",
+        "Severity":  "WARN",
+        "Rule":  "Dark Mode",
+        "Detail":  "No prefers-color-scheme media query in CSS"
+    }
+]
