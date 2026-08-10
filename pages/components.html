@@ -1209,7 +1209,6 @@ export default function App() {
 </div>
 
 <script>
-    document.getElementById('themeToggle')?.addEventListener('click',()=>document.body.classList.toggle('dark-mode'));
     const obs = new IntersectionObserver(entries=>{
         entries.forEach(e=>{
             if(e.isIntersecting){
