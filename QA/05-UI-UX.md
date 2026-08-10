@@ -1,7 +1,7 @@
 # 05 — Visual UI / UX Audit Report
 
 ## 1. Executive Summary & Audit Methodology
-A deep structural HTML/CSS and design token visual QA audit was conducted across all core pages of the SuamiSihat Design System portal (`index.html`, `pages/brand-system.html`, `pages/components.html`, `pages/onboarding.html`, `pages/signature.html`, `pages/tools.html`).
+A deep structural HTML/CSS and design token visual QA audit was conducted across all core pages of the SuamiSihat™ Design System portal (`index.html`, `pages/brand-system.html`, `pages/components.html`, `pages/onboarding.html`, `pages/signature.html`, `pages/tools.html`).
 
 The visual evaluation audited layout grid stability, typography scaling, visual hierarchy, logo variant correctness, button/card consistency, contrast ratios, and component state transitions across **Desktop (1440px)**, **Tablet (768px)**, and **Mobile (390px)** viewports in both **Light Mode** and **Dark Mode**.
 

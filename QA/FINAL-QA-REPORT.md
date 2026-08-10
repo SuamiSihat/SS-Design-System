@@ -116,7 +116,7 @@
 
 ## Final Recommendation
 
-The **SuamiSihat Design System** repository (`SuamiSihat/branding_suamisihat`) is formally certified as **RELEASE READY**.
+The **SuamiSihat™ Design System** repository (`SuamiSihat/branding_suamisihat`) is formally certified as **RELEASE READY**.
 
 **Fixes applied this session:**
 - **INL-01 ✔**: Deleted the inline `classList.toggle('dark-mode')` listener from `pages/components.html:1212`. `ThemeManager` in `main.js` is now the sole theme handler on every page, as required by AGENTS.md.

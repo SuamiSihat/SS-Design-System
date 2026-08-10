@@ -1,6 +1,6 @@
 # Changelog
 
-> **SuamiSihat Design System** is the **master project, master documentation, and master guideline** for the entire SS ecosystem — web, Expo/React Native mobile apps, and all internal tools. This changelog is the authoritative record of every change. All platforms derive from this system.
+> **SuamiSihat™ Design System** is the **master project, master documentation, and master guideline** for the entire SS ecosystem — web, Expo/React Native mobile apps, and all internal tools. This changelog is the authoritative record of every change. All platforms derive from this system.
 
 ---
 
@@ -28,7 +28,7 @@ Full independent QA audit conducted across all 14 audit domains. Two P2 defects 
 
 **Multi-Platform Token System + Expo React Native Foundation**
 
-Establishes the design token infrastructure and Expo/React Native integration layer. This version makes the design system the official single source of truth for all SuamiSihat platforms.
+Establishes the design token infrastructure and Expo/React Native integration layer. This version makes the design system the official single source of truth for all SuamiSihat™ platforms.
 
 ### New: Token System
 
@@ -87,7 +87,7 @@ Establishes the design token infrastructure and Expo/React Native integration la
 
 **Fluent 2 Design System Overhaul**
 
-A complete visual and architectural rebirth of the SuamiSihat Design System, built on Microsoft's Fluent 2 design language — adapted to the SuamiSihat brand palette.
+A complete visual and architectural rebirth of the SuamiSihat™ Design System, built on Microsoft's Fluent 2 design language — adapted to the SuamiSihat™ brand palette.
 
 ### Design Foundation
 

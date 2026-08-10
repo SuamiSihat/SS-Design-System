@@ -1,4 +1,4 @@
-# SuamiSihat Design System — Agent Rules
+# SuamiSihat™ Design System — Agent Rules
 
 ## Logo Selection Rules
 

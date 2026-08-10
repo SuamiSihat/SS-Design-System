@@ -1,7 +1,7 @@
 # 02 — Functional QA Audit Report
 
 ## 1. Audit Overview
-This report evaluates all interactive features, controls, state management, storage hooks, and navigation workflows across the SuamiSihat Design System repository.
+This report evaluates all interactive features, controls, state management, storage hooks, and navigation workflows across the SuamiSihat™ Design System repository.
 
 ---
 

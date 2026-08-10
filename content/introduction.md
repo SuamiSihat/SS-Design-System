@@ -6,12 +6,12 @@ The SS Design System is our shared creative language — built so every designer
 
 ## What's Inside
 
-Inside, you'll find SuamiSihat's foundational brand elements:
+Inside, you'll find SuamiSihat™'s foundational brand elements:
 
 - **Logo System** — Master brand, parent corporate, and subsidiary marks with clear space rules
 - **Colour Palette** — Primary blues, secondary golds, and neutrals with exact colour values
 - **Typography** — Our typeface stack, weights, and usage hierarchy
-- **Brand Architecture** — 1 Master Brand (SuamiSihat), 1 Parent Corporate Company (SuamiSihat Holding Sdn. Bhd. / SS Health), and 4 Operating Subsidiaries (SS Clinic, SS Wellness, SS Ecommerce, SS Technology)
+- **Brand Architecture** — 1 Master Brand (SuamiSihat™), 1 Parent Corporate Company (SuamiSihat™ Holding Sdn. Bhd. / SS Health), and 4 Operating Subsidiaries (SS Clinic, SS Wellness, SS Ecommerce, SS Technology)
 - **Icons & Logo Usage** — Safe zones, Do's & Don'ts, incorrect usage examples, and icon variants
 - **Downloads** — All official brand kits packaged and version-controlled
 

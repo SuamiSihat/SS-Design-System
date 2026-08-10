@@ -14,7 +14,7 @@ We're not building just another health brand. We're building the brand that chan
 
 ## Our Mission
 
-> To empower every touchpoint of the SuamiSihat ecosystem with a design language that is consistent, accessible, and purposefully built — so every product, platform, and patient interaction reflects who we are.
+> To empower every touchpoint of the SuamiSihat™ ecosystem with a design language that is consistent, accessible, and purposefully built — so every product, platform, and patient interaction reflects who we are.
 
 Our design system exists to make this real. When a patient sees our clinic signage, opens our app, or receives our packaging, they should feel the same brand — confident, clear, and human.
 
