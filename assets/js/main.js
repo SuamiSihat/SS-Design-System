@@ -369,7 +369,7 @@ function animateClick(element) {
 class ThemeManager {
     constructor() {
         this.themeToggle = document.getElementById('themeToggle');
-        this.logo = document.querySelector('.navbar-logo, .logo, #headerLogo');
+        this.logo = document.querySelector('.logo');
         this.footerLogos = document.querySelectorAll('.footer-logo, .f-footer-logo');
         this.metaThemeColor = document.querySelector('meta[name="theme-color"]');
         this.currentTheme = this.getInitialTheme();
@@ -421,6 +421,9 @@ class ThemeManager {
 
         // Update footer logos (full wordmark) — Rule 1: theme mode via LogoSelector
         LogoSelector.applyToFooter(theme);
+
+        // BRAND-STATIC-01: Auto-invert sub-brand logos on theme change
+        this.applyToSubBrandLogos(isDark);
 
         
         // Update meta theme color
@@ -479,6 +482,35 @@ class ThemeManager {
             if (!localStorage.getItem(CONFIG.THEME_STORAGE_KEY)) {
                 const newTheme = e.matches ? 'dark' : 'light';
                 this.applyTheme(newTheme);
+            }
+        });
+    }
+
+    /**
+     * BRAND-STATIC-01 — Auto-invert sub-brand logos on dark/light mode change.
+     * Reads data-dark-src / data-light-src from each .sub-brand-bg-toggle button
+     * and updates the corresponding logo image in its target area.
+     *
+     * @param {boolean} isDark - true when switching to dark mode
+     */
+    applyToSubBrandLogos(isDark) {
+        document.querySelectorAll('.sub-brand-bg-toggle').forEach(btn => {
+            const targetId = btn.dataset.target;
+            if (!targetId) return;
+            const area = document.getElementById(targetId);
+            if (!area) return;
+            const img = area.querySelector('img');
+            if (!img) return;
+
+            const src = isDark ? btn.dataset.darkSrc : btn.dataset.lightSrc;
+            if (src) {
+                img.src = src;
+                // Sync the dark-bg class so manual toggle stays consistent
+                if (isDark) {
+                    area.classList.add('dark-bg');
+                } else {
+                    area.classList.remove('dark-bg');
+                }
             }
         });
     }
