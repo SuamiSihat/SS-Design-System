@@ -435,13 +435,15 @@ class ThemeManager {
             this.themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
             this.themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
             
-            const icon = this.themeToggle.querySelector('i');
-            if (icon) {
-                if (isDark) {
-                    icon.className = 'fa-solid fa-sun';
-                } else {
-                    icon.className = 'fa-solid fa-moon';
-                }
+            // Support both Iconify (<iconify-icon>) and Font Awesome (<i>) toggle icons
+            const iconifyIcon = this.themeToggle.querySelector('iconify-icon');
+            const faIcon = this.themeToggle.querySelector('i');
+            if (iconifyIcon) {
+                iconifyIcon.setAttribute('icon', isDark
+                    ? 'fluent:weather-sunny-24-regular'
+                    : 'fluent:weather-moon-24-regular');
+            } else if (faIcon) {
+                faIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
             }
         }
         
