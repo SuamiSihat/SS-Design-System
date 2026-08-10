@@ -51,32 +51,45 @@
 FileETag None
 
 # ============================================================================
-# URL Rewriting
+# URL Rewriting & Clean URL Masking
 # ============================================================================
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    RewriteBase /
 
     # Redirect directories to trailing slashes
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^(.+[^/])$ $1/ [R=301,L]
 
-    # Remove .html extension
+    # 1. External redirect: Strip .html extension if typed directly by user
+    # e.g. /pages/brand-system.html -> /pages/brand-system
+    RewriteCond %{THE_REQUEST} \s/pages/([^\s\?]+)\.html[\s\?] [NC]
+    RewriteRule ^pages/([^\s]+)\.html$ /pages/%1 [R=301,L]
+
+    # 2. Short Root-level URL Masking:
+    # e.g. /brand-system -> pages/brand-system.html
+    # e.g. /components -> pages/components.html
+    # e.g. /tools -> pages/tools.html
+    RewriteCond %{DOCUMENT_ROOT}/pages/$1.html -f
+    RewriteRule ^([a-zA-Z0-9_-]+)/?$ pages/$1.html [L,QSA]
+
+    # 3. /pages/ Extensionless URL Masking:
+    # e.g. /pages/brand-system -> pages/brand-system.html
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME}\.html -f
-    RewriteRule ^(.*)$ $1.html [L]
+    RewriteRule ^(.*)$ $1.html [L,QSA]
 
-    # Mask doc query parameters: pages/doc-slug -> pages/doc.html?doc=slug
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^pages/doc-([a-zA-Z0-9_-]+)/?$  pages/doc.html?doc=$1 [QSA,L]
-
-    # Custom redirects to relevant brand specs and anchors
-    RewriteRule ^brand/?$       pages/brand-system.html [R=301,NE,L]
-    RewriteRule ^guidelines/?$  pages/brand-guidelines.html [R=301,NE,L]
-    RewriteRule ^colors/?$      pages/brand-system.html#colour [R=301,NE,L]
-    RewriteRule ^typography/?$  pages/brand-system.html#typography [R=301,NE,L]
-    RewriteRule ^logos/?$       pages/brand-system.html#logomark [R=301,NE,L]
-    RewriteRule ^download/?$    pages/brand-system.html#download [R=301,NE,L]
+    # 4. Short doc & section aliases:
+    RewriteRule ^doc-([a-zA-Z0-9_-]+)/?$      pages/doc.html?doc=$1 [QSA,L]
+    RewriteRule ^pages/doc-([a-zA-Z0-9_-]+)/?$ pages/doc.html?doc=$1 [QSA,L]
+    RewriteRule ^roadmap/?$                    pages/doc.html?doc=roadmap [QSA,L]
+    RewriteRule ^changelog/?$                  pages/doc.html?doc=changelog [QSA,L]
+    RewriteRule ^brand/?$                      pages/brand-system.html [QSA,L]
+    RewriteRule ^guidelines/?$                 pages/brand-guidelines.html [QSA,L]
+    RewriteRule ^colors/?$                     pages/brand-system.html#colour [R=301,NE,L]
+    RewriteRule ^typography/?$                 pages/brand-system.html#typography [R=301,NE,L]
+    RewriteRule ^logos/?$                      pages/brand-system.html#logomark [R=301,NE,L]
+    RewriteRule ^download/?$                   pages/brand-system.html#download [R=301,NE,L]
 </IfModule>
 
 # ============================================================================
