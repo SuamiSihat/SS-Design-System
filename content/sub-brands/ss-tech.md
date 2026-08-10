@@ -1,8 +1,8 @@
 # SS Technology
 
-**SuamiSihat Technology Sdn. Bhd.**
+**SuamiSihat™ Technology Sdn. Bhd.**
 
-SuamiSihat Technology Sdn. Bhd. develops digital health products, applications, EHR integrations, and technology solutions supporting the SuamiSihat ecosystem.
+SuamiSihat™ Technology Sdn. Bhd. develops digital health products, applications, EHR integrations, and technology solutions supporting the SuamiSihat™ ecosystem.
 
 ---
 

@@ -1,6 +1,6 @@
 # SS Brand Logos
 
-Official SuamiSihat brand assets. See https://suamisihat.com.my/brand-assets/ for the full kit.
+Official SuamiSihat™ brand assets. See https://suamisihat.com.my/brand-assets/ for the full kit.
 
 ---
 

@@ -238,7 +238,7 @@ var LogoSelector = (function () {
                 }
 
                 img.src = base + logoFile + '?v=9';
-                img.alt = 'SuamiSihat logo';
+                img.alt = 'SuamiSihat™ logo';
             });
         },
 
@@ -416,7 +416,7 @@ class ThemeManager {
         // Update navbar logo (icon/logomark) — Rule 1: theme mode
         if (this.logo) {
             this.logo.src = LogoSelector.markForTheme(theme);
-            this.logo.alt = `SuamiSihat Logo (${theme} mode)`;
+            this.logo.alt = `SuamiSihat™ Logo (${theme} mode)`;
         }
 
         // Update footer logos (full wordmark) — Rule 1: theme mode via LogoSelector
@@ -694,7 +694,7 @@ class ColorSystem {
         
         if (logoImg) {
             logoImg.src = imgSrc;
-            logoImg.alt = `SuamiSihat Logo on ${color} background`;
+            logoImg.alt = `SuamiSihat™ Logo on ${color} background`;
         }
     }
 }
@@ -964,7 +964,7 @@ class PerformanceEnhancer {
 }
 
 // ============================================================================
-// SuamiSihat Dynamic Hero Wave & Particle Engine
+// SuamiSihat™ Dynamic Hero Wave & Particle Engine
 // ============================================================================
 
 class SuamiSihatHeroWave {
@@ -983,7 +983,7 @@ class SuamiSihatHeroWave {
         this.floatingLogos = [];
         this.time = 0;
 
-        // Preload SuamiSihat SS Icon Mark SVG
+        // Preload SuamiSihat™ SS Icon Mark SVG
         this.logoImg = new Image();
         this.logoImg.src = 'public/brand/logos/ss-logomark-light.svg';
         this.logoImgLoaded = false;
@@ -1032,7 +1032,7 @@ class SuamiSihatHeroWave {
             });
         }
 
-        // 2. Floating SuamiSihat SS Logomarks
+        // 2. Floating SuamiSihat™ SS Logomarks
         this.floatingLogos = [];
         const logoCount = 5;
         for (let i = 0; i < logoCount; i++) {
@@ -1085,7 +1085,7 @@ class SuamiSihatHeroWave {
         // 2. Draw Scattered Men/Mars Star Symbols
         this.drawMenStars(isDark);
 
-        // 3. Draw Floating SuamiSihat SS Logomarks
+        // 3. Draw Floating SuamiSihat™ SS Logomarks
         this.drawFloatingLogos(isDark);
 
         requestAnimationFrame(() => this.animate());
@@ -1259,7 +1259,7 @@ class SuamiSihatHeroWave {
             this.ctx.globalAlpha = l.opacity;
 
             if (this.logoImgLoaded && this.logoImg) {
-                // Draw actual SuamiSihat SS Icon Mark SVG
+                // Draw actual SuamiSihat™ SS Icon Mark SVG
                 const s = l.size * 1.6;
                 this.ctx.drawImage(this.logoImg, -s / 2, -s / 2, s, s);
             } else {
@@ -1358,7 +1358,7 @@ class SSBrandApp {
             // Setup global error handling
             this.setupGlobalErrorHandling();
 
-            ErrorHandler.log('SuamiSihat Design System application initialized successfully');
+            ErrorHandler.log('SuamiSihat™ Design System application initialized successfully');
         } catch (error) {
             ErrorHandler.handleError(error, 'Application initialization');
         }

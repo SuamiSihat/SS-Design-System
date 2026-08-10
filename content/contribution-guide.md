@@ -61,7 +61,7 @@ content/
 
 ## Code Contributions
 
-For developers working within SuamiSihat systems:
+For developers working within SuamiSihat™ systems:
 
 - All design token changes must be made in `assets/css/ss_theme.css`
 - Component styles live in `assets/css/style.css`

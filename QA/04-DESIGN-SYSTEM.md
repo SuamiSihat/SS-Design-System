@@ -1,7 +1,7 @@
 # 04 — Focused Fluent 2 Design-System Audit Report
 
 ## 1. Executive Summary & Evaluation Criteria
-This focused audit evaluates the SuamiSihat Design System against **Microsoft Fluent 2** design principles and token architecture.
+This focused audit evaluates the SuamiSihat™ Design System against **Microsoft Fluent 2** design principles and token architecture.
 
 The evaluation inspected:
 1. **Design Tokens Integration** (`fluent.css`)

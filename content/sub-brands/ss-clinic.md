@@ -1,8 +1,8 @@
 # SS Clinic
 
-**SuamiSihat Clinic Sdn. Bhd.**
+**SuamiSihat™ Clinic Sdn. Bhd.**
 
-SuamiSihat Clinic Sdn. Bhd. delivers direct patient care, medical diagnostics, telehealth, and personalised treatment plans.
+SuamiSihat™ Clinic Sdn. Bhd. delivers direct patient care, medical diagnostics, telehealth, and personalised treatment plans.
 
 ---
 

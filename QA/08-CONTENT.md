@@ -32,5 +32,5 @@ Audit of all written content, markdown files in `content/`, brand terminology, P
 
 ## 4. Brand Terminology Consistency
 
-- Consistent capitalization across all pages: **SuamiSihat**, **SS Health**, **SS Clinic**, **SS Wellness**, **SS Ecom**, **SS Tech**.
+- Consistent capitalization across all pages: **SuamiSihat™**, **SS Health**, **SS Clinic**, **SS Wellness**, **SS Ecom**, **SS Tech**.
 - No placeholder or dummy text ("Lorem Ipsum") left in production HTML files.

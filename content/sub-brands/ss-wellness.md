@@ -1,8 +1,8 @@
 # SS Wellness
 
-**SuamiSihat Wellness Sdn. Bhd.**
+**SuamiSihat™ Wellness Sdn. Bhd.**
 
-SuamiSihat Wellness Sdn. Bhd. focuses on preventative health, wellness products, lifestyle guidance, supplements, and daily well-being before health conditions develop.
+SuamiSihat™ Wellness Sdn. Bhd. focuses on preventative health, wellness products, lifestyle guidance, supplements, and daily well-being before health conditions develop.
 
 ---
 

@@ -1,8 +1,8 @@
-# SuamiSihat Design System — v3.2
+# SuamiSihat™ Design System — v3.2
 
 ## 🎨 Project Overview
 
-The SuamiSihat Design System is a comprehensive, interactive brand toolkit for SuamiSihat and its operating sub-brands, built on **Microsoft Fluent 2** design language adapted to the SuamiSihat brand palette. It provides designers, developers, and stakeholders with all necessary assets, guidelines, and interactive tools to maintain a consistent, premium brand expression across all platforms and touchpoints.
+The SuamiSihat™ Design System is a comprehensive, interactive brand toolkit for SuamiSihat™ and its operating sub-brands, built on **Microsoft Fluent 2** design language adapted to the SuamiSihat™ brand palette. It provides designers, developers, and stakeholders with all necessary assets, guidelines, and interactive tools to maintain a consistent, premium brand expression across all platforms and touchpoints.
 
 ### Key Features
 
@@ -218,5 +218,5 @@ For questions about brand usage, guidelines, or asset requests:
 - **Response Time**: Within 24-48 hours
 
 ## 📄 License
-This design system and all assets are proprietary to SuamiSihat Holding Sdn. Bhd. All rights reserved.
+This design system and all assets are proprietary to SuamiSihat™ Holding Sdn. Bhd. All rights reserved.
 
