@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    SS Brand Assets - Main Stylesheet
    ========================================================================== */
 
@@ -1547,6 +1547,40 @@ body.dark-mode .glass-navbar .nav-link:hover,
 body.dark-mode .glass-navbar .nav-link.active {
     color: var(--color-brand-primary) !important;
     background: var(--color-brand-subtle);
+}
+
+/* ---- Theme toggle button — glass-navbar pages ---- */
+/* .btn#themeToggle has no color from Bootstrap — define it explicitly */
+.glass-navbar #themeToggle,
+.navbar-custom #themeToggle {
+    color: var(--color-neutral-fg-2);
+    background: transparent;
+    border: 1px solid var(--color-neutral-stroke-1);
+    border-radius: var(--f-radius-md);
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color var(--f-duration-fast) var(--f-curve-easy-ease),
+                background var(--f-duration-fast) var(--f-curve-easy-ease),
+                border-color var(--f-duration-fast) var(--f-curve-easy-ease);
+    flex-shrink: 0;
+}
+.glass-navbar #themeToggle:hover,
+.navbar-custom #themeToggle:hover {
+    color: var(--color-brand-primary);
+    background: var(--color-brand-subtle);
+    border-color: var(--color-brand-light);
+}
+/* Dark mode: keep icon visible on dark navbar */
+body.dark-mode .glass-navbar #themeToggle,
+body.dark-mode .navbar-custom #themeToggle {
+    color: var(--color-neutral-fg-2);
+    border-color: var(--color-neutral-stroke-1);
 }
 
 /* ---- Card components — Fluent elevation ---- */
