@@ -37,6 +37,7 @@ yarn-error.log*
 
 # Node / Build Dependencies
 node_modules/
-dist/
-build/
+# Top-level dist/ (not used) — but allow CI-committed assets/*/dist/
+/dist/
+/build/
 coverage/
