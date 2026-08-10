@@ -23,6 +23,7 @@
         'changelog',
         'contribution-guide',
         'roadmap',
+        'brand-voice',
         'sub-brands/ss-health',
         'sub-brands/ss-clinic',
         'sub-brands/ss-wellness',

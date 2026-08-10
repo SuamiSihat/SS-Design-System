@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    SS Brand Assets - Main Stylesheet
    ========================================================================== */
 
@@ -1773,4 +1773,54 @@ body {
 @media (max-width: 576px) {
   footer .row { text-align: center; }
   footer .col-md-4 { margin-bottom: var(--f-space-4); }
+}
+
+/* ================================================================
+   ACCESSIBILITY UTILITIES — WCAG 2.1 AA
+   ================================================================ */
+
+/* Screen-reader only (visually hidden but accessible) */
+.f-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Skip to main content link */
+.f-skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: var(--f-color-brand-primary, #022461);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.f-skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--f-color-accent, #21a1f7);
+  outline-offset: 2px;
+}
+
+/* Global focus-visible ring — WCAG 2.4.11 */
+:focus-visible {
+  outline: 3px solid var(--f-color-accent, #21a1f7);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* Override outline:none in favour of focus-visible only */
+:focus:not(:focus-visible) {
+  outline: none;
 }
