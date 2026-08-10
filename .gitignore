@@ -8,8 +8,18 @@ ehthumbs.db
 Thumbs.db
 Desktop.ini
 
+# Environment & Private Deployment Configs
+.env
+.env.*
+!.env.example
+deploy.config.ps1
+*.pem
+*.key
+.htpasswd
+
 # IDEs and Editors
 .idea/
+.vscode/
 *.swp
 *.swo
 *~
@@ -17,6 +27,7 @@ Desktop.ini
 
 # Agents & AI Assist Metadata
 .agents/
+.gemini/
 
 # Logs and Temporary Files
 *.log
@@ -24,7 +35,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Node / Dependencies
+# Node / Build Dependencies
 node_modules/
 dist/
 build/
+coverage/

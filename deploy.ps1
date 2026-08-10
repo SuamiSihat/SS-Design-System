@@ -1,10 +1,10 @@
 # =============================================================================
-# SuamiSihat Design System — Deploy Script
+# SuamiSihat™ Design System — Production Deploy Script
 # Usage: .\deploy.ps1 [-Message "your commit message"]
-# What it does:
-#   1. Commits any staged/unstaged changes (optional)
-#   2. Pushes to GitHub (origin/main)
-#   3. SSHs into the NAS and runs git pull to update the live site
+#
+# Configuration:
+#   Set environment variables or create a local untracked 'deploy.config.ps1'
+#   See 'deploy.config.ps1.example' for template.
 # =============================================================================
 
 param(
@@ -12,17 +12,25 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+
+# Load local config if present (untracked in .gitignore)
+$configFile = Join-Path $PSScriptRoot "deploy.config.ps1"
+if (Test-Path $configFile) {
+    . $configFile
+}
+
+# Resolve connection parameters from env or defaults
+$NAS_HOST = if ($env:NAS_HOST) { $env:NAS_HOST } elseif ($global:DEPLOY_NAS_HOST) { $global:DEPLOY_NAS_HOST } else { "suamisihat.myds.me" }
+$NAS_PORT = if ($env:NAS_PORT) { $env:NAS_PORT } elseif ($global:DEPLOY_NAS_PORT) { $global:DEPLOY_NAS_PORT } else { "2222" }
+$NAS_USER = if ($env:NAS_USER) { $env:NAS_USER } elseif ($global:DEPLOY_NAS_USER) { $global:DEPLOY_NAS_USER } else { "harussani" }
+$NAS_PATH = if ($env:NAS_PATH) { $env:NAS_PATH } elseif ($global:DEPLOY_NAS_PATH) { $global:DEPLOY_NAS_PATH } else { "/volume1/web/ss_assets" }
+
 $env:PATH += ";C:\Program Files\Git\cmd"
 $git = "C:\Program Files\Git\cmd\git.exe"
 
-$NAS_HOST  = "suamisihat.myds.me"
-$NAS_PORT  = "2222"
-$NAS_USER  = "harussani"
-$NAS_PATH  = "/volume1/web/ss_assets"
-
 Write-Host ""
 Write-Host "=================================================" -ForegroundColor Cyan
-Write-Host "  SuamiSihat Design System - Deploy to Production" -ForegroundColor Cyan
+Write-Host "  SuamiSihat™ Design System — Deploy to Production" -ForegroundColor Cyan
 Write-Host "=================================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -45,18 +53,18 @@ Write-Host "Pushing to GitHub (origin/main)..." -ForegroundColor Yellow
 $commitMsg = & $git log --oneline -1
 Write-Host "  Pushed: $commitMsg" -ForegroundColor Green
 
-# -- Step 3: Pull on NAS ---------------------------------------------------
+# -- Step 3: Sync Server ---------------------------------------------------
 Write-Host ""
-Write-Host "Updating NAS ($NAS_HOST port $NAS_PORT)..." -ForegroundColor Yellow
+Write-Host "Updating Production Host ($NAS_HOST)..." -ForegroundColor Yellow
 $sshTarget = "${NAS_USER}@${NAS_HOST}"
 $sshCmd = "cd $NAS_PATH; git fetch origin main; git reset --hard origin/main; echo DEPLOY_OK"
 $result = ssh -p $NAS_PORT -o ConnectTimeout=15 -o StrictHostKeyChecking=no $sshTarget $sshCmd
 
 if ($result -match "DEPLOY_OK") {
-    Write-Host "  NAS updated successfully!" -ForegroundColor Green
+    Write-Host "  Production host updated successfully!" -ForegroundColor Green
     $result | ForEach-Object { Write-Host "  $_" -ForegroundColor Gray }
 } else {
-    Write-Host "  NAS deploy output:" -ForegroundColor Yellow
+    Write-Host "  Deploy output:" -ForegroundColor Yellow
     Write-Host $result
 }
 
