@@ -1388,6 +1388,11 @@ class SSBrandApp {
             this.logomarkToggleSystem = new LogomarkToggleSystem();
             this.scrollToTopSystem = new ScrollToTopSystem();
             this.heroWave = new SuamiSihatHeroWave();
+            this.fluentNavManager = new FluentNavManager();
+            initPortalCardRipple();
+            initFluentScrollReveal();
+            initFluentSidebarToggle();
+            LogoSelector.applyToFooter();
 
             // Setup global error handling
             this.setupGlobalErrorHandling();
@@ -1554,22 +1559,38 @@ SSBrandApp.prototype.init = async function() {
  * Global Sidebar Toggle initialization for Fluent 2 page layouts
  */
 function initFluentSidebarToggle() {
-    const toggleBtn = document.querySelector('.f-sidebar-toggle');
-    const layoutWrapper = document.querySelector('.f-page-layout');
-    
-    if (toggleBtn && layoutWrapper) {
-        toggleBtn.addEventListener('click', () => {
+    const toggleBtns = document.querySelectorAll('.f-sidebar-toggle, .brand-sidebar-toggle');
+    toggleBtns.forEach(toggleBtn => {
+        if (toggleBtn.dataset.bound) return;
+        toggleBtn.dataset.bound = 'true';
+
+        toggleBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const layoutWrapper = toggleBtn.closest('.f-page-layout') || document.querySelector('.f-page-layout');
+            if (!layoutWrapper) return;
+
             layoutWrapper.classList.toggle('sidebar-minimized');
             const isMinimized = layoutWrapper.classList.contains('sidebar-minimized');
-            const icon = toggleBtn.querySelector('i, iconify-icon');
+            toggleBtn.setAttribute('aria-label', isMinimized ? 'Expand sidebar' : 'Minimize sidebar');
+
+            const icon = toggleBtn.querySelector('iconify-icon, i');
             if (icon) {
-                // If it's a font-awesome chevron
-                if (icon.classList.contains('fa-chevron-left') || icon.classList.contains('fa-chevron-right')) {
+                if (icon.tagName.toLowerCase() === 'iconify-icon') {
+                    icon.setAttribute('icon', isMinimized ? 'fluent:chevron-right-16-regular' : 'fluent:chevron-left-16-regular');
+                } else if (icon.classList.contains('fa-chevron-left') || icon.classList.contains('fa-chevron-right')) {
                     icon.classList.toggle('fa-chevron-left', !isMinimized);
                     icon.classList.toggle('fa-chevron-right', isMinimized);
                 }
-                // Rotation is handled by CSS (.sidebar-minimized .f-sidebar-toggle i { transform: rotate(180deg) })
             }
         });
+    });
+}
+
+// Auto-bind immediately or on DOMContentLoaded
+if (typeof document !== 'undefined') {
+    if (document.readyState !== 'loading') {
+        initFluentSidebarToggle();
+    } else {
+        document.addEventListener('DOMContentLoaded', initFluentSidebarToggle);
     }
 }
