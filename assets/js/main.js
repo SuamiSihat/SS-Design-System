@@ -1418,15 +1418,6 @@ class SSBrandApp {
 }
 
 // ============================================================================
-// Application Startup
-// ============================================================================
-
-// Initialize application when DOM is ready
-const app = new SSBrandApp();
-app.init().catch(error => {
-    ErrorHandler.handleError(error, 'Application startup');
-});
-// ============================================================================
 // Fluent 2 Enhancements — v3.0
 // Handles Fluent navbar, acrylic scroll, theme sync across all page types
 // ============================================================================
@@ -1542,19 +1533,6 @@ function initFluentScrollReveal() {
     });
 }
 
-// Hook into app init
-const _origInit = SSBrandApp.prototype.init;
-SSBrandApp.prototype.init = async function() {
-    await _origInit.call(this);
-    this.fluentNavManager = new FluentNavManager();
-    initPortalCardRipple();
-    initFluentScrollReveal();
-    initFluentSidebarToggle();
-    // Apply Rule 2 (background brightness) to all footer logos on every page load
-    LogoSelector.applyToFooter();
-    ErrorHandler.log('Fluent 2 enhancements applied');
-};
-
 /**
  * Global Sidebar Toggle initialization for Fluent 2 page layouts
  */
@@ -1594,3 +1572,13 @@ if (typeof document !== 'undefined') {
         document.addEventListener('DOMContentLoaded', initFluentSidebarToggle);
     }
 }
+
+// ============================================================================
+// Application Startup
+// ============================================================================
+
+// Initialize application when all classes and managers are defined
+const app = new SSBrandApp();
+app.init().catch(error => {
+    ErrorHandler.handleError(error, 'Application startup');
+});
