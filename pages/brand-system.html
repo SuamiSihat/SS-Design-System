@@ -649,6 +649,9 @@
                 <li><a href="#colour">
                     <span class="nav-icon"><iconify-icon icon="fluent:color-24-regular"></iconify-icon></span>Colour
                 </a></li>
+                <li><a href="#patterns">
+                    <span class="nav-icon"><iconify-icon icon="fluent:color-background-24-regular"></iconify-icon></span>Color Patterns
+                </a></li>
                 <li><a href="#typography">
                     <span class="nav-icon"><iconify-icon icon="fluent:text-font-24-regular"></iconify-icon></span>Typography
                 </a></li>
@@ -790,9 +793,9 @@
                     </div>
                     <!-- Sleek Proportion Bar -->
                     <div style="display:flex;height:24px;border-radius:var(--f-radius-full);overflow:hidden;border:1px solid var(--color-neutral-stroke-1);margin-bottom:var(--f-space-3);box-shadow:var(--f-shadow-2);">
-                        <div style="flex:60;background:var(--color-neutral-bg-4);border-right:2px solid var(--color-neutral-stroke-2);"></div>
-                        <div style="flex:30;background:#022057;border-right:2px solid var(--color-neutral-stroke-2);"></div>
-                        <div style="flex:10;background:var(--color-brand-primary);"></div>
+                        <div style="flex:60;background:var(--color-neutral-bg-4);border-right:2px solid var(--color-neutral-stroke-2);" title="60% Foundation"></div>
+                        <div style="flex:30;background:#022057;border-right:2px solid var(--color-neutral-stroke-2);" title="30% Secondary"></div>
+                        <div style="flex:10;background:#21A1F7;box-shadow:inset 0 0 4px rgba(255,255,255,0.4);" title="10% Azure Accent"></div>
                     </div>
 
                     <!-- Clean Proportional Legend -->
@@ -806,30 +809,30 @@
                             <strong>30%</strong> Secondary (Structure &amp; Cards)
                         </div>
                         <div style="display:flex;align-items:center;gap:6px;color:var(--color-neutral-fg-1);">
-                            <span style="width:12px;height:12px;border-radius:3px;background:var(--color-brand-primary);display:inline-block;"></span>
-                            <strong>10%</strong> Accent (Primary CTA)
+                            <span style="width:12px;height:12px;border-radius:3px;background:#21A1F7;display:inline-block;"></span>
+                            <strong>10%</strong> Accent (Primary CTA — Azure)
                         </div>
                     </div>
                     <div class="row g-3">
                         <div class="col-md-4">
                             <div style="font-size:0.8rem;line-height:1.6;color:var(--color-neutral-fg-2);">
-                                <strong style="color:var(--color-neutral-fg-1);">60% Foundation:</strong> Calm clinical canvas providing breathing room. Body backgrounds and clean neutral surfaces.
+                                <strong style="color:var(--color-neutral-fg-1);">60% Foundation:</strong> Calm clinical canvas (<code>#F8FAFC</code> / <code>#FFFFFF</code>) providing spacious breathing room and hygiene. Body backgrounds and clean neutral surfaces.
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div style="font-size:0.8rem;line-height:1.6;color:var(--color-neutral-fg-2);">
-                                <strong style="color:var(--color-neutral-fg-1);">30% Secondary:</strong> Prussian Blue, SS Blue, and Slate containers grouping cards, headers, and footers.
+                                <strong style="color:var(--color-neutral-fg-1);">30% Secondary:</strong> Prussian Blue (<code>#022057</code>), SS Blue (<code>#043388</code>), and Slate structural containers grouping cards, navigation bars, headers, and footers.
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div style="font-size:0.8rem;line-height:1.6;color:var(--color-neutral-fg-2);">
-                                <strong style="color:var(--color-neutral-fg-1);">10% Accent:</strong> High-potency focal color reserved strictly for primary conversion CTAs (<code>BOOK APPOINTMENT</code>) and active states.
+                                <strong style="color:var(--color-neutral-fg-1);">10% Accent (Azure):</strong> High-potency focal color (<code>#21A1F7</code>) reserved strictly for primary conversion CTAs (<code>BOOK APPOINTMENT</code>), active navigation pills, and interactive focus rings.
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="bs-colour-group-label">Primary Colours</div>
+                <div class="bs-colour-group-label">Primary Official Colours</div>
                 <div class="bs-colour-grid">
                     <div class="bs-swatch-card" data-hex="#022057" tabindex="0" role="button" aria-label="SS Prussian Blue">
                         <div class="bs-swatch-color" style="background:#022057"></div>
@@ -875,6 +878,18 @@
                             <div class="bs-swatch-token">--ss-malibu</div>
                             <div class="bs-swatch-meta">RGB: 109, 198, 236<br>CMYK: 54, 16, 0, 7 · Pantone 297 C</div>
                             <button class="bs-copy-btn" onclick="copyHex('#6DC6EC',this)">
+                                <iconify-icon icon="fluent:copy-24-regular" style="font-size:0.75rem"></iconify-icon> Copy HEX
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bs-swatch-card" data-hex="#1C1C1C" tabindex="0" role="button" aria-label="Neutral Black">
+                        <div class="bs-swatch-color" style="background:#1C1C1C"></div>
+                        <div class="bs-swatch-body">
+                            <div class="bs-swatch-name">Neutral Black</div>
+                            <div class="bs-swatch-hex">#1C1C1C</div>
+                            <div class="bs-swatch-token">--ss-neutral-black</div>
+                            <div class="bs-swatch-meta">RGB: 28, 28, 28<br>CMYK: 0, 0, 0, 89 · Anchor Typography Neutral</div>
+                            <button class="bs-copy-btn" onclick="copyHex('#1C1C1C',this)">
                                 <iconify-icon icon="fluent:copy-24-regular" style="font-size:0.75rem"></iconify-icon> Copy HEX
                             </button>
                         </div>
@@ -975,6 +990,146 @@
                     <div class="bs-neutral-block" style="background:#fff;border-left:1px solid var(--color-neutral-stroke-1)" onclick="copyHex('#ffffff',null,'White copied')">
                         <div class="bs-neutral-block-name" style="color:#333">White</div>
                         <div class="bs-neutral-block-hex" style="color:#333">#FFFFFF</div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="bs-divider">
+
+            <!-- ===== COLOR PATTERNS ===== -->
+            <section id="patterns" class="bs-section">
+                <div class="bs-section-eyebrow">Applied Visual Harmony</div>
+                <h2 class="bs-section-title">Curated Color Patterns (60:30:10 Schemes)</h2>
+                <p class="bs-section-desc">Production-ready surface combinations engineered for clinical trust, digital conversion, and accessibility compliance. Each pattern strictly enforces the <b>60:30:10 hierarchy</b> with <b>Neutral Black (<code>#1C1C1C</code>)</b> typography.</p>
+
+                <div class="row g-4 mb-4">
+                    <!-- Pattern 1: Clinical Conversion (Flagship Light) -->
+                    <div class="col-lg-4 col-md-6">
+                        <div style="background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);overflow:hidden;box-shadow:var(--f-shadow-4);height:100%;display:flex;flex-direction:column;">
+                            <!-- Proportion Bar -->
+                            <div style="display:flex;height:12px;width:100%;">
+                                <div style="flex:60;background:#F8FAFC;border-right:1px solid #E2E8F0;" title="60% Foundation"></div>
+                                <div style="flex:30;background:#022057;border-right:1px solid rgba(255,255,255,0.2);" title="30% Secondary"></div>
+                                <div style="flex:10;background:#21A1F7;" title="10% Azure Accent"></div>
+                            </div>
+                            <div style="padding:var(--f-space-5);flex:1;display:flex;flex-direction:column;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--f-space-2);">
+                                    <span class="ss-badge ss-badge-brand" style="font-size:0.68rem;">Flagship Light</span>
+                                    <span style="font-size:0.72rem;color:var(--color-neutral-fg-3);font-weight:600;">Main Web &amp; Services</span>
+                                </div>
+                                <h3 style="font-size:1.05rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:var(--f-space-2);">The Clinical Conversion</h3>
+                                <p style="font-size:0.8125rem;color:var(--color-neutral-fg-2);line-height:1.5;margin-bottom:var(--f-space-4);">
+                                    Engineered for high-traffic patient onboarding and service vertical pages. The clean white canvas instills medical hygiene, Prussian Blue anchors clinical trust, and high-potency <strong>Azure (#21A1F7)</strong> directs unwavering focus to booking appointments.
+                                </p>
+
+                                <!-- Mini Live UI Component Preview -->
+                                <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:var(--f-radius-lg);padding:var(--f-space-4);margin-bottom:var(--f-space-4);margin-top:auto;">
+                                    <div style="background:#FFFFFF;border:1px solid rgba(4,51,136,0.12);border-radius:var(--f-radius-md);padding:var(--f-space-3);box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+                                        <div style="font-size:0.72rem;font-weight:700;color:#022057;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:2px;">Consultation</div>
+                                        <div style="font-size:0.875rem;font-weight:700;color:#1C1C1C;margin-bottom:4px;">Men's Hormone Therapy</div>
+                                        <div style="font-size:0.75rem;color:#525252;line-height:1.4;margin-bottom:var(--f-space-3);">Doctor-led clinical evaluation with personalized testosterone recovery protocols.</div>
+                                        <button type="button" style="background:#21A1F7;color:#022057;font-weight:700;font-size:0.72rem;padding:6px 14px;border:none;border-radius:var(--f-radius-sm);display:inline-flex;align-items:center;gap:4px;cursor:default;">
+                                            <iconify-icon icon="fluent:calendar-ltr-24-filled" style="font-size:0.85rem;"></iconify-icon> BOOK APPOINTMENT
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Allocation Breakdown -->
+                                <div style="font-size:0.75rem;color:var(--color-neutral-fg-3);display:grid;gap:4px;padding-top:var(--f-space-2);border-top:1px solid var(--color-neutral-stroke-1);">
+                                    <div><strong>60% Foundation:</strong> #F8FAFC (Body) &amp; #FFFFFF (Card Surface)</div>
+                                    <div><strong>30% Secondary:</strong> #022057 (Prussian Blue) &amp; #043388 (SS Blue)</div>
+                                    <div><strong>10% Accent:</strong> #21A1F7 (Azure Primary Conversion CTA)</div>
+                                    <div><strong>Typography:</strong> #1C1C1C (Neutral Black body &amp; headers)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 2: Executive Discretion (Signature Dark) -->
+                    <div class="col-lg-4 col-md-6">
+                        <div style="background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);overflow:hidden;box-shadow:var(--f-shadow-4);height:100%;display:flex;flex-direction:column;">
+                            <!-- Proportion Bar -->
+                            <div style="display:flex;height:12px;width:100%;">
+                                <div style="flex:60;background:#090D16;border-right:1px solid rgba(255,255,255,0.1);" title="60% Foundation"></div>
+                                <div style="flex:30;background:#0F172A;border-right:1px solid rgba(255,255,255,0.15);" title="30% Secondary"></div>
+                                <div style="flex:10;background:#21A1F7;" title="10% Azure Accent"></div>
+                            </div>
+                            <div style="padding:var(--f-space-5);flex:1;display:flex;flex-direction:column;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--f-space-2);">
+                                    <span class="ss-badge ss-badge-brand" style="font-size:0.68rem;background:rgba(33,161,247,0.12);color:var(--ss-azure);">Signature Dark</span>
+                                    <span style="font-size:0.72rem;color:var(--color-neutral-fg-3);font-weight:600;">Executive &amp; VIP Portals</span>
+                                </div>
+                                <h3 style="font-size:1.05rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:var(--f-space-2);">The Executive Discretion</h3>
+                                <p style="font-size:0.8125rem;color:var(--color-neutral-fg-2);line-height:1.5;margin-bottom:var(--f-space-4);">
+                                    Crafted for patient privacy, confidential medical records, and executive health programs. Deep slate surfaces eliminate glare while luminous <strong>Azure (#21A1F7)</strong> glows distinctly for active navigation and priority consultations.
+                                </p>
+
+                                <!-- Mini Live UI Component Preview -->
+                                <div style="background:#090D16;border:1px solid rgba(255,255,255,0.1);border-radius:var(--f-radius-lg);padding:var(--f-space-4);margin-bottom:var(--f-space-4);margin-top:auto;">
+                                    <div style="background:#0F172A;border:1px solid rgba(255,255,255,0.12);border-radius:var(--f-radius-md);padding:var(--f-space-3);box-shadow:0 4px 16px rgba(0,0,0,0.4);">
+                                        <div style="font-size:0.72rem;font-weight:700;color:#6DC6EC;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:2px;">Confidential VIP</div>
+                                        <div style="font-size:0.875rem;font-weight:700;color:#FFFFFF;margin-bottom:4px;">Executive Wellness Suite</div>
+                                        <div style="font-size:0.75rem;color:#ABABAB;line-height:1.4;margin-bottom:var(--f-space-3);">Private physician concierge with comprehensive discreet biomarkers.</div>
+                                        <button type="button" style="background:#21A1F7;color:#022057;font-weight:700;font-size:0.72rem;padding:6px 14px;border:none;border-radius:var(--f-radius-sm);display:inline-flex;align-items:center;gap:4px;cursor:default;box-shadow:0 0 12px rgba(33,161,247,0.4);">
+                                            <iconify-icon icon="fluent:shield-checkmark-24-filled" style="font-size:0.85rem;"></iconify-icon> ACCESS PORTAL
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Allocation Breakdown -->
+                                <div style="font-size:0.75rem;color:var(--color-neutral-fg-3);display:grid;gap:4px;padding-top:var(--f-space-2);border-top:1px solid var(--color-neutral-stroke-1);">
+                                    <div><strong>60% Foundation:</strong> #090D16 (Void Dark) &amp; #141414 (Canvas)</div>
+                                    <div><strong>30% Secondary:</strong> #0F172A (Slate 900) &amp; #022057 (Prussian Blue)</div>
+                                    <div><strong>10% Accent:</strong> #21A1F7 (Luminous Azure Focal Points)</div>
+                                    <div><strong>Typography:</strong> #FFFFFF (Pure White) &amp; #ABABAB (Slate Muted)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pattern 3: Clinical Warmth (Wellness & Fertility) -->
+                    <div class="col-lg-4 col-md-6">
+                        <div style="background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);overflow:hidden;box-shadow:var(--f-shadow-4);height:100%;display:flex;flex-direction:column;">
+                            <!-- Proportion Bar -->
+                            <div style="display:flex;height:12px;width:100%;">
+                                <div style="flex:60;background:#FDFCFB;border-right:1px solid #EFEAE4;" title="60% Foundation"></div>
+                                <div style="flex:30;background:#022057;border-right:1px solid rgba(255,255,255,0.2);" title="30% Secondary"></div>
+                                <div style="flex:10;background:#21A1F7;" title="10% Azure Accent"></div>
+                            </div>
+                            <div style="padding:var(--f-space-5);flex:1;display:flex;flex-direction:column;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--f-space-2);">
+                                    <span class="ss-badge ss-badge-brand" style="font-size:0.68rem;background:rgba(189,154,115,0.15);color:#8A6538;border-color:rgba(189,154,115,0.3);">Trust &amp; Warmth</span>
+                                    <span style="font-size:0.72rem;color:var(--color-neutral-fg-3);font-weight:600;">Fertility &amp; Doctor Trust</span>
+                                </div>
+                                <h3 style="font-size:1.05rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:var(--f-space-2);">The Clinical Warmth</h3>
+                                <p style="font-size:0.8125rem;color:var(--color-neutral-fg-2);line-height:1.5;margin-bottom:var(--f-space-4);">
+                                    Harmonizes medical precision with empathetic warmth for couples and fertility journeys. Soft ivory backdrops and <strong>Lion Gold (#BD9A73)</strong> trust badges reinforce doctor credibility while <strong>Azure (#21A1F7)</strong> anchors conversion.
+                                </p>
+
+                                <!-- Mini Live UI Component Preview -->
+                                <div style="background:#FDFCFB;border:1px solid #EFEAE4;border-radius:var(--f-radius-lg);padding:var(--f-space-4);margin-bottom:var(--f-space-4);margin-top:auto;">
+                                    <div style="background:#FFFFFF;border:1px solid rgba(189,154,115,0.25);border-radius:var(--f-radius-md);padding:var(--f-space-3);box-shadow:0 2px 8px rgba(189,154,115,0.06);">
+                                        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
+                                            <div style="font-size:0.72rem;font-weight:700;color:#022057;text-transform:uppercase;letter-spacing:0.04em;">Fertility Care</div>
+                                            <span style="font-size:0.68rem;font-weight:700;background:rgba(189,154,115,0.15);color:#8A6538;padding:2px 6px;border-radius:4px;">⭐ 4.9 Certified</span>
+                                        </div>
+                                        <div style="font-size:0.875rem;font-weight:700;color:#1C1C1C;margin-bottom:4px;">Men's Reproductive Health</div>
+                                        <div style="font-size:0.75rem;color:#525252;line-height:1.4;margin-bottom:var(--f-space-3);">Compassionate specialist consultations with advanced semen analysis.</div>
+                                        <button type="button" style="background:#21A1F7;color:#022057;font-weight:700;font-size:0.72rem;padding:6px 14px;border:none;border-radius:var(--f-radius-sm);display:inline-flex;align-items:center;gap:4px;cursor:default;">
+                                            <iconify-icon icon="fluent:calendar-star-24-filled" style="font-size:0.85rem;"></iconify-icon> SCHEDULE CONSULTATION
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Allocation Breakdown -->
+                                <div style="font-size:0.75rem;color:var(--color-neutral-fg-3);display:grid;gap:4px;padding-top:var(--f-space-2);border-top:1px solid var(--color-neutral-stroke-1);">
+                                    <div><strong>60% Foundation:</strong> #FDFCFB (Warm Ivory Canvas) &amp; #FFFFFF (Card)</div>
+                                    <div><strong>30% Secondary:</strong> #022057 (Prussian Blue) &amp; #BD9A73 (Lion Gold)</div>
+                                    <div><strong>10% Accent:</strong> #21A1F7 (Azure Primary Booking Action)</div>
+                                    <div><strong>Typography:</strong> #1C1C1C (Neutral Black text)</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
