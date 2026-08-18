@@ -217,27 +217,14 @@ var LogoSelector = (function () {
          *
          * @param {string} [theme]   'light' | 'dark' — fallback hint
          * @param {string} [prefix]  path prefix (auto-detected when omitted)
-         */
         applyToFooter: function (theme, prefix) {
             var self = this;
             var base = prefix !== undefined ? prefix : autoPrefix();
 
-            document.querySelectorAll('.footer-logo, .f-footer-logo').forEach(function (img) {
-                // ── Rule 2: resolve the logo's actual background ──
-                var bgRaw = resolveBackground(img);
-                var lightness = rgbToLightness(bgRaw);
-
-                var logoFile;
-                if (lightness !== null) {
-                    // Rule 2: dark bg (L < 50) → white wordmark (_dark.svg)
-                    //         light bg (L ≥ 50) → navy wordmark (_light.svg)
-                    logoFile = (lightness < 50) ? PATHS.FULL_DARK : PATHS.FULL_LIGHT;
-                } else {
-                    // Fallback to Rule 1 when background cannot be computed
-                    logoFile = (theme === 'dark') ? PATHS.FULL_DARK : PATHS.FULL_LIGHT;
-                }
-
-                img.src = base + logoFile + '?v=9';
+            document.querySelectorAll('.footer-logo, .f-footer-logo, footer img[src*="logo_suamisihat"]').forEach(function (img) {
+                // SuamiSihat brand rule: Footers always render on dark Prussian Blue background
+                // and must strictly display the dark/white wordmark variant
+                img.src = base + PATHS.FULL_DARK + '?v=10';
                 img.alt = 'SuamiSihat™ logo';
             });
         },
@@ -1003,7 +990,7 @@ class PerformanceEnhancer {
 
 class SuamiSihatHeroWave {
     constructor() {
-        this.canvas = document.getElementById('heroWaveCanvas');
+        this.canvas = document.getElementById('heroWaveCanvas') || document.querySelector('.hero-wave-canvas');
         if (!this.canvas) return;
         this.ctx = this.canvas.getContext('2d');
         this.container = this.canvas.parentElement;
@@ -1017,9 +1004,12 @@ class SuamiSihatHeroWave {
         this.floatingLogos = [];
         this.time = 0;
 
-        // Preload SuamiSihat™ SS Icon Mark SVG
+        // Preload SuamiSihat™ SS Icon Mark SVG with correct relative path
+        const isSubDir = window.location.pathname.includes('/pages/') || window.location.pathname.includes('/products/');
+        const prefix = isSubDir ? (window.location.pathname.includes('/products/') && window.location.pathname.split('/').length > 4 ? '../../' : '../') : '';
+
         this.logoImg = new Image();
-        this.logoImg.src = 'public/brand/logos/ss-logomark-light.svg';
+        this.logoImg.src = prefix + 'public/brand/logos/ss-logomark-light.svg';
         this.logoImgLoaded = false;
         this.logoImg.onload = () => { this.logoImgLoaded = true; };
         
