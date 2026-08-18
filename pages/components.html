@@ -224,10 +224,10 @@
                     <li class="nav-item"><a class="nav-link" href="brand-guidelines.html" aria-label="Brand Guidelines & PDFs">Guidelines & PDFs</a></li>
                     <li class="nav-item"><a class="nav-link active" href="components.html">Components</a></li>
                     <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="onboarding.html">Onboarding</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="docsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Docs</a>
                         <ul class="dropdown-menu dropdown-menu-end ss-dropdown" aria-labelledby="docsDropdown">
+                            <li><a class="dropdown-item" href="onboarding.html"><iconify-icon icon="fluent:person-star-24-regular" class="me-2"></iconify-icon>Onboarding Guide</a></li>
                             <li><a class="dropdown-item" href="doc.html?doc=changelog"><iconify-icon icon="fluent:clock-arrow-download-24-regular" class="me-2"></iconify-icon>What's New</a></li>
                             <li><a class="dropdown-item" href="doc.html?doc=roadmap"><iconify-icon icon="fluent:map-drive-24-regular" class="me-2"></iconify-icon>Roadmap</a></li>
                             <li><a class="dropdown-item" href="doc.html?doc=contribution-guide"><iconify-icon icon="fluent:heart-hand-24-regular" class="me-2"></iconify-icon>Contribution Guide</a></li>
@@ -448,18 +448,26 @@
                     <span class="ss-badge ss-badge-brand">Brand Standard</span>
                 </div>
                 <div class="cl-preview" style="display:block;padding:var(--f-space-6);">
-                    <!-- Ratio Distribution Visualizer Bar -->
-                    <div style="margin-bottom:var(--f-space-6);">
-                        <div style="display:flex;height:40px;border-radius:var(--f-radius-md);overflow:hidden;border:1px solid var(--color-neutral-stroke-1);box-shadow:var(--f-shadow-2);">
-                            <div style="flex:60;background:var(--color-neutral-bg-1);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--color-neutral-fg-1);border-right:2px solid var(--color-neutral-stroke-2);">
-                                60% Foundation (Canvas &amp; Whitespace)
-                            </div>
-                            <div style="flex:30;background:#022057;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:#ffffff;border-right:2px solid var(--color-neutral-stroke-2);">
-                                30% Secondary (Structure &amp; Cards)
-                            </div>
-                            <div style="flex:10;background:var(--color-brand-primary);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:#ffffff;">
-                                10% Accent (CTA)
-                            </div>
+                    <!-- Sleek Proportion Bar -->
+                    <div style="display:flex;height:24px;border-radius:var(--f-radius-full);overflow:hidden;border:1px solid var(--color-neutral-stroke-1);margin-bottom:var(--f-space-3);box-shadow:var(--f-shadow-2);">
+                        <div style="flex:60;background:var(--color-neutral-bg-4);border-right:2px solid var(--color-neutral-stroke-2);"></div>
+                        <div style="flex:30;background:#022057;border-right:2px solid var(--color-neutral-stroke-2);"></div>
+                        <div style="flex:10;background:var(--color-brand-primary);"></div>
+                    </div>
+
+                    <!-- Clean Proportional Legend -->
+                    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--f-space-2);margin-bottom:var(--f-space-5);font-size:0.78rem;font-weight:600;">
+                        <div style="display:flex;align-items:center;gap:6px;color:var(--color-neutral-fg-1);">
+                            <span style="width:12px;height:12px;border-radius:3px;background:var(--color-neutral-bg-4);border:1px solid var(--color-neutral-stroke-2);display:inline-block;"></span>
+                            <strong>60%</strong> Foundation (Canvas &amp; Whitespace)
+                        </div>
+                        <div style="display:flex;align-items:center;gap:6px;color:var(--color-neutral-fg-1);">
+                            <span style="width:12px;height:12px;border-radius:3px;background:#022057;display:inline-block;"></span>
+                            <strong>30%</strong> Secondary (Structure &amp; Cards)
+                        </div>
+                        <div style="display:flex;align-items:center;gap:6px;color:var(--color-neutral-fg-1);">
+                            <span style="width:12px;height:12px;border-radius:3px;background:var(--color-brand-primary);display:inline-block;"></span>
+                            <strong>10%</strong> Accent (Primary CTA)
                         </div>
                     </div>
 
