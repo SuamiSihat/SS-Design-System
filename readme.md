@@ -2,35 +2,204 @@
 
 # SuamiSihat™ Design System
 
-**Official Brand & Design System Toolkit for the SuamiSihat™ Ecosystem**
+**The Authoritative Visual Language, W3C Token Architecture & Multi-Platform Component Standard for the SuamiSihat™ Digital Health Ecosystem.**
 
-[![Release](https://img.shields.io/badge/version-3.3.0-043388.svg?style=for-the-badge)](https://github.com/SuamiSihat/branding_suamisihat/releases)
-[![License](https://img.shields.io/badge/license-MIT-6DC6EC.svg?style=for-the-badge)](LICENSE)
-[![Design System](https://img.shields.io/badge/Design%20Language-Microsoft%20Fluent%202-022057.svg?style=for-the-badge)](https://microsofthttps//fluent2.microsoft.design/)
-[![Status](https://img.shields.io/badge/QA%20Status-RELEASE%20READY-2e7d32.svg?style=for-the-badge)](QA/FINAL-QA-REPORT.md)
+[![Release](https://img.shields.io/badge/Release-v3.3.0-043388.svg?style=for-the-badge&logo=github)](https://github.com/SuamiSihat/SS-Design-System/releases)
+[![License](https://img.shields.io/badge/License-MIT-6DC6EC.svg?style=for-the-badge)](LICENSE)
+[![Design Language](https://img.shields.io/badge/Design%20Language-Microsoft%20Fluent%202-022057.svg?style=for-the-badge&logo=windows)](https://fluent2.microsoft.design/)
+[![Accessibility](https://img.shields.io/badge/WCAG-2.1%20AAA%20Compliant-2e7d32.svg?style=for-the-badge)](https://www.w3.org/WAI/standards-guidelines/wcag/)
+[![Platforms](https://img.shields.io/badge/Platforms-Web%20•%20Expo%20•%20Flutter%20•%20WPF-BD9A73.svg?style=for-the-badge)](#-multi-platform-adapters)
 
-[🌐 Live System Hub](https://assets.suamisihat.com.my/) • [📚 Interactive Roadmap](https://assets.suamisihat.com.my/roadmap) • [💻 SSCAM App](https://github.com/SuamiSihat/ss_cam)
+<br/>
+
+[🌐 Live System Hub](https://assets.suamisihat.com.my/) • [📚 Brand Guidelines](https://assets.suamisihat.com.my/pages/brand-guidelines.html) • [🧩 Component Library](https://assets.suamisihat.com.my/pages/components.html) • [🗺️ Strategic Roadmap](https://assets.suamisihat.com.my/pages/doc.html?doc=roadmap) • [💻 SSCAM Desktop Suite](https://github.com/SuamiSihat/ss_cam)
 
 ---
 
 </div>
 
-## 🎨 Project Overview
+## 📌 Executive Overview
 
-The **SuamiSihat™ Design System** is a comprehensive, interactive brand toolkit for SuamiSihat™ and its operating sub-brands, built on **Microsoft Fluent 2** design language adapted to the SuamiSihat™ brand palette (`#022057` Prussian Blue, `#043388` SS Blue, `#6DC6EC` Sky Blue).
+The **SuamiSihat™ Design System** is the unified single source of truth for branding, typography, color hierarchy, and UI component architecture across the entire **SuamiSihat™** clinical and digital health ecosystem.
 
-It acts as the **single source of truth** across Web, Mobile (Expo / React Native & Flutter), and Windows WPF desktop applications.
+Engineered on **Microsoft Fluent 2** design principles and customized for men's medical vitality, the system balances **clinical authority**, **uncompromising patient discretion**, and **modern digital conversion**. It serves web platforms, mobile applications (Expo / React Native & Flutter), Windows WPF desktop suites, and operating sub-brands.
 
-### 🌟 Key Features
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                                SUAMISIHAT™ DESIGN SYSTEM                               │
+│                                (Single Source of Truth)                                │
+└───────────────────────────────────────────┬────────────────────────────────────────────┘
+                                            │
+           ┌────────────────────────────────┼────────────────────────────────┐
+           ▼                                ▼                                ▼
+  ┌──────────────────┐            ┌──────────────────┐             ┌──────────────────┐
+  │   WEB PLATFORMS  │            │   MOBILE APPS    │             │  DESKTOP & HUBS  │
+  │ • Patient Portal │            │ • Expo / React N.│             │ • SS CAM (WPF)   │
+  │ • Vertical Pages │            │ • Flutter Suite  │             │ • Clinical Tools │
+  │ • Teleconsult UI │            │ • Patient Care   │             │ • Brand Asset Hub│
+  └──────────────────┘            └──────────────────┘             └──────────────────┘
+```
 
-- **Microsoft Fluent 2 Tokens**: 3-tier token architecture (`fluent.css`, `design-tokens.json`, `ss_tokens.ts`, `ss_tokens.dart`) — raw tokens → semantic intent tokens → component atoms.
-- **Acrylic Glassmorphic Navigation**: `blur(20px) saturate(180%)` navigation bar with Fluent motion curves, active-link detection, and clean URL routing.
-- **Interactive Component Library**: Live preview of UI components, interactive copy-to-clipboard color chips, typography specs, and code snippets at `/components`.
-- **SS CAM Hub**: Asset launchpad & companion for the **SS CAM** (SuamiSihat™ Creative Assets Management) Windows WPF desktop app.
-- **Interactive Documentation**: Dynamic Markdown rendering engine (`doc.html`) supporting interactive Mermaid.js diagrams, strategic roadmap (`/roadmap`), contribution guide, and changelog.
-- **Mail Signature Generator**: Live-preview HTML email signature builder for all corporate and sub-brand entities (`/signature`).
-- **Staff Onboarding Guide**: Interactive checklist with `localStorage` persistence and sticky sidebar navigation (`/onboarding`).
-- **Full Dark Mode**: Semantic Fluent tokens flip automatically with OS preference detection and smooth transitions.
+---
+
+## 🏛️ Brand Terminology & Core Design Rules
+
+### 1. The 60:30:10 Visual Allocation Rule
+Every surface across the SuamiSihat™ ecosystem strictly adheres to the **60:30:10 visual color hierarchy** to ensure medical hygiene, clear layout grouping, and high-conversion patient actions without visual fatigue.
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│ [==================== 60% ====================] [========== 30% ==========] [== 10% =] │
+│           Clinical Canvas & Whitespace              Secondary Structure        Accent   │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+| Layer | Allocation | Official Palette & Hex | Semantic Role & Hierarchy |
+|---|---|---|---|
+| **Foundation** | **60%** | `#F8FAFC` (Canvas Light) / `#FFFFFF` (Surface) / `#090D16` (Void Dark) | **Calm Clinical Canvas**: Establishes spacious breathing room, medical cleanliness, and patient comfort. Used for page backgrounds, section canvases, and structural spacing. |
+| **Secondary** | **30%** | `#022057` (Prussian Blue) & `#043388` (SS Blue) | **Structural Anchors & Trust**: Organizes layout hierarchy, card containers, navigation topbars, section headers, and corporate footer blocks. |
+| **Accent** | **10%** | `#21A1F7` (Azure Blue) & `#F7E143` (Banana Yellow) | **Primary Conversion Focal Action**: High-potency focal color strictly reserved for primary conversion CTAs (`BOOK APPOINTMENT`), active nav pills, and focus rings. |
+
+---
+
+### 2. Strict Typography Neutral Rule (`#1C1C1C`)
+- **Digital Typography Standard**: Body copy, article text, labels, table content, and headings must **strictly use Neutral Black (`#1C1C1C`)** (`--ss-neutral-black`).
+- **Never Full Black for Text**: Pure black (`#000000`) causes harsh contrast strain and is **strictly prohibited for typography**. Pure black is reserved exclusively for dark surface backgrounds and high-contrast dark canvas modes.
+
+```css
+/* ✅ CORRECT */
+body, h1, h2, p, .ss-label {
+    color: #1C1C1C; /* var(--ss-neutral-black) */
+}
+
+/* ❌ PROHIBITED */
+body, p {
+    color: #000000; /* Causes visual vibration on clinical white canvases */
+}
+```
+
+---
+
+### 3. Elimination of CTA Competition
+- Service category cards, informational modules, and secondary list items must **never** use solid accent backgrounds or full accent-filled buttons.
+- Only the single dominant conversion action on a screen (e.g. `BOOK APPOINTMENT` or `ACCESS PORTAL`) receives the uncompromised **10% Accent** treatment.
+
+---
+
+### 4. Background & Logo Pairing Rule
+- On all vibrant, saturated, or dark surfaces (**Malibu `#6DC6EC`**, **Azure `#21A1F7`**, **SS Blue `#043388`**, **Prussian Blue `#022057`**, and **Void Dark `#090D16`**), interfaces must strictly display the **Primary Dark Logo** (`logo_suamisihat_primary_dark.svg` featuring the white wordmark).
+
+---
+
+## 🎨 Curated 60:30:10 Color Schemes
+
+The design system provides 3 production-certified color patterns engineered for clinical trust, digital conversion, and accessibility:
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│ 1. THE CLINICAL CONVERSION (Flagship Light — Main Web & Service Verticals)             │
+│ • 60% Foundation: #F8FAFC (Body Canvas) & #FFFFFF (Card Surface)                       │
+│ • 30% Secondary:  #022057 (Prussian Blue) & #043388 (SS Blue Structures)               │
+│ • 10% Accent:     #21A1F7 (Azure Primary Booking Action)                               │
+│ • Typography:     #1C1C1C (Neutral Black body copy & headings)                         │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│ 2. THE EXECUTIVE DISCRETION (Signature Dark — VIP Portals & Sensitive Health Records)  │
+│ • 60% Foundation: #090D16 (Void Dark) & #141414 (Surface Canvas)                       │
+│ • 30% Secondary:  #0F172A (Slate 900) & #022057 (Prussian Blue Containers)             │
+│ • 10% Accent:     #21A1F7 (Luminous Azure Focal Points)                                │
+│ • Typography:     #FFFFFF (Pure White) & #ABABAB (Slate Muted)                         │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│ 3. THE CLINICAL WARMTH (Wellness & Couples Fertility Journeys)                         │
+│ • 60% Foundation: #FDFCFB (Warm Ivory Canvas) & #FFFFFF (Card Surface)                 │
+│ • 30% Secondary:  #022057 (Prussian Blue) & #BD9A73 (Lion Gold Trust Badges)           │
+│ • 10% Accent:     #21A1F7 (Azure Primary Consultation Action)                          │
+│ • Typography:     #1C1C1C (Neutral Black text)                                         │
+└────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 💼 Ecosystem Use Cases
+
+### 1. Web & Patient Telehealth Portals
+- **Doctor Consultation Booking**: High-conversion patient onboarding with frictionless scheduling flows.
+- **Clinical Service Verticals**: Purpose-built visual identities for treatment funnels:
+  - *Erectile Dysfunction (ED) Clinical Protocol*
+  - *Men's Testosterone & Hormone Optimization*
+  - *Premature Ejaculation (PE) Delay Therapy*
+  - *Discreet STD / STI Screening & Lab Services*
+  - *Fertility & Semen Quality Biomarkers*
+
+### 2. Mobile Applications (Expo / React Native & Flutter)
+- **Daily Vitality Companion**: Private biometric tracking, medication intake reminders, and treatment progress graphs.
+- **Secure Encrypted Consultation**: End-to-end discreet messaging with certified medical practitioners.
+- **Touch Targets**: Standardized 44px minimum hit targets adhering to iOS HIG and Android Material guidelines.
+
+### 3. Windows WPF Desktop ([SS CAM Hub](https://github.com/SuamiSihat/ss_cam))
+- **Creative Assets Management**: Offline-first desktop suite for internal clinic operators, designers, and marketing teams to export vector logos, generate branded collateral, and inspect token values.
+
+### 4. Operating Sub-Brands Governance
+All operating entities inherit the central token architecture while expressing unique vertical roles:
+- **Androlab**: Advanced male health biomarker diagnostics and laboratory services.
+- **Mensculine**: Premium wellness lifestyle, stamina formulations, and vitality nutrition.
+- **MENSS**: Clinical prescription treatments and physician-guided protocols.
+- **Rejal**: Traditional herbal vitality backed by modern clinical validation.
+- **SS Wellness**: Holistic men's wellness, pelvic rehabilitation, and lifestyle recovery.
+
+---
+
+## 🎨 Master Brand Palette & Tokens
+
+| Swatch | Color Name | Hex Code | Token | Usage |
+|:---:|---|---|---|---|
+| 🟦 | **Prussian Blue** | `#022057` | `--ss-prussian-blue` | Primary corporate headers, dark cards, clinical authority |
+| 🔵 | **SS Blue** | `#043388` | `--ss-blue` | Primary brand identity, structural elements, nav headers |
+| 🌐 | **Azure** | `#21A1F7` | `--ss-azure` | Primary 10% conversion CTA (`BOOK APPOINTMENT`), focus rings |
+| 🧊 | **Malibu** | `#6DC6EC` | `--ss-malibu` | Soft highlights, active chip outlines, secondary accents |
+| ⚫ | **Neutral Black** | `#1C1C1C` | `--ss-neutral-black` | **Mandatory text color** for all headings, body, and UI labels |
+| 🦁 | **Lion Gold** | `#BD9A73` | `--ss-lion` | Premium certifications, doctor rating badges, warmth |
+| 🍌 | **Banana Yellow** | `#F7E143` | `--ss-banana-yellow` | Dedicated high-intent CTA button background (`.ss-btn-cta`) |
+| 🟡 | **Arylide Yellow** | `#E5D15C` | `--ss-arylide` | Status indicators, pending appointment tags, warnings |
+
+---
+
+## 🧩 UI Component Primitives
+
+The system includes standardized Fluent 2 component primitives with WCAG AAA contrast:
+
+### 1. Primary Action Button (`.ss-btn-primary`)
+```html
+<button class="ss-btn ss-btn-primary">
+    <iconify-icon icon="fluent:calendar-ltr-24-filled"></iconify-icon>
+    <span>Primary Action</span>
+</button>
+```
+
+### 2. High-Intent Banana Yellow CTA (`.ss-btn-cta`)
+```html
+<button class="ss-btn ss-btn-cta">
+    <iconify-icon icon="fluent:flash-24-filled"></iconify-icon>
+    <span>BOOK APPOINTMENT</span>
+</button>
+```
+
+### 3. Secondary & Ghost Actions
+```html
+<button class="ss-btn ss-btn-secondary">Secondary Action</button>
+<button class="ss-btn ss-btn-ghost">Ghost Link</button>
+```
+
+---
+
+## 📱 Multi-Platform Adapters
+
+Design tokens follow the **W3C Design Token Community Group** standard and are exported to:
+
+- **Web / CSS**: [`assets/css/fluent.css`](assets/css/fluent.css) & [`assets/css/dist/fluent.css`](assets/css/dist/fluent.css)
+- **Design Tokens (JSON)**: [`assets/tokens/design-tokens.json`](assets/tokens/design-tokens.json)
+- **TypeScript / Expo**: [`assets/tokens/ss_tokens.ts`](assets/tokens/ss_tokens.ts)
+- **Flutter / Dart**: [`assets/tokens/ss_tokens.dart`](assets/tokens/ss_tokens.dart)
+- **Windows WPF**: Integrated via XAML Resource Dictionaries in [SS CAM](https://github.com/SuamiSihat/ss_cam)
 
 ---
 
@@ -38,123 +207,78 @@ It acts as the **single source of truth** across Web, Mobile (Expo / React Nativ
 
 ```text
 branding_suamisihat/
-├── index.html                    # Master Hub Homepage — Fluent 2 portal
+├── index.html                    # System Hub & Navigation Portal
+├── pages/                        # Interactive documentation & tool pages
+│   ├── brand-system.html         # Master Brand Identity, 60:30:10 & Logos
+│   ├── brand-guidelines.html     # Clinical Guidelines & Downloadable PDFs
+│   ├── components.html           # Live Fluent 2 UI Component Library
+│   ├── products.html             # Product Vertical & Packaging Catalogue
+│   ├── onboarding.html           # Interactive Staff Onboarding Guide
+│   ├── signature.html            # Dynamic Email Signature Generator
+│   ├── doc.html                  # Markdown & Interactive Mermaid Engine
+│   ├── 403.html                  # Animated 60:30:10 Access Forbidden Page
+│   ├── 404.html                  # Animated 60:30:10 Page Not Found
+│   └── 500.html                  # Animated 60:30:10 Server Error Page
 ├── assets/
-│   ├── css/
-│   │   ├── fluent.css            # Fluent 2 token foundation (load first)
-│   │   ├── ss_theme.css          # Semantic bridge layer
-│   │   ├── style.css             # Core component styles & Fluent overrides
-│   │   └── markdown.css          # Markdown prose styles
-│   ├── js/
-│   │   ├── main.js               # Core engine (ThemeManager, Nav, Animations)
-│   │   └── markdown-loader.js    # Markdown rendering engine + Mermaid support
-│   └── tokens/
-│       ├── design-tokens.json    # Master W3C Design Tokens specification
-│       ├── ss_tokens.ts          # Expo / React Native token package
-│       └── ss_tokens.dart        # Flutter design tokens package
-├── pages/                        # System pages (brand-system, components, tools, etc.)
-├── content/                      # Editable Markdown documentation & roadmap
-├── public/brand/                 # SVG logos, logomarks, and sub-brand media
-├── .htaccess                     # Apache clean URL rewrite & security headers
-├── deploy.ps1                    # Deployment script (supports env config)
-├── deploy.config.ps1.example     # Template for local deployment credentials
+│   ├── css/                      # Token foundation, theme, and styles
+│   │   ├── fluent.css            # Tier 1 & 2 Fluent 2 token foundation
+│   │   ├── style.css             # Component layout & acrylic utilities
+│   │   └── dist/                 # Production minified CSS bundles
+│   ├── js/                       # Core application engine & helpers
+│   │   ├── main.js               # Theme manager, navigation, logo selector
+│   │   └── dist/                 # Production minified JavaScript bundles
+│   └── tokens/                   # Master W3C token JSON, TS, and Dart
+├── public/brand/                 # Authoritative SVG logos & sub-brand marks
+├── scripts/                      # Minification and watcher build scripts
+│   ├── minify-css.mjs            # CSS minifier & optimizer
+│   ├── minify-js.mjs             # JavaScript bundle minifier
+│   └── watch.mjs                 # Live chokidar file watcher
+├── .htaccess                     # Synology Apache clean URL routing & security
+├── nginx.conf                    # Production Nginx reverse proxy configuration
+├── deploy.ps1                    # Production deployment automation script
 └── README.md                     # Repository documentation
 ```
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start & Build Pipeline
 
-### Local Development Setup
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/SuamiSihat/branding_suamisihat.git
-   cd branding_suamisihat
-   ```
-
-2. **Start a local static web server**:
-   ```bash
-   # Python 3
-   python -m http.server 8000
-
-   # Node.js
-   npx serve -p 8000
-
-   # PHP
-   php -S localhost:8000
-   ```
-
-3. **Open in browser**:
-   ```text
-   http://localhost:8000
-   ```
-
----
-
-## 🐳 Docker Deployment
-
-The project includes production-ready Docker containerization powered by Apache (`httpd:alpine`), featuring `.htaccess` clean URL masking out-of-the-box.
-
-### Using Docker Compose
-
+### 1. Local Development
 ```bash
-docker compose up --build -d
+# Clone the repository
+git clone https://github.com/SuamiSihat/SS-Design-System.git
+cd SS-Design-System
+
+# Install build dependencies
+npm install
+
+# Start development watcher (auto-minifies CSS & JS on save)
+npm run watch
 ```
-Access the application at **`http://localhost:8080`**.
 
-### Using Docker CLI
-
+### 2. Build for Production
 ```bash
-# Build Docker image
-docker build -t ss-design-system .
+# Rebuild all minified production assets
+npm run build
+```
 
-# Run container
-docker run -d -p 8080:80 --name ss-design-system ss-design-system
+### 3. Deploy to Production NAS
+```bash
+# Execute deployment script
+powershell -ExecutionPolicy Bypass -File deploy.ps1 -Message "feat: release update"
 ```
 
 ---
 
-## 🎨 Color Palette & Design Tokens
+## 🤝 Contributing & Governance
 
-| Token | Hex Value | Role | Usage |
-|---|---|---|---|
-| `ss-prussian-blue` | `#022057` | Primary Dark | Corporate headers, dark cards, legal specs |
-| `ss-blue` | `#043388` | Primary Brand | Primary buttons, active states, brand accents |
-| `ss-azure` | `#21A1F7` | Brand Light | Interactive highlights, links, focus rings |
-| `ss-malibu` | `#6DC6EC` | Sky Blue Accent | Light mode footer, secondary highlights |
-| `ss-lion` | `#BD9A73` | Gold Secondary | Premium badges, sub-brand highlights |
-| `ss-fawn` | `#CCAC8D` | Gold Soft | Secondary borders, muted accents |
+1. All new components must adhere strictly to the **60:30:10 Visual Allocation Rule** and use **Neutral Black (`#1C1C1C`)** for typography.
+2. Review our [Contribution Guide](pages/doc.html?doc=contribution-guide) before opening a Pull Request.
+3. Report vulnerabilities privately to **[branding@suamisihat.com](mailto:branding@suamisihat.com)**.
 
 ---
 
-## 📱 Multi-Platform Adapters
+## 📄 License & Legal
 
-The design tokens are exported in standard formats to support all client applications:
-
-- **Web (CSS / JS)**: `assets/css/fluent.css` & `assets/css/ss_theme.css`
-- **Expo / React Native**: `assets/tokens/ss_tokens.ts` (using `@fluentui/react-native-icons`)
-- **Flutter**: `assets/tokens/ss_tokens.dart`
-- **Windows WPF**: Synchronized with [SS CAM Desktop Suite](https://github.com/SuamiSihat/ss_cam)
-
----
-
-## 🤝 Contributing
-
-Contributions, feedback, and issue reports are welcome!
-- Please review our [Contribution Guide](content/contribution-guide.md).
-- To report a bug or request a feature, please open a [GitHub Issue](https://github.com/SuamiSihat/branding_suamisihat/issues).
-- Before submitting a pull request, verify your changes against our [PR Template](.github/PULL_REQUEST_TEMPLATE.md).
-
----
-
-## 🔒 Security Policy
-
-If you discover a security vulnerability, please refer to our [Security Policy](SECURITY.md) and report it privately via email to [branding@suamisihat.com](mailto:branding@suamisihat.com).
-
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-Copyright © 2026 SuamiSihat™ Holding Sdn. Bhd. All rights reserved.
+Copyright © 2026 **SuamiSihat™ Holding Sdn. Bhd.** All rights reserved.  
+Licensed under the [MIT License](LICENSE).
