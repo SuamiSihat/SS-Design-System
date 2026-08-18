@@ -13,11 +13,11 @@ Welcome to the **SuamiSihat™ Design System Roadmap**. This document outlines o
 
 ---
 
-## 🎯 Current Status (v3.2 — RELEASE READY)
+## 🎯 Current Status (v3.3 — RELEASE READY)
 
 | Metric | Status |
 |---|---|
-| **Version** | `v3.2` |
+| **Version** | `v3.3` |
 | **Audit Status** | 🟢 **14 / 14 QA Domains Passed** |
 | **P0 / P1 Defects** | `0` |
 | **P2 Defects** | `0` (Remediated) |
@@ -28,7 +28,7 @@ Welcome to the **SuamiSihat™ Design System Roadmap**. This document outlines o
 ## 🗺️ Release Roadmap & Milestones
 
 ```
- [v1.0 - v2.1]         [v3.0 - v3.2]         [v3.3 - v3.5]          [v4.0 Enterprise]
+ [v1.0 - v2.1]         [v3.0 - v3.3]         [v3.3 - v3.5]          [v4.0 Enterprise]
  Foundation         Fluent 2 & Tokens     Token Hardening        Component Packages
  ───────┬───────    ──────────┬────────   ──────────┬─────────   ──────────┬───────────
         │                     │                     │                      │
@@ -64,7 +64,7 @@ Welcome to the **SuamiSihat™ Design System Roadmap**. This document outlines o
 
 | Version | Date | Highlights |
 |---|---|---|
-| **v3.2** | Aug 2026 | Full 14-report QA Audit complete, P2 fixes, SSCAM WPF integration, trademark `SuamiSihat™` standardization |
+| **v3.3** | Aug 2026 | Full 14-report QA Audit complete, P2 fixes, SSCAM WPF integration, trademark `SuamiSihat™` standardization |
 | **v3.1** | Aug 2026 | Multi-platform token system (JSON, CSS, TS, Dart) & Expo React Native foundation |
 | **v3.0** | Aug 2026 | Microsoft Fluent 2 design system overhaul & 3-tier color system |
 | **v2.1** | Jul 2026 | Hub upgrade & Markdown documentation engine integration |

@@ -12,6 +12,7 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+Set-Location $PSScriptRoot
 
 # Load local config if present (untracked in .gitignore)
 $configFile = Join-Path $PSScriptRoot "deploy.config.ps1"

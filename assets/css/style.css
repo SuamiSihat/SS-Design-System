@@ -1180,9 +1180,11 @@ body.dark-mode .footer-grid {
 }
 
 @media (max-width: 480px) {
-    border-left: 3px solid var(--accent);
-    padding-left: 1rem;
-    margin-top: 1rem;
+    .intro-tagline {
+        border-left: 3px solid var(--accent);
+        padding-left: 1rem;
+        margin-top: 1rem;
+    }
 }
 
 body.dark-mode .intro-tagline {
