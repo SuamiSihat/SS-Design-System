@@ -80,6 +80,8 @@
         .ss-btn:active{transform:scale(.97)}
         .ss-btn-primary{background:var(--color-brand-primary);color:#fff}
         .ss-btn-primary:hover{background:var(--color-brand-dark);box-shadow:var(--f-shadow-brand-sm);color:#fff}
+        .ss-btn-cta{background:var(--ss-banana-yellow,#F7E143);color:#1C1C1C;font-weight:700;border:none;box-shadow:0 2px 8px rgba(247,225,67,.35)}
+        .ss-btn-cta:hover{background:#FCE53D;color:#1C1C1C;box-shadow:0 4px 14px rgba(247,225,67,.5);transform:translateY(-2px)}
         .ss-btn-secondary{background:var(--color-neutral-bg-3);color:var(--color-neutral-fg-1);border:1px solid var(--color-neutral-stroke-2)}
         .ss-btn-secondary:hover{background:var(--color-neutral-bg-4)}
         .ss-btn-ghost{background:transparent;color:var(--color-brand-primary)}
@@ -438,71 +440,55 @@
             <h2 class="cl-section-title">Color System &amp; 60:30:10 Hierarchy</h2>
             <p class="cl-section-desc">Our design system enforces a disciplined <b>60:30:10 visual color hierarchy</b> across web and mobile. Three-tier token model in <code>fluent.css</code>: Global (raw hex) → Semantic (intent) → Component. Never use raw hex in components.</p>
 
-            <!-- 60:30:10 Visual Color Architecture Card -->
+            <!-- The 60:30:10 Visual Allocation Rule Card -->
             <div class="cl-card">
                 <div class="cl-card-header">
                     <div>
-                        <div class="cl-card-title">SuamiSihat™ 60:30:10 Visual Color Architecture</div>
-                        <div class="cl-card-subtitle">Perceptual visual distribution across clinical interfaces (Medical, Masculine, Premium)</div>
+                        <div class="cl-card-title">The 60:30:10 Visual Allocation Rule</div>
                     </div>
                     <span class="ss-badge ss-badge-brand">Brand Standard</span>
                 </div>
                 <div class="cl-preview" style="display:block;padding:var(--f-space-6);">
                     <!-- Sleek Proportion Bar -->
-                    <div style="display:flex;height:24px;border-radius:var(--f-radius-full);overflow:hidden;border:1px solid var(--color-neutral-stroke-1);margin-bottom:var(--f-space-3);box-shadow:var(--f-shadow-2);">
-                        <div style="flex:60;background:var(--color-neutral-bg-4);border-right:2px solid var(--color-neutral-stroke-2);"></div>
-                        <div style="flex:30;background:#022057;border-right:2px solid var(--color-neutral-stroke-2);"></div>
-                        <div style="flex:10;background:var(--color-brand-primary);"></div>
+                    <div style="display:flex;height:24px;border-radius:var(--f-radius-full);overflow:hidden;border:1px solid var(--color-neutral-stroke-1);margin-bottom:var(--f-space-4);box-shadow:var(--f-shadow-2);">
+                        <div style="flex:60;background:#E2E8F0;" title="60% Foundation"></div>
+                        <div style="flex:30;background:#022057;" title="30% Secondary"></div>
+                        <div style="flex:10;background:#21A1F7;" title="10% Accent (Azure)"></div>
                     </div>
 
                     <!-- Clean Proportional Legend -->
-                    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--f-space-2);margin-bottom:var(--f-space-5);font-size:0.78rem;font-weight:600;">
-                        <div style="display:flex;align-items:center;gap:6px;color:var(--color-neutral-fg-1);">
-                            <span style="width:12px;height:12px;border-radius:3px;background:var(--color-neutral-bg-4);border:1px solid var(--color-neutral-stroke-2);display:inline-block;"></span>
+                    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--f-space-3);margin-bottom:var(--f-space-6);font-size:0.82rem;font-weight:600;">
+                        <div style="display:flex;align-items:center;gap:8px;color:var(--color-neutral-fg-1);">
+                            <span style="width:14px;height:14px;border-radius:3px;background:#E2E8F0;border:1px solid var(--color-neutral-stroke-2);display:inline-block;"></span>
                             <strong>60%</strong> Foundation (Canvas &amp; Whitespace)
                         </div>
-                        <div style="display:flex;align-items:center;gap:6px;color:var(--color-neutral-fg-1);">
-                            <span style="width:12px;height:12px;border-radius:3px;background:#022057;display:inline-block;"></span>
+                        <div style="display:flex;align-items:center;gap:8px;color:var(--color-neutral-fg-1);">
+                            <span style="width:14px;height:14px;border-radius:3px;background:#022057;display:inline-block;"></span>
                             <strong>30%</strong> Secondary (Structure &amp; Cards)
                         </div>
-                        <div style="display:flex;align-items:center;gap:6px;color:var(--color-neutral-fg-1);">
-                            <span style="width:12px;height:12px;border-radius:3px;background:var(--color-brand-primary);display:inline-block;"></span>
-                            <strong>10%</strong> Accent (Primary CTA)
+                        <div style="display:flex;align-items:center;gap:8px;color:var(--color-neutral-fg-1);">
+                            <span style="width:14px;height:14px;border-radius:3px;background:#21A1F7;display:inline-block;"></span>
+                            <strong>10%</strong> Accent (Primary CTA &mdash; Azure)
                         </div>
                     </div>
 
-                    <!-- 3-Tier Layer Breakdown Grid -->
-                    <div class="row g-4 mb-4">
+                    <!-- 3-Column Layer Breakdown Grid -->
+                    <div class="row g-4 mb-3">
                         <div class="col-md-4">
-                            <div style="padding:var(--f-space-4);border-radius:var(--f-radius-lg);background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);height:100%;">
-                                <div style="display:inline-block;padding:2px 8px;border-radius:var(--f-radius-sm);background:var(--color-neutral-bg-4);font-size:0.7rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:8px;">60% ± 10% Foundation</div>
-                                <h4 style="font-size:0.95rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;">Clinical Canvas</h4>
-                                <p style="font-size:0.8rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Establishes medical cleanliness, breathing room, and premium baseline. Body background, empty areas, and spacious section canvases.</p>
-                                <div style="margin-top:10px;font-family:monospace;font-size:0.7rem;color:var(--color-neutral-fg-3);">Tokens: <code>--color-neutral-bg-1</code>, <code>#F8FAFC</code></div>
+                            <div style="font-size:0.875rem;line-height:1.6;color:var(--color-neutral-fg-2);">
+                                <strong style="color:var(--color-neutral-fg-1);">60% Foundation:</strong> Calm clinical canvas (<span style="color:#e83e8c;font-family:monospace;font-weight:600;">#F8FAFC</span> / <span style="color:#e83e8c;font-family:monospace;font-weight:600;">#FFFFFF</span>) providing spacious breathing room and hygiene. Body backgrounds and clean neutral surfaces.
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div style="padding:var(--f-space-4);border-radius:var(--f-radius-lg);background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);height:100%;">
-                                <div style="display:inline-block;padding:2px 8px;border-radius:var(--f-radius-sm);background:rgba(2,32,87,0.1);font-size:0.7rem;font-weight:700;color:#022057;margin-bottom:8px;">30% ± 10% Secondary</div>
-                                <h4 style="font-size:0.95rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;">Structure &amp; Surfaces</h4>
-                                <p style="font-size:0.8rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Creates layout grouping and hierarchy. Cards, content containers, structural panels, navigation topbars, and deep Prussian Blue footer surfaces.</p>
-                                <div style="margin-top:10px;font-family:monospace;font-size:0.7rem;color:var(--color-neutral-fg-3);">Tokens: <code>--color-neutral-bg-2</code>, <code>--ss-prussian-blue</code></div>
+                            <div style="font-size:0.875rem;line-height:1.6;color:var(--color-neutral-fg-2);">
+                                <strong style="color:var(--color-neutral-fg-1);">30% Secondary:</strong> Prussian Blue (<span style="color:#e83e8c;font-family:monospace;font-weight:600;">#022057</span>), SS Blue (<span style="color:#e83e8c;font-family:monospace;font-weight:600;">#043388</span>), and Slate structural containers grouping cards, navigation bars, headers, and footers.
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div style="padding:var(--f-space-4);border-radius:var(--f-radius-lg);background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);height:100%;">
-                                <div style="display:inline-block;padding:2px 8px;border-radius:var(--f-radius-sm);background:rgba(33,161,247,0.12);font-size:0.7rem;font-weight:700;color:var(--color-brand-primary);margin-bottom:8px;">10% ± 5% Accent</div>
-                                <h4 style="font-size:0.95rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;">Primary Focal Action</h4>
-                                <p style="font-size:0.8rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">High-potency focal color strictly disciplined for <b>Primary CTAs</b> (Book Appointment), active navigation states, critical metrics, and active focus.</p>
-                                <div style="margin-top:10px;font-family:monospace;font-size:0.7rem;color:var(--color-neutral-fg-3);">Tokens: <code>--color-brand-primary</code>, <code>--ss-azure</code></div>
+                            <div style="font-size:0.875rem;line-height:1.6;color:var(--color-neutral-fg-2);">
+                                <strong style="color:var(--color-neutral-fg-1);">10% Accent (Azure):</strong> High-potency focal color (<span style="color:#e83e8c;font-family:monospace;font-weight:600;">#21A1F7</span>) reserved strictly for primary conversion CTAs (<span style="color:#e83e8c;font-family:monospace;font-weight:600;">BOOK APPOINTMENT</span>), active navigation pills, and interactive focus rings.
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Do & Don't Guidelines -->
-                    <div style="padding:var(--f-space-4);border-radius:var(--f-radius-md);background:var(--color-neutral-bg-3);border-left:4px solid var(--color-brand-primary);">
-                        <div style="font-size:0.85rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:4px;"><iconify-icon icon="fluent:checkmark-circle-24-regular" style="vertical-align:middle;margin-right:4px;color:var(--color-brand-primary);"></iconify-icon> Conversion Rule: Eliminate CTA Competition</div>
-                        <p style="font-size:0.8rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Service category cards must <b>never</b> use solid accent backgrounds or accent-filled buttons. Only the dominant conversion action (<code>BOOK APPOINTMENT</code>) receives the uncompromised Primary Brand Accent color treatment.</p>
                     </div>
                 </div>
             </div>
@@ -515,9 +501,10 @@
                         <div class="cl-swatch"><div class="cl-swatch-color" style="background:#043388"></div><div class="cl-swatch-info"><div class="cl-swatch-name">SS Blue</div><div class="cl-swatch-hex">#043388</div><div class="cl-swatch-token">--ss-blue</div></div></div>
                         <div class="cl-swatch"><div class="cl-swatch-color" style="background:#21A1F7"></div><div class="cl-swatch-info"><div class="cl-swatch-name">Azure</div><div class="cl-swatch-hex">#21A1F7</div><div class="cl-swatch-token">--ss-azure</div></div></div>
                         <div class="cl-swatch"><div class="cl-swatch-color" style="background:#6DC6EC"></div><div class="cl-swatch-info"><div class="cl-swatch-name">Malibu</div><div class="cl-swatch-hex">#6DC6EC</div><div class="cl-swatch-token">--ss-malibu</div></div></div>
+                        <div class="cl-swatch"><div class="cl-swatch-color" style="background:#1C1C1C"></div><div class="cl-swatch-info"><div class="cl-swatch-name">Neutral Black</div><div class="cl-swatch-hex">#1C1C1C</div><div class="cl-swatch-token">--ss-neutral-black</div></div></div>
                         <div class="cl-swatch"><div class="cl-swatch-color" style="background:#BD9A73"></div><div class="cl-swatch-info"><div class="cl-swatch-name">Lion</div><div class="cl-swatch-hex">#BD9A73</div><div class="cl-swatch-token">--ss-lion</div></div></div>
                         <div class="cl-swatch"><div class="cl-swatch-color" style="background:#E5D15C"></div><div class="cl-swatch-info"><div class="cl-swatch-name">Arylide Yellow</div><div class="cl-swatch-hex">#E5D15C</div><div class="cl-swatch-token">--ss-arylide</div></div></div>
-                        <div class="cl-swatch"><div class="cl-swatch-color" style="background:#FCE53D"></div><div class="cl-swatch-info"><div class="cl-swatch-name">Banana Yellow</div><div class="cl-swatch-hex">#FCE53D</div><div class="cl-swatch-token">--ss-banana</div></div></div>
+                        <div class="cl-swatch"><div class="cl-swatch-color" style="background:#F7E143"></div><div class="cl-swatch-info"><div class="cl-swatch-name">Banana Yellow</div><div class="cl-swatch-hex">#F7E143</div><div class="cl-swatch-token">--ss-banana-yellow</div></div></div>
                     </div>
                 </div>
             </div>
@@ -698,6 +685,7 @@
                 <div class="cl-card-header"><div class="cl-card-title">Variants &amp; States</div></div>
                 <div class="cl-preview">
                     <button class="ss-btn ss-btn-primary"><iconify-icon icon="fluent:checkmark-24-regular"></iconify-icon> Primary</button>
+                    <button class="ss-btn ss-btn-cta"><iconify-icon icon="fluent:flash-24-filled"></iconify-icon> CTA Button</button>
                     <button class="ss-btn ss-btn-secondary"><iconify-icon icon="fluent:add-24-regular"></iconify-icon> Secondary</button>
                     <button class="ss-btn ss-btn-ghost">Ghost</button>
                     <button class="ss-btn ss-btn-danger"><iconify-icon icon="fluent:delete-24-regular"></iconify-icon> Danger</button>
@@ -705,10 +693,18 @@
                 </div>
                 <div class="cl-card-header" style="border-top:1px solid var(--color-neutral-stroke-1)"><div class="cl-card-title">Sizes</div></div>
                 <div class="cl-preview">
-                    <button class="ss-btn ss-btn-primary ss-btn-sm">Small</button>
-                    <button class="ss-btn ss-btn-primary">Medium</button>
-                    <button class="ss-btn ss-btn-primary ss-btn-lg">Large</button>
+                    <button class="ss-btn ss-btn-cta ss-btn-sm">CTA Small</button>
+                    <button class="ss-btn ss-btn-cta">CTA Medium</button>
+                    <button class="ss-btn ss-btn-cta ss-btn-lg">CTA Large</button>
+                    <button class="ss-btn ss-btn-primary ss-btn-sm">Primary Small</button>
+                    <button class="ss-btn ss-btn-primary">Primary Medium</button>
+                    <button class="ss-btn ss-btn-primary ss-btn-lg">Primary Large</button>
                 </div>
+                <div class="cl-card-header" style="border-top:1px solid var(--color-neutral-stroke-1)"><div class="cl-card-title">Code Example</div></div>
+                <div class="cl-code-block"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>&lt;!-- Banana Yellow CTA Button (#F7E143 bg, #1C1C1C Neutral Black text) --&gt;
+&lt;button class="ss-btn ss-btn-cta"&gt;
+    &lt;iconify-icon icon="fluent:flash-24-filled"&gt;&lt;/iconify-icon&gt; BOOK APPOINTMENT
+&lt;/button&gt;</div>
             </div>
         </section>
 
