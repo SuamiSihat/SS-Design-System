@@ -89,9 +89,9 @@ FileETag None
     RewriteCond %{DOCUMENT_ROOT}/$1.html -f
     RewriteRule ^(pages/[a-zA-Z0-9_-]+)/?$ $1.html [L,QSA]
 
-    # 3. Internal Rewrite: /name -> /pages/name.html (Root short URL alias)
+    # 3. Internal Rewrite: /name or /name.html -> /pages/name.html (Root short URL alias)
     RewriteCond %{DOCUMENT_ROOT}/pages/$1.html -f
-    RewriteRule ^([a-zA-Z0-9_-]+)/?$ pages/$1.html [L,QSA]
+    RewriteRule ^([a-zA-Z0-9_-]+)(?:\.html)?/?$ pages/$1.html [L,QSA]
 
     # 4. Fallback internal rewrite for any extensionless request
     RewriteCond %{REQUEST_FILENAME} !-d

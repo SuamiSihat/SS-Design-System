@@ -1578,10 +1578,9 @@ function initCleanUrlMasking() {
         if (!window.location.protocol.startsWith('http')) return; // Avoid local file:// security limits
 
         const pathname = window.location.pathname;
-        const pageMatch = pathname.match(/\/pages\/([a-zA-Z0-9_-]+)\.html$/i);
-        if (pageMatch && pageMatch[1]) {
-            const pageName = pageMatch[1];
-            const cleanPath = pathname.replace(/\/pages\/[a-zA-Z0-9_-]+\.html$/i, '/' + pageName);
+        // Clean .html extension while preserving directory hierarchy (e.g. /pages/brand-system)
+        if (pathname.endsWith('.html')) {
+            const cleanPath = pathname.replace(/\.html$/i, '');
             const search = window.location.search || '';
             const hash = window.location.hash || '';
             window.history.replaceState(null, '', cleanPath + search + hash);
