@@ -204,19 +204,10 @@ var LogoSelector = (function () {
         },
 
         /**
-         * Apply Rule 2 (background brightness) to every .footer-logo / .f-footer-logo
-         * on the current page.
-         *
-         * For each logo image, the function walks up the DOM to find the actual rendered
-         * background colour of its container, converts that to HSL lightness, then picks:
-         *   L < 50  → dark background → use logo_suamisihat_primary_dark.svg  (white wordmark)
-         *   L ≥ 50  → light background → use logo_suamisihat_primary_light.svg (navy wordmark)
-         *
-         * `theme` is accepted as a fallback hint (used when the background cannot be
-         * resolved from the DOM), but the computed colour always takes precedence.
-         *
-         * @param {string} [theme]   'light' | 'dark' — fallback hint
-         * @param {string} [prefix]  path prefix (auto-detected when omitted)
+         * Apply dark wordmark logo to all footers
+         * @param {string} [theme]
+         * @param {string} [prefix]
+         */
         applyToFooter: function (theme, prefix) {
             var self = this;
             var base = prefix !== undefined ? prefix : autoPrefix();
