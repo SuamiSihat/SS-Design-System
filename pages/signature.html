@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Generate your official SuamiSihat™ email signature - always on-brand, ready to paste.">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Mail Signature Generator - SuamiSihat™ Design System</title>
     <link rel="icon" href="../public/brand/favicon/favicon.ico" sizes="any">
     <link rel="icon" href="../public/brand/logos/ss-logomark-light.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../public/brand/favicon/apple-touch-icon.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@3/dist/iconify.min.js" defer></script>
     <link rel="stylesheet" href="../assets/css/fluent.css?v=9">
     <link rel="stylesheet" href="../assets/css/ss_theme.css?v=9">
@@ -92,7 +92,7 @@
     <main id="main-content">
         <div class="sig-shell">
             <aside class="sig-form-panel f-animate-up" aria-label="Signature form">
-                <h2><i class="fa-solid fa-sliders me-2" aria-hidden="true"></i>Your Details</h2>
+                <h2><iconify-icon icon="fluent:options-24-regular" class="me-2" aria-hidden="true"></iconify-icon>Your Details</h2>
                 <div class="f-field"><label class="f-label" for="sig-name">Full Name</label><input class="f-input" id="sig-name" type="text" placeholder="e.g. Ahmad Syazwan" autocomplete="name"></div>
                 <div class="f-field"><label class="f-label" for="sig-title">Job Title</label><input class="f-input" id="sig-title" type="text" placeholder="e.g. Brand Designer"></div>
                 <div class="f-field">
@@ -114,14 +114,14 @@
 
             <section class="sig-preview-panel f-animate-up f-delay-2" aria-label="Signature preview">
                 <div class="preview-header">
-                    <h2><i class="fa-solid fa-eye me-2" aria-hidden="true"></i>Live Preview</h2>
-                    <button class="copy-btn" id="copyBtn" aria-label="Copy signature to clipboard"><i class="fa-regular fa-copy" aria-hidden="true"></i> Copy Signature</button>
+                    <h2><iconify-icon icon="fluent:eye-24-regular" class="me-2" aria-hidden="true"></iconify-icon>Live Preview</h2>
+                    <button class="copy-btn" id="copyBtn" aria-label="Copy signature to clipboard"><iconify-icon icon="fluent:copy-24-regular" aria-hidden="true"></iconify-icon> Copy Signature</button>
                 </div>
                 <div class="sig-canvas" id="sigCanvas" aria-live="polite">
                     <div id="sigOutput"></div>
                 </div>
                 <div class="usage-card">
-                    <h3><i class="fa-solid fa-circle-info me-2" aria-hidden="true"></i>How to use your signature</h3>
+                    <h3><iconify-icon icon="fluent:info-24-regular" class="me-2" aria-hidden="true"></iconify-icon>How to use your signature</h3>
                     <ol class="usage-steps">
                         <li><span class="usage-step-num">1</span>Fill in your details above - the preview updates live.</li>
                         <li><span class="usage-step-num">2</span>Click <strong>Copy Signature</strong>. The formatted HTML is on your clipboard.</li>
@@ -136,12 +136,34 @@
 
     <script>
     (function(){
+        function escapeHTML(str) {
+            if (!str) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
         var state={name:'',title:'',entity:'SuamiSihat™',color:'#043388',phone:'',email:'',website:'https://suamisihat.com.my',tagline:''};
         var LOGO='https://suamisihat.com.my/wp-content/uploads/2024/10/logo_ss_primary_white.png';
         function buildSig(){
-            var n=state.name||'Your Name',t=state.title||'Your Title',e=state.entity,c=state.color;
-            var p=state.phone||'+60 XX-XXX XXXX',em=state.email||'name@suamisihat.com';
-            var w=state.website||'https://suamisihat.com.my',tg=state.tagline;
+            var n=escapeHTML(state.name||'Your Name');
+            var t=escapeHTML(state.title||'Your Title');
+            var e=escapeHTML(state.entity);
+            var c=/^#[0-9A-Fa-f]{6}$/.test(state.color)?state.color:'#043388';
+            var rawPhone=(state.phone||'+60 XX-XXX XXXX').replace(/[^\d\s\+\-\(\)]/g, '');
+            var p=escapeHTML(rawPhone);
+            var rawEmail=(state.email||'name@suamisihat.com').replace(/[^\w\.\-\@\+]/g, '');
+            var em=escapeHTML(rawEmail);
+            var rawWeb=(state.website||'https://suamisihat.com.my').trim();
+            if (!/^https?:\/\//i.test(rawWeb)) rawWeb = 'https://' + rawWeb;
+            var w=escapeHTML(rawWeb);
+            var tg=escapeHTML(state.tagline);
+            var telHref = escapeHTML('tel:' + rawPhone.replace(/\s/g, ''));
+            var mailHref = escapeHTML('mailto:' + rawEmail);
+
             return '<table cellpadding="0" cellspacing="0" border="0" style="font-family:\'Segoe UI\',Arial,sans-serif;font-size:13px;color:#3c3c3b;border-collapse:collapse;max-width:520px;">'
                 +'<tr>'
                 +'<td style="background:'+c+';width:6px;">&nbsp;</td>'
@@ -151,8 +173,8 @@
                   +'<p style="margin:0 0 2px 0;font-size:12px;font-weight:500;color:#043388;">'+t+'</p>'
                   +'<p style="margin:0 0 10px 0;font-size:11px;color:#999;text-transform:uppercase;letter-spacing:0.05em;">'+e+'</p>'
                   +'<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">'
-                    +'<tr><td style="padding-bottom:3px;"><span style="display:inline-block;width:14px;text-align:center;">&#128222;</span> <a href="tel:'+p.replace(/\s/g,'')+'" style="color:#043388;text-decoration:none;font-size:12px;">'+p+'</a></td></tr>'
-                    +'<tr><td style="padding-bottom:3px;"><span style="display:inline-block;width:14px;text-align:center;">&#9993;</span> <a href="mailto:'+em+'" style="color:#043388;text-decoration:none;font-size:12px;">'+em+'</a></td></tr>'
+                    +'<tr><td style="padding-bottom:3px;"><span style="display:inline-block;width:14px;text-align:center;">&#128222;</span> <a href="'+telHref+'" style="color:#043388;text-decoration:none;font-size:12px;">'+p+'</a></td></tr>'
+                    +'<tr><td style="padding-bottom:3px;"><span style="display:inline-block;width:14px;text-align:center;">&#9993;</span> <a href="'+mailHref+'" style="color:#043388;text-decoration:none;font-size:12px;">'+em+'</a></td></tr>'
                     +'<tr><td><span style="display:inline-block;width:14px;text-align:center;">&#127760;</span> <a href="'+w+'" style="color:#043388;text-decoration:none;font-size:12px;">'+w.replace(/^https?:\/\//,'')+'</a></td></tr>'
                   +'</table>'
                   +(tg?'<p style="margin:10px 0 0;font-size:10.5px;font-style:italic;color:#999;">'+tg+'</p>':'')
@@ -181,8 +203,8 @@
                 var blob=new Blob([html],{type:'text/html'});
                 navigator.clipboard.write([new ClipboardItem({'text/html':blob})]).catch(function(){navigator.clipboard.writeText(html);});
             }catch(e){navigator.clipboard.writeText(html);}
-            copyBtn.classList.add('copied');copyBtn.innerHTML='<i class="fa-solid fa-check"></i> Copied!';
-            setTimeout(function(){copyBtn.classList.remove('copied');copyBtn.innerHTML='<i class="fa-regular fa-copy"></i> Copy Signature';},2500);
+            copyBtn.classList.add('copied');copyBtn.innerHTML='<iconify-icon icon="fluent:checkmark-24-regular"></iconify-icon> Copied!';
+            setTimeout(function(){copyBtn.classList.remove('copied');copyBtn.innerHTML='<iconify-icon icon="fluent:copy-24-regular"></iconify-icon> Copy Signature';},2500);
         });
         render();
     })();

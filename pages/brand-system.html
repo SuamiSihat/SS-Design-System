@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SS Brand System — Interactive brand guidelines for logos, colour, typography, sub-brands, icons and download kits.">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Brand System — SuamiSihat™ Design System</title>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -741,7 +742,7 @@
                         <button class="bs-logo-picker-btn" data-color="#21A1F7" data-img="../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg" aria-label="Azure">
                             <span class="bs-logo-picker-dot" style="background:#21A1F7"></span>Azure
                         </button>
-                        <button class="bs-logo-picker-btn" data-color="#6DC6EC" data-img="../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_light.svg" aria-label="Malibu">
+                        <button class="bs-logo-picker-btn" data-color="#6DC6EC" data-img="../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg" aria-label="Malibu">
                             <span class="bs-logo-picker-dot" style="background:#6DC6EC"></span>Malibu
                         </button>
                         <button class="bs-logo-picker-btn" data-color="#FCE53D" data-img="../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_light.svg" aria-label="Banana">
@@ -932,11 +933,24 @@
                     </div>
                 </div>
 
-                <div class="bs-colour-group-label">Neutrals</div>
+                <div class="bs-colour-group-label">Neutrals &amp; Typography Rule</div>
+                <div class="bs-info-box" style="margin-bottom:var(--f-space-4);background:rgba(4,51,136,0.04);border-left:3px solid var(--color-brand-primary);">
+                    <div class="bs-info-box-title" style="font-weight:700;color:var(--color-neutral-fg-1);">
+                        <iconify-icon icon="fluent:text-field-24-regular" style="font-size:1rem;margin-right:6px;vertical-align:middle;color:var(--color-brand-primary)"></iconify-icon>
+                        Typography Rule: Neutral Black (#1C1C1C)
+                    </div>
+                    <p style="font-size:0.875rem;line-height:1.6;color:var(--color-neutral-fg-2);margin:var(--f-space-2) 0 0;">
+                        Digital typography (headings, paragraphs, captions, UI labels) must <strong>strictly use Neutral Black (<code>#1C1C1C</code>)</strong>. Never use full black (<code>#000000</code>) for text. Pure black (<code>#000000</code>) is strictly reserved for high-contrast background canvases and surfaces.
+                    </p>
+                </div>
                 <div class="bs-neutral-strip">
-                    <div class="bs-neutral-block" style="background:#000" onclick="copyHex('#000000',null,'Black copied')">
-                        <div class="bs-neutral-block-name" style="color:#fff">Black</div>
+                    <div class="bs-neutral-block" style="background:#000" onclick="copyHex('#000000',null,'Full Black (BG only) copied')">
+                        <div class="bs-neutral-block-name" style="color:#fff">Full Black (BG)</div>
                         <div class="bs-neutral-block-hex" style="color:#fff">#000000</div>
+                    </div>
+                    <div class="bs-neutral-block" style="background:#1C1C1C;border-left:1px solid rgba(255,255,255,0.15)" onclick="copyHex('#1C1C1C',null,'Neutral Black (Text) copied')">
+                        <div class="bs-neutral-block-name" style="color:#fff;font-weight:700">Neutral Black</div>
+                        <div class="bs-neutral-block-hex" style="color:#21A1F7;font-weight:700">#1C1C1C (Text)</div>
                     </div>
                     <div class="bs-neutral-block" style="background:#3C3C3B" onclick="copyHex('#3C3C3B',null,'Grey 90 copied')">
                         <div class="bs-neutral-block-name" style="color:#fff">Grey 90</div>
@@ -975,14 +989,14 @@
 
                 <div class="bs-colour-group-label" style="margin-top:0">Primary Typefaces</div>
                 <div class="bs-font-grid">
-                    <a href="https://font.download/font/poppins" target="_blank" rel="noopener" class="bs-font-card" aria-label="Poppins font">
+                    <a href="https://font.download/font/poppins" target="_blank" rel="noopener noreferrer" class="bs-font-card" aria-label="Poppins font">
                         <div class="bs-font-role-badge bs-font-role-primary">Primary</div>
                         <div class="bs-font-specimen poppins">Brand Voice &amp; Digital Excellence</div>
                         <div class="bs-font-name">Poppins</div>
                         <div class="bs-font-desc">Primary typeface for interfaces, marketing, and all brand communications.</div>
                         <div class="bs-font-link">View on Font Download <iconify-icon icon="fluent:arrow-up-right-24-regular" style="font-size:0.75rem"></iconify-icon></div>
                     </a>
-                    <a href="https://font.download/font/helvetica-neue-5" target="_blank" rel="noopener" class="bs-font-card" aria-label="Helvetica Neue font">
+                    <a href="https://font.download/font/helvetica-neue-5" target="_blank" rel="noopener noreferrer" class="bs-font-card" aria-label="Helvetica Neue font">
                         <div class="bs-font-role-badge bs-font-role-primary">Primary</div>
                         <div class="bs-font-specimen helvetica">Clinical Authority &amp; Legibility</div>
                         <div class="bs-font-name">Helvetica Neue</div>
@@ -993,7 +1007,7 @@
 
                 <div class="bs-colour-group-label">Secondary Typefaces</div>
                 <div class="bs-font-grid">
-                    <a href="https://www.dafontfree.io/calibri-font/" target="_blank" rel="noopener" class="bs-font-card" aria-label="Calibri font">
+                    <a href="https://www.dafontfree.io/calibri-font/" target="_blank" rel="noopener noreferrer" class="bs-font-card" aria-label="Calibri font">
                         <div class="bs-font-role-badge bs-font-role-secondary">Secondary</div>
                         <div class="bs-font-specimen calibri">Operational Utility &amp; Clarity</div>
                         <div class="bs-font-name">Calibri</div>
@@ -1004,7 +1018,7 @@
 
                 <div class="bs-colour-group-label">Tertiary Typeface</div>
                 <div class="bs-font-grid">
-                    <a href="https://font.download/font/montserrat" target="_blank" rel="noopener" class="bs-font-card" aria-label="Montserrat font">
+                    <a href="https://font.download/font/montserrat" target="_blank" rel="noopener noreferrer" class="bs-font-card" aria-label="Montserrat font">
                         <div class="bs-font-role-badge bs-font-role-tertiary">Tertiary</div>
                         <div class="bs-font-specimen montserrat">Strategic Emphasis &amp; Impact</div>
                         <div class="bs-font-name">Montserrat</div>

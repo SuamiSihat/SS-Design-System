@@ -36,9 +36,10 @@
   --f-neutral-74:   #3B3B3B;
   --f-neutral-82:   #2B2B2B;
   --f-neutral-88:   #212121;
-  --f-neutral-92:   #1A1A1A;
+  --f-neutral-text: #1C1C1C; /* Neutral Black — Primary text color. Never full black #000000 for text */
+  --f-neutral-92:   #1C1C1C;
   --f-neutral-96:   #121212;
-  --f-neutral-100:  #000000;
+  --f-neutral-100:  #000000; /* Full Black — Surfaces / Backgrounds only */
 
   /* -- Fluent Border Radius ---------------------------------------------- */
   --f-radius-none:  0px;
@@ -136,7 +137,7 @@
   --color-neutral-stroke-on-accent: rgba(255,255,255,0.20);
 
   /* -- Foreground / Text -------------------------------------------------- */
-  --color-neutral-fg-1:       var(--f-neutral-92);
+  --color-neutral-fg-1:       var(--f-neutral-text);   /* #1C1C1C Neutral Black — Never #000000 for text */
   --color-neutral-fg-2:       var(--f-neutral-62);
   --color-neutral-fg-3:       #616161;   /* WCAG AA: ~5.1:1 on white */
   --color-neutral-fg-4:       var(--f-neutral-36);
@@ -202,7 +203,7 @@ body.dark-mode {
   --color-neutral-fg-2:       #ABABAB;
   --color-neutral-fg-3:       #767676;
   --color-neutral-fg-4:       #4A4A4A;
-  --color-neutral-fg-inverse: var(--f-neutral-92);
+  --color-neutral-fg-inverse: var(--f-neutral-text); /* #1C1C1C Neutral Black */
 
   --color-brand-primary:      var(--ss-azure);
   --color-brand-dark:         var(--ss-blue);

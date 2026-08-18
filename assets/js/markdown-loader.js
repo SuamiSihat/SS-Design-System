@@ -69,18 +69,24 @@
         `;
     }
 
+    function escapeHTML(str) {
+        if (!str) return '';
+        return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
     /** Show a friendly error state */
     function showError(container, docId) {
+        const safeDocId = escapeHTML(docId);
         container.innerHTML = `
             <div style="text-align:center;padding:4rem 2rem;">
-                <div style="font-size:3rem;margin-bottom:1rem;">📄</div>
+                <div style="font-size:3rem;margin-bottom:1rem;color:var(--color-neutral-fg-3);"><iconify-icon icon="fluent:document-error-24-regular"></iconify-icon></div>
                 <h2 style="color:var(--heading-color)">Page not found</h2>
                 <p style="color:var(--text-color);opacity:0.7;">
-                    Could not load <code>${docId}.md</code>. 
+                    Could not load <code>${safeDocId}.md</code>. 
                     The document may not exist yet.
                 </p>
-                <a href="/" class="btn btn-primary mt-3">
-                    ← Back to Design System
+                <a href="../index.html" class="btn btn-primary mt-3">
+                    <iconify-icon icon="fluent:arrow-left-24-regular" class="me-1"></iconify-icon>Back to Design System
                 </a>
             </div>
         `;

@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta id="metaDesc" name="description" content="Product Brand Assets — SuamiSihat™ Design System">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title id="pageTitle">Product — SuamiSihat™ Design System</title>
     
     <!-- Preconnect & Fonts -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Bootstrap & Font Awesome -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Design System CSS -->
     <style>
@@ -203,6 +202,8 @@
     <link rel="stylesheet" href="../../assets/css/ss_theme.css?v=9">
     <link rel="stylesheet" href="../../assets/css/style.css?v=9">
     <link rel="stylesheet" href="../../assets/css/markdown.css?v=9">
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@3/dist/iconify.min.js" defer></script>
 
 </head>
 <body>
@@ -214,28 +215,28 @@
                 SuamiSihat™ DS <span class="navbar-version-badge">v3.3</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                <iconify-icon icon="fluent:navigation-24-regular" style="font-size:1.2rem"></iconify-icon>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="../../pages/brand-system.html">Brand System</a></li>
                     <li class="nav-item"><a class="nav-link" href="../../pages/brand-guidelines.html">Guidelines</a></li>
                     <li class="nav-item"><a class="nav-link" href="../../pages/components.html">Components</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="../../pages/products.html">Products</a></li>
+                    <li class="nav-item active"><a class="nav-link active" href="../../pages/products.html">Products</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="docsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Docs</a>
                         <ul class="dropdown-menu dropdown-menu-end ss-dropdown" aria-labelledby="docsDropdown">
-                            <li><a class="dropdown-item" href="../../pages/onboarding.html"><i class="fa-solid fa-rocket me-2"></i>Onboarding Guide</a></li>
-                            <li><a class="dropdown-item" href="../../pages/doc.html?doc=changelog"><i class="fa-solid fa-clock-rotate-left me-2"></i>What's New</a></li>
-                            <li><a class="dropdown-item" href="../../pages/doc.html?doc=roadmap"><i class="fa-solid fa-map-location-dot me-2"></i>Roadmap</a></li>
-                            <li><a class="dropdown-item" href="../../pages/doc.html?doc=contribution-guide"><i class="fa-solid fa-hand-holding-heart me-2"></i>Contribution Guide</a></li>
+                            <li><a class="dropdown-item" href="../../pages/onboarding.html"><iconify-icon icon="fluent:person-star-24-regular" class="me-2"></iconify-icon>Onboarding Guide</a></li>
+                            <li><a class="dropdown-item" href="../../pages/doc.html?doc=changelog"><iconify-icon icon="fluent:clock-arrow-download-24-regular" class="me-2"></iconify-icon>What's New</a></li>
+                            <li><a class="dropdown-item" href="../../pages/doc.html?doc=roadmap"><iconify-icon icon="fluent:map-drive-24-regular" class="me-2"></iconify-icon>Roadmap</a></li>
+                            <li><a class="dropdown-item" href="../../pages/doc.html?doc=contribution-guide"><iconify-icon icon="fluent:heart-hand-24-regular" class="me-2"></iconify-icon>Contribution Guide</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="../../pages/doc.html?doc=vision-mission"><i class="fa-solid fa-eye me-2"></i>Vision &amp; Mission</a></li>
+                            <li><a class="dropdown-item" href="../../pages/doc.html?doc=vision-mission"><iconify-icon icon="fluent:eye-24-regular" class="me-2"></iconify-icon>Vision &amp; Mission</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <button id="themeToggle" class="btn ms-auto" aria-label="Toggle dark mode" aria-pressed="false">
-                            <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+                            <iconify-icon icon="fluent:weather-moon-24-regular" style="font-size:1.1rem"></iconify-icon>
                         </button>
                     </li>
                 </ul>
@@ -300,7 +301,7 @@
                 <!-- Right Column: Gallery -->
                 <div class="col-lg-7">
                     <div class="product-details-card">
-                        <h2 class="h3 text-semibold mb-4"><i class="fa-solid fa-images me-2 text-accent"></i>Photo & Asset Gallery</h2>
+                        <h2 class="h3 text-semibold mb-4"><iconify-icon icon="fluent:image-multiple-24-regular" class="me-2 text-accent"></iconify-icon>Photo &amp; Asset Gallery</h2>
                         
                         <div id="galleryGrid" class="row g-4">
                             <!-- Gallery items rendered dynamically -->
@@ -337,7 +338,7 @@
                         <li><a href="../../pages/doc.html?doc=vision-mission">Vision &amp; Mission</a></li>
                     </ul>
                     <h4 class="footer-heading mt-4">Contact</h4>
-                    <p class="footer-contact"><i class="fa-solid fa-envelope me-2"></i><a href="mailto:branding@suamisihat.com">branding@suamisihat.com</a></p>
+                    <p class="footer-contact"><iconify-icon icon="fluent:mail-24-regular" class="me-2"></iconify-icon><a href="mailto:branding@suamisihat.com">branding@suamisihat.com</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -433,7 +434,7 @@
                                     <div class="gallery-meta">${metaDesc}</div>
                                     <div class="gallery-actions">
                                         <a href="${assetFile}" download class="btn btn-primary btn-gallery">
-                                            <i class="fa-solid fa-download"></i>Download
+                                            <iconify-icon icon="fluent:arrow-download-24-regular" class="me-1"></iconify-icon>Download
                                         </a>
                                     </div>
                                 </div>
@@ -453,7 +454,7 @@
                 console.error(error);
                 document.getElementById('loader').innerHTML = `
                     <div class="text-center text-danger p-5">
-                        <i class="fa-solid fa-triangle-exclamation display-4 mb-3"></i>
+                        <iconify-icon icon="fluent:warning-24-regular" style="font-size:3rem;margin-bottom:1rem;display:inline-block;"></iconify-icon>
                         <p class="lead">Error loading product details: ${error.message}</p>
                     </div>
                 `;
