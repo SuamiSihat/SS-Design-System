@@ -191,10 +191,16 @@
         }
         .bs-logo-picker-display {
             display: flex; align-items: center; justify-content: center;
-            min-height: 200px; padding: var(--f-space-10);
+            min-height: 340px; padding: var(--f-space-10) var(--f-space-8);
             transition: background-color var(--f-duration-gentle);
         }
-        .bs-logo-picker-display img { max-height: 110px; width: auto; transition: all var(--f-duration-gentle); }
+        .bs-logo-picker-display img {
+            max-height: 200px;
+            width: auto;
+            max-width: 85%;
+            transition: all var(--f-duration-gentle);
+            filter: drop-shadow(0 4px 16px rgba(0,0,0,0.08));
+        }
         .bs-logo-picker-caption {
             padding: var(--f-space-4) var(--f-space-6);
             border-top: 1px solid var(--color-neutral-stroke-1);
@@ -579,6 +585,8 @@
             .brand-main { padding: var(--f-space-6) var(--f-space-4); }
             .bs-logo-picker { grid-template-columns: 1fr; }
             .bs-logo-picker-swatches { flex-direction: row; overflow-x: auto; border-right: none; border-bottom: 1px solid var(--color-neutral-stroke-1); }
+            .bs-logo-picker-display { min-height: 220px; padding: var(--f-space-6) var(--f-space-4); }
+            .bs-logo-picker-display img { max-height: 120px; }
         }
     </style>
 </head>
