@@ -425,8 +425,9 @@
         }
         .bs-subbrand-logo-area.dark-bg { background: #022057; }
         .bs-subbrand-logo-area img { max-height: 44px; width: auto; }
-        .bs-subbrand-actions { display: flex; gap: var(--f-space-2); }
-        .bs-subbrand-actions .ss-btn { flex: 1; justify-content: center; }
+        .bs-subbrand-actions { display: flex; gap: var(--f-space-2); align-items: center; }
+        .bs-subbrand-actions .sub-brand-bg-toggle { width: 36px; height: 36px; padding: 0; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 36px; border-radius: var(--f-radius-md); }
+        .bs-subbrand-actions a.ss-btn { flex: 1; justify-content: center; }
 
         /* ============================================================
            ICON & LOGO USAGE SECTION
@@ -437,29 +438,30 @@
             border-radius: var(--f-radius-xl);
             overflow: hidden;
             box-shadow: var(--f-shadow-8);
-            max-width: 540px;
+            width: 100% !important;
+            max-width: 100% !important;
         }
         .bs-logomark-toggle-bg {
             display: flex; align-items: center; justify-content: center;
             padding: var(--f-space-10);
-            min-height: 220px;
+            min-height: 260px;
             transition: background-color var(--f-duration-gentle);
             cursor: pointer;
         }
-        .bs-logomark-toggle-bg img { max-height: 160px; transition: all var(--f-duration-gentle); }
+        .bs-logomark-toggle-bg img { max-height: 180px; transition: all var(--f-duration-gentle); }
         .bs-logomark-card-footer {
             padding: var(--f-space-4) var(--f-space-6);
             border-top: 1px solid var(--color-neutral-stroke-1);
-            display: flex; align-items: center; gap: var(--f-space-4);
+            display: flex; align-items: center; gap: var(--f-space-3);
         }
         .bs-mode-pill {
-            display: inline-flex; align-items: center; gap: var(--f-space-1);
-            padding: 4px var(--f-space-3); border-radius: var(--f-radius-full);
-            font-size: 0.7rem; font-weight: 600; border: 1px solid var(--color-neutral-stroke-1);
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px; border-radius: var(--f-radius-md);
+            font-size: 0.95rem; border: 1px solid var(--color-neutral-stroke-1);
             cursor: pointer; transition: all var(--f-duration-fast);
+            background: var(--color-neutral-bg-3); color: var(--color-neutral-fg-2);
         }
         .bs-mode-pill.active { background: var(--color-brand-primary); color: #fff; border-color: transparent; }
-        .bs-mode-pill:not(.active) { background: var(--color-neutral-bg-3); color: var(--color-neutral-fg-2); }
 
         /* Do/Don't grid */
         .bs-rule-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--f-space-5); margin-bottom: var(--f-space-8); }
@@ -609,10 +611,10 @@
                     <li class="nav-item"><a class="nav-link" href="brand-guidelines.html" aria-label="Brand Guidelines & PDFs">Guidelines & PDFs</a></li>
                     <li class="nav-item"><a class="nav-link" href="components.html" aria-label="Component Library">Components</a></li>
                     <li class="nav-item"><a class="nav-link" href="products.html" aria-label="Product Catalogue">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="onboarding.html" aria-label="Staff Onboarding">Onboarding</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="docsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Docs</a>
                         <ul class="dropdown-menu dropdown-menu-end ss-dropdown" aria-labelledby="docsDropdown">
+                            <li><a class="dropdown-item" href="onboarding.html"><iconify-icon icon="fluent:person-star-24-regular" class="me-2"></iconify-icon>Onboarding Guide</a></li>
                             <li><a class="dropdown-item" href="doc.html?doc=changelog"><iconify-icon icon="fluent:clock-arrow-download-24-regular" class="me-2"></iconify-icon>What's New</a></li>
                             <li><a class="dropdown-item" href="doc.html?doc=roadmap"><iconify-icon icon="fluent:map-drive-24-regular" class="me-2"></iconify-icon>Roadmap</a></li>
                             <li><a class="dropdown-item" href="doc.html?doc=contribution-guide"><iconify-icon icon="fluent:heart-hand-24-regular" class="me-2"></iconify-icon>Contribution Guide</a></li>
@@ -785,15 +787,26 @@
                         <div style="font-size:1rem;font-weight:700;color:var(--color-neutral-fg-1);">The 60:30:10 Visual Allocation Rule</div>
                         <span class="ss-badge ss-badge-brand">Brand Standard</span>
                     </div>
-                    <div style="display:flex;height:38px;border-radius:var(--f-radius-md);overflow:hidden;border:1px solid var(--color-neutral-stroke-1);margin-bottom:var(--f-space-5);box-shadow:var(--f-shadow-2);">
-                        <div style="flex:60;background:var(--color-neutral-bg-1);display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--color-neutral-fg-1);border-right:2px solid var(--color-neutral-stroke-2);">
-                            60% Foundation (Canvas / Whitespace)
+                    <!-- Sleek Proportion Bar -->
+                    <div style="display:flex;height:24px;border-radius:var(--f-radius-full);overflow:hidden;border:1px solid var(--color-neutral-stroke-1);margin-bottom:var(--f-space-3);box-shadow:var(--f-shadow-2);">
+                        <div style="flex:60;background:var(--color-neutral-bg-4);border-right:2px solid var(--color-neutral-stroke-2);"></div>
+                        <div style="flex:30;background:#022057;border-right:2px solid var(--color-neutral-stroke-2);"></div>
+                        <div style="flex:10;background:var(--color-brand-primary);"></div>
+                    </div>
+
+                    <!-- Clean Proportional Legend -->
+                    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--f-space-2);margin-bottom:var(--f-space-5);font-size:0.78rem;font-weight:600;">
+                        <div style="display:flex;align-items:center;gap:6px;color:var(--color-neutral-fg-1);">
+                            <span style="width:12px;height:12px;border-radius:3px;background:var(--color-neutral-bg-4);border:1px solid var(--color-neutral-stroke-2);display:inline-block;"></span>
+                            <strong>60%</strong> Foundation (Canvas &amp; Whitespace)
                         </div>
-                        <div style="flex:30;background:#022057;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:#ffffff;border-right:2px solid var(--color-neutral-stroke-2);">
-                            30% Secondary (Cards &amp; Structure)
+                        <div style="display:flex;align-items:center;gap:6px;color:var(--color-neutral-fg-1);">
+                            <span style="width:12px;height:12px;border-radius:3px;background:#022057;display:inline-block;"></span>
+                            <strong>30%</strong> Secondary (Structure &amp; Cards)
                         </div>
-                        <div style="flex:10;background:#21A1F7;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:#ffffff;">
-                            10% Accent (CTA)
+                        <div style="display:flex;align-items:center;gap:6px;color:var(--color-neutral-fg-1);">
+                            <span style="width:12px;height:12px;border-radius:3px;background:var(--color-brand-primary);display:inline-block;"></span>
+                            <strong>10%</strong> Accent (Primary CTA)
                         </div>
                     </div>
                     <div class="row g-3">
@@ -1038,8 +1051,8 @@
                                 <img src="../public/brand/logos/01_logo_ssHealth/logo_ssh_primary_light.svg" alt="SS Health Logo" loading="lazy">
                             </div>
                             <div class="bs-subbrand-actions">
-                                <button class="ss-btn ss-btn-secondary ss-btn-sm sub-brand-bg-toggle" data-target="logo-health" data-dark-src="../public/brand/logos/01_logo_ssHealth/logo_ssh_primary_dark.svg" data-light-src="../public/brand/logos/01_logo_ssHealth/logo_ssh_primary_light.svg" aria-label="Toggle logo background">
-                                    <iconify-icon icon="fluent:circle-half-fill-24-regular"></iconify-icon> Toggle
+                                <button class="ss-btn ss-btn-secondary ss-btn-sm sub-brand-bg-toggle" data-target="logo-health" data-dark-src="../public/brand/logos/01_logo_ssHealth/logo_ssh_primary_dark.svg" data-light-src="../public/brand/logos/01_logo_ssHealth/logo_ssh_primary_light.svg" aria-label="Toggle logo background" title="Toggle background">
+                                    <iconify-icon icon="fluent:circle-half-fill-24-regular"></iconify-icon>
                                 </button>
                                 <a href="../public/brand/downloads/01_logo_ssHealth.zip" class="ss-btn ss-btn-primary ss-btn-sm">
                                     <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon> Corp Kit
@@ -1062,8 +1075,8 @@
                                 <img src="../public/brand/logos/02_logo_ssClinic/logo_ssc_primary_light.svg" alt="SS Clinic Logo" loading="lazy">
                             </div>
                             <div class="bs-subbrand-actions">
-                                <button class="ss-btn ss-btn-secondary ss-btn-sm sub-brand-bg-toggle" data-target="logo-clinic" data-dark-src="../public/brand/logos/02_logo_ssClinic/logo_ssc_primary_dark.svg" data-light-src="../public/brand/logos/02_logo_ssClinic/logo_ssc_primary_light.svg" aria-label="Toggle logo background">
-                                    <iconify-icon icon="fluent:circle-half-fill-24-regular"></iconify-icon> Toggle
+                                <button class="ss-btn ss-btn-secondary ss-btn-sm sub-brand-bg-toggle" data-target="logo-clinic" data-dark-src="../public/brand/logos/02_logo_ssClinic/logo_ssc_primary_dark.svg" data-light-src="../public/brand/logos/02_logo_ssClinic/logo_ssc_primary_light.svg" aria-label="Toggle logo background" title="Toggle background">
+                                    <iconify-icon icon="fluent:circle-half-fill-24-regular"></iconify-icon>
                                 </button>
                                 <a href="../public/brand/downloads/02_logo_ssClinic.zip" class="ss-btn ss-btn-primary ss-btn-sm">
                                     <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon> Logo Kit
@@ -1086,8 +1099,8 @@
                                 <img src="../public/brand/logos/03_logo_ssWellness/logo_ssw_primary_light.svg" alt="SS Wellness Logo" loading="lazy">
                             </div>
                             <div class="bs-subbrand-actions">
-                                <button class="ss-btn ss-btn-secondary ss-btn-sm sub-brand-bg-toggle" data-target="logo-wellness" data-dark-src="../public/brand/logos/03_logo_ssWellness/logo_ssw_primary_dark.svg" data-light-src="../public/brand/logos/03_logo_ssWellness/logo_ssw_primary_light.svg" aria-label="Toggle logo background">
-                                    <iconify-icon icon="fluent:circle-half-fill-24-regular"></iconify-icon> Toggle
+                                <button class="ss-btn ss-btn-secondary ss-btn-sm sub-brand-bg-toggle" data-target="logo-wellness" data-dark-src="../public/brand/logos/03_logo_ssWellness/logo_ssw_primary_dark.svg" data-light-src="../public/brand/logos/03_logo_ssWellness/logo_ssw_primary_light.svg" aria-label="Toggle logo background" title="Toggle background">
+                                    <iconify-icon icon="fluent:circle-half-fill-24-regular"></iconify-icon>
                                 </button>
                                 <a href="../public/brand/downloads/03_logo_ssWellness.zip" class="ss-btn ss-btn-primary ss-btn-sm">
                                     <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon> Logo Kit
@@ -1110,8 +1123,8 @@
                                 <img src="../public/brand/logos/04_logo_ssEcom/logo_sse_primary_light.svg" alt="SS Ecommerce Logo" loading="lazy">
                             </div>
                             <div class="bs-subbrand-actions">
-                                <button class="ss-btn ss-btn-secondary ss-btn-sm sub-brand-bg-toggle" data-target="logo-ecom" data-dark-src="../public/brand/logos/04_logo_ssEcom/logo_sse_primary_dark.svg" data-light-src="../public/brand/logos/04_logo_ssEcom/logo_sse_primary_light.svg" aria-label="Toggle logo background">
-                                    <iconify-icon icon="fluent:circle-half-fill-24-regular"></iconify-icon> Toggle
+                                <button class="ss-btn ss-btn-secondary ss-btn-sm sub-brand-bg-toggle" data-target="logo-ecom" data-dark-src="../public/brand/logos/04_logo_ssEcom/logo_sse_primary_dark.svg" data-light-src="../public/brand/logos/04_logo_ssEcom/logo_sse_primary_light.svg" aria-label="Toggle logo background" title="Toggle background">
+                                    <iconify-icon icon="fluent:circle-half-fill-24-regular"></iconify-icon>
                                 </button>
                                 <a href="../public/brand/downloads/04_logo_ssEcom.zip" class="ss-btn ss-btn-primary ss-btn-sm">
                                     <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon> Logo Kit
@@ -1134,8 +1147,8 @@
                                 <img src="../public/brand/logos/05_logo_ssTech/logo_sst_primary_light.svg" alt="SS Technology Logo" loading="lazy">
                             </div>
                             <div class="bs-subbrand-actions">
-                                <button class="ss-btn ss-btn-secondary ss-btn-sm sub-brand-bg-toggle" data-target="logo-tech" data-dark-src="../public/brand/logos/05_logo_ssTech/logo_sst_primary_dark.svg" data-light-src="../public/brand/logos/05_logo_ssTech/logo_sst_primary_light.svg" aria-label="Toggle logo background">
-                                    <iconify-icon icon="fluent:circle-half-fill-24-regular"></iconify-icon> Toggle
+                                <button class="ss-btn ss-btn-secondary ss-btn-sm sub-brand-bg-toggle" data-target="logo-tech" data-dark-src="../public/brand/logos/05_logo_ssTech/logo_sst_primary_dark.svg" data-light-src="../public/brand/logos/05_logo_ssTech/logo_sst_primary_light.svg" aria-label="Toggle logo background" title="Toggle background">
+                                    <iconify-icon icon="fluent:circle-half-fill-24-regular"></iconify-icon>
                                 </button>
                                 <a href="../public/brand/downloads/05_logo_ssTech.zip" class="ss-btn ss-btn-primary ss-btn-sm">
                                     <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon> Logo Kit
@@ -1160,13 +1173,12 @@
                         <img src="../public/brand/logos/ss-logomark-light.svg" alt="SS Logomark" id="logomarkImg" loading="eager">
                     </div>
                     <div class="bs-logomark-card-footer">
-                        <span class="bs-mode-pill active" id="pillLight" onclick="setLogomarkMode('light')">
-                            <iconify-icon icon="fluent:weather-sunny-24-regular" style="font-size:0.75rem"></iconify-icon> Light
-                        </span>
-                        <span class="bs-mode-pill" id="pillDark" onclick="setLogomarkMode('dark')">
-                            <iconify-icon icon="fluent:weather-moon-24-regular" style="font-size:0.75rem"></iconify-icon> Dark
-                        </span>
-                        <span style="font-size:0.75rem;color:var(--color-neutral-fg-3);margin-left:auto">Click to toggle</span>
+                        <button class="bs-mode-pill active" id="pillLight" onclick="setLogomarkMode('light')" aria-label="Light background" title="Light background">
+                            <iconify-icon icon="fluent:weather-sunny-24-regular"></iconify-icon>
+                        </button>
+                        <button class="bs-mode-pill" id="pillDark" onclick="setLogomarkMode('dark')" aria-label="Dark background" title="Dark background">
+                            <iconify-icon icon="fluent:weather-moon-24-regular"></iconify-icon>
+                        </button>
                     </div>
                 </div>
 
