@@ -1,4 +1,4 @@
-﻿/**
+/**
  * SuamiSihat Design System — Expo / React Native Tokens
  * ss_tokens.ts  |  v3.1.0
  *
@@ -32,11 +32,13 @@ export const SSColors = {
   banana:       '#FCE53D',
 
   // Semantic — Light Mode (design-tokens.json → color.semantic.light.*)
-  fgPrimary:      '#1A1A1A',
+  fgPrimary:      '#1C1C1C', // Neutral Black — Never use #000000 for text
   fgSecondary:    '#525252',
   fgPlaceholder:  '#737373',
   fgDisabled:     '#999999',
   fgInverse:      '#FFFFFF',
+  neutralBlack:   '#1C1C1C', // Primary typography
+  fullBlack:      '#000000', // Canvas / Background only
   bgCanvas:       '#F5F5F5',
   bgSurface:      '#FFFFFF',
   bgSubtle:       '#EBEBEB',
@@ -64,7 +66,7 @@ export const SSColorsDark: Partial<typeof SSColors> = {
   fgSecondary:   '#ABABAB',
   fgPlaceholder: '#767676',
   fgDisabled:    '#4A4A4A',
-  fgInverse:     '#1A1A1A',
+  fgInverse:     '#1C1C1C', // Inverted Neutral Black on light chip/badge
   bgCanvas:      '#141414',
   bgSurface:     '#1F1F1F',
   bgSubtle:      '#292929',

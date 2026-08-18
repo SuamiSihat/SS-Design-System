@@ -193,6 +193,13 @@ var LogoSelector = (function () {
          */
         forBackground: function (hexColour, prefix) {
             var base = prefix !== undefined ? prefix : autoPrefix();
+            if (hexColour && typeof hexColour === 'string') {
+                var normalized = hexColour.trim().toLowerCase();
+                // Explicit brand rule: Prussian, SS Blue, Azure, Malibu, and Black pair with primary dark logo
+                if (['#022057', '#043388', '#21a1f7', '#6dc6ec', '#000000', '#000'].indexOf(normalized) !== -1) {
+                    return base + PATHS.FULL_DARK;
+                }
+            }
             var l = hexToLightness(hexColour);
             if (l === null) {
                 console.warn('[LogoSelector] Could not parse colour: ' + hexColour + '. Falling back to dark variant.');
@@ -1447,11 +1454,14 @@ class FluentThemeSync {
             '#themeToggle, .topbar-theme-btn, .f-theme-btn'
         );
         allBtns.forEach(btn => {
+            const iconify = btn.querySelector('iconify-icon');
             const icon = btn.querySelector('i');
-            if (!icon) return;
-            // Buttons that show current mode indicator (half-stroke = neutral)
-            if (icon.classList.contains('fa-circle-half-stroke')) return;
-            icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+            if (iconify) {
+                iconify.setAttribute('icon', isDark ? 'fluent:weather-sunny-24-regular' : 'fluent:weather-moon-24-regular');
+            } else if (icon) {
+                if (icon.classList.contains('fa-circle-half-stroke')) return;
+                icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+            }
             btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
             btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
         });
@@ -1549,8 +1559,35 @@ function initFluentSidebarToggle() {
 if (typeof document !== 'undefined') {
     if (document.readyState !== 'loading') {
         initFluentSidebarToggle();
+        initCleanUrlMasking();
     } else {
-        document.addEventListener('DOMContentLoaded', initFluentSidebarToggle);
+        document.addEventListener('DOMContentLoaded', () => {
+            initFluentSidebarToggle();
+            initCleanUrlMasking();
+        });
+    }
+}
+
+/**
+ * URL Masking & Clean Path Normalization
+ * Automatically normalizes /pages/*.html in browser address bar to clean routes
+ */
+function initCleanUrlMasking() {
+    try {
+        if (typeof window === 'undefined' || !window.history || !window.location) return;
+        if (!window.location.protocol.startsWith('http')) return; // Avoid local file:// security limits
+
+        const pathname = window.location.pathname;
+        const pageMatch = pathname.match(/\/pages\/([a-zA-Z0-9_-]+)\.html$/i);
+        if (pageMatch && pageMatch[1]) {
+            const pageName = pageMatch[1];
+            const cleanPath = pathname.replace(/\/pages\/[a-zA-Z0-9_-]+\.html$/i, '/' + pageName);
+            const search = window.location.search || '';
+            const hash = window.location.hash || '';
+            window.history.replaceState(null, '', cleanPath + search + hash);
+        }
+    } catch (e) {
+        // Silently continue if history API is restricted
     }
 }
 
@@ -1563,3 +1600,4 @@ const app = new SSBrandApp();
 app.init().catch(error => {
     ErrorHandler.handleError(error, 'Application startup');
 });
+

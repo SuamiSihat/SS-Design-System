@@ -19,21 +19,21 @@
       "banana":        { "$value": "#FCE53D", "$type": "color", "$description": "Banana Yellow — CTA highlight" }
     },
     "neutral": {
-      "0":   { "$value": "#FFFFFF", "$type": "color" },
-      "2":   { "$value": "#F5F5F5", "$type": "color", "$description": "Page canvas light" },
-      "4":   { "$value": "#EBEBEB", "$type": "color" },
-      "6":   { "$value": "#E0E0E0", "$type": "color" },
-      "8":   { "$value": "#D6D6D6", "$type": "color" },
-      "16":  { "$value": "#C2C2C2", "$type": "color" },
-      "36":  { "$value": "#999999", "$type": "color" },
-      "50":  { "$value": "#737373", "$type": "color" },
-      "62":  { "$value": "#525252", "$type": "color" },
-      "92":  { "$value": "#1A1A1A", "$type": "color" },
-      "100": { "$value": "#000000", "$type": "color" }
+      "0":             { "$value": "#FFFFFF", "$type": "color" },
+      "2":             { "$value": "#F5F5F5", "$type": "color", "$description": "Page canvas light" },
+      "4":             { "$value": "#EBEBEB", "$type": "color" },
+      "6":             { "$value": "#E0E0E0", "$type": "color" },
+      "8":             { "$value": "#D6D6D6", "$type": "color" },
+      "16":            { "$value": "#C2C2C2", "$type": "color" },
+      "36":            { "$value": "#999999", "$type": "color" },
+      "50":            { "$value": "#737373", "$type": "color" },
+      "62":            { "$value": "#525252", "$type": "color" },
+      "neutral-black": { "$value": "#1C1C1C", "$type": "color", "$description": "Neutral Black — Primary text color. Never use full black #000000 for text." },
+      "100":           { "$value": "#000000", "$type": "color", "$description": "Full Black — Background / Surface only. Never use for typography." }
     },
     "semantic": {
       "light": {
-        "fg-primary":     { "$value": "#1A1A1A",              "$type": "color" },
+        "fg-primary":     { "$value": "#1C1C1C",              "$type": "color", "$description": "Neutral Black — Never use #000000 for text" },
         "fg-secondary":   { "$value": "#525252",              "$type": "color" },
         "fg-placeholder": { "$value": "#737373",              "$type": "color" },
         "fg-disabled":    { "$value": "#999999",              "$type": "color" },
@@ -53,7 +53,7 @@
         "fg-secondary":   { "$value": "#ABABAB",                "$type": "color" },
         "fg-placeholder": { "$value": "#767676",                "$type": "color" },
         "fg-disabled":    { "$value": "#4A4A4A",                "$type": "color" },
-        "fg-inverse":     { "$value": "#1A1A1A",                "$type": "color" },
+        "fg-inverse":     { "$value": "#1C1C1C",                "$type": "color", "$description": "Neutral Black on inverted surface" },
         "bg-canvas":      { "$value": "#141414",                "$type": "color" },
         "bg-surface":     { "$value": "#1F1F1F",                "$type": "color" },
         "bg-subtle":      { "$value": "#292929",                "$type": "color" },

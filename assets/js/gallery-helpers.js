@@ -56,12 +56,12 @@ function getTagClass(tag) {
  * Return an HTML icon string for a given tag.
  *
  * @param {string} tag  e.g. 'clinic', 'wellness', 'ecom'
- * @returns {string}    HTML string with Font Awesome icon
+ * @returns {string}    HTML string with Fluent icon
  */
 function getTagIcon(tag) {
     const t = tag.toLowerCase();
-    if (t.includes('clinic'))                       return '<i class="fa-solid fa-stethoscope me-1"></i>';
-    if (t.includes('wellness') || t.includes('supplement')) return '<i class="fa-solid fa-capsules me-1"></i>';
-    if (t.includes('ecom') || t.includes('groom')) return '<i class="fa-solid fa-shopping-bag me-1"></i>';
-    return '<i class="fa-solid fa-circle-nodes me-1"></i>';
+    if (t.includes('clinic'))                       return '<iconify-icon icon="fluent:stethoscope-24-regular" class="me-1"></iconify-icon>';
+    if (t.includes('wellness') || t.includes('supplement')) return '<iconify-icon icon="fluent:pill-24-regular" class="me-1"></iconify-icon>';
+    if (t.includes('ecom') || t.includes('groom')) return '<iconify-icon icon="fluent:shopping-bag-24-regular" class="me-1"></iconify-icon>';
+    return '<iconify-icon icon="fluent:organization-24-regular" class="me-1"></iconify-icon>';
 }

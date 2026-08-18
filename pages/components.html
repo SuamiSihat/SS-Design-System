@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SuamiSihat™ Design System - Component Library. Live component showcase for web and Expo/React Native.">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Components - SuamiSihat™ Design System</title>
     <link rel="icon" href="../public/brand/favicon/favicon.ico" sizes="any">
     <link rel="icon" href="../public/brand/logos/ss-logomark-light.svg" type="image/svg+xml">
@@ -11,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/fluent.css?v=9">
     <link rel="stylesheet" href="../assets/css/ss_theme.css?v=9">
@@ -187,7 +187,7 @@
         .ss-list-title{font-size:.9rem;font-weight:600;color:var(--color-neutral-fg-1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
         .ss-list-sub{font-size:.75rem;color:var(--color-neutral-fg-3)}
         .ss-list-right{display:flex;align-items:center;gap:var(--f-space-2);flex-shrink:0}
-        /* â”€â”€ Stats Card â”€â”€ */
+        /* ── Stats Card ── */
         .ss-stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:var(--f-space-3)}
         .ss-stat-card{background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);padding:var(--f-space-4);box-shadow:var(--f-shadow-2)}
         .ss-stat-icon{width:36px;height:36px;border-radius:var(--f-radius-md);display:flex;align-items:center;justify-content:center;margin-bottom:var(--f-space-3)}
@@ -196,7 +196,7 @@
         .ss-stat-delta{font-size:.72rem;font-weight:600;display:inline-flex;align-items:center;gap:2px;margin-top:var(--f-space-2)}
         .ss-stat-up{color:var(--color-success-fg)}
         .ss-stat-down{color:var(--color-error-fg)}
-        /* â”€â”€ Expo Setup card â”€â”€ */
+        /* ── Expo Setup card ── */
         .cl-install-step{display:flex;gap:var(--f-space-4);padding:var(--f-space-4) 0;border-bottom:1px solid var(--color-neutral-stroke-1)}
         .cl-install-step:last-child{border-bottom:none}
         .cl-install-num{width:28px;height:28px;border-radius:var(--f-radius-full);background:var(--color-brand-subtle);color:var(--color-brand-primary);font-size:.78rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
@@ -313,7 +313,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="cl-card h-100 p-4" style="background:var(--color-neutral-bg-2);">
                         <div class="tool-icon mb-3" style="background:var(--color-brand-subtle);color:var(--color-brand-primary);width:48px;height:48px;border-radius:var(--f-radius-lg);display:flex;align-items:center;justify-content:center;font-size:1.5rem;">
-                            <i class="fa-solid fa-leaf"></i>
+                            <iconify-icon icon="fluent:leaf-two-24-regular"></iconify-icon>
                         </div>
                         <h4 style="font-size:1rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;">1. Natural</h4>
                         <p style="font-size:.825rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Feels intuitive and responsive. Smooth spring motion curves, organic wave motion, and fluid interactive feedback matching human touch.</p>
@@ -322,7 +322,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="cl-card h-100 p-4" style="background:var(--color-neutral-bg-2);">
                         <div class="tool-icon mb-3" style="background:var(--color-brand-subtle);color:var(--color-brand-primary);width:48px;height:48px;border-radius:var(--f-radius-lg);display:flex;align-items:center;justify-content:center;font-size:1.5rem;">
-                            <i class="fa-solid fa-users"></i>
+                            <iconify-icon icon="fluent:people-24-regular"></iconify-icon>
                         </div>
                         <h4 style="font-size:1rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;">2. Inclusive</h4>
                         <p style="font-size:.825rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Built for everyone. Strict WCAG 2.1 AA/AAA contrast ratios, keyboard accessibility, focus rings, and high-contrast dark mode support.</p>
@@ -331,7 +331,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="cl-card h-100 p-4" style="background:var(--color-neutral-bg-2);">
                         <div class="tool-icon mb-3" style="background:var(--color-brand-subtle);color:var(--color-brand-primary);width:48px;height:48px;border-radius:var(--f-radius-lg);display:flex;align-items:center;justify-content:center;font-size:1.5rem;">
-                            <i class="fa-solid fa-bolt"></i>
+                            <iconify-icon icon="fluent:flash-24-regular"></iconify-icon>
                         </div>
                         <h4 style="font-size:1rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;">3. Effortless</h4>
                         <p style="font-size:.825rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Reduces cognitive load. Clean visual hierarchy, predictable component states, clear action targets (44px min), and contextual tokens.</p>
@@ -340,7 +340,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="cl-card h-100 p-4" style="background:var(--color-neutral-bg-2);">
                         <div class="tool-icon mb-3" style="background:var(--color-brand-subtle);color:var(--color-brand-primary);width:48px;height:48px;border-radius:var(--f-radius-lg);display:flex;align-items:center;justify-content:center;font-size:1.5rem;">
-                            <i class="fa-solid fa-bullseye"></i>
+                            <iconify-icon icon="fluent:target-arrow-24-regular"></iconify-icon>
                         </div>
                         <h4 style="font-size:1rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;">4. Intentional</h4>
                         <p style="font-size:.825rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Every detail has a purpose. Single source-of-truth tokens across Web and Expo React Native, with consistent component contracts.</p>
@@ -357,27 +357,27 @@
                 <div class="cl-preview" style="display:block;padding:var(--f-space-6);">
                     <div class="row g-4">
                         <div class="col-md-6">
-                            <h5 style="font-size:.9rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;"><i class="fa-solid fa-layer-group text-primary me-2"></i>Material &amp; Surfaces</h5>
+                            <h5 style="font-size:.9rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;"><iconify-icon icon="fluent:layer-24-regular" class="text-primary me-2"></iconify-icon>Material &amp; Surfaces</h5>
                             <p style="font-size:.82rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Uses <b>Acrylic</b> (20px blur + 180% saturation) for floating navigation bars and modals, and <b>Mica</b> (base layer opacity) for subtle hierarchy layering without distracting reflections.</p>
                         </div>
                         <div class="col-md-6">
-                            <h5 style="font-size:.9rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;"><i class="fa-solid fa-cloud-sun text-primary me-2"></i>Elevation &amp; Depth</h5>
+                            <h5 style="font-size:.9rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;"><iconify-icon icon="fluent:weather-partly-cloudy-day-24-regular" class="text-primary me-2"></iconify-icon>Elevation &amp; Depth</h5>
                             <p style="font-size:.82rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">6 elevation tiers (2, 4, 8, 16, 28, 64) cast directional ambient shadows. Interactive elements elevate dynamically on hover (`translateY(-4px)` + brand shadow tint).</p>
                         </div>
                         <div class="col-md-6">
-                            <h5 style="font-size:.9rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;"><i class="fa-solid fa-icons text-primary me-2"></i>Iconography</h5>
+                            <h5 style="font-size:.9rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;"><iconify-icon icon="fluent:shapes-24-regular" class="text-primary me-2"></iconify-icon>Iconography</h5>
                             <p style="font-size:.82rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Standardized on <b>Fluent UI System Icons</b> (Regular style). Standard sizes: 16px (inline), 20px (menu/button), 24px (nav/headers), 32px/48px (feature displays).</p>
                         </div>
                         <div class="col-md-6">
-                            <h5 style="font-size:.9rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;"><i class="fa-solid fa-table-cells text-primary me-2"></i>Layout &amp; Grid</h5>
+                            <h5 style="font-size:.9rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;"><iconify-icon icon="fluent:grid-24-regular" class="text-primary me-2"></iconify-icon>Layout &amp; Grid</h5>
                             <p style="font-size:.82rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Strict 4px base grid (`--f-space-1` to `--f-space-24`). All touchable interactive elements adhere to a <b>44px minimum hit target</b> for mobile accessibility.</p>
                         </div>
                         <div class="col-md-6">
-                            <h5 style="font-size:.9rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;"><i class="fa-solid fa-bezier-curve text-primary me-2"></i>Motion &amp; Curves</h5>
+                            <h5 style="font-size:.9rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;"><iconify-icon icon="fluent:bezier-curve-square-24-regular" class="text-primary me-2"></iconify-icon>Motion &amp; Curves</h5>
                             <p style="font-size:.82rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Entering items use <b>Decelerate Curve</b> (`cubic-bezier(0.1, 0.9, 0.2, 1.0)`), exit items use <b>Accelerate</b>, and hover feedback uses tactile <b>Spring</b> easing.</p>
                         </div>
                         <div class="col-md-6">
-                            <h5 style="font-size:.9rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;"><i class="fa-solid fa-shapes text-primary me-2"></i>Shapes &amp; Radii</h5>
+                            <h5 style="font-size:.9rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;"><iconify-icon icon="fluent:shape-exclude-24-regular" class="text-primary me-2"></iconify-icon>Shapes &amp; Radii</h5>
                             <p style="font-size:.82rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">8 corner radius scale options: `sm` (4px), `md` (8px), `lg` (12px), `xl` (16px), `2xl` (20px), `3xl` (28px), and `full` (9999px pill). Radii are never mixed within a single component tree.</p>
                         </div>
                     </div>
@@ -929,7 +929,7 @@ Icon(FluentIcons.home_24_filled)</div>
             <h2 class="cl-section-title">Navigation</h2>
             <p class="cl-section-desc">Bottom Tab Bar is the primary navigation pattern for Expo apps. Fluent 2 icon rule: Regular = inactive, Filled = active. 44px min touch target always.</p>
             <div class="cl-card">
-                <div class="cl-card-header"><div><div class="cl-card-title">Bottom Tab Bar</div><div class="cl-card-subtitle">Primary mobile nav â€” Fluent icons Regular â†’ Filled on active state</div></div></div>
+                <div class="cl-card-header"><div><div class="cl-card-title">Bottom Tab Bar</div><div class="cl-card-subtitle">Primary mobile nav — Fluent icons Regular → Filled on active state</div></div></div>
                 <div class="cl-preview" style="display:block;padding:0;background:var(--color-neutral-bg-3)">
                     <div style="max-width:375px;margin:var(--f-space-5) auto;background:var(--color-neutral-bg-2);border-radius:var(--f-radius-xl);overflow:hidden;border:1px solid var(--color-neutral-stroke-1)">
                         <div style="padding:var(--f-space-5);height:180px;display:flex;align-items:center;justify-content:center;color:var(--color-neutral-fg-3);font-size:.875rem">Screen Content Area</div>
@@ -1053,7 +1053,7 @@ export function AppointmentSheet({ snapPoints = ['50%'] }) {
                 <div class="cl-card-header"><div class="cl-card-title">Toast Variants</div></div>
                 <div class="cl-preview" style="flex-direction:column;align-items:stretch;width:100%">
                     <div class="ss-toast-stack">
-                        <div class="ss-toast ss-toast-success"><iconify-icon icon="fluent:checkmark-circle-24-filled"></iconify-icon><div class="ss-toast-content"><div class="ss-toast-title">Appointment confirmed</div><div class="ss-toast-msg">Dr. Ahmad Â· 14 Aug at 10:00 AM</div></div><button class="ss-toast-close"><iconify-icon icon="fluent:dismiss-16-regular"></iconify-icon></button></div>
+                        <div class="ss-toast ss-toast-success"><iconify-icon icon="fluent:checkmark-circle-24-filled"></iconify-icon><div class="ss-toast-content"><div class="ss-toast-title">Appointment confirmed</div><div class="ss-toast-msg">Dr. Ahmad · 14 Aug at 10:00 AM</div></div><button class="ss-toast-close"><iconify-icon icon="fluent:dismiss-16-regular"></iconify-icon></button></div>
                         <div class="ss-toast ss-toast-error" style="animation-delay:80ms"><iconify-icon icon="fluent:error-circle-24-filled"></iconify-icon><div class="ss-toast-content"><div class="ss-toast-title">Sync failed</div><div class="ss-toast-msg">Check connection and try again</div></div><button class="ss-toast-close"><iconify-icon icon="fluent:dismiss-16-regular"></iconify-icon></button></div>
                         <div class="ss-toast ss-toast-warning" style="animation-delay:160ms"><iconify-icon icon="fluent:warning-24-filled"></iconify-icon><div class="ss-toast-content"><div class="ss-toast-title">Low storage</div><div class="ss-toast-msg">Free up space to continue</div></div><button class="ss-toast-close"><iconify-icon icon="fluent:dismiss-16-regular"></iconify-icon></button></div>
                         <div class="ss-toast ss-toast-info" style="animation-delay:240ms"><iconify-icon icon="fluent:info-24-filled"></iconify-icon><div class="ss-toast-content"><div class="ss-toast-title">Update available</div><div class="ss-toast-msg">SuamiSihat™ v3.3 is ready</div></div><button class="ss-toast-close"><iconify-icon icon="fluent:dismiss-16-regular"></iconify-icon></button></div>
@@ -1067,20 +1067,20 @@ export function AppointmentSheet({ snapPoints = ['50%'] }) {
   &lt;iconify-icon icon="fluent:checkmark-circle-24-filled"&gt;&lt;/iconify-icon&gt;
   &lt;div class="ss-toast-content"&gt;
     &lt;div class="ss-toast-title"&gt;Appointment confirmed&lt;/div&gt;
-    &lt;div class="ss-toast-msg"&gt;Dr. Ahmad Â· 14 Aug at 10:00 AM&lt;/div&gt;
+    &lt;div class="ss-toast-msg"&gt;Dr. Ahmad · 14 Aug at 10:00 AM&lt;/div&gt;
   &lt;/div&gt;
   &lt;button class="ss-toast-close"&gt;
     &lt;iconify-icon icon="fluent:dismiss-16-regular"&gt;&lt;/iconify-icon&gt;
   &lt;/button&gt;
 &lt;/div&gt;</div>
-                <div id="toast-expo" class="cl-code-block" style="position:relative;display:none"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button">// npx expo install react-native-toast-message
+                <div id="toast-expo" class="cl-code-block" style="position:relative;display:none"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>// npx expo install react-native-toast-message
 import Toast from 'react-native-toast-message';
 import { SSColors, SSFont, SSRadius, SSSpacing, SSShadow } from './ss_tokens';
 // Trigger (call anywhere):
 Toast.show({
   type: 'success', // 'success'|'error'|'info'|'warning'
   text1: 'Appointment confirmed',
-  text2: 'Dr. Ahmad Â· 14 Aug at 10:00 AM',
+  text2: 'Dr. Ahmad · 14 Aug at 10:00 AM',
   position: 'bottom',
   visibilityTime: 4000,
 });
@@ -1107,7 +1107,7 @@ const ssToastConfig = {
         <section class="cl-section" id="empty-state">
             <div class="cl-section-eyebrow">Components</div>
             <h2 class="cl-section-title">Empty State</h2>
-            <p class="cl-section-desc">When a list or screen has no content. Always: icon â†’ title â†’ description â†’ single primary action. Never leave a screen blank.</p>
+            <p class="cl-section-desc">When a list or screen has no content. Always: icon → title → description → single primary action. Never leave a screen blank.</p>
             <div class="cl-card">
                 <div class="cl-card-header"><div class="cl-card-title">Standard Empty State</div></div>
                 <div class="cl-preview" style="justify-content:center">
@@ -1169,12 +1169,12 @@ export function EmptyState({ icon: Icon, title, description, actionLabel, onActi
                         </div>
                         <div class="ss-list-item">
                             <div class="ss-list-icon" style="background:rgba(229,209,92,0.15)"><iconify-icon icon="fluent:pill-24-filled" style="color:#CA8A04;font-size:20px"></iconify-icon></div>
-                            <div class="ss-list-body"><div class="ss-list-title">Medication Reminder</div><div class="ss-list-sub">8:00 AM Â· Daily</div></div>
+                            <div class="ss-list-body"><div class="ss-list-title">Medication Reminder</div><div class="ss-list-sub">8:00 AM · Daily</div></div>
                             <div class="ss-list-right"><span style="font-size:.72rem;color:var(--color-neutral-fg-3)">2 pills</span><iconify-icon icon="fluent:chevron-right-16-regular" style="color:var(--color-neutral-fg-3)"></iconify-icon></div>
                         </div>
                         <div class="ss-list-item">
                             <div class="ss-list-icon" style="background:rgba(4,51,136,0.06)"><iconify-icon icon="fluent:person-24-filled" style="color:#043388;font-size:20px"></iconify-icon></div>
-                            <div class="ss-list-body"><div class="ss-list-title">Dr. Ahmad Zaki</div><div class="ss-list-sub">Cardiologist Â· KLCC Medical</div></div>
+                            <div class="ss-list-body"><div class="ss-list-title">Dr. Ahmad Zaki</div><div class="ss-list-sub">Cardiologist · KLCC Medical</div></div>
                             <div class="ss-list-right"><iconify-icon icon="fluent:call-24-regular" style="color:var(--color-brand-primary);font-size:20px"></iconify-icon><iconify-icon icon="fluent:chevron-right-16-regular" style="color:var(--color-neutral-fg-3)"></iconify-icon></div>
                         </div>
                     </div>
@@ -1250,11 +1250,11 @@ export function SSListItem({ icon: Icon, iconBg, iconColor, title, subtitle, tra
             <h2 class="cl-section-title">Expo Setup</h2>
             <p class="cl-section-desc">Bootstrap a new SuamiSihat™ Expo app with all design system dependencies. Copy this checklist to get to first screen in under 10 minutes.</p>
             <div class="cl-card">
-                <div class="cl-card-header"><div><div class="cl-card-title">New Project Checklist</div><div class="cl-card-subtitle">Expo SDK 51+ Â· TypeScript Â· Managed Workflow</div></div></div>
+                <div class="cl-card-header"><div><div class="cl-card-title">New Project Checklist</div><div class="cl-card-subtitle">Expo SDK 51+ · TypeScript · Managed Workflow</div></div></div>
                 <div style="padding:var(--f-space-5)">
                     <div class="cl-install-step"><div class="cl-install-num">1</div><div><div class="cl-install-title">Create Expo app</div><div class="cl-install-desc">Blank TypeScript template.</div><div class="cl-code-block" style="position:relative;border-radius:var(--f-radius-md)"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>npx create-expo-app@latest ss-health --template blank-typescript</div></div></div>
                     <div class="cl-install-step"><div class="cl-install-num">2</div><div><div class="cl-install-title">Install Inter font</div><div class="cl-install-desc">Matches web portal typography exactly.</div><div class="cl-code-block" style="position:relative;border-radius:var(--f-radius-md)"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>npx expo install expo-font @expo-google-fonts/inter</div></div></div>
-                    <div class="cl-install-step"><div class="cl-install-num">3</div><div><div class="cl-install-title">Install Fluent icons</div><div class="cl-install-desc">Same icon vocabulary as web: <code>fluent:home-24-regular</code> â†’ <code>Home24Regular</code></div><div class="cl-code-block" style="position:relative;border-radius:var(--f-radius-md)"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>npx expo install @fluentui/react-native-icons react-native-svg</div></div></div>
+                    <div class="cl-install-step"><div class="cl-install-num">3</div><div><div class="cl-install-title">Install Fluent icons</div><div class="cl-install-desc">Same icon vocabulary as web: <code>fluent:home-24-regular</code> → <code>Home24Regular</code></div><div class="cl-code-block" style="position:relative;border-radius:var(--f-radius-md)"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>npx expo install @fluentui/react-native-icons react-native-svg</div></div></div>
                     <div class="cl-install-step"><div class="cl-install-num">4</div><div><div class="cl-install-title">Copy SS token file</div><div class="cl-install-desc">Drop <code>ss_tokens.ts</code> into your project.</div><div class="cl-code-block" style="position:relative;border-radius:var(--f-radius-md)"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>cp ssDesignSystem/assets/tokens/ss_tokens.ts src/theme/ss_tokens.ts</div></div></div>
                     <div class="cl-install-step"><div class="cl-install-num">5</div><div><div class="cl-install-title">Navigation + Bottom Sheet</div><div class="cl-install-desc">For tab navigation and interactive sheets.</div><div class="cl-code-block" style="position:relative;border-radius:var(--f-radius-md)"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button>npx expo install @react-navigation/native @react-navigation/bottom-tabs react-native-screens react-native-safe-area-context @gorhom/bottom-sheet react-native-reanimated react-native-gesture-handler</div></div></div>
                     <div class="cl-install-step"><div class="cl-install-num">6</div><div><div class="cl-install-title">Load fonts in App root</div><div class="cl-install-desc">Prevent flash of wrong font on startup.</div><div class="cl-code-block" style="position:relative;border-radius:var(--f-radius-md)"><button class="cl-copy-btn" onclick="copyCode(this)">Copy</button">import { useFonts, Inter_400Regular, Inter_500Medium,
