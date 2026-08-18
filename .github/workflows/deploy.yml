@@ -1,0 +1,26 @@
+name: Auto Deploy to Synology NAS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to Synology Web Station
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Synology NAS via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.NAS_HOST || 'suamisihat.myds.me' }}
+          port: ${{ secrets.NAS_PORT || '2222' }}
+          username: ${{ secrets.NAS_USER || 'harussani' }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          password: ${{ secrets.NAS_PASSWORD }}
+          script: |
+            cd /volume1/web/ss_assets
+            git fetch origin main
+            git reset --hard origin/main
+            echo "Successfully updated https://assets.suamisihat.myds.me/"
