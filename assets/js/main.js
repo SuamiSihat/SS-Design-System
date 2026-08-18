@@ -1573,21 +1573,7 @@ if (typeof document !== 'undefined') {
  * Automatically normalizes /pages/*.html in browser address bar to clean routes
  */
 function initCleanUrlMasking() {
-    try {
-        if (typeof window === 'undefined' || !window.history || !window.location) return;
-        if (!window.location.protocol.startsWith('http')) return; // Avoid local file:// security limits
-
-        const pathname = window.location.pathname;
-        // Clean .html extension while preserving directory hierarchy (e.g. /pages/brand-system)
-        if (pathname.endsWith('.html')) {
-            const cleanPath = pathname.replace(/\.html$/i, '');
-            const search = window.location.search || '';
-            const hash = window.location.hash || '';
-            window.history.replaceState(null, '', cleanPath + search + hash);
-        }
-    } catch (e) {
-        // Silently continue if history API is restricted
-    }
+    // Safe no-op on static hosting to preserve direct refresh reliability
 }
 
 // ============================================================================
