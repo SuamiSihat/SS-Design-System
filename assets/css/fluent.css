@@ -21,6 +21,8 @@
   --ss-fawn:            #CCAC8D;   /* Fawn              - warm support  */
   --ss-arylide:         #E5D15C;   /* Arylide Yellow    - badge / tag   */
   --ss-banana:          #FCE53D;   /* Banana Yellow     - CTA highlight */
+  --ss-banana-yellow:   #F7E143;   /* Banana Yellow (CTA button primary) */
+  --ss-neutral-black:   #1C1C1C;   /* Neutral Black — primary typography */
 
   /* -- Fluent Neutral Ramp ----------------------------------------------- */
   --f-neutral-0:    #FFFFFF;
@@ -445,3 +447,97 @@ body.dark-mode ::selection { background: rgba(33,161,247,0.22); }
   background: radial-gradient(ellipse at center, rgba(33, 161, 247, 0.18) 0%, transparent 70%);
   pointer-events: none;
 }
+
+/* ==========================================================================
+   Button Primitives & CTA Variant
+   ========================================================================== */
+.ss-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--f-space-2);
+  padding: 10px var(--f-space-5);
+  border-radius: var(--f-radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all var(--f-duration-gentle) var(--f-curve-spring);
+  font-family: inherit;
+  min-height: 44px;
+  text-decoration: none;
+}
+
+.ss-btn:active {
+  transform: scale(0.97);
+}
+
+.ss-btn-primary {
+  background: var(--color-brand-primary);
+  color: #FFFFFF !important;
+}
+
+.ss-btn-primary:hover {
+  background: var(--color-brand-dark);
+  box-shadow: var(--f-shadow-brand-sm);
+  color: #FFFFFF !important;
+}
+
+/* Banana Yellow CTA Button (#F7E143 bg, #1C1C1C Neutral Black text) */
+.ss-btn-cta {
+  background: var(--ss-banana-yellow, #F7E143);
+  color: var(--ss-neutral-black, #1C1C1C) !important;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 2px 8px rgba(247, 225, 67, 0.35);
+}
+
+.ss-btn-cta:hover {
+  background: #FCE53D;
+  color: var(--ss-neutral-black, #1C1C1C) !important;
+  box-shadow: 0 4px 14px rgba(247, 225, 67, 0.5);
+  transform: translateY(-2px);
+}
+
+.ss-btn-secondary {
+  background: var(--color-neutral-bg-3);
+  color: var(--color-neutral-fg-1);
+  border: 1px solid var(--color-neutral-stroke-2);
+}
+
+.ss-btn-secondary:hover {
+  background: var(--color-neutral-bg-4);
+}
+
+.ss-btn-ghost {
+  background: transparent;
+  color: var(--color-brand-primary);
+}
+
+.ss-btn-ghost:hover {
+  background: var(--color-brand-subtle);
+}
+
+.ss-btn-danger {
+  background: var(--color-error-bg);
+  color: var(--color-error-fg);
+  border: 1px solid rgba(220, 38, 38, 0.18);
+}
+
+.ss-btn-sm {
+  padding: 6px var(--f-space-3);
+  font-size: 0.78rem;
+  min-height: 36px;
+}
+
+.ss-btn-lg {
+  padding: var(--f-space-3) var(--f-space-6);
+  font-size: 1rem;
+  min-height: 52px;
+}
+
+.ss-btn:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
