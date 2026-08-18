@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>Page Not Found - SS Brand Assets</title>
-    <link rel="icon" href="../public/brand/favicon/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>404 - Page Not Found · SuamiSihat™ Design System</title>
+    <link rel="icon" id="pageFavicon" href="../public/brand/logos/ss-logomark-light.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <style>
         :root {
-            --primary: #022461;
-            --primary-light: #043388;
-            --accent: #21a1f7;
-            --accent-light: #6dc6ec;
-            --warning: #f7e143;
-            --text-light: #ffffff;
-            --text-dark: #1c1c1c;
-            --background: #ffffff;
-            --gradient-blue: linear-gradient(135deg, #022461 0%, #21a1f7 100%);
+            --ss-prussian: #022057;
+            --ss-blue: #043388;
+            --ss-azure: #21A1F7;
+            --ss-malibu: #6DC6EC;
+            --ss-dark: #090D16;
+            --ss-text-primary: #FFFFFF;
+            --ss-text-muted: #94A3B8;
         }
 
         * {
@@ -27,11 +26,11 @@
         }
 
         body {
-            background: var(--gradient-blue);
+            background-color: var(--ss-dark);
             width: 100vw;
-            height: 100vh;
-            color: var(--text-light);
-            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            color: var(--ss-text-primary);
+            font-family: 'Poppins', system-ui, -apple-system, sans-serif;
             text-align: center;
             display: flex;
             justify-content: center;
@@ -40,372 +39,433 @@
             position: relative;
         }
 
-        /* Animated background particles */
-        .particles {
+        /* ── Fullscreen Animated Canvas ── */
+        #heroCanvas {
             position: absolute;
-            top: 0;
-            left: 0;
+            inset: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
             z-index: 1;
+            display: block;
         }
 
-        .particle {
+        /* ── Radial Ambient Glow Overlay ── */
+        .ambient-glow {
             position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
+            inset: 0;
+            background: radial-gradient(circle at 50% 40%, rgba(33, 161, 247, 0.12) 0%, rgba(2, 32, 87, 0.4) 60%, rgba(9, 13, 22, 0.85) 100%);
+            z-index: 2;
+            pointer-events: none;
         }
 
-        .particle:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .particle:nth-child(2) {
-            width: 60px;
-            height: 60px;
-            left: 20%;
-            animation-delay: 2s;
-        }
-
-        .particle:nth-child(3) {
-            width: 100px;
-            height: 100px;
-            left: 70%;
-            animation-delay: 4s;
-        }
-
-        .particle:nth-child(4) {
-            width: 40px;
-            height: 40px;
-            left: 80%;
-            animation-delay: 1s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px) rotate(0deg);
-                opacity: 0.3;
-            }
-            50% {
-                transform: translateY(-20px) rotate(180deg);
-                opacity: 0.8;
-            }
-        }
-
+        /* ── Content Card ── */
         .error-container {
             position: relative;
-            z-index: 2;
+            z-index: 3;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2em;
-            max-width: 800px;
-            padding: 2em;
+            max-width: 680px;
+            width: 90%;
+            padding: 2.5rem 2rem;
+            background: rgba(15, 23, 42, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 24px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(33, 161, 247, 0.1);
+            animation: fadeInCard 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeInCard {
+            from { opacity: 0; transform: translateY(20px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         .logo-container {
-            margin-bottom: 1em;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .logo-container img {
-            height: 200px;
-            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
-            animation: logoFloat 3s ease-in-out infinite;
+            max-height: 48px;
+            width: auto;
+            max-width: 240px;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+            transition: transform 0.3s ease;
         }
 
-        @keyframes logoFloat {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
+        .logo-container img:hover {
+            transform: scale(1.03);
         }
 
         .error-num {
-            font-size: 12em;
-            font-weight: 700;
+            font-size: clamp(5rem, 14vw, 8.5rem);
+            font-weight: 800;
             margin: 0;
             line-height: 1;
-            color: var(--accent-light);
-            text-shadow: 0 10px 30px rgba(109, 198, 236, 0.5);
-            animation: numberGlow 2s ease-in-out infinite alternate;
+            letter-spacing: -0.04em;
+            background: linear-gradient(135deg, #FFFFFF 0%, var(--ss-malibu) 50%, var(--ss-azure) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 40px rgba(33, 161, 247, 0.4);
+            animation: numberPulse 3s ease-in-out infinite alternate;
         }
 
-        @keyframes numberGlow {
-            0% {
-                text-shadow: 0 10px 30px rgba(109, 198, 236, 0.5);
-            }
-            100% {
-                text-shadow: 0 10px 40px rgba(109, 198, 236, 0.8);
-            }
+        @keyframes numberPulse {
+            0% { transform: scale(1); filter: drop-shadow(0 0 20px rgba(33, 161, 247, 0.25)); }
+            100% { transform: scale(1.02); filter: drop-shadow(0 0 35px rgba(109, 198, 236, 0.5)); }
         }
 
         .error-message {
-            font-size: 1.5em;
-            font-weight: 400;
-            margin-bottom: 2em;
-            max-width: 600px;
-            line-height: 1.6;
+            font-size: clamp(1.1rem, 3vw, 1.35rem);
+            font-weight: 600;
+            margin-top: 0.5rem;
+            margin-bottom: 0.75rem;
+            color: #FFFFFF;
+            line-height: 1.4;
         }
 
         .error-description {
-            font-size: 1.1em;
-            margin-bottom: 3em;
-            opacity: 0.9;
-            max-width: 500px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--ss-text-muted);
+            max-width: 520px;
+            margin-bottom: 2rem;
         }
 
         .error-actions {
             display: flex;
-            gap: 1.5em;
+            gap: 0.875rem;
             flex-wrap: wrap;
             justify-content: center;
-        }
-
-        .btn {
-            color: var(--text-light);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: 600;
-            padding: 15px 30px;
-            border: 2px solid var(--text-light);
-            border-radius: var(--f-radius-md);
-            transition: all 0.3s ease;
-            background: transparent;
-            cursor: pointer;
-            font-size: 0.9em;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
             width: 100%;
-            height: 100%;
-            background: var(--text-light);
-            transition: left 0.3s ease;
-            z-index: -1;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ── Action Buttons ── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.84rem;
+            letter-spacing: 0.02em;
+            padding: 0.75rem 1.4rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(10px);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
         }
 
         .btn:hover {
-            color: var(--primary);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.35);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            color: #FFFFFF;
+            text-decoration: none;
         }
 
-        .btn:hover::before {
-            left: 0;
-        }
-
+        /* Primary 10% Azure CTA */
         .btn-primary {
-            background: var(--accent);
-            border-color: var(--accent);
+            background: var(--ss-azure);
+            border-color: var(--ss-azure);
+            color: var(--ss-prussian) !important;
+            font-weight: 700;
+            box-shadow: 0 4px 16px rgba(33, 161, 247, 0.35);
         }
 
         .btn-primary:hover {
-            background: var(--accent-light);
-            border-color: var(--accent-light);
-            color: var(--text-light);
+            background: var(--ss-malibu);
+            border-color: var(--ss-malibu);
+            color: var(--ss-prussian) !important;
+            box-shadow: 0 6px 24px rgba(33, 161, 247, 0.5);
+            transform: translateY(-2px);
         }
 
+        /* ── Search Input ── */
         .search-container {
-            margin-top: 2em;
             position: relative;
-            max-width: 400px;
+            max-width: 440px;
             width: 100%;
         }
 
         .search-input {
             width: 100%;
-            padding: 15px 20px;
-            border: none;
-            border-radius: var(--f-radius-md);
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-light);
-            font-size: 1em;
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0.75rem 1rem 0.75rem 2.6rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            background: rgba(2, 32, 87, 0.4);
+            color: #FFFFFF;
+            font-size: 0.85rem;
+            font-family: inherit;
+            outline: none;
+            transition: all 0.25s ease;
         }
 
         .search-input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.5);
         }
 
         .search-input:focus {
-            outline: none;
-            background: rgba(255, 255, 255, 0.2);
-            border-color: var(--accent-light);
+            border-color: var(--ss-azure);
+            background: rgba(4, 51, 136, 0.5);
+            box-shadow: 0 0 0 3px rgba(33, 161, 247, 0.25);
         }
 
-        @media (max-width: 768px) {
-            .error-num {
-                font-size: 8em;
+        .search-icon {
+            position: absolute;
+            left: 0.9rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1rem;
+            pointer-events: none;
+        }
+
+        @media (max-width: 576px) {
+            .error-container {
+                padding: 2rem 1.25rem;
             }
-            
-            .logo-container img {
-                height: 150px;
-            }
-            
-            .error-message {
-                font-size: 1.2em;
-            }
-            
-            .error-description {
-                font-size: 1em;
-            }
-            
             .error-actions {
                 flex-direction: column;
-                align-items: center;
+                width: 100%;
             }
-            
             .btn {
-                width: 200px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .error-num {
-                font-size: 6em;
-            }
-            
-            .logo-container img {
-                height: 120px;
-            }
-            
-            .particle {
-                display: none;
+                width: 100%;
             }
         }
     </style>
-    <link rel=stylesheet href=../assets/css/style.css></head>
+</head>
 <body>
-<main id=main-content role=main>
-    <!-- Animated background particles -->
-    <div class="particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
+    <!-- 60:30:10 Animated Background Canvas -->
+    <canvas id="heroCanvas"></canvas>
+    <div class="ambient-glow"></div>
 
-    <div class="error-container">
+    <main id="main-content" class="error-container" role="main">
+        <!-- Resilient Logo Container -->
         <div class="logo-container">
-            <img src="../public/brand/logos/ss-logomark-light.svg" alt="SuamiSihat™ Logo">
+            <a id="homeLink" href="../index.html" aria-label="SuamiSihat™ Home">
+                <img id="errorLogo" 
+                     src="../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg" 
+                     alt="SuamiSihat™ Design System">
+            </a>
         </div>
         
-        <h1 class="error-num">404</h1>
+        <div class="error-num" aria-hidden="true">404</div>
         
-        <p class="error-message">
-            Oops! This page seems to have wandered off into the digital wilderness.
-        </p>
+        <h1 class="error-message">
+            Oops! This page seems to have wandered off.
+        </h1>
         
         <p class="error-description">
-            The page you're looking for doesn't exist or has been moved to a new location.
+            The link you followed may be broken, or the page has been moved or renamed in the SuamiSihat™ ecosystem.
         </p>
         
         <div class="error-actions">
-            <a href="../index.html" class="btn btn-primary">Go Home</a>
-            <a href="brand-guidelines.html" class="btn">Brand Guidelines</a>
-            <a href="mailto:branding@suamisihat.com" class="btn">Contact Support</a>
+            <a id="btnHome" href="../index.html" class="btn btn-primary">
+                <iconify-icon icon="fluent:home-24-filled"></iconify-icon>
+                <span>Go Home</span>
+            </a>
+            <a id="btnGuidelines" href="brand-guidelines.html" class="btn">
+                <iconify-icon icon="fluent:book-open-24-regular"></iconify-icon>
+                <span>Brand Guidelines</span>
+            </a>
+            <a id="btnComponents" href="components.html" class="btn">
+                <iconify-icon icon="fluent:apps-24-regular"></iconify-icon>
+                <span>Components</span>
+            </a>
+            <a href="mailto:branding@suamisihat.com" class="btn">
+                <iconify-icon icon="fluent:mail-24-regular"></iconify-icon>
+                <span>Contact Support</span>
+            </a>
         </div>
 
         <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search for something else..." 
+            <iconify-icon icon="fluent:search-24-regular" class="search-icon"></iconify-icon>
+            <input type="text" class="search-input" placeholder="Search documentation or assets..." 
                    onkeypress="if(event.key==='Enter') searchPage(this.value)">
         </div>
-    </div>
+    </main>
 
     <script>
-        // Search functionality
+        // ─────────────────────────────────────────────────────────────
+        // 1. Resilient Dynamic Path Resolver (Works at root & subfolder)
+        // ─────────────────────────────────────────────────────────────
+        (function() {
+            var pathname = window.location.pathname;
+            var isAtRoot = !pathname.includes('/pages/') && !pathname.includes('\\pages\\');
+            var prefix = isAtRoot ? '' : '../';
+            var pagesPrefix = isAtRoot ? 'pages/' : '';
+
+            // Resolve logo
+            var logo = document.getElementById('errorLogo');
+            if (logo) {
+                var logoSrc = prefix + 'public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg';
+                logo.src = logoSrc;
+                logo.onerror = function() {
+                    if (!this.getAttribute('data-fallback')) {
+                        this.setAttribute('data-fallback', '1');
+                        this.src = (isAtRoot ? 'public/' : '../public/') + 'brand/logos/ss-logomark-light.svg';
+                    }
+                };
+            }
+
+            // Resolve favicon
+            var fav = document.getElementById('pageFavicon');
+            if (fav) {
+                fav.href = prefix + 'public/brand/logos/ss-logomark-light.svg';
+            }
+
+            // Resolve navigation links
+            var homeLink = document.getElementById('homeLink');
+            var btnHome = document.getElementById('btnHome');
+            var btnGuidelines = document.getElementById('btnGuidelines');
+            var btnComponents = document.getElementById('btnComponents');
+
+            if (homeLink) homeLink.href = prefix + 'index.html';
+            if (btnHome) btnHome.href = prefix + 'index.html';
+            if (btnGuidelines) btnGuidelines.href = pagesPrefix + 'brand-guidelines.html';
+            if (btnComponents) btnComponents.href = pagesPrefix + 'components.html';
+        })();
+
+        // ─────────────────────────────────────────────────────────────
+        // 2. Search Page Handler
+        // ─────────────────────────────────────────────────────────────
         function searchPage(query) {
-            if (query.trim()) {
-                // You can implement actual search functionality here
-                // For now, redirect to home page
-                window.location.href = '../index.html';
+            if (query && query.trim()) {
+                var isAtRoot = !window.location.pathname.includes('/pages/');
+                var target = (isAtRoot ? 'pages/' : '') + 'brand-system.html?q=' + encodeURIComponent(query.trim());
+                window.location.href = target;
             }
         }
 
-        // Add some interactive effects
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add click effect to buttons
-            const buttons = document.querySelectorAll('.btn');
-            buttons.forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    // Create ripple effect
-                    const ripple = document.createElement('span');
-                    const rect = this.getBoundingClientRect();
-                    const size = Math.max(rect.width, rect.height);
-                    const x = e.clientX - rect.left - size / 2;
-                    const y = e.clientY - rect.top - size / 2;
-                    
-                    ripple.style.width = ripple.style.height = size + 'px';
-                    ripple.style.left = x + 'px';
-                    ripple.style.top = y + 'px';
-                    ripple.classList.add('ripple');
-                    
-                    this.appendChild(ripple);
-                    
-                    setTimeout(() => {
-                        ripple.remove();
-                    }, 600);
-                });
+        // ─────────────────────────────────────────────────────────────
+        // 3. SuamiSihat™ 60:30:10 Animated Loop Background Engine
+        // ─────────────────────────────────────────────────────────────
+        (function() {
+            var canvas = document.getElementById('heroCanvas');
+            if (!canvas) return;
+            var ctx = canvas.getContext('2d');
+            var width, height;
+            var step = 0;
+            var mouseX = 0, mouseY = 0;
+            var targetMouseX = 0, targetMouseY = 0;
+
+            function resize() {
+                var dpr = window.devicePixelRatio || 1;
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = width * dpr;
+                canvas.height = height * dpr;
+                ctx.scale(dpr, dpr);
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+
+            // Interactive mouse tracking with gentle dampening
+            window.addEventListener('mousemove', function(e) {
+                targetMouseX = (e.clientX / width - 0.5) * 40;
+                targetMouseY = (e.clientY / height - 0.5) * 40;
             });
 
-            // Add parallax effect to particles
-            document.addEventListener('mousemove', function(e) {
-                const particles = document.querySelectorAll('.particle');
-                const mouseX = e.clientX / window.innerWidth;
-                const mouseY = e.clientY / window.innerHeight;
-                
-                particles.forEach((particle, index) => {
-                    const speed = (index + 1) * 0.5;
-                    const x = (mouseX - 0.5) * speed;
-                    const y = (mouseY - 0.5) * speed;
-                    
-                    particle.style.transform = `translate(${x}px, ${y}px)`;
+            // 10% Radiant Energy Particles
+            var particleCount = Math.min(32, Math.floor(width / 40));
+            var particles = [];
+            for (var i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    radius: Math.random() * 2.2 + 1.2,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: (Math.random() - 0.5) * 0.4,
+                    alpha: Math.random() * 0.5 + 0.25,
+                    isAzure: Math.random() > 0.4
                 });
-            });
-        });
+            }
 
-        // Add CSS for ripple effect
-        const style = document.createElement('style');
-        style.textContent = `
-            .btn {
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .ripple {
-                position: absolute;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.3);
-                transform: scale(0);
-                animation: ripple-animation 0.6s linear;
-                pointer-events: none;
-            }
-            
-            @keyframes ripple-animation {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
+            function render() {
+                step += 0.005;
+                mouseX += (targetMouseX - mouseX) * 0.05;
+                mouseY += (targetMouseY - mouseY) * 0.05;
+
+                ctx.clearRect(0, 0, width, height);
+
+                // 60% Foundation Base: Deep Prussian Blue to Void Dark
+                var baseGrad = ctx.createLinearGradient(0, 0, width + mouseX, height + mouseY);
+                baseGrad.addColorStop(0, '#022057');   // SS Prussian Blue
+                baseGrad.addColorStop(0.5, '#043388'); // SS Blue
+                baseGrad.addColorStop(1, '#090D16');   // Void Dark
+                ctx.fillStyle = baseGrad;
+                ctx.fillRect(0, 0, width, height);
+
+                // 30% Structural Fluid Sine Waves
+                ctx.save();
+                for (var w = 0; w < 3; w++) {
+                    ctx.beginPath();
+                    var yOffset = height * 0.62 + (w * 45) + (mouseY * (w + 1) * 0.2);
+                    ctx.moveTo(0, height);
+                    ctx.lineTo(0, yOffset);
+
+                    for (var x = 0; x <= width; x += 25) {
+                        var wave = Math.sin(x * 0.0025 + step + (w * 1.5)) * 32 +
+                                   Math.cos(x * 0.0012 - step * 0.8) * 18;
+                        ctx.lineTo(x, yOffset + wave);
+                    }
+
+                    ctx.lineTo(width, height);
+                    ctx.closePath();
+
+                    if (w === 0) {
+                        ctx.fillStyle = 'rgba(2, 32, 87, 0.45)';
+                    } else if (w === 1) {
+                        ctx.fillStyle = 'rgba(4, 51, 136, 0.25)';
+                    } else {
+                        ctx.fillStyle = 'rgba(9, 13, 22, 0.75)';
+                    }
+                    ctx.fill();
                 }
+                ctx.restore();
+
+                // 10% Luminous Azure & Malibu Energy Nodes
+                for (var p = 0; p < particles.length; p++) {
+                    var pt = particles[p];
+                    pt.x += pt.vx;
+                    pt.y += pt.vy;
+
+                    if (pt.x < 0) pt.x = width;
+                    if (pt.x > width) pt.x = 0;
+                    if (pt.y < 0) pt.y = height;
+                    if (pt.y > height) pt.y = 0;
+
+                    ctx.beginPath();
+                    ctx.arc(pt.x + (mouseX * 0.3), pt.y + (mouseY * 0.3), pt.radius, 0, Math.PI * 2);
+                    
+                    if (pt.isAzure) {
+                        ctx.fillStyle = 'rgba(33, 161, 247, ' + pt.alpha + ')';
+                        ctx.shadowColor = '#21A1F7';
+                    } else {
+                        ctx.fillStyle = 'rgba(109, 198, 236, ' + (pt.alpha * 0.8) + ')';
+                        ctx.shadowColor = '#6DC6EC';
+                    }
+                    ctx.shadowBlur = 14;
+                    ctx.fill();
+                }
+
+                requestAnimationFrame(render);
             }
-        `;
-        document.head.appendChild(style);
+
+            render();
+        })();
     </script>
-</main>
-    <script src=../assets/js/main.js defer></script></body>
+</body>
 </html>
-
-
-
