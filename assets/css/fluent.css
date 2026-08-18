@@ -327,7 +327,7 @@ body.dark-mode ::selection { background: rgba(33,161,247,0.22); }
 }
 
 .f-page-layout.sidebar-minimized {
-  grid-template-columns: 0px 1fr;
+  grid-template-columns: 0px 1fr !important;
 }
 
 .f-sidebar {
@@ -350,10 +350,14 @@ body.dark-mode ::selection { background: rgba(33,161,247,0.22); }
 }
 
 .f-page-layout.sidebar-minimized .f-sidebar {
-  opacity: 0;
-  pointer-events: none;
-  overflow: hidden;
-  border-right-width: 0;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  border-right-width: 0 !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  visibility: hidden !important;
 }
 
 .f-main-content {
@@ -391,12 +395,13 @@ body.dark-mode ::selection { background: rgba(33,161,247,0.22); }
 }
 
 .f-page-layout.sidebar-minimized .f-sidebar-toggle {
-  left: 14px;
-  background: var(--color-brand-primary);
-  color: #fff;
-  border-color: transparent;
+  left: 12px !important;
+  background: var(--color-brand-primary) !important;
+  color: #fff !important;
+  border-color: transparent !important;
 }
 
+.f-page-layout.sidebar-minimized .f-sidebar-toggle iconify-icon,
 .f-page-layout.sidebar-minimized .f-sidebar-toggle i {
   transform: rotate(180deg);
 }
