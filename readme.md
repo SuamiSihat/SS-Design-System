@@ -9,7 +9,7 @@
 [![Design System](https://img.shields.io/badge/Design%20Language-Microsoft%20Fluent%202-022057.svg?style=for-the-badge)](https://microsofthttps//fluent2.microsoft.design/)
 [![Status](https://img.shields.io/badge/QA%20Status-RELEASE%20READY-2e7d32.svg?style=for-the-badge)](QA/FINAL-QA-REPORT.md)
 
-[🌐 Live System Hub](https://assets.suamisihat.myds.me/) • [📚 Interactive Roadmap](https://assets.suamisihat.myds.me/roadmap) • [💻 SSCAM App](https://github.com/SuamiSihat/ss_cam)
+[🌐 Live System Hub](https://assets.suamisihat.com.my/) • [📚 Interactive Roadmap](https://assets.suamisihat.com.my/roadmap) • [💻 SSCAM App](https://github.com/SuamiSihat/ss_cam)
 
 ---
 
