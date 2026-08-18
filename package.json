@@ -10,8 +10,14 @@
     "watch": "node scripts/watch.mjs"
   },
   "devDependencies": {
+    "@sveltejs/adapter-static": "^3.0.10",
+    "@tailwindcss/typography": "^0.5.20",
+    "autoprefixer": "^10.5.4",
+    "chokidar": "^3.6.0",
     "lightningcss": "^1.28.2",
-    "terser": "^5.36.0",
-    "chokidar": "^3.6.0"
+    "lucide-svelte": "^1.0.1",
+    "postcss": "^8.5.26",
+    "tailwindcss": "^4.3.3",
+    "terser": "^5.36.0"
   }
 }

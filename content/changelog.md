@@ -4,7 +4,7 @@
 
 ---
 
-## v3.2 — August 2026
+## v3.3 — August 2026
 
 **QA Audit & Production Hardening**
 

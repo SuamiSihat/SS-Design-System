@@ -4,7 +4,7 @@
 
 **Official Brand & Design System Toolkit for the SuamiSihat™ Ecosystem**
 
-[![Release](https://img.shields.io/badge/version-3.2.0-043388.svg?style=for-the-badge)](https://github.com/SuamiSihat/branding_suamisihat/releases)
+[![Release](https://img.shields.io/badge/version-3.3.0-043388.svg?style=for-the-badge)](https://github.com/SuamiSihat/branding_suamisihat/releases)
 [![License](https://img.shields.io/badge/license-MIT-6DC6EC.svg?style=for-the-badge)](LICENSE)
 [![Design System](https://img.shields.io/badge/Design%20Language-Microsoft%20Fluent%202-022057.svg?style=for-the-badge)](https://microsofthttps//fluent2.microsoft.design/)
 [![Status](https://img.shields.io/badge/QA%20Status-RELEASE%20READY-2e7d32.svg?style=for-the-badge)](QA/FINAL-QA-REPORT.md)
