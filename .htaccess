@@ -80,23 +80,21 @@ FileETag None
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^(.+[^/])$ $1/ [R=301,L]
 
-    # 1. External 301 Redirect: Strip .html extension if requested directly in browser URL
-    # e.g. /pages/brand-guidelines.html -> /pages/brand-guidelines
-    RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s\?] [NC]
-    RewriteRule ^ /%1 [R=301,L]
+    # 1. Fallback internal rewrite: if requested URL + .html exists, rewrite to it
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.html -f
+    RewriteRule ^(.*)$ $1.html [L,QSA]
 
     # 2. Internal Rewrite: /pages/name -> /pages/name.html
-    RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-    RewriteRule ^(pages/[a-zA-Z0-9_-]+)/?$ $1.html [L,QSA]
-
-    # 3. Internal Rewrite: /name or /name.html -> /pages/name.html (Root short URL alias)
-    RewriteCond %{DOCUMENT_ROOT}/pages/$1.html -f
-    RewriteRule ^([a-zA-Z0-9_-]+)(?:\.html)?/?$ pages/$1.html [L,QSA]
-
-    # 4. Fallback internal rewrite for any extensionless request
+    RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME}\.html -f
-    RewriteRule ^(.*)$ $1.html [L,QSA]
+    RewriteRule ^pages/([a-zA-Z0-9_-]+)/?$ pages/$1.html [L,QSA]
+
+    # 3. Internal Rewrite: /name -> /pages/name.html (Root short alias)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^([a-zA-Z0-9_-]+)/?$ pages/$1.html [L,QSA]
 
     # 5. Short aliases & doc query shortcuts
     RewriteRule ^doc-([a-zA-Z0-9_-]+)/?$       pages/doc.html?doc=$1 [QSA,L]
