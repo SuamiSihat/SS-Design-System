@@ -1,6 +1,6 @@
 /**
  * SuamiSihat Design System — Expo / React Native Tokens
- * ss_tokens.ts  |  v3.1.0
+ * ss_tokens.ts  |  v3.4.0
  *
  * AUTO-DERIVED from assets/tokens/design-tokens.json
  * DO NOT EDIT MANUALLY — update design-tokens.json instead.

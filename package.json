@@ -1,6 +1,6 @@
 {
   "name": "ss-design-system",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "description": "SuamiSihat™ Design System — static asset build pipeline",
   "private": true,
   "scripts": {

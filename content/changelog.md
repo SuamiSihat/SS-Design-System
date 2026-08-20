@@ -4,6 +4,38 @@
 
 ---
 
+## v3.4 — August 2026
+
+**AI Agent Skill Systems, Client Representation Standards & Ecosystem Governance**
+
+Major release introducing production-grade AI Agent Skill systems, formal client representation standards, healthcare YMYL E-E-A-T copywriting frameworks, and performance asset optimizations.
+
+### New Features & Agent Systems
+
+- **SuamiSihat™ AI Brand Director (`suamisihat-brand-director`)**:
+  - Full modular brand governance and art direction system featuring 30 specialist sub-skills across Foundation, Visual Identity, Design System, Communication, Compliance, AI Production, and Intelligence.
+  - Formal 100-point Brand Audit scorecard and Release Gate pipeline (`PASS`, `PASS WITH MINOR CHANGES`, `REVISE`, `REJECT`).
+  - Strict 5-tier correction hierarchy: `REMOVE` → `REBALANCE` → `REFINE` → `REPLACE` → `REDESIGN`.
+
+- **SuamiSihat™ Copywriting & SEO Optimization Agent (`suamisihat-copy-seo`)**:
+  - Comprehensive clinical narrative and search optimization system with 20 specialist sub-skills.
+  - Google Healthcare YMYL & E-E-A-T compliance with doctor author bylines and verified citations.
+  - Structured JSON-LD schema generators (`MedicalClinic`, `MedicalWebPage`, `Physician`, `FAQPage`).
+  - Bilingual Malaysian localization guidelines (authentic English & Bahasa Malaysia code-switching).
+  - Ministry of Health (MOH) Malaysia & NPRA advertising compliance screening.
+
+- **Client Representation & 60:30:10 Standards Module**:
+  - Added Section 08 to `pages/brand-system.html` with direct sidebar navigation.
+  - Formalizes rules for how staff and developers represent SuamiSihat™ to patients and clients across teleconsultation funnels, clinics, and packaging.
+
+### Optimizations & Fixes
+
+- **Script Deduplication**: Standardized on modern deferred `iconify-icon/2.1.0` loader across `index.html` and `pages/brand-system.html`, removing redundant bundle overhead.
+- **Brand Casing Hardening**: Fixed footer casing in `pages/brand-system.html` from `Suamisihat` to mandatory `SuamiSihat™`.
+- **Token Synchronization**: Synchronized master token specifications in `design-tokens.json` to version 3.4.0.
+
+---
+
 ## v3.3 — August 2026
 
 **QA Audit & Production Hardening**
