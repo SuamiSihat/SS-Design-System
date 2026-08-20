@@ -64,6 +64,7 @@ Welcome to the **SuamiSihat™ Design System Roadmap**. This document outlines o
 
 | Version | Date | Highlights |
 |---|---|---|
+| **v3.4** | Aug 2026 | SuamiSihat™ AI Brand Director & Copywriting / SEO Optimization agents, Client Representation standards, token & script optimizations |
 | **v3.3** | Aug 2026 | Full 14-report QA Audit complete, P2 fixes, SSCAM WPF integration, trademark `SuamiSihat™` standardization |
 | **v3.1** | Aug 2026 | Multi-platform token system (JSON, CSS, TS, Dart) & Expo React Native foundation |
 | **v3.0** | Aug 2026 | Microsoft Fluent 2 design system overhaul & 3-tier color system |

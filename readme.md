@@ -4,7 +4,7 @@
 
 **The Authoritative Visual Language, W3C Token Architecture & Multi-Platform Component Standard for the SuamiSihat™ Digital Health Ecosystem.**
 
-[![Release](https://img.shields.io/badge/Release-v3.3.0-043388.svg?style=for-the-badge&logo=github)](https://github.com/SuamiSihat/SS-Design-System/releases)
+[![Release](https://img.shields.io/badge/Release-v3.4.0-043388.svg?style=for-the-badge&logo=github)](https://github.com/SuamiSihat/SS-Design-System/releases)
 [![License](https://img.shields.io/badge/License-MIT-6DC6EC.svg?style=for-the-badge)](LICENSE)
 [![Design Language](https://img.shields.io/badge/Design%20Language-Microsoft%20Fluent%202-022057.svg?style=for-the-badge&logo=windows)](https://fluent2.microsoft.design/)
 [![Accessibility](https://img.shields.io/badge/WCAG-2.1%20AAA%20Compliant-2e7d32.svg?style=for-the-badge)](https://www.w3.org/WAI/standards-guidelines/wcag/)

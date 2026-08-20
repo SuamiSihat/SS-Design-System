@@ -2,10 +2,10 @@
   "$schema": "https://design-tokens.org/schema.json",
   "$metadata": {
     "name": "SuamiSihat Design System",
-    "version": "3.1.0",
+    "version": "3.4.0",
     "platform": "all",
     "description": "Master design token file — single source of truth for web, Expo/React Native, and all SuamiSihat platforms. Edit this file only; all platform output files are derived from here.",
-    "lastUpdated": "2026-08-07"
+    "lastUpdated": "2026-08-20"
   },
   "color": {
     "brand": {
