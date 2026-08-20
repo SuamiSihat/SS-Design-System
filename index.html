@@ -323,37 +323,189 @@
         .f-portal-card-cta-ext { color: var(--color-neutral-fg-3); }
         .f-portal-card-cta-ext:hover { color: var(--color-brand-primary); }
 
-        /* ---- Sub-brand strip ------------------------------------------ */
+        /* ---- Sub-brand Ecosystem Showcase (Animated & Modern) -------- */
         .f-subbrand {
+            position: relative;
             background: var(--color-neutral-bg-2);
             border-top: 1px solid var(--color-neutral-stroke-1);
             border-bottom: 1px solid var(--color-neutral-stroke-1);
-            padding: var(--f-space-8) var(--f-space-6);
+            padding: var(--f-space-12) var(--f-space-6);
+            overflow: hidden;
         }
-        .f-subbrand-inner { max-width: 1200px; margin: 0 auto; }
+        .f-subbrand-ambient {
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 700px; height: 350px;
+            background: radial-gradient(ellipse at center, rgba(33, 161, 247, 0.12) 0%, rgba(4, 51, 136, 0.05) 50%, transparent 75%);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            filter: blur(50px);
+            animation: subbrandPulse 8s ease-in-out infinite alternate;
+        }
+        @keyframes subbrandPulse {
+            0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
+            100% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+        }
+        .f-subbrand-inner { position: relative; max-width: 1200px; margin: 0 auto; z-index: 1; }
+        .f-subbrand-header {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto var(--f-space-8);
+        }
+        .f-subbrand-badge {
+            display: inline-flex; align-items: center; gap: var(--f-space-1);
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--color-brand-primary);
+            background: var(--color-brand-subtle);
+            padding: 4px var(--f-space-3);
+            border-radius: var(--f-radius-full);
+            margin-bottom: var(--f-space-3);
+        }
+        .f-subbrand-title {
+            font-size: 1.75rem; font-weight: 700;
+            color: var(--color-neutral-fg-1);
+            letter-spacing: -0.02em;
+            margin-bottom: var(--f-space-2);
+        }
+        .f-subbrand-subtitle {
+            font-size: 0.9375rem; color: var(--color-neutral-fg-2);
+            line-height: 1.6;
+        }
+
+        /* 5-Column Interactive Grid */
         .f-subbrand-grid {
-            display: flex; align-items: center;
-            justify-content: center; gap: var(--f-space-8);
-            flex-wrap: wrap;
-            padding: var(--f-space-6);
-            background: var(--color-neutral-bg-3);
-            border-radius: var(--f-radius-xl);
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: var(--f-space-4);
+            margin-bottom: var(--f-space-6);
+        }
+        @media (max-width: 1100px) {
+            .f-subbrand-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .f-subbrand-grid { grid-template-columns: repeat(2, 1fr); gap: var(--f-space-3); }
+        }
+        @media (max-width: 480px) {
+            .f-subbrand-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Interactive Sub-brand Card */
+        .f-subbrand-card {
+            position: relative;
+            background: var(--color-neutral-bg-1);
             border: 1px solid var(--color-neutral-stroke-1);
-        }
-        .f-subbrand-item {
+            border-radius: var(--f-radius-xl);
+            padding: var(--f-space-5) var(--f-space-4);
             display: flex; flex-direction: column;
-            align-items: center; gap: var(--f-space-2);
-            opacity: 0.65;
-            transition: opacity var(--f-duration-normal) var(--f-curve-easy-ease),
-                        transform var(--f-duration-normal) var(--f-curve-spring);
-            cursor: default;
+            text-decoration: none;
+            box-shadow: var(--f-shadow-4);
+            transition: all var(--f-duration-normal) var(--f-curve-spring);
+            overflow: hidden;
+            cursor: pointer;
         }
-        .f-subbrand-item:hover { opacity: 1; transform: translateY(-2px); }
-        .f-subbrand-item img { height: 32px; width: auto; object-fit: contain; }
-        .f-subbrand-item span {
-            font-size: 0.7rem; font-weight: 700;
-            letter-spacing: 0.08em; text-transform: uppercase;
-            color: var(--color-neutral-fg-3);
+        .f-subbrand-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #21A1F7, #043388, #6DC6EC);
+            opacity: 0;
+            transition: opacity var(--f-duration-fast) var(--f-curve-easy-ease);
+        }
+        .f-subbrand-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 16px 36px -6px rgba(4, 51, 136, 0.16), 0 0 0 1px var(--color-brand-primary);
+            text-decoration: none;
+        }
+        .f-subbrand-card:hover::before { opacity: 1; }
+
+        .f-subbrand-card-top {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: var(--f-space-4);
+        }
+        .f-subbrand-pill {
+            font-size: 0.65rem; font-weight: 700;
+            font-family: monospace;
+            padding: 2px 8px; border-radius: var(--f-radius-sm);
+            background: var(--color-brand-subtle);
+            color: var(--color-brand-primary);
+            transition: all var(--f-duration-fast);
+        }
+        .f-subbrand-card:hover .f-subbrand-pill {
+            background: var(--color-brand-primary); color: #FFFFFF;
+        }
+        .f-subbrand-status-dot {
+            width: 7px; height: 7px; border-radius: 50%;
+            background: #16A34A;
+            box-shadow: 0 0 8px rgba(22, 163, 74, 0.6);
+            display: inline-block;
+        }
+
+        .f-subbrand-logo-wrap {
+            height: 56px;
+            display: flex; align-items: center; justify-content: center;
+            padding: var(--f-space-2);
+            margin-bottom: var(--f-space-4);
+            background: var(--color-neutral-bg-3);
+            border-radius: var(--f-radius-lg);
+            border: 1px solid var(--color-neutral-stroke-2);
+            transition: background var(--f-duration-fast);
+        }
+        .f-subbrand-card:hover .f-subbrand-logo-wrap {
+            background: var(--color-neutral-bg-4);
+        }
+        .f-subbrand-logo-wrap img {
+            max-height: 36px; width: auto; max-width: 90%;
+            object-fit: contain;
+            transition: transform var(--f-duration-gentle) var(--f-curve-spring);
+        }
+        .f-subbrand-card:hover .f-subbrand-logo-wrap img {
+            transform: scale(1.08);
+        }
+
+        .f-subbrand-card-body { flex: 1; }
+        .f-subbrand-name {
+            font-size: 0.9rem; font-weight: 700;
+            color: var(--color-neutral-fg-1);
+            margin-bottom: 2px;
+        }
+        .f-subbrand-desc {
+            font-size: 0.75rem; color: var(--color-neutral-fg-3);
+            line-height: 1.45; margin-bottom: var(--f-space-3);
+        }
+
+        .f-subbrand-card-footer {
+            display: flex; align-items: center; justify-content: space-between;
+            font-size: 0.72rem; font-weight: 600;
+            color: var(--color-brand-primary);
+            padding-top: var(--f-space-2);
+            border-top: 1px solid var(--color-neutral-stroke-2);
+        }
+        .f-subbrand-arrow {
+            transition: transform var(--f-duration-fast) var(--f-curve-easy-ease);
+        }
+        .f-subbrand-card:hover .f-subbrand-arrow {
+            transform: translateX(4px);
+        }
+
+        .f-subbrand-cta-wrap {
+            text-align: center;
+            margin-top: var(--f-space-4);
+        }
+        .f-subbrand-cta-link {
+            display: inline-flex; align-items: center; gap: var(--f-space-2);
+            font-size: 0.85rem; font-weight: 600;
+            color: var(--color-brand-primary);
+            text-decoration: none;
+            padding: var(--f-space-2) var(--f-space-4);
+            border-radius: var(--f-radius-full);
+            background: var(--color-brand-subtle);
+            transition: all var(--f-duration-fast);
+        }
+        .f-subbrand-cta-link:hover {
+            background: var(--color-brand-primary); color: #fff;
+            transform: translateY(-2px);
+            text-decoration: none;
         }
 
         /* ---- Footer --------------------------------------------------- */
@@ -813,23 +965,142 @@
     </main>
 
     <!-- ================================================================
-         Sub-brand Strip
+         Sub-brand Ecosystem Showcase (Animated & Modern)
          ================================================================ -->
-    <section id="ecosystem" class="f-subbrand" aria-label="SuamiSihat™ brand family">
+    <section id="ecosystem" class="f-subbrand" aria-label="SuamiSihat™ Ecosystem Architecture">
+        <!-- Ambient animated glow aura -->
+        <div class="f-subbrand-ambient" aria-hidden="true"></div>
+
         <div class="f-subbrand-inner">
-            <p class="f-section-label" style="text-align:center;margin-bottom:var(--f-space-3);">Brand Architecture</p>
-            <p style="text-align:center;font-size:0.875rem;color:var(--color-neutral-fg-2);margin-bottom:var(--f-space-5);">One master brand &mdash; four operating subsidiaries.</p>
-            <div class="f-subbrand-grid">
-                <div class="f-subbrand-item"><img src="public/brand/logos/01_logo_ssHealth/logo_ssh_primary_light.svg" alt="SS Health" loading="lazy"><span>SS Health</span></div>
-                <div class="f-subbrand-item"><img src="public/brand/logos/02_logo_ssClinic/logo_ssc_primary_light.svg" alt="SS Clinic" loading="lazy"><span>SS Clinic</span></div>
-                <div class="f-subbrand-item"><img src="public/brand/logos/03_logo_ssWellness/logo_ssw_primary_light.svg" alt="SS Wellness" loading="lazy"><span>SS Wellness</span></div>
-                <div class="f-subbrand-item"><img src="public/brand/logos/04_logo_ssEcom/logo_sse_primary_light.svg" alt="SS Ecommerce" loading="lazy"><span>SS Ecommerce</span></div>
-                <div class="f-subbrand-item"><img src="public/brand/logos/05_logo_ssTech/logo_sst_primary_light.svg" alt="SS Technology" loading="lazy"><span>SS Technology</span></div>
+            <div class="f-subbrand-header">
+                <span class="f-subbrand-badge">
+                    <iconify-icon icon="fluent:organization-24-regular" aria-hidden="true"></iconify-icon>
+                    Ecosystem Architecture
+                </span>
+                <h2 class="f-subbrand-title">One Master Brand. Five Operating Entities.</h2>
+                <p class="f-subbrand-subtitle">
+                    The specialized operating subsidiaries delivering clinical excellence, telehealth, longevity, and technology under SuamiSihat™.
+                </p>
             </div>
-            <p style="text-align:center;margin-top:var(--f-space-4);">
-                <a href="pages/brand-system.html#subbrand"
-                    style="font-size:0.8rem;font-weight:600;color:var(--color-brand-primary);text-decoration:none;">View full sub-brand guidelines <iconify-icon icon="fluent:arrow-right-24-regular" aria-hidden="true"></iconify-icon></a>
-            </p>
+
+            <div class="f-subbrand-grid">
+                <!-- 1 · SSH -->
+                <a href="pages/brand-system.html#subbrand" class="f-subbrand-card" aria-label="Explore SS Health guidelines">
+                    <div class="f-subbrand-card-top">
+                        <span class="f-subbrand-pill">SSH</span>
+                        <span class="f-subbrand-status-dot" title="Active Entity"></span>
+                    </div>
+                    <div class="f-subbrand-logo-wrap">
+                        <img src="public/brand/logos/01_logo_ssHealth/logo_ssh_primary_light.svg"
+                             data-light-src="public/brand/logos/01_logo_ssHealth/logo_ssh_primary_light.svg"
+                             data-dark-src="public/brand/logos/01_logo_ssHealth/logo_ssh_primary_dark.svg"
+                             alt="SS Health Logo" loading="lazy">
+                    </div>
+                    <div class="f-subbrand-card-body">
+                        <div class="f-subbrand-name">SS Health</div>
+                        <div class="f-subbrand-desc">Master brand &amp; holding governance for all health initiatives.</div>
+                    </div>
+                    <div class="f-subbrand-card-footer">
+                        <span>Guidelines</span>
+                        <iconify-icon icon="fluent:arrow-right-24-regular" class="f-subbrand-arrow" aria-hidden="true"></iconify-icon>
+                    </div>
+                </a>
+
+                <!-- 2 · SSC -->
+                <a href="pages/brand-system.html#subbrand" class="f-subbrand-card" aria-label="Explore SS Clinic guidelines">
+                    <div class="f-subbrand-card-top">
+                        <span class="f-subbrand-pill">SSC</span>
+                        <span class="f-subbrand-status-dot" title="Active Entity"></span>
+                    </div>
+                    <div class="f-subbrand-logo-wrap">
+                        <img src="public/brand/logos/02_logo_ssClinic/logo_ssc_primary_light.svg"
+                             data-light-src="public/brand/logos/02_logo_ssClinic/logo_ssc_primary_light.svg"
+                             data-dark-src="public/brand/logos/02_logo_ssClinic/logo_ssc_primary_dark.svg"
+                             alt="SS Clinic Logo" loading="lazy">
+                    </div>
+                    <div class="f-subbrand-card-body">
+                        <div class="f-subbrand-name">SS Clinic</div>
+                        <div class="f-subbrand-desc">Telehealth, physical clinics, and licensed doctor consultations.</div>
+                    </div>
+                    <div class="f-subbrand-card-footer">
+                        <span>Guidelines</span>
+                        <iconify-icon icon="fluent:arrow-right-24-regular" class="f-subbrand-arrow" aria-hidden="true"></iconify-icon>
+                    </div>
+                </a>
+
+                <!-- 3 · SSW -->
+                <a href="pages/brand-system.html#subbrand" class="f-subbrand-card" aria-label="Explore SS Wellness guidelines">
+                    <div class="f-subbrand-card-top">
+                        <span class="f-subbrand-pill">SSW</span>
+                        <span class="f-subbrand-status-dot" title="Active Entity"></span>
+                    </div>
+                    <div class="f-subbrand-logo-wrap">
+                        <img src="public/brand/logos/03_logo_ssWellness/logo_ssw_primary_light.svg"
+                             data-light-src="public/brand/logos/03_logo_ssWellness/logo_ssw_primary_light.svg"
+                             data-dark-src="public/brand/logos/03_logo_ssWellness/logo_ssw_primary_dark.svg"
+                             alt="SS Wellness Logo" loading="lazy">
+                    </div>
+                    <div class="f-subbrand-card-body">
+                        <div class="f-subbrand-name">SS Wellness</div>
+                        <div class="f-subbrand-desc">Preventive vitality, longevity programs, and lifestyle health.</div>
+                    </div>
+                    <div class="f-subbrand-card-footer">
+                        <span>Guidelines</span>
+                        <iconify-icon icon="fluent:arrow-right-24-regular" class="f-subbrand-arrow" aria-hidden="true"></iconify-icon>
+                    </div>
+                </a>
+
+                <!-- 4 · SSE -->
+                <a href="pages/brand-system.html#subbrand" class="f-subbrand-card" aria-label="Explore SS Ecommerce guidelines">
+                    <div class="f-subbrand-card-top">
+                        <span class="f-subbrand-pill">SSE</span>
+                        <span class="f-subbrand-status-dot" title="Active Entity"></span>
+                    </div>
+                    <div class="f-subbrand-logo-wrap">
+                        <img src="public/brand/logos/04_logo_ssEcom/logo_sse_primary_light.svg"
+                             data-light-src="public/brand/logos/04_logo_ssEcom/logo_sse_primary_light.svg"
+                             data-dark-src="public/brand/logos/04_logo_ssEcom/logo_sse_primary_dark.svg"
+                             alt="SS Ecommerce Logo" loading="lazy">
+                    </div>
+                    <div class="f-subbrand-card-body">
+                        <div class="f-subbrand-name">SS Ecommerce</div>
+                        <div class="f-subbrand-desc">Direct-to-consumer health products, discretion, and delivery.</div>
+                    </div>
+                    <div class="f-subbrand-card-footer">
+                        <span>Guidelines</span>
+                        <iconify-icon icon="fluent:arrow-right-24-regular" class="f-subbrand-arrow" aria-hidden="true"></iconify-icon>
+                    </div>
+                </a>
+
+                <!-- 5 · SST -->
+                <a href="pages/brand-system.html#subbrand" class="f-subbrand-card" aria-label="Explore SS Technology guidelines">
+                    <div class="f-subbrand-card-top">
+                        <span class="f-subbrand-pill">SST</span>
+                        <span class="f-subbrand-status-dot" title="Active Entity"></span>
+                    </div>
+                    <div class="f-subbrand-logo-wrap">
+                        <img src="public/brand/logos/05_logo_ssTech/logo_sst_primary_light.svg"
+                             data-light-src="public/brand/logos/05_logo_ssTech/logo_sst_primary_light.svg"
+                             data-dark-src="public/brand/logos/05_logo_ssTech/logo_sst_primary_dark.svg"
+                             alt="SS Technology Logo" loading="lazy">
+                    </div>
+                    <div class="f-subbrand-card-body">
+                        <div class="f-subbrand-name">SS Technology</div>
+                        <div class="f-subbrand-desc">HealthTech systems, patient portals, and core infrastructure.</div>
+                    </div>
+                    <div class="f-subbrand-card-footer">
+                        <span>Guidelines</span>
+                        <iconify-icon icon="fluent:arrow-right-24-regular" class="f-subbrand-arrow" aria-hidden="true"></iconify-icon>
+                    </div>
+                </a>
+            </div>
+
+            <div class="f-subbrand-cta-wrap">
+                <a href="pages/brand-system.html#subbrand" class="f-subbrand-cta-link">
+                    <span>View full sub-brand design rules &amp; colour palettes</span>
+                    <iconify-icon icon="fluent:arrow-right-24-regular" aria-hidden="true"></iconify-icon>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -839,7 +1110,7 @@
     <footer class="f-footer" role="contentinfo">
         <div class="f-footer-inner">
             <div>
-                <img src="public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg" alt="SuamiSihat™" class="f-footer-logo" loading="lazy">
+                <img src="public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_light.svg" alt="SuamiSihat™" class="f-footer-logo" loading="lazy">
                 <p class="f-footer-tagline">The single source of truth for the SuamiSihat™ design ecosystem. For internal staff use.</p>
             </div>
             <div>
@@ -857,7 +1128,7 @@
                 <p class="f-footer-heading">Resources</p>
                 <ul class="f-footer-links">
                     <li><a href="pages/doc.html?doc=changelog">What's New</a></li>
-                        <li><a href="pages/doc.html?doc=roadmap">Roadmap</a></li>
+                    <li><a href="pages/doc.html?doc=roadmap">Roadmap</a></li>
                     <li><a href="pages/doc.html?doc=contribution-guide">Contribution Guide</a></li>
                     <li><a href="pages/doc.html?doc=vision-mission">Vision &amp; Mission</a></li>
                     <li><a href="https://nas.suamisihat.com.my/" target="_blank" rel="noopener noreferrer">SSNAS Dashboard &#8599;</a></li>
@@ -866,8 +1137,8 @@
             </div>
         </div>
         <div class="f-footer-bottom">
-            <span class="f-footer-copy">&copy; 2026 SuamiSihat™ Holding Sdn. Bhd. &middot; SuamiSihat™ Design System v3.4</span>
-            <span class="f-footer-copy">Built with Fluent 2 Design System</span>
+            <span class="f-footer-copy">&copy; 2026 SuamiSihat™. SuamiSihat Holding Sdn Bhd. All Right reserved</span>
+            <span class="f-footer-copy">SS Design System v3.4</span>
         </div>
     </footer>
 
