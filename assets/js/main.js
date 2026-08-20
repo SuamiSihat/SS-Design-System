@@ -218,11 +218,19 @@ var LogoSelector = (function () {
         applyToFooter: function (theme, prefix) {
             var self = this;
             var base = prefix !== undefined ? prefix : autoPrefix();
+            var isDark = (theme || 'light') === 'dark';
 
             document.querySelectorAll('.footer-logo, .f-footer-logo, footer img[src*="logo_suamisihat"]').forEach(function (img) {
-                // SuamiSihat brand rule: Footers always render on dark Prussian Blue background
-                // and must strictly display the dark/white wordmark variant
-                img.src = base + PATHS.FULL_DARK + '?v=10';
+                var footer = img.closest('footer') || img.closest('.f-footer');
+                // Landing page footer (.f-footer) inherits dynamic theme background
+                var variant;
+                if (img.classList.contains('f-footer-logo') || (footer && footer.classList.contains('f-footer'))) {
+                    variant = isDark ? PATHS.FULL_DARK : PATHS.FULL_LIGHT;
+                } else {
+                    // Static dark Prussian Blue footer on sub-pages
+                    variant = PATHS.FULL_DARK;
+                }
+                img.src = base + variant + '?v=10';
                 img.alt = 'SuamiSihat™ logo';
             });
         },
@@ -479,6 +487,14 @@ class ThemeManager {
      * @param {boolean} isDark - true when switching to dark mode
      */
     applyToSubBrandLogos(isDark) {
+        // Update sub-brand cards in the ecosystem showcase
+        document.querySelectorAll('.f-subbrand-card img, .f-subbrand-item img, [data-light-src]').forEach(img => {
+            const src = isDark ? img.dataset.darkSrc : img.dataset.lightSrc;
+            if (src) {
+                img.src = src;
+            }
+        });
+
         document.querySelectorAll('.sub-brand-bg-toggle').forEach(btn => {
             const targetId = btn.dataset.target;
             if (!targetId) return;
