@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pertabiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1D3464;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0D1E3D;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#66BED8;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#21A1F7;stop-opacity:0.2" />
+    </linearGradient>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="300" fill="url(#pertabiGrad)" />
+  <rect width="1200" height="300" fill="url(#grid)" />
+  <circle cx="1050" cy="150" r="220" fill="rgba(102, 190, 216, 0.15)" filter="blur(50px)" />
+  <circle cx="150" cy="260" r="140" fill="rgba(29, 52, 100, 0.4)" filter="blur(30px)" />
+  
+  <!-- Subtle emblem accent line -->
+  <path d="M 80 215 L 420 215" stroke="url(#accentCyan)" stroke-width="3" stroke-linecap="round" />
+  
+  <text x="80" y="125" fill="#66BED8" font-family="'Segoe UI', 'Montserrat', sans-serif" font-weight="600" font-size="14px" letter-spacing="4">ROS-REGISTERED NATIONAL SOCIETY · PPM-023-10-15122021</text>
+  <text x="80" y="175" fill="#ffffff" font-family="'Segoe UI', 'Montserrat', sans-serif" font-weight="800" font-size="44px" letter-spacing="3">PERTABI</text>
+  <text x="80" y="200" fill="#B4C9D1" font-family="'Segoe UI', 'Poppins', sans-serif" font-weight="500" font-size="16px" letter-spacing="1">PERSATUAN TAAT BERSAMA ISTERI MALAYSIA</text>
+  <text x="80" y="245" fill="rgba(255, 255, 255, 0.85)" font-family="'Segoe UI', 'Poppins', sans-serif" font-weight="400" font-size="15px" letter-spacing="2">TAAT SETIA PROGRESIF · MEMARTABATKAN INSTITUSI KELUARGA</text>
+</svg>
