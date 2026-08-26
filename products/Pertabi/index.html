@@ -231,7 +231,7 @@
         .merch-carousel-stage {
             background: linear-gradient(180deg, #f4f7fb 0%, #e9eef5 100%);
             position: relative;
-            min-height: 440px;
+            min-height: 460px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -243,7 +243,7 @@
         }
 
         .merch-slide-img {
-            max-height: 380px;
+            max-height: 400px;
             max-width: 90%;
             object-fit: contain;
             filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.18));
@@ -340,8 +340,8 @@
             background: #f0f3f8;
             cursor: pointer;
             transition: all 0.2s ease;
-            width: 74px;
-            height: 74px;
+            width: 76px;
+            height: 76px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -476,7 +476,7 @@
                 <img id="featuresBanner" src="banner.svg" alt="PERTABI Features Banner">
             </div>
 
-            <!-- Two-Column Layout for Overview & Primary Details -->
+            <!-- Two-Column Layout for Overview & Brand Assets -->
             <div class="row mb-4">
                 <!-- Left Column: Details & Logo -->
                 <div class="col-lg-5">
@@ -505,7 +505,7 @@
                     </div>
                 </div>
 
-                <!-- Right Column: Section A - Brand Assets -->
+                <!-- Right Column: Section A - Brand Vectors -->
                 <div class="col-lg-7">
                     <div class="product-details-card">
                         <div class="section-header-wrap">
@@ -525,17 +525,17 @@
                 </div>
             </div>
 
-            <!-- Full-Width Section B: Merchandise Carousel Gallery -->
+            <!-- Full-Width Section B: Merchandise Carousel Gallery (All Jersey Images) -->
             <div class="row">
                 <div class="col-12">
                     <div class="section-header-wrap mb-3">
                         <div>
                             <h2 class="h3 text-semibold mb-1 d-flex align-items-center gap-2">
-                                <iconify-icon icon="fluent:tag-24-regular" class="text-accent"></iconify-icon>Official Merchandise &amp; Activewear
+                                <iconify-icon icon="fluent:tag-24-regular" class="text-accent"></iconify-icon>Official Merchandise — Jersey Gallery
                             </h2>
-                            <p class="text-muted mb-0">Exclusive lifestyle merchandise, active jerseys, and community gear</p>
+                            <p class="text-muted mb-0">Interactive showcase displaying all activewear assets from the <code>Jersey/</code> folder</p>
                         </div>
-                        <span class="section-badge">Carousel Gallery View</span>
+                        <span class="section-badge" id="merchCountBadge">Jersey Collection</span>
                     </div>
 
                     <!-- Carousel Container -->
@@ -562,9 +562,9 @@
                         <!-- Meta & Download Bar (updates with active slide) -->
                         <div class="merch-meta-panel" id="merchMetaPanel">
                             <div>
-                                <span class="badge bg-primary me-2" id="merchMetaTag">Activewear</span>
-                                <h3 class="merch-meta-title" id="merchMetaTitle">PERTABI Active Jersey 2026</h3>
-                                <p class="merch-meta-desc" id="merchMetaDesc">High-performance breathable dry-fit activewear.</p>
+                                <span class="badge bg-primary me-2" id="merchMetaTag">Jersey Collection</span>
+                                <h3 class="merch-meta-title" id="merchMetaTitle">PERTABI Jersey</h3>
+                                <p class="merch-meta-desc" id="merchMetaDesc">Official high-performance activewear jersey.</p>
                             </div>
                             <div class="d-flex align-items-center gap-2">
                                 <a id="merchDownloadBtn" href="" download class="btn btn-primary px-4 py-2 d-flex align-items-center gap-2">
@@ -625,6 +625,32 @@
     <script src="../../assets/js/gallery-helpers.js"></script>
     
     <script>
+        /**
+         * Helper: Auto-generates human-readable titles for Jersey / Merchandise files.
+         */
+        function humanizeMerchTitle(filename) {
+            const clean = filename.replace(/^Jersey\//i, '');
+            const nameWithoutExt = clean.substring(0, clean.lastIndexOf('.')) || clean;
+            
+            // Detect View angles
+            let viewLabel = '';
+            if (nameWithoutExt.endsWith('_1') || /front/i.test(nameWithoutExt)) {
+                viewLabel = 'Front View';
+            } else if (nameWithoutExt.endsWith('_2') || /back/i.test(nameWithoutExt)) {
+                viewLabel = 'Back View';
+            } else if (nameWithoutExt.endsWith('_3') || /side/i.test(nameWithoutExt)) {
+                viewLabel = 'Side View';
+            }
+
+            const baseName = nameWithoutExt
+                .replace(/[-_][0-9]+$/g, '')
+                .replace(/[-_]/g, ' ')
+                .replace(/\bjersy\b/i, 'Jersey')
+                .replace(/\bpertabi\b/i, 'PERTABI');
+
+            return viewLabel ? `${baseName} — ${viewLabel}` : baseName;
+        }
+
         document.addEventListener('DOMContentLoaded', async () => {
             try {
                 // Fetch product metadata
@@ -680,11 +706,27 @@
                 }
                 document.getElementById('ownershipText').textContent = (meta.ownership && meta.ownership.text) || '';
 
-                // 5. Render Section A: Brand Assets (Logos & Vectors)
+                // 5. Render Section A: Brand Vectors
                 const brandAssetsGrid = document.getElementById('brandAssetsGrid');
                 brandAssetsGrid.innerHTML = '';
                 
-                const brandAssetsList = meta.brandAssets || [];
+                // Support both string array and object array
+                let brandAssetsList = [];
+                if (Array.isArray(meta.brandAssets)) {
+                    brandAssetsList = meta.brandAssets.map(item => {
+                        if (typeof item === 'string') {
+                            const isDark = item.includes('dark');
+                            const isVert = item.includes('vertical');
+                            return {
+                                file: item,
+                                title: isVert ? 'Logo PERTABI Vertical (Stacked)' : (isDark ? 'Logo PERTABI Horizontal (Dark BG)' : 'Logo PERTABI Horizontal (Light BG)'),
+                                desc: isVert ? 'Stacked vertical logo for emblems & avatars.' : (isDark ? 'Vector layout with white text for dark surfaces.' : 'Primary vector layout for light surfaces.')
+                            };
+                        }
+                        return item;
+                    });
+                }
+                
                 document.getElementById('brandAssetsCount').textContent = `${brandAssetsList.length} Vector Assets`;
 
                 brandAssetsList.forEach(asset => {
@@ -715,14 +757,33 @@
                     brandAssetsGrid.appendChild(col);
                 });
 
-                // 6. Render Section B: Merchandise Carousel Gallery
+                // 6. Render Section B: Merchandise Carousel (Auto-parses all images in Jersey folder)
                 const carouselInner = document.getElementById('carouselInner');
                 const merchThumbnails = document.getElementById('merchThumbnails');
                 carouselInner.innerHTML = '';
                 merchThumbnails.innerHTML = '';
 
-                const merchItems = meta.merchandise || [];
-                
+                // Extract all merchandise images from meta.merchandise or meta.assets
+                let rawMerchList = meta.merchandise || [];
+                if (rawMerchList.length === 0 && Array.isArray(meta.assets)) {
+                    rawMerchList = meta.assets.filter(a => a.startsWith('Jersey/') || /\.(png|jpg|jpeg|webp)$/i.test(a));
+                }
+
+                // Transform raw list into normalized items
+                const merchItems = rawMerchList.map(entry => {
+                    if (typeof entry === 'string') {
+                        return {
+                            file: entry,
+                            title: humanizeMerchTitle(entry),
+                            tag: 'Official Activewear',
+                            desc: 'High-performance moisture-wicking activewear featuring the official PERTABI crest and emblem.'
+                        };
+                    }
+                    return entry;
+                });
+
+                document.getElementById('merchCountBadge').textContent = `${merchItems.length} Jersey Views`;
+
                 merchItems.forEach((item, index) => {
                     const isActive = index === 0 ? 'active' : '';
 
@@ -753,7 +814,7 @@
                     const cur = merchItems[index];
                     document.getElementById('merchMetaTitle').textContent = cur.title;
                     document.getElementById('merchMetaDesc').textContent = cur.desc;
-                    document.getElementById('merchMetaTag').textContent = cur.tag || 'Merchandise';
+                    document.getElementById('merchMetaTag').textContent = cur.tag || 'Jersey Collection';
                     document.getElementById('merchDownloadBtn').href = cur.file;
                     
                     // Update active thumbnail
