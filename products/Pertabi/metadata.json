@@ -8,11 +8,35 @@
     "tags": ["ROS Registered NGO", "National Society", "Partner Network"],
     "text": "Persatuan Taat Bersama Isteri Malaysia (PERTABI — PPM-023-10-15122021) is a national-level society registered under Section 7 of the Societies Act 1966, dedicated to advancing husband welfare, family communication, and household health across Malaysia."
   },
-  "assets": [
-    "logo_pertabi_horizontal-light.svg",
-    "logo_pertabi_horizontal-dark.svg",
-    "logo_pertabi_vertical.svg",
-    "Jersey/Pertabi_jersy_1.png",
-    "Jersey/Pertabi_jersy_2.png"
+  "brandAssets": [
+    {
+      "file": "logo_pertabi_horizontal-light.svg",
+      "title": "Logo PERTABI Horizontal (Light BG)",
+      "desc": "Primary horizontal vector with dark charcoal typography (#4A4A4C) optimized for light surfaces."
+    },
+    {
+      "file": "logo_pertabi_horizontal-dark.svg",
+      "title": "Logo PERTABI Horizontal (Dark BG)",
+      "desc": "Horizontal vector with off-white typography (#F5FCFF) optimized for dark and navy surfaces."
+    },
+    {
+      "file": "logo_pertabi_vertical.svg",
+      "title": "Logo PERTABI Vertical (Stacked)",
+      "desc": "Vertical stacked vector for square layouts, profile badges, signage, and merchandise embroidery."
+    }
+  ],
+  "merchandise": [
+    {
+      "file": "Jersey/Pertabi_jersy_1.png",
+      "title": "PERTABI Activewear Jersey 2026 — Front View",
+      "tag": "Official Activewear",
+      "desc": "Premium dry-fit activewear jersey featuring ergonomic athletic cuts, signature Navy/Cyan color palette, and high-definition chest crest."
+    },
+    {
+      "file": "Jersey/Pertabi_jersy_2.png",
+      "title": "PERTABI Activewear Jersey 2026 — Back View",
+      "tag": "Official Activewear",
+      "desc": "Moisture-wicking athletic back profile engineered with 'Taat Setia Progresif' motto and active airflow mesh panels."
+    }
   ]
 }

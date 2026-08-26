@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="metaDesc" name="description" content="PERTABI Brand Assets & Overview — SuamiSihat™ Design System">
+    <meta id="metaDesc" name="description" content="PERTABI Brand Assets & Merchandise — SuamiSihat™ Design System">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title id="pageTitle">PERTABI — SuamiSihat™ Design System</title>
 
@@ -50,7 +50,7 @@
             background: var(--card-background);
             border-radius: var(--border-radius-lg);
             box-shadow: 0 10px 30px var(--card-shadow);
-            padding: 2.5rem;
+            padding: 2.25rem;
             margin-bottom: 2rem;
             border: 1px solid var(--border, rgba(0, 0, 0, 0.05));
         }
@@ -58,11 +58,11 @@
         .brand-detail-logo-area {
             background: #f8f9fa;
             border-radius: var(--border-radius-md);
-            padding: 3rem;
+            padding: 2.5rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 250px;
+            min-height: 220px;
             margin-bottom: 2rem;
             border: 1px solid var(--border, rgba(0, 0, 0, 0.05));
             position: relative;
@@ -74,8 +74,8 @@
         }
 
         .brand-detail-logo-area img {
-            max-width: 80%;
-            max-height: 180px;
+            max-width: 85%;
+            max-height: 160px;
             object-fit: contain;
             filter: drop-shadow(0 4px 12px rgba(0,0,0,0.08));
         }
@@ -98,6 +98,31 @@
             display: block;
         }
 
+        /* Section Headings */
+        .section-header-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--border, rgba(0, 0, 0, 0.06));
+            padding-bottom: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: var(--color-brand-subtle, rgba(33, 161, 247, 0.12));
+            color: var(--color-brand-primary, #043388);
+        }
+
+        body.dark-mode .section-badge {
+            background: rgba(102, 190, 216, 0.18);
+            color: #66bed8;
+        }
+
+        /* Brand Asset Card */
         .gallery-card {
             background: var(--card-background);
             border-radius: var(--border-radius-md);
@@ -111,51 +136,66 @@
         }
 
         .gallery-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
             box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-            border-color: var(--accent);
+            border-color: #66bed8;
         }
 
         .gallery-img-container {
             background: #f8f9fa;
-            padding: 2rem;
-            height: 160px;
+            padding: 1.75rem;
+            height: 140px;
             display: flex;
             justify-content: center;
             align-items: center;
             border-bottom: 1px solid var(--border, rgba(0, 0, 0, 0.05));
         }
 
+        .gallery-img-container.dark-preview {
+            background: #141c2e;
+        }
+
         body.dark-mode .gallery-img-container {
             background: #0d1527;
         }
 
+        body.dark-mode .gallery-img-container.dark-preview {
+            background: #060b14;
+        }
+
         .gallery-img-container img {
             max-width: 90%;
-            max-height: 100px;
+            max-height: 90px;
             object-fit: contain;
         }
 
         .gallery-info {
-            padding: 1.25rem;
+            padding: 1.15rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
         .gallery-title {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             font-weight: 600;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.3rem;
             color: var(--heading-color);
         }
 
-        .gallery-meta {
-            font-size: 0.75rem;
+        .gallery-desc {
+            font-size: 0.78rem;
             color: var(--text-color);
-            opacity: 0.7;
-            margin-bottom: 1rem;
-            flex-grow: 1;
+            opacity: 0.8;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .gallery-meta {
+            font-size: 0.72rem;
+            color: var(--text-color);
+            opacity: 0.65;
+            margin-bottom: 0.9rem;
         }
 
         .gallery-actions {
@@ -167,7 +207,7 @@
         .btn-gallery {
             flex: 1;
             font-size: 0.8rem;
-            padding: 8px 12px;
+            padding: 7px 12px;
             border-radius: 6px;
             font-weight: 500;
             display: flex;
@@ -175,7 +215,159 @@
             justify-content: center;
             gap: 4px;
         }
-        
+
+        /* ============================================================
+           MERCHANDISE CAROUSEL GALLERY VIEW
+           ============================================================ */
+        .merch-carousel-wrapper {
+            background: var(--card-background);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--border, rgba(0, 0, 0, 0.08));
+            box-shadow: 0 10px 30px var(--card-shadow);
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+        }
+
+        .merch-carousel-stage {
+            background: linear-gradient(180deg, #f4f7fb 0%, #e9eef5 100%);
+            position: relative;
+            min-height: 440px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5rem 1rem;
+        }
+
+        body.dark-mode .merch-carousel-stage {
+            background: linear-gradient(180deg, #0d1527 0%, #060b14 100%);
+        }
+
+        .merch-slide-img {
+            max-height: 380px;
+            max-width: 90%;
+            object-fit: contain;
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.18));
+            transition: transform 0.4s ease;
+        }
+
+        .merch-slide-img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Carousel Navigation Buttons (Fluent Glass) */
+        .carousel-btn-glass {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1D3464;
+            opacity: 0.9;
+            transition: all 0.25s ease;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        body.dark-mode .carousel-btn-glass {
+            background: rgba(20, 30, 50, 0.8);
+            border-color: rgba(255, 255, 255, 0.15);
+            color: #66BED8;
+        }
+
+        .carousel-btn-glass:hover {
+            opacity: 1;
+            transform: translateY(-50%) scale(1.08);
+            background: #ffffff;
+            color: #043388;
+        }
+
+        body.dark-mode .carousel-btn-glass:hover {
+            background: #141c2e;
+            color: #66BED8;
+        }
+
+        .carousel-control-prev { left: 18px; width: auto; }
+        .carousel-control-next { right: 18px; width: auto; }
+
+        /* Carousel Meta Panel */
+        .merch-meta-panel {
+            padding: 1.75rem 2rem;
+            background: var(--card-background);
+            border-top: 1px solid var(--border, rgba(0, 0, 0, 0.06));
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .merch-meta-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .merch-meta-desc {
+            font-size: 0.88rem;
+            color: var(--text-color);
+            opacity: 0.85;
+            margin-bottom: 0;
+            max-width: 650px;
+        }
+
+        /* Thumbnails Strip */
+        .merch-thumbnails-row {
+            display: flex;
+            gap: 12px;
+            padding: 1rem 2rem 1.5rem;
+            background: var(--card-background);
+            overflow-x: auto;
+        }
+
+        .merch-thumb-btn {
+            border: 2px solid transparent;
+            border-radius: 8px;
+            padding: 4px;
+            background: #f0f3f8;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 74px;
+            height: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        body.dark-mode .merch-thumb-btn {
+            background: #0d1527;
+        }
+
+        .merch-thumb-btn img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .merch-thumb-btn.active, .merch-thumb-btn:hover {
+            border-color: #66BED8;
+            box-shadow: 0 0 0 3px rgba(102, 190, 216, 0.3);
+            background: #ffffff;
+        }
+
+        body.dark-mode .merch-thumb-btn.active {
+            background: #141c2e;
+        }
+
         .breadcrumb-product {
             font-size: 0.8rem;
             margin-bottom: 1.5rem;
@@ -284,7 +476,8 @@
                 <img id="featuresBanner" src="banner.svg" alt="PERTABI Features Banner">
             </div>
 
-            <div class="row">
+            <!-- Two-Column Layout for Overview & Primary Details -->
+            <div class="row mb-4">
                 <!-- Left Column: Details & Logo -->
                 <div class="col-lg-5">
                     <div class="brand-detail-logo-area">
@@ -301,19 +494,88 @@
                         <div id="ownershipTags" class="d-flex flex-wrap align-items-center gap-2 mb-4">
                             <!-- Badges Rendered Here -->
                         </div>
-                        <p id="ownershipText" class="text-sm opacity-80 mb-0">
+                        <p id="ownershipText" class="text-sm opacity-80 mb-3">
                             Ownership details.
                         </p>
+                        
+                        <hr class="my-4">
+                        <a href="article-history-and-introduction.md" target="_blank" class="btn btn-outline-primary w-100 py-2 d-flex align-items-center justify-content-center gap-2">
+                            <iconify-icon icon="fluent:book-open-24-regular"></iconify-icon>Read Full History &amp; Introduction Article
+                        </a>
                     </div>
                 </div>
 
-                <!-- Right Column: Gallery -->
+                <!-- Right Column: Section A - Brand Assets -->
                 <div class="col-lg-7">
                     <div class="product-details-card">
-                        <h2 class="h3 text-semibold mb-4"><iconify-icon icon="fluent:image-multiple-24-regular" class="me-2 text-accent"></iconify-icon>Official Brand Assets &amp; Merchandise</h2>
+                        <div class="section-header-wrap">
+                            <div>
+                                <h2 class="h4 text-semibold mb-1 d-flex align-items-center gap-2">
+                                    <iconify-icon icon="fluent:shapes-24-regular" class="text-accent"></iconify-icon>Brand Assets &amp; Logomarks
+                                </h2>
+                                <p class="text-sm text-muted mb-0">Official vector logomarks, typography variants &amp; usage specs</p>
+                            </div>
+                            <span class="section-badge" id="brandAssetsCount">3 Assets</span>
+                        </div>
                         
-                        <div id="galleryGrid" class="row g-4">
-                            <!-- Gallery items rendered dynamically -->
+                        <div id="brandAssetsGrid" class="row g-3">
+                            <!-- Brand Vector items rendered dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full-Width Section B: Merchandise Carousel Gallery -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header-wrap mb-3">
+                        <div>
+                            <h2 class="h3 text-semibold mb-1 d-flex align-items-center gap-2">
+                                <iconify-icon icon="fluent:tag-24-regular" class="text-accent"></iconify-icon>Official Merchandise &amp; Activewear
+                            </h2>
+                            <p class="text-muted mb-0">Exclusive lifestyle merchandise, active jerseys, and community gear</p>
+                        </div>
+                        <span class="section-badge">Carousel Gallery View</span>
+                    </div>
+
+                    <!-- Carousel Container -->
+                    <div class="merch-carousel-wrapper">
+                        <div id="merchCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                            <!-- Slides -->
+                            <div class="carousel-inner" id="carouselInner">
+                                <!-- Rendered dynamically -->
+                            </div>
+
+                            <!-- Controls -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#merchCarousel" data-bs-slide="prev" aria-label="Previous Slide">
+                                <div class="carousel-btn-glass">
+                                    <iconify-icon icon="fluent:chevron-left-24-regular" style="font-size:1.5rem;"></iconify-icon>
+                                </div>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#merchCarousel" data-bs-slide="next" aria-label="Next Slide">
+                                <div class="carousel-btn-glass">
+                                    <iconify-icon icon="fluent:chevron-right-24-regular" style="font-size:1.5rem;"></iconify-icon>
+                                </div>
+                            </button>
+                        </div>
+
+                        <!-- Meta & Download Bar (updates with active slide) -->
+                        <div class="merch-meta-panel" id="merchMetaPanel">
+                            <div>
+                                <span class="badge bg-primary me-2" id="merchMetaTag">Activewear</span>
+                                <h3 class="merch-meta-title" id="merchMetaTitle">PERTABI Active Jersey 2026</h3>
+                                <p class="merch-meta-desc" id="merchMetaDesc">High-performance breathable dry-fit activewear.</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <a id="merchDownloadBtn" href="" download class="btn btn-primary px-4 py-2 d-flex align-items-center gap-2">
+                                    <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon>Download High-Res
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Thumbnail Navigation Bar -->
+                        <div class="merch-thumbnails-row" id="merchThumbnails">
+                            <!-- Thumbnails rendered dynamically -->
                         </div>
                     </div>
                 </div>
@@ -378,11 +640,11 @@
                 // 1. Set titles, breadcrumbs and tags
                 document.title = `${meta.name} — SuamiSihat™ Design System`;
                 document.getElementById('pageTitle').textContent = `${meta.name} — SuamiSihat™ Design System`;
-                document.getElementById('metaDesc').setAttribute('content', `${meta.name} Brand Assets — SuamiSihat™ Design System`);
+                document.getElementById('metaDesc').setAttribute('content', `${meta.name} Brand Assets & Merchandise — SuamiSihat™ Design System`);
                 
                 document.getElementById('breadcrumbCurrent').textContent = meta.name;
                 document.getElementById('heroTitle').textContent = meta.name;
-                document.getElementById('heroTagline').textContent = meta.tagline || 'Brand Assets & Spec';
+                document.getElementById('heroTagline').textContent = meta.tagline || 'Brand Assets & Specs';
                 
                 // Hero Background
                 if (meta.heroGradient) {
@@ -395,7 +657,7 @@
                 bannerImg.alt = `${meta.name} Features Banner`;
                 
                 const primaryLogo = document.getElementById('primaryLogo');
-                primaryLogo.src = meta.logo || 'logo.svg';
+                primaryLogo.src = meta.logo || 'logo_pertabi_horizontal-light.svg';
                 primaryLogo.alt = `${meta.name} Primary Logo`;
 
                 // 3. Render Markdown Description
@@ -418,41 +680,101 @@
                 }
                 document.getElementById('ownershipText').textContent = (meta.ownership && meta.ownership.text) || '';
 
-                // 5. Render Photo/Asset Gallery Grid Automatically
-                const galleryGrid = document.getElementById('galleryGrid');
-                galleryGrid.innerHTML = '';
+                // 5. Render Section A: Brand Assets (Logos & Vectors)
+                const brandAssetsGrid = document.getElementById('brandAssetsGrid');
+                brandAssetsGrid.innerHTML = '';
                 
-                if (meta.assets && meta.assets.length > 0) {
-                    meta.assets.forEach(assetFile => {
-                        // Skip loading the banner as a gallery asset
-                        if (assetFile === meta.banner || assetFile === 'banner.svg') return;
+                const brandAssetsList = meta.brandAssets || [];
+                document.getElementById('brandAssetsCount').textContent = `${brandAssetsList.length} Vector Assets`;
 
-                        const col = document.createElement('div');
-                        col.className = 'col-md-6';
-                        
-                        const title = formatAssetName(assetFile);
-                        const metaDesc = getAssetMeta(assetFile);
+                brandAssetsList.forEach(asset => {
+                    const col = document.createElement('div');
+                    col.className = 'col-md-6';
+                    
+                    const isDarkVariant = asset.file.includes('dark');
+                    const previewClass = isDarkVariant ? 'gallery-img-container dark-preview' : 'gallery-img-container';
+                    const metaType = getAssetMeta(asset.file);
 
-                        col.innerHTML = `
-                            <div class="gallery-card">
-                                <div class="gallery-img-container">
-                                    <img src="${assetFile}" alt="${title}" loading="lazy">
-                                </div>
-                                <div class="gallery-info">
-                                    <div class="gallery-title">${title}</div>
-                                    <div class="gallery-meta">${metaDesc}</div>
-                                    <div class="gallery-actions">
-                                        <a href="${assetFile}" download class="btn btn-primary btn-gallery">
-                                            <iconify-icon icon="fluent:arrow-download-24-regular" class="me-1"></iconify-icon>Download
-                                        </a>
-                                    </div>
+                    col.innerHTML = `
+                        <div class="gallery-card">
+                            <div class="${previewClass}">
+                                <img src="${asset.file}" alt="${asset.title}" loading="lazy">
+                            </div>
+                            <div class="gallery-info">
+                                <div class="gallery-title">${asset.title}</div>
+                                <div class="gallery-desc">${asset.desc || ''}</div>
+                                <div class="gallery-meta"><iconify-icon icon="fluent:document-24-regular" class="me-1"></iconify-icon>${metaType}</div>
+                                <div class="gallery-actions">
+                                    <a href="${asset.file}" download class="btn btn-primary btn-gallery">
+                                        <iconify-icon icon="fluent:arrow-download-24-regular" class="me-1"></iconify-icon>Download SVG
+                                    </a>
                                 </div>
                             </div>
-                        `;
-                        galleryGrid.appendChild(col);
+                        </div>
+                    `;
+                    brandAssetsGrid.appendChild(col);
+                });
+
+                // 6. Render Section B: Merchandise Carousel Gallery
+                const carouselInner = document.getElementById('carouselInner');
+                const merchThumbnails = document.getElementById('merchThumbnails');
+                carouselInner.innerHTML = '';
+                merchThumbnails.innerHTML = '';
+
+                const merchItems = meta.merchandise || [];
+                
+                merchItems.forEach((item, index) => {
+                    const isActive = index === 0 ? 'active' : '';
+
+                    // Carousel Slide
+                    const slide = document.createElement('div');
+                    slide.className = `carousel-item ${isActive}`;
+                    slide.innerHTML = `
+                        <div class="merch-carousel-stage">
+                            <img src="${item.file}" class="merch-slide-img" alt="${item.title}" loading="lazy">
+                        </div>
+                    `;
+                    carouselInner.appendChild(slide);
+
+                    // Thumbnail Button
+                    const thumbBtn = document.createElement('button');
+                    thumbBtn.type = 'button';
+                    thumbBtn.className = `merch-thumb-btn ${isActive}`;
+                    thumbBtn.setAttribute('data-bs-target', '#merchCarousel');
+                    thumbBtn.setAttribute('data-bs-slide-to', index.toString());
+                    thumbBtn.setAttribute('aria-label', `Slide ${index + 1}`);
+                    thumbBtn.innerHTML = `<img src="${item.file}" alt="${item.title}">`;
+                    merchThumbnails.appendChild(thumbBtn);
+                });
+
+                // Update active meta panel helper
+                function updateMerchMeta(index) {
+                    if (!merchItems[index]) return;
+                    const cur = merchItems[index];
+                    document.getElementById('merchMetaTitle').textContent = cur.title;
+                    document.getElementById('merchMetaDesc').textContent = cur.desc;
+                    document.getElementById('merchMetaTag').textContent = cur.tag || 'Merchandise';
+                    document.getElementById('merchDownloadBtn').href = cur.file;
+                    
+                    // Update active thumbnail
+                    const thumbs = merchThumbnails.querySelectorAll('.merch-thumb-btn');
+                    thumbs.forEach((t, i) => {
+                        if (i === index) t.classList.add('active');
+                        else t.classList.remove('active');
                     });
-                } else {
-                    galleryGrid.innerHTML = '<div class="col-12"><p class="text-muted text-center">No additional logo assets found in this folder.</p></div>';
+                }
+
+                // Initial setup for first item
+                if (merchItems.length > 0) {
+                    updateMerchMeta(0);
+                }
+
+                // Hook Bootstrap Carousel slide events to update meta & thumbnails
+                const merchCarouselEl = document.getElementById('merchCarousel');
+                if (merchCarouselEl) {
+                    merchCarouselEl.addEventListener('slide.bs.carousel', (event) => {
+                        updateMerchMeta(event.to);
+                    });
                 }
 
                 // Hide loader and show content
