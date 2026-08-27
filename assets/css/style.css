@@ -1878,8 +1878,4 @@ body {
   outline-offset: 3px;
   border-radius: var(--f-radius-sm);
 }
-
-/* Override outline:none in favour of focus-visible only */
-:focus:not(:focus-visible) {
-  outline: none;
-}
+
