@@ -263,7 +263,7 @@
         <p style="font-size: 0.85rem; color: var(--color-neutral-fg-2); line-height: 1.6; flex: 1; margin-bottom: 1.25rem;">
           Access internal network drives, clinical databases, media raw files, and server tools.
         </p>
-        <a href="https://nas.suamisihat.com.my/" target="_blank" rel="noopener noreferrer" class="ss-btn ss-btn-secondary" style="text-decoration: none; justify-content: center; display: inline-flex; align-items: center; gap: 6px;">
+        <a href="https://suamisihat.myds.me" target="_blank" rel="noopener noreferrer" class="ss-btn ss-btn-secondary" style="text-decoration: none; justify-content: center; display: inline-flex; align-items: center; gap: 6px;">
           Launch SSNAS <iconify-icon icon="fluent:open-16-regular"></iconify-icon>
         </a>
       </div>
