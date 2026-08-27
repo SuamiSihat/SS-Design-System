@@ -3,220 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="metaDesc" name="description" content="Product Brand Assets — SuamiSihat™ Design System">
+    <meta name="description" content="MENSS™ — Intimate Lifestyle, Clinical Hardware & Hygiene Ecosystem">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title id="pageTitle">Product — SuamiSihat™ Design System</title>
+    <title>MENSS™ Brand Hub — SuamiSihat™ Design System</title>
 
     <!-- Favicon Suite -->
     <link rel="icon" href="../../public/brand/favicon/favicon.ico" sizes="any">
     <link rel="icon" href="../../public/brand/logos/ss-logomark-light.svg" type="image/svg+xml">
-    <link rel="icon" href="../../public/brand/favicon/favicon-32x32.png" type="image/png" sizes="32x32">
-    <link rel="icon" href="../../public/brand/favicon/favicon-16x16.png" type="image/png" sizes="16x16">
     <link rel="apple-touch-icon" href="../../public/brand/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="../../public/brand/favicon/site.webmanifest">
     <meta name="theme-color" content="#022057">
     
-    <!-- Preconnect & Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Bootstrap -->
+    <!-- Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
     <!-- Design System CSS -->
-    <style>
-        .product-hero {
-            padding: 5rem 0 3rem;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            transition: background 0.3s ease;
-        }
-        
-        .product-hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .product-details-card {
-            background: var(--card-background);
-            border-radius: var(--border-radius-lg);
-            box-shadow: 0 10px 30px var(--card-shadow);
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            border: 1px solid var(--border, rgba(0, 0, 0, 0.05));
-        }
-
-        .brand-detail-logo-area {
-            background: #f8f9fa;
-            border-radius: var(--border-radius-md);
-            padding: 3rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 250px;
-            margin-bottom: 2rem;
-            border: 1px solid var(--border, rgba(0, 0, 0, 0.05));
-            position: relative;
-            overflow: hidden;
-        }
-
-        body.dark-mode .brand-detail-logo-area {
-            background: #0d1527;
-        }
-
-        .brand-detail-logo-area img {
-            max-width: 80%;
-            max-height: 180px;
-            object-fit: contain;
-            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.08));
-        }
-
-        /* Banner styling */
-        .banner-container {
-            width: 100%;
-            border-radius: var(--border-radius-md);
-            overflow: hidden;
-            margin-bottom: 2rem;
-            box-shadow: 0 6px 20px var(--card-shadow);
-            border: 1px solid var(--border, rgba(0, 0, 0, 0.08));
-        }
-        
-        .banner-container img {
-            width: 100%;
-            height: auto;
-            max-height: 300px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .gallery-card {
-            background: var(--card-background);
-            border-radius: var(--border-radius-md);
-            border: 1px solid var(--border, rgba(0, 0, 0, 0.08));
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 4px 12px var(--card-shadow);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .gallery-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-            border-color: var(--accent);
-        }
-
-        .gallery-img-container {
-            background: #f8f9fa;
-            padding: 2rem;
-            height: 160px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-bottom: 1px solid var(--border, rgba(0, 0, 0, 0.05));
-        }
-
-        body.dark-mode .gallery-img-container {
-            background: #0d1527;
-        }
-
-        .gallery-img-container img {
-            max-width: 90%;
-            max-height: 100px;
-            object-fit: contain;
-        }
-
-        .gallery-info {
-            padding: 1.25rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .gallery-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-            color: var(--heading-color);
-        }
-
-        .gallery-meta {
-            font-size: 0.75rem;
-            color: var(--text-color);
-            opacity: 0.7;
-            margin-bottom: 1rem;
-            flex-grow: 1;
-        }
-
-        .gallery-actions {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: auto;
-        }
-
-        .btn-gallery {
-            flex: 1;
-            font-size: 0.8rem;
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-        }
-        
-        .breadcrumb-product {
-            font-size: 0.8rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            opacity: 0.8;
-        }
-
-        .breadcrumb-product a {
-            color: #ffffff;
-            text-decoration: none;
-            opacity: 0.8;
-        }
-
-        .breadcrumb-product a:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
-
-        /* Spinner */
-        #loader {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 400px;
-        }
-        
-        #productContent {
-            display: none;
-        }
-    </style>
     <link rel="stylesheet" href="../../assets/css/fluent.css?v=9">
     <link rel="stylesheet" href="../../assets/css/ss_theme.css?v=9">
     <link rel="stylesheet" href="../../assets/css/style.css?v=9">
     <link rel="stylesheet" href="../../assets/css/markdown.css?v=9">
-    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@iconify/iconify@3/dist/iconify.min.js" defer></script>
 
+    <style>
+        :root {
+            --brand-hero-from: #043388;
+            --brand-hero-mid: #022057;
+            --brand-hero-to: #21A1F7;
+            --brand-accent-color: #21A1F7;
+        }
+
+        .brand-master-hero {
+            padding: 4.5rem 0 3.5rem;
+            background: linear-gradient(135deg, var(--brand-hero-from) 0%, var(--brand-hero-mid) 60%, var(--brand-hero-to) 100%);
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brand-master-hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 85% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .brand-section-card {
+            background: var(--color-neutral-bg-1, #ffffff);
+            border: 1px solid var(--color-neutral-stroke-2, rgba(0,0,0,0.08));
+            border-radius: var(--f-radius-lg, 16px);
+            padding: 2.25rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px var(--card-shadow, rgba(0,0,0,0.04));
+            transition: all 0.25s ease;
+        }
+
+        body.dark-mode .brand-section-card {
+            background: var(--color-neutral-bg-2, #0d1527);
+            border-color: rgba(255,255,255,0.08);
+        }
+
+        .product-spec-article {
+            background: var(--color-neutral-bg-1, #ffffff);
+            border: 1px solid var(--color-neutral-stroke-2, rgba(0,0,0,0.08));
+            border-radius: var(--f-radius-lg, 16px);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        body.dark-mode .product-spec-article {
+            background: var(--color-neutral-bg-2, #0d1527);
+            border-color: rgba(255,255,255,0.08);
+        }
+
+        .product-spec-article:hover {
+            border-color: var(--brand-accent-color);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+
+        .token-swatch {
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        .btn-brand-primary {
+            background: var(--brand-hero-from);
+            color: #ffffff !important;
+            font-weight: 600;
+            border-radius: 8px;
+            padding: 8px 18px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn-brand-primary:hover {
+            opacity: 0.9;
+        }
+
+        .btn-brand-outline {
+            background: transparent;
+            color: var(--color-neutral-fg-1) !important;
+            font-weight: 600;
+            border-radius: 8px;
+            padding: 7px 16px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid var(--color-neutral-stroke-1, rgba(0,0,0,0.15));
+            transition: all 0.2s ease;
+        }
+
+        .btn-brand-outline:hover {
+            border-color: var(--brand-hero-from);
+            color: var(--brand-hero-from) !important;
+        }
+
+        .sub-nav-sticky {
+            position: sticky;
+            top: 60px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--color-neutral-stroke-2, rgba(0,0,0,0.08));
+            padding: 0.75rem 0;
+        }
+
+        body.dark-mode .sub-nav-sticky {
+            background: rgba(7, 13, 24, 0.92);
+            border-bottom-color: rgba(255,255,255,0.08);
+        }
+
+        .sub-nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .sub-nav-links a {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--color-neutral-fg-2);
+            text-decoration: none;
+            padding: 4px 0;
+            transition: color 0.2s ease;
+        }
+
+        .sub-nav-links a:hover, .sub-nav-links a.active {
+            color: var(--brand-hero-from);
+            border-bottom: 2px solid var(--brand-hero-from);
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
+
+    <!-- Main Navigation -->
     <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-custom sticky-top glass-navbar transition-all" role="navigation" aria-label="Main navigation">
         <div class="container">
             <img src="../../public/brand/logos/ss-logomark-light.svg" alt="SuamiSihat™ Icon" class="logo me-2 logo-height" loading="eager" />
@@ -231,20 +192,9 @@
                     <li class="nav-item"><a class="nav-link" href="../../pages/brand-system.html">Brand System</a></li>
                     <li class="nav-item"><a class="nav-link" href="../../pages/brand-guidelines.html">Guidelines</a></li>
                     <li class="nav-item"><a class="nav-link" href="../../pages/components.html">Components</a></li>
-                    <li class="nav-item active"><a class="nav-link active" href="../../pages/products.html">Products</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="docsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Docs</a>
-                        <ul class="dropdown-menu dropdown-menu-end ss-dropdown" aria-labelledby="docsDropdown">
-                            <li><a class="dropdown-item" href="../../pages/onboarding.html"><iconify-icon icon="fluent:person-star-24-regular" class="me-2"></iconify-icon>Onboarding Guide</a></li>
-                            <li><a class="dropdown-item" href="../../pages/doc.html?doc=changelog"><iconify-icon icon="fluent:clock-arrow-download-24-regular" class="me-2"></iconify-icon>What's New</a></li>
-                            <li><a class="dropdown-item" href="../../pages/doc.html?doc=roadmap"><iconify-icon icon="fluent:map-drive-24-regular" class="me-2"></iconify-icon>Roadmap</a></li>
-                            <li><a class="dropdown-item" href="../../pages/doc.html?doc=contribution-guide"><iconify-icon icon="fluent:heart-hand-24-regular" class="me-2"></iconify-icon>Contribution Guide</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="../../pages/doc.html?doc=vision-mission"><iconify-icon icon="fluent:eye-24-regular" class="me-2"></iconify-icon>Vision &amp; Mission</a></li>
-                        </ul>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="../../pages/products.html">Products</a></li>
                     <li class="nav-item">
-                        <button id="themeToggle" class="btn ms-auto" aria-label="Toggle dark mode" aria-pressed="false">
+                        <button id="themeToggle" class="btn ms-auto" aria-label="Toggle dark mode">
                             <iconify-icon icon="fluent:weather-moon-24-regular" style="font-size:1.1rem"></iconify-icon>
                         </button>
                     </li>
@@ -253,73 +203,502 @@
         </div>
     </nav>
 
-    <!-- Loader -->
-    <div id="loader">
-        <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
+    <!-- 1. BRAND DEFAULT VIEW & HERO -->
+    <header class="brand-master-hero" role="banner">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-between gap-3 mb-3">
+                <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-light text-dark font-monospace text-uppercase" style="font-size:0.7rem;letter-spacing:1px;">Brand Pillar Hub</span>
+                    <span class="badge bg-primary text-white" style="font-size:0.7rem;">05-SSE · 02-SSC</span>
+                </div>
+                <span class="text-white opacity-75 font-monospace text-xs" style="font-size:0.75rem;">SuamiSihat™ Portfolio Pillar</span>
+            </div>
+
+            <div class="row align-items-center justify-content-between g-4">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold text-white mb-2">MENSS™</h1>
+                    <p class="lead text-white-50 mb-3">Strength Engineered for Modern Masculine Wellness</p>
+                    <p class="text-white opacity-85 mb-4" style="max-width: 650px; font-size: 0.95rem; line-height: 1.6;">
+                        MENSS is SuamiSihat’s flagship intimate lifestyle, clinical hardware, and dermatological hygiene brand. It bridges daily self-care rituals with evidence-based physical conditioning and erectile support.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://shop.suamisihat.com/products/menss-ring" target="_blank" rel="noopener" class="btn btn-light fw-bold text-dark px-4 py-2" style="border-radius:8px;">
+                            <iconify-icon icon="fluent:cart-24-regular" class="me-1"></iconify-icon>Shop MENSS Range
+                        </a>
+                        <a href="#section-products" class="btn btn-outline-light px-4 py-2" style="border-radius:8px;">
+                            Explore 5 Sub-Products ↓
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="p-4 rounded-4" style="background: rgba(255,255,255,0.1); backdrop-filter:blur(16px); border: 1px solid rgba(255,255,255,0.2);">
+                        <img src="logo_menss.svg" alt="MENSS Logo" style="max-height: 90px; width: auto;" class="mb-3">
+                        <h6 class="text-white fw-bold mb-1">MENSS Ecosystem</h6>
+                        <p class="text-white-50 text-xs mb-0">5 Active Formulations &amp; Hardware Devices</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub-Navigation Anchors -->
+    <div class="sub-nav-sticky">
+        <div class="container">
+            <ul class="sub-nav-links">
+                <li><a href="#section-history" class="active"><iconify-icon icon="fluent:history-24-regular" class="me-1"></iconify-icon>1. Brand History</a></li>
+                <li><a href="#section-assets"><iconify-icon icon="fluent:color-24-regular" class="me-1"></iconify-icon>2. Assets &amp; Guidelines</a></li>
+                <li><a href="#section-products"><iconify-icon icon="fluent:box-24-regular" class="me-1"></iconify-icon>3. Sub-Products (5 Lines)</a></li>
+                <li><a href="#section-synergy"><iconify-icon icon="fluent:apps-list-detail-24-regular" class="me-1"></iconify-icon>4. Synergy &amp; Bundles</a></li>
+                <li><a href="#section-cta"><iconify-icon icon="fluent:arrow-download-24-regular" class="me-1"></iconify-icon>5. Print Downloads &amp; Channels</a></li>
+            </ul>
         </div>
     </div>
 
-    <!-- Product Content (rendered dynamically) -->
-    <div id="productContent">
-        <!-- Product Hero -->
-        <header id="heroSection" class="product-hero text-white" role="banner">
-            <div class="container">
-                <div class="breadcrumb-product">
-                    <a href="../../index.html">Home</a>
-                    <span>/</span>
-                    <a href="../../pages/products.html">Products</a>
-                    <span>/</span>
-                    <span id="breadcrumbCurrent">Product</span>
-                </div>
-                <h1 id="heroTitle" class="display-4 text-bold mb-2">Product</h1>
-                <p id="heroTagline" class="lead opacity-80 mb-0">Platform Overview</p>
+    <!-- Main Content Body -->
+    <main class="container my-5" role="main">
+
+        <!-- 1. BRAND HISTORY & PURPOSE -->
+        <section id="section-history" class="brand-section-card">
+            <div class="d-flex align-items-center gap-2 mb-3">
+                <span class="p-2 rounded-3 bg-primary bg-opacity-10 text-primary">
+                    <iconify-icon icon="fluent:book-compass-24-regular" style="font-size:1.25rem"></iconify-icon>
+                </span>
+                <h2 class="h4 fw-bold mb-0">1. Brand History, Lineage &amp; Purpose</h2>
             </div>
-        </header>
+            <p class="text-muted text-sm mb-4">
+                MENSS was founded under SuamiSihat to dismantle traditional hyper-macho taboos by delivering dignified, medically grounded personal care and intimate hardware for modern men.
+            </p>
 
-        <!-- Main Content -->
-        <main class="container my-5" role="main">
-            <!-- Features Banner -->
-            <div class="banner-container">
-                <img id="featuresBanner" src="banner.svg" alt="Product Features Banner">
-            </div>
-
-            <div class="row">
-                <!-- Left Column: Details & Logo -->
-                <div class="col-lg-5">
-                    <div class="brand-detail-logo-area">
-                        <img id="primaryLogo" src="" alt="Primary Logo">
-                    </div>
-
-                    <div class="product-details-card">
-                        <h2 class="h3 text-semibold mb-3">Product Description</h2>
-                        <div id="markdownDescription" class="md-content">
-                            <!-- MD Description Rendered Here -->
-                        </div>
-
-                        <h3 class="h5 text-semibold mt-4 mb-2">Ownership & Alignment</h3>
-                        <div id="ownershipTags" class="d-flex flex-wrap align-items-center gap-2 mb-4">
-                            <!-- Badges Rendered Here -->
-                        </div>
-                        <p id="ownershipText" class="text-sm opacity-80 mb-0">
-                            Ownership details.
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="p-3.5 rounded-3 border h-100" style="background: var(--color-neutral-bg-2, #fafafa);">
+                        <h6 class="fw-bold text-primary mb-1">Dignified Modern Masculinity</h6>
+                        <p class="text-muted text-xs mb-0">
+                            Replaces sleazy aggressive tropes with calm, engineering-grade elegance and clean packaging aesthetics.
                         </p>
                     </div>
                 </div>
-
-                <!-- Right Column: Gallery -->
-                <div class="col-lg-7">
-                    <div class="product-details-card">
-                        <h2 class="h3 text-semibold mb-4"><iconify-icon icon="fluent:image-multiple-24-regular" class="me-2 text-accent"></iconify-icon>Photo &amp; Asset Gallery</h2>
-                        
-                        <div id="galleryGrid" class="row g-4">
-                            <!-- Gallery items rendered dynamically -->
-                        </div>
+                <div class="col-md-4">
+                    <div class="p-3.5 rounded-3 border h-100" style="background: var(--color-neutral-bg-2, #fafafa);">
+                        <h6 class="fw-bold text-primary mb-1">Clinical Hardware Rigour</h6>
+                        <p class="text-muted text-xs mb-0">
+                            Devices are engineered in direct alignment with SuamiSihat Clinic protocols for safe erectile conditioning.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3.5 rounded-3 border h-100" style="background: var(--color-neutral-bg-2, #fafafa);">
+                        <h6 class="fw-bold text-primary mb-1">Global Export Whitelabel</h6>
+                        <p class="text-muted text-xs mb-0">
+                            The intimate skincare formulation is whitelabeled and exported internationally as <strong>Mensculine Care Cream</strong>.
+                        </p>
                     </div>
                 </div>
             </div>
-        </main>
-    </div>
+        </section>
+
+        <!-- 2. BRAND ASSETS & 60:30:10 TOKENS -->
+        <section id="section-assets" class="brand-section-card">
+            <div class="d-flex flex-wrap align-items-center justify-between gap-3 mb-3">
+                <div class="d-flex align-items-center gap-2">
+                    <span class="p-2 rounded-3 bg-primary bg-opacity-10 text-primary">
+                        <iconify-icon icon="fluent:color-line-24-regular" style="font-size:1.25rem"></iconify-icon>
+                    </span>
+                    <h2 class="h4 fw-bold mb-0">2. Brand Assets &amp; 60:30:10 Visual System</h2>
+                </div>
+                <div class="d-flex gap-2">
+                    <a href="logo_menss.svg" download class="btn-brand-outline" style="font-size:0.75rem;"><iconify-icon icon="fluent:folder-arrow-down-24-regular"></iconify-icon>Logo Vector (.SVG)</a>
+                    <a href="#" class="btn-brand-outline" style="font-size:0.75rem;"><iconify-icon icon="fluent:document-pdf-24-regular"></iconify-icon>Brand Manual (.PDF)</a>
+                </div>
+            </div>
+            
+            <div class="row g-3 mb-2">
+                <div class="col-md-4">
+                    <div class="token-swatch" style="background: #043388;">
+                        <div><strong class="d-block text-xs">Primary Foundation (60%)</strong><small class="opacity-75" style="font-size:10px;">Royal Navy Canvas</small></div>
+                        <code class="bg-black bg-opacity-25 px-2 py-0.5 rounded text-white text-xs">#043388</code>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="token-swatch" style="background: #022057;">
+                        <div><strong class="d-block text-xs">Supporting Neutral (30%)</strong><small class="opacity-75" style="font-size:10px;">Midnight Structure</small></div>
+                        <code class="bg-black bg-opacity-25 px-2 py-0.5 rounded text-white text-xs">#022057</code>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="token-swatch" style="background: #21A1F7;">
+                        <div><strong class="d-block text-xs">High-Impact Accent (10%)</strong><small class="opacity-75" style="font-size:10px;">Electric Action Cyan</small></div>
+                        <code class="bg-black bg-opacity-25 px-2 py-0.5 rounded text-white text-xs">#21A1F7</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SUB-PRODUCTS SECTION (THE 7-PILLAR SPECIFICATION BLUEPRINT) -->
+        <section id="section-products" class="mb-5">
+            <div class="d-flex align-items-center justify-between mb-4">
+                <div>
+                    <h2 class="h3 fw-bold mb-1">3. Sub-Products Master Showcase (5 Lines)</h2>
+                    <p class="text-muted text-sm mb-0">Complete specifications, materials, directions for use, safety warnings, galleries, and print dieline downloads.</p>
+                </div>
+            </div>
+
+            <!-- PRODUCT 1: MENSS : FRÉSH Wash -->
+            <article class="product-spec-article">
+                <div class="d-flex flex-wrap align-items-center justify-between gap-3 pb-3 border-bottom mb-4">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="p-3 rounded-3 bg-primary bg-opacity-10 text-primary d-flex align-items-center justify-center" style="font-size:1.5rem;">
+                            🧴
+                        </div>
+                        <div>
+                            <div class="d-flex align-items-center gap-2">
+                                <h3 class="h5 fw-bold mb-0 text-foreground">1. MENSS : FRÉSH Wash</h3>
+                                <span class="badge bg-success bg-opacity-10 text-success text-uppercase" style="font-size:10px;">GMP / Cosmetic</span>
+                            </div>
+                            <small class="text-muted font-monospace">SKU: SS-MNS-W01 &nbsp;&middot;&nbsp; Intimate Penile Dermatological Wash</small>
+                        </div>
+                    </div>
+                    <a href="https://shop.suamisihat.com" target="_blank" rel="noopener" class="btn-brand-primary" style="font-size:0.8rem;">
+                        <iconify-icon icon="fluent:cart-24-regular"></iconify-icon>Shop FRÉSH Wash
+                    </a>
+                </div>
+
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6">
+                        <h6 class="fw-bold text-xs text-uppercase tracking-wider text-muted mb-2">📝 1. Product Description</h6>
+                        <p class="text-sm text-foreground mb-2" style="line-height:1.6;">
+                            MENSS : FRÉSH Wash is a gentle intimate dermatological wash engineered specifically for penile skin physiology. Formulated to maintain the natural moisture barrier, calm friction sensitivity, and optimize microvascular skin elasticity.
+                        </p>
+                        <div class="p-2.5 rounded-2 bg-warning bg-opacity-10 border border-warning border-opacity-25 text-xs text-warning-emphasis">
+                            <strong>Whitelabel Lineage:</strong> Whitelabeled and exported internationally as <strong>Mensculine Care Cream</strong> (50g aluminum squeeze tube).
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h6 class="fw-bold text-xs text-uppercase tracking-wider text-muted mb-2">📐 2. Spec, Size &amp; Volume</h6>
+                        <ul class="list-unstyled text-sm space-y-1 mb-0">
+                            <li>• <strong>Net Volume:</strong> 50 ml / 1.7 fl. oz (and 100ml Home Pump)</li>
+                            <li>• <strong>Packaging Format:</strong> Aluminum Matte Squeeze Tube with flip-top cap</li>
+                            <li>• <strong>Primary Dimensions:</strong> 35 mm × 35 mm × 125 mm</li>
+                            <li>• <strong>Outer Box Dimensions:</strong> 40 mm × 40 mm × 130 mm (350gsm Soft-Touch Matte)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <div class="p-3 rounded-3 border h-100" style="background: var(--color-neutral-bg-2, #fafafa);">
+                            <h6 class="fw-bold text-xs text-primary mb-2">🧪 3. Active Ingredients</h6>
+                            <ul class="text-xs text-muted mb-0 ps-3">
+                                <li>Physta® Standardized Tongkat Ali Extract</li>
+                                <li>L-Arginine HCl (Microcirculation)</li>
+                                <li>Vitamin C (Antioxidant Barrier)</li>
+                                <li>Chamomile &amp; Aloe Soothing Matrix</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="p-3 rounded-3 border h-100" style="background: var(--color-neutral-bg-2, #fafafa);">
+                            <h6 class="fw-bold text-xs text-success mb-2">📖 4. Directions for Use</h6>
+                            <ol class="text-xs text-muted mb-0 ps-3">
+                                <li>Dispense pea-sized amount onto wet palm.</li>
+                                <li>Gently massage onto penile skin for 30s.</li>
+                                <li>Rinse thoroughly with lukewarm water.</li>
+                                <li>Use daily during morning/night shower.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="p-3 rounded-3 border h-100" style="background: rgba(225, 29, 72, 0.04); border-color: rgba(225,29,72,0.2) !important;">
+                            <h6 class="fw-bold text-xs text-danger mb-2">🛑 5. Safety &amp; Warnings</h6>
+                            <ul class="text-xs text-muted mb-0 ps-3">
+                                <li>For external intimate use only.</li>
+                                <li>Do not apply to open wounds or sores.</li>
+                                <li>Store below 30°C away from direct heat.</li>
+                                <li>Discontinue if allergic irritation occurs.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-3 border-top d-flex flex-wrap align-items-center justify-between gap-3">
+                    <div class="d-flex align-items-center gap-2">
+                        <strong class="text-xs text-muted">🖼️ 6. Gallery View:</strong>
+                        <div class="d-flex gap-2">
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">📦 3D Box Mockup</span>
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">🧴 Tube Render</span>
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">📐 Offset Dieline</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn-brand-outline" style="font-size:0.75rem;">
+                            <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon>Tube Dieline (.PDF)
+                        </a>
+                        <a href="#" class="btn-brand-outline" style="font-size:0.75rem;">
+                            <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon>Outer Box Dieline (.AI)
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PRODUCT 2: MENSS Penile Pump (VED) -->
+            <article class="product-spec-article">
+                <div class="d-flex flex-wrap align-items-center justify-between gap-3 pb-3 border-bottom mb-4">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="p-3 rounded-3 bg-info bg-opacity-10 text-info d-flex align-items-center justify-center" style="font-size:1.5rem;">
+                            📦
+                        </div>
+                        <div>
+                            <div class="d-flex align-items-center gap-2">
+                                <h3 class="h5 fw-bold mb-0 text-foreground">2. MENSS Penile Pump (VED)</h3>
+                                <span class="badge bg-info bg-opacity-10 text-info text-uppercase" style="font-size:10px;">Clinical Hardware / VED</span>
+                            </div>
+                            <small class="text-muted font-monospace">SKU: SS-MNS-P01 &nbsp;&middot;&nbsp; Motorized Li-ion Vacuum Erection Device</small>
+                        </div>
+                    </div>
+                    <a href="https://shop.suamisihat.com/products/menss-pump" target="_blank" rel="noopener" class="btn-brand-primary" style="font-size:0.8rem;">
+                        <iconify-icon icon="fluent:cart-24-regular"></iconify-icon>Shop Penile Pump
+                    </a>
+                </div>
+
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6">
+                        <h6 class="fw-bold text-xs text-uppercase tracking-wider text-muted mb-2">📝 1. Product Description</h6>
+                        <p class="text-sm text-foreground mb-2" style="line-height:1.6;">
+                            Motorized USB-C clinical Vacuum Erection Device (VED) for non-invasive penile tissue conditioning, erectile rehabilitation, and microvascular stimulation. Features an ultra-luxury 5-compartment drawer unboxing experience.
+                        </p>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h6 class="fw-bold text-xs text-uppercase tracking-wider text-muted mb-2">📐 2. Spec, Size &amp; Dimensions</h6>
+                        <ul class="list-unstyled text-sm space-y-1 mb-0">
+                            <li>• <strong>Cylinder:</strong> Medical-grade polycarbonate (200mm depth × 55mm inner dia)</li>
+                            <li>• <strong>Motor Unit:</strong> Micro-diaphragm pump with USB-C Li-ion battery</li>
+                            <li>• <strong>Outer Box:</strong> 85 mm (W) × 85 mm (D) × 320 mm (H) rigid luxury drawer box</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <div class="p-3 rounded-3 border h-100" style="background: var(--color-neutral-bg-2, #fafafa);">
+                            <h6 class="fw-bold text-xs text-primary mb-2">🧪 3. Materials &amp; Hardware</h6>
+                            <ul class="text-xs text-muted mb-0 ps-3">
+                                <li>Clear medical polycarbonate cylinder</li>
+                                <li>3× Silicone comfort seal sleeves</li>
+                                <li>Matte ABS motorized control head</li>
+                                <li>Type-C braided charging cable</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="p-3 rounded-3 border h-100" style="background: var(--color-neutral-bg-2, #fafafa);">
+                            <h6 class="fw-bold text-xs text-success mb-2">📖 4. Directions for Use</h6>
+                            <ol class="text-xs text-muted mb-0 ps-3">
+                                <li>Apply water-based lubricant to seal.</li>
+                                <li>Insert flaccid penis into cylinder.</li>
+                                <li>Engage pump until full tumescence.</li>
+                                <li>Hold 5–10 mins, release via valve.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="p-3 rounded-3 border h-100" style="background: rgba(225, 29, 72, 0.04); border-color: rgba(225,29,72,0.2) !important;">
+                            <h6 class="fw-bold text-xs text-danger mb-2">🛑 5. Safety &amp; Warnings</h6>
+                            <ul class="text-xs text-muted mb-0 ps-3">
+                                <li>Max 15 minutes per session.</li>
+                                <li>Never fall asleep with pump engaged.</li>
+                                <li>Do not exceed comfortable pressure.</li>
+                                <li>Clean cylinder with warm soapy water.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-3 border-top d-flex flex-wrap align-items-center justify-between gap-3">
+                    <div class="d-flex align-items-center gap-2">
+                        <strong class="text-xs text-muted">🖼️ 6. Gallery View:</strong>
+                        <div class="d-flex gap-2">
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">📦 5-Tray Drawer Box</span>
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">⚙️ Motor Unit</span>
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">📐 Hardware Dieline</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn-brand-outline" style="font-size:0.75rem;">
+                            <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon>Drawer Box Dieline (.PDF)
+                        </a>
+                        <a href="#" class="btn-brand-outline" style="font-size:0.75rem;">
+                            <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon>Clinical Manual (.PDF)
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PRODUCT 3: MENSS Ring Series -->
+            <article class="product-spec-article">
+                <div class="d-flex flex-wrap align-items-center justify-between gap-3 pb-3 border-bottom mb-4">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="p-3 rounded-3 bg-primary bg-opacity-10 text-primary d-flex align-items-center justify-center" style="font-size:1.5rem;">
+                            💍
+                        </div>
+                        <div>
+                            <div class="d-flex align-items-center gap-2">
+                                <h3 class="h5 fw-bold mb-0 text-foreground">3. MENSS Ring Series (Core · Duo · Carry)</h3>
+                                <span class="badge bg-primary bg-opacity-10 text-primary text-uppercase" style="font-size:10px;">Medical Silicone Device</span>
+                            </div>
+                            <small class="text-muted font-monospace">SKU: SS-MNS-R01 &nbsp;&middot;&nbsp; Condom Fastener &amp; Erection Support Ring</small>
+                        </div>
+                    </div>
+                    <a href="https://shop.suamisihat.com/products/menss-ring" target="_blank" rel="noopener" class="btn-brand-primary" style="font-size:0.8rem;">
+                        <iconify-icon icon="fluent:cart-24-regular"></iconify-icon>Shop Ring Series
+                    </a>
+                </div>
+
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6">
+                        <h6 class="fw-bold text-xs text-uppercase tracking-wider text-muted mb-2">📝 1. Product Description</h6>
+                        <p class="text-sm text-foreground mb-2" style="line-height:1.6;">
+                            Medical-grade silicone support ring engineered to secure condom placement, prevent slippage, and maintain firm erection rigidity through gentle venous outflow restriction.
+                        </p>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h6 class="fw-bold text-xs text-uppercase tracking-wider text-muted mb-2">📐 2. Spec, Size &amp; 3 SKUs</h6>
+                        <ul class="list-unstyled text-sm space-y-1 mb-0">
+                            <li>• <strong>Ring Geometry:</strong> 28 mm inner dia × 8 mm width (400% stretch recovery)</li>
+                            <li>• <strong>MENSS Carry:</strong> Frosted hard acrylic keychain case (1 Ring)</li>
+                            <li>• <strong>MENSS Core:</strong> Nitrogen-sealed foil blister sachet (1 Ring)</li>
+                            <li>• <strong>MENSS Duo:</strong> Luxury matchbox slide-pack (2 Rings)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <div class="p-3 rounded-3 border h-100" style="background: var(--color-neutral-bg-2, #fafafa);">
+                            <h6 class="fw-bold text-xs text-primary mb-2">🧪 3. Materials</h6>
+                            <ul class="text-xs text-muted mb-0 ps-3">
+                                <li>100% Medical Platinum Silicone</li>
+                                <li>Hypoallergenic &amp; Phthalate-free</li>
+                                <li>Velvet matte tactile finish</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="p-3 rounded-3 border h-100" style="background: var(--color-neutral-bg-2, #fafafa);">
+                            <h6 class="fw-bold text-xs text-success mb-2">📖 4. Directions for Use</h6>
+                            <ol class="text-xs text-muted mb-0 ps-3">
+                                <li>Stretch ring over erect penis to base.</li>
+                                <li>Ensure comfortable fit without pinching.</li>
+                                <li>Remove gently after ejaculation.</li>
+                                <li>Wash with mild soap &amp; warm water.</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="p-3 rounded-3 border h-100" style="background: rgba(225, 29, 72, 0.04); border-color: rgba(225,29,72,0.2) !important;">
+                            <h6 class="fw-bold text-xs text-danger mb-2">🛑 5. Safety &amp; Warnings</h6>
+                            <ul class="text-xs text-muted mb-0 ps-3">
+                                <li>Max wear time: 30 mins per session.</li>
+                                <li>Never sleep with ring on.</li>
+                                <li>Reusable for 3–5 sessions.</li>
+                                <li>Discontinue if numbness occurs.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-3 border-top d-flex flex-wrap align-items-center justify-between gap-3">
+                    <div class="d-flex align-items-center gap-2">
+                        <strong class="text-xs text-muted">🖼️ 6. Gallery View:</strong>
+                        <div class="d-flex gap-2">
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">🔑 Carry Keychain</span>
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">📦 Matchbox Duo</span>
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">✨ Ring Close-up</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <a href="#" class="btn-brand-outline" style="font-size:0.75rem;">
+                            <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon>Matchbox Dieline (.PDF)
+                        </a>
+                        <a href="#" class="btn-brand-outline" style="font-size:0.75rem;">
+                            <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon>Foil Sachet Dieline (.AI)
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- 4. SYNERGY PROTOCOL -->
+        <section id="section-synergy" class="brand-section-card">
+            <div class="d-flex align-items-center gap-2 mb-3">
+                <span class="p-2 rounded-3 bg-primary bg-opacity-10 text-primary">
+                    <iconify-icon icon="fluent:flowchart-24-regular" style="font-size:1.25rem"></iconify-icon>
+                </span>
+                <h2 class="h4 fw-bold mb-0">4. Recommended MENSS Synergy Protocol</h2>
+            </div>
+            <p class="text-muted text-sm mb-4">
+                How clinicians and consumers combine MENSS products for comprehensive intimate health and confidence.
+            </p>
+
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="p-3 rounded-3 border h-100" style="background: var(--color-neutral-bg-2, #fafafa);">
+                        <span class="badge bg-primary bg-opacity-10 text-primary text-uppercase mb-2" style="font-size:10px;">Step 1: Daily Conditioning</span>
+                        <h6 class="fw-bold mb-1">FRÉSH Wash + Penile Pump</h6>
+                        <p class="text-muted text-xs mb-0">Moisturize intimate tissue daily and condition microvascular blood flow 3x weekly.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 rounded-3 border h-100" style="background: var(--color-neutral-bg-2, #fafafa);">
+                        <span class="badge bg-info bg-opacity-10 text-info text-uppercase mb-2" style="font-size:10px;">Step 2: Performance</span>
+                        <h6 class="fw-bold mb-1">MENSS Ring Support</h6>
+                        <p class="text-muted text-xs mb-0">Maintain sustained rigidity and prevent condom slippage during intercourse.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 rounded-3 border h-100" style="background: var(--color-neutral-bg-2, #fafafa);">
+                        <span class="badge bg-success bg-opacity-10 text-success text-uppercase mb-2" style="font-size:10px;">Step 3: Biometrics</span>
+                        <h6 class="fw-bold mb-1">MENSS NOCTIS Telemetry</h6>
+                        <p class="text-muted text-xs mb-0">Track nocturnal recovery cycles and arterial elasticity on mobile app.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CENTRAL PURCHASE & DISTRIBUTION CTAs -->
+        <section id="section-cta" class="brand-section-card" style="background: linear-gradient(135deg, rgba(4,51,136,0.05) 0%, rgba(33,161,247,0.08) 100%);">
+            <div class="d-flex flex-wrap align-items-center justify-between gap-4">
+                <div>
+                    <h3 class="h5 fw-bold mb-1">5. Central Purchase &amp; Pharmacy Distribution</h3>
+                    <p class="text-muted text-xs mb-0">Available for direct consumer online orders, clinic dispensing, and B2B pharmacy bulk supply.</p>
+                </div>
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="https://shop.suamisihat.com/products/menss-ring" target="_blank" rel="noopener" class="btn-brand-primary" style="font-size:0.8rem;">
+                        <iconify-icon icon="fluent:cart-24-regular"></iconify-icon>Shop MENSS Store
+                    </a>
+                    <a href="https://suamisihat.com.my/farmasi" target="_blank" rel="noopener" class="btn-brand-outline" style="font-size:0.8rem;">
+                        <iconify-icon icon="fluent:building-shop-24-regular"></iconify-icon>Pharmacy Portal
+                    </a>
+                    <a href="https://wa.me/message/SP713HGUVHHDJ1" target="_blank" rel="noopener" class="btn-brand-outline" style="font-size:0.8rem;">
+                        <iconify-icon icon="fluent:chat-24-regular"></iconify-icon>Doctor Concierge
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
@@ -327,10 +706,10 @@
             <div class="footer-grid">
                 <div class="footer-col footer-brand-col">
                     <img src="../../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg" alt="SuamiSihat™" class="footer-logo" loading="lazy">
-                    <p class="footer-tagline">The single source of truth for the Suamisihat design ecosystem.</p>
+                    <p class="footer-tagline">The single source of truth for the SuamiSihat™ design ecosystem.</p>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-heading">Quick Links</h4>
+                    <h4 class="footer-heading">Site</h4>
                     <ul class="footer-links">
                         <li><a href="../../index.html">Home</a></li>
                         <li><a href="../../pages/brand-system.html">Brand System</a></li>
@@ -344,10 +723,7 @@
                         <li><a href="../../pages/doc.html?doc=changelog">What's New</a></li>
                         <li><a href="../../pages/doc.html?doc=roadmap">Roadmap</a></li>
                         <li><a href="../../pages/doc.html?doc=contribution-guide">Contribution Guide</a></li>
-                        <li><a href="../../pages/doc.html?doc=vision-mission">Vision &amp; Mission</a></li>
                     </ul>
-                    <h4 class="footer-heading mt-4">Contact</h4>
-                    <p class="footer-contact"><iconify-icon icon="fluent:mail-24-regular" class="me-2"></iconify-icon><a href="mailto:branding@suamisihat.com">branding@suamisihat.com</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -356,130 +732,8 @@
         </div>
     </footer>
 
-    <!-- Bootstrap Bundle & Marked Markdown Parser -->
+    <!-- Bootstrap Bundle & Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="../../assets/js/main.js?v=10" defer></script>
-    <script src="../../assets/js/gallery-helpers.js"></script>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            try {
-                // Fetch product metadata
-                const metadataResponse = await fetch('./metadata.json?nocache=' + Date.now());
-                if (!metadataResponse.ok) throw new Error('Failed to load metadata.json');
-                const meta = await metadataResponse.json();
-
-                // Fetch product description Markdown
-                const markdownResponse = await fetch('./description.md?nocache=' + Date.now());
-                if (!markdownResponse.ok) throw new Error('Failed to load description.md');
-                const markdownText = await markdownResponse.text();
-
-                // 1. Set titles, breadcrumbs and tags
-                document.title = `${meta.name} — SuamiSihat™ Design System`;
-                document.getElementById('pageTitle').textContent = `${meta.name} — SuamiSihat™ Design System`;
-                document.getElementById('metaDesc').setAttribute('content', `${meta.name} Brand Assets — SuamiSihat™ Design System`);
-                
-                document.getElementById('breadcrumbCurrent').textContent = meta.name;
-                document.getElementById('heroTitle').textContent = meta.name;
-                document.getElementById('heroTagline').textContent = meta.tagline || 'Brand Assets & Spec';
-                
-                // Hero Background
-                if (meta.heroGradient) {
-                    document.getElementById('heroSection').style.background = meta.heroGradient;
-                }
-
-                // 2. Banner & Logo
-                const bannerImg = document.getElementById('featuresBanner');
-                bannerImg.src = meta.banner || 'banner.svg';
-                bannerImg.alt = `${meta.name} Features Banner`;
-                
-                const primaryLogo = document.getElementById('primaryLogo');
-                primaryLogo.src = meta.logo || 'logo.svg';
-                primaryLogo.alt = `${meta.name} Primary Logo`;
-
-                // 3. Render Markdown Description
-                if (typeof marked !== 'undefined') {
-                    document.getElementById('markdownDescription').innerHTML = marked.parse(markdownText);
-                } else {
-                    document.getElementById('markdownDescription').textContent = markdownText;
-                }
-
-                // 4. Render Ownership Section
-                const ownershipTags = document.getElementById('ownershipTags');
-                ownershipTags.innerHTML = '';
-                if (meta.ownership && meta.ownership.tags) {
-                    meta.ownership.tags.forEach(tag => {
-                        const span = document.createElement('span');
-                        span.className = 'product-tag ' + getTagClass(tag);
-                        span.innerHTML = getTagIcon(tag) + tag;
-                        ownershipTags.appendChild(span);
-                    });
-                }
-                document.getElementById('ownershipText').textContent = (meta.ownership && meta.ownership.text) || '';
-
-                // 5. Render Photo/Asset Gallery Grid Automatically
-                const galleryGrid = document.getElementById('galleryGrid');
-                galleryGrid.innerHTML = '';
-                
-                if (meta.assets && meta.assets.length > 0) {
-                    meta.assets.forEach(assetFile => {
-                        // Skip loading the banner as a gallery asset
-                        if (assetFile === meta.banner || assetFile === 'banner.svg') return;
-
-                        const col = document.createElement('div');
-                        col.className = 'col-md-6';
-                        
-                        const title = formatAssetName(assetFile);
-                        const metaDesc = getAssetMeta(assetFile);
-
-                        col.innerHTML = `
-                            <div class="gallery-card">
-                                <div class="gallery-img-container">
-                                    <img src="${assetFile}" alt="${title}" loading="lazy">
-                                </div>
-                                <div class="gallery-info">
-                                    <div class="gallery-title">${title}</div>
-                                    <div class="gallery-meta">${metaDesc}</div>
-                                    <div class="gallery-actions">
-                                        <a href="${assetFile}" download class="btn btn-primary btn-gallery">
-                                            <iconify-icon icon="fluent:arrow-download-24-regular" class="me-1"></iconify-icon>Download
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                        galleryGrid.appendChild(col);
-                    });
-                } else {
-                    galleryGrid.innerHTML = '<div class="col-12"><p class="text-muted text-center">No additional logo assets found in this folder.</p></div>';
-                }
-
-                // Hide loader and show content
-                document.getElementById('loader').style.display = 'none';
-                document.getElementById('productContent').style.display = 'block';
-
-            } catch (error) {
-                console.error(error);
-                document.getElementById('loader').innerHTML = `
-                    <div class="text-center text-danger p-5">
-                        <iconify-icon icon="fluent:warning-24-regular" style="font-size:3rem;margin-bottom:1rem;display:inline-block;"></iconify-icon>
-                        <p class="lead">Error loading product details: ${error.message}</p>
-                    </div>
-                `;
-            }
-        });
-
-        // Helpers loaded from ../../assets/js/gallery-helpers.js
-    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
