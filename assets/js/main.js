@@ -1571,15 +1571,262 @@ function initFluentSidebarToggle() {
     });
 }
 
+// ============================================================================
+// Fluent 2 Product Gallery Carousel & Universal Lightbox System
+// ============================================================================
+
+var SSGalleryLightbox = (function () {
+    'use strict';
+
+    let lightboxEl = null;
+    let currentItems = [];
+    let currentIndex = 0;
+
+    /**
+     * Creates and mounts the universal lightbox DOM elements if they don't already exist.
+     */
+    function ensureLightboxDOM() {
+        if (lightboxEl) return lightboxEl;
+
+        lightboxEl = document.createElement('div');
+        lightboxEl.id = 'ssUniversalLightbox';
+        lightboxEl.className = 'ss-lightbox';
+        lightboxEl.setAttribute('role', 'dialog');
+        lightboxEl.setAttribute('aria-modal', 'true');
+        lightboxEl.setAttribute('aria-label', 'Image Lightbox Preview');
+
+        lightboxEl.innerHTML = `
+            <div class="ss-lightbox-dialog" role="document">
+                <div class="ss-lightbox-header">
+                    <div class="ss-lightbox-title" id="ssLightboxTitle">
+                        <iconify-icon icon="fluent:image-24-regular"></iconify-icon>
+                        <span id="ssLightboxCaption">Product Visual</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="ss-lightbox-counter" id="ssLightboxCounter">1 / 1</span>
+                        <button class="ss-lightbox-close" id="ssLightboxCloseBtn" aria-label="Close Lightbox (ESC)">
+                            <iconify-icon icon="fluent:dismiss-24-regular" style="font-size:1.25rem"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="ss-lightbox-stage" id="ssLightboxStage">
+                    <img id="ssLightboxImage" class="ss-lightbox-img" src="" alt="Enlarged Product View">
+                </div>
+
+                <button class="ss-lightbox-nav prev" id="ssLightboxPrevBtn" aria-label="Previous Image (Left Arrow)">
+                    <iconify-icon icon="fluent:chevron-left-24-regular" style="font-size:1.5rem"></iconify-icon>
+                </button>
+                <button class="ss-lightbox-nav next" id="ssLightboxNextBtn" aria-label="Next Image (Right Arrow)">
+                    <iconify-icon icon="fluent:chevron-right-24-regular" style="font-size:1.5rem"></iconify-icon>
+                </button>
+
+                <div class="ss-lightbox-footer">
+                    <a id="ssLightboxDownloadBtn" href="" download class="ss-lightbox-download-btn">
+                        <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon>
+                        Download High-Res Asset
+                    </a>
+                    <span class="text-white opacity-50 text-xs font-monospace ms-2 d-none d-sm-inline">ESC to close · ← / → arrows</span>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(lightboxEl);
+
+        // Bind events
+        document.getElementById('ssLightboxCloseBtn').addEventListener('click', closeLightbox);
+        document.getElementById('ssLightboxPrevBtn').addEventListener('click', (e) => { e.stopPropagation(); prevImage(); });
+        document.getElementById('ssLightboxNextBtn').addEventListener('click', (e) => { e.stopPropagation(); nextImage(); });
+        lightboxEl.addEventListener('click', (e) => {
+            if (e.target === lightboxEl || e.target.classList.contains('ss-lightbox-dialog') || e.target.classList.contains('ss-lightbox-stage')) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightboxEl.classList.contains('open')) return;
+            if (e.key === 'Escape') closeLightbox();
+            else if (e.key === 'ArrowLeft') prevImage();
+            else if (e.key === 'ArrowRight') nextImage();
+        });
+
+        return lightboxEl;
+    }
+
+    function openLightbox(items, startIndex = 0) {
+        if (!items || items.length === 0) return;
+        ensureLightboxDOM();
+        currentItems = items;
+        currentIndex = Math.max(0, Math.min(startIndex, items.length - 1));
+        renderActiveItem();
+        lightboxEl.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        if (!lightboxEl) return;
+        lightboxEl.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function renderActiveItem() {
+        if (!currentItems[currentIndex]) return;
+        const item = currentItems[currentIndex];
+        const imgEl = document.getElementById('ssLightboxImage');
+        const captionEl = document.getElementById('ssLightboxCaption');
+        const counterEl = document.getElementById('ssLightboxCounter');
+        const downloadBtn = document.getElementById('ssLightboxDownloadBtn');
+        const prevBtn = document.getElementById('ssLightboxPrevBtn');
+        const nextBtn = document.getElementById('ssLightboxNextBtn');
+
+        imgEl.src = item.src || item.href || '';
+        imgEl.alt = item.title || 'Product Asset';
+        captionEl.textContent = item.title || item.alt || 'Product Asset Preview';
+        counterEl.textContent = `${currentIndex + 1} / ${currentItems.length}`;
+        downloadBtn.href = item.src || item.href || '';
+
+        // Hide/show navigation buttons if single item
+        const isMultiple = currentItems.length > 1;
+        prevBtn.style.display = isMultiple ? 'flex' : 'none';
+        nextBtn.style.display = isMultiple ? 'flex' : 'none';
+    }
+
+    function nextImage() {
+        if (currentItems.length <= 1) return;
+        currentIndex = (currentIndex + 1) % currentItems.length;
+        renderActiveItem();
+    }
+
+    function prevImage() {
+        if (currentItems.length <= 1) return;
+        currentIndex = (currentIndex - 1 + currentItems.length) % currentItems.length;
+        renderActiveItem();
+    }
+
+    /**
+     * Initializes all `.ss-gallery-card` interactive carousels on the page.
+     */
+    function initGalleries() {
+        const galleryCards = document.querySelectorAll('.ss-gallery-card');
+
+        galleryCards.forEach(card => {
+            if (card.dataset.galleryBound === 'true') return;
+            card.dataset.galleryBound = 'true';
+
+            const stage = card.querySelector('.ss-gallery-stage');
+            const stageImg = card.querySelector('.ss-gallery-stage-img');
+            const metaTitle = card.querySelector('.ss-gallery-meta-title');
+            const metaSub = card.querySelector('.ss-gallery-meta-sub');
+            const thumbs = card.querySelectorAll('.ss-gallery-thumb');
+            const prevBtn = card.querySelector('.ss-carousel-btn.prev');
+            const nextBtn = card.querySelector('.ss-carousel-btn.next');
+
+            // Parse gallery items from thumbnail dataset or children
+            const items = [];
+            thumbs.forEach((thumb, idx) => {
+                const img = thumb.querySelector('img');
+                const src = thumb.dataset.src || (img ? img.src : '');
+                const title = thumb.dataset.title || (img ? img.alt : `View ${idx + 1}`);
+                const sub = thumb.dataset.sub || '';
+                items.push({ src, title, sub });
+            });
+
+            if (items.length === 0 && stageImg) {
+                items.push({ src: stageImg.src, title: stageImg.alt || 'Product Preview', sub: '' });
+            }
+
+            let activeIdx = 0;
+
+            function updateStage(index) {
+                activeIdx = Math.max(0, Math.min(index, items.length - 1));
+                const item = items[activeIdx];
+                if (!item) return;
+
+                if (stageImg) {
+                    stageImg.src = item.src;
+                    stageImg.alt = item.title;
+                }
+                if (metaTitle) metaTitle.textContent = item.title;
+                if (metaSub) metaSub.textContent = item.sub || '';
+
+                thumbs.forEach((t, i) => {
+                    t.classList.toggle('active', i === activeIdx);
+                });
+            }
+
+            // Thumbnail clicks
+            thumbs.forEach((thumb, idx) => {
+                thumb.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    updateStage(idx);
+                });
+            });
+
+            // Prev / Next button clicks
+            if (prevBtn) {
+                prevBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const newIdx = (activeIdx - 1 + items.length) % items.length;
+                    updateStage(newIdx);
+                });
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const newIdx = (activeIdx + 1) % items.length;
+                    updateStage(newIdx);
+                });
+            }
+
+            // Stage click opens Lightbox!
+            if (stage) {
+                stage.addEventListener('click', () => {
+                    openLightbox(items, activeIdx);
+                });
+            }
+        });
+
+        // Also bind any standalone [data-ss-lightbox] links or images
+        document.querySelectorAll('[data-ss-lightbox]').forEach(el => {
+            if (el.dataset.lightboxBound === 'true') return;
+            el.dataset.lightboxBound = 'true';
+
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                const groupName = el.dataset.ssLightbox;
+                const groupElements = Array.from(document.querySelectorAll(`[data-ss-lightbox="${groupName}"]`));
+                const items = groupElements.map(itemEl => {
+                    const img = itemEl.querySelector('img') || itemEl;
+                    return {
+                        src: itemEl.getAttribute('href') || itemEl.dataset.src || (img ? img.src : ''),
+                        title: itemEl.dataset.title || (img ? img.alt : 'Gallery Image'),
+                        sub: itemEl.dataset.sub || ''
+                    };
+                });
+                const clickedIdx = groupElements.indexOf(el);
+                openLightbox(items, clickedIdx >= 0 ? clickedIdx : 0);
+            });
+        });
+    }
+
+    return {
+        init: initGalleries,
+        open: openLightbox,
+        close: closeLightbox
+    };
+})();
+
 // Auto-bind immediately or on DOMContentLoaded
 if (typeof document !== 'undefined') {
     if (document.readyState !== 'loading') {
         initFluentSidebarToggle();
         initCleanUrlMasking();
+        SSGalleryLightbox.init();
     } else {
         document.addEventListener('DOMContentLoaded', () => {
             initFluentSidebarToggle();
             initCleanUrlMasking();
+            SSGalleryLightbox.init();
         });
     }
 }
@@ -1601,4 +1848,5 @@ const app = new SSBrandApp();
 app.init().catch(error => {
     ErrorHandler.handleError(error, 'Application startup');
 });
+
 

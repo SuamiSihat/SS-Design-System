@@ -504,23 +504,60 @@
                     </div>
                 </div>
 
-                <div class="pt-3 border-top d-flex flex-wrap align-items-center justify-between gap-3">
-                    <div class="d-flex align-items-center gap-2">
-                        <strong class="text-xs text-muted">🖼️ 6. Gallery View:</strong>
+                <div class="pt-3 border-top">
+                    <div class="d-flex flex-wrap align-items-center justify-between gap-3 mb-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <strong class="text-xs text-muted">🖼️ 6. Gallery &amp; Brand Assets:</strong>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">Vector &amp; Identity Renders · Click to Zoom</span>
+                            </div>
+                        </div>
+
                         <div class="d-flex gap-2">
-                            <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">📦 3D Box Mockup</span>
-                            <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">🧴 Aluminum Tube</span>
-                            <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">📐 Export Dieline</span>
+                            <a href="logos/logo_mensculine_primary.svg" download class="btn-brand-outline" style="font-size:0.75rem;">
+                                <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon>Primary Logo (.SVG)
+                            </a>
+                            <a href="logos/logo_mensculine_secondary.svg" download class="btn-brand-outline" style="font-size:0.75rem;">
+                                <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon>Secondary Logo (.SVG)
+                            </a>
                         </div>
                     </div>
 
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn-brand-outline" style="font-size:0.75rem;">
-                            <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon>Tube Dieline (.PDF)
-                        </a>
-                        <a href="#" class="btn-brand-outline" style="font-size:0.75rem;">
-                            <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon>Box Dieline (.AI)
-                        </a>
+                    <!-- Interactive Carousel: Mensculine -->
+                    <div class="ss-gallery-card">
+                        <div class="ss-gallery-stage" title="Click to open full-screen lightbox">
+                            <span class="ss-gallery-zoom-badge">
+                                <iconify-icon icon="fluent:full-screen-maximize-24-regular"></iconify-icon> Click to Zoom
+                            </span>
+                            <img class="ss-gallery-stage-img" src="banner.svg" alt="Mensculine Banner Preview">
+                            
+                            <button class="ss-carousel-btn prev" type="button" aria-label="Previous image">
+                                <iconify-icon icon="fluent:chevron-left-24-regular" style="font-size:1.25rem"></iconify-icon>
+                            </button>
+                            <button class="ss-carousel-btn next" type="button" aria-label="Next image">
+                                <iconify-icon icon="fluent:chevron-right-24-regular" style="font-size:1.25rem"></iconify-icon>
+                            </button>
+                        </div>
+
+                        <div class="ss-gallery-meta">
+                            <div>
+                                <div class="ss-gallery-meta-title">Mensculine Master Visual Banner</div>
+                                <p class="ss-gallery-meta-sub">Premium gold and obsidian botanical care line identity.</p>
+                            </div>
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary font-monospace" style="font-size:11px;">Mensculine Care Cream</span>
+                        </div>
+
+                        <div class="ss-gallery-thumbs">
+                            <button class="ss-gallery-thumb active" data-src="banner.svg" data-title="Mensculine Master Visual Banner" data-sub="Premium gold and obsidian botanical care line identity." type="button">
+                                <img src="banner.svg" alt="Banner Preview">
+                            </button>
+                            <button class="ss-gallery-thumb" data-src="logos/logo_mensculine_primary.svg" data-title="Mensculine Primary Crest" data-sub="Official luxury wordmark and heraldic icon." type="button">
+                                <img src="logos/logo_mensculine_primary.svg" alt="Primary Logo">
+                            </button>
+                            <button class="ss-gallery-thumb" data-src="logos/logo_mensculine_secondary.svg" data-title="Mensculine Emblem" data-sub="Secondary emblem variant for packaging seals." type="button">
+                                <img src="logos/logo_mensculine_secondary.svg" alt="Secondary Logo">
+                            </button>
+                        </div>
                     </div>
                 </div>
             </article>

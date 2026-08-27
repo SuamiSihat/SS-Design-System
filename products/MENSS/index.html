@@ -608,9 +608,9 @@
                 <div class="pt-3 border-top">
                     <div class="d-flex flex-wrap align-items-center justify-between gap-3 mb-3">
                         <div class="d-flex align-items-center gap-2">
-                            <strong class="text-xs text-muted">🖼️ 6. Gallery Showcase:</strong>
+                            <strong class="text-xs text-muted">🖼️ 6. Gallery &amp; Hardware Renders:</strong>
                             <div class="d-flex gap-2">
-                                <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">4 Hardware Assets</span>
+                                <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">4 High-Res Assets · Click to Zoom</span>
                             </div>
                         </div>
                         <div class="d-flex flex-wrap gap-2">
@@ -623,30 +623,43 @@
                         </div>
                     </div>
                     
-                    <div class="row g-2">
-                        <div class="col-6 col-md-3">
-                            <a href="sub-products/penile-pump/gallery/MENSS-PP-Box.png" target="_blank" class="d-block p-2 rounded-3 border bg-light text-center">
-                                <img src="sub-products/penile-pump/gallery/MENSS-PP-Box.png" alt="MENSS Drawer Box" class="img-fluid rounded" style="max-height: 110px; object-fit: contain;">
-                                <small class="d-block text-muted text-truncate mt-1" style="font-size:10px;">5-Tray Luxury Box</small>
-                            </a>
+                    <!-- Interactive Product Carousel -->
+                    <div class="ss-gallery-card">
+                        <div class="ss-gallery-stage" title="Click to open full-screen lightbox">
+                            <span class="ss-gallery-zoom-badge">
+                                <iconify-icon icon="fluent:full-screen-maximize-24-regular"></iconify-icon> Click to Zoom
+                            </span>
+                            <img class="ss-gallery-stage-img" src="sub-products/penile-pump/gallery/MENSS-PP-Box.png" alt="5-Tray Luxury Drawer Box">
+                            
+                            <button class="ss-carousel-btn prev" type="button" aria-label="Previous image">
+                                <iconify-icon icon="fluent:chevron-left-24-regular" style="font-size:1.25rem"></iconify-icon>
+                            </button>
+                            <button class="ss-carousel-btn next" type="button" aria-label="Next image">
+                                <iconify-icon icon="fluent:chevron-right-24-regular" style="font-size:1.25rem"></iconify-icon>
+                            </button>
                         </div>
-                        <div class="col-6 col-md-3">
-                            <a href="sub-products/penile-pump/gallery/202509_D0062_Menss_Packaging_Penile Pump_v1.png" target="_blank" class="d-block p-2 rounded-3 border bg-light text-center">
-                                <img src="sub-products/penile-pump/gallery/202509_D0062_Menss_Packaging_Penile Pump_v1.png" alt="MENSS Packaging Design" class="img-fluid rounded" style="max-height: 110px; object-fit: contain;">
-                                <small class="d-block text-muted text-truncate mt-1" style="font-size:10px;">Packaging Flat Artwork</small>
-                            </a>
+
+                        <div class="ss-gallery-meta">
+                            <div>
+                                <div class="ss-gallery-meta-title">5-Tray Luxury Drawer Box</div>
+                                <p class="ss-gallery-meta-sub">5-tier drawer unboxing system housing pump, silicone rings, charger, and clinical guides.</p>
+                            </div>
+                            <span class="badge bg-primary bg-opacity-10 text-primary font-monospace" style="font-size:11px;">MENSS Penile Pump</span>
                         </div>
-                        <div class="col-6 col-md-3">
-                            <a href="sub-products/penile-pump/gallery/Render_Mockup_1080_1920_2025-10-14.jpg" target="_blank" class="d-block p-2 rounded-3 border bg-light text-center">
-                                <img src="sub-products/penile-pump/gallery/Render_Mockup_1080_1920_2025-10-14.jpg" alt="MENSS Pump 3D Render" class="img-fluid rounded" style="max-height: 110px; object-fit: contain;">
-                                <small class="d-block text-muted text-truncate mt-1" style="font-size:10px;">3D Unit Render</small>
-                            </a>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <a href="sub-products/penile-pump/gallery/Pump Silhuatte.png" target="_blank" class="d-block p-2 rounded-3 border bg-light text-center">
-                                <img src="sub-products/penile-pump/gallery/Pump Silhuatte.png" alt="Pump Silhouette Anatomy" class="img-fluid rounded" style="max-height: 110px; object-fit: contain;">
-                                <small class="d-block text-muted text-truncate mt-1" style="font-size:10px;">Hardware Profile</small>
-                            </a>
+
+                        <div class="ss-gallery-thumbs">
+                            <button class="ss-gallery-thumb active" data-src="sub-products/penile-pump/gallery/MENSS-PP-Box.png" data-title="5-Tray Luxury Drawer Box" data-sub="5-tier drawer unboxing system housing pump and accessories." type="button">
+                                <img src="sub-products/penile-pump/gallery/MENSS-PP-Box.png" alt="5-Tray Luxury Box">
+                            </button>
+                            <button class="ss-gallery-thumb" data-src="sub-products/penile-pump/gallery/202509_D0062_Menss_Packaging_Penile Pump_v1.png" data-title="Packaging Artwork Flat Dieline" data-sub="Production offset flat artwork for outer sleeve and trays." type="button">
+                                <img src="sub-products/penile-pump/gallery/202509_D0062_Menss_Packaging_Penile Pump_v1.png" alt="Packaging Artwork Flat Dieline">
+                            </button>
+                            <button class="ss-gallery-thumb" data-src="sub-products/penile-pump/gallery/Render_Mockup_1080_1920_2025-10-14.jpg" data-title="3D Unit & Cylinder Render" data-sub="Motorized vacuum head with transparent polycarbonate scale cylinder." type="button">
+                                <img src="sub-products/penile-pump/gallery/Render_Mockup_1080_1920_2025-10-14.jpg" alt="3D Unit Render">
+                            </button>
+                            <button class="ss-gallery-thumb" data-src="sub-products/penile-pump/gallery/Pump Silhuatte.png" data-title="Hardware Profile & Dimension Blueprint" data-sub="Ergonomic grip and cylinder dimensional silhouette." type="button">
+                                <img src="sub-products/penile-pump/gallery/Pump Silhuatte.png" alt="Hardware Profile Blueprint">
+                            </button>
                         </div>
                     </div>
                 </div>
