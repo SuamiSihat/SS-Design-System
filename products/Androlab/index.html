@@ -506,9 +506,9 @@
                 <div class="pt-3 border-top">
                     <div class="d-flex flex-wrap align-items-center justify-between gap-3 mb-3">
                         <div class="d-flex align-items-center gap-2">
-                            <strong class="text-xs text-muted">🖼️ 6. Gallery Showcase:</strong>
+                            <strong class="text-xs text-muted">🖼️ 6. Gallery &amp; 3D Renders:</strong>
                             <div class="d-flex gap-2">
-                                <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">4 Render Assets</span>
+                                <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">4 High-Res Assets · Click to Zoom</span>
                             </div>
                         </div>
                         <div class="d-flex flex-wrap gap-2">
@@ -521,30 +521,43 @@
                         </div>
                     </div>
                     
-                    <div class="row g-2">
-                        <div class="col-6 col-md-3">
-                            <a href="sub-products/androlab-alpha/gallery/Render_Mockup_3840_1876_2025-11-07.png" target="_blank" class="d-block p-2 rounded-3 border bg-light text-center">
-                                <img src="sub-products/androlab-alpha/gallery/Render_Mockup_3840_1876_2025-11-07.png" alt="Androlab Alpha 3D Render" class="img-fluid rounded" style="max-height: 110px; object-fit: contain;">
-                                <small class="d-block text-muted text-truncate mt-1" style="font-size:10px;">Retail Box 3D Mockup</small>
-                            </a>
+                    <!-- Interactive Product Carousel -->
+                    <div class="ss-gallery-card">
+                        <div class="ss-gallery-stage" title="Click to open full-screen lightbox">
+                            <span class="ss-gallery-zoom-badge">
+                                <iconify-icon icon="fluent:full-screen-maximize-24-regular"></iconify-icon> Click to Zoom
+                            </span>
+                            <img class="ss-gallery-stage-img" src="sub-products/androlab-alpha/gallery/Render_Mockup_3840_1876_2025-11-07.png" alt="Retail Box 3D Mockup">
+                            
+                            <button class="ss-carousel-btn prev" type="button" aria-label="Previous image">
+                                <iconify-icon icon="fluent:chevron-left-24-regular" style="font-size:1.25rem"></iconify-icon>
+                            </button>
+                            <button class="ss-carousel-btn next" type="button" aria-label="Next image">
+                                <iconify-icon icon="fluent:chevron-right-24-regular" style="font-size:1.25rem"></iconify-icon>
+                            </button>
                         </div>
-                        <div class="col-6 col-md-3">
-                            <a href="sub-products/androlab-alpha/gallery/Render_Mockup_3840_1916_2025-11-07.png" target="_blank" class="d-block p-2 rounded-3 border bg-light text-center">
-                                <img src="sub-products/androlab-alpha/gallery/Render_Mockup_3840_1916_2025-11-07.png" alt="Androlab Alpha Studio Render" class="img-fluid rounded" style="max-height: 110px; object-fit: contain;">
-                                <small class="d-block text-muted text-truncate mt-1" style="font-size:10px;">Studio Packshot Render</small>
-                            </a>
+
+                        <div class="ss-gallery-meta">
+                            <div>
+                                <div class="ss-gallery-meta-title">Retail Box 3D Mockup</div>
+                                <p class="ss-gallery-meta-sub">Official 3D photorealistic retail packaging render for marketing and displays.</p>
+                            </div>
+                            <span class="badge bg-primary bg-opacity-10 text-primary font-monospace" style="font-size:11px;">ANDROLAB Alpha</span>
                         </div>
-                        <div class="col-6 col-md-3">
-                            <a href="sub-products/androlab-alpha/gallery/androlab-P0104-BKKM.png" target="_blank" class="d-block p-2 rounded-3 border bg-light text-center">
-                                <img src="sub-products/androlab-alpha/gallery/androlab-P0104-BKKM.png" alt="Androlab Alpha Box Artwork" class="img-fluid rounded" style="max-height: 110px; object-fit: contain;">
-                                <small class="d-block text-muted text-truncate mt-1" style="font-size:10px;">BKKM Packaging Layout</small>
-                            </a>
-                        </div>
-                        <div class="col-6 col-md-3">
-                            <a href="sub-products/androlab-alpha/gallery/sachet P0104.png" target="_blank" class="d-block p-2 rounded-3 border bg-light text-center">
-                                <img src="sub-products/androlab-alpha/gallery/sachet P0104.png" alt="Androlab Alpha Sachet Unit" class="img-fluid rounded" style="max-height: 110px; object-fit: contain;">
-                                <small class="d-block text-muted text-truncate mt-1" style="font-size:10px;">Foil Sachet Unit</small>
-                            </a>
+
+                        <div class="ss-gallery-thumbs">
+                            <button class="ss-gallery-thumb active" data-src="sub-products/androlab-alpha/gallery/Render_Mockup_3840_1876_2025-11-07.png" data-title="Retail Box 3D Mockup" data-sub="Official 3D photorealistic retail packaging render." type="button">
+                                <img src="sub-products/androlab-alpha/gallery/Render_Mockup_3840_1876_2025-11-07.png" alt="Retail Box 3D Mockup">
+                            </button>
+                            <button class="ss-gallery-thumb" data-src="sub-products/androlab-alpha/gallery/Render_Mockup_3840_1916_2025-11-07.png" data-title="Studio Packshot Render" data-sub="Studio lighting perspective showing foil carton finish." type="button">
+                                <img src="sub-products/androlab-alpha/gallery/Render_Mockup_3840_1916_2025-11-07.png" alt="Studio Packshot Render">
+                            </button>
+                            <button class="ss-gallery-thumb" data-src="sub-products/androlab-alpha/gallery/androlab-P0104-BKKM.png" data-title="BKKM Packaging Layout" data-sub="Registered Ministry of Health Malaysia (BKKM) flat artwork dieline." type="button">
+                                <img src="sub-products/androlab-alpha/gallery/androlab-P0104-BKKM.png" alt="BKKM Packaging Layout">
+                            </button>
+                            <button class="ss-gallery-thumb" data-src="sub-products/androlab-alpha/gallery/sachet P0104.png" data-title="Foil Sachet Unit" data-sub="Individual serving foil sachet artwork and barrier specs." type="button">
+                                <img src="sub-products/androlab-alpha/gallery/sachet P0104.png" alt="Foil Sachet Unit">
+                            </button>
                         </div>
                     </div>
                 </div>

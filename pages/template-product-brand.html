@@ -529,24 +529,57 @@
                     </div>
                 </div>
 
-                <!-- 6. Gallery View & 7. Download Packaging for Print -->
-                <div class="pt-3 border-top d-flex flex-wrap align-items-center justify-between gap-3">
-                    <div class="d-flex align-items-center gap-2">
-                        <strong class="text-xs text-muted">🖼️ 6. Gallery View:</strong>
-                        <div class="d-flex gap-2">
-                            <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">📦 3D Box Mockup</span>
-                            <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">🧴 Primary Tube Unit</span>
-                            <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">📐 Offset Dieline Spec</span>
+                <!-- 6. Gallery Showcase & 7. Download Packaging for Print -->
+                <div class="pt-3 border-top">
+                    <div class="d-flex flex-wrap align-items-center justify-between gap-3 mb-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <strong class="text-xs text-muted">🖼️ 6. Gallery &amp; Visual Showcase:</strong>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-secondary bg-opacity-10 text-secondary" style="font-size:11px;">Interactive 3D / Renders · Click to Zoom</span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="#" class="btn-brand-outline" style="font-size:0.75rem;">
+                                <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon>Primary Dieline (.PDF)
+                            </a>
+                            <a href="#" class="btn-brand-outline" style="font-size:0.75rem;">
+                                <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon>Outer Carton Vector (.AI)
+                            </a>
                         </div>
                     </div>
 
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn-brand-outline" style="font-size:0.75rem;">
-                            <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon>Tube Dieline (.PDF)
-                        </a>
-                        <a href="#" class="btn-brand-outline" style="font-size:0.75rem;">
-                            <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon>Outer Box Dieline (.AI)
-                        </a>
+                    <!-- Interactive Product Carousel Reference -->
+                    <div class="ss-gallery-card">
+                        <div class="ss-gallery-stage" title="Click to open full-screen lightbox">
+                            <span class="ss-gallery-zoom-badge">
+                                <iconify-icon icon="fluent:full-screen-maximize-24-regular"></iconify-icon> Click to Zoom
+                            </span>
+                            <img class="ss-gallery-stage-img" src="../../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg" alt="Product Packshot Preview">
+                            
+                            <button class="ss-carousel-btn prev" type="button" aria-label="Previous image">
+                                <iconify-icon icon="fluent:chevron-left-24-regular" style="font-size:1.25rem"></iconify-icon>
+                            </button>
+                            <button class="ss-carousel-btn next" type="button" aria-label="Next image">
+                                <iconify-icon icon="fluent:chevron-right-24-regular" style="font-size:1.25rem"></iconify-icon>
+                            </button>
+                        </div>
+
+                        <div class="ss-gallery-meta">
+                            <div>
+                                <div class="ss-gallery-meta-title">Packshot 3D Mockup</div>
+                                <p class="ss-gallery-meta-sub">Official photorealistic packaging render for digital storefronts and marketing assets.</p>
+                            </div>
+                            <span class="badge bg-primary bg-opacity-10 text-primary font-monospace" style="font-size:11px;">[Sub-Product 1]</span>
+                        </div>
+
+                        <div class="ss-gallery-thumbs">
+                            <button class="ss-gallery-thumb active" data-src="../../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg" data-title="Packshot 3D Mockup" data-sub="Official photorealistic packaging render." type="button">
+                                <img src="../../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg" alt="Packshot 3D Mockup">
+                            </button>
+                            <button class="ss-gallery-thumb" data-src="../../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_light.svg" data-title="Monochrome Secondary Mockup" data-sub="Packaging layout with secondary brand accents." type="button">
+                                <img src="../../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_light.svg" alt="Monochrome Secondary Mockup">
+                            </button>
+                        </div>
                     </div>
                 </div>
             </article>

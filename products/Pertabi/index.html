@@ -893,10 +893,20 @@
                     const slide = document.createElement('div');
                     slide.className = `carousel-item ${isActive}`;
                     slide.innerHTML = `
-                        <div class="merch-carousel-stage">
+                        <div class="merch-carousel-stage" title="Click to zoom in lightbox" style="cursor: pointer;">
                             <img src="${item.file}" class="merch-slide-img" alt="${item.title}" loading="lazy">
                         </div>
                     `;
+                    slide.addEventListener('click', () => {
+                        if (window.SSGalleryLightbox) {
+                            const lightboxItems = merchItems.map(m => ({
+                                src: m.file,
+                                title: m.title,
+                                sub: m.desc
+                            }));
+                            window.SSGalleryLightbox.open(lightboxItems, index);
+                        }
+                    });
                     carouselInner.appendChild(slide);
 
                     // Thumbnail Button
