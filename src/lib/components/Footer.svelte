@@ -1,7 +1,7 @@
 <footer class="f-footer">
     <div class="f-footer-inner">
         <div>
-            <img src="/public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_light.svg" 
+            <img src="/public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg" 
                  alt="SuamiSihat™" 
                  class="f-footer-logo" 
                  loading="lazy">

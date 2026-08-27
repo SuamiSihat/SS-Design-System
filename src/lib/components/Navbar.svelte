@@ -4,13 +4,23 @@
 
   let drawerOpen = $state(false);
   let isDarkMode = $state(false);
+  let docsDropdownOpen = $state(false);
 
   const navLinks = [
     { label: 'Brand System', href: '/brand-system/' },
     { label: 'Guidelines', href: '/brand-guidelines/' },
     { label: 'Components', href: '/components/' },
-    { label: 'Products', href: '/products/' },
-    { label: 'Docs', href: '/doc/?doc=roadmap' }
+    { label: 'Products', href: '/products/' }
+  ];
+
+  const docsLinks = [
+    { label: 'Onboarding Guide', href: '/onboarding/', icon: 'fluent:person-star-24-regular' },
+    { label: "What's New", href: '/doc/?doc=changelog', icon: 'fluent:clock-arrow-download-24-regular' },
+    { label: 'Roadmap', href: '/doc/?doc=roadmap', icon: 'fluent:map-drive-24-regular' },
+    { label: 'Contribution Guide', href: '/doc/?doc=contribution-guide', icon: 'fluent:heart-hand-24-regular' },
+    { label: 'Vision & Mission', href: '/doc/?doc=vision-mission', icon: 'fluent:eye-24-regular' },
+    { label: 'Brand Voice', href: '/doc/?doc=brand-voice', icon: 'fluent:megaphone-24-regular' },
+    { label: 'Mail Signature', href: '/signature/', icon: 'fluent:mail-template-24-regular' }
   ];
 
   function toggleTheme() {
@@ -36,6 +46,14 @@
     document.body.style.overflow = '';
   }
 
+  function toggleDocsDropdown() {
+    docsDropdownOpen = !docsDropdownOpen;
+  }
+
+  function closeDocsDropdown() {
+    docsDropdownOpen = false;
+  }
+
   onMount(() => {
     const saved = localStorage.getItem('ss-theme');
     if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -50,8 +68,19 @@
         nav.classList.toggle('scrolled', window.scrollY > 8);
       }
     };
+
+    const handleClickOutside = (e) => {
+      if (!e.target.closest('.f-nav-docs-dropdown')) {
+        docsDropdownOpen = false;
+      }
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('click', handleClickOutside);
+    };
   });
 </script>
 
@@ -60,11 +89,11 @@
     <!-- Brand -->
     <a class="f-navbar-brand" href="/" aria-label="Home">
       <img src="/public/brand/logos/ss-logomark-light.svg" class="logo" alt="SuamiSihat™ Icon" aria-hidden="true" loading="eager" style="height: 28px;">
-      <span class="f-navbar-brand-name">SuamiSihat™ Design System</span>
+      <span class="f-navbar-brand-name">SS Design System</span>
       <span class="f-navbar-version">v3.5</span>
     </a>
 
-    <!-- Nav links (hidden on small screens, toggled by JS) -->
+    <!-- Nav links (hidden on small screens) -->
     <ul class="f-nav-links d-none d-lg-flex" id="navLinks" role="menubar">
       {#each navLinks as link}
         <li role="none">
@@ -76,6 +105,35 @@
           </a>
         </li>
       {/each}
+
+      <!-- Docs dropdown -->
+      <li role="none" class="f-nav-docs-dropdown" style="position: relative;">
+        <button
+          class="f-nav-link f-nav-docs-btn"
+          class:active={$page.url.pathname.startsWith('/doc') || $page.url.pathname.startsWith('/onboarding') || $page.url.pathname.startsWith('/signature')}
+          onclick={toggleDocsDropdown}
+          aria-haspopup="true"
+          aria-expanded={docsDropdownOpen}
+          role="menuitem"
+          type="button"
+        >
+          Docs
+          <iconify-icon icon="fluent:chevron-down-16-regular" style="font-size:0.75rem; margin-left:2px; vertical-align:middle; transition: transform 0.2s ease;" style:transform={docsDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)'}></iconify-icon>
+        </button>
+
+        {#if docsDropdownOpen}
+          <ul class="f-docs-dropdown-menu" role="menu" aria-label="Documentation links">
+            {#each docsLinks as item}
+              <li role="none">
+                <a class="f-docs-dropdown-item" href={item.href} onclick={closeDocsDropdown} role="menuitem">
+                  <iconify-icon icon={item.icon} aria-hidden="true" style="font-size:1rem; flex-shrink:0;"></iconify-icon>
+                  {item.label}
+                </a>
+              </li>
+            {/each}
+          </ul>
+        {/if}
+      </li>
     </ul>
 
     <!-- Controls -->
@@ -135,3 +193,73 @@
     <div class="f-drawer-footer">SuamiSihat™ Design System v3.5</div>
   </aside>
 {/if}
+
+<style>
+  /* Docs dropdown button — matches f-nav-link styling */
+  .f-nav-docs-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font: inherit;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  /* Docs dropdown menu panel */
+  .f-docs-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 220px;
+    list-style: none;
+    padding: 6px;
+    margin: 0;
+    background: var(--color-neutral-bg-2, #FFFFFF);
+    border: 1px solid var(--color-neutral-stroke-1, rgba(0,0,0,0.08));
+    border-radius: var(--f-radius-lg, 12px);
+    box-shadow: var(--f-shadow-brand-md, 0 8px 24px rgba(4,51,136,0.12));
+    z-index: 2000;
+    animation: dropdownFadeIn 0.15s ease;
+  }
+
+  :global([data-theme="dark"]) .f-docs-dropdown-menu {
+    background: #0d1527;
+    border-color: rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  }
+
+  @keyframes dropdownFadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Docs dropdown item */
+  .f-docs-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: var(--f-radius-md, 8px);
+    font-size: 0.8375rem;
+    font-weight: 500;
+    color: var(--color-neutral-fg-2, #475569);
+    text-decoration: none;
+    transition: background 0.12s ease, color 0.12s ease;
+  }
+
+  .f-docs-dropdown-item:hover {
+    background: var(--color-brand-subtle, rgba(4,51,136,0.06));
+    color: var(--color-brand-primary, #043388);
+  }
+
+  :global([data-theme="dark"]) .f-docs-dropdown-item {
+    color: #94A3B8;
+  }
+
+  :global([data-theme="dark"]) .f-docs-dropdown-item:hover {
+    background: rgba(33,161,247,0.1);
+    color: #21A1F7;
+  }
+</style>

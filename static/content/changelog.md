@@ -4,6 +4,43 @@
 
 ---
 
+## v3.5 — August 2026
+
+**SvelteKit 2 + Svelte 5 Migration, Living Component Hub & Art Direction Restoration**
+
+Major architectural and art direction release migrating the design system to SvelteKit 2 and Svelte 5, while restoring full parity with the master design system specification across all product catalogues, documentation engines, and navigation components.
+
+### New Features & Restorations
+
+- **Product Catalogue Full Restoration (`/products/`)**:
+  - Restored full 14-product portfolio across 3 authoritative sections: **SS Products & Global Lines** (8 lines including archived MFX & Xprimal), **Partner Brands** (4 partner networks), and **Bioactives, Ingredients & Science Partners** (2 assets).
+  - Restored 4-group sidebar navigation: All Products (IntersectionObserver scroll-spy), Brand Hubs (direct sub-product links), By Category filter buttons, and Site Navigation.
+  - Enriched product cards with comprehensive clinical formulations, NPRA registration numbers, corporate entity tags (`01-SSH · 02-SSC · 05-SSE`), and custom `--card-accent` gradients.
+  - Standardized high-contrast white logo tile containers across light and dark modes for 100% brand mark legibility.
+
+- **Dynamic Sub-Product Brand Hubs (`/products/[slug]/`)**:
+  - Implemented parameterized `[slug]` routing with SSR data loader (`+page.js`) supporting 8 initial brand hubs (ANDROLAB, MENSS, Mensculine, Dr Mit Ring®, REJAL, PERTABI, Husband Clinic, Isteri Sihat).
+  - Designed full-width master hero banners with brand gradient palettes, white logo showcase tiles, and direct action CTAs.
+  - Integrated sticky 5-section sub-navigation, portfolio sidebar switcher, and dynamic markdown narrative loader (`/content/products/[slug].md`).
+  - Added structured sub-product SKU cards with category tags and direct vector asset download capabilities.
+
+- **Authoritative Markdown & Diagram Engine (`/doc/`)**:
+  - Integrated global `marked@9.1.6` for full CommonMark and GitHub Flavored Markdown (GFM) tables, code fences, and blockquotes.
+  - Embedded `mermaid@10` for dynamic architecture and roadmap flowchart rendering.
+  - Built real-time dynamic Table of Contents (TOC) sidebar auto-generated from rendered `<h2>` and `<h3>` headings with smooth scrolling.
+  - Added animated skeleton loading states and 3-level breadcrumb navigation.
+
+- **Global Navigation & Dropdown System (`Navbar.svelte`)**:
+  - Upgraded desktop navbar with interactive 7-item "Docs" dropdown menu with Fluent icons and dark mode acrylic styling.
+  - Standardized brand title to `SS Design System v3.5` matching layout rhythm.
+  - Added click-outside and Escape key dismissal handling.
+
+- **Brand Asset Governance & Logo Alignment (`Footer.svelte`)**:
+  - Replaced footer logo with official `logo_suamisihat_primary_dark.svg` (white wordmark variant) ensuring high contrast and compliance on dark corporate footers.
+  - Enforced full-width layout standard across main viewports, eliminating restrictive `max-width` content islands.
+
+---
+
 ## v3.4 — August 2026
 
 **AI Agent Skill Systems, Client Representation Standards & Ecosystem Governance**

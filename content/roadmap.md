@@ -13,50 +13,44 @@ Welcome to the **SuamiSihat™ Design System Roadmap**. This document outlines o
 
 ---
 
-## 🎯 Current Status (v3.3 — RELEASE READY)
+## 🎯 Current Status (v3.5 — SVELTEKIT LIVING HUB)
 
 | Metric | Status |
 |---|---|
-| **Version** | `v3.3` |
-| **Audit Status** | 🟢 **14 / 14 QA Domains Passed** |
-| **P0 / P1 Defects** | `0` |
-| **P2 Defects** | `0` (Remediated) |
-| **P3 / P4 Backlog** | Active & Prioritized |
+| **Version** | `v3.5.0` |
+| **Framework** | SvelteKit 2 + Svelte 5 (Runes & Signals) |
+| **Living Pages** | 100% SvelteKit Ported (Catalogue, Brand System, Docs, Components, Tools, Signature, Guidelines, Onboarding) |
+| **Product Hubs** | 14 Product Portfolio + Dynamic `[slug]` Brand Hubs |
+| **Markdown Engine** | Full GFM (Marked 9.1.6) + Mermaid Diagrams + Dynamic Auto-TOC |
+| **Audit Status** | 🟢 **RELEASE READY** |
 
 ---
 
 ## 🗺️ Release Roadmap & Milestones
 
 ```
- [v1.0 - v2.1]         [v3.0 - v3.3]         [v3.3 - v3.5]          [v4.0 Enterprise]
- Foundation         Fluent 2 & Tokens     Token Hardening        Component Packages
- ───────┬───────    ──────────┬────────   ──────────┬─────────   ──────────┬───────────
-        │                     │                     │                      │
-  Web Baseline         Multi-Platform        Semantic Tokens         NPM & Pub.dev
-  Dark Mode            14 QA Audits          JS Module Cleanup       Component Kits
+ [v1.0 - v2.1]         [v3.0 - v3.4]            [v3.5]                [v4.0 Enterprise]
+ Foundation         Fluent 2 & Agents     SvelteKit Living Hub       Component Packages
+ ───────┬───────    ──────────┬────────   ──────────┬─────────       ──────────┬───────────
+        │                     │                     │                          │
+  Web Baseline         Multi-Platform       Svelte 5 Runes             NPM & Pub.dev
+  Dark Mode            AI Agent Skills      Dynamic Brand Hubs         Enterprise CDN
+                       QA Audit Suite       Full Markdown Engine       Shared Design Tokens
 ```
 
 ---
 
-## 📋 Open Backlog & Near-Term Items (v3.3)
+## 📋 Active Priorities & Enhancements (v3.5)
 
-### Priority 3 — Polish & Refactoring
-
-| ID | Title | Component | Description | Effort | Status |
-|---|---|---|---|---|---|
-| `BRAND-STATIC-01` | Sub-Brand Logo Dark Filter | Brand / Header | Auto-invert static sub-brand logos on dark mode backgrounds | XS | Backlog |
-| `BRAND-HERO-01` | Hero Canvas Dynamic Mark | Canvas / Hero | Update hero canvas preload to use `LogoSelector.markForTheme()` | XS | Backlog |
-| `DS-01` to `DS-05` | Semantic Token Migration | CSS Architecture | Refactor hardcoded CSS hex/shadow/radius to Fluent tier-2 semantic tokens | S | In Progress |
-| `DUP-01` | Nav Label Clarification | Navigation | Rename "Brand Guidelines" label to "Guidelines & PDFs" to clarify intent | XS | Planned |
-| `DUP-02` | Shared Product JS Module | Product Pages | Extract `formatAssetName` / `getAssetMeta` gallery helpers to shared module | S | Planned |
-
-### Priority 4 — Architecture & Build Enhancements
+### Component Enhancements & Brand Narratives
 
 | ID | Title | Component | Description | Effort | Status |
 |---|---|---|---|---|---|
-| `ARCH-01` | ThemeManager Cleanup | Core JS | Remove deprecated `.navbar-logo` and `#headerLogo` selectors | XS | Planned |
-| `PERF-01` | Production Build Pipeline | Build System | Integrate production minification & bundle optimizer (`esbuild` / `lightningcss`) | M | Planned |
-| `TOOL-01` | SSCAM Desktop Sync API | Tools / Desktop | Deep integration between SSCAM WPF app and Design System token exporter | M | Planned |
+| `PROD-MD-01` | Brand Narrative Markdown | Content / Products | Author dedicated `/content/products/[slug].md` narrative histories for all 8 core brand hubs | S | In Progress |
+| `DOC-TOC-01` | Dynamic TOC Anchor Sync | Docs / Svelte | Smooth anchor jumping and scroll-spy synchronization for in-page Markdown headings | XS | Completed |
+| `NAV-DOCS-01` | Interactive Docs Dropdown | Navigation | Desktop navbar dropdown with dark mode acrylic support and Fluent 2 iconography | XS | Completed |
+| `LOGO-CONTRAST` | Logo Contrast Hardening | Assets / Brand | Standardize high-contrast white logo containers across all light/dark product surfaces | XS | Completed |
+| `BUILD-OPT-01` | Static Build & NAS Sync | Pipeline | Automated static asset pipeline copying SvelteKit build artifacts for Synology Web Station | S | Completed |
 
 ---
 
@@ -64,6 +58,7 @@ Welcome to the **SuamiSihat™ Design System Roadmap**. This document outlines o
 
 | Version | Date | Highlights |
 |---|---|---|
+| **v3.5** | Aug 2026 | SvelteKit 2 + Svelte 5 migration, full 14-product catalogue restoration, dynamic sub-product brand hubs (`[slug]`), Marked + Mermaid markdown engine with dynamic TOC, navbar Docs dropdown, and logo governance fixes |
 | **v3.4** | Aug 2026 | SuamiSihat™ AI Brand Director & Copywriting / SEO Optimization agents, Client Representation standards, token & script optimizations |
 | **v3.3** | Aug 2026 | Full 14-report QA Audit complete, P2 fixes, SSCAM WPF integration, trademark `SuamiSihat™` standardization |
 | **v3.1** | Aug 2026 | Multi-platform token system (JSON, CSS, TS, Dart) & Expo React Native foundation |
