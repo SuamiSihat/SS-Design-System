@@ -1,6 +1,6 @@
 {
   "name": "ss-design-system",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "description": "SuamiSihat™ Design System — SvelteKit living component hub & static asset pipeline",
   "private": true,
   "type": "module",
@@ -10,6 +10,7 @@
     "build:raw": "npm run build:css && npm run build:js",
     "build:css": "node scripts/minify-css.mjs",
     "build:js": "node scripts/minify-js.mjs",
+    "test": "node scripts/smoke-test.mjs",
     "preview": "vite preview",
     "watch": "node scripts/watch.mjs",
     "deploy": "powershell -ExecutionPolicy Bypass -File deploy.ps1"
