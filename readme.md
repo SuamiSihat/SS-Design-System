@@ -1,5 +1,3 @@
-<div align="center">
-
 # SuamiSihat™ Design System
 
 **The Authoritative Visual Language, W3C Token Architecture & Multi-Platform Component Standard for the SuamiSihat™ Digital Health Ecosystem.**
@@ -11,13 +9,9 @@
 [![Accessibility](https://img.shields.io/badge/WCAG-2.1%20AAA%20Compliant-2e7d32.svg?style=for-the-badge)](https://www.w3.org/WAI/standards-guidelines/wcag/)
 [![Platforms](https://img.shields.io/badge/Platforms-Web%20•%20Expo%20•%20Flutter%20•%20WPF-BD9A73.svg?style=for-the-badge)](#-multi-platform-adapters)
 
-<br/>
-
 [🌐 Live System Hub](https://assets.suamisihat.com.my/) • [📚 Brand Guidelines](https://assets.suamisihat.com.my/brand-guidelines/) • [🧩 Component Library](https://assets.suamisihat.com.my/components/) • [🗺️ Strategic Roadmap](https://assets.suamisihat.com.my/doc/?doc=roadmap) • [💻 SSCAM Desktop Suite](https://github.com/SuamiSihat/ss_cam)
 
 ---
-
-</div>
 
 ## 📌 Executive Overview
 
@@ -46,6 +40,7 @@ Engineered on **Microsoft Fluent 2** design principles and customized for men's 
 ## 🏛️ Brand Terminology & Core Design Rules
 
 ### 1. The 60:30:10 Visual Allocation Rule
+
 Every surface across the SuamiSihat™ ecosystem strictly adheres to the **60:30:10 visual color hierarchy** to ensure medical hygiene, clear layout grouping, and high-conversion patient actions without visual fatigue.
 
 ```text
@@ -56,38 +51,50 @@ Every surface across the SuamiSihat™ ecosystem strictly adheres to the **60:30
 ```
 
 | Layer | Allocation | Official Palette & Hex | Semantic Role & Hierarchy |
-|---|---|---|---|
+| :--- | :--- | :--- | :--- |
 | **Foundation** | **60%** | `#F8FAFC` (Canvas Light) / `#FFFFFF` (Surface) / `#090D16` (Void Dark) | **Calm Clinical Canvas**: Establishes spacious breathing room, medical cleanliness, and patient comfort. Used for page backgrounds, section canvases, and structural spacing. |
 | **Secondary** | **30%** | `#022057` (Prussian Blue) & `#043388` (SS Blue) | **Structural Anchors & Trust**: Organizes layout hierarchy, card containers, navigation topbars, section headers, and corporate footer blocks. |
 | **Accent** | **10%** | `#21A1F7` (Azure Blue) & `#F7E143` (Banana Yellow) | **Primary Conversion Focal Action**: High-potency focal color strictly reserved for primary conversion CTAs (`BOOK APPOINTMENT`), active nav pills, and focus rings. |
 
 ---
 
-### 2. Strict Typography Neutral Rule (`#1C1C1C`)
-- **Digital Typography Standard**: Body copy, article text, labels, table content, and headings must **strictly use Neutral Black (`#1C1C1C`)** (`--ss-neutral-black`).
-- **Never Full Black for Text**: Pure black (`#000000`) causes harsh contrast strain and is **strictly prohibited for typography**. Pure black is reserved exclusively for dark surface backgrounds and high-contrast dark canvas modes.
+### 2. 4-Tier Text Hierarchy & Text Color Standards
+
+The system strictly enforces **four levels of text emphasis** across light and dark interfaces:
+
+| Level | Token Name | Light Mode | Dark Mode | Role & Usage |
+| :--- | :--- | :--- | :--- | :--- |
+| **Level 1 — Strong** | `--text-strong` | `#000000` | `#FFFFFF` | **Maximum Emphasis**: H1, major headlines, key statistics, prices, critical CTAs. *Never use for long paragraphs.* |
+| **Level 2 — Primary** | `--text-primary` | `#19191A` (Carbon Black) | `#FCFAF6` (Porcelain) | **Standard Readable Content**: Default reading color for body text, H2–H6, navigation, labels, and forms. |
+| **Level 3 — Secondary** | `--text-secondary` | `rgba(25, 25, 26, 0.65)` | `rgba(252, 250, 246, 0.65)` | **Supporting Information**: Metadata, timestamps, helper text, subtitles, secondary tags. |
+| **Level 4 — Disabled** | `--text-disabled` | `rgba(25, 25, 26, 0.35)` | `rgba(252, 250, 246, 0.35)` | **Inactive State**: Disabled buttons, unavailable inputs, inactive actions. |
+| **Inverse** | `--text-inverse` | `#FFFFFF` | `#000000` | **Inverse Surfaces**: Text on dark buttons, badges, or contrasting overlays. |
+
+> **Art Direction Rule:** *"Black and white create emphasis. Carbon Black and Porcelain create readability."*
 
 ```css
-/* ✅ CORRECT */
-body, h1, h2, p, .ss-label {
-    color: #1C1C1C; /* var(--ss-neutral-black) */
-}
+/* ✅ CORRECT LIGHT MODE */
+h1 { color: var(--text-strong, #000000); }
+p  { color: var(--text-primary, #19191A); }
+small { color: var(--text-secondary, rgba(25, 25, 26, 0.65)); }
 
-/* ❌ PROHIBITED */
-body, p {
-    color: #000000; /* Causes visual vibration on clinical white canvases */
-}
+/* ✅ CORRECT DARK MODE */
+[data-theme="dark"] h1 { color: var(--text-strong, #FFFFFF); }
+[data-theme="dark"] p  { color: var(--text-primary, #FCFAF6); }
+[data-theme="dark"] small { color: var(--text-secondary, rgba(252, 250, 246, 0.65)); }
 ```
 
 ---
 
 ### 3. Elimination of CTA Competition
+
 - Service category cards, informational modules, and secondary list items must **never** use solid accent backgrounds or full accent-filled buttons.
 - Only the single dominant conversion action on a screen (e.g. `BOOK APPOINTMENT` or `ACCESS PORTAL`) receives the uncompromised **10% Accent** treatment.
 
 ---
 
 ### 4. Background & Logo Pairing Rule
+
 - On all vibrant, saturated, or dark surfaces (**Malibu `#6DC6EC`**, **Azure `#21A1F7`**, **SS Blue `#043388`**, **Prussian Blue `#022057`**, and **Void Dark `#090D16`**), interfaces must strictly display the **Primary Dark Logo** (`logo_suamisihat_primary_dark.svg` featuring the white wordmark).
 
 ---
@@ -123,6 +130,7 @@ The design system provides 3 production-certified color patterns engineered for 
 ## 💼 Ecosystem Use Cases
 
 ### 1. Web & Patient Telehealth Portals
+
 - **Doctor Consultation Booking**: High-conversion patient onboarding with frictionless scheduling flows.
 - **Clinical Service Verticals**: Purpose-built visual identities for treatment funnels:
   - *Erectile Dysfunction (ED) Clinical Protocol*
@@ -132,15 +140,19 @@ The design system provides 3 production-certified color patterns engineered for 
   - *Fertility & Semen Quality Biomarkers*
 
 ### 2. Mobile Applications (Expo / React Native & Flutter)
+
 - **Daily Vitality Companion**: Private biometric tracking, medication intake reminders, and treatment progress graphs.
 - **Secure Encrypted Consultation**: End-to-end discreet messaging with certified medical practitioners.
 - **Touch Targets**: Standardized 44px minimum hit targets adhering to iOS HIG and Android Material guidelines.
 
 ### 3. Windows WPF Desktop ([SS CAM Hub](https://github.com/SuamiSihat/ss_cam))
+
 - **Creative Assets Management**: Offline-first desktop suite for internal clinic operators, designers, and marketing teams to export vector logos, generate branded collateral, and inspect token values.
 
 ### 4. Operating Sub-Brands Governance
+
 All operating entities inherit the central token architecture while expressing unique vertical roles:
+
 - **Androlab**: Advanced male health biomarker diagnostics and laboratory services.
 - **Mensculine**: Premium wellness lifestyle, stamina formulations, and vitality nutrition.
 - **MENSS**: Clinical prescription treatments and physician-guided protocols.
@@ -152,7 +164,7 @@ All operating entities inherit the central token architecture while expressing u
 ## 🎨 Master Brand Palette & Tokens
 
 | Swatch | Color Name | Hex Code | Token | Usage |
-|:---:|---|---|---|---|
+| :---: | :--- | :--- | :--- | :--- |
 | 🟦 | **Prussian Blue** | `#022057` | `--ss-prussian-blue` | Primary corporate headers, dark cards, clinical authority |
 | 🔵 | **SS Blue** | `#043388` | `--ss-blue` | Primary brand identity, structural elements, nav headers |
 | 🌐 | **Azure** | `#21A1F7` | `--ss-azure` | Primary 10% conversion CTA (`BOOK APPOINTMENT`), focus rings |
@@ -169,6 +181,7 @@ All operating entities inherit the central token architecture while expressing u
 The system includes standardized Fluent 2 component primitives with WCAG AAA contrast:
 
 ### 1. Primary Action Button (`.ss-btn-primary`)
+
 ```html
 <button class="ss-btn ss-btn-primary">
     <iconify-icon icon="fluent:calendar-ltr-24-filled"></iconify-icon>
@@ -177,6 +190,7 @@ The system includes standardized Fluent 2 component primitives with WCAG AAA con
 ```
 
 ### 2. High-Intent Banana Yellow CTA (`.ss-btn-cta`)
+
 ```html
 <button class="ss-btn ss-btn-cta">
     <iconify-icon icon="fluent:flash-24-filled"></iconify-icon>
@@ -185,6 +199,7 @@ The system includes standardized Fluent 2 component primitives with WCAG AAA con
 ```
 
 ### 3. Secondary & Ghost Actions
+
 ```html
 <button class="ss-btn ss-btn-secondary">Secondary Action</button>
 <button class="ss-btn ss-btn-ghost">Ghost Link</button>
@@ -197,7 +212,7 @@ The system includes standardized Fluent 2 component primitives with WCAG AAA con
 Design tokens follow the **W3C Design Token Community Group** standard and are exported to:
 
 - **Web / CSS**: [`assets/css/fluent.css`](assets/css/fluent.css) & [`assets/css/dist/fluent.css`](assets/css/dist/fluent.css)
-- **Design Tokens (JSON)**: [`assets/tokens/design-tokens.json`](assets/tokens/design-tokens.json)
+- **Design Tokens (JSON)**: [`assets/tokens/tokens.json`](assets/tokens/tokens.json)
 - **TypeScript / Expo**: [`assets/tokens/ss_tokens.ts`](assets/tokens/ss_tokens.ts)
 - **Flutter / Dart**: [`assets/tokens/ss_tokens.dart`](assets/tokens/ss_tokens.dart)
 - **Windows WPF**: Integrated via XAML Resource Dictionaries in [SS CAM](https://github.com/SuamiSihat/ss_cam)
@@ -211,12 +226,13 @@ SS-Design-System/
 ├── src/                          # SvelteKit 2 / Svelte 5 Application
 │   ├── app.html                  # Global HTML shell (Fonts, marked.js, mermaid.js, Iconify)
 │   ├── lib/
-│   │   └── components/           # Reusable living components
-│   │       ├── Navbar.svelte     # Acrylic navigation with 7-item Docs dropdown & dark mode
-│   │       ├── Footer.svelte     # Corporate footer with correct dark logo variant
-│   │       ├── HeroBackground.svelte # Interactive particle & floating logomark canvas
-│   │       ├── ColorSwatch.svelte# Interactive 60:30:10 token swatch inspector
-│   │       └── BrandAssetCard.svelte # Vector asset preview & download tile
+│   │   ├── components/           # Reusable living components
+│   │   │   ├── Navbar.svelte     # Acrylic navigation with 7-item Docs dropdown & dark mode
+│   │   │   ├── Footer.svelte     # Corporate footer with correct dark logo variant
+│   │   │   ├── HeroBackground.svelte # Interactive particle & floating logomark canvas
+│   │   │   ├── ColorSwatch.svelte# Interactive 60:30:10 token swatch inspector
+│   │   │   └── BrandAssetCard.svelte # Vector asset preview & download tile
+│   │   └── stores/               # Svelte stores & state management
 │   └── routes/                   # File-based routes & living pages
 │       ├── +page.svelte          # System Home & Executive Overview
 │       ├── brand-system/         # Living Brand Identity, 60:30:10 & Token Governance
@@ -229,20 +245,33 @@ SS-Design-System/
 │       ├── onboarding/           # Interactive Staff Onboarding Guide
 │       ├── signature/            # Dynamic Email Signature Generator
 │       └── tools/                # SS CAM Windows Desktop Integration
-├── content/                      # Canonical Markdown Documentation Source
-│   ├── changelog.md              # Authoritative System Changelog (v1.0 → v3.5)
-│   ├── roadmap.md                # Strategic Milestone Roadmap
-│   ├── brand-voice.md            # Clinical Tone & Copywriting Standards
-│   └── vision-mission.md         # Corporate Governance & Clinical Pillars
 ├── static/                       # Static Public Assets (served at web root)
 │   ├── public/brand/             # Official SVG logos & sub-brand marks
-│   ├── products/                 # Product vector marks & packaging renders
-│   └── content/                  # Synced markdown documents for client fetching
-├── assets/                       # Legacy & CSS token stylesheets (fluent.css, ss_theme.css)
-├── scripts/                      # Build automation & Synology NAS sync scripts
+│   ├── products/                 # Product vector marks, metadata & packaging renders
+│   ├── brand-guidelines/         # PDF booklet covers & printable guides
+│   └── content/                  # Markdown documentation source for client fetching
+│       ├── introduction.md       # System Introduction & Standards
+│       ├── text-color-guide.md   # Authoritative 4-Tier Text Hierarchy Guide
+│       ├── roadmap.md            # Strategic Milestone Roadmap
+│       ├── changelog.md          # System Changelog (v1.0 → v3.5)
+│       ├── brand-voice.md        # Clinical Tone & Copywriting Standards
+│       ├── contribution-guide.md # Open Contribution & PR Guidelines
+│       ├── vision-mission.md     # Corporate Governance & Clinical Pillars
+│       └── sub-brands/           # Subsidiary branding documentation (01-SSH to 05-SST)
+├── assets/                       # Global CSS stylesheets & W3C Token exports
+│   ├── css/                      # fluent.css, ss_theme.css, style.css, brand-system.css
+│   ├── js/                       # main.js (ThemeManager, LogoSelector, Clipboard)
+│   └── tokens/                   # tokens.json (W3C standard token definitions)
+├── scripts/                      # Build automation & quality assurance suites
+│   ├── smoke-test.mjs            # 29-point bundle, token & SSG validation suite
+│   ├── dom-test.mjs              # 89-point DOM hierarchy & structural test suite
+│   ├── minify-css.mjs            # LightningCSS optimization pipeline
+│   ├── minify-js.mjs             # Terser JavaScript optimization pipeline
+│   ├── sync-build.mjs            # Static build sync to web root for NAS hosting
+│   └── watch.mjs                 # Chokidar asset change watcher
 ├── svelte.config.js              # SvelteKit static adapter configuration
 ├── vite.config.js                # Vite build configuration
-└── package.json                  # Dependencies (SvelteKit, Svelte 5, Tailwind)
+└── package.json                  # Dependencies (SvelteKit, Svelte 5, Tailwind, LightningCSS)
 ```
 
 ---
@@ -250,37 +279,48 @@ SS-Design-System/
 ## 🚀 Quick Start & Build Pipeline
 
 ### 1. Local Development
+
 ```bash
 # Clone the repository
 git clone https://github.com/SuamiSihat/SS-Design-System.git
 cd SS-Design-System
 
-# Install build dependencies
+# Install dependencies
 npm install
 
-# Start development watcher (auto-minifies CSS & JS on save)
-npm run watch
+# Start development server with Hot Module Replacement (HMR)
+npm run dev
 ```
 
 ### 2. Build for Production
+
 ```bash
-# Rebuild all minified production assets
+# Build raw assets, compile SvelteKit SSG, and sync web root
 npm run build
 ```
 
-### 3. Deploy to Production NAS
+### 3. Run Quality Assurance Test Suite
+
 ```bash
-# Execute deployment script
-powershell -ExecutionPolicy Bypass -File deploy.ps1 -Message "feat: release update"
+# Run all 118 automated tests (Smoke + DOM Validation)
+npm test
+```
+
+### 4. Deploy to Production NAS
+
+```bash
+# Execute deployment script to Synology NAS Web Station
+powershell -ExecutionPolicy Bypass -File deploy.ps1 -Message "feat: release v3.5.0 update"
 ```
 
 ---
 
 ## 🤝 Contributing & Governance
 
-1. All new components must adhere strictly to the **60:30:10 Visual Allocation Rule** and use **Neutral Black (`#1C1C1C`)** for typography.
-2. Review our [Contribution Guide](pages/doc.html?doc=contribution-guide) before opening a Pull Request.
-3. Report vulnerabilities privately to **[branding@suamisihat.com](mailto:branding@suamisihat.com)**.
+1. All new components must adhere strictly to the **60:30:10 Visual Allocation Rule** and the **4-Tier Text Color Hierarchy** (`--text-strong`, `--text-primary`, `--text-secondary`, `--text-disabled`).
+2. Review our [Contribution Guide](/doc/?doc=contribution-guide) before opening a Pull Request.
+3. Verify that all tests pass (`npm test` — 100% pass required) before submitting changes.
+4. Report vulnerabilities privately to **[branding@suamisihat.com](mailto:branding@suamisihat.com)**.
 
 ---
 

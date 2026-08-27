@@ -70,7 +70,7 @@
 FileETag None
 
 # ============================================================================
-# Clean URL Rewriting & Extensionless Navigation
+# Clean URL Rewriting & SvelteKit Static Hosting
 # ============================================================================
 <IfModule mod_rewrite.c>
     RewriteEngine On
@@ -80,33 +80,21 @@ FileETag None
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteRule ^(.+[^/])$ $1/ [R=301,L]
 
-    # 1. Fallback internal rewrite: if requested URL + .html exists, rewrite to it
+    # 1. Fallback internal rewrite: if requested directory contains index.html, serve it
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME}.html -f
-    RewriteRule ^(.*)$ $1.html [L,QSA]
+    RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+    RewriteRule ^(.*)$ $1/index.html [L,QSA]
 
-    # 2. Internal Rewrite: /pages/name -> /pages/name.html
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^pages/([a-zA-Z0-9_-]+)/?$ pages/$1.html [L,QSA]
-
-    # 3. Internal Rewrite: /name -> /pages/name.html (Root short alias)
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^([a-zA-Z0-9_-]+)/?$ pages/$1.html [L,QSA]
-
-    # 5. Short aliases & doc query shortcuts
-    RewriteRule ^doc-([a-zA-Z0-9_-]+)/?$       pages/doc.html?doc=$1 [QSA,L]
-    RewriteRule ^pages/doc-([a-zA-Z0-9_-]+)/?$  pages/doc.html?doc=$1 [QSA,L]
-    RewriteRule ^roadmap/?$                     pages/doc.html?doc=roadmap [QSA,L]
-    RewriteRule ^changelog/?$                   pages/doc.html?doc=changelog [QSA,L]
-    RewriteRule ^brand/?$                       pages/brand-system.html [QSA,L]
-    RewriteRule ^guidelines/?$                  pages/brand-guidelines.html [QSA,L]
-    RewriteRule ^colors/?$                      pages/brand-system.html#colour [R=301,NE,L]
-    RewriteRule ^typography/?$                  pages/brand-system.html#typography [R=301,NE,L]
-    RewriteRule ^logos/?$                       pages/brand-system.html#logomark [R=301,NE,L]
-    RewriteRule ^download/?$                    pages/brand-system.html#download [R=301,NE,L]
+    # 2. Short aliases
+    RewriteRule ^roadmap/?$                     doc/?doc=roadmap [R=301,L,QSA]
+    RewriteRule ^changelog/?$                   doc/?doc=changelog [R=301,L,QSA]
+    RewriteRule ^brand/?$                       brand-system/ [R=301,L]
+    RewriteRule ^guidelines/?$                  brand-guidelines/ [R=301,L]
+    RewriteRule ^colors/?$                      brand-system/#colour [R=301,NE,L]
+    RewriteRule ^typography/?$                  brand-system/#typography [R=301,NE,L]
+    RewriteRule ^logos/?$                       brand-system/#logomark [R=301,NE,L]
+    RewriteRule ^download/?$                    brand-system/#downloads [R=301,NE,L]
 </IfModule>
 
 # ============================================================================
@@ -120,20 +108,10 @@ FileETag None
     Require all denied
 </FilesMatch>
 
-# Password-protect a directory (uncomment if needed)
-# <Directory "/var/www/html/brand-guidelines">
-#     AuthType Basic
-#     AuthName "Restricted"
-#     AuthUserFile "/var/www/html/.htpasswd"
-#     Require valid-user
-# </Directory>
-
 # ============================================================================
 # Error Handling
 # ============================================================================
-ErrorDocument 403 /pages/403.html
-ErrorDocument 404 /pages/404.html
-ErrorDocument 500 /pages/500.html
+ErrorDocument 404 /404.html
 
 # ============================================================================
 # Maintenance Mode (uncomment when needed)
