@@ -11,7 +11,8 @@
     "build:css": "node scripts/minify-css.mjs",
     "build:js": "node scripts/minify-js.mjs",
     "preview": "vite preview",
-    "watch": "node scripts/watch.mjs"
+    "watch": "node scripts/watch.mjs",
+    "deploy": "powershell -ExecutionPolicy Bypass -File deploy.ps1"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.10",
