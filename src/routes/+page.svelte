@@ -1,17 +1,24 @@
 <script>
   import { onMount } from 'svelte';
+  import { theme } from '$lib/stores/theme.js';
 
-  let canvas;
+  let canvas = $state();
   let animId;
+  let isDarkMode = $derived($theme === 'dark');
 
   onMount(() => {
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const cvs = canvas || document.getElementById('heroWaveCanvas');
+    if (!cvs) return;
+    const ctx = cvs.getContext('2d');
+    if (!ctx) return;
+
     let width = 0;
     let height = 0;
     let time = 0;
     let mouseX = -1000;
     let mouseY = -1000;
+    let targetMouseX = -1000;
+    let targetMouseY = -1000;
 
     const stars = [];
     const floatingLogos = [];
@@ -21,118 +28,275 @@
     logoImg.onload = () => { logoImgLoaded = true; };
 
     function resize() {
-      const parent = canvas.parentElement;
-      width = canvas.width = parent.offsetWidth;
-      height = canvas.height = parent.offsetHeight;
+      if (!cvs) return;
+      const parent = cvs.parentElement || document.querySelector('.f-hero');
+      if (!parent) return;
+      const dpr = window.devicePixelRatio || 1;
+      width = parent.clientWidth || window.innerWidth || 1200;
+      height = Math.max(parent.clientHeight || parent.offsetHeight || 500, 480);
+      
+      cvs.width = Math.floor(width * dpr);
+      cvs.height = Math.floor(height * dpr);
+      cvs.style.width = `${width}px`;
+      cvs.style.height = `${height}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
       initParticles();
     }
 
     function initParticles() {
       stars.length = 0;
-      const count = Math.floor((width * height) / 12000);
+      // Men's / Mars ♂ symbol particle count
+      const count = Math.min(55, Math.max(28, Math.floor((width * height) / 14000)));
       for (let i = 0; i < count; i++) {
+        const colorType = Math.random();
         stars.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          radius: Math.random() * 1.5 + 0.5,
-          baseAlpha: Math.random() * 0.5 + 0.2,
-          speed: Math.random() * 0.02 + 0.005,
-          phase: Math.random() * Math.PI * 2
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.25,
+          size: Math.random() * 10 + 16,
+          rotation: Math.random() * Math.PI * 2,
+          rotSpeed: (Math.random() - 0.5) * 0.015,
+          baseOpacity: Math.random() * 0.35 + 0.35,
+          twinkleSpeed: Math.random() * 0.03 + 0.01,
+          twinkleOffset: Math.random() * Math.PI * 2,
+          isFragment: i % 3 === 0,
+          color: colorType > 0.75 ? '#F7E143' : colorType > 0.45 ? '#21A1F7' : colorType > 0.2 ? '#6DC6EC' : '#FFFFFF'
         });
       }
 
       floatingLogos.length = 0;
-      const logoCount = Math.max(3, Math.floor(width / 320));
+      const logoCount = Math.min(6, Math.max(3, Math.floor(width / 260)));
       for (let i = 0; i < logoCount; i++) {
         floatingLogos.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
-          size: Math.random() * 20 + 24,
-          vx: (Math.random() - 0.5) * 0.3,
-          vy: (Math.random() - 0.5) * 0.2,
+          x: (width / (logoCount + 1)) * (i + 1) + (Math.random() - 0.5) * 80,
+          y: height * 0.5 + (Math.random() - 0.5) * 160,
+          size: Math.random() * 14 + 32,
+          vx: (Math.random() - 0.5) * 0.25,
+          vy: (Math.random() - 0.5) * 0.18,
           rot: Math.random() * Math.PI * 2,
           vRot: (Math.random() - 0.5) * 0.005,
-          alpha: Math.random() * 0.12 + 0.04
+          phase: Math.random() * Math.PI * 2,
+          floatSpeed: Math.random() * 0.02 + 0.01,
+          floatAmp: Math.random() * 18 + 10,
+          alpha: Math.random() * 0.25 + 0.18
         });
       }
     }
 
     function handleMouseMove(e) {
-      const rect = canvas.getBoundingClientRect();
-      mouseX = e.clientX - rect.left;
-      mouseY = e.clientY - rect.top;
+      if (!cvs) return;
+      const rect = cvs.getBoundingClientRect();
+      targetMouseX = e.clientX - rect.left;
+      targetMouseY = e.clientY - rect.top;
     }
 
     function handleMouseLeave() {
-      mouseX = -1000;
-      mouseY = -1000;
+      targetMouseX = -1000;
+      targetMouseY = -1000;
     }
 
-    canvas.parentElement.addEventListener('mousemove', handleMouseMove);
-    canvas.parentElement.addEventListener('mouseleave', handleMouseLeave);
-    window.addEventListener('resize', resize);
+    const heroSection = cvs.parentElement || document.querySelector('.f-hero');
+    if (heroSection) {
+      heroSection.addEventListener('mousemove', handleMouseMove, { passive: true });
+      heroSection.addEventListener('mouseleave', handleMouseLeave, { passive: true });
+    }
+    window.addEventListener('resize', resize, { passive: true });
     resize();
 
     function render() {
-      time += 0.015;
+      time += 0.018;
+      
+      // Smooth mouse follow
+      mouseX += (targetMouseX - mouseX) * 0.08;
+      mouseY += (targetMouseY - mouseY) * 0.08;
+
       ctx.clearRect(0, 0, width, height);
 
-      // Stars
-      for (const s of stars) {
-        const a = s.baseAlpha + Math.sin(time * 2 + s.phase) * 0.2;
-        ctx.fillStyle = `rgba(255, 255, 255, ${Math.max(0, a)})`;
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
-        ctx.fill();
-      }
+      // 1. Draw Flowing Sine Wave Energy Streams (Centered Across Hero Title)
+      drawWaveStreams();
 
-      // Floating Logos
-      if (logoImgLoaded) {
-        for (const l of floatingLogos) {
-          l.x += l.vx;
-          l.y += l.vy;
-          l.rot += l.vRot;
-          if (l.x < -50) l.x = width + 50;
-          if (l.x > width + 50) l.x = -50;
-          if (l.y < -50) l.y = height + 50;
-          if (l.y > height + 50) l.y = -50;
+      // 2. Draw Floating SuamiSihat Logomark Marks
+      drawLogos();
 
-          ctx.save();
-          ctx.translate(l.x, l.y);
-          ctx.rotate(l.rot);
-          ctx.globalAlpha = l.alpha;
-          ctx.drawImage(logoImg, -l.size / 2, -l.size / 2, l.size, l.size);
-          ctx.restore();
-        }
-      }
-
-      // Dynamic Sine Waves
-      drawWave(0.004, 25, 0.8, 'rgba(33, 161, 247, 0.08)', height * 0.7);
-      drawWave(0.006, 35, 1.2, 'rgba(109, 198, 236, 0.06)', height * 0.78);
-      drawWave(0.003, 45, 0.5, 'rgba(4, 51, 136, 0.15)', height * 0.85);
+      // 3. Draw Men's / Mars (♂) Star Particles & Shards
+      drawMarsParticles();
 
       animId = requestAnimationFrame(render);
     }
 
-    function drawWave(freq, amp, speed, color, baseH) {
-      ctx.fillStyle = color;
-      ctx.beginPath();
-      ctx.moveTo(0, height);
-      for (let x = 0; x <= width; x += 8) {
-        let mouseEffect = 0;
-        if (mouseX > 0) {
-          const d = Math.abs(x - mouseX);
-          if (d < 180) mouseEffect = Math.cos((d / 180) * (Math.PI / 2)) * 20;
+    function drawWaveStreams() {
+      const streamColors = [
+        'rgba(33, 161, 247, 0.42)',  // Azure
+        'rgba(109, 198, 236, 0.32)', // Malibu
+        'rgba(247, 225, 67, 0.26)',  // Banana Gold
+        'rgba(255, 255, 255, 0.20)'  // White
+      ];
+
+      const yCenter = height * 0.52;
+
+      for (let l = 0; l < 4; l++) {
+        ctx.beginPath();
+        const yBase = yCenter + (l - 1.5) * 34;
+        const freq = 0.0026 + l * 0.0012;
+        const amp = 30 + l * 10;
+        const speed = time * (0.7 + l * 0.25);
+
+        for (let x = 0; x <= width; x += 12) {
+          const dx = x - mouseX;
+          const dy = yBase - mouseY;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          const mouseForce = dist < 160 ? Math.sin((160 - dist) / 160 * Math.PI) * 26 : 0;
+
+          const y = yBase + Math.sin(x * freq + speed) * amp + Math.cos(x * 0.006 - speed * 0.5) * (amp * 0.35) + mouseForce;
+
+          if (x === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
+
+          // Glowing node dots
+          if (x % 50 === 0) {
+            ctx.save();
+            ctx.fillStyle = l === 2 ? '#F7E143' : '#6DC6EC';
+            ctx.globalAlpha = 0.65 + Math.sin(x * 0.04 + time * 3) * 0.25;
+            ctx.shadowColor = l === 2 ? '#F7E143' : '#21A1F7';
+            ctx.shadowBlur = 8;
+            ctx.beginPath();
+            ctx.arc(x, y, 2.8, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.restore();
+          }
         }
-        const y = baseH + Math.sin(x * freq + time * speed) * amp - mouseEffect;
-        ctx.lineTo(x, y);
+
+        ctx.strokeStyle = streamColors[l];
+        ctx.lineWidth = 1.8;
+        ctx.stroke();
       }
-      ctx.lineTo(width, height);
-      ctx.closePath();
-      ctx.fill();
     }
 
-    render();
+    function drawLogos() {
+      for (const l of floatingLogos) {
+        l.x += l.vx;
+        if (l.x < -60) l.x = width + 60;
+        if (l.x > width + 60) l.x = -60;
+
+        const floatY = l.y + Math.sin(time * l.floatSpeed * 40 + l.phase) * l.floatAmp;
+
+        // Mouse Repulsion
+        const dx = l.x - mouseX;
+        const dy = floatY - mouseY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        let pushX = 0, pushY = 0;
+        if (dist < 160 && dist > 0) {
+          const force = (160 - dist) / 160;
+          pushX = (dx / dist) * force * 28;
+          pushY = (dy / dist) * force * 28;
+        }
+
+        ctx.save();
+        ctx.translate(l.x + pushX, floatY + pushY);
+        ctx.rotate(l.rot);
+        ctx.globalAlpha = l.alpha;
+
+        if (logoImgLoaded && logoImg) {
+          ctx.drawImage(logoImg, -l.size / 2, -l.size / 2, l.size, l.size);
+        } else {
+          // Precise vector S-logomark fallback
+          ctx.strokeStyle = '#6DC6EC';
+          ctx.lineWidth = 2.4;
+          ctx.beginPath();
+          ctx.arc(0, -l.size * 0.22, l.size * 0.32, Math.PI * 0.5, Math.PI * 1.8);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.arc(0, l.size * 0.22, l.size * 0.32, Math.PI * 1.5, Math.PI * 0.8, true);
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+    }
+
+    function drawMarsParticles() {
+      for (const s of stars) {
+        s.x += s.vx;
+        s.y += s.vy;
+        if (s.x < -30) s.x = width + 30;
+        if (s.x > width + 30) s.x = -30;
+        if (s.y < -30) s.y = height + 30;
+        if (s.y > height + 30) s.y = -30;
+
+        s.rotation += s.rotSpeed;
+
+        const opacity = Math.max(0.2, s.baseOpacity + Math.sin(time * s.twinkleSpeed * 50 + s.twinkleOffset) * 0.25);
+
+        // Mouse Repulsion
+        const dx = s.x - mouseX;
+        const dy = s.y - mouseY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        let pushX = 0, pushY = 0;
+        if (dist < 140 && dist > 0) {
+          const force = (140 - dist) / 140;
+          pushX = (dx / dist) * force * 24;
+          pushY = (dy / dist) * force * 24;
+        }
+
+        ctx.save();
+        ctx.translate(s.x + pushX, s.y + pushY);
+        ctx.rotate(s.rotation);
+        ctx.globalAlpha = opacity;
+
+        ctx.strokeStyle = s.color;
+        ctx.fillStyle = s.color;
+        ctx.lineWidth = 1.8;
+        ctx.shadowColor = s.color;
+        ctx.shadowBlur = 6;
+
+        const sz = s.size;
+
+        if (s.isFragment) {
+          // Shard fragment: Arc + Angled arrow head
+          ctx.beginPath();
+          ctx.arc(0, 0, sz * 0.35, 0, Math.PI * 1.3);
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(sz * 0.2, -sz * 0.2);
+          ctx.lineTo(sz * 0.65, -sz * 0.65);
+          ctx.stroke();
+
+          ctx.beginPath();
+          ctx.moveTo(sz * 0.65, -sz * 0.65);
+          ctx.lineTo(sz * 0.35, -sz * 0.65);
+          ctx.lineTo(sz * 0.65, -sz * 0.35);
+          ctx.closePath();
+          ctx.fill();
+        } else {
+          // Classic Mars / Men's gender symbol ♂
+          // 1. Circle at lower-left
+          ctx.beginPath();
+          ctx.arc(-sz * 0.16, sz * 0.16, sz * 0.35, 0, Math.PI * 2);
+          ctx.stroke();
+
+          // 2. Arrow stem pointing 45° upper-right
+          ctx.beginPath();
+          ctx.moveTo(sz * 0.1, -sz * 0.1);
+          ctx.lineTo(sz * 0.6, -sz * 0.6);
+          ctx.stroke();
+
+          // 3. Arrow tip
+          ctx.beginPath();
+          ctx.moveTo(sz * 0.6, -sz * 0.6);
+          ctx.lineTo(sz * 0.28, -sz * 0.6);
+          ctx.lineTo(sz * 0.6, -sz * 0.28);
+          ctx.closePath();
+          ctx.fill();
+        }
+
+        ctx.restore();
+      }
+    }
 
     return () => {
       window.removeEventListener('resize', resize);
@@ -157,15 +321,14 @@
 
   <div class="f-hero-inner f-animate-up">
     <div class="f-hero-eyebrow">
-      <iconify-icon icon="fluent:record-16-regular" aria-hidden="true"></iconify-icon>
-      Design System &mdash; v3.5
+      <iconify-icon icon="fluent:gender-male-24-regular" style="font-size: 1.15rem; color: #6DC6EC; vertical-align: middle;" aria-hidden="true"></iconify-icon>
+      <span>SuamiSihat™ Design System &bull; v3.5</span>
     </div>
     <h1 class="f-hero-title">
-      Ship the SuamiSihat™ brand<br>faster and better.
+      One source. Every standard.<br>Ship with confidence.
     </h1>
     <p class="f-hero-subtitle">
-      The single source of truth for how we look, feel, and sound. 
-      Everything from Fluent 2 tokens and UI components to brand kits and onboarding guides.
+      The authoritative single source of truth for the SuamiSihat™ brand ecosystem &mdash; unifying design tokens, Fluent 2 components, guidelines, and subsidiary standards.
     </p>
     <div class="f-hero-ctas">
       <a href="/brand-system/" class="f-btn-hero-primary" id="hero-cta-brand">
@@ -192,9 +355,9 @@
      ================================================================ -->
 <main id="main-content">
   <section id="explore" class="f-portal-section" aria-label="Navigate to hub sections">
-    <p class="f-section-label">Hub Modules</p>
-    <h2 class="f-section-title">Everything you need to build.</h2>
-    <p class="f-section-subtitle">No more guessing hex codes or hunting for logos. Grab what you need and get back to shipping.</p>
+    <p class="f-section-label">Knowledge Hub</p>
+    <h2 class="f-section-title">Every standard. Every asset. One place.</h2>
+    <p class="f-section-subtitle">Eliminate inconsistency across every touchpoint. Curated brand tokens, component standards, product documentation, and operational resources.</p>
 
     <div class="f-portal-grid">
 
@@ -321,12 +484,12 @@
   <!-- About This Hub -->
   <section id="about" class="f-portal-section" style="padding-top:0;">
     <hr class="f-divider">
-    <p class="f-section-label">About</p>
-    <h2 class="f-section-title">We speak one language.</h2>
+    <p class="f-section-label">Governance</p>
+    <h2 class="f-section-title">One Language. One Brand.</h2>
     <p style="font-size:0.95rem;color:var(--color-neutral-fg-2);line-height:1.75;max-width:680px;margin-bottom:var(--f-space-6);">
-      The SuamiSihat™ Design System ensures our brand looks sharp, consistent, and premium across all touchpoints. 
-      Whether you're spinning up a new web app, drafting a social post, or presenting to partners &mdash; this is your source code. 
-      Need something else? Ping us at <a href="mailto:branding@suamisihat.com" style="color:var(--color-brand-primary); font-weight: 500;">branding@suamisihat.com</a>.
+      The SuamiSihat™ Design System governs the visual and experiential language across every digital and physical touchpoint. 
+      Whether you are developing clinical applications, producing brand communications, or engaging healthcare partners &mdash; this is your authoritative reference standard. 
+      For design enquiries, contact <a href="mailto:branding@suamisihat.com" style="color:var(--color-brand-primary); font-weight: 500;">branding@suamisihat.com</a>.
     </p>
 
     <!-- Vision & Mission -->
@@ -356,27 +519,25 @@
     <div class="f-subbrand-header">
       <div class="f-subbrand-badge">
         <iconify-icon icon="fluent:layer-diagonal-24-regular" aria-hidden="true"></iconify-icon>
-        Ecosystem Architecture
+        Corporate Ecosystem
       </div>
-      <h2 class="f-subbrand-title">Operating Sub-Brands</h2>
-      <p class="f-subbrand-subtitle">Every entity in the SuamiSihat™ family operates under unified brand governance with tailored visual identities.</p>
+      <h2 class="f-subbrand-title">Subsidiary Brand Network</h2>
+      <p class="f-subbrand-subtitle">Each entity in the SuamiSihat™ family operates under a unified governance framework with tailored visual identities.</p>
     </div>
 
     <div class="f-subbrand-grid">
       <!-- 1 · SSH -->
-      <a href="/brand-system/#subbrand" class="f-subbrand-card" aria-label="Explore SS Holding guidelines">
+      <a href="/brand-system/#subbrand" class="f-subbrand-card" aria-label="Explore SS Health guidelines">
         <div class="f-subbrand-card-top">
           <span class="f-subbrand-pill">SSH</span>
           <span class="f-subbrand-status-dot" title="Active Entity"></span>
         </div>
         <div class="f-subbrand-logo-wrap">
-          <img src="/public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_light.svg"
-               data-light-src="/public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_light.svg"
-               data-dark-src="/public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg"
-               alt="SS Holding Logo" loading="lazy">
+          <img src={isDarkMode ? "/public/brand/logos/01_logo_ssHealth/logo_ssh_primary_dark.svg" : "/public/brand/logos/01_logo_ssHealth/logo_ssh_primary_light.svg"}
+               alt="SS Health Logo" loading="lazy">
         </div>
         <div class="f-subbrand-card-body">
-          <div class="f-subbrand-name">SS Holding</div>
+          <div class="f-subbrand-name">SS Health</div>
           <div class="f-subbrand-desc">Corporate governance, investor relations, and strategic steering.</div>
         </div>
         <div class="f-subbrand-card-footer">
@@ -392,9 +553,7 @@
           <span class="f-subbrand-status-dot" title="Active Entity"></span>
         </div>
         <div class="f-subbrand-logo-wrap">
-          <img src="/public/brand/logos/02_logo_ssClinic/logo_ssc_primary_light.svg"
-               data-light-src="/public/brand/logos/02_logo_ssClinic/logo_ssc_primary_light.svg"
-               data-dark-src="/public/brand/logos/02_logo_ssClinic/logo_ssc_primary_dark.svg"
+          <img src={isDarkMode ? "/public/brand/logos/02_logo_ssClinic/logo_ssc_primary_dark.svg" : "/public/brand/logos/02_logo_ssClinic/logo_ssc_primary_light.svg"}
                alt="SS Clinic Logo" loading="lazy">
         </div>
         <div class="f-subbrand-card-body">
@@ -407,21 +566,19 @@
         </div>
       </a>
 
-      <!-- 3 · SSG -->
-      <a href="/brand-system/#subbrand" class="f-subbrand-card" aria-label="Explore SS Group guidelines">
+      <!-- 3 · SSW -->
+      <a href="/brand-system/#subbrand" class="f-subbrand-card" aria-label="Explore SS Wellness guidelines">
         <div class="f-subbrand-card-top">
-          <span class="f-subbrand-pill">SSG</span>
+          <span class="f-subbrand-pill">SSW</span>
           <span class="f-subbrand-status-dot" title="Active Entity"></span>
         </div>
         <div class="f-subbrand-logo-wrap">
-          <img src="/public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_light.svg"
-               data-light-src="/public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_light.svg"
-               data-dark-src="/public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg"
-               alt="SS Group Logo" loading="lazy">
+          <img src={isDarkMode ? "/public/brand/logos/03_logo_ssWellness/logo_ssw_primary_dark.svg" : "/public/brand/logos/03_logo_ssWellness/logo_ssw_primary_light.svg"}
+               alt="SS Wellness Logo" loading="lazy">
         </div>
         <div class="f-subbrand-card-body">
-          <div class="f-subbrand-name">SS Group</div>
-          <div class="f-subbrand-desc">Health consultations, group initiatives, and community outreach.</div>
+          <div class="f-subbrand-name">SS Wellness</div>
+          <div class="f-subbrand-desc">Wellness products, health tracking, supplements, and daily well-being.</div>
         </div>
         <div class="f-subbrand-card-footer">
           <span>Guidelines</span>
@@ -436,9 +593,7 @@
           <span class="f-subbrand-status-dot" title="Active Entity"></span>
         </div>
         <div class="f-subbrand-logo-wrap">
-          <img src="/public/brand/logos/04_logo_ssEcom/logo_sse_primary_light.svg"
-               data-light-src="/public/brand/logos/04_logo_ssEcom/logo_sse_primary_light.svg"
-               data-dark-src="/public/brand/logos/04_logo_ssEcom/logo_sse_primary_dark.svg"
+          <img src={isDarkMode ? "/public/brand/logos/04_logo_ssEcom/logo_sse_primary_dark.svg" : "/public/brand/logos/04_logo_ssEcom/logo_sse_primary_light.svg"}
                alt="SS Ecommerce Logo" loading="lazy">
         </div>
         <div class="f-subbrand-card-body">
@@ -458,9 +613,7 @@
           <span class="f-subbrand-status-dot" title="Active Entity"></span>
         </div>
         <div class="f-subbrand-logo-wrap">
-          <img src="/public/brand/logos/05_logo_ssTech/logo_sst_primary_light.svg"
-               data-light-src="/public/brand/logos/05_logo_ssTech/logo_sst_primary_light.svg"
-               data-dark-src="/public/brand/logos/05_logo_ssTech/logo_sst_primary_dark.svg"
+          <img src={isDarkMode ? "/public/brand/logos/05_logo_ssTech/logo_sst_primary_dark.svg" : "/public/brand/logos/05_logo_ssTech/logo_sst_primary_light.svg"}
                alt="SS Technology Logo" loading="lazy">
         </div>
         <div class="f-subbrand-card-body">
@@ -476,7 +629,7 @@
 
     <div class="f-subbrand-cta-wrap">
       <a href="/brand-system/#subbrand" class="f-subbrand-cta-link">
-        <span>View full sub-brand design rules &amp; colour palettes</span>
+        <span>Explore the complete sub-brand governance standards</span>
         <iconify-icon icon="fluent:arrow-right-24-regular" aria-hidden="true"></iconify-icon>
       </a>
     </div>

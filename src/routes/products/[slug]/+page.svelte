@@ -9,6 +9,33 @@
   let renderedContent = $state('');
   let isSidebarMinimized = $state(false);
   let activeSection = $state('section-history');
+  let selectedGalleryIndex = $state(0);
+  let isLightboxOpen = $state(false);
+
+  function openLightbox(idx = 0) {
+    selectedGalleryIndex = idx;
+    isLightboxOpen = true;
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeLightbox() {
+    isLightboxOpen = false;
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = '';
+    }
+  }
+
+  function prevGalleryImage() {
+    if (!product?.gallery?.length) return;
+    selectedGalleryIndex = (selectedGalleryIndex - 1 + product.gallery.length) % product.gallery.length;
+  }
+
+  function nextGalleryImage() {
+    if (!product?.gallery?.length) return;
+    selectedGalleryIndex = (selectedGalleryIndex + 1) % product.gallery.length;
+  }
 
   const portfolioLinks = [
     { slug: 'androlab',    label: 'ANDROLAB',     icon: 'fluent:pill-24-regular' },
@@ -16,6 +43,7 @@
     { slug: 'mensculine',  label: 'Mensculine',    icon: 'fluent:globe-24-regular' },
     { slug: 'drmitring',   label: 'Dr Mit Ring®',  icon: 'fluent:stethoscope-24-regular' },
     { slug: 'rejal',       label: 'REJAL',         icon: 'fluent:leaf-three-24-regular' },
+    { slug: 'nucaffe',     label: 'nuCaffe®',     icon: 'fluent:drink-coffee-24-regular' },
     { slug: 'pertabi',     label: 'PERTABI',       icon: 'fluent:people-community-24-regular' }
   ];
 
@@ -122,8 +150,11 @@
       <li><a href="#section-history"  class:active={activeSection === 'section-history'}>1. Brand History</a></li>
       <li><a href="#section-assets"   class:active={activeSection === 'section-assets'}>2. Assets & Guidelines</a></li>
       <li><a href="#section-products" class:active={activeSection === 'section-products'}>3. Sub-Products</a></li>
-      <li><a href="#section-synergy"  class:active={activeSection === 'section-synergy'}>4. Synergy & Bundles</a></li>
-      <li><a href="#section-cta"      class:active={activeSection === 'section-cta'}>5. Downloads & Shop</a></li>
+      {#if product.gallery?.length > 0}
+        <li><a href="#section-gallery" class:active={activeSection === 'section-gallery'}>4. Visual Gallery</a></li>
+      {/if}
+      <li><a href="#section-synergy"  class:active={activeSection === 'section-synergy'}>{product.gallery?.length > 0 ? '5' : '4'}. Synergy & Bundles</a></li>
+      <li><a href="#section-cta"      class:active={activeSection === 'section-cta'}>{product.gallery?.length > 0 ? '6' : '5'}. Downloads & Shop</a></li>
     </ul>
   </div>
 </nav>
@@ -131,58 +162,65 @@
 <!-- ─── Page Layout with Sidebar ──────────────────────────────── -->
 <div
   class="f-page-layout"
-  style="display: grid; grid-template-columns: {isSidebarMinimized ? '0 1fr' : '260px 1fr'}; min-height: 60vh; position: relative; transition: grid-template-columns 0.3s ease;"
+  class:sidebar-minimized={isSidebarMinimized}
+  style="display: grid; grid-template-columns: {isSidebarMinimized ? 'minmax(0, 1fr)' : '260px minmax(0, 1fr)'}; min-height: 60vh; position: relative; transition: grid-template-columns 0.3s ease; width: 100%;"
 >
   <!-- Sidebar Toggle Pill -->
   <button
+    type="button"
     class="f-sidebar-toggle"
     onclick={() => isSidebarMinimized = !isSidebarMinimized}
-    aria-label="Toggle sidebar"
+    aria-label={isSidebarMinimized ? "Expand sidebar" : "Minimize sidebar"}
     style="position: fixed; left: {isSidebarMinimized ? '12px' : '248px'}; top: 50vh; width: 24px; height: 24px; border-radius: 50%; background: var(--color-neutral-bg-2); border: 1px solid var(--color-neutral-stroke-2); color: var(--color-neutral-fg-2); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1010; box-shadow: var(--f-shadow-2); transition: all 0.3s ease;"
   >
     <iconify-icon icon={isSidebarMinimized ? "fluent:chevron-right-16-regular" : "fluent:chevron-left-16-regular"}></iconify-icon>
   </button>
 
   <!-- Left Sidebar -->
-  <aside class="f-sidebar acrylic" aria-label="Brand navigation" style="display: {isSidebarMinimized ? 'none' : 'block'}; overflow-y: auto;">
-    <!-- Brand Navigation -->
-    <div class="cat-sidebar-section">
-      <p class="cat-sidebar-heading">Brand Navigation</p>
-      <ul class="cat-nav">
-        <li><a href="#section-history"  class:active={activeSection === 'section-history'}><span class="cat-icon"><iconify-icon icon="fluent:book-compass-24-regular"></iconify-icon></span>1. Brand History</a></li>
-        <li><a href="#section-assets"   class:active={activeSection === 'section-assets'}><span class="cat-icon"><iconify-icon icon="fluent:color-24-regular"></iconify-icon></span>2. Assets & Guidelines</a></li>
-        <li><a href="#section-products" class:active={activeSection === 'section-products'}><span class="cat-icon"><iconify-icon icon="fluent:box-multiple-24-regular"></iconify-icon></span>3. Sub-Products</a></li>
-        <li><a href="#section-synergy"  class:active={activeSection === 'section-synergy'}><span class="cat-icon"><iconify-icon icon="fluent:apps-list-detail-24-regular"></iconify-icon></span>4. Synergy & Bundles</a></li>
-        <li><a href="#section-cta"      class:active={activeSection === 'section-cta'}><span class="cat-icon"><iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon></span>5. Downloads & Shop</a></li>
-      </ul>
-    </div>
+  {#if !isSidebarMinimized}
+    <aside class="f-sidebar acrylic" aria-label="Brand navigation" style="overflow-y: auto;">
+      <!-- Brand Navigation -->
+      <div class="cat-sidebar-section">
+        <p class="cat-sidebar-heading">Brand Navigation</p>
+        <ul class="cat-nav">
+          <li><a href="#section-history"  class:active={activeSection === 'section-history'}><span class="cat-icon"><iconify-icon icon="fluent:book-compass-24-regular"></iconify-icon></span>1. Brand History</a></li>
+          <li><a href="#section-assets"   class:active={activeSection === 'section-assets'}><span class="cat-icon"><iconify-icon icon="fluent:color-24-regular"></iconify-icon></span>2. Assets & Guidelines</a></li>
+          <li><a href="#section-products" class:active={activeSection === 'section-products'}><span class="cat-icon"><iconify-icon icon="fluent:box-multiple-24-regular"></iconify-icon></span>3. Sub-Products</a></li>
+          {#if product.gallery?.length > 0}
+            <li><a href="#section-gallery" class:active={activeSection === 'section-gallery'}><span class="cat-icon"><iconify-icon icon="fluent:image-multiple-24-regular"></iconify-icon></span>4. Visual Gallery</a></li>
+          {/if}
+          <li><a href="#section-synergy"  class:active={activeSection === 'section-synergy'}><span class="cat-icon"><iconify-icon icon="fluent:apps-list-detail-24-regular"></iconify-icon></span>{product.gallery?.length > 0 ? '5' : '4'}. Synergy & Bundles</a></li>
+          <li><a href="#section-cta"      class:active={activeSection === 'section-cta'}><span class="cat-icon"><iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon></span>{product.gallery?.length > 0 ? '6' : '5'}. Downloads & Shop</a></li>
+        </ul>
+      </div>
 
-    <!-- Brand Portfolio -->
-    <div class="cat-sidebar-section">
-      <p class="cat-sidebar-heading">Brand Portfolio</p>
-      <ul class="cat-nav">
-        {#each portfolioLinks as link}
-          <li>
-            <a href="/products/{link.slug}/" class:active={slug === link.slug}>
-              <span class="cat-icon"><iconify-icon icon={link.icon}></iconify-icon></span>
-              {link.label}
-            </a>
-          </li>
-        {/each}
-      </ul>
-    </div>
+      <!-- Brand Portfolio -->
+      <div class="cat-sidebar-section">
+        <p class="cat-sidebar-heading">Brand Portfolio</p>
+        <ul class="cat-nav">
+          {#each portfolioLinks as link}
+            <li>
+              <a href="/products/{link.slug}/" class:active={slug === link.slug}>
+                <span class="cat-icon"><iconify-icon icon={link.icon}></iconify-icon></span>
+                {link.label}
+              </a>
+            </li>
+          {/each}
+        </ul>
+      </div>
 
-    <!-- Navigate -->
-    <div class="cat-sidebar-section">
-      <p class="cat-sidebar-heading">Navigate</p>
-      <ul class="cat-nav">
-        <li><a href="/products/"><span class="cat-icon"><iconify-icon icon="fluent:grid-24-regular"></iconify-icon></span>Products Catalogue</a></li>
-        <li><a href="/brand-system/"><span class="cat-icon"><iconify-icon icon="fluent:color-line-24-regular"></iconify-icon></span>Brand System</a></li>
-        <li><a href="/brand-guidelines/"><span class="cat-icon"><iconify-icon icon="fluent:book-open-24-regular"></iconify-icon></span>Guidelines PDF</a></li>
-        <li><a href="/"><span class="cat-icon"><iconify-icon icon="fluent:home-24-regular"></iconify-icon></span>Home</a></li>
-      </ul>
-    </div>
-  </aside>
+      <!-- Navigate -->
+      <div class="cat-sidebar-section">
+        <p class="cat-sidebar-heading">Navigate</p>
+        <ul class="cat-nav">
+          <li><a href="/products/"><span class="cat-icon"><iconify-icon icon="fluent:grid-24-regular"></iconify-icon></span>Products Catalogue</a></li>
+          <li><a href="/brand-system/"><span class="cat-icon"><iconify-icon icon="fluent:color-line-24-regular"></iconify-icon></span>Brand System</a></li>
+          <li><a href="/brand-guidelines/"><span class="cat-icon"><iconify-icon icon="fluent:book-open-24-regular"></iconify-icon></span>Guidelines PDF</a></li>
+          <li><a href="/"><span class="cat-icon"><iconify-icon icon="fluent:home-24-regular"></iconify-icon></span>Home</a></li>
+        </ul>
+      </div>
+    </aside>
+  {/if}
 
   <!-- Main Content -->
   <main class="brand-hub-main" id="main-content">
@@ -306,7 +344,73 @@
       </section>
     {/if}
 
-    <!-- ── Section 4: Synergy & Bundles ───────────────────────── -->
+    <!-- ── Section 4: Visual Gallery & 3D Showcase ───────────── -->
+    {#if product.gallery?.length > 0}
+      <section id="section-gallery" data-section class="brand-section">
+        <div class="brand-section-header">
+          <div class="brand-section-icon" style="background: rgba(4,51,136,0.08); color: var(--color-brand-primary);">
+            <iconify-icon icon="fluent:image-multiple-24-regular"></iconify-icon>
+          </div>
+          <div>
+            <h2 class="brand-section-title">Product Renders & Photography</h2>
+            <p class="brand-section-desc">Interactive 3D studio packshots, packaging renders, and lifestyle photography ({product.gallery.length} asset{product.gallery.length > 1 ? 's' : ''})</p>
+          </div>
+        </div>
+
+        <div class="brand-section-card p-0" style="overflow: hidden; padding: 0;">
+          <div
+            class="ss-gallery-stage"
+            onclick={() => openLightbox(selectedGalleryIndex)}
+            role="button"
+            tabindex="0"
+            onkeydown={(e) => e.key === 'Enter' && openLightbox(selectedGalleryIndex)}
+            title="Click to zoom in full-screen lightbox"
+          >
+            <span class="ss-gallery-zoom-badge">
+              <iconify-icon icon="fluent:full-screen-maximize-24-regular"></iconify-icon> Click to Zoom
+            </span>
+            <img class="ss-gallery-stage-img" src={product.gallery[selectedGalleryIndex].src} alt={product.gallery[selectedGalleryIndex].title} loading="eager" />
+            
+            {#if product.gallery.length > 1}
+              <button class="ss-carousel-btn prev" type="button" aria-label="Previous image" onclick={(e) => { e.stopPropagation(); prevGalleryImage(); }}>
+                <iconify-icon icon="fluent:chevron-left-24-regular"></iconify-icon>
+              </button>
+              <button class="ss-carousel-btn next" type="button" aria-label="Next image" onclick={(e) => { e.stopPropagation(); nextGalleryImage(); }}>
+                <iconify-icon icon="fluent:chevron-right-24-regular"></iconify-icon>
+              </button>
+            {/if}
+          </div>
+
+          <div class="ss-gallery-meta">
+            <div>
+              <div class="ss-gallery-meta-title">{product.gallery[selectedGalleryIndex].title}</div>
+              <p class="ss-gallery-meta-sub">{product.gallery[selectedGalleryIndex].sub}</p>
+            </div>
+            <span class="badge bg-primary bg-opacity-10 text-primary font-monospace" style="font-size:0.75rem; padding: 4px 10px; border-radius: 6px;">
+              Asset {selectedGalleryIndex + 1} of {product.gallery.length}
+            </span>
+          </div>
+
+          {#if product.gallery.length > 1}
+            <div class="ss-gallery-thumbs">
+              {#each product.gallery as item, idx}
+                <button
+                  class="ss-gallery-thumb"
+                  class:active={selectedGalleryIndex === idx}
+                  type="button"
+                  onclick={() => selectedGalleryIndex = idx}
+                  aria-label={`View ${item.title}`}
+                >
+                  <img src={item.src} alt={item.title} loading="lazy" />
+                </button>
+              {/each}
+            </div>
+          {/if}
+        </div>
+      </section>
+    {/if}
+
+    <!-- ── Section 5: Synergy & Bundles ───────────────────────── -->
     <section id="section-synergy" data-section class="brand-section">
       <div class="brand-section-header">
         <div class="brand-section-icon" style="background: rgba(4,51,136,0.08); color: var(--color-brand-primary);">
@@ -322,7 +426,7 @@
       </div>
     </section>
 
-    <!-- ── Section 5: Downloads & Shop ────────────────────────── -->
+    <!-- ── Section 6: Downloads & Shop ────────────────────────── -->
     <section id="section-cta" data-section class="brand-section">
       <div class="brand-section-header">
         <div class="brand-section-icon" style="background: rgba(4,51,136,0.08); color: var(--color-brand-primary);">
@@ -354,6 +458,34 @@
   </main>
 </div>
 
+<!-- ─── Lightbox Modal ────────────────────────────────────────── -->
+{#if isLightboxOpen && product?.gallery?.[selectedGalleryIndex]}
+  <div class="lightbox-overlay" onclick={closeLightbox} role="dialog" aria-modal="true" aria-label="Product Image Lightbox">
+    <button class="lightbox-close" onclick={closeLightbox} aria-label="Close fullscreen view">
+      <iconify-icon icon="fluent:dismiss-24-regular"></iconify-icon>
+    </button>
+    
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+    <div class="lightbox-content" onclick={(e) => e.stopPropagation()} role="document">
+      <img src={product.gallery[selectedGalleryIndex].src} alt={product.gallery[selectedGalleryIndex].title} class="lightbox-img" />
+      <div class="lightbox-caption">
+        <h4 class="lightbox-title">{product.gallery[selectedGalleryIndex].title}</h4>
+        <p class="lightbox-sub">{product.gallery[selectedGalleryIndex].sub}</p>
+      </div>
+
+      {#if product.gallery.length > 1}
+        <button class="lightbox-nav prev" onclick={prevGalleryImage} aria-label="Previous image">
+          <iconify-icon icon="fluent:chevron-left-24-regular"></iconify-icon>
+        </button>
+        <button class="lightbox-nav next" onclick={nextGalleryImage} aria-label="Next image">
+          <iconify-icon icon="fluent:chevron-right-24-regular"></iconify-icon>
+        </button>
+      {/if}
+    </div>
+  </div>
+{/if}
+
 {/if}
 
 <style>
@@ -372,9 +504,11 @@
     pointer-events: none;
   }
   .brand-hero-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 3rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 clamp(1.5rem, 4vw, 4rem);
+    box-sizing: border-box;
     position: relative;
     z-index: 1;
   }
@@ -432,16 +566,18 @@
     background: rgba(7,13,24,0.92);
     border-bottom-color: rgba(255,255,255,0.08);
   }
-  .sub-nav-inner { max-width: 1400px; margin: 0 auto; padding: 0 3rem; }
+  .sub-nav-inner { width: 100%; max-width: 100%; margin: 0; padding: 0 clamp(1.5rem, 4vw, 4rem); box-sizing: border-box; }
   .sub-nav-links { display: flex; gap: 1.5rem; list-style: none; padding: 0; margin: 0; overflow-x: auto; white-space: nowrap; }
   .sub-nav-links a { font-size: 0.8125rem; font-weight: 600; color: var(--color-neutral-fg-2); text-decoration: none; padding: 4px 0; transition: color 0.15s ease; border-bottom: 2px solid transparent; }
   .sub-nav-links a:hover, .sub-nav-links a.active { color: var(--color-brand-primary, #043388); border-bottom-color: var(--color-brand-primary, #043388); }
 
   /* ── Main layout ──────────────────────────── */
   .brand-hub-main {
-    padding: 2.5rem 3rem;
+    padding: 2.5rem clamp(1.5rem, 4vw, 4rem);
     min-width: 0;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
   @media (max-width: 768px) { .brand-hub-main { padding: 1.5rem 1.25rem; } }
 
@@ -485,4 +621,245 @@
   .product-assets-btn:hover { background: var(--color-brand-primary); color: #fff; border-color: transparent; }
   .btn-outline-small { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 600; padding: 6px 14px; border-radius: 8px; background: transparent; color: var(--color-neutral-fg-2); text-decoration: none; border: 1px solid var(--color-neutral-stroke-1); transition: all 0.15s ease; }
   .btn-outline-small:hover { color: var(--color-neutral-fg-1); border-color: var(--color-neutral-stroke-2); }
+
+  /* ── Interactive Gallery ──────────────────── */
+  .ss-gallery-stage {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    background: radial-gradient(circle at center, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.06) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: zoom-in;
+    user-select: none;
+  }
+  :global([data-theme="dark"]) .ss-gallery-stage {
+    background: radial-gradient(circle at center, #0B1322 0%, #060B14 100%);
+  }
+  .ss-gallery-stage-img {
+    max-height: 85%;
+    max-width: 90%;
+    object-fit: contain;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: drop-shadow(0 12px 24px rgba(0,0,0,0.15));
+  }
+  .ss-gallery-stage:hover .ss-gallery-stage-img {
+    transform: scale(1.03);
+  }
+  .ss-gallery-zoom-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .ss-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.85);
+    border: 1px solid rgba(0,0,0,0.1);
+    color: var(--color-neutral-fg-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+  }
+  :global([data-theme="dark"]) .ss-carousel-btn {
+    background: rgba(15, 23, 42, 0.85);
+    border-color: rgba(255,255,255,0.1);
+    color: #fff;
+  }
+  .ss-carousel-btn:hover {
+    background: var(--color-brand-primary);
+    color: #fff;
+    transform: translateY(-50%) scale(1.1);
+  }
+  .ss-carousel-btn.prev { left: 14px; }
+  .ss-carousel-btn.next { right: 14px; }
+
+  .ss-gallery-meta {
+    padding: 1.25rem 1.5rem;
+    background: var(--color-neutral-bg-1);
+    border-top: 1px solid var(--color-neutral-stroke-1);
+    border-bottom: 1px solid var(--color-neutral-stroke-1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  :global([data-theme="dark"]) .ss-gallery-meta {
+    background: var(--color-neutral-bg-2);
+  }
+  .ss-gallery-meta-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-neutral-fg-1);
+    margin-bottom: 2px;
+  }
+  .ss-gallery-meta-sub {
+    font-size: 0.8rem;
+    color: var(--color-neutral-fg-2);
+    margin: 0;
+  }
+
+  .ss-gallery-thumbs {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    background: var(--color-neutral-bg-2, #fafafa);
+    overflow-x: auto;
+  }
+  :global([data-theme="dark"]) .ss-gallery-thumbs {
+    background: #080E1A;
+  }
+  .ss-gallery-thumb {
+    width: 72px;
+    height: 72px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    padding: 4px;
+    background: #fff;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  :global([data-theme="dark"]) .ss-gallery-thumb {
+    background: #111A2E;
+  }
+  .ss-gallery-thumb img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  .ss-gallery-thumb:hover {
+    border-color: var(--color-brand-primary);
+    transform: translateY(-2px);
+  }
+  .ss-gallery-thumb.active {
+    border-color: var(--color-brand-primary);
+    box-shadow: 0 0 0 2px var(--color-brand-subtle);
+  }
+
+  /* ── Lightbox Overlay ─────────────────────── */
+  .lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(16px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    animation: fadeIn 0.2s ease-out;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #fff;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10001;
+  }
+  .lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+  }
+  .lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .lightbox-img {
+    max-width: 85vw;
+    max-height: 72vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+    background: rgba(255,255,255,0.03);
+  }
+  .lightbox-caption {
+    margin-top: 1rem;
+    text-align: center;
+    color: #fff;
+  }
+  .lightbox-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 4px;
+  }
+  .lightbox-sub {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+  }
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10000;
+  }
+  .lightbox-nav:hover {
+    background: var(--color-brand-primary);
+    transform: translateY(-50%) scale(1.1);
+  }
+  .lightbox-nav.prev { left: -60px; }
+  .lightbox-nav.next { right: -60px; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 </style>

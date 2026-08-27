@@ -6,11 +6,11 @@
 
 ## v3.5 — August 2026
 
-**SvelteKit 2 + Svelte 5 Migration, Living Component Hub & Art Direction Restoration**
+### SvelteKit 2 and Svelte 5 Migration, Living Component Hub and Art Direction Restoration
 
 Major architectural and art direction release migrating the design system to SvelteKit 2 and Svelte 5, while restoring full parity with the master design system specification across all product catalogues, documentation engines, and navigation components.
 
-### New Features & Restorations
+### New Features and Restorations in v3.5
 
 - **Product Catalogue Full Restoration (`/products/`)**:
   - Restored full 14-product portfolio across 3 authoritative sections: **SS Products & Global Lines** (8 lines including archived MFX & Xprimal), **Partner Brands** (4 partner networks), and **Bioactives, Ingredients & Science Partners** (2 assets).
@@ -35,19 +35,41 @@ Major architectural and art direction release migrating the design system to Sve
   - Standardized brand title to `SS Design System v3.5` matching layout rhythm.
   - Added click-outside and Escape key dismissal handling.
 
-- **Brand Asset Governance & Logo Alignment (`Footer.svelte`)**:
-  - Replaced footer logo with official `logo_suamisihat_primary_dark.svg` (white wordmark variant) ensuring high contrast and compliance on dark corporate footers.
-  - Enforced full-width layout standard across main viewports, eliminating restrictive `max-width` content islands.
+- **Multi-Format Color Space Specification Standard**:
+  - Defined certified mathematical conversion values across all 15 official brand, secondary, and semantic tokens for **HEX, RGB, CMYK, CIE-Lab, BAL / RAL Standards, and Pantone (PMS)**.
+  - Built interactive, copy-ready Master Color Specification Matrix Table and dynamic swatches in `/brand-system/` and `/components/`.
+
+- **4-Tier Text Color Hierarchy & Surface Pairing Standard**:
+  - Codified the definitive 4-level text hierarchy across light and dark modes: `--text-strong` (`#000000` / `#FFFFFF`), `--text-primary` (`#19191A` Carbon Black / `#FCFAF6` Porcelain), `--text-secondary` (`rgba(..., 0.65)`), and `--text-disabled` (`rgba(..., 0.35)`).
+  - Defined official surface tokens: `--surface-canvas` (`#FCFAF6` / `#1C1C1C`) and `--surface-elevated` (`#FFFFFF` / `#000000`).
+  - Authored dedicated **Text Color Usage Guide** (`/content/text-color-guide.md`) and added to the interactive documentation suite (`/doc/?doc=text-color-guide`).
+  - Enforced art direction rule: *"Black and white create emphasis. Carbon Black and Porcelain create readability."*
+
+- **Sidebar Collapse Layout Resilience**:
+  - Overhauled `.f-page-layout` CSS Grid architecture using `minmax(0, 1fr)` column definitions and Svelte `{#if !isSidebarMinimized}` unmount semantics.
+  - Eliminated conflicting vanilla event listeners from `main.js`, resolving grid column squishing on sidebar collapse across all pages.
+
+- **Standalone Logomark Surface Contrast Hardening**:
+  - Enforced mandatory high-contrast logomark pairing: Dark Prussian Blue surfaces (`#022057`) strictly render `ss-logomark-dark.svg` (white arc), while Light Porcelain surfaces (`#FCFAF6`) render `ss-logomark-light.svg` (navy arc).
+  - Updated live Interactive Logomark Surface Contrast Tester in `/brand-system/` with real-time contrast ratios (16.2:1 and 15.8:1).
+
+- **Deprecation Clean-Up & Zero-Orphan Static Pipeline**:
+  - Removed deprecated `pages/` directory and obsolete static product HTMLs, routing all traffic to SvelteKit SSG.
+  - Enhanced `scripts/sync-build.mjs` with automatic directory purge to prevent accumulation of orphaned hash chunks.
+  - Modernized `nginx.conf` and `.htaccess` for clean, extensionless SSG routing and robust 404 handling.
+
+- **118-Point Automated QA Test Suite**:
+  - Shipped automated 29-assertion Smoke Test Suite (`smoke-test.mjs`) and 89-assertion DOM Validation Suite (`dom-test.mjs`) executed via `npm test`.
 
 ---
 
 ## v3.4 — August 2026
 
-**AI Agent Skill Systems, Client Representation Standards & Ecosystem Governance**
+### AI Agent Skill Systems, Client Representation Standards and Ecosystem Governance
 
 Major release introducing production-grade AI Agent Skill systems, formal client representation standards, healthcare YMYL E-E-A-T copywriting frameworks, and performance asset optimizations.
 
-### New Features & Agent Systems
+### New Features and Agent Systems in v3.4
 
 - **SuamiSihat™ AI Brand Director (`suamisihat-brand-director`)**:
   - Full modular brand governance and art direction system featuring 30 specialist sub-skills across Foundation, Visual Identity, Design System, Communication, Compliance, AI Production, and Intelligence.
@@ -65,7 +87,7 @@ Major release introducing production-grade AI Agent Skill systems, formal client
   - Added Section 08 to `pages/brand-system.html` with direct sidebar navigation.
   - Formalizes rules for how staff and developers represent SuamiSihat™ to patients and clients across teleconsultation funnels, clinics, and packaging.
 
-### Optimizations & Fixes
+### Optimizations and Fixes in v3.4
 
 - **Script Deduplication**: Standardized on modern deferred `iconify-icon/2.1.0` loader across `index.html` and `pages/brand-system.html`, removing redundant bundle overhead.
 - **Brand Casing Hardening**: Fixed footer casing in `pages/brand-system.html` from `Suamisihat` to mandatory `SuamiSihat™`.
@@ -75,19 +97,17 @@ Major release introducing production-grade AI Agent Skill systems, formal client
 
 ## v3.3 — August 2026
 
-**QA Audit & Production Hardening**
+### QA Audit and Production Hardening
 
 Full independent QA audit conducted across all 14 audit domains. Two P2 defects identified and remediated before release declaration.
 
-### Bug Fixes
+### Bug Fixes in v3.3
 
 - **INL-01 (P2)**: Removed an inline `classList.toggle('dark-mode')` event listener from `pages/components.html` (line 1212) that was duplicating and partially overriding `ThemeManager`. The inline handler bypassed logo variant swaps, `localStorage` persistence, `aria-pressed` state, and `FluentThemeSync.syncAllButtons()`. `ThemeManager` in `main.js` is now the sole theme handler on every page, as required by AGENTS.md.
-
 - **CSS-VER-01 (P2)**: Updated CSS cache-buster query string from `?v=8` to `?v=9` in all four product sub-pages (`products/Androlab`, `products/MENSS`, `products/Mensculine`, `products/Rejal`). These pages were inadvertently left on the previous version during the v3.1 release, causing browsers to serve stale stylesheet builds on those routes.
-
 - **FOOTER-LOGO-01**: Fixed `--footer-background` token override in `style.css` which was overriding light mode `#6DC6EC` with dark navy `#022057`. Updated all footer logo images to default to `logo_suamisihat_primary_light.svg` on light backgrounds as per AGENTS.md Rule 2.
 
-### Feature Additions & Documentation Updates
+### Feature Additions and Documentation Updates in v3.3
 
 - **Interactive Roadmap Page**: Added `content/roadmap.md` and integrated interactive Mermaid milestone diagrams in `doc.html?doc=roadmap` and navbar dropdown links across all pages.
 - **SSCAM WPF Windows App Integration**: Updated `pages/tools.html` with official WPF Windows app screenshots from `github.com/SuamiSihat/ss_cam`, added GitHub repository release and source code links.
@@ -104,11 +124,11 @@ Full independent QA audit conducted across all 14 audit domains. Two P2 defects 
 
 ## v3.1 — August 2026
 
-**Multi-Platform Token System + Expo React Native Foundation**
+### Multi-Platform Token System and Expo React Native Foundation
 
 Establishes the design token infrastructure and Expo/React Native integration layer. This version makes the design system the official single source of truth for all SuamiSihat™ platforms.
 
-### New: Token System
+### Token System in v3.1
 
 - **`assets/tokens/design-tokens.json`** — Master W3C Design Token format file covering:
   - Full SS brand colour palette (8 brand colours)
@@ -135,7 +155,7 @@ Establishes the design token infrastructure and Expo/React Native integration la
   - `SSMotion` — duration constants + Easing presets + spring config
   - `SSBase` — StyleSheet presets: buttons (4 variants + sm/lg/disabled), cards, inputs, badges, avatars, divider, progress, screen container
 
-### New: Component Library Page
+### Component Library in v3.1
 
 - **`pages/components.html`** — Live interactive component showcase (656 lines, 62 KB):
   - 7 foundation sections: Color, Typography, Spacing, Elevation, Radius, Motion, Icons
@@ -146,14 +166,14 @@ Establishes the design token infrastructure and Expo/React Native integration la
   - Full dark mode support
 - **`index.html`** — Component Library portal card added (card 8)
 
-### Platform: Expo / React Native
+### Platform Integration for Expo and React Native
 
 - **Mobile platform**: Confirmed as **Expo** (managed workflow)
 - **Icon library**: **`@fluentui/react-native-icons`** — same icon vocabulary as web Iconify Fluent set (`home-24-regular` → `Home24Regular`)
 - **Font**: **`@expo-google-fonts/inter`** — matches web Inter typeface
 - **Token naming**: Mirrors CSS variable names for cross-platform consistency
 
-### Architecture
+### Architecture Updates in v3.1
 
 - Design system elevated to **master project status** — authoritative source for all SS platforms
 - Changelog is now the canonical record of all system changes
@@ -163,11 +183,11 @@ Establishes the design token infrastructure and Expo/React Native integration la
 
 ## v3.0 — August 2026
 
-**Fluent 2 Design System Overhaul**
+### Fluent 2 Design System Overhaul
 
 A complete visual and architectural rebirth of the SuamiSihat™ Design System, built on Microsoft's Fluent 2 design language — adapted to the SuamiSihat™ brand palette.
 
-### Design Foundation
+### Design Foundation in v3.0
 
 - **`fluent.css`** — New source-of-truth token file with three tiers:
   - **Tier 1** — Global raw tokens: SS brand palette, Fluent neutral ramp (16 stops), spacing (4px grid), radius, shadows, motion curves, stroke widths
@@ -175,28 +195,28 @@ A complete visual and architectural rebirth of the SuamiSihat™ Design System, 
   - **Tier 3** — Global reset, focus ring, scrollbar, skeleton shimmer, fade-up/fade-in animations, stagger delay helpers
 - **`ss_theme.css`** — Bridge layer that re-aliases all legacy variables (`--primary-color`, `--card-background`, etc.) to Fluent semantic tokens, ensuring all existing sub-pages receive Fluent colours without markup changes
 
-### New Pages
+### New Pages in v3.0
 
 | Page | Description |
-|---|---|
+| :--- | :--- |
 | `pages/signature.html` | Live Mail Signature Generator — preview + copy HTML for all entities |
 | `pages/tools.html` | SS CAM Download Hub + SSNAS Dashboard launchpad |
 | `pages/onboarding.html` | Interactive Staff Onboarding Guide with localStorage-persistent checklist |
 
-### CSS Upgrades
+### CSS Upgrades in v3.0
 
 - **`style.css`** — Fluent 2 override layer appended: legacy vars aliased, glassmorphic navbar (acrylic blur), card shadows tokenised, dropdown/footer/badge all Fluent-aware
 - **`markdown.css`** — Fluent 2 prose layer: Inter font, tokenised headings/links/code blocks/tables, brand gradient table headers, TOC active-pill transition
 - **`onboarding.css`** — New companion stylesheet for onboarding checklist components
 
-### JavaScript Upgrades (`main.js`)
+### JavaScript Upgrades in v3.0
 
 - `FluentNavManager` — Scroll shadow + active-link detection on Fluent navbars
 - `FluentThemeSync` — Patches `ThemeManager` to keep all theme buttons in sync across all page types
 - Portal card click ripple animation
 - Scroll-reveal: `f-animate-up`/`f-animate-in` elements play on viewport entry
 
-### Infrastructure
+### Infrastructure in v3.0
 
 - **CSS load order** fixed site-wide: `fluent.css → ss_theme.css → style.css → markdown.css`
 - **`fluent.css`** injected into all legacy pages that were missing it
@@ -204,9 +224,9 @@ A complete visual and architectural rebirth of the SuamiSihat™ Design System, 
 - **Navigation** — Onboarding + Mail Signature links added to all page navbars
 - Version badge updated to `v3.0` site-wide
 
-### New Files
+### New Files in v3.0
 
-```
+```text
 assets/css/
 ├── fluent.css          ← NEW: Fluent 2 token foundation
 └── onboarding.css      ← NEW: onboarding component styles
@@ -221,11 +241,11 @@ pages/
 
 ## v2.1 — June 2026
 
-**Hub Upgrade & Markdown Integration**
+### Hub Upgrade and Markdown Integration
 
 This release transforms the design system homepage into the core hub of the SuamiSihat™ design ecosystem, and introduces dynamic markdown-powered documentation.
 
-### What Changed
+### Changes in v2.1
 
 - **New Hero** — Stronger headline, clearer positioning, and CTA buttons for a better first impression
 - **Vision & Mission** — Added as a first-class section in the About page, and as a standalone doc (`/pages/doc.html?doc=vision-mission`)
@@ -235,9 +255,9 @@ This release transforms the design system homepage into the core hub of the Suam
 - **Copywriting** — Refined across all sections to a professional-casual tone; removed redundant welcome text, added punchy section intros
 - **Section titles** — Fixed stray backtick in download section; updated "Introduction" to "About This System"
 
-### New Files
+### New Files in v2.1
 
-```
+```text
 content/
 ├── vision-mission.md
 ├── introduction.md
@@ -262,7 +282,7 @@ assets/
 
 ## v2.0 — Early 2026
 
-**Interactive Design System**
+### Interactive Design System
 
 - Introduced glassmorphism navbar with ScrollSpy
 - Added interactive logo preview with colour background switcher
@@ -275,7 +295,7 @@ assets/
 
 ## v1.0 — 2025
 
-**Initial Release**
+### Initial Baseline Release
 
 - SS Health brand guidelines in web format
 - Logo, colour, typography, and download sections
@@ -284,5 +304,4 @@ assets/
 
 ---
 
-*To request a change or report an issue, see the [Contribution Guide](doc.html?doc=contribution-guide) or email [branding@suamisihat.com](mailto:branding@suamisihat.com).*
-
+*To request a change or report an issue, see the [Contribution Guide](/doc/?doc=contribution-guide) or email [branding@suamisihat.com](mailto:branding@suamisihat.com).*

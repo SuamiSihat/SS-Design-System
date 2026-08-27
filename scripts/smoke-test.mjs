@@ -95,6 +95,7 @@ checkFileExists('build/public/brand/favicon/favicon.ico', 100);
 checkFileExists('build/content/roadmap.md', 100);
 checkFileExists('build/content/brand-voice.md', 100);
 checkFileExists('build/content/changelog.md', 100);
+checkFileExists('build/content/text-color-guide.md', 100);
 
 // -----------------------------------------------------------------------------
 // Test Group 4: JSON Token Syntax Integrity
@@ -106,6 +107,7 @@ try {
     const json = JSON.parse(readFileSync(tokenPath, 'utf8'));
     assert(typeof json === 'object' && json !== null, 'tokens.json is valid parseable JSON');
     assert(Boolean(json.color || json.brand || json.colors), 'tokens.json contains color token definitions');
+    assert(Boolean(json.color?.semantic?.light?.['text-strong'] || json.color?.semantic?.light?.['fg-primary']), 'tokens.json contains 4-tier text color definitions');
   } else {
     assert(false, 'tokens.json exists for parsing');
   }

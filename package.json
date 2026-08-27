@@ -10,7 +10,9 @@
     "build:raw": "npm run build:css && npm run build:js",
     "build:css": "node scripts/minify-css.mjs",
     "build:js": "node scripts/minify-js.mjs",
-    "test": "node scripts/smoke-test.mjs",
+    "test": "node scripts/smoke-test.mjs && node scripts/dom-test.mjs",
+    "test:smoke": "node scripts/smoke-test.mjs",
+    "test:dom": "node scripts/dom-test.mjs",
     "preview": "vite preview",
     "watch": "node scripts/watch.mjs",
     "deploy": "powershell -ExecutionPolicy Bypass -File deploy.ps1"
@@ -22,6 +24,7 @@
     "@tailwindcss/typography": "^0.5.20",
     "autoprefixer": "^10.5.4",
     "chokidar": "^3.6.0",
+    "jsdom": "^30.0.1",
     "lightningcss": "^1.28.2",
     "lucide-svelte": "^1.0.1",
     "postcss": "^8.5.26",

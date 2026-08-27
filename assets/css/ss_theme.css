@@ -30,10 +30,11 @@
 	--primary-light: var(--color-brand-primary, #043388);
 	--accent: var(--color-brand-light, #21A1F7);
 	--accent-light: var(--color-brand-malibu, #6DC6EC);
-	--text-dark: var(--color-neutral-fg-1, #1A1A1A);
-	--text-light: var(--color-neutral-fg-inverse, #FFFFFF);
+	--text-strong: var(--text-strong, #000000);
+	--text-dark: var(--text-primary, var(--color-neutral-fg-1, #19191A));
+	--text-light: var(--text-inverse, var(--color-neutral-fg-inverse, #FFFFFF));
 	--warning: var(--ss-banana, #FCE53D);
-	--background: var(--color-neutral-bg-1, #F5F5F5);
+	--background: var(--surface-canvas, var(--color-neutral-bg-1, #FCFAF6));
 	--border: var(--color-neutral-stroke-1, rgba(0, 0, 0, 0.08));
 
 	/* Shadows (Mapped to Fluent 2 Elevation) */

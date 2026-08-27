@@ -56,22 +56,23 @@ function debounce(func, wait) {
 //
 //  Rule 1 · Theme Mode
 //  ─────────────────────────────────────────────────────────────
-//  | Theme  | Logo                                |
-//  |--------|-------------------------------------|
-//  | light  | logo_suamisihat_primary_light.svg   |
-//  | dark   | logo_suamisihat_primary_dark.svg    |
+//  | Theme  | Logo                                | Logomark Icon       |
+//  |--------|-------------------------------------|---------------------|
+//  | light  | logo_suamisihat_primary_light.svg   | ss-logomark-light.svg|
+//  | dark   | logo_suamisihat_primary_dark.svg    | ss-logomark-dark.svg |
 //
 //  Rule 2 · Background Brightness (for static / non-themed surfaces)
 //  ─────────────────────────────────────────────────────────────
-//  | Background                  | Logo                                |
-//  |-----------------------------|-------------------------------------|
-//  | Light / bright  (L >= 50%)  | logo_suamisihat_primary_light.svg   |
-//  | Dark  / dim     (L  < 50%)  | logo_suamisihat_primary_dark.svg    |
+//  | Background                  | Logo                                | Logomark Icon       |
+//  |-----------------------------|-------------------------------------|---------------------|
+//  | Light / bright  (L >= 50%)  | logo_suamisihat_primary_light.svg   | ss-logomark-light.svg|
+//  | Dark  / dim     (L  < 50%)  | logo_suamisihat_primary_dark.svg    | ss-logomark-dark.svg |
 //
 // Usage:
 //   LogoSelector.forTheme('dark')          → path string (Rule 1)
 //   LogoSelector.forBackground('#043388')  → path string (Rule 2)
-//   LogoSelector.apply(prefix)             → updates all .footer-logo on page
+//   LogoSelector.applyToFooter(theme)      → updates all footers on page
+//   LogoSelector.markForTheme(theme)       → updates logomark icon
 // ============================================================================
 
 var LogoSelector = (function () {
@@ -313,13 +314,22 @@ function showFeedback(message, isAlert = false) {
         return;
     }
 
-    // Remove existing feedback
+    // Support local inline toast container if present
+    const copyToast = document.getElementById('bsCopyToast');
+    if (copyToast) {
+        copyToast.textContent = message;
+        copyToast.classList.add('show');
+        clearTimeout(window._bsToastTimer);
+        window._bsToastTimer = setTimeout(() => copyToast.classList.remove('show'), 2200);
+    }
+
+    // Remove existing floating feedback
     const existingFeedback = document.querySelector('.copy-feedback');
     if (existingFeedback) {
         existingFeedback.remove();
     }
 
-    // Create new feedback element
+    // Create new floating feedback element
     const feedback = document.createElement('div');
     feedback.className = 'copy-feedback';
     feedback.textContent = message;
@@ -334,6 +344,25 @@ function showFeedback(message, isAlert = false) {
             feedback.remove();
         }
     }, CONFIG.FEEDBACK_DURATION);
+}
+
+// Global copy helper for all static templates & event handlers
+if (typeof window !== 'undefined') {
+    window.showCopyToast = function(msg) {
+        showFeedback(msg || 'Copied to clipboard');
+    };
+
+    window.copyHex = function(hex, btn, overrideMsg) {
+        if (!hex) return;
+        showFeedback(overrideMsg || `${hex} copied`);
+        copyToClipboard(hex, btn);
+        if (btn) {
+            const orig = btn.innerHTML;
+            btn.classList.add('copied');
+            btn.innerHTML = '<iconify-icon icon="fluent:checkmark-24-regular" style="font-size:0.75rem"></iconify-icon> Copied!';
+            setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = orig; }, 2000);
+        }
+    };
 }
 
 /**
@@ -396,8 +425,17 @@ class ThemeManager {
     applyTheme(theme) {
         const isDark = theme === 'dark';
         
-        // Toggle body class
+        // Toggle body class and html data-theme attribute
         document.body.classList.toggle('dark-mode', isDark);
+        if (isDark) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.documentElement.classList.add('dark-mode');
+            document.body.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+            document.documentElement.classList.remove('dark-mode');
+            document.body.removeAttribute('data-theme');
+        }
         
         // Update logo
         const isSubpage = window.location.href.toLowerCase().includes('/pages/') || 
@@ -418,7 +456,6 @@ class ThemeManager {
         // BRAND-STATIC-01: Auto-invert sub-brand logos on theme change
         this.applyToSubBrandLogos(isDark);
 
-        
         // Update meta theme color
         if (this.metaThemeColor) {
             this.metaThemeColor.setAttribute('content', 
@@ -426,14 +463,15 @@ class ThemeManager {
             );
         }
 
-        // Update theme toggle button accessibility and icon
-        if (this.themeToggle) {
-            this.themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-            this.themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        // Update theme toggle button accessibility and icon across all buttons
+        const allToggleBtns = document.querySelectorAll('#themeToggle, .topbar-theme-btn, .f-theme-btn');
+        allToggleBtns.forEach(btn => {
+            btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+            btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
             
             // Support both Iconify (<iconify-icon>) and Font Awesome (<i>) toggle icons
-            const iconifyIcon = this.themeToggle.querySelector('iconify-icon');
-            const faIcon = this.themeToggle.querySelector('i');
+            const iconifyIcon = btn.querySelector('iconify-icon');
+            const faIcon = btn.querySelector('i');
             if (iconifyIcon) {
                 iconifyIcon.setAttribute('icon', isDark
                     ? 'fluent:weather-sunny-24-regular'
@@ -441,10 +479,11 @@ class ThemeManager {
             } else if (faIcon) {
                 faIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
             }
-        }
+        });
         
         // Save to storage
         localStorage.setItem(CONFIG.THEME_STORAGE_KEY, theme);
+        localStorage.setItem('ss-theme', theme);
         this.currentTheme = theme;
     }
 
@@ -457,26 +496,39 @@ class ThemeManager {
     }
 
     /**
-     * Bind event listeners
+     * Bind event listeners to all theme toggle buttons
      */
     bindEvents() {
-        if (this.themeToggle) {
-            this.themeToggle.addEventListener('click', () => this.toggleTheme());
-        }
+        const allToggleBtns = document.querySelectorAll('#themeToggle, .topbar-theme-btn, .f-theme-btn');
+        allToggleBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.toggleTheme();
+            });
+        });
     }
 
     /**
      * Listen for system theme changes
      */
     setupSystemThemeListener() {
+        if (!window.matchMedia) return;
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        mediaQuery.addEventListener('change', (e) => {
+        if (!mediaQuery) return;
+        
+        const listener = (e) => {
             // Only auto-switch if user hasn't manually set a preference
             if (!localStorage.getItem(CONFIG.THEME_STORAGE_KEY)) {
                 const newTheme = e.matches ? 'dark' : 'light';
                 this.applyTheme(newTheme);
             }
-        });
+        };
+
+        if (mediaQuery.addEventListener) {
+            mediaQuery.addEventListener('change', listener);
+        } else if (mediaQuery.addListener) {
+            mediaQuery.addListener(listener);
+        }
     }
 
     /**
@@ -651,9 +703,9 @@ class NavigationManager {
  */
 class ColorSystem {
     constructor() {
-        this.colorCards = document.querySelectorAll('.color-card');
-        this.colorStrips = document.querySelectorAll('.color-strip');
-        this.logoButtons = document.querySelectorAll('.color-list button');
+        this.colorCards = document.querySelectorAll('.color-card, .bs-swatch-card, .cl-swatch');
+        this.colorStrips = document.querySelectorAll('.color-strip, .bs-neutral-block');
+        this.logoButtons = document.querySelectorAll('.color-list button, .bs-logo-picker-btn, .logo-swatch-btn');
         
         this.init();
     }
@@ -672,6 +724,8 @@ class ColorSystem {
      */
     bindColorCards() {
         this.colorCards.forEach(card => {
+            if (card.dataset.colorBound) return;
+            card.dataset.colorBound = 'true';
             card.addEventListener('click', () => {
                 const hex = card.getAttribute('data-hex');
                 if (hex) {
@@ -686,13 +740,14 @@ class ColorSystem {
      */
     bindColorStrips() {
         this.colorStrips.forEach(strip => {
-            // Remove any existing onclick attributes
+            if (strip.dataset.stripBound) return;
+            strip.dataset.stripBound = 'true';
             strip.removeAttribute('onclick');
             
             strip.addEventListener('click', () => {
-                const hexMatch = strip.textContent.match(/HEX: (#[0-9A-F]{6})/i);
-                if (hexMatch) {
-                    copyToClipboard(hexMatch[1], strip);
+                const hex = strip.getAttribute('data-hex') || (strip.textContent.match(/HEX: (#[0-9A-F]{6})/i) || [])[1];
+                if (hex) {
+                    copyToClipboard(hex, strip);
                 }
             });
         });
@@ -703,7 +758,11 @@ class ColorSystem {
      */
     bindLogoButtons() {
         this.logoButtons.forEach(btn => {
+            if (btn.dataset.btnBound) return;
+            btn.dataset.btnBound = 'true';
             btn.addEventListener('click', () => {
+                this.logoButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
                 const color = btn.dataset.color;
                 const imgSrc = btn.dataset.img;
                 
@@ -720,11 +779,12 @@ class ColorSystem {
      * @param {string} imgSrc - Image source
      */
     updateLogoDisplay(color, imgSrc) {
-        const logoDisplay = document.getElementById('logoDisplay');
-        const logoImg = document.getElementById('logoImg');
+        const logoDisplay = document.getElementById('logoDisplay') || document.getElementById('logoPickerDisplay') || document.getElementById('logoContrastStage');
+        const logoImg = document.getElementById('logoImg') || document.getElementById('logoPickerImg') || document.getElementById('logoContrastImg');
         
         if (logoDisplay) {
             logoDisplay.style.backgroundColor = color;
+            logoDisplay.style.background = color;
         }
         
         if (logoImg) {
@@ -753,7 +813,29 @@ class SubBrandSystem {
 
     bindBgTogglers() {
         this.bgTogglers.forEach(toggler => {
-            toggler.addEventListener('click', () => {
+            if (toggler.dataset.subBrandBound) return;
+            toggler.dataset.subBrandBound = 'true';
+
+            toggler.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = toggler.dataset.target;
+                const area = targetId ? document.getElementById(targetId) : null;
+                if (area) {
+                    const img = area.querySelector('img');
+                    const isDark = area.classList.contains('dark-bg');
+                    if (isDark) {
+                        area.classList.remove('dark-bg');
+                        if (img && toggler.dataset.lightSrc) img.src = toggler.dataset.lightSrc;
+                        else if (img && img.src.includes('_dark.svg')) img.src = img.src.replace('_dark.svg', '_light.svg');
+                    } else {
+                        area.classList.add('dark-bg');
+                        if (img && toggler.dataset.darkSrc) img.src = toggler.dataset.darkSrc;
+                        else if (img && img.src.includes('_light.svg')) img.src = img.src.replace('_light.svg', '_dark.svg');
+                    }
+                    animateClick(toggler);
+                    return;
+                }
+
                 const card = toggler.closest('.sub-brand-card');
                 if (!card) return;
 
@@ -762,25 +844,14 @@ class SubBrandSystem {
                 if (!display || !img) return;
 
                 const isLightBg = display.classList.contains('light-bg');
-
                 if (isLightBg) {
-                    // Switch to dark background (Prussian Blue)
                     display.classList.remove('light-bg');
                     display.style.backgroundColor = '#022057';
-                    
-                    // Swap to dark version logo (which is white)
-                    if (img.src.includes('_light.svg')) {
-                        img.src = img.src.replace('_light.svg', '_dark.svg');
-                    }
+                    if (img.src.includes('_light.svg')) img.src = img.src.replace('_light.svg', '_dark.svg');
                 } else {
-                    // Switch to light background
                     display.classList.add('light-bg');
-                    display.style.backgroundColor = '#f8f9fa';
-                    
-                    // Swap to light version logo (which is dark text)
-                    if (img.src.includes('_dark.svg')) {
-                        img.src = img.src.replace('_dark.svg', '_light.svg');
-                    }
+                    display.style.backgroundColor = '#FCFAF6';
+                    if (img.src.includes('_dark.svg')) img.src = img.src.replace('_dark.svg', '_light.svg');
                 }
                 
                 animateClick(toggler);
@@ -798,61 +869,65 @@ class SubBrandSystem {
  */
 class LogomarkToggleSystem {
     constructor() {
-        this.toggleCard = document.getElementById('logomarkToggleCard');
+        this.toggleArea = document.getElementById('logomarkToggleBg') || document.getElementById('logomarkToggleCard');
+        this.pillLight = document.getElementById('pillLight') || document.getElementById('btnLogomarkLight');
+        this.pillDark = document.getElementById('pillDark') || document.getElementById('btnLogomarkDark');
+        this.isDark = false;
         this.init();
     }
 
     init() {
-        if (!this.toggleCard) return;
+        if (!this.toggleArea && !this.pillLight && !this.pillDark) return;
         this.bindEvents();
+
+        // Expose global methods
+        if (typeof window !== 'undefined') {
+            window.setLogomarkMode = (mode) => this.setMode(mode);
+            window.toggleLogomarkBg = () => this.toggle();
+        }
+    }
+
+    setMode(mode) {
+        const bg = document.getElementById('logomarkToggleBg') || document.getElementById('logomarkStage');
+        const img = document.getElementById('logomarkImg');
+        const pillLight = this.pillLight;
+        const pillDark = this.pillDark;
+        
+        if (mode === 'dark') {
+            if (bg) { bg.style.background = '#022057'; bg.style.backgroundColor = '#022057'; }
+            if (img) img.src = LogoSelector.markForTheme ? LogoSelector.markForTheme('dark') : '../public/brand/logos/ss-logomark-light.svg';
+            if (pillLight) { pillLight.classList.remove('active'); pillLight.classList.remove('ss-btn-primary'); pillLight.classList.add('ss-btn-secondary'); }
+            if (pillDark) { pillDark.classList.add('active'); pillDark.classList.add('ss-btn-primary'); pillDark.classList.remove('ss-btn-secondary'); }
+            this.isDark = true;
+        } else {
+            if (bg) { bg.style.background = '#FCFAF6'; bg.style.backgroundColor = '#FCFAF6'; }
+            if (img) img.src = LogoSelector.markForTheme ? LogoSelector.markForTheme('light') : '../public/brand/logos/ss-logomark-dark.svg';
+            if (pillLight) { pillLight.classList.add('active'); pillLight.classList.add('ss-btn-primary'); pillLight.classList.remove('ss-btn-secondary'); }
+            if (pillDark) { pillDark.classList.remove('active'); pillDark.classList.remove('ss-btn-primary'); pillDark.classList.add('ss-btn-secondary'); }
+            this.isDark = false;
+        }
+    }
+
+    toggle() {
+        this.setMode(this.isDark ? 'light' : 'dark');
     }
 
     bindEvents() {
-        this.toggleCard.addEventListener('click', () => {
-            const toggleBg = document.getElementById('logomarkToggleBg');
-            const pillLight = document.getElementById('pillLight');
-            const pillDark = document.getElementById('pillDark');
-            const img = document.getElementById('logomarkImg');
-            const title = document.getElementById('logomarkTitle');
-            
-            if (!toggleBg || !img) return;
-            
-            const isLightBg = toggleBg.classList.contains('bg-light');
-            
-            if (isLightBg) {
-                // Switch to dark mode
-                toggleBg.classList.remove('bg-light');
-                toggleBg.classList.add('bg-dark');
-                title.classList.add('text-white');
-                pillLight.classList.add('opacity-50');
-                pillDark.classList.remove('opacity-50');
-                
-                if (img.src.includes('-light.svg')) {
-                    img.src = img.src.replace('-light.svg', '-dark.svg');
-                }
-            } else {
-                // Switch to light mode
-                toggleBg.classList.remove('bg-dark');
-                toggleBg.classList.add('bg-light');
-                title.classList.remove('text-white');
-                pillLight.classList.remove('opacity-50');
-                pillDark.classList.add('opacity-50');
-                
-                if (img.src.includes('-dark.svg')) {
-                    img.src = img.src.replace('-dark.svg', '-light.svg');
-                }
-            }
-            
-            animateClick(this.toggleCard);
-        });
-        
-        // Keyboard support
-        this.toggleCard.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                this.toggleCard.click();
-            }
-        });
+        if (this.pillLight && !this.pillLight.dataset.pillBound) {
+            this.pillLight.dataset.pillBound = 'true';
+            this.pillLight.addEventListener('click', (e) => { e.preventDefault(); this.setMode('light'); });
+        }
+        if (this.pillDark && !this.pillDark.dataset.pillBound) {
+            this.pillDark.dataset.pillBound = 'true';
+            this.pillDark.addEventListener('click', (e) => { e.preventDefault(); this.setMode('dark'); });
+        }
+        if (this.toggleArea && !this.toggleArea.dataset.areaBound) {
+            this.toggleArea.dataset.areaBound = 'true';
+            this.toggleArea.addEventListener('click', () => this.toggle());
+            this.toggleArea.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.toggle(); }
+            });
+        }
     }
 }
 
@@ -1549,6 +1624,11 @@ function initFluentSidebarToggle() {
         if (toggleBtn.dataset.bound) return;
         toggleBtn.dataset.bound = 'true';
 
+        // If the toggle is inside a SvelteKit application where Svelte handles onclick, skip vanilla listener
+        if (document.querySelector('[data-sveltekit-preload-data]') || document.querySelector('.f-app-shell')) {
+            return;
+        }
+
         toggleBtn.addEventListener('click', (e) => {
             e.preventDefault();
             const layoutWrapper = toggleBtn.closest('.f-page-layout') || document.querySelector('.f-page-layout');
@@ -1845,6 +1925,9 @@ function initCleanUrlMasking() {
 
 // Initialize application when all classes and managers are defined
 const app = new SSBrandApp();
+if (typeof window !== 'undefined') {
+    window.app = app;
+}
 app.init().catch(error => {
     ErrorHandler.handleError(error, 'Application startup');
 });

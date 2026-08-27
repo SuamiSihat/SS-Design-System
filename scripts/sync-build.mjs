@@ -4,7 +4,7 @@
  * so that static hosts (like Synology NAS Web Station) serve SvelteKit directly.
  */
 
-import { cpSync, existsSync, mkdirSync } from 'fs';
+import { cpSync, existsSync, rmSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -32,6 +32,9 @@ for (const item of itemsToCopy) {
   const src = join(BUILD, item);
   const dest = join(ROOT, item);
   if (existsSync(src)) {
+    if (item === '_app' && existsSync(dest)) {
+      rmSync(dest, { recursive: true, force: true });
+    }
     cpSync(src, dest, { recursive: true, force: true });
     console.log(`  ✓ Synced ${item}`);
   }

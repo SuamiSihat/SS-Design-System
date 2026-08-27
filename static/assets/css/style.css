@@ -7,12 +7,17 @@
    ========================================================================== */
 
 :root {
-    /* Theme Colors */
-    --primary-color: #043388;
-    --background-color: #f8f8f8;
-    --text-color: #3C3C3B; /* Grey 90 for readability */
-    --heading-color: #022057; /* Prussian Blue */
-    --card-background: #ffffff;
+    /* Theme Colors & 4-Tier Text Hierarchy */
+    --primary-color: var(--ss-blue, #043388);
+    --background-color: var(--surface-canvas, #FCFAF6);
+    --text-strong: #000000;
+    --text-primary: #19191A;
+    --text-secondary: rgba(25, 25, 26, 0.65);
+    --text-disabled: rgba(25, 25, 26, 0.35);
+    --text-inverse: #FFFFFF;
+    --text-color: var(--text-primary, #19191A);
+    --heading-color: var(--text-strong, #000000);
+    --card-background: var(--surface-elevated, #FFFFFF);
     --card-shadow: rgba(0, 0, 0, 0.05);
     --footer-background: #6DC6EC;
     --footer-text: #022057; /* Navy text on light blue footer */
@@ -40,19 +45,25 @@
 }
 
 /* Dark Mode Theme */
-.dark-mode {
-    --primary-color: #6DC6EC;
-    --background-color: #0a1128; /* Sleek dark navy-black */
-    --text-color: #e2e8f0; /* White-grey text */
-    --heading-color: #ffffff;
-    --card-background: #1c2541; /* Navy dark card background */
+.dark-mode,
+[data-theme="dark"] {
+    --primary-color: var(--ss-azure, #21A1F7);
+    --background-color: var(--surface-canvas, #1C1C1C);
+    --text-strong: #FFFFFF;
+    --text-primary: #FCFAF6;
+    --text-secondary: rgba(252, 250, 246, 0.65);
+    --text-disabled: rgba(252, 250, 246, 0.35);
+    --text-inverse: #000000;
+    --text-color: var(--text-primary, #FCFAF6);
+    --heading-color: var(--text-strong, #FFFFFF);
+    --card-background: #19191A;
     --card-shadow: rgba(0, 0, 0, 0.3);
-    --footer-background: #0a1128;
-    --footer-text: #ffffff;
+    --footer-background: #141414;
+    --footer-text: #FCFAF6;
     
     /* Theme overrides for ss_theme.css variables */
-    --text-dark: #e2e8f0;
-    --background: #0a1128;
+    --text-dark: var(--text-primary, #FCFAF6);
+    --background: var(--surface-canvas, #1C1C1C);
     --border: rgba(255, 255, 255, 0.1);
 }
 
@@ -91,9 +102,11 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 
 .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: var(--spacing-lg);
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: clamp(1rem, 3vw, 2.5rem);
 }
 
 .footer {
@@ -1152,8 +1165,12 @@ body.dark-mode .ss-dropdown .dropdown-divider {
 .footer-container {
     padding-top: 3rem;
     padding-bottom: 0;
-    max-width: 1200px;
-    margin: auto;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: clamp(1.5rem, 4vw, 4rem);
+    padding-right: clamp(1.5rem, 4vw, 4rem);
+    margin: 0;
 }
 
 .footer-grid {
@@ -1348,8 +1365,12 @@ body.dark-mode .ss-dropdown .dropdown-divider {
 .footer-container {
     padding-top: 3rem;
     padding-bottom: 0;
-    max-width: 1200px;
-    margin: auto;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: clamp(1.5rem, 4vw, 4rem);
+    padding-right: clamp(1.5rem, 4vw, 4rem);
+    margin: 0;
 }
 
 .footer-grid {

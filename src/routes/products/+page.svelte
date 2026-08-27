@@ -310,87 +310,91 @@
 <div
   class="f-page-layout"
   class:sidebar-minimized={isSidebarMinimized}
-  style="display: grid; grid-template-columns: {isSidebarMinimized ? '0 1fr' : '260px 1fr'}; min-height: calc(100vh - 60px); position: relative; transition: grid-template-columns 0.3s ease;"
+  id="pageLayout"
+  style="display: grid; grid-template-columns: {isSidebarMinimized ? 'minmax(0, 1fr)' : '260px minmax(0, 1fr)'}; min-height: calc(100vh - 60px); position: relative; transition: grid-template-columns 0.3s ease; width: 100%;"
 >
   <!-- Sidebar Toggle Pill -->
   <button
+    type="button"
     class="f-sidebar-toggle"
     onclick={toggleSidebar}
-    aria-label="Toggle sidebar"
+    aria-label={isSidebarMinimized ? "Expand sidebar" : "Minimize sidebar"}
     style="position: fixed; left: {isSidebarMinimized ? '12px' : '248px'}; top: 180px; width: 24px; height: 24px; border-radius: 50%; background: var(--color-neutral-bg-2); border: 1px solid var(--color-neutral-stroke-2); color: var(--color-neutral-fg-2); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1010; box-shadow: var(--f-shadow-2); transition: all 0.3s ease;"
   >
     <iconify-icon icon={isSidebarMinimized ? "fluent:chevron-right-16-regular" : "fluent:chevron-left-16-regular"}></iconify-icon>
   </button>
 
   <!-- Left Sidebar -->
-  <aside class="f-sidebar acrylic" aria-label="Product catalogue navigation" style="display: {isSidebarMinimized ? 'none' : 'block'}; overflow-y: auto;">
+  {#if !isSidebarMinimized}
+    <aside class="f-sidebar acrylic" aria-label="Product catalogue navigation" style="overflow-y: auto;">
 
-    <!-- Group 1: Section scroll-spy anchors -->
-    <div class="cat-sidebar-section">
-      <p class="cat-sidebar-heading">All Products</p>
-      <ul class="cat-nav">
-        {#each ssSections as section}
-          <li>
-            <a href="#{section.id}" class:active={activeSection === section.id}>
-              <span class="cat-icon"><iconify-icon icon={section.icon}></iconify-icon></span>
-              {section.title.split(' ')[0]} {section.title.split(' ')[1] || ''}
-              <span class="cat-count">{section.products.length}</span>
-            </a>
-          </li>
-        {/each}
-      </ul>
-    </div>
+      <!-- Group 1: Section scroll-spy anchors -->
+      <div class="cat-sidebar-section">
+        <p class="cat-sidebar-heading">All Products</p>
+        <ul class="cat-nav">
+          {#each ssSections as section}
+            <li>
+              <a href="#{section.id}" class:active={activeSection === section.id}>
+                <span class="cat-icon"><iconify-icon icon={section.icon}></iconify-icon></span>
+                {section.title.split(' ')[0]} {section.title.split(' ')[1] || ''}
+                <span class="cat-count">{section.products.length}</span>
+              </a>
+            </li>
+          {/each}
+        </ul>
+      </div>
 
-    <!-- Group 2: Brand Hubs — direct links -->
-    <div class="cat-sidebar-section">
-      <p class="cat-sidebar-heading">Brand Hubs</p>
-      <ul class="cat-nav">
-        <li><a href="/products/androlab/"><span class="cat-icon"><iconify-icon icon="fluent:pill-24-regular"></iconify-icon></span>ANDROLAB</a></li>
-        <li><a href="/products/menss/"><span class="cat-icon"><iconify-icon icon="fluent:heart-pulse-24-regular"></iconify-icon></span>MENSS</a></li>
-        <li><a href="/products/mensculine/"><span class="cat-icon"><iconify-icon icon="fluent:globe-24-regular"></iconify-icon></span>Mensculine</a></li>
-        <li><a href="/products/drmitring/"><span class="cat-icon"><iconify-icon icon="fluent:stethoscope-24-regular"></iconify-icon></span>Dr Mit Ring®</a></li>
-        <li><a href="/products/rejal/"><span class="cat-icon"><iconify-icon icon="fluent:leaf-three-24-regular"></iconify-icon></span>REJAL</a></li>
-        <li><a href="/products/pertabi/"><span class="cat-icon"><iconify-icon icon="fluent:people-community-24-regular"></iconify-icon></span>PERTABI</a></li>
-      </ul>
-    </div>
+      <!-- Group 2: Brand Hubs — direct links -->
+      <div class="cat-sidebar-section">
+        <p class="cat-sidebar-heading">Brand Hubs</p>
+        <ul class="cat-nav">
+          <li><a href="/products/androlab/"><span class="cat-icon"><iconify-icon icon="fluent:pill-24-regular"></iconify-icon></span>ANDROLAB</a></li>
+          <li><a href="/products/menss/"><span class="cat-icon"><iconify-icon icon="fluent:heart-pulse-24-regular"></iconify-icon></span>MENSS</a></li>
+          <li><a href="/products/mensculine/"><span class="cat-icon"><iconify-icon icon="fluent:globe-24-regular"></iconify-icon></span>Mensculine</a></li>
+          <li><a href="/products/drmitring/"><span class="cat-icon"><iconify-icon icon="fluent:stethoscope-24-regular"></iconify-icon></span>Dr Mit Ring®</a></li>
+          <li><a href="/products/rejal/"><span class="cat-icon"><iconify-icon icon="fluent:leaf-three-24-regular"></iconify-icon></span>REJAL</a></li>
+          <li><a href="/products/pertabi/"><span class="cat-icon"><iconify-icon icon="fluent:people-community-24-regular"></iconify-icon></span>PERTABI</a></li>
+        </ul>
+      </div>
 
-    <!-- Group 3: Category filter -->
-    <div class="cat-sidebar-section">
-      <p class="cat-sidebar-heading">By Category</p>
-      <ul class="cat-nav">
-        {#each [
-          { id: 'all',         label: 'All Products',        icon: 'fluent:apps-24-regular' },
-          { id: 'supplements', label: 'Supplements',          icon: 'fluent:pill-24-regular' },
-          { id: 'clinical',    label: 'Clinical & Devices',   icon: 'fluent:stethoscope-24-regular' },
-          { id: 'lifestyle',   label: 'Lifestyle & Grooming', icon: 'fluent:heart-pulse-24-regular' },
-          { id: 'superfood',   label: 'Superfoods & Teas',    icon: 'fluent:leaf-three-24-regular' },
-          { id: 'programme',   label: "Advocacy & NGOs",      icon: 'fluent:people-community-24-regular' }
-        ] as cat}
-          <li>
-            <button
-              type="button"
-              class="cat-nav-btn"
-              class:active={selectedFilter === cat.id}
-              onclick={() => { selectedFilter = cat.id; }}
-            >
-              <span class="cat-icon"><iconify-icon icon={cat.icon}></iconify-icon></span>
-              {cat.label}
-            </button>
-          </li>
-        {/each}
-      </ul>
-    </div>
+      <!-- Group 3: Category filter -->
+      <div class="cat-sidebar-section">
+        <p class="cat-sidebar-heading">By Category</p>
+        <ul class="cat-nav">
+          {#each [
+            { id: 'all',         label: 'All Products',        icon: 'fluent:apps-24-regular' },
+            { id: 'supplements', label: 'Supplements',          icon: 'fluent:pill-24-regular' },
+            { id: 'clinical',    label: 'Clinical & Devices',   icon: 'fluent:stethoscope-24-regular' },
+            { id: 'lifestyle',   label: 'Lifestyle & Grooming', icon: 'fluent:heart-pulse-24-regular' },
+            { id: 'superfood',   label: 'Superfoods & Teas',    icon: 'fluent:leaf-three-24-regular' },
+            { id: 'programme',   label: "Advocacy & NGOs",      icon: 'fluent:people-community-24-regular' }
+          ] as cat}
+            <li>
+              <button
+                type="button"
+                class="cat-nav-btn"
+                class:active={selectedFilter === cat.id}
+                onclick={() => { selectedFilter = cat.id; }}
+              >
+                <span class="cat-icon"><iconify-icon icon={cat.icon}></iconify-icon></span>
+                {cat.label}
+              </button>
+            </li>
+          {/each}
+        </ul>
+      </div>
 
-    <!-- Group 4: Navigate -->
-    <div class="cat-sidebar-section">
-      <p class="cat-sidebar-heading">Navigate</p>
-      <ul class="cat-nav">
-        <li><a href="/"><span class="cat-icon"><iconify-icon icon="fluent:home-24-regular"></iconify-icon></span>Home</a></li>
-        <li><a href="/brand-system/"><span class="cat-icon"><iconify-icon icon="fluent:color-24-regular"></iconify-icon></span>Brand System</a></li>
-        <li><a href="/brand-guidelines/"><span class="cat-icon"><iconify-icon icon="fluent:book-open-24-regular"></iconify-icon></span>Guidelines PDF</a></li>
-      </ul>
-    </div>
-  </aside>
+      <!-- Group 4: Navigate -->
+      <div class="cat-sidebar-section">
+        <p class="cat-sidebar-heading">Navigate</p>
+        <ul class="cat-nav">
+          <li><a href="/"><span class="cat-icon"><iconify-icon icon="fluent:home-24-regular"></iconify-icon></span>Home</a></li>
+          <li><a href="/brand-system/"><span class="cat-icon"><iconify-icon icon="fluent:color-24-regular"></iconify-icon></span>Brand System</a></li>
+          <li><a href="/brand-guidelines/"><span class="cat-icon"><iconify-icon icon="fluent:book-open-24-regular"></iconify-icon></span>Guidelines PDF</a></li>
+        </ul>
+      </div>
+    </aside>
+  {/if}
 
   <!-- Main Content -->
   <main class="cat-main f-main-content" id="main-content">
@@ -404,18 +408,47 @@
       <div class="cat-page-header">
         <div>
           <h1 class="cat-page-title">Product Catalogue</h1>
-          <p class="cat-page-subtitle">All SS Health brands and partner products — in one place.</p>
+          <p class="cat-page-subtitle">All SS Health brands, medical devices, superfoods and partner lines — in one place.</p>
         </div>
         <div class="cat-search-wrap">
           <iconify-icon icon="fluent:search-24-regular" class="cat-search-icon" aria-hidden="true"></iconify-icon>
           <input
             type="search"
             class="cat-search"
-            placeholder="Search products…"
+            placeholder="Search products, ingredients, or brand codes…"
             aria-label="Search products"
             bind:value={searchQuery}
           />
         </div>
+      </div>
+
+      <!-- Quick Interactive Category Chips Bar -->
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mt-3 pt-2" style="border-top:1px solid var(--color-neutral-stroke-1);">
+        <div class="d-flex flex-wrap gap-2">
+          {#each [
+            { id: 'all',         label: 'All Products',        icon: 'fluent:apps-24-regular' },
+            { id: 'supplements', label: 'Supplements',          icon: 'fluent:pill-24-regular' },
+            { id: 'clinical',    label: 'Clinical & Devices',   icon: 'fluent:stethoscope-24-regular' },
+            { id: 'lifestyle',   label: 'Lifestyle & Grooming', icon: 'fluent:heart-pulse-24-regular' },
+            { id: 'superfood',   label: 'Superfoods & Teas',    icon: 'fluent:leaf-three-24-regular' },
+            { id: 'programme',   label: "Advocacy & NGOs",      icon: 'fluent:people-community-24-regular' }
+          ] as cat}
+            <button
+              type="button"
+              class="btn btn-sm d-inline-flex align-items-center gap-1 rounded-pill px-3"
+              class:btn-primary={selectedFilter === cat.id}
+              class:btn-outline-secondary={selectedFilter !== cat.id}
+              onclick={() => { selectedFilter = cat.id; }}
+              style="font-size:0.775rem; font-weight:600;"
+            >
+              <iconify-icon icon={cat.icon} style="font-size:0.9rem;"></iconify-icon>
+              {cat.label}
+            </button>
+          {/each}
+        </div>
+        <span class="ss-badge ss-badge-neutral" style="font-size:0.75rem; font-weight:600;">
+          Showing {totalVisible()} active {totalVisible() === 1 ? 'brand' : 'brands'}
+        </span>
       </div>
     </div>
 
@@ -514,9 +547,11 @@
 <style>
   /* ── Layout ─────────────────────────────────── */
   .cat-main {
-    padding: var(--f-space-8, 2rem) var(--f-space-10, 2.5rem);
+    padding: var(--f-space-8, 2rem) clamp(1.5rem, 4vw, 4rem);
     min-width: 0;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   /* ── Page Header ──────────────────────────── */

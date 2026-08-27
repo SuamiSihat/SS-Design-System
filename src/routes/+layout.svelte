@@ -1,8 +1,14 @@
 <script>
+  import { onMount } from 'svelte';
   import Navbar from '$lib/components/Navbar.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import { initTheme } from '$lib/stores/theme.js';
 
   let { children } = $props();
+
+  onMount(() => {
+    initTheme();
+  });
 </script>
 
 <div class="f-app-shell">

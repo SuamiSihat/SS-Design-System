@@ -1,8 +1,18 @@
+<script>
+  import { theme } from '$lib/stores/theme.js';
+
+  let logoSrc = $derived(
+    $theme === 'dark'
+      ? '/public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg'
+      : '/public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_light.svg'
+  );
+</script>
+
 <footer class="f-footer">
     <div class="f-footer-inner">
         <div>
-            <img src="/public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg" 
-                 alt="SuamiSihat™" 
+            <img src={logoSrc} 
+                 alt="SuamiSihat™ Logo" 
                  class="f-footer-logo" 
                  loading="lazy">
             <p class="f-footer-tagline">The single source of truth for the SuamiSihat™ design ecosystem. For internal staff use.</p>
@@ -10,6 +20,7 @@
         <div>
             <p class="f-footer-heading">Hub</p>
             <ul class="f-footer-links">
+                <li><a href="/">Home</a></li>
                 <li><a href="/brand-system/">Brand System</a></li>
                 <li><a href="/brand-guidelines/">Guidelines</a></li>
                 <li><a href="/components/">Components</a></li>
@@ -32,7 +43,7 @@
         </div>
     </div>
     <div class="f-footer-bottom">
-        <span class="f-footer-copy">&copy; 2026 SuamiSihat™. SuamiSihat Holding Sdn Bhd. All Right reserved</span>
+        <span class="f-footer-copy">&copy; 2026 SuamiSihat™. SuamiSihat Holding Sdn Bhd. All Rights Reserved.</span>
         <span class="f-footer-copy">SS Design System v3.5</span>
     </div>
 </footer>
@@ -41,9 +52,11 @@
   .f-footer {
     background: var(--color-neutral-bg-2, #FFFFFF);
     border-top: 1px solid var(--color-neutral-stroke-1, rgba(0, 0, 0, 0.08));
-    padding: var(--f-space-12, 3rem) var(--f-space-6, 1.5rem) var(--f-space-8, 2rem);
+    padding: var(--f-space-12, 3rem) clamp(1.5rem, 4vw, 4rem) var(--f-space-8, 2rem);
     transition: background 0.25s ease, border-color 0.25s ease;
     margin-top: auto;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   :global([data-theme="dark"]) .f-footer {
@@ -52,8 +65,9 @@
   }
 
   .f-footer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr;
     gap: var(--f-space-8, 2rem);
@@ -77,7 +91,7 @@
     font-size: 0.85rem;
     color: var(--color-neutral-fg-2, #64748B);
     line-height: 1.6;
-    max-width: 380px;
+    max-width: 480px;
     margin: 0;
   }
 
@@ -105,7 +119,7 @@
 
   .f-footer-links a {
     font-size: 0.875rem;
-    color: var(--color-neutral-fg-2, #475569);
+    color: var(--color-neutral-fg-2, #64748B);
     text-decoration: none;
     transition: color 0.15s ease;
   }
@@ -123,9 +137,10 @@
   }
 
   .f-footer-bottom {
-    max-width: 1200px;
-    margin: 2rem auto 0;
-    padding-top: 1rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 2.5rem 0 0;
+    padding-top: 1.25rem;
     border-top: 1px solid var(--color-neutral-stroke-1, rgba(0, 0, 0, 0.08));
     display: flex;
     align-items: center;
