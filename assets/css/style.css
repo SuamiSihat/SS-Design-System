@@ -1872,10 +1872,5 @@ body {
   outline-offset: 2px;
 }
 
-/* Global focus-visible ring — WCAG 2.4.11 */
-:focus-visible {
-  outline: 3px solid var(--f-color-accent, #21a1f7);
-  outline-offset: 3px;
-  border-radius: var(--f-radius-sm);
-}
+
 

@@ -5,7 +5,7 @@
     { id: 'd1-1', period: 'Day 1', text: 'Receive and set up your work laptop / device' },
     { id: 'd1-2', period: 'Day 1', text: 'Set up your @suamisihat.com work email' },
     { id: 'd1-3', period: 'Day 1', text: 'Generate your mail signature using the Signature Generator', link: '/signature/' },
-    { id: 'd1-4', period: 'Day 1', text: 'Log into the SSNAS Dashboard and bookmark it', link: 'https://nas.suamisihat.com.my/' },
+    { id: 'd1-4', period: 'Day 1', text: 'Log into the SSNAS Dashboard and bookmark it', link: 'https://suamisihat.myds.me' },
     { id: 'd1-5', period: 'Day 1', text: 'Complete HR paperwork and emergency contact form' },
     { id: 'd2-1', period: 'Days 2-3', text: 'Read through the Brand System - especially Logo Rules and Colour Tokens', link: '/brand-system/' },
     { id: 'd2-2', period: 'Days 2-3', text: 'Review the Brand Guidelines PDF booklets', link: '/brand-guidelines/' },
@@ -273,7 +273,7 @@
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:0.75rem;">
-        <a href="https://nas.suamisihat.com.my/" target="_blank" rel="noopener noreferrer" class="cl-card" style="display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-lg);background:var(--color-neutral-bg-2);text-decoration:none;">
+        <a href="https://suamisihat.myds.me" target="_blank" rel="noopener noreferrer" class="cl-card" style="display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-lg);background:var(--color-neutral-bg-2);text-decoration:none;">
           <div style="display:flex;align-items:center;gap:12px;">
             <div style="width:36px;height:36px;border-radius:8px;background:rgba(33,161,247,0.1);color:#21A1F7;display:flex;align-items:center;justify-content:center;font-size:1.1rem;"><iconify-icon icon="fluent:gauge-24-regular"></iconify-icon></div>
             <div><strong style="color:var(--color-neutral-fg-1);font-size:0.95rem;display:block;">SSNAS Dashboard</strong><span style="font-size:0.75rem;color:var(--color-neutral-fg-3);">Main internal launchpad &mdash; shared drives, apps, and tools</span></div>

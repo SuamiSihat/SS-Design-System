@@ -36,7 +36,7 @@
         <li><a href="/products/" class="footer-link">Products</a></li>
         <li><a href="/tools/" class="footer-link">Tools</a></li>
         <li><a href="/signature/" class="footer-link">Signature</a></li>
-        <li><a href="https://nas.suamisihat.com.my/" target="_blank" rel="noopener noreferrer" class="footer-link footer-ext">SSNAS ↗</a></li>
+        <li><a href="https://suamisihat.myds.me" target="_blank" rel="noopener noreferrer" class="footer-link footer-ext">SSNAS ↗</a></li>
       </ul>
     </section>
 
@@ -81,15 +81,14 @@
 
 <style>
   /* ================================================================
-     Microsoft Fluent 2 Official Website Footer Specification
-     Parity with fluent2.microsoft.design
+     Microsoft Fluent 2 Official Compact Horizon Footer Specification
      ================================================================ */
   .fluent2-footer {
     width: 100%;
     box-sizing: border-box;
     background: #F5F5F7;
     border-top: 1px solid rgba(0, 0, 0, 0.08);
-    padding: 2.25rem clamp(1.5rem, 5vw, 5rem) 2rem;
+    padding: 1.15rem clamp(1.5rem, 5vw, 5rem) 1rem;
     margin-top: auto;
     font-family: inherit;
     transition: background 0.2s ease, border-color 0.2s ease;
@@ -112,7 +111,7 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 0.75rem 1.5rem;
   }
 
   .footer-logo-wrap a {
@@ -122,7 +121,7 @@
   }
 
   .footer-logo {
-    height: 28px;
+    height: 24px;
     width: auto;
     display: block;
   }
@@ -134,17 +133,17 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1.75rem;
+    gap: 1.25rem 1.75rem;
   }
 
   @media (max-width: 768px) {
     .footer-links {
-      gap: 1rem 1.25rem;
+      gap: 0.75rem 1.25rem;
     }
   }
 
   .footer-link {
-    font-size: 0.875rem;
+    font-size: 0.825rem;
     font-weight: 500;
     color: #424242;
     text-decoration: none;
@@ -172,7 +171,7 @@
     border: 0;
     height: 1px;
     background: rgba(0, 0, 0, 0.08);
-    margin: 1.5rem 0 1.25rem;
+    margin: 0.75rem 0 0.65rem;
     padding: 0;
   }
 
@@ -186,28 +185,31 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1.25rem;
+    gap: 0.75rem 1.25rem;
   }
 
-  /* Subsidiary Mini Buttons (matching Fluent 2 icon links) */
+  /* Subsidiary Mini Buttons */
   .social-links {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   .social-icon-btn {
-    width: 28px;
-    height: 24px;
+    width: 26px;
+    height: 22px;
     border-radius: 4px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     background: rgba(0, 0, 0, 0.05);
     color: #616161;
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     font-weight: 700;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
     text-decoration: none;
     transition: background 0.15s ease, color 0.15s ease;
   }
@@ -235,8 +237,8 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1.25rem;
-    font-size: 0.75rem;
+    gap: 1.15rem;
+    font-size: 0.725rem;
     color: #707070;
   }
 
@@ -248,7 +250,7 @@
     background: transparent;
     border: none;
     padding: 0;
-    font-size: 0.75rem;
+    font-size: 0.725rem;
     font-family: inherit;
     font-weight: 500;
     color: inherit;
