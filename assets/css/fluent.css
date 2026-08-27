@@ -30,6 +30,9 @@
   --ss-drmitring-green: #6AB845;   /* Dr Mit Ring® Primary Brand Green */
   --ss-drmitring-deep:  #23963B;   /* Dr Mit Ring® Deep Medical Emerald */
   --ss-drmitring-canvas:#FBFBFB;   /* Dr Mit Ring® Pure Light Canvas */
+  --ss-mensculine-black:#1C1C1C;   /* Mensculine Foundation Obsidian Black */
+  --ss-mensculine-blue: #038AFA;   /* Mensculine Vibrant Cyan Blue Accent */
+  --ss-mensculine-canvas:#F1F1F1;  /* Mensculine Light Neutral Surface */
 
   /* -- Fluent Neutral Ramp ----------------------------------------------- */
   --f-neutral-0:    #FFFFFF;
