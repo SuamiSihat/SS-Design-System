@@ -6,155 +6,280 @@
       ? '/public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg'
       : '/public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_light.svg'
   );
+
+  let feedbackSent = $state(false);
+
+  function triggerFeedback() {
+    feedbackSent = true;
+    setTimeout(() => { feedbackSent = false; }, 3000);
+  }
 </script>
 
-<footer class="f-footer">
-    <div class="f-footer-inner">
-        <div>
-            <img src={logoSrc} 
-                 alt="SuamiSihat™ Logo" 
-                 class="f-footer-logo" 
-                 loading="lazy">
-            <p class="f-footer-tagline">The single source of truth for the SuamiSihat™ design ecosystem. For internal staff use.</p>
-        </div>
-        <div>
-            <p class="f-footer-heading">Hub</p>
-            <ul class="f-footer-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/brand-system/">Brand System</a></li>
-                <li><a href="/brand-guidelines/">Guidelines</a></li>
-                <li><a href="/components/">Components</a></li>
-                <li><a href="/products/">Products</a></li>
-                <li><a href="/signature/">Mail Signature</a></li>
-                <li><a href="/tools/">SS CAM &amp; Tools</a></li>
-                <li><a href="/onboarding/">Onboarding</a></li>
-            </ul>
-        </div>
-        <div>
-            <p class="f-footer-heading">Resources</p>
-            <ul class="f-footer-links">
-                <li><a href="/doc/?doc=changelog">What's New</a></li>
-                <li><a href="/doc/?doc=roadmap">Roadmap</a></li>
-                <li><a href="/doc/?doc=contribution-guide">Contribution Guide</a></li>
-                <li><a href="/doc/?doc=vision-mission">Vision &amp; Mission</a></li>
-                <li><a href="https://nas.suamisihat.com.my/" target="_blank" rel="noopener noreferrer">SSNAS Dashboard &#8599;</a></li>
-                <li><a href="https://suamisihat.com.my/brand-assets/" target="_blank" rel="noopener noreferrer">Official Brand Assets &#8599;</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="f-footer-bottom">
-        <span class="f-footer-copy">&copy; 2026 SuamiSihat™. SuamiSihat Holding Sdn Bhd. All Rights Reserved.</span>
-        <span class="f-footer-copy">SS Design System v3.5</span>
-    </div>
+<footer id="fluent2-footer" class="fluent2-footer">
+  <div class="footer-content">
+    <!-- Top Section: Logo on Left, Navigation on Right -->
+    <section class="footer-top">
+      <div class="footer-logo-wrap">
+        <a href="/" aria-label="SuamiSihat Homepage">
+          <img src={logoSrc} 
+               alt="SuamiSihat™ Design System" 
+               class="footer-logo" 
+               loading="lazy">
+        </a>
+      </div>
+
+      <ul class="footer-links" aria-label="Bottom navigation">
+        <li><a href="/" class="footer-link">Home</a></li>
+        <li><a href="/brand-system/" class="footer-link">Brand System</a></li>
+        <li><a href="/brand-guidelines/" class="footer-link">Guidelines</a></li>
+        <li><a href="/components/" class="footer-link">Components</a></li>
+        <li><a href="/products/" class="footer-link">Products</a></li>
+        <li><a href="/tools/" class="footer-link">Tools</a></li>
+        <li><a href="/signature/" class="footer-link">Signature</a></li>
+        <li><a href="https://nas.suamisihat.com.my/" target="_blank" rel="noopener noreferrer" class="footer-link footer-ext">SSNAS ↗</a></li>
+      </ul>
+    </section>
+
+    <!-- Fluent 2 Hairline Separator -->
+    <hr class="sep">
+
+    <!-- Bottom Section: Entity Icons on Left, Legal & Feedback on Right -->
+    <section class="footer-bottom">
+      <div class="social-links" aria-label="Operating Entities">
+        <a href="/brand-system/#subbrand" class="social-icon-btn" title="SS Health (SSH)">
+          <span>SSH</span>
+        </a>
+        <a href="/brand-system/#subbrand" class="social-icon-btn" title="SS Clinic (SSC)">
+          <span>SSC</span>
+        </a>
+        <a href="/brand-system/#subbrand" class="social-icon-btn" title="SS Wellness (SSW)">
+          <span>SSW</span>
+        </a>
+        <a href="/brand-system/#subbrand" class="social-icon-btn" title="SS Ecommerce (SSE)">
+          <span>SSE</span>
+        </a>
+        <a href="/brand-system/#subbrand" class="social-icon-btn" title="SS Technology (SST)">
+          <span>SST</span>
+        </a>
+      </div>
+
+      <ul class="external-links">
+        <li>
+          <button id="feedback-button" type="button" class="feedback-btn" onclick={triggerFeedback}>
+            {feedbackSent ? '✓ Thank you!' : 'Feedback'}
+          </button>
+        </li>
+        <li><a href="mailto:branding@suamisihat.com" class="ext-link">Contact SuamiSihat</a></li>
+        <li><a href="/doc/?doc=vision-mission" class="ext-link">Vision &amp; Mission</a></li>
+        <li><a href="/doc/?doc=contribution-guide" class="ext-link">Contribution Guide</a></li>
+        <li><a href="/doc/?doc=changelog" class="ext-link">Changelog</a></li>
+        <li class="copy">&copy; SuamiSihat <span id="copy-year">2026</span></li>
+      </ul>
+    </section>
+  </div>
 </footer>
 
 <style>
-  .f-footer {
-    background: var(--color-neutral-bg-2, #FFFFFF);
-    border-top: 1px solid var(--color-neutral-stroke-1, rgba(0, 0, 0, 0.08));
-    padding: var(--f-space-12, 3rem) clamp(1.5rem, 4vw, 4rem) var(--f-space-8, 2rem);
-    transition: background 0.25s ease, border-color 0.25s ease;
-    margin-top: auto;
+  /* ================================================================
+     Microsoft Fluent 2 Official Website Footer Specification
+     Parity with fluent2.microsoft.design
+     ================================================================ */
+  .fluent2-footer {
     width: 100%;
     box-sizing: border-box;
+    background: #F5F5F7;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 2.25rem clamp(1.5rem, 5vw, 5rem) 2rem;
+    margin-top: auto;
+    font-family: inherit;
+    transition: background 0.2s ease, border-color 0.2s ease;
   }
 
-  :global([data-theme="dark"]) .f-footer {
-    background: #090D16;
-    border-top-color: rgba(255, 255, 255, 0.1);
+  :global([data-theme="dark"]) .fluent2-footer {
+    background: #141414;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  .f-footer-inner {
+  .footer-content {
     width: 100%;
     max-width: 100%;
     margin: 0;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: var(--f-space-8, 2rem);
   }
 
-  @media (max-width: 768px) {
-    .f-footer-inner {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
+  /* Top Section */
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
   }
 
-  .f-footer-logo {
-    height: 64px;
+  .footer-logo-wrap a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .footer-logo {
+    height: 28px;
     width: auto;
-    margin-bottom: 0.75rem;
     display: block;
   }
 
-  .f-footer-tagline {
-    font-size: 0.85rem;
-    color: var(--color-neutral-fg-2, #64748B);
-    line-height: 1.6;
-    max-width: 480px;
-    margin: 0;
-  }
-
-  :global([data-theme="dark"]) .f-footer-tagline {
-    color: #94A3B8;
-  }
-
-  .f-footer-heading {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-neutral-fg-3, #94A3B8);
-    margin-bottom: 0.75rem;
-  }
-
-  .f-footer-links {
+  .footer-links {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.75rem;
   }
 
-  .f-footer-links a {
+  @media (max-width: 768px) {
+    .footer-links {
+      gap: 1rem 1.25rem;
+    }
+  }
+
+  .footer-link {
     font-size: 0.875rem;
-    color: var(--color-neutral-fg-2, #64748B);
+    font-weight: 500;
+    color: #424242;
     text-decoration: none;
     transition: color 0.15s ease;
   }
 
-  :global([data-theme="dark"]) .f-footer-links a {
-    color: #94A3B8;
+  :global([data-theme="dark"]) .footer-link {
+    color: #D6D6D6;
   }
 
-  .f-footer-links a:hover {
-    color: var(--color-brand-primary, #043388);
+  .footer-link:hover {
+    color: #043388;
   }
 
-  :global([data-theme="dark"]) .f-footer-links a:hover {
+  :global([data-theme="dark"]) .footer-link:hover {
     color: #21A1F7;
   }
 
-  .f-footer-bottom {
-    width: 100%;
-    max-width: 100%;
-    margin: 2.5rem 0 0;
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--color-neutral-stroke-1, rgba(0, 0, 0, 0.08));
+  .footer-ext {
+    font-weight: 600;
+  }
+
+  /* Fluent 2 Separator Line */
+  .sep {
+    border: 0;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.08);
+    margin: 1.5rem 0 1.25rem;
+    padding: 0;
+  }
+
+  :global([data-theme="dark"]) .sep {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Bottom Section */
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  /* Subsidiary Mini Buttons (matching Fluent 2 icon links) */
+  .social-links {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .social-icon-btn {
+    width: 28px;
+    height: 24px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.05);
+    color: #616161;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  :global([data-theme="dark"]) .social-icon-btn {
+    background: rgba(255, 255, 255, 0.06);
+    color: #A3A3A3;
+  }
+
+  .social-icon-btn:hover {
+    background: #043388;
+    color: #FFFFFF;
+  }
+
+  :global([data-theme="dark"]) .social-icon-btn:hover {
+    background: #21A1F7;
+    color: #000000;
+  }
+
+  /* External & Legal Links */
+  .external-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 1.25rem;
+    font-size: 0.75rem;
+    color: #707070;
   }
 
-  :global([data-theme="dark"]) .f-footer-bottom {
-    border-top-color: rgba(255, 255, 255, 0.1);
+  :global([data-theme="dark"]) .external-links {
+    color: #8A8A8A;
   }
 
-  .f-footer-copy {
-    font-size: 0.85rem;
-    color: var(--color-neutral-fg-3, #94A3B8);
+  .feedback-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-size: 0.75rem;
+    font-family: inherit;
+    font-weight: 500;
+    color: inherit;
+    cursor: pointer;
+    transition: color 0.15s ease;
+  }
+
+  .feedback-btn:hover {
+    color: #043388;
+  }
+
+  :global([data-theme="dark"]) .feedback-btn:hover {
+    color: #FFFFFF;
+  }
+
+  .ext-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .ext-link:hover {
+    color: #19191A;
+  }
+
+  :global([data-theme="dark"]) .ext-link:hover {
+    color: #FFFFFF;
+  }
+
+  .copy {
+    color: inherit;
+    font-weight: 400;
   }
 </style>

@@ -1,0 +1,1 @@
+import"./D5S8kCR6.js";import{n as e}from"./GVysa_fg.js";var t=()=>{let t=e;return{page:{subscribe:t.page.subscribe},navigating:{subscribe:t.navigating.subscribe},updated:t.updated}},n={subscribe(e){return t().page.subscribe(e)}};export{n as t};
