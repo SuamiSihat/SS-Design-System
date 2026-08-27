@@ -3,7 +3,13 @@
   "tagline": "Precision Men's Health Supplements",
   "logo": "logo_androlab_primary.svg",
   "banner": "banner.svg",
-  "heroGradient": "linear-gradient(135deg, #022057 0%, #043388 100%)",
+  "heroGradient": "linear-gradient(135deg, #101820 0%, #0A89FA 100%)",
+  "colors": {
+    "primary": "#101820",
+    "accent": "#0A89FA",
+    "rxGold": "#FCE53D",
+    "canvas": "#F1F1F1"
+  },
   "ownership": {
     "tags": ["SS Health Owned", "SS Clinic", "SS Wellness"],
     "text": "Androlab is an in-house brand operated collaboratively under the SS Clinic and SS Wellness ecosystems."
@@ -11,9 +17,7 @@
   "assets": [
     "logo_androlab_primary.svg",
     "logo_androlab_secondary.svg",
-    "logo_androlab_rx_primary.svg",
-    "logo_androlab_alpha_primary.svg",
-    "Icon.png",
-    "all_logo.png"
+    "sub-products/androlab-rx/logos/logo_androlab_rx_primary.svg",
+    "sub-products/androlab-alpha/logos/logo_androlab_alpha_primary.svg"
   ]
 }
