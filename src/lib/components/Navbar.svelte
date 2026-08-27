@@ -1,7 +1,9 @@
 <script>
   import { page } from '$app/stores';
+  import { onMount } from 'svelte';
 
   let mobileOpen = $state(false);
+  let isDarkMode = $state(false);
 
   const navLinks = [
     { label: 'Brand Guidelines', href: '/brand-guidelines/' },
@@ -16,6 +18,25 @@
   function toggleMobile() {
     mobileOpen = !mobileOpen;
   }
+
+  function toggleTheme() {
+    isDarkMode = !isDarkMode;
+    if (isDarkMode) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('ss-theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('ss-theme', 'light');
+    }
+  }
+
+  onMount(() => {
+    const saved = localStorage.getItem('ss-theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      isDarkMode = true;
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  });
 </script>
 
 <header class="f-navbar">
@@ -39,6 +60,18 @@
     </nav>
 
     <div class="f-nav-actions d-none d-lg-flex" style="margin-left: auto; gap: 0.5rem; align-items: center;">
+      <!-- Theme Toggle -->
+      <button 
+        type="button" 
+        class="btn btn-sm"
+        onclick={toggleTheme}
+        title="Toggle Light / Dark Mode"
+        style="border: 1px solid var(--color-neutral-stroke-1); color: var(--color-neutral-fg-1); display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: var(--f-radius-medium); padding: 0;"
+        aria-label="Toggle dark mode"
+      >
+        <iconify-icon icon={isDarkMode ? "lucide:sun" : "lucide:moon"} width="16" height="16"></iconify-icon>
+      </button>
+
       <a href="https://github.com/SuamiSihat/SS-Design-System" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="border: 1px solid var(--color-neutral-stroke-1); color: var(--color-neutral-fg-1); display: inline-flex; align-items: center; gap: 0.35rem; border-radius: var(--f-radius-medium); font-size: 0.8rem; padding: 0.35rem 0.75rem;">
         <iconify-icon icon="lucide:github" width="16"></iconify-icon> GitHub
       </a>
@@ -72,9 +105,20 @@
           </a>
         {/each}
         <hr style="margin: 0.5rem 0; border-color: var(--color-neutral-stroke-1);" />
-        <a href="https://github.com/SuamiSihat/SS-Design-System" target="_blank" rel="noopener noreferrer" style="color: var(--color-neutral-fg-2); text-decoration: none; font-size: 0.875rem; display: flex; align-items: center; gap: 0.5rem;">
-          <iconify-icon icon="lucide:github" width="18"></iconify-icon> View on GitHub
-        </a>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <button 
+            type="button" 
+            class="btn btn-sm" 
+            onclick={toggleTheme}
+            style="border: 1px solid var(--color-neutral-stroke-1); color: var(--color-neutral-fg-1); display: flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.75rem; border-radius: 6px;"
+          >
+            <iconify-icon icon={isDarkMode ? "lucide:sun" : "lucide:moon"} width="16"></iconify-icon>
+            {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+          </button>
+          <a href="https://github.com/SuamiSihat/SS-Design-System" target="_blank" rel="noopener noreferrer" style="color: var(--color-neutral-fg-2); text-decoration: none; font-size: 0.875rem; display: flex; align-items: center; gap: 0.35rem;">
+            <iconify-icon icon="lucide:github" width="16"></iconify-icon> GitHub
+          </a>
+        </div>
       </div>
     </div>
   {/if}

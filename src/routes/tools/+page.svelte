@@ -1,6 +1,40 @@
 <script>
   let hexInput = $state('#043388');
   let bgHex = $state('#FFFFFF');
+  let iconSearch = $state('');
+  let copiedIcon = $state('');
+
+  const icons = [
+    { id: 'activity', name: 'Activity / Vitality', tags: 'pulse health heart rate vital' },
+    { id: 'shield-check', name: 'Shield Check / Verified', tags: 'security trust moh moh-approved medical' },
+    { id: 'heart-pulse', name: 'Heart Pulse', tags: 'cardio stamina performance wellness' },
+    { id: 'lock', name: 'Lock / Discretion', tags: 'privacy confidential secret encryption' },
+    { id: 'stethoscope', name: 'Stethoscope / Doctor', tags: 'clinic physician consult teleconsult' },
+    { id: 'pill', name: 'Pill / Formulation', tags: 'androlab capsule medication supplement' },
+    { id: 'zap', name: 'Energy / Zap', tags: 'potency vitality fast power' },
+    { id: 'calendar', name: 'Calendar / Booking', tags: 'appointment schedule slot date' },
+    { id: 'phone-call', name: 'Phone Call / Telehealth', tags: 'contact support teleconsult call' },
+    { id: 'user-check', name: 'User Check / Verified Patient', tags: 'patient doctor account register' },
+    { id: 'award', name: 'Award / Standard', tags: 'certified gold standard quality' },
+    { id: 'sparkles', name: 'Sparkles / AI & Modern', tags: 'ss-cam intelligence modern vitality' }
+  ];
+
+  let filteredIcons = $derived(
+    iconSearch.trim() === '' 
+      ? icons 
+      : icons.filter(i => (i.name + ' ' + i.tags).toLowerCase().includes(iconSearch.toLowerCase()))
+  );
+
+  async function copyIconSnippet(iconId) {
+    const snippet = `<iconify-icon icon="lucide:${iconId}" width="24" height="24"></iconify-icon>`;
+    try {
+      await navigator.clipboard.writeText(snippet);
+      copiedIcon = iconId;
+      setTimeout(() => (copiedIcon = ''), 2000);
+    } catch (e) {
+      console.error(e);
+    }
+  }
 
   function hexToRgb(hex) {
     let cleanHex = hex.replace('#', '');
@@ -56,12 +90,12 @@
     <div class="text-uppercase fw-bold text-primary" style="font-size: 0.8rem; letter-spacing: 0.08em;">Design Utilities</div>
     <h1 class="display-6 fw-bold mb-2">Color & Accessibility Tools</h1>
     <p class="lead text-secondary" style="max-width: 780px;">
-      Interactive utilities for testing WCAG color contrast, validating 60:30:10 allocations, and checking token values.
+      Interactive utilities for testing WCAG color contrast, validating 60:30:10 allocations, and searching healthcare system icons.
     </p>
   </div>
 
-  <div class="row g-4">
-    <!-- Tool: WCAG Contrast Evaluator -->
+  <div class="row g-4 mb-5">
+    <!-- Tool 1: WCAG Contrast Evaluator -->
     <div class="col-lg-6">
       <div class="card p-4 border rounded-4 shadow-sm h-100" style="background: var(--color-layer-card, #FFFFFF);">
         <h4 class="fw-bold mb-3" style="font-size: 1.15rem;">WCAG 2.1 Contrast Checker</h4>
@@ -105,22 +139,67 @@
       </div>
     </div>
 
-    <!-- Tool: 60:30:10 Quick Cheatsheet -->
+    <!-- Tool 2: 60:30:10 Quick Cheatsheet -->
     <div class="col-lg-6">
       <div class="card p-4 border rounded-4 shadow-sm h-100" style="background: var(--color-layer-card, #FFFFFF);">
         <h4 class="fw-bold mb-3" style="font-size: 1.15rem;">60:30:10 Surface Rules</h4>
         <ul class="list-unstyled d-flex flex-column gap-3" style="font-size: 0.875rem;">
-          <li class="p-3 rounded-3" style="background: #F8FAFC; border-left: 4px solid #CBD5E1;">
+          <li class="p-3 rounded-3" style="background: #F8FAFC; border-left: 4px solid #CBD5E1; color: #1C1C1C;">
             <strong>60% Foundation Canvas:</strong> Always default body background to <code>#F8FAFC</code> or surface cards to <code>#FFFFFF</code>. Never paint primary canvases with dark saturated blue.
           </li>
-          <li class="p-3 rounded-3" style="background: #EBF5FE; border-left: 4px solid #022057;">
+          <li class="p-3 rounded-3" style="background: #EBF5FE; border-left: 4px solid #022057; color: #022057;">
             <strong>30% Structure:</strong> Use <code>#022057</code> for the top navbar, section dividers, and footer. Keeps the page anchored without visual noise.
           </li>
-          <li class="p-3 rounded-3" style="background: #FEF9C3; border-left: 4px solid #21A1F7;">
+          <li class="p-3 rounded-3" style="background: #FEF9C3; border-left: 4px solid #21A1F7; color: #022057;">
             <strong>10% Accent:</strong> Reserve <code>#21A1F7</code> and <code>#F7E143</code> strictly for interactive focal points. Maximum 1-2 accent CTAs per viewport.
           </li>
         </ul>
       </div>
     </div>
   </div>
+
+  <!-- Tool 3: Interactive Lucide Icon Search & Copier -->
+  <section class="card p-4 p-md-5 border rounded-4 shadow-sm" style="background: var(--color-layer-card, #FFFFFF);">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-4">
+      <div>
+        <h3 class="h5 fw-bold mb-1">Healthcare & System Icon Explorer</h3>
+        <p class="text-secondary mb-0" style="font-size: 0.9rem;">
+          Search clinical, vitality, and interface icons. Click any card to copy its component code.
+        </p>
+      </div>
+      <div style="max-width: 280px; width: 100%;">
+        <input 
+          type="text" 
+          class="form-control" 
+          placeholder="Search icons (e.g. clinic, heart)..." 
+          bind:value={iconSearch}
+        />
+      </div>
+    </div>
+
+    <div class="row g-3">
+      {#each filteredIcons as ico}
+        <div class="col-6 col-md-4 col-lg-3">
+          <div 
+            class="p-3 border rounded-3 text-center h-100 d-flex flex-column align-items-center justify-content-center"
+            style="background: var(--color-neutral-bg-1, #F8FAFC); cursor: pointer; transition: all 0.2s ease;"
+            onclick={() => copyIconSnippet(ico.id)}
+            onkeydown={(e) => e.key === 'Enter' && copyIconSnippet(ico.id)}
+            role="button"
+            tabindex="0"
+          >
+            <div style="color: var(--color-brand-primary, #043388); margin-bottom: 0.5rem;">
+              <iconify-icon icon="lucide:{ico.id}" width="32" height="32"></iconify-icon>
+            </div>
+            <div class="fw-bold mb-1" style="font-size: 0.85rem; color: var(--color-neutral-fg-1, #1C1C1C);">
+              {ico.name}
+            </div>
+            <code class="text-muted" style="font-size: 0.75rem;">
+              {copiedIcon === ico.id ? '✓ Copied!' : `lucide:${ico.id}`}
+            </code>
+          </div>
+        </div>
+      {/each}
+    </div>
+  </section>
 </div>
