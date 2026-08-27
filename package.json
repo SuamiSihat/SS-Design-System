@@ -1,23 +1,31 @@
 {
   "name": "ss-design-system",
   "version": "3.4.0",
-  "description": "SuamiSihat™ Design System — static asset build pipeline",
+  "description": "SuamiSihat™ Design System — SvelteKit living component hub & static asset pipeline",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build": "npm run build:css && npm run build:js",
+    "dev": "vite dev",
+    "build": "npm run build:raw && vite build",
+    "build:raw": "npm run build:css && npm run build:js",
     "build:css": "node scripts/minify-css.mjs",
     "build:js": "node scripts/minify-js.mjs",
+    "preview": "vite preview",
     "watch": "node scripts/watch.mjs"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/kit": "^2.70.3",
+    "@sveltejs/vite-plugin-svelte": "^7.3.0",
     "@tailwindcss/typography": "^0.5.20",
     "autoprefixer": "^10.5.4",
     "chokidar": "^3.6.0",
     "lightningcss": "^1.28.2",
     "lucide-svelte": "^1.0.1",
     "postcss": "^8.5.26",
+    "svelte": "^5.56.10",
     "tailwindcss": "^4.3.3",
-    "terser": "^5.36.0"
+    "terser": "^5.36.0",
+    "vite": "^8.2.2"
   }
 }
