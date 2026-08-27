@@ -12,6 +12,12 @@ Major architectural and art direction release migrating the design system to Sve
 
 ### New Features and Restorations in v3.5
 
+- **Default Hero Component Standard (`ss-hero`)**:
+  - Standardized `.ss-hero` and `<SSHero />` as the official default background and container component for all hero banners, landing headers, and product master headers across SuamiSihat™.
+  - Embedded the interactive 2D kinetic vitality wave canvas (`#heroWaveCanvas` / `.hero-wave-canvas`) featuring floating Mars `♂` symbols, radiant Azure (`#21A1F7`) and Gold (`#F7E143`) energy nodes, and ambient pulsing glow (`.ss-hero-ambient-glow`).
+  - Added full multi-framework integration guides (SvelteKit, Vanilla HTML/CSS, Expo React Native, Flutter) to the Component Library (`/components/#ss-hero`) and Brand System (`/brand-system/#patterns`).
+  - Added Agent Rule 6 (`ss-hero` Hero Standard) enforcing the 60% brand vertical gradient, 30% ambient glow bloom, and 10% kinetic vitality wave canvas.
+
 - **Product Catalogue Full Restoration (`/products/`)**:
   - Restored full 14-product portfolio across 3 authoritative sections: **SS Products & Global Lines** (8 lines including archived MFX & Xprimal), **Partner Brands** (4 partner networks), and **Bioactives, Ingredients & Science Partners** (2 assets).
   - Restored 4-group sidebar navigation: All Products (IntersectionObserver scroll-spy), Brand Hubs (direct sub-product links), By Category filter buttons, and Site Navigation.

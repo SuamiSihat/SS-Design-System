@@ -931,6 +931,45 @@ class SSColors {
             </div>
           </div>
         </div>
+
+        <!-- Pattern 4 / Hero Motion Standard: ss-hero Component -->
+        <div class="col-12 mt-2">
+          <div style="background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);overflow:hidden;box-shadow:var(--f-shadow-4);">
+            <div style="padding:1.5rem 1.75rem; border-bottom:1px solid var(--color-neutral-stroke-1); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+              <div>
+                <span class="ss-badge ss-badge-brand mb-1">Standard Banner Component</span>
+                <h3 style="font-size:1.25rem; font-weight:800; color:var(--color-neutral-fg-1); margin:0;">Default Hero Motion Standard (<code>ss-hero</code>)</h3>
+              </div>
+              <span style="font-size:0.75rem; color:var(--color-brand-primary); font-weight:700; background:var(--color-brand-subtle); padding:4px 10px; border-radius:9999px;">Rule 6 Standard</span>
+            </div>
+            <div style="padding:1.5rem 1.75rem;">
+              <p style="font-size:0.9rem; color:var(--color-neutral-fg-2); line-height:1.6; margin-bottom:1.25rem;">
+                The <code>ss-hero</code> component is the <strong>official default background for all hero-type banners</strong> across SuamiSihat™ portals, landing pages, and product master headers.
+              </p>
+              <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1rem; margin-bottom:1.25rem;">
+                <div style="background:var(--color-neutral-bg-1); padding:1rem; border-radius:var(--f-radius-lg); border:1px solid var(--color-neutral-stroke-1);">
+                  <div style="font-size:0.75rem; font-weight:700; color:var(--color-brand-primary); margin-bottom:4px;">60% Dominant Base</div>
+                  <div style="font-size:0.825rem; color:var(--color-neutral-fg-1); font-weight:600; margin-bottom:4px;">Brand Vertical Gradient</div>
+                  <div style="font-size:0.75rem; color:var(--color-neutral-fg-3);"><code>#022057</code> (Prussian Blue) to <code>#043388</code> (SS Blue) in light mode; <code>#021440</code> to <code>#022057</code> in dark mode.</div>
+                </div>
+                <div style="background:var(--color-neutral-bg-1); padding:1rem; border-radius:var(--f-radius-lg); border:1px solid var(--color-neutral-stroke-1);">
+                  <div style="font-size:0.75rem; font-weight:700; color:var(--color-brand-primary); margin-bottom:4px;">30% Structural Glow</div>
+                  <div style="font-size:0.825rem; color:var(--color-neutral-fg-1); font-weight:600; margin-bottom:4px;">Ambient Radial Light Bloom</div>
+                  <div style="font-size:0.75rem; color:var(--color-neutral-fg-3);">Radial light bloom (<code>.f-hero-ambient-glow</code>) pulsing gently with 60px blur to create depth and clinical atmosphere.</div>
+                </div>
+                <div style="background:var(--color-neutral-bg-1); padding:1rem; border-radius:var(--f-radius-lg); border:1px solid var(--color-neutral-stroke-1);">
+                  <div style="font-size:0.75rem; font-weight:700; color:var(--color-brand-primary); margin-bottom:4px;">10% Kinetic Vitality</div>
+                  <div style="font-size:0.825rem; color:var(--color-neutral-fg-1); font-weight:600; margin-bottom:4px;">Interactive Mars ♂ Particles</div>
+                  <div style="font-size:0.75rem; color:var(--color-neutral-fg-3);">Interactive canvas wave (<code>.hero-wave-canvas</code>) with radiant Azure (<code>#21A1F7</code>) &amp; Gold (<code>#F7E143</code>) nodes and cursor tracking.</div>
+                </div>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; background:var(--color-brand-subtle); padding:0.875rem 1.25rem; border-radius:var(--f-radius-md);">
+                <span style="font-size:0.825rem; color:var(--color-neutral-fg-1);">Explore component implementation and multi-framework code snippets in the Component Library.</span>
+                <a href="/components/#ss-hero" class="ss-btn ss-btn-primary ss-btn-sm"><iconify-icon icon="fluent:sparkle-24-regular"></iconify-icon> View ss-hero in Components</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

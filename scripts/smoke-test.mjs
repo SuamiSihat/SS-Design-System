@@ -96,6 +96,7 @@ checkFileExists('build/content/roadmap.md', 100);
 checkFileExists('build/content/brand-voice.md', 100);
 checkFileExists('build/content/changelog.md', 100);
 checkFileExists('build/content/text-color-guide.md', 100);
+checkFileExists('build/content/ss-hero-guide.md', 100);
 
 // -----------------------------------------------------------------------------
 // Test Group 4: JSON Token Syntax Integrity

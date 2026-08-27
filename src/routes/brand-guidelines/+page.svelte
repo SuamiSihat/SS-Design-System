@@ -262,6 +262,28 @@
           </div>
         </div>
       </div>
+
+      <!-- Hero Banner Component Standard -->
+      <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--color-neutral-stroke-1);">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span class="ss-badge ss-badge-brand" style="font-size: 0.75rem;">MOTION STANDARD</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-neutral-fg-1); margin: 0;">Default Hero Component (<code>ss-hero</code>)</h3>
+          </div>
+          <span style="font-size: 0.75rem; color: var(--color-brand-primary); font-weight: 700;">Rule 6 Mandate</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--color-neutral-fg-2); line-height: 1.6; margin-bottom: 1rem;">
+          All digital touchpoints, web portals, landing pages, and application headers must utilize the <strong><code>ss-hero</code></strong> animated particle wave and ambient glow backdrop as their standard hero container.
+        </p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a href="/components/#ss-hero" class="ss-btn ss-btn-primary ss-btn-sm" style="display: inline-flex; align-items: center; gap: 6px;">
+            <iconify-icon icon="fluent:sparkle-24-regular"></iconify-icon> Component Library: ss-hero
+          </a>
+          <a href="/brand-system/#patterns" class="ss-btn ss-btn-secondary ss-btn-sm" style="display: inline-flex; align-items: center; gap: 6px;">
+            <iconify-icon icon="fluent:color-background-24-regular"></iconify-icon> Brand System Allocation
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </div>

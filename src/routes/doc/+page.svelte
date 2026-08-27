@@ -17,6 +17,7 @@
       label: 'Core Documentation',
       items: [
         { id: 'introduction',        title: 'Introduction & Standards', path: '/content/introduction.md',       icon: 'fluent:home-24-regular' },
+        { id: 'ss-hero-guide',       title: 'Hero Banner Standard (ss-hero)', path: '/content/ss-hero-guide.md', icon: 'fluent:sparkle-24-regular' },
         { id: 'text-color-guide',    title: 'Text Color & Hierarchy Guide', path: '/content/text-color-guide.md', icon: 'fluent:text-color-24-regular' },
         { id: 'roadmap',             title: 'Strategic Roadmap 2026',  path: '/content/roadmap.md',             icon: 'fluent:map-drive-24-regular' },
         { id: 'brand-voice',         title: 'Brand Voice & Tone',       path: '/content/brand-voice.md',          icon: 'fluent:megaphone-24-regular' },
