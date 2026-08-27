@@ -4,15 +4,16 @@
 
 **The Authoritative Visual Language, W3C Token Architecture & Multi-Platform Component Standard for the SuamiSihat™ Digital Health Ecosystem.**
 
-[![Release](https://img.shields.io/badge/Release-v3.4.0-043388.svg?style=for-the-badge&logo=github)](https://github.com/SuamiSihat/SS-Design-System/releases)
+[![Release](https://img.shields.io/badge/Release-v3.5.0-043388.svg?style=for-the-badge&logo=github)](https://github.com/SuamiSihat/SS-Design-System/releases)
 [![License](https://img.shields.io/badge/License-MIT-6DC6EC.svg?style=for-the-badge)](LICENSE)
+[![Framework](https://img.shields.io/badge/Framework-SvelteKit%202%20•%20Svelte%205-FF3E00.svg?style=for-the-badge&logo=svelte)](https://svelte.dev/)
 [![Design Language](https://img.shields.io/badge/Design%20Language-Microsoft%20Fluent%202-022057.svg?style=for-the-badge&logo=windows)](https://fluent2.microsoft.design/)
 [![Accessibility](https://img.shields.io/badge/WCAG-2.1%20AAA%20Compliant-2e7d32.svg?style=for-the-badge)](https://www.w3.org/WAI/standards-guidelines/wcag/)
 [![Platforms](https://img.shields.io/badge/Platforms-Web%20•%20Expo%20•%20Flutter%20•%20WPF-BD9A73.svg?style=for-the-badge)](#-multi-platform-adapters)
 
 <br/>
 
-[🌐 Live System Hub](https://assets.suamisihat.com.my/) • [📚 Brand Guidelines](https://assets.suamisihat.com.my/pages/brand-guidelines.html) • [🧩 Component Library](https://assets.suamisihat.com.my/pages/components.html) • [🗺️ Strategic Roadmap](https://assets.suamisihat.com.my/pages/doc.html?doc=roadmap) • [💻 SSCAM Desktop Suite](https://github.com/SuamiSihat/ss_cam)
+[🌐 Live System Hub](https://assets.suamisihat.com.my/) • [📚 Brand Guidelines](https://assets.suamisihat.com.my/brand-guidelines/) • [🧩 Component Library](https://assets.suamisihat.com.my/components/) • [🗺️ Strategic Roadmap](https://assets.suamisihat.com.my/doc/?doc=roadmap) • [💻 SSCAM Desktop Suite](https://github.com/SuamiSihat/ss_cam)
 
 ---
 

@@ -44,7 +44,7 @@
     <a href="/" class="f-navbar-brand">
       <img src="/public/brand/logos/ss-logomark-light.svg" alt="SuamiSihat Logo" width="32" height="32" />
       <span class="f-navbar-brand-name">SuamiSihat™ <span style="font-weight: 400; opacity: 0.85;">Design System</span></span>
-      <span class="f-navbar-version">v3.4</span>
+      <span class="f-navbar-version">v3.5</span>
     </a>
 
     <nav class="f-nav-links d-none d-lg-flex">
