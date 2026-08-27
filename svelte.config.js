@@ -15,7 +15,8 @@ const config = {
     prerender: {
       handleHttpError: ({ status, path, referrer, referenceType }) => {
         console.warn(`[prerender ${status}] ${path} (from ${referrer || 'root'})`);
-      }
+      },
+      handleMissingId: 'ignore'
     }
   }
 };

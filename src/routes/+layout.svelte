@@ -5,15 +5,29 @@
   let { children } = $props();
 </script>
 
-<div class="f-app-shell" style="display: flex; flex-direction: column; min-height: 100vh; background-color: var(--color-neutral-bg-1, #F8FAFC); color: var(--color-neutral-fg-1, #1C1C1C);">
+<div class="f-app-shell">
   <Navbar />
-  <main style="flex: 1; display: flex; flex-direction: column;">
+  <div class="f-content-wrapper">
     {@render children?.()}
-  </main>
+  </div>
   <Footer />
 </div>
 
 <style>
+  .f-app-shell {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--color-neutral-bg-1, #F8FAFC);
+    color: var(--color-neutral-fg-1, #1C1C1C);
+  }
+
+  .f-content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
   :global(body) {
     margin: 0;
     padding: 0;
@@ -36,7 +50,6 @@
 
   :global(h1, h2, h3, h4, h5, h6) {
     color: var(--color-neutral-fg-1, #1C1C1C);
-    font-weight: 700;
   }
 
   :global([data-theme="dark"] h1),
@@ -48,17 +61,7 @@
     color: #FFFFFF !important;
   }
 
-  :global([data-theme="dark"] .card) {
-    background-color: #0F172A !important;
-    border-color: rgba(255, 255, 255, 0.12) !important;
-    color: #F8FAFC !important;
-  }
-
   :global(a) {
-    color: var(--color-brand-primary, #043388);
-    transition: color 0.15s ease;
-  }
-  :global(a:hover) {
-    color: var(--color-brand-hover, #022057);
+    text-decoration: none;
   }
 </style>
