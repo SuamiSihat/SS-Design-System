@@ -1868,9 +1868,7 @@ body {
 }
 .f-skip-link:focus {
   top: 0;
-  outline: 3px solid var(--f-color-accent, #21a1f7);
-  outline-offset: 2px;
-}
+
 
 
 

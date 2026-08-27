@@ -107,12 +107,12 @@
 
 <main id="main-content">
   <!-- ================================================================
-       CHAPTER 2: WHAT IT MEANS FOR SUAMISIHAT AS A BRAND
+       CHAPTER 2: BENTO GRID — WHAT IT MEANS & THE 3 PILLARS
        ================================================================ -->
-  <section id="story" class="f-section-block" aria-label="Brand Manifesto">
+  <section id="story" class="f-section-block" aria-label="Brand Manifesto and Core Pillars">
     <div class="f-chapter-badge">
       <span class="f-chapter-num">1</span>
-      <span>The Brand Manifesto</span>
+      <span>The Brand Manifesto &amp; Pillars</span>
     </div>
 
     <div class="f-section-head">
@@ -122,87 +122,93 @@
       </p>
     </div>
 
-    <div class="f-manifesto-card">
-      <div class="f-manifesto-grid">
-        <div>
-          <p class="f-manifesto-quote">
-            &ldquo;For decades, men's wellness has been trapped between clinical intimidation and back-alley ambiguity. SuamiSihat was created to restore dignity, clinical authority, and design excellence to every man's healthcare journey.&rdquo;
-          </p>
-          <p class="f-manifesto-lead">
-            Our design language pairs <strong>deep vitality Navy (<code style="color:var(--color-brand-primary);">#043388</code>)</strong> with <strong>radiant Azure (<code style="color:#21A1F7;">#21A1F7</code>)</strong> and warm gold accents — creating an unmistakable presence across physical clinics, prescription packaging, mobile teleconsultations, and national wellness campaigns.
-          </p>
-        </div>
-
-        <!-- Animated Clinical Vitality Beacon -->
-        <div class="f-manifesto-animation-pane">
-          <div class="f-lottie-wrap">
-            <dotlottie-player
-              src="https://lottie.host/80a2ba19-75a6-43d9-9524-ae13f05b00cb/nB9sM4WqgB.lottie"
-              background="transparent"
-              speed="1"
-              style="width: 140px; height: 140px;"
-              loop
-              autoplay
-            ></dotlottie-player>
-            <div class="f-lottie-pulse-ring"></div>
+    <!-- Chapter 2 Bento Architecture -->
+    <div class="f-bento-grid">
+      <!-- Bento Item 1: Large 8-Col Manifesto Card with Lottie Beacon -->
+      <div class="f-bento-card f-bento-hero-card f-bento-span-8">
+        <div class="f-manifesto-grid">
+          <div>
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--color-brand-primary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem;">
+              Core Brand Purpose
+            </div>
+            <p class="f-manifesto-quote">
+              &ldquo;For decades, men's wellness has been trapped between clinical intimidation and back-alley ambiguity. SuamiSihat restores patient dignity, clinical authority, and design excellence.&rdquo;
+            </p>
+            <p class="f-manifesto-lead">
+              Pairing <strong>vitality Navy (<code style="color:var(--color-brand-primary);">#043388</code>)</strong> with <strong>radiant Azure (<code style="color:#21A1F7;">#21A1F7</code>)</strong> across physical clinics, prescription packaging, and teleconsultations.
+            </p>
           </div>
-          <span class="f-lottie-caption">Certified Medical Trust &bull; 60:30:10 Ratio</span>
+
+          <div class="f-manifesto-animation-pane">
+            <div class="f-lottie-wrap">
+              <dotlottie-player
+                src="https://lottie.host/80a2ba19-75a6-43d9-9524-ae13f05b00cb/nB9sM4WqgB.lottie"
+                background="transparent"
+                speed="1"
+                style="width: 130px; height: 130px;"
+                loop
+                autoplay
+              ></dotlottie-player>
+            </div>
+            <span class="f-lottie-caption">Clinical Trust &bull; 60:30:10 Ratio</span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- 3 Core Pillars: Why Use SuamiSihat Brand System? -->
-    <div class="f-section-head" style="margin-top: 3.5rem;">
-      <div class="f-chapter-badge">
-        <span class="f-chapter-num">2</span>
-        <span>The 3 Pillars</span>
+      <!-- Bento Item 2: 4-Col Zero Brand Dilution Card -->
+      <div class="f-bento-card f-bento-span-4" style="justify-content: space-between;">
+        <div>
+          <div class="f-pillar-icon-wrap">
+            <div class="f-pillar-icon">
+              <iconify-icon icon="fluent:box-multiple-24-regular"></iconify-icon>
+            </div>
+          </div>
+          <h3 class="f-pillar-title">Zero Brand Dilution</h3>
+          <p class="f-pillar-desc">
+            5 operating subsidiaries and 8+ product lines synchronized under 1 authoritative token system.
+          </p>
+        </div>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 1.25rem;">
+          <span style="font-size: 0.7rem; font-weight: 700; padding: 3px 8px; border-radius: 6px; background: rgba(4,51,136,0.08); color: var(--color-brand-primary);">SSH</span>
+          <span style="font-size: 0.7rem; font-weight: 700; padding: 3px 8px; border-radius: 6px; background: rgba(4,51,136,0.08); color: var(--color-brand-primary);">SSC</span>
+          <span style="font-size: 0.7rem; font-weight: 700; padding: 3px 8px; border-radius: 6px; background: rgba(4,51,136,0.08); color: var(--color-brand-primary);">SSW</span>
+          <span style="font-size: 0.7rem; font-weight: 700; padding: 3px 8px; border-radius: 6px; background: rgba(4,51,136,0.08); color: var(--color-brand-primary);">SSE</span>
+          <span style="font-size: 0.7rem; font-weight: 700; padding: 3px 8px; border-radius: 6px; background: rgba(4,51,136,0.08); color: var(--color-brand-primary);">SST</span>
+        </div>
       </div>
-      <h2 class="f-section-title">Why Use the SuamiSihat Brand System?</h2>
-      <p class="f-section-subtitle">
-        Eliminate design fragmentation, protect clinical authority, and ship 10x faster across all digital and physical surfaces.
-      </p>
-    </div>
 
-    <div class="f-pillars-grid">
-      <!-- Pillar 1 -->
-      <div class="f-pillar-card">
+      <!-- Bento Item 3: 4-Col Clinical Authority Card -->
+      <div class="f-bento-card f-bento-span-4">
         <div class="f-pillar-icon-wrap">
           <div class="f-pillar-icon">
             <iconify-icon icon="fluent:shield-checkmark-24-regular"></iconify-icon>
           </div>
-          <div class="f-pillar-glow"></div>
         </div>
-        <h3 class="f-pillar-title">1. Clinical Authority &amp; Dignity</h3>
+        <h3 class="f-pillar-title">Clinical Authority</h3>
         <p class="f-pillar-desc">
-          Every color choice, typography scale, and exclusion zone is engineered to reassure patients that they are interacting with certified medical expertise.
+          Strict color pairings and 1X clearspace rules engineered to reassure patients of medical expertise.
         </p>
       </div>
 
-      <!-- Pillar 2 -->
-      <div class="f-pillar-card">
-        <div class="f-pillar-icon-wrap">
-          <div class="f-pillar-icon">
-            <iconify-icon icon="fluent:box-multiple-24-regular"></iconify-icon>
-          </div>
-          <div class="f-pillar-glow"></div>
-        </div>
-        <h3 class="f-pillar-title">2. Zero Brand Dilution</h3>
-        <p class="f-pillar-desc">
-          With 5 distinct operating subsidiaries (SSH, SSC, SSW, SSE, SST) and 8+ product lines, centralized design tokens prevent color drift and rogue brand treatments.
+      <!-- Bento Item 4: 4-Col 10x Velocity Metric Card -->
+      <div class="f-bento-card f-bento-span-4" style="text-align: center; justify-content: center; align-items: center;">
+        <div class="f-bento-stat-val">10×</div>
+        <div class="f-bento-stat-label">Shipping Velocity</div>
+        <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0.5rem 0 0;">
+          From 4-week turnaround down to 72 hours with ready Fluent 2 components.
         </p>
       </div>
 
-      <!-- Pillar 3 -->
-      <div class="f-pillar-card">
+      <!-- Bento Item 5: 4-Col Accessibility Card -->
+      <div class="f-bento-card f-bento-span-4">
         <div class="f-pillar-icon-wrap">
-          <div class="f-pillar-icon">
-            <iconify-icon icon="fluent:rocket-24-regular"></iconify-icon>
+          <div class="f-pillar-icon" style="background: rgba(22, 163, 74, 0.1); color: #16A34A;">
+            <iconify-icon icon="fluent:accessibility-24-regular"></iconify-icon>
           </div>
-          <div class="f-pillar-glow"></div>
         </div>
-        <h3 class="f-pillar-title">3. 10x Shipping Velocity</h3>
+        <h3 class="f-pillar-title">WCAG 2.1 AA Certified</h3>
         <p class="f-pillar-desc">
-          Engineers and designers ship production-ready interfaces in hours using pre-tested Fluent 2 components, Svelte 5 runes, and multi-platform token pipelines.
+          4-tier text contrast matrix strictly audited across canvas, elevated cards, and inverted buttons.
         </p>
       </div>
     </div>
@@ -213,8 +219,8 @@
        ================================================================ -->
   <section id="case-study" class="f-section-block" aria-label="Interactive Case Study" style="background: rgba(4, 51, 136, 0.02);">
     <div class="f-chapter-badge">
-      <span class="f-chapter-num">3</span>
-      <span>Case Study</span>
+      <span class="f-chapter-num">2</span>
+      <span>Interactive Case Study</span>
     </div>
 
     <div class="f-section-head">
@@ -301,8 +307,8 @@
        ================================================================ -->
   <section id="roles" class="f-section-block" aria-label="Audience Hub">
     <div class="f-chapter-badge">
-      <span class="f-chapter-num">4</span>
-      <span>Audience Hub</span>
+      <span class="f-chapter-num">3</span>
+      <span>Audience Persona Hub</span>
     </div>
 
     <div class="f-section-head">
@@ -486,427 +492,404 @@
   </section>
 
   <!-- ================================================================
-       CHAPTER 5: CORE DESIGN SYSTEM CAPABILITIES (INTERACTIVE STUDIOS)
+       CHAPTER 5: BENTO GRID — LIVING STUDIOS & CAPABILITIES
        ================================================================ -->
-  <section id="studios" class="f-section-block" aria-label="Interactive Studios">
+  <section id="studios" class="f-section-block" aria-label="Interactive Living Studios">
     <div class="f-chapter-badge">
-      <span class="f-chapter-num">5</span>
-      <span>Living Studios</span>
+      <span class="f-chapter-num">4</span>
+      <span>Living Studios &amp; Tools</span>
     </div>
 
     <div class="f-section-head">
-      <h2 class="f-section-title">Visual Identity &amp; Interactive Color Studio</h2>
+      <h2 class="f-section-title">Visual Identity &amp; Living Studios</h2>
       <p class="f-section-subtitle">
-        Click any swatch to copy its HEX token and inspect surface contrast in real-time.
+        Explore interactive color palettes, living UI components, and the 4-tier typography scale.
       </p>
     </div>
 
-    <!-- Live Color Studio -->
-    <div class="f-interactive-palette-box">
-      <div class="f-palette-swatches">
-        <button 
-          type="button" 
-          class="f-palette-btn {activeSwatchHex === '#043388' ? 'selected' : ''}" 
-          style="--swatch-bg: #043388;" 
-          onclick={() => selectSwatch('#043388', 'SS Blue')} 
-          title="Click to copy SS Blue (#043388)"
-        >
-          <span class="f-swatch-label">SS Blue</span>
-          <span class="f-swatch-code">#043388</span>
-        </button>
-
-        <button 
-          type="button" 
-          class="f-palette-btn {activeSwatchHex === '#022057' ? 'selected' : ''}" 
-          style="--swatch-bg: #022057;" 
-          onclick={() => selectSwatch('#022057', 'Prussian Blue')} 
-          title="Click to copy Prussian Blue (#022057)"
-        >
-          <span class="f-swatch-label">Prussian</span>
-          <span class="f-swatch-code">#022057</span>
-        </button>
-
-        <button 
-          type="button" 
-          class="f-palette-btn {activeSwatchHex === '#21A1F7' ? 'selected' : ''}" 
-          style="--swatch-bg: #21A1F7;" 
-          onclick={() => selectSwatch('#21A1F7', 'Azure')} 
-          title="Click to copy Azure (#21A1F7)"
-        >
-          <span class="f-swatch-label">Azure</span>
-          <span class="f-swatch-code">#21A1F7</span>
-        </button>
-
-        <button 
-          type="button" 
-          class="f-palette-btn {activeSwatchHex === '#6DC6EC' ? 'selected' : ''}" 
-          style="--swatch-bg: #6DC6EC; color: #19191A;" 
-          onclick={() => selectSwatch('#6DC6EC', 'Malibu')} 
-          title="Click to copy Malibu (#6DC6EC)"
-        >
-          <span class="f-swatch-label" style="color:#19191A;">Malibu</span>
-          <span class="f-swatch-code" style="color:rgba(25,25,26,0.7);">#6DC6EC</span>
-        </button>
-
-        <button 
-          type="button" 
-          class="f-palette-btn {activeSwatchHex === '#FCE53D' ? 'selected' : ''}" 
-          style="--swatch-bg: #FCE53D; color: #19191A;" 
-          onclick={() => selectSwatch('#FCE53D', 'Banana Yellow')} 
-          title="Click to copy Banana Yellow (#FCE53D)"
-        >
-          <span class="f-swatch-label" style="color:#19191A;">Banana</span>
-          <span class="f-swatch-code" style="color:rgba(25,25,26,0.7);">#FCE53D</span>
-        </button>
-
-        <button 
-          type="button" 
-          class="f-palette-btn {activeSwatchHex === '#FCFAF6' ? 'selected' : ''}" 
-          style="--swatch-bg: #FCFAF6; color: #19191A; border: 1px solid rgba(0,0,0,0.12);" 
-          onclick={() => selectSwatch('#FCFAF6', 'Porcelain')} 
-          title="Click to copy Porcelain (#FCFAF6)"
-        >
-          <span class="f-swatch-label" style="color:#19191A;">Porcelain</span>
-          <span class="f-swatch-code" style="color:rgba(25,25,26,0.7);">#FCFAF6</span>
-        </button>
-      </div>
-
-      <div class="f-palette-inspector">
-        <div class="f-inspector-chip" style="background: {activeSwatchHex}; color: {activeSwatchHex === '#FCFAF6' || activeSwatchHex === '#FCE53D' || activeSwatchHex === '#6DC6EC' ? '#19191A' : '#FFFFFF'};">
-          <span class="f-inspector-name">{activeSwatchName}: <strong>{activeSwatchHex}</strong></span>
-          <button type="button" class="f-inspector-copy-btn" onclick={() => copyToClipboard(activeSwatchHex, `Copied ${activeSwatchName} (${activeSwatchHex})!`)}>
-            <iconify-icon icon="fluent:copy-16-regular"></iconify-icon> Copy HEX
-          </button>
+    <!-- Chapter 5 Bento Grid -->
+    <div class="f-bento-grid">
+      <!-- Bento Item 1: Wide 12-Col Color Studio -->
+      <div class="f-bento-card f-bento-span-12">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1rem;">
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0;">Interactive Color Harmony Studio</h3>
+          <span style="font-size: 0.775rem; color: var(--text-secondary);">Click any swatch to copy HEX &amp; inspect contrast</span>
         </div>
-        <span class="f-inspector-hint">60:30:10 Brand Harmony Compliant &bull; WCAG 2.1 Pass</span>
-      </div>
-    </div>
 
-    <!-- Foundation 3-Card Grid -->
-    <div class="f-foundation-grid">
-      <a href="/brand-system/" class="f-card-foundation" id="card-brand-system" aria-label="Open Brand System">
-        <div class="f-card-top">
-          <div class="f-card-icon"><iconify-icon icon="fluent:color-24-regular"></iconify-icon></div>
-          <span class="f-badge f-badge-core">Core Standard</span>
-        </div>
-        <div class="f-card-content">
-          <h3 class="f-card-title">Brand System &amp; Tokens</h3>
-          <p class="f-card-desc">Typography scales, full color palettes, vector logos, and Figma asset exports.</p>
-        </div>
-        <div class="f-card-action">
-          <span>Explore System</span>
-          <iconify-icon icon="fluent:arrow-right-16-regular"></iconify-icon>
-        </div>
-      </a>
-
-      <a href="/brand-guidelines/" class="f-card-foundation" id="card-guidelines" aria-label="View Brand Guidelines">
-        <div class="f-card-top">
-          <div class="f-card-icon"><iconify-icon icon="fluent:book-open-24-regular"></iconify-icon></div>
-          <span class="f-badge">Manuals</span>
-        </div>
-        <div class="f-card-content">
-          <h3 class="f-card-title">Brand Guidelines</h3>
-          <p class="f-card-desc">Interactive PDF booklets for Logo &amp; Concept and Interior Architecture standards.</p>
-        </div>
-        <div class="f-card-action">
-          <span>Read Manuals</span>
-          <iconify-icon icon="fluent:arrow-right-16-regular"></iconify-icon>
-        </div>
-      </a>
-
-      <a href="/products/" class="f-card-foundation" id="card-products" aria-label="Browse Product Catalogue">
-        <div class="f-card-top">
-          <div class="f-card-icon"><iconify-icon icon="fluent:pill-24-regular"></iconify-icon></div>
-          <span class="f-badge f-badge-warning">Products</span>
-        </div>
-        <div class="f-card-content">
-          <h3 class="f-card-title">Product Catalogue</h3>
-          <p class="f-card-desc">Comprehensive brand registry for Androlab, MENSS, Mensculine, and Rejal.</p>
-        </div>
-        <div class="f-card-action">
-          <span>Browse Products</span>
-          <iconify-icon icon="fluent:arrow-right-16-regular"></iconify-icon>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <!-- Living Component Workbench -->
-  <section id="components-stage" class="f-section-block" aria-label="Component Engineering">
-    <div class="f-section-head">
-      <div class="f-chapter-badge">
-        <span class="f-chapter-num">6</span>
-        <span>Living Workbench</span>
-      </div>
-      <h2 class="f-section-title">Interactive Component Workbench</h2>
-      <p class="f-section-subtitle">
-        Customize button states, test live toggles, and copy production-ready multi-platform code snippets.
-      </p>
-    </div>
-
-    <div class="f-workbench-card">
-      <div class="f-workbench-grid">
-        <div class="f-stage-pane">
-          <div class="f-stage-controls">
-            <div class="f-control-group">
-              <span class="f-control-label">Variant</span>
-              <div class="f-control-pills">
-                <button type="button" class="f-pill-opt {btnVariant === 'primary' ? 'active' : ''}" onclick={() => { btnVariant = 'primary'; }}>Primary</button>
-                <button type="button" class="f-pill-opt {btnVariant === 'secondary' ? 'active' : ''}" onclick={() => { btnVariant = 'secondary'; }}>Secondary</button>
-                <button type="button" class="f-pill-opt {btnVariant === 'outline' ? 'active' : ''}" onclick={() => { btnVariant = 'outline'; }}>Outline</button>
-                <button type="button" class="f-pill-opt {btnVariant === 'subtle' ? 'active' : ''}" onclick={() => { btnVariant = 'subtle'; }}>Subtle</button>
-              </div>
-            </div>
-
-            <div class="f-control-group">
-              <span class="f-control-label">Size</span>
-              <div class="f-control-pills">
-                <button type="button" class="f-pill-opt {btnSize === 'sm' ? 'active' : ''}" onclick={() => { btnSize = 'sm'; }}>SM</button>
-                <button type="button" class="f-pill-opt {btnSize === 'md' ? 'active' : ''}" onclick={() => { btnSize = 'md'; }}>MD</button>
-                <button type="button" class="f-pill-opt {btnSize === 'lg' ? 'active' : ''}" onclick={() => { btnSize = 'lg'; }}>LG</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="f-interactive-canvas">
+        <div class="f-interactive-palette-box" style="margin: 0;">
+          <div class="f-palette-swatches">
             <button 
               type="button" 
-              class="f-workbench-btn f-btn-{btnVariant} f-size-{btnSize}" 
-              onclick={() => { clickCounter += 1; }}
-              title="Click me to test dynamic state updates!"
+              class="f-palette-btn {activeSwatchHex === '#043388' ? 'selected' : ''}" 
+              style="--swatch-bg: #043388;" 
+              onclick={() => selectSwatch('#043388', 'SS Blue')} 
+              title="Click to copy SS Blue (#043388)"
             >
-              <iconify-icon icon="fluent:cursor-click-24-regular"></iconify-icon>
-              <span>Action ({clickCounter})</span>
+              <span class="f-swatch-label">SS Blue</span>
+              <span class="f-swatch-code">#043388</span>
             </button>
 
-            <div 
-              class="f-workbench-switch-wrap" 
-              onclick={() => { isToggleActive = !isToggleActive; }}
-              onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); isToggleActive = !isToggleActive; } }}
-              role="switch"
-              tabindex="0"
-              aria-checked={isToggleActive}
+            <button 
+              type="button" 
+              class="f-palette-btn {activeSwatchHex === '#022057' ? 'selected' : ''}" 
+              style="--swatch-bg: #022057;" 
+              onclick={() => selectSwatch('#022057', 'Prussian Blue')} 
+              title="Click to copy Prussian Blue (#022057)"
             >
-              <div class="f-workbench-switch {isToggleActive ? 'on' : ''}">
-                <span class="f-workbench-thumb"></span>
-              </div>
-              <span class="f-workbench-switch-label">{isToggleActive ? 'Notifications On' : 'Muted'}</span>
-            </div>
+              <span class="f-swatch-label">Prussian</span>
+              <span class="f-swatch-code">#022057</span>
+            </button>
 
-            <div class="f-workbench-input-wrap">
-              <iconify-icon icon="fluent:search-16-regular" class="f-input-icon"></iconify-icon>
-              <input type="text" bind:value={sampleInput} class="f-workbench-input" placeholder="Type unit name..." />
+            <button 
+              type="button" 
+              class="f-palette-btn {activeSwatchHex === '#21A1F7' ? 'selected' : ''}" 
+              style="--swatch-bg: #21A1F7;" 
+              onclick={() => selectSwatch('#21A1F7', 'Azure')} 
+              title="Click to copy Azure (#21A1F7)"
+            >
+              <span class="f-swatch-label">Azure</span>
+              <span class="f-swatch-code">#21A1F7</span>
+            </button>
+
+            <button 
+              type="button" 
+              class="f-palette-btn {activeSwatchHex === '#6DC6EC' ? 'selected' : ''}" 
+              style="--swatch-bg: #6DC6EC; color: #19191A;" 
+              onclick={() => selectSwatch('#6DC6EC', 'Malibu')} 
+              title="Click to copy Malibu (#6DC6EC)"
+            >
+              <span class="f-swatch-label" style="color:#19191A;">Malibu</span>
+              <span class="f-swatch-code" style="color:rgba(25,25,26,0.7);">#6DC6EC</span>
+            </button>
+
+            <button 
+              type="button" 
+              class="f-palette-btn {activeSwatchHex === '#FCE53D' ? 'selected' : ''}" 
+              style="--swatch-bg: #FCE53D; color: #19191A;" 
+              onclick={() => selectSwatch('#FCE53D', 'Banana Yellow')} 
+              title="Click to copy Banana Yellow (#FCE53D)"
+            >
+              <span class="f-swatch-label" style="color:#19191A;">Banana</span>
+              <span class="f-swatch-code" style="color:rgba(25,25,26,0.7);">#FCE53D</span>
+            </button>
+
+            <button 
+              type="button" 
+              class="f-palette-btn {activeSwatchHex === '#FCFAF6' ? 'selected' : ''}" 
+              style="--swatch-bg: #FCFAF6; color: #19191A; border: 1px solid rgba(0,0,0,0.12);" 
+              onclick={() => selectSwatch('#FCFAF6', 'Porcelain')} 
+              title="Click to copy Porcelain (#FCFAF6)"
+            >
+              <span class="f-swatch-label" style="color:#19191A;">Porcelain</span>
+              <span class="f-swatch-code" style="color:rgba(25,25,26,0.7);">#FCFAF6</span>
+            </button>
+          </div>
+
+          <div class="f-palette-inspector">
+            <div class="f-inspector-chip" style="background: {activeSwatchHex}; color: {activeSwatchHex === '#FCFAF6' || activeSwatchHex === '#FCE53D' || activeSwatchHex === '#6DC6EC' ? '#19191A' : '#FFFFFF'};">
+              <span class="f-inspector-name">{activeSwatchName}: <strong>{activeSwatchHex}</strong></span>
+              <button type="button" class="f-inspector-copy-btn" onclick={() => copyToClipboard(activeSwatchHex, `Copied ${activeSwatchName} (${activeSwatchHex})!`)}>
+                <iconify-icon icon="fluent:copy-16-regular"></iconify-icon> Copy HEX
+              </button>
+            </div>
+            <span class="f-inspector-hint">60:30:10 Brand Harmony &bull; WCAG 2.1 Pass</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bento Item 2: 8-Col Living Component Workbench -->
+      <div class="f-bento-card f-bento-span-8">
+        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 1rem;">Living Component Workbench</h3>
+        
+        <div class="f-stage-controls" style="margin-bottom: 1.25rem;">
+          <div class="f-control-group">
+            <span class="f-control-label">Variant</span>
+            <div class="f-control-pills">
+              <button type="button" class="f-pill-opt {btnVariant === 'primary' ? 'active' : ''}" onclick={() => { btnVariant = 'primary'; }}>Primary</button>
+              <button type="button" class="f-pill-opt {btnVariant === 'secondary' ? 'active' : ''}" onclick={() => { btnVariant = 'secondary'; }}>Secondary</button>
+              <button type="button" class="f-pill-opt {btnVariant === 'outline' ? 'active' : ''}" onclick={() => { btnVariant = 'outline'; }}>Outline</button>
+              <button type="button" class="f-pill-opt {btnVariant === 'subtle' ? 'active' : ''}" onclick={() => { btnVariant = 'subtle'; }}>Subtle</button>
             </div>
           </div>
 
-          <div class="f-code-box-wrapper">
-            <div class="f-code-bar">
-              <div class="f-code-tabs">
-                <button type="button" class="f-code-tab {activeCodeTab === 'web' ? 'active' : ''}" onclick={() => { activeCodeTab = 'web'; }}>Web (CSS)</button>
-                <button type="button" class="f-code-tab {activeCodeTab === 'flutter' ? 'active' : ''}" onclick={() => { activeCodeTab = 'flutter'; }}>Flutter</button>
-                <button type="button" class="f-code-tab {activeCodeTab === 'tailwind' ? 'active' : ''}" onclick={() => { activeCodeTab = 'tailwind'; }}>Tailwind</button>
-                <button type="button" class="f-code-tab {activeCodeTab === 'token' ? 'active' : ''}" onclick={() => { activeCodeTab = 'token'; }}>Design Tokens</button>
-              </div>
-              <button type="button" class="f-code-copy-btn" onclick={() => copyToClipboard(generatedCode(), 'Copied snippet to clipboard!')}>
-                <iconify-icon icon="fluent:copy-16-regular"></iconify-icon> Copy Snippet
-              </button>
+          <div class="f-control-group">
+            <span class="f-control-label">Size</span>
+            <div class="f-control-pills">
+              <button type="button" class="f-pill-opt {btnSize === 'sm' ? 'active' : ''}" onclick={() => { btnSize = 'sm'; }}>SM</button>
+              <button type="button" class="f-pill-opt {btnSize === 'md' ? 'active' : ''}" onclick={() => { btnSize = 'md'; }}>MD</button>
+              <button type="button" class="f-pill-opt {btnSize === 'lg' ? 'active' : ''}" onclick={() => { btnSize = 'lg'; }}>LG</button>
             </div>
-            <pre class="f-code-pre"><code>{generatedCode()}</code></pre>
           </div>
         </div>
 
-        <div class="f-info-pane">
-          <h3 class="f-info-title">Living Component Registry</h3>
-          <p class="f-info-lead">
-            Over 24 foundational UI components built for Fluent 2 spatial aesthetics, full keyboard accessibility, and zero runtime bloat.
-          </p>
-          <div class="f-quick-jump-grid">
-            <a href="/components/#buttons" class="f-jump-item"><iconify-icon icon="fluent:cursor-click-16-regular"></iconify-icon> Buttons</a>
-            <a href="/components/#badges" class="f-jump-item"><iconify-icon icon="fluent:tag-16-regular"></iconify-icon> Badges &amp; Tags</a>
-            <a href="/components/#cards" class="f-jump-item"><iconify-icon icon="fluent:card-ui-24-regular"></iconify-icon> Surface Cards</a>
-            <a href="/components/#inputs" class="f-jump-item"><iconify-icon icon="fluent:textbox-16-regular"></iconify-icon> Form Inputs</a>
-            <a href="/components/#motion" class="f-jump-item"><iconify-icon icon="fluent:fluid-24-regular"></iconify-icon> Motion &amp; Wave</a>
-            <a href="/components/#flutter" class="f-jump-item"><iconify-icon icon="fluent:phone-24-regular"></iconify-icon> Flutter Spec</a>
+        <div class="f-interactive-canvas" style="margin-bottom: 1.25rem;">
+          <button 
+            type="button" 
+            class="f-workbench-btn f-btn-{btnVariant} f-size-{btnSize}" 
+            onclick={() => { clickCounter += 1; }}
+            title="Click to test live state updates!"
+          >
+            <iconify-icon icon="fluent:cursor-click-24-regular"></iconify-icon>
+            <span>Action ({clickCounter})</span>
+          </button>
+
+          <div 
+            class="f-workbench-switch-wrap" 
+            onclick={() => { isToggleActive = !isToggleActive; }}
+            onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); isToggleActive = !isToggleActive; } }}
+            role="switch"
+            tabindex="0"
+            aria-checked={isToggleActive}
+          >
+            <div class="f-workbench-switch {isToggleActive ? 'on' : ''}">
+              <span class="f-workbench-thumb"></span>
+            </div>
+            <span class="f-workbench-switch-label">{isToggleActive ? 'Notifications On' : 'Muted'}</span>
           </div>
-          <div class="f-info-footer">
-            <a href="/components/" class="f-btn-hero-primary" id="card-components">
-              <iconify-icon icon="fluent:puzzle-piece-24-regular"></iconify-icon>
-              Explore All 24+ Components
+
+          <div class="f-workbench-input-wrap">
+            <iconify-icon icon="fluent:search-16-regular" class="f-input-icon"></iconify-icon>
+            <input type="text" bind:value={sampleInput} class="f-workbench-input" placeholder="Type unit name..." />
+          </div>
+        </div>
+
+        <div class="f-code-box-wrapper">
+          <div class="f-code-bar">
+            <div class="f-code-tabs">
+              <button type="button" class="f-code-tab {activeCodeTab === 'web' ? 'active' : ''}" onclick={() => { activeCodeTab = 'web'; }}>Web (CSS)</button>
+              <button type="button" class="f-code-tab {activeCodeTab === 'flutter' ? 'active' : ''}" onclick={() => { activeCodeTab = 'flutter'; }}>Flutter</button>
+              <button type="button" class="f-code-tab {activeCodeTab === 'tailwind' ? 'active' : ''}" onclick={() => { activeCodeTab = 'tailwind'; }}>Tailwind</button>
+              <button type="button" class="f-code-tab {activeCodeTab === 'token' ? 'active' : ''}" onclick={() => { activeCodeTab = 'token'; }}>Design Tokens</button>
+            </div>
+            <button type="button" class="f-code-copy-btn" onclick={() => copyToClipboard(generatedCode(), 'Copied snippet to clipboard!')}>
+              <iconify-icon icon="fluent:copy-16-regular"></iconify-icon> Copy Snippet
+            </button>
+          </div>
+          <pre class="f-code-pre"><code>{generatedCode()}</code></pre>
+        </div>
+      </div>
+
+      <!-- Bento Item 3: 4-Col Foundation Quick Hub -->
+      <div class="f-bento-card f-bento-span-4" style="justify-content: space-between;">
+        <div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">Core Documentation</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0 0 1.25rem;">
+            Direct links to authoritative guidelines, PDF manuals, and product registries.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <a href="/brand-system/" class="f-card-foundation" id="card-brand-system" style="padding: 1rem; border-radius: 14px;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-weight: 700; font-size: 0.9rem; color: var(--text-strong);">Brand System &amp; Tokens</span>
+                <iconify-icon icon="fluent:arrow-right-16-regular"></iconify-icon>
+              </div>
+            </a>
+            <a href="/brand-guidelines/" class="f-card-foundation" id="card-guidelines" style="padding: 1rem; border-radius: 14px;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-weight: 700; font-size: 0.9rem; color: var(--text-strong);">Brand PDF Manuals</span>
+                <iconify-icon icon="fluent:arrow-right-16-regular"></iconify-icon>
+              </div>
+            </a>
+            <a href="/products/" class="f-card-foundation" id="card-products" style="padding: 1rem; border-radius: 14px;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-weight: 700; font-size: 0.9rem; color: var(--text-strong);">Product Catalogue</span>
+                <iconify-icon icon="fluent:arrow-right-16-regular"></iconify-icon>
+              </div>
             </a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Typography Scale Lab -->
-  <section id="typography-lab" class="f-section-block" aria-label="Typography Scale Lab">
-    <div class="f-section-head">
-      <div class="f-chapter-badge">
-        <span class="f-chapter-num">7</span>
-        <span>Typography Lab</span>
-      </div>
-      <h2 class="f-section-title">4-Tier Typography Hierarchy</h2>
-      <p class="f-section-subtitle">
-        Type your own live test string to evaluate tracking, line heights, and hierarchy levels.
-      </p>
-    </div>
-
-    <div class="f-type-lab-card">
-      <div class="f-type-input-bar">
-        <label for="customTypeInput" class="f-type-input-label">Live Sample Text:</label>
-        <input id="customTypeInput" type="text" bind:value={customTypePhrase} class="f-type-input" placeholder="Type a custom phrase..." />
+        <div style="margin-top: 1.5rem;">
+          <a href="/components/" class="f-btn-hero-primary" id="card-components" style="width: 100%; justify-content: center;">
+            <iconify-icon icon="fluent:puzzle-piece-24-regular"></iconify-icon> All 24+ Components
+          </a>
+        </div>
       </div>
 
-      <div class="f-type-scale-rows">
-        <button 
-          type="button" 
-          class="f-type-row" 
-          onclick={() => copyToClipboard('--text-strong', 'Copied --text-strong token!')}
-          aria-label="Copy --text-strong token"
-        >
-          <div class="f-type-meta">
-            <span class="f-type-name">Display (H1)</span>
-            <span class="f-type-token">--text-strong</span>
+      <!-- Bento Item 4: 12-Col Typography Scale Lab -->
+      <div class="f-bento-card f-bento-span-12">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1.25rem;">
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 4px;">4-Tier Typography Hierarchy Lab</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">Type a test phrase to evaluate tracking, contrast, and font weights.</p>
           </div>
-          <div class="f-type-render f-type-display">{customTypePhrase}</div>
-        </button>
+          <div class="f-type-input-bar" style="margin: 0; min-width: 280px;">
+            <input id="customTypeInput" type="text" bind:value={customTypePhrase} class="f-type-input" placeholder="Type a custom phrase..." />
+          </div>
+        </div>
 
-        <button 
-          type="button" 
-          class="f-type-row" 
-          onclick={() => copyToClipboard('--text-primary', 'Copied --text-primary token!')}
-          aria-label="Copy --text-primary token"
-        >
-          <div class="f-type-meta">
-            <span class="f-type-name">Title (H2-H3)</span>
-            <span class="f-type-token">--text-primary</span>
-          </div>
-          <div class="f-type-render f-type-title">{customTypePhrase}</div>
-        </button>
+        <div class="f-type-scale-rows">
+          <button 
+            type="button" 
+            class="f-type-row" 
+            onclick={() => copyToClipboard('--text-strong', 'Copied --text-strong token!')}
+            aria-label="Copy --text-strong token"
+          >
+            <div class="f-type-meta">
+              <span class="f-type-name">Display (H1)</span>
+              <span class="f-type-token">--text-strong</span>
+            </div>
+            <div class="f-type-render f-type-display">{customTypePhrase}</div>
+          </button>
 
-        <button 
-          type="button" 
-          class="f-type-row" 
-          onclick={() => copyToClipboard('--text-secondary', 'Copied --text-secondary token!')}
-          aria-label="Copy --text-secondary token"
-        >
-          <div class="f-type-meta">
-            <span class="f-type-name">Body Text</span>
-            <span class="f-type-token">--text-secondary</span>
-          </div>
-          <div class="f-type-render f-type-body">{customTypePhrase}</div>
-        </button>
+          <button 
+            type="button" 
+            class="f-type-row" 
+            onclick={() => copyToClipboard('--text-primary', 'Copied --text-primary token!')}
+            aria-label="Copy --text-primary token"
+          >
+            <div class="f-type-meta">
+              <span class="f-type-name">Title (H2-H3)</span>
+              <span class="f-type-token">--text-primary</span>
+            </div>
+            <div class="f-type-render f-type-title">{customTypePhrase}</div>
+          </button>
 
-        <button 
-          type="button" 
-          class="f-type-row" 
-          onclick={() => copyToClipboard('--text-disabled', 'Copied --text-disabled token!')}
-          aria-label="Copy --text-disabled token"
-        >
-          <div class="f-type-meta">
-            <span class="f-type-name">Caption &amp; Meta</span>
-            <span class="f-type-token">--text-disabled</span>
-          </div>
-          <div class="f-type-render f-type-caption">{customTypePhrase}</div>
-        </button>
+          <button 
+            type="button" 
+            class="f-type-row" 
+            onclick={() => copyToClipboard('--text-secondary', 'Copied --text-secondary token!')}
+            aria-label="Copy --text-secondary token"
+          >
+            <div class="f-type-meta">
+              <span class="f-type-name">Body Text</span>
+              <span class="f-type-token">--text-secondary</span>
+            </div>
+            <div class="f-type-render f-type-body">{customTypePhrase}</div>
+          </button>
+
+          <button 
+            type="button" 
+            class="f-type-row" 
+            onclick={() => copyToClipboard('--text-disabled', 'Copied --text-disabled token!')}
+            aria-label="Copy --text-disabled token"
+          >
+            <div class="f-type-meta">
+              <span class="f-type-name">Caption &amp; Meta</span>
+              <span class="f-type-token">--text-disabled</span>
+            </div>
+            <div class="f-type-render f-type-caption">{customTypePhrase}</div>
+          </button>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ================================================================
-       CHAPTER 6: OPERATIONAL TOOLS & SUBSIDIARY ECOSYSTEM
+       CHAPTER 6: BENTO GRID — OPERATIONAL TOOLS & ECOSYSTEM
        ================================================================ -->
-  <section id="tools-section" class="f-section-block" aria-label="Tools and Utilities">
+  <section id="tools-section" class="f-section-block" aria-label="Tools and Subsidiary Ecosystem">
+    <div class="f-chapter-badge">
+      <span class="f-chapter-num">5</span>
+      <span>Ecosystem &amp; Tools</span>
+    </div>
+
     <div class="f-section-head">
-      <div class="f-chapter-badge">
-        <span class="f-chapter-num">8</span>
-        <span>Ecosystem &amp; Tools</span>
-      </div>
       <h2 class="f-section-title">Tools &amp; Operational Resources</h2>
       <p class="f-section-subtitle">
         Practical creative utilities curated for daily marketing, clinical, and staff operations.
       </p>
     </div>
 
-    <div class="f-tools-grid">
-      <a href="/signature/" class="f-card-tool" id="card-signature" aria-label="Mail Signature Generator">
-        <div class="f-tool-icon"><iconify-icon icon="fluent:mail-template-24-regular"></iconify-icon></div>
-        <div class="f-tool-body">
-          <h4 class="f-tool-title">Mail Signature Generator</h4>
-          <p class="f-tool-desc">Create your verified HTML email signature.</p>
+    <!-- Chapter 6 Bento Grid -->
+    <div class="f-bento-grid">
+      <!-- Bento Item 1: 6-Col SS CAM Workstation -->
+      <a href="/tools/" class="f-bento-card f-bento-span-6" id="card-sscam" aria-label="SS CAM Creative Asset Management" style="text-decoration: none;">
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem;">
+          <div class="f-pillar-icon" style="margin: 0;">
+            <iconify-icon icon="fluent:camera-24-regular"></iconify-icon>
+          </div>
+          <span style="font-size: 0.725rem; font-weight: 700; background: rgba(4,51,136,0.08); color: var(--color-brand-primary); padding: 4px 10px; border-radius: 9999px;">Windows App</span>
         </div>
-        <iconify-icon icon="fluent:chevron-right-16-regular" class="f-tool-arrow"></iconify-icon>
+        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">SS CAM (Desktop Workstation)</h3>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
+          Native desktop utility for batch watermarking, LUT color grading, and clinical asset management.
+        </p>
+        <div style="margin-top: 1.25rem; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 0.85rem; color: var(--color-brand-primary);">
+          <span>Launch Tool</span> &rarr;
+        </div>
       </a>
 
-      <a href="/tools/" class="f-card-tool" id="card-sscam" aria-label="SS CAM Creative Asset Management">
-        <div class="f-tool-icon"><iconify-icon icon="fluent:camera-24-regular"></iconify-icon></div>
-        <div class="f-tool-body">
-          <h4 class="f-tool-title">SS CAM (Windows Desktop)</h4>
-          <p class="f-tool-desc">Official creative asset watermarker &amp; LUT editor.</p>
+      <!-- Bento Item 2: 6-Col Mail Signature Generator -->
+      <a href="/signature/" class="f-bento-card f-bento-span-6" id="card-signature" aria-label="Mail Signature Generator" style="text-decoration: none;">
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem;">
+          <div class="f-pillar-icon" style="margin: 0;">
+            <iconify-icon icon="fluent:mail-template-24-regular"></iconify-icon>
+          </div>
+          <span style="font-size: 0.725rem; font-weight: 700; background: rgba(33,161,247,0.12); color: #21A1F7; padding: 4px 10px; border-radius: 9999px;">Daily Utility</span>
         </div>
-        <iconify-icon icon="fluent:chevron-right-16-regular" class="f-tool-arrow"></iconify-icon>
+        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">Mail Signature Generator</h3>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
+          Generate standardized, on-brand HTML email signatures for your operating subsidiary in seconds.
+        </p>
+        <div style="margin-top: 1.25rem; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 0.85rem; color: var(--color-brand-primary);">
+          <span>Generate Signature</span> &rarr;
+        </div>
       </a>
 
-      <a href="/onboarding/" class="f-card-tool" id="card-onboarding" aria-label="Staff Onboarding">
-        <div class="f-tool-icon"><iconify-icon icon="fluent:handshake-24-regular"></iconify-icon></div>
-        <div class="f-tool-body">
-          <h4 class="f-tool-title">Staff Onboarding</h4>
-          <p class="f-tool-desc">Orientation guide &amp; first-week checklist.</p>
+      <!-- Bento Item 3: 4-Col Staff Onboarding -->
+      <a href="/onboarding/" class="f-bento-card f-bento-span-4" id="card-onboarding" aria-label="Staff Onboarding" style="text-decoration: none;">
+        <div class="f-pillar-icon" style="margin: 0 0 1rem;">
+          <iconify-icon icon="fluent:handshake-24-regular"></iconify-icon>
         </div>
-        <iconify-icon icon="fluent:chevron-right-16-regular" class="f-tool-arrow"></iconify-icon>
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">Staff Onboarding</h3>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
+          First-week checklist, tool installations, and brand culture orientation.
+        </p>
       </a>
 
-      <a href="/doc/?doc=changelog" class="f-card-tool" id="card-docs" aria-label="Documentation and Changelog">
-        <div class="f-tool-icon"><iconify-icon icon="fluent:document-bullet-list-24-regular"></iconify-icon></div>
-        <div class="f-tool-body">
-          <h4 class="f-tool-title">System Docs &amp; Log</h4>
-          <p class="f-tool-desc">Roadmap, brand voice, and v3.5 changelog.</p>
+      <!-- Bento Item 4: 4-Col System Docs & Changelog -->
+      <a href="/doc/?doc=changelog" class="f-bento-card f-bento-span-4" id="card-docs" aria-label="Documentation and Changelog" style="text-decoration: none;">
+        <div class="f-pillar-icon" style="margin: 0 0 1rem;">
+          <iconify-icon icon="fluent:document-bullet-list-24-regular"></iconify-icon>
         </div>
-        <iconify-icon icon="fluent:chevron-right-16-regular" class="f-tool-arrow"></iconify-icon>
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">System Docs &amp; Log</h3>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
+          v3.5 release notes, architecture roadmap, and brand voice standards.
+        </p>
       </a>
 
-      <a href="https://suamisihat.myds.me" class="f-card-tool f-card-tool-ext" id="card-dashboard" target="_blank" rel="noopener noreferrer" aria-label="SSNAS Dashboard">
-        <div class="f-tool-icon"><iconify-icon icon="fluent:server-24-regular"></iconify-icon></div>
-        <div class="f-tool-body">
-          <h4 class="f-tool-title">SSNAS Dashboard ↗</h4>
-          <p class="f-tool-desc">Internal shared storage and server portal.</p>
+      <!-- Bento Item 5: 4-Col SSNAS Cloud Server -->
+      <a href="https://suamisihat.myds.me" class="f-bento-card f-bento-span-4" id="card-dashboard" target="_blank" rel="noopener noreferrer" aria-label="SSNAS Dashboard" style="text-decoration: none;">
+        <div class="f-pillar-icon" style="margin: 0 0 1rem; background: rgba(33, 161, 247, 0.1); color: #21A1F7;">
+          <iconify-icon icon="fluent:server-24-regular"></iconify-icon>
         </div>
-        <iconify-icon icon="fluent:open-16-regular" class="f-tool-arrow"></iconify-icon>
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">SSNAS Dashboard ↗</h3>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
+          Central internal file storage, raw asset packages, and Synology portal.
+        </p>
       </a>
-    </div>
 
-    <!-- Operating Subsidiary Grid -->
-    <div style="margin-top: 3rem;">
-      <div style="font-size: 0.725rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 1rem;">
-        Operating Subsidiaries of SuamiSihat Group
-      </div>
-      <div class="f-subbrand-grid">
-        <a href="/brand-system/#subbrand" class="f-subbrand-card">
-          <span class="f-subbrand-code">SSH</span>
-          <span class="f-subbrand-name">SS Health</span>
-          <span class="f-subbrand-role">Holding Corporate</span>
-        </a>
-        <a href="/brand-system/#subbrand" class="f-subbrand-card">
-          <span class="f-subbrand-code">SSC</span>
-          <span class="f-subbrand-name">SS Clinic</span>
-          <span class="f-subbrand-role">Clinical Practice</span>
-        </a>
-        <a href="/brand-system/#subbrand" class="f-subbrand-card">
-          <span class="f-subbrand-code">SSW</span>
-          <span class="f-subbrand-name">SS Wellness</span>
-          <span class="f-subbrand-role">Lifestyle &amp; Care</span>
-        </a>
-        <a href="/brand-system/#subbrand" class="f-subbrand-card">
-          <span class="f-subbrand-code">SSE</span>
-          <span class="f-subbrand-name">SS Ecommerce</span>
-          <span class="f-subbrand-role">Direct-to-Patient</span>
-        </a>
-        <a href="/brand-system/#subbrand" class="f-subbrand-card">
-          <span class="f-subbrand-code">SST</span>
-          <span class="f-subbrand-name">SS Technology</span>
-          <span class="f-subbrand-role">Software &amp; Digital</span>
-        </a>
+      <!-- Bento Item 6: 12-Col Operating Subsidiaries Ribbon -->
+      <div class="f-bento-card f-bento-span-12">
+        <div style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 1rem;">
+          Operating Subsidiaries of SuamiSihat Group
+        </div>
+        <div class="f-subbrand-grid">
+          <a href="/brand-system/#subbrand" class="f-subbrand-card">
+            <span class="f-subbrand-code">SSH</span>
+            <span class="f-subbrand-name">SS Health</span>
+            <span class="f-subbrand-role">Holding Corporate</span>
+          </a>
+          <a href="/brand-system/#subbrand" class="f-subbrand-card">
+            <span class="f-subbrand-code">SSC</span>
+            <span class="f-subbrand-name">SS Clinic</span>
+            <span class="f-subbrand-role">Clinical Practice</span>
+          </a>
+          <a href="/brand-system/#subbrand" class="f-subbrand-card">
+            <span class="f-subbrand-code">SSW</span>
+            <span class="f-subbrand-name">SS Wellness</span>
+            <span class="f-subbrand-role">Lifestyle &amp; Care</span>
+          </a>
+          <a href="/brand-system/#subbrand" class="f-subbrand-card">
+            <span class="f-subbrand-code">SSE</span>
+            <span class="f-subbrand-name">SS Ecommerce</span>
+            <span class="f-subbrand-role">Direct-to-Patient</span>
+          </a>
+          <a href="/brand-system/#subbrand" class="f-subbrand-card">
+            <span class="f-subbrand-code">SST</span>
+            <span class="f-subbrand-name">SS Technology</span>
+            <span class="f-subbrand-role">Software &amp; Digital</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
