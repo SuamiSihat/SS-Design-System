@@ -1,210 +1,203 @@
 <script>
   import CodeBox from '$lib/components/CodeBox.svelte';
 
-  let selectedComponent = $state('buttons');
+  let isSidebarMinimized = $state(false);
+
+  function toggleSidebar() {
+    isSidebarMinimized = !isSidebarMinimized;
+  }
 </script>
 
 <svelte:head>
   <title>Component Library — SuamiSihat™ Design System</title>
 </svelte:head>
 
-<div class="container-xl py-5">
-  <!-- Header -->
-  <div class="mb-5">
-    <nav aria-label="breadcrumb" class="mb-3">
-      <ol class="breadcrumb" style="font-size: 0.8rem;">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Components</li>
-      </ol>
-    </nav>
-    <div class="text-uppercase fw-bold text-primary" style="font-size: 0.8rem; letter-spacing: 0.08em;">UI Component Standard</div>
-    <h1 class="display-6 fw-bold mb-2">Fluent 2 Component Library</h1>
-    <p class="lead text-secondary" style="max-width: 780px;">
-      Production-ready UI components designed with the 60:30:10 rule, accessible focus rings, and acrylic backdrop effects.
-    </p>
+<div class="f-page-layout" class:sidebar-minimized={isSidebarMinimized} style="display: grid; grid-template-columns: {isSidebarMinimized ? '0 1fr' : '260px 1fr'}; min-height: calc(100vh - 60px); position: relative; transition: all 0.3s ease;">
+  <!-- Sidebar Toggle Pill -->
+  <button class="f-sidebar-toggle" onclick={toggleSidebar} aria-label="Toggle sidebar" style="position: fixed; left: {isSidebarMinimized ? '12px' : '248px'}; top: 180px; width: 24px; height: 24px; border-radius: 50%; background: var(--color-neutral-bg-2); border: 1px solid var(--color-neutral-stroke-2); color: var(--color-neutral-fg-2); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1010; box-shadow: var(--f-shadow-2); transition: all 0.3s ease;">
+    <iconify-icon icon={isSidebarMinimized ? "fluent:chevron-right-16-regular" : "fluent:chevron-left-16-regular"}></iconify-icon>
+  </button>
 
-    <!-- Component Category Filter -->
-    <div class="d-flex gap-2 mt-4 flex-wrap">
-      <button 
-        type="button" 
-        class="btn btn-sm rounded-pill px-3" 
-        class:btn-primary={selectedComponent === 'buttons'}
-        class:btn-outline-secondary={selectedComponent !== 'buttons'}
-        onclick={() => (selectedComponent = 'buttons')}
-      >
-        Buttons & CTAs
-      </button>
-      <button 
-        type="button" 
-        class="btn btn-sm rounded-pill px-3" 
-        class:btn-primary={selectedComponent === 'cards'}
-        class:btn-outline-secondary={selectedComponent !== 'cards'}
-        onclick={() => (selectedComponent = 'cards')}
-      >
-        Service & Stat Cards
-      </button>
-      <button 
-        type="button" 
-        class="btn btn-sm rounded-pill px-3" 
-        class:btn-primary={selectedComponent === 'badges'}
-        class:btn-outline-secondary={selectedComponent !== 'badges'}
-        onclick={() => (selectedComponent = 'badges')}
-      >
-        Badges & Status
-      </button>
-      <button 
-        type="button" 
-        class="btn btn-sm rounded-pill px-3" 
-        class:btn-primary={selectedComponent === 'alerts'}
-        class:btn-outline-secondary={selectedComponent !== 'alerts'}
-        onclick={() => (selectedComponent = 'alerts')}
-      >
-        Alerts & Messages
-      </button>
+  <!-- Component Sidebar -->
+  <aside class="f-sidebar" aria-label="Component navigation" style="display: {isSidebarMinimized ? 'none' : 'block'};">
+    <div class="cl-sidebar-section">
+      <span class="cl-sidebar-label">Foundation</span>
+      <a href="#fluent2-guide" class="cl-sidebar-link"><iconify-icon icon="fluent:book-compass-24-regular"></iconify-icon> Fluent 2 Guide</a>
+      <a href="#colors" class="cl-sidebar-link"><iconify-icon icon="fluent:color-24-regular"></iconify-icon> Color System</a>
+      <a href="#typography" class="cl-sidebar-link"><iconify-icon icon="fluent:text-font-24-regular"></iconify-icon> Typography</a>
+      <a href="#spacing" class="cl-sidebar-link"><iconify-icon icon="fluent:spacing-horizontal-24-regular"></iconify-icon> Spacing</a>
+      <a href="#elevation" class="cl-sidebar-link"><iconify-icon icon="fluent:layer-24-regular"></iconify-icon> Elevation</a>
     </div>
-  </div>
+    <div class="cl-divider"></div>
+    <div class="cl-sidebar-section">
+      <span class="cl-sidebar-label">Components</span>
+      <a href="#buttons" class="cl-sidebar-link"><iconify-icon icon="fluent:rectangle-24-regular"></iconify-icon> Buttons</a>
+      <a href="#badges" class="cl-sidebar-link"><iconify-icon icon="fluent:badge-24-regular"></iconify-icon> Badges &amp; Tags</a>
+      <a href="#cards" class="cl-sidebar-link"><iconify-icon icon="fluent:card-ui-24-regular"></iconify-icon> Cards</a>
+      <a href="#alerts" class="cl-sidebar-link"><iconify-icon icon="fluent:alert-24-regular"></iconify-icon> Alerts</a>
+      <a href="#inputs" class="cl-sidebar-link"><iconify-icon icon="fluent:text-field-24-regular"></iconify-icon> Inputs</a>
+    </div>
+  </aside>
 
-  <!-- SECTION: BUTTONS -->
-  {#if selectedComponent === 'buttons'}
-    <div class="card p-4 p-md-5 border rounded-4 shadow-sm mb-4" style="background: var(--color-layer-card, #FFFFFF);">
-      <h3 class="h5 fw-bold mb-3">Buttons & Conversion Actions</h3>
-      <p class="text-secondary mb-4" style="font-size: 0.9rem;">
-        Primary conversion buttons use the 10% Accent (Azure <code>#21A1F7</code>). Secondary actions use subtle neutral styles to eliminate CTA collision.
-      </p>
-
-      <!-- Visual Preview -->
-      <div class="p-4 border rounded-3 mb-4 bg-light d-flex flex-wrap align-items-center gap-3">
-        <button class="btn" style="background: #21A1F7; color: #022057; font-weight: 700; border-radius: 8px; padding: 0.6rem 1.4rem;">
-          Primary Accent CTA
-        </button>
-        <button class="btn" style="background: #022057; color: #FFFFFF; font-weight: 600; border-radius: 8px; padding: 0.6rem 1.4rem;">
-          Brand Secondary
-        </button>
-        <button class="btn btn-outline-secondary" style="border-radius: 8px; padding: 0.6rem 1.4rem; font-weight: 600;">
-          Neutral Outline
-        </button>
-        <button class="btn btn-danger" style="border-radius: 8px; padding: 0.6rem 1.4rem; font-weight: 600;">
-          Destructive
-        </button>
+  <!-- Component Content -->
+  <main class="f-main-content" id="main-content" style="padding: 2.5rem; max-width: 1200px;">
+    <!-- Breadcrumb & Header -->
+    <div style="margin-bottom: var(--f-space-12);">
+      <nav class="brand-breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <iconify-icon icon="fluent:chevron-right-12-regular"></iconify-icon>
+        <span style="color:var(--color-neutral-fg-1);font-weight:600;">Component Library</span>
+      </nav>
+      <div class="cl-section-eyebrow">SuamiSihat™ Design System</div>
+      <h1 style="font-size:2.25rem;font-weight:700;letter-spacing:-.03em;margin-bottom:var(--f-space-3);color:var(--color-neutral-fg-1);">Component Library</h1>
+      <p style="font-size:1rem;color:var(--color-neutral-fg-2);line-height:1.7;max-width:600px;">The complete visual language of SuamiSihat™. Fluent 2 architecture. One system for web, mobile apps, and internal tools.</p>
+      <div style="display:flex;gap:var(--f-space-2);flex-wrap:wrap;margin-top:var(--f-space-4);">
+        <span class="ss-badge ss-badge-brand">Fluent 2</span>
+        <span class="ss-badge ss-badge-success">Expo Ready</span>
+        <span class="ss-badge ss-badge-neutral">WCAG AA</span>
+        <span class="ss-badge ss-badge-neutral">Dark Mode</span>
       </div>
-
-      <CodeBox 
-        title="Button HTML Structure"
-        language="html"
-        code={`<!-- 10% Primary Conversion CTA -->
-<button class="f-btn f-btn-primary">Book Appointment</button>
-
-<!-- 30% Secondary Brand Button -->
-<button class="f-btn f-btn-secondary">View Services</button>
-
-<!-- Neutral Outline -->
-<button class="f-btn f-btn-outline">Cancel</button>`}
-      />
     </div>
-  {/if}
 
-  <!-- SECTION: CARDS -->
-  {#if selectedComponent === 'cards'}
-    <div class="card p-4 p-md-5 border rounded-4 shadow-sm mb-4" style="background: var(--color-layer-card, #FFFFFF);">
-      <h3 class="h5 fw-bold mb-3">Service & Clinical Information Cards</h3>
-      <p class="text-secondary mb-4" style="font-size: 0.9rem;">
-        Service cards follow the 60% neutral background rule with clean 1px borders and subtle elevation on hover.
-      </p>
+    <!-- 1. Fluent 2 Guide -->
+    <section class="cl-section" id="fluent2-guide">
+      <div class="cl-section-eyebrow">Official Standard</div>
+      <h2 class="cl-section-title">Microsoft Fluent 2 Guidelines &amp; UX Framework</h2>
+      <p class="cl-section-desc">SuamiSihat™'s design system strictly adopts Microsoft's Fluent 2 design language adapted to our brand palette. Grounded in 4 core principles, 8 design dimensions, and a unified UX state framework.</p>
 
-      <!-- Visual Preview -->
-      <div class="p-4 border rounded-3 mb-4 bg-light">
-        <div class="row g-3">
-          <div class="col-md-6">
-            <div class="card p-4 border rounded-4 shadow-sm h-100" style="background: #FFFFFF;">
-              <div class="d-flex align-items-center gap-2 mb-2">
-                <span class="badge" style="background: rgba(4, 51, 136, 0.1); color: #043388;">CLINICAL SERVICE</span>
-                <span class="text-muted ms-auto" style="font-size: 0.75rem;">30-45 mins</span>
-              </div>
-              <h4 class="fw-bold mb-2" style="font-size: 1.15rem; color: #1C1C1C;">Erectile Vitality & ED Teleconsult</h4>
-              <p class="text-secondary mb-3" style="font-size: 0.85rem; line-height: 1.5;">
-                Comprehensive confidential medical consultation with registered doctor and personalized clinical plan.
-              </p>
-              <div class="d-flex align-items-center justify-content-between pt-3 border-top mt-auto">
-                <span class="fw-bold" style="color: #022057; font-size: 1.1rem;">RM 150</span>
-                <a href="#book" class="btn btn-sm text-decoration-none" style="background: #21A1F7; color: #022057; font-weight: 700; border-radius: 6px;">
-                  Book Now
-                </a>
-              </div>
+      <div class="row g-4 mb-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="cl-card h-100 p-4" style="background:var(--color-neutral-bg-2);">
+            <div class="tool-icon mb-3" style="background:var(--color-brand-subtle);color:var(--color-brand-primary);width:48px;height:48px;border-radius:var(--f-radius-lg);display:flex;align-items:center;justify-content:center;font-size:1.5rem;">
+              <iconify-icon icon="fluent:leaf-two-24-regular"></iconify-icon>
             </div>
+            <h4 style="font-size:1rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;">1. Natural</h4>
+            <p style="font-size:.825rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Feels intuitive and responsive. Smooth spring motion curves, organic wave motion, and fluid interactive feedback matching human touch.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="cl-card h-100 p-4" style="background:var(--color-neutral-bg-2);">
+            <div class="tool-icon mb-3" style="background:var(--color-brand-subtle);color:var(--color-brand-primary);width:48px;height:48px;border-radius:var(--f-radius-lg);display:flex;align-items:center;justify-content:center;font-size:1.5rem;">
+              <iconify-icon icon="fluent:people-24-regular"></iconify-icon>
+            </div>
+            <h4 style="font-size:1rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;">2. Inclusive</h4>
+            <p style="font-size:.825rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Built for everyone. Strict WCAG 2.1 AA/AAA contrast ratios, keyboard accessibility, focus rings, and high-contrast dark mode support.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="cl-card h-100 p-4" style="background:var(--color-neutral-bg-2);">
+            <div class="tool-icon mb-3" style="background:var(--color-brand-subtle);color:var(--color-brand-primary);width:48px;height:48px;border-radius:var(--f-radius-lg);display:flex;align-items:center;justify-content:center;font-size:1.5rem;">
+              <iconify-icon icon="fluent:sparkle-24-regular"></iconify-icon>
+            </div>
+            <h4 style="font-size:1rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;">3. Intentional</h4>
+            <p style="font-size:.825rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">60:30:10 color discipline eliminates cognitive load. Critical clinical information stands out clearly with intentional focus.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="cl-card h-100 p-4" style="background:var(--color-neutral-bg-2);">
+            <div class="tool-icon mb-3" style="background:var(--color-brand-subtle);color:var(--color-brand-primary);width:48px;height:48px;border-radius:var(--f-radius-lg);display:flex;align-items:center;justify-content:center;font-size:1.5rem;">
+              <iconify-icon icon="fluent:layer-24-regular"></iconify-icon>
+            </div>
+            <h4 style="font-size:1rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;">4. Coherent</h4>
+            <p style="font-size:.825rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">Cross-platform visual parity. Web, Flutter mobile, and WPF desktop feel seamlessly connected as one unified health suite.</p>
           </div>
         </div>
       </div>
+    </section>
 
-      <CodeBox 
-        title="Card HTML & CSS Tokens"
-        language="html"
-        code={`<div class="f-card f-card-elevated">
-  <div class="f-card-header">
-    <span class="f-badge">CLINICAL SERVICE</span>
-  </div>
-  <h4 class="f-card-title">Erectile Vitality & ED Teleconsult</h4>
-  <p class="f-card-text">Comprehensive confidential consultation with registered doctor.</p>
-  <div class="f-card-footer">
-    <span class="f-price">RM 150</span>
-    <button class="f-btn f-btn-primary">Book Now</button>
-  </div>
-</div>`}
-      />
-    </div>
-  {/if}
+    <!-- 2. Buttons -->
+    <section class="cl-section" id="buttons">
+      <div class="cl-section-eyebrow">Interactive Controls</div>
+      <h2 class="cl-section-title">Buttons &amp; Calls to Action</h2>
+      <p class="cl-section-desc">Fluent 2 buttons with 44px touch targets, accessible focus indicators, and spring transitions.</p>
 
-  <!-- SECTION: BADGES -->
-  {#if selectedComponent === 'badges'}
-    <div class="card p-4 p-md-5 border rounded-4 shadow-sm mb-4" style="background: var(--color-layer-card, #FFFFFF);">
-      <h3 class="h5 fw-bold mb-3">Status Badges & Verification Tags</h3>
-      
-      <div class="p-4 border rounded-3 mb-4 bg-light d-flex flex-wrap gap-2 align-items-center">
-        <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #065F46; border: 1px solid #10B981; padding: 0.4rem 0.8rem; border-radius: 9999px;">
-          ✓ MOH Registered
-        </span>
-        <span class="badge" style="background: rgba(33, 161, 247, 0.15); color: #0369A1; border: 1px solid #21A1F7; padding: 0.4rem 0.8rem; border-radius: 9999px;">
-          Telehealth Active
-        </span>
-        <span class="badge" style="background: rgba(245, 158, 11, 0.15); color: #92400E; border: 1px solid #F59E0B; padding: 0.4rem 0.8rem; border-radius: 9999px;">
-          Pending Consultation
-        </span>
-        <span class="badge" style="background: rgba(239, 68, 68, 0.15); color: #991B1B; border: 1px solid #EF4444; padding: 0.4rem 0.8rem; border-radius: 9999px;">
-          Contraindication
-        </span>
-      </div>
-
-      <CodeBox 
-        title="Badge HTML Standard"
-        language="html"
-        code={`<span class="f-badge f-badge-success">✓ MOH Registered</span>
-<span class="f-badge f-badge-info">Telehealth Active</span>
-<span class="f-badge f-badge-warning">Pending Consultation</span>`}
-      />
-    </div>
-  {/if}
-
-  <!-- SECTION: ALERTS -->
-  {#if selectedComponent === 'alerts'}
-    <div class="card p-4 p-md-5 border rounded-4 shadow-sm mb-4" style="background: var(--color-layer-card, #FFFFFF);">
-      <h3 class="h5 fw-bold mb-3">Alerts & Patient Notices</h3>
-
-      <div class="p-4 border rounded-3 mb-4 bg-light d-flex flex-column gap-3">
-        <div class="p-3 rounded-3" style="background: #EBF5FE; border-left: 4px solid #21A1F7; color: #0369A1;">
-          <strong>Clinical Note:</strong> All patient data is encrypted and strictly accessible only to your attending medical doctor.
+      <div class="cl-card">
+        <div class="cl-card-header">
+          <div>
+            <div class="cl-card-title">Button Variants</div>
+            <div class="cl-card-subtitle">Primary, Secondary, CTA Banana Yellow, and Ghost buttons</div>
+          </div>
         </div>
-        <div class="p-3 rounded-3" style="background: #ECFDF5; border-left: 4px solid #10B981; color: #065F46;">
-          <strong>Appointment Confirmed:</strong> Your teleconsult slot is booked for 2:30 PM (Asia/Kuala_Lumpur).
+        <div class="cl-preview">
+          <button class="ss-btn ss-btn-primary">Primary Action</button>
+          <button class="ss-btn ss-btn-cta"><iconify-icon icon="fluent:calendar-ltr-24-filled"></iconify-icon> Book Consultation</button>
+          <button class="ss-btn ss-btn-secondary">Secondary Action</button>
+          <button class="ss-btn ss-btn-ghost">Ghost Link</button>
+          <button class="ss-btn ss-btn-danger">Destructive Action</button>
+        </div>
+        <CodeBox code={`<button class="ss-btn ss-btn-primary">Primary Action</button>
+<button class="ss-btn ss-btn-cta"><iconify-icon icon="fluent:calendar-ltr-24-filled"></iconify-icon> Book Consultation</button>
+<button class="ss-btn ss-btn-secondary">Secondary Action</button>`} language="html" />
+      </div>
+    </section>
+
+    <!-- 3. Badges & Status -->
+    <section class="cl-section" id="badges">
+      <div class="cl-section-eyebrow">Metadata &amp; Feedback</div>
+      <h2 class="cl-section-title">Badges &amp; Status Indicators</h2>
+      <p class="cl-section-desc">Pill badges for categorization, entity tagging, and health consultation status.</p>
+
+      <div class="cl-card">
+        <div class="cl-card-header">
+          <div>
+            <div class="cl-card-title">Status Pills</div>
+            <div class="cl-card-subtitle">Brand, Success, Warning, Error, and Neutral variants</div>
+          </div>
+        </div>
+        <div class="cl-preview">
+          <span class="ss-badge ss-badge-brand">Brand Core</span>
+          <span class="ss-badge ss-badge-success">Verified Doctor</span>
+          <span class="ss-badge ss-badge-warning">Pending Review</span>
+          <span class="ss-badge ss-badge-danger">Urgent Action</span>
+          <span class="ss-badge ss-badge-neutral">Internal Note</span>
+        </div>
+        <CodeBox code={`<span class="ss-badge ss-badge-brand">Brand Core</span>
+<span class="ss-badge ss-badge-success">Verified Doctor</span>
+<span class="ss-badge ss-badge-warning">Pending Review</span>`} language="html" />
+      </div>
+    </section>
+
+    <!-- 4. Cards & Surfaces -->
+    <section class="cl-section" id="cards">
+      <div class="cl-section-eyebrow">Surfaces &amp; Containers</div>
+      <h2 class="cl-section-title">Service &amp; Clinical Cards</h2>
+      <p class="cl-section-desc">Elevation containers grouped under the 30% structural trust layer with 1px border definition.</p>
+
+      <div class="row g-4 mb-4">
+        <div class="col-md-6">
+          <div class="cl-card p-4" style="background:var(--color-neutral-bg-2);">
+            <div style="font-size:0.75rem;font-weight:700;color:var(--color-brand-primary);text-transform:uppercase;margin-bottom:4px;">Medical Service</div>
+            <h3 style="font-size:1.15rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:8px;">Men's Vitality Consultation</h3>
+            <p style="font-size:0.85rem;color:var(--color-neutral-fg-2);line-height:1.6;margin-bottom:1rem;">Doctor-led private evaluation of biomarkers, testosterone levels, and personalized recovery plans.</p>
+            <button class="ss-btn ss-btn-primary ss-btn-sm">Book Session &rarr;</button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="cl-card p-4" style="background:var(--color-neutral-bg-2);">
+            <div style="font-size:0.75rem;font-weight:700;color:var(--ss-malibu);text-transform:uppercase;margin-bottom:4px;">Biometric Lab</div>
+            <h3 style="font-size:1.15rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:8px;">Hormone Panel Screening</h3>
+            <p style="font-size:0.85rem;color:var(--color-neutral-fg-2);line-height:1.6;margin-bottom:1rem;">Complete diagnostic panel measuring Free Testosterone, SHBG, Lipid profile, and Fasting Glucose.</p>
+            <button class="ss-btn ss-btn-secondary ss-btn-sm">Learn More</button>
+          </div>
         </div>
       </div>
+    </section>
 
-      <CodeBox 
-        title="Alert HTML"
-        language="html"
-        code={`<div class="f-alert f-alert-info">
-  <strong>Clinical Note:</strong> Patient data is encrypted end-to-end.
-</div>`}
-      />
-    </div>
-  {/if}
+    <!-- 5. Alerts -->
+    <section class="cl-section" id="alerts">
+      <div class="cl-section-eyebrow">Alerts &amp; Feedback</div>
+      <h2 class="cl-section-title">Alert Banners</h2>
+      <p class="cl-section-desc">Clinical and operational alert notices with accessible icons.</p>
 
+      <div class="cl-card p-4 mb-3" style="background:rgba(33,161,247,0.08);border-left:4px solid #21A1F7;">
+        <div style="display:flex;gap:0.75rem;align-items:flex-start;">
+          <iconify-icon icon="fluent:info-24-filled" style="color:#21A1F7;font-size:1.25rem;flex-shrink:0;margin-top:2px;"></iconify-icon>
+          <div>
+            <div style="font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:2px;">Clinical Notice</div>
+            <div style="font-size:0.85rem;color:var(--color-neutral-fg-2);line-height:1.5;">All testosterone replacement therapy (TRT) consultations require a verified blood biomarker panel within the last 30 days.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </div>
