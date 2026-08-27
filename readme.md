@@ -204,40 +204,45 @@ Design tokens follow the **W3C Design Token Community Group** standard and are e
 
 ---
 
-## 📁 Repository Structure
+## 📁 Repository Architecture (SvelteKit 2 + Svelte 5)
 
 ```text
-branding_suamisihat/
-├── index.html                    # System Hub & Navigation Portal
-├── pages/                        # Interactive documentation & tool pages
-│   ├── brand-system.html         # Master Brand Identity, 60:30:10 & Logos
-│   ├── brand-guidelines.html     # Clinical Guidelines & Downloadable PDFs
-│   ├── components.html           # Live Fluent 2 UI Component Library
-│   ├── products.html             # Product Vertical & Packaging Catalogue
-│   ├── onboarding.html           # Interactive Staff Onboarding Guide
-│   ├── signature.html            # Dynamic Email Signature Generator
-│   ├── doc.html                  # Markdown & Interactive Mermaid Engine
-│   ├── 403.html                  # Animated 60:30:10 Access Forbidden Page
-│   ├── 404.html                  # Animated 60:30:10 Page Not Found
-│   └── 500.html                  # Animated 60:30:10 Server Error Page
-├── assets/
-│   ├── css/                      # Token foundation, theme, and styles
-│   │   ├── fluent.css            # Tier 1 & 2 Fluent 2 token foundation
-│   │   ├── style.css             # Component layout & acrylic utilities
-│   │   └── dist/                 # Production minified CSS bundles
-│   ├── js/                       # Core application engine & helpers
-│   │   ├── main.js               # Theme manager, navigation, logo selector
-│   │   └── dist/                 # Production minified JavaScript bundles
-│   └── tokens/                   # Master W3C token JSON, TS, and Dart
-├── public/brand/                 # Authoritative SVG logos & sub-brand marks
-├── scripts/                      # Minification and watcher build scripts
-│   ├── minify-css.mjs            # CSS minifier & optimizer
-│   ├── minify-js.mjs             # JavaScript bundle minifier
-│   └── watch.mjs                 # Live chokidar file watcher
-├── .htaccess                     # Synology Apache clean URL routing & security
-├── nginx.conf                    # Production Nginx reverse proxy configuration
-├── deploy.ps1                    # Production deployment automation script
-└── README.md                     # Repository documentation
+SS-Design-System/
+├── src/                          # SvelteKit 2 / Svelte 5 Application
+│   ├── app.html                  # Global HTML shell (Fonts, marked.js, mermaid.js, Iconify)
+│   ├── lib/
+│   │   └── components/           # Reusable living components
+│   │       ├── Navbar.svelte     # Acrylic navigation with 7-item Docs dropdown & dark mode
+│   │       ├── Footer.svelte     # Corporate footer with correct dark logo variant
+│   │       ├── HeroBackground.svelte # Interactive particle & floating logomark canvas
+│   │       ├── ColorSwatch.svelte# Interactive 60:30:10 token swatch inspector
+│   │       └── BrandAssetCard.svelte # Vector asset preview & download tile
+│   └── routes/                   # File-based routes & living pages
+│       ├── +page.svelte          # System Home & Executive Overview
+│       ├── brand-system/         # Living Brand Identity, 60:30:10 & Token Governance
+│       ├── brand-guidelines/     # Clinical Brand Guidelines & PDF Catalogues
+│       ├── components/           # Live Fluent 2 UI Component Library & Playground
+│       ├── products/             # Product Portfolio (14 brands across 3 sections)
+│       │   ├── +page.svelte      # 4-group sidebar, scroll-spy, search, & category filter
+│       │   └── [slug]/           # Dynamic Sub-Product Brand Hubs (ANDROLAB, MENSS, etc.)
+│       ├── doc/                  # Markdown & Interactive Mermaid Documentation Engine
+│       ├── onboarding/           # Interactive Staff Onboarding Guide
+│       ├── signature/            # Dynamic Email Signature Generator
+│       └── tools/                # SS CAM Windows Desktop Integration
+├── content/                      # Canonical Markdown Documentation Source
+│   ├── changelog.md              # Authoritative System Changelog (v1.0 → v3.5)
+│   ├── roadmap.md                # Strategic Milestone Roadmap
+│   ├── brand-voice.md            # Clinical Tone & Copywriting Standards
+│   └── vision-mission.md         # Corporate Governance & Clinical Pillars
+├── static/                       # Static Public Assets (served at web root)
+│   ├── public/brand/             # Official SVG logos & sub-brand marks
+│   ├── products/                 # Product vector marks & packaging renders
+│   └── content/                  # Synced markdown documents for client fetching
+├── assets/                       # Legacy & CSS token stylesheets (fluent.css, ss_theme.css)
+├── scripts/                      # Build automation & Synology NAS sync scripts
+├── svelte.config.js              # SvelteKit static adapter configuration
+├── vite.config.js                # Vite build configuration
+└── package.json                  # Dependencies (SvelteKit, Svelte 5, Tailwind)
 ```
 
 ---
