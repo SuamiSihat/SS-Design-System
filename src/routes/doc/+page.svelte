@@ -29,7 +29,7 @@
     {
       label: 'Operating Subsidiaries',
       items: [
-        { id: 'sub-brands/ss-health',   title: '01-SSH · SS Health Holding',    path: '/content/sub-brands/ss-health.md',   icon: 'fluent:building-multiple-24-regular' },
+        { id: 'sub-brands/ss-health',   title: '01-SSH · SuamiSihat Holding (SS Health)',    path: '/content/sub-brands/ss-health.md',   icon: 'fluent:building-multiple-24-regular' },
         { id: 'sub-brands/ss-clinic',   title: '02-SSC · SS Clinic Standard',   path: '/content/sub-brands/ss-clinic.md',   icon: 'fluent:stethoscope-24-regular' },
         { id: 'sub-brands/ss-wellness', title: '03-SSW · SS Wellness Standard', path: '/content/sub-brands/ss-wellness.md', icon: 'fluent:heart-pulse-24-regular' },
         { id: 'sub-brands/ss-ecom',     title: '04-SSE · SS E-Commerce',        path: '/content/sub-brands/ss-ecom.md',     icon: 'fluent:store-microsoft-24-regular' },

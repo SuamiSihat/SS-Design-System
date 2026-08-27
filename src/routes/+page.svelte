@@ -7,7 +7,7 @@
   // 1. Interactive Group Architecture State
   let selectedEntity = $state('SSH'); // 'SSH' | 'SSC' | 'SSW' | 'SSE' | 'SST'
   const entityData = {
-    SSH: { name: 'SuamiSihat Health (Holding)', role: 'Corporate Governance & IP Ownership', color: '#043388', accent: '#21A1F7', status: 'Primary Authority', tag: '01-SSH' },
+    SSH: { name: 'SuamiSihat Holding Sdn Bhd (SS Health)', role: 'Corporate Governance & IP Ownership', color: '#043388', accent: '#21A1F7', status: 'Primary Authority', tag: '01-SSH' },
     SSC: { name: 'SuamiSihat Clinic', role: 'Physical Clinical Operations & Telemedicine', color: '#022057', accent: '#6DC6EC', status: 'Clinical Practice', tag: '02-SSC' },
     SSW: { name: 'SuamiSihat Wellness', role: 'Preventative Care & Lifestyle Supplements', color: '#043388', accent: '#FCE53D', status: 'Consumer Care', tag: '03-SSW' },
     SSE: { name: 'SuamiSihat Ecommerce', role: 'Direct-to-Patient Fulfillment & Logistics', color: '#022057', accent: '#22C55E', status: 'Digital Retail', tag: '04-SSE' },
@@ -295,7 +295,7 @@
             <div class="f-node-tag">Group Holding</div>
             <div class="f-node-title">
               <iconify-icon icon="fluent:building-bank-24-filled" style="color:#21A1F7;"></iconify-icon>
-              <span>SuamiSihat Health (SSH)</span>
+              <span>SuamiSihat Holding Sdn Bhd (SS Health)</span>
             </div>
             <div class="f-node-sub">Single Source of Truth Token Pipeline</div>
           </button>
@@ -1049,8 +1049,8 @@
         <div class="f-subbrand-grid">
           <a href="/brand-system/#subbrand" class="f-subbrand-card" style="border-left: 4px solid #043388;">
             <span class="f-subbrand-code">SSH</span>
-            <span class="f-subbrand-name">SS Health</span>
-            <span class="f-subbrand-role">Holding Corporate</span>
+            <span class="f-subbrand-name">SuamiSihat Holding Sdn Bhd</span>
+            <span class="f-subbrand-role">Holding Corporate (SS Health)</span>
           </a>
           <a href="/brand-system/#subbrand" class="f-subbrand-card" style="border-left: 4px solid #6DC6EC;">
             <span class="f-subbrand-code" style="color:#6DC6EC;">SSC</span>
