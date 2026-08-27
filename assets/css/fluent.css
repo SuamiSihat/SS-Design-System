@@ -23,6 +23,9 @@
   --ss-banana:          #FCE53D;   /* Banana Yellow     - CTA highlight */
   --ss-banana-yellow:   #F7E143;   /* Banana Yellow (CTA button primary) */
   --ss-neutral-black:   #1C1C1C;   /* Neutral Black — primary typography */
+  --ss-menss-black:     #030404;   /* MENSS Foundation Carbon Obsidian */
+  --ss-menss-cyan:      #0E92CC;   /* MENSS Precision Cyan Blue */
+  --ss-menss-white:     #FEFEFE;   /* MENSS Light Neutral Pure Contrast */
 
   /* -- Fluent Neutral Ramp ----------------------------------------------- */
   --f-neutral-0:    #FFFFFF;

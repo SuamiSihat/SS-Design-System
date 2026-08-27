@@ -3,7 +3,12 @@
   "tagline": "Modern Masculinity & Lifestyle Platform",
   "logo": "logo_menss.svg",
   "banner": "banner.svg",
-  "heroGradient": "linear-gradient(135deg, #043388 0%, #21A1F7 100%)",
+  "heroGradient": "linear-gradient(135deg, #030404 0%, #0e92cc 100%)",
+  "colors": {
+    "primary": "#030404",
+    "accent": "#0e92cc",
+    "neutralLight": "#fefefe"
+  },
   "ownership": {
     "tags": ["SS Health Owned", "SS Wellness"],
     "text": "MENSS is an in-house wellness platform operated entirely under the SS Wellness ecosystem."
