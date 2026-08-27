@@ -82,6 +82,8 @@ testDom('Component Library (build/components/index.html)', componentsHtml, [
   { desc: 'Sidebar links to #radius', pattern: /href="#radius"/i },
   { desc: 'Sidebar links to #motion', pattern: /href="#motion"/i },
   { desc: 'Sidebar links to #icons', pattern: /href="#icons"/i },
+  { desc: 'Sidebar links to #ss-hero', pattern: /href="#ss-hero"/i },
+  { desc: 'Contains ss-hero component showcase', pattern: /ss-hero|hero-wave-canvas|SS Hero Banner/i },
   { desc: 'Sidebar links to #buttons', pattern: /href="#buttons"/i },
   { desc: 'Sidebar links to #badges', pattern: /href="#badges"/i },
   { desc: 'Sidebar links to #inputs', pattern: /href="#inputs"/i },

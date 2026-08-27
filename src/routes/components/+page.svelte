@@ -1,10 +1,12 @@
 <script>
   import { onMount } from 'svelte';
   import CodeBox from '$lib/components/CodeBox.svelte';
+  import SSHero from '$lib/components/SSHero.svelte';
 
   let isSidebarMinimized = $state(false);
   let activeTab = $state('overview');
   let activeCodeTabs = $state({
+    hero: 'svelte',
     nav: 'web',
     modal: 'web',
     toast: 'web',
@@ -73,6 +75,117 @@
   });
 
   const codeSnippets = {
+    heroSvelte: `<!-- SvelteKit Component Usage -->
+<` + `script>
+  import SSHero from '$lib/components/SSHero.svelte';
+<` + `/script>
+
+<SSHero
+  eyebrow="Design System — SuamiSihat™"
+  title="Ship the SuamiSihat™ brand faster and better."
+  subtitle="The single source of truth for brand standards, design tokens, and components."
+  showBadges={true}
+  minHeight="480px"
+>
+  <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:1.5rem;">
+    <a href="/brand-system/" class="ss-btn ss-btn-cta">Explore Brand System</a>
+    <a href="/brand-guidelines/" class="ss-btn ss-btn-secondary">Guidelines</a>
+  </div>
+</SSHero>`,
+    heroWeb: `<!-- Vanilla HTML/CSS Default Hero Standard -->
+<section class="ss-hero" role="region" aria-label="Hero Banner">
+  <!-- Interactive Wave & Particle Canvas Background -->
+  <canvas id="heroWaveCanvas" class="hero-wave-canvas"></canvas>
+
+  <!-- Ambient Glow Backdrop -->
+  <div class="f-hero-ambient-glow"></div>
+
+  <div class="f-hero-inner">
+    <div class="f-hero-eyebrow">
+      <iconify-icon icon="fluent:record-16-regular"></iconify-icon>
+      Design System &mdash; SuamiSihat™
+    </div>
+    <h1 class="f-hero-title">Ship the SuamiSihat™ brand faster and better.</h1>
+    <p class="f-hero-subtitle">The standard background banner component for all hero headers.</p>
+    <div class="f-hero-ctas">
+      <a href="#explore" class="ss-btn ss-btn-primary">Explore Brand System</a>
+    </div>
+  </div>
+</section>
+
+<!-- Assets script initializes canvas wave animation -->
+<` + `script src="assets/js/main.js" defer><` + `/script>`,
+    heroExpo: `// Expo React Native (TSX)
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import { SSColors, SSRadius, SSSpacing, SSFont } from './ss_tokens';
+
+export function SSHeroBanner({ title, subtitle }) {
+  return (
+    <View style={styles.container}>
+      <LinearGradient
+        colors={[SSColors.prussianBlue, SSColors.ssBlue, '#021A40']}
+        style={StyleSheet.absoluteFillObject}
+      />
+      <View style={styles.content}>
+        <Text style={styles.eyebrow}>DESIGN SYSTEM — SUAMISIHAT™</Text>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.subtitle}>{subtitle}</Text>
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { minHeight: 380, justifyContent: 'center', alignItems: 'center', padding: SSSpacing.s6, overflow: 'hidden' },
+  content: { alignItems: 'center', maxWidth: 480 },
+  eyebrow: { color: SSColors.azure, fontSize: 11, fontWeight: '700', letterSpacing: 1, marginBottom: 12 },
+  title: { color: '#FFFFFF', fontSize: 26, fontWeight: '800', textAlign: 'center', marginBottom: 8 },
+  subtitle: { color: 'rgba(255,255,255,0.8)', fontSize: 14, textAlign: 'center', lineHeight: 22 },
+});`,
+    heroFlutter: `// Flutter CustomPainter Animated Hero Banner
+import 'package:flutter/material.dart';
+
+class SSHeroBanner extends StatelessWidget {
+  final String title;
+  final String subtitle;
+
+  const SSHeroBanner({Key? key, required this.title, required this.subtitle}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      constraints: const BoxConstraints(minHeight: 420),
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [Color(0xFF022057), Color(0xFF043388), Color(0xFF021A40)],
+        ),
+      ),
+      child: Stack(
+        children: [
+          // Wave & Mars Particle CustomPainter
+          Positioned.fill(child: CustomPaint(painter: SSHeroWavePainter())),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(title, textAlign: TextAlign.center, style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white)),
+                  const SizedBox(height: 12),
+                  Text(subtitle, textAlign: TextAlign.center, style: TextStyle(color: Colors.white.withOpacity(0.8), fontSize: 15)),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}`,
     buttonsWeb: `<!-- Banana Yellow CTA Button (#FCE53D bg, #1C1C1C Neutral Black text) -->
 <button class="ss-btn ss-btn-cta">
   <iconify-icon icon="fluent:flash-24-filled"></iconify-icon> BOOK APPOINTMENT
@@ -293,6 +406,7 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
 
       <div class="cl-sidebar-section" style="padding: 0 0.5rem 0.5rem;">
         <span class="cl-sidebar-label" style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-fg-3, #94A3B8); padding: 0.5rem 0.5rem 0.25rem; display: block;">Components</span>
+        <a href="#ss-hero" class="cl-sidebar-link"><iconify-icon icon="fluent:sparkle-24-regular"></iconify-icon> SS Hero Banner</a>
         <a href="#buttons" class="cl-sidebar-link"><iconify-icon icon="fluent:rectangle-24-regular"></iconify-icon> Buttons</a>
         <a href="#badges" class="cl-sidebar-link"><iconify-icon icon="fluent:badge-24-regular"></iconify-icon> Badges &amp; Chips</a>
         <a href="#inputs" class="cl-sidebar-link"><iconify-icon icon="fluent:text-field-24-regular"></iconify-icon> Inputs &amp; Forms</a>
@@ -947,7 +1061,41 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
       </div>
     </section>
 
-    <!-- 6. Buttons & Calls to Action -->
+    <!-- 6. SS Hero Component (Default Hero Banner Standard) -->
+    <section class="cl-section" id="ss-hero" style="margin-bottom: 4rem; scroll-margin-top: 80px;">
+      <div class="cl-section-eyebrow">Standard Container</div>
+      <h2 class="cl-section-title">SS Hero Banner (<code>ss-hero</code>)</h2>
+      <p class="cl-section-desc">
+        The official default background and container component for all hero-type banners, landing headers, and product master headers across SuamiSihat™. Combines the 60:30 brand base gradient, a 30% ambient glow bloom, and a 10% interactive kinetic particle wave canvas with Mars ♂ energy nodes.
+      </p>
+
+      <!-- Live Interactive Demo of SSHero -->
+      <div class="cl-card mb-4" style="background:var(--color-neutral-bg-2); border:1px solid var(--color-neutral-stroke-1); border-radius:var(--f-radius-xl); overflow:hidden;">
+        <div style="border-radius:var(--f-radius-xl); overflow:hidden;">
+          <SSHero
+            eyebrow="OFFICIAL HERO STANDARD"
+            title="Interactive Vitality Wave &amp; Energy Particles"
+            subtitle="Default background for all SuamiSihat™ hero banners with mouse-reactive kinetic waves and ambient glow."
+            minHeight="360px"
+            showBadges={true}
+          />
+        </div>
+
+        <!-- Code Tabs: Svelte vs Web vs Expo vs Flutter -->
+        <div style="border-top:1px solid var(--color-neutral-stroke-1); padding:0.5rem 1rem; background:var(--color-neutral-bg-3); display:flex; gap:0.5rem; flex-wrap:wrap;">
+          <button class="ss-btn ss-btn-sm" class:ss-btn-primary={activeCodeTabs.hero === 'svelte'} class:ss-btn-secondary={activeCodeTabs.hero !== 'svelte'} onclick={() => setCodeTab('hero', 'svelte')}><iconify-icon icon="fluent:flash-24-regular"></iconify-icon> Svelte</button>
+          <button class="ss-btn ss-btn-sm" class:ss-btn-primary={activeCodeTabs.hero === 'web'} class:ss-btn-secondary={activeCodeTabs.hero !== 'web'} onclick={() => setCodeTab('hero', 'web')}><iconify-icon icon="fluent:globe-24-regular"></iconify-icon> HTML/CSS</button>
+          <button class="ss-btn ss-btn-sm" class:ss-btn-primary={activeCodeTabs.hero === 'expo'} class:ss-btn-secondary={activeCodeTabs.hero !== 'expo'} onclick={() => setCodeTab('hero', 'expo')}><iconify-icon icon="fluent:phone-24-regular"></iconify-icon> Expo</button>
+          <button class="ss-btn ss-btn-sm" class:ss-btn-primary={activeCodeTabs.hero === 'flutter'} class:ss-btn-secondary={activeCodeTabs.hero !== 'flutter'} onclick={() => setCodeTab('hero', 'flutter')}><iconify-icon icon="fluent:phone-24-regular"></iconify-icon> Flutter</button>
+        </div>
+        <CodeBox
+          code={activeCodeTabs.hero === 'svelte' ? codeSnippets.heroSvelte : activeCodeTabs.hero === 'web' ? codeSnippets.heroWeb : activeCodeTabs.hero === 'expo' ? codeSnippets.heroExpo : codeSnippets.heroFlutter}
+          language={activeCodeTabs.hero === 'svelte' ? 'html' : activeCodeTabs.hero === 'web' ? 'html' : activeCodeTabs.hero === 'expo' ? 'typescript' : 'dart'}
+        />
+      </div>
+    </section>
+
+    <!-- 7. Buttons & Calls to Action -->
     <section class="cl-section" id="buttons" style="margin-bottom: 4rem; scroll-margin-top: 80px;">
       <div class="cl-section-eyebrow">Interactive Controls</div>
       <h2 class="cl-section-title">Buttons &amp; Calls to Action</h2>

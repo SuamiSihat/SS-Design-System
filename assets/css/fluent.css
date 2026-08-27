@@ -465,6 +465,15 @@ body.dark-mode ::selection { background: rgba(33,161,247,0.22); }
 /* ==========================================================================
    Hero Wave & Trademark Vitality Background
    ========================================================================== */
+.ss-hero,
+.f-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--gradient-brand-vertical, linear-gradient(180deg, #022057 0%, #043388 60%, #021A40 100%));
+  text-align: center;
+  box-sizing: border-box;
+}
+
 .hero-wave-canvas {
   position: absolute;
   top: 0;
@@ -475,6 +484,7 @@ body.dark-mode ::selection { background: rgba(33,161,247,0.22); }
   pointer-events: none;
 }
 
+.ss-hero-ambient-glow,
 .f-hero-ambient-glow {
   position: absolute;
   inset: 0;
@@ -483,6 +493,7 @@ body.dark-mode ::selection { background: rgba(33,161,247,0.22); }
   z-index: 1;
 }
 
+.ss-hero-ambient-glow::before,
 .f-hero-ambient-glow::before {
   content: '';
   position: absolute;

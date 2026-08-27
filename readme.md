@@ -178,9 +178,43 @@ All operating entities inherit the central token architecture while expressing u
 
 ## 🧩 UI Component Primitives
 
-The system includes standardized Fluent 2 component primitives with WCAG AAA contrast:
+### 1. Default Hero Banner Standard (`.ss-hero` / `<SSHero />`)
 
-### 1. Primary Action Button (`.ss-btn-primary`)
+The official default container and background standard for all hero banners, landing headers, and product master headers across SuamiSihat™:
+
+```svelte
+<!-- SvelteKit 2 / Svelte 5 Usage -->
+<script>
+  import SSHero from '$lib/components/SSHero.svelte';
+</script>
+
+<SSHero
+  eyebrow="SuamiSihat™ Design System • v3.5"
+  title="One source. Every standard.<br>Ship with confidence."
+  subtitle="The authoritative single source of truth for the SuamiSihat™ brand ecosystem."
+  minHeight="540px"
+>
+  <div class="f-hero-ctas">
+    <a href="/brand-system/" class="f-btn-hero-primary">Explore Brand System</a>
+    <a href="/components/" class="f-btn-hero-secondary">UI Components</a>
+  </div>
+</SSHero>
+```
+
+```html
+<!-- Vanilla HTML/CSS Standard -->
+<section class="ss-hero" role="region" aria-label="Hero Banner">
+  <canvas id="heroWaveCanvas" class="hero-wave-canvas"></canvas>
+  <div class="f-hero-ambient-glow"></div>
+  <div class="f-hero-inner">
+    <div class="f-hero-eyebrow">Design System &mdash; SuamiSihat™</div>
+    <h1 class="f-hero-title">Ship the SuamiSihat™ brand faster.</h1>
+    <p class="f-hero-subtitle">The standard background banner component for all hero headers.</p>
+  </div>
+</section>
+```
+
+### 2. Primary Action Button (`.ss-btn-primary`)
 
 ```html
 <button class="ss-btn ss-btn-primary">
@@ -189,7 +223,7 @@ The system includes standardized Fluent 2 component primitives with WCAG AAA con
 </button>
 ```
 
-### 2. High-Intent Banana Yellow CTA (`.ss-btn-cta`)
+### 3. High-Intent Banana Yellow CTA (`.ss-btn-cta`)
 
 ```html
 <button class="ss-btn ss-btn-cta">
@@ -198,7 +232,7 @@ The system includes standardized Fluent 2 component primitives with WCAG AAA con
 </button>
 ```
 
-### 3. Secondary & Ghost Actions
+### 4. Secondary & Ghost Actions
 
 ```html
 <button class="ss-btn ss-btn-secondary">Secondary Action</button>
@@ -227,14 +261,14 @@ SS-Design-System/
 │   ├── app.html                  # Global HTML shell (Fonts, marked.js, mermaid.js, Iconify)
 │   ├── lib/
 │   │   ├── components/           # Reusable living components
+│   │   │   ├── SSHero.svelte     # Official ss-hero canvas vitality wave & banner standard
 │   │   │   ├── Navbar.svelte     # Acrylic navigation with 7-item Docs dropdown & dark mode
 │   │   │   ├── Footer.svelte     # Corporate footer with correct dark logo variant
-│   │   │   ├── HeroBackground.svelte # Interactive particle & floating logomark canvas
 │   │   │   ├── ColorSwatch.svelte# Interactive 60:30:10 token swatch inspector
 │   │   │   └── BrandAssetCard.svelte # Vector asset preview & download tile
-│   │   └── stores/               # Svelte stores & state management
+│   │   └── stores/               # Svelte stores & state management (theme, docs)
 │   └── routes/                   # File-based routes & living pages
-│       ├── +page.svelte          # System Home & Executive Overview
+│       ├── +page.svelte          # System Home with SSHero & Executive Overview
 │       ├── brand-system/         # Living Brand Identity, 60:30:10 & Token Governance
 │       ├── brand-guidelines/     # Clinical Brand Guidelines & PDF Catalogues
 │       ├── components/           # Live Fluent 2 UI Component Library & Playground
@@ -250,8 +284,9 @@ SS-Design-System/
 │   ├── products/                 # Product vector marks, metadata & packaging renders
 │   ├── brand-guidelines/         # PDF booklet covers & printable guides
 │   └── content/                  # Markdown documentation source for client fetching
-│       ├── introduction.md       # System Introduction & Standards
+│       ├── ss-hero-guide.md      # Official ss-hero Component Standard & Guide
 │       ├── text-color-guide.md   # Authoritative 4-Tier Text Hierarchy Guide
+│       ├── introduction.md       # System Introduction & Standards
 │       ├── roadmap.md            # Strategic Milestone Roadmap
 │       ├── changelog.md          # System Changelog (v1.0 → v3.5)
 │       ├── brand-voice.md        # Clinical Tone & Copywriting Standards
@@ -263,8 +298,8 @@ SS-Design-System/
 │   ├── js/                       # main.js (ThemeManager, LogoSelector, Clipboard)
 │   └── tokens/                   # tokens.json (W3C standard token definitions)
 ├── scripts/                      # Build automation & quality assurance suites
-│   ├── smoke-test.mjs            # 29-point bundle, token & SSG validation suite
-│   ├── dom-test.mjs              # 89-point DOM hierarchy & structural test suite
+│   ├── smoke-test.mjs            # 30-point bundle, token & SSG validation suite
+│   ├── dom-test.mjs              # 91-point DOM hierarchy & structural test suite
 │   ├── minify-css.mjs            # LightningCSS optimization pipeline
 │   ├── minify-js.mjs             # Terser JavaScript optimization pipeline
 │   ├── sync-build.mjs            # Static build sync to web root for NAS hosting
@@ -302,7 +337,7 @@ npm run build
 ### 3. Run Quality Assurance Test Suite
 
 ```bash
-# Run all 118 automated tests (Smoke + DOM Validation)
+# Run all 121 automated tests (30 Smoke + 91 DOM Validation)
 npm test
 ```
 

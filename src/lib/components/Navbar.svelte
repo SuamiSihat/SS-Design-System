@@ -41,6 +41,7 @@
     { title: 'Multi-Platform Token Exports', cat: 'Tokens', href: '/brand-system/#tokens', desc: 'Export W3C JSON tokens to Tailwind, Flutter, and WPF' },
 
     // Components
+    { title: 'SS Hero Banner Standard (ss-hero)', cat: 'Components', href: '/components/#ss-hero', desc: 'Default animated vitality wave & particle canvas background for all hero banners' },
     { title: 'Button Components (CTA, Primary, Secondary)', cat: 'Components', href: '/components/#buttons', desc: 'Banana Yellow CTA, primary azure, ghost, and danger buttons' },
     { title: 'Badges & Status Tags', cat: 'Components', href: '/components/#badges', desc: 'Fluent 2 pill badges, neutral tags, and brand badges' },
     { title: 'Input Controls & Switches', cat: 'Components', href: '/components/#inputs', desc: 'Text fields, search inputs, checkboxes, radio buttons, and switches' },
