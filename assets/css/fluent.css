@@ -37,6 +37,10 @@
   --ss-androlab-blue:   #0A89FA;   /* ANDROLAB Science Electric Blue */
   --ss-androlab-gold:   #FCE53D;   /* ANDROLAB RX Prescription Gold */
   --ss-androlab-canvas: #F1F1F1;   /* ANDROLAB Pure Light Clinical Surface */
+  --ss-nucaffe-black:   #1C1C1C;   /* nuCaffe® Dark Roast Obsidian Black */
+  --ss-nucaffe-red:     #DF2127;   /* nuCaffe® Coffee Cherry Red */
+  --ss-nucaffe-crema:   #C59B6D;   /* nuCaffe® Latte Crema Warm Gold */
+  --ss-nucaffe-canvas:  #FBFBFB;   /* nuCaffe® Pure Foam Light Canvas */
 
   /* -- Fluent Neutral Ramp ----------------------------------------------- */
   --f-neutral-0:    #FFFFFF;
