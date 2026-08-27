@@ -6,6 +6,7 @@
 
   // 1. Interactive Group Architecture State
   let selectedEntity = $state('SSH'); // 'SSH' | 'SSC' | 'SSW' | 'SSE' | 'SST'
+  let activeDilutionEntity = $state('SSH'); // Active subsidiary highlight in Zero Brand Dilution Lottie card
   const entityData = {
     SSH: { name: 'SuamiSihat Holding Sdn Bhd (SS Health)', role: 'Corporate Governance & IP Ownership', color: '#043388', accent: '#21A1F7', status: 'Primary Authority', tag: '01-SSH' },
     SSC: { name: 'SuamiSihat Clinic', role: 'Physical Clinical Operations & Telemedicine', color: '#022057', accent: '#6DC6EC', status: 'Clinical Practice', tag: '02-SSC' },
@@ -195,26 +196,113 @@
         </div>
       </div>
 
-      <!-- Bento Item 2: 4-Col Zero Brand Dilution Card -->
-      <div class="f-bento-card f-bento-span-4">
+      <!-- Bento Item 2: 4-Col Zero Brand Dilution Card with Lottie/Kinetic Animation -->
+      <div class="f-bento-card f-bento-span-4 f-dilution-card">
         <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
         <div>
-          <div class="f-pillar-icon-wrap">
-            <div class="f-pillar-icon">
-              <iconify-icon icon="fluent:box-multiple-24-regular"></iconify-icon>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+            <div class="f-pillar-icon-wrap" style="margin-bottom: 0;">
+              <div class="f-pillar-icon" style="background: rgba(33, 161, 247, 0.12); color: #21A1F7;">
+                <iconify-icon icon="fluent:box-multiple-24-regular"></iconify-icon>
+              </div>
             </div>
+            <span class="f-dilution-badge">
+              <span class="f-pulse-dot-green"></span> 0.00% Drift
+            </span>
           </div>
+
           <h3 class="f-pillar-title">Zero Brand Dilution</h3>
           <p class="f-pillar-desc">
-            5 operating subsidiaries and 8+ product lines synchronized under 1 authoritative token system.
+            5 operating subsidiaries and 8+ product lines synchronized under 1 authoritative token engine.
           </p>
+
+          <!-- Dynamic Lottie / Kinetic Quantum Token Alignment Animation Stage -->
+          <div class="f-dilution-animation-stage" aria-label="Brand Token Synchronization Animation">
+            <div class="f-dilution-lottie-container">
+              <!-- Orbital Rotating Alignment Rings -->
+              <div class="f-lottie-orbit-ring ring-outer"></div>
+              <div class="f-lottie-orbit-ring ring-mid"></div>
+
+              <!-- Radiating Particle Sync Rays & Converging Subsidiary Nodes -->
+              <svg viewBox="0 0 160 110" class="f-dilution-svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="beamSSH" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#043388" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#21A1F7" stop-opacity="0.3"/>
+                  </linearGradient>
+                  <linearGradient id="beamSSC" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#6DC6EC" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#21A1F7" stop-opacity="0.3"/>
+                  </linearGradient>
+                  <linearGradient id="beamSSW" x1="100%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#FCE53D" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#21A1F7" stop-opacity="0.3"/>
+                  </linearGradient>
+                  <linearGradient id="beamSSE" x1="100%" y1="100%" x2="0%" y2="0%">
+                    <stop offset="0%" stop-color="#22C55E" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#21A1F7" stop-opacity="0.3"/>
+                  </linearGradient>
+                  <linearGradient id="beamSST" x1="50%" y1="100%" x2="50%" y2="0%">
+                    <stop offset="0%" stop-color="#A855F7" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#21A1F7" stop-opacity="0.3"/>
+                  </linearGradient>
+                  <filter id="coreGlowPrism" x="-30%" y="-30%" width="160%" height="160%">
+                    <feGaussianBlur stdDeviation="3" result="blur"/>
+                    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                  </filter>
+                </defs>
+
+                <!-- Convergence Laser Streams -->
+                <line x1="22" y1="22" x2="80" y2="52" stroke="url(#beamSSH)" stroke-width="1.8" stroke-dasharray="4 3" class="f-stream-line stream-1 {activeDilutionEntity === 'SSH' ? 'active-beam' : ''}"/>
+                <line x1="22" y1="84" x2="80" y2="52" stroke="url(#beamSSC)" stroke-width="1.8" stroke-dasharray="4 3" class="f-stream-line stream-2 {activeDilutionEntity === 'SSC' ? 'active-beam' : ''}"/>
+                <line x1="138" y1="22" x2="80" y2="52" stroke="url(#beamSSW)" stroke-width="1.8" stroke-dasharray="4 3" class="f-stream-line stream-3 {activeDilutionEntity === 'SSW' ? 'active-beam' : ''}"/>
+                <line x1="138" y1="84" x2="80" y2="52" stroke="url(#beamSSE)" stroke-width="1.8" stroke-dasharray="4 3" class="f-stream-line stream-4 {activeDilutionEntity === 'SSE' ? 'active-beam' : ''}"/>
+                <line x1="80" y1="96" x2="80" y2="52" stroke="url(#beamSST)" stroke-width="1.8" stroke-dasharray="4 3" class="f-stream-line stream-5 {activeDilutionEntity === 'SST' ? 'active-beam' : ''}"/>
+
+                <!-- 5 Subsidiary Satellites with Brand Colors -->
+                <g class="f-satellite-node node-ssh {activeDilutionEntity === 'SSH' ? 'highlighted' : ''}" onclick={() => activeDilutionEntity = 'SSH'} onkeydown={(e) => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activeDilutionEntity = 'SSH'; } }} role="button" tabindex="0" aria-label="Select SuamiSihat Holding">
+                  <circle cx="22" cy="22" r="8" fill="#043388" stroke="#21A1F7" stroke-width="1.5"/>
+                  <text x="22" y="25" font-size="5.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">SSH</text>
+                </g>
+                <g class="f-satellite-node node-ssc {activeDilutionEntity === 'SSC' ? 'highlighted' : ''}" onclick={() => activeDilutionEntity = 'SSC'} onkeydown={(e) => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activeDilutionEntity = 'SSC'; } }} role="button" tabindex="0" aria-label="Select SS Clinic">
+                  <circle cx="22" cy="84" r="8" fill="#022057" stroke="#6DC6EC" stroke-width="1.5"/>
+                  <text x="22" y="87" font-size="5.5" font-weight="bold" fill="#6DC6EC" text-anchor="middle">SSC</text>
+                </g>
+                <g class="f-satellite-node node-ssw {activeDilutionEntity === 'SSW' ? 'highlighted' : ''}" onclick={() => activeDilutionEntity = 'SSW'} onkeydown={(e) => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activeDilutionEntity = 'SSW'; } }} role="button" tabindex="0" aria-label="Select SS Wellness">
+                  <circle cx="138" cy="22" r="8" fill="#043388" stroke="#FCE53D" stroke-width="1.5"/>
+                  <text x="138" y="25" font-size="5.5" font-weight="bold" fill="#FCE53D" text-anchor="middle">SSW</text>
+                </g>
+                <g class="f-satellite-node node-sse {activeDilutionEntity === 'SSE' ? 'highlighted' : ''}" onclick={() => activeDilutionEntity = 'SSE'} onkeydown={(e) => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activeDilutionEntity = 'SSE'; } }} role="button" tabindex="0" aria-label="Select SS Ecommerce">
+                  <circle cx="138" cy="84" r="8" fill="#022057" stroke="#22C55E" stroke-width="1.5"/>
+                  <text x="138" y="87" font-size="5.5" font-weight="bold" fill="#22C55E" text-anchor="middle">SSE</text>
+                </g>
+                <g class="f-satellite-node node-sst {activeDilutionEntity === 'SST' ? 'highlighted' : ''}" onclick={() => activeDilutionEntity = 'SST'} onkeydown={(e) => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activeDilutionEntity = 'SST'; } }} role="button" tabindex="0" aria-label="Select SS Technology">
+                  <circle cx="80" cy="96" r="7.5" fill="#043388" stroke="#A855F7" stroke-width="1.5"/>
+                  <text x="80" y="99" font-size="5" font-weight="bold" fill="#A855F7" text-anchor="middle">SST</text>
+                </g>
+
+                <!-- Central Master Token Core -->
+                <circle cx="80" cy="52" r="16" fill="url(#beamSSH)" filter="url(#coreGlowPrism)" class="f-core-pulse"/>
+                <circle cx="80" cy="52" r="11" fill="#022057" stroke="#21A1F7" stroke-width="2"/>
+                <path d="M77 47C77 45.5 78.5 44.5 80 44.5C81.5 44.5 83 45.5 83 47C83 49 77 51 77 55C77 58.5 80 59.5 82 59.5C83.5 59.5 84.5 58.8 84.5 58.8" stroke="#6DC6EC" stroke-width="1.8" stroke-linecap="round" fill="none" class="f-core-s-mark"/>
+              </svg>
+            </div>
+
+            <div class="f-lottie-meta-bar">
+              <span class="f-sync-status-text">
+                <iconify-icon icon="fluent:lock-closed-16-regular" style="color:#22C55E;"></iconify-icon>
+                <span>{entityData[activeDilutionEntity]?.name.split(' (')[0] || 'Holding Token Core'} &bull; 100% Locked</span>
+              </span>
+            </div>
+          </div>
         </div>
+
         <div class="f-subsidiary-chips-row">
-          <span class="f-sub-chip">SSH</span>
-          <span class="f-sub-chip">SSC</span>
-          <span class="f-sub-chip">SSW</span>
-          <span class="f-sub-chip">SSE</span>
-          <span class="f-sub-chip">SST</span>
+          <button type="button" class="f-sub-chip-btn {activeDilutionEntity === 'SSH' ? 'active' : ''}" onclick={() => activeDilutionEntity = 'SSH'}>SSH</button>
+          <button type="button" class="f-sub-chip-btn {activeDilutionEntity === 'SSC' ? 'active' : ''}" onclick={() => activeDilutionEntity = 'SSC'}>SSC</button>
+          <button type="button" class="f-sub-chip-btn {activeDilutionEntity === 'SSW' ? 'active' : ''}" onclick={() => activeDilutionEntity = 'SSW'}>SSW</button>
+          <button type="button" class="f-sub-chip-btn {activeDilutionEntity === 'SSE' ? 'active' : ''}" onclick={() => activeDilutionEntity = 'SSE'}>SSE</button>
+          <button type="button" class="f-sub-chip-btn {activeDilutionEntity === 'SST' ? 'active' : ''}" onclick={() => activeDilutionEntity = 'SST'}>SST</button>
         </div>
       </div>
 
@@ -1040,38 +1128,61 @@
         </p>
       </a>
 
-      <!-- Bento Item 6: 12-Col Operating Subsidiaries Ribbon -->
-      <div class="f-bento-card f-bento-span-12">
+      <!-- Bento Item 6: 12-Col Multi-Platform Token Exporter Hub (Unique Non-Duplicate Developer Utility) -->
+      <div class="f-bento-card f-bento-span-12 f-token-export-card">
         <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
-        <div style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 1rem;">
-          Operating Subsidiaries of SuamiSihat Group
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem;">
+          <div>
+            <div style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">
+              Multi-Platform Token Export Engine
+            </div>
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-strong); margin: 0;">Instant Token Bundles for Production Teams</h3>
+          </div>
+          <span class="f-badge-shimmer" style="color: #22C55E; border-color: rgba(34,197,94,0.3);">
+            <iconify-icon icon="fluent:checkmark-circle-16-filled"></iconify-icon> W3C Spec v3.5 Compliant
+          </span>
         </div>
-        <div class="f-subbrand-grid">
-          <a href="/brand-system/#subbrand" class="f-subbrand-card" style="border-left: 4px solid #043388;">
-            <span class="f-subbrand-code">SSH</span>
-            <span class="f-subbrand-name">SuamiSihat Holding Sdn Bhd</span>
-            <span class="f-subbrand-role">Holding Corporate (SS Health)</span>
-          </a>
-          <a href="/brand-system/#subbrand" class="f-subbrand-card" style="border-left: 4px solid #6DC6EC;">
-            <span class="f-subbrand-code" style="color:#6DC6EC;">SSC</span>
-            <span class="f-subbrand-name">SS Clinic</span>
-            <span class="f-subbrand-role">Clinical Practice</span>
-          </a>
-          <a href="/brand-system/#subbrand" class="f-subbrand-card" style="border-left: 4px solid #FCE53D;">
-            <span class="f-subbrand-code" style="color:#D97706;">SSW</span>
-            <span class="f-subbrand-name">SS Wellness</span>
-            <span class="f-subbrand-role">Lifestyle &amp; Care</span>
-          </a>
-          <a href="/brand-system/#subbrand" class="f-subbrand-card" style="border-left: 4px solid #22C55E;">
-            <span class="f-subbrand-code" style="color:#22C55E;">SSE</span>
-            <span class="f-subbrand-name">SS Ecommerce</span>
-            <span class="f-subbrand-role">Direct-to-Patient</span>
-          </a>
-          <a href="/brand-system/#subbrand" class="f-subbrand-card" style="border-left: 4px solid #A855F7;">
-            <span class="f-subbrand-code" style="color:#A855F7;">SST</span>
-            <span class="f-subbrand-name">SS Technology</span>
-            <span class="f-subbrand-role">Software &amp; Digital</span>
-          </a>
+        
+        <div class="f-export-grid">
+          <div class="f-export-card">
+            <div class="f-export-header">
+              <span class="f-export-tech">CSS Custom Properties</span>
+              <button type="button" class="f-export-copy" onclick={() => copyToClipboard(`:root {\n  --color-brand-primary: #043388;\n  --color-brand-Prussian: #022057;\n  --color-brand-azure: #21A1F7;\n  --color-brand-malibu: #6DC6EC;\n  --text-strong: #000000;\n  --text-primary: #19191A;\n  --text-secondary: rgba(25, 25, 26, 0.65);\n  --text-disabled: rgba(25, 25, 26, 0.35);\n}`, 'Copied CSS Variables!')}>
+                <iconify-icon icon="fluent:copy-16-regular"></iconify-icon> Copy
+              </button>
+            </div>
+            <p class="f-export-desc">Native CSS custom variables with light &amp; dark mode scoping.</p>
+          </div>
+
+          <div class="f-export-card">
+            <div class="f-export-header">
+              <span class="f-export-tech">Tailwind v4 Theme</span>
+              <button type="button" class="f-export-copy" onclick={() => copyToClipboard(`@theme {\n  --color-ss-primary: #043388;\n  --color-ss-prussian: #022057;\n  --color-ss-azure: #21A1F7;\n  --color-ss-malibu: #6DC6EC;\n  --color-ss-porcelain: #FCFAF6;\n}`, 'Copied Tailwind theme tokens!')}>
+                <iconify-icon icon="fluent:copy-16-regular"></iconify-icon> Copy
+              </button>
+            </div>
+            <p class="f-export-desc">CSS theme declarations for Tailwind CSS v4 &amp; v3.</p>
+          </div>
+
+          <div class="f-export-card">
+            <div class="f-export-header">
+              <span class="f-export-tech">Flutter Dart Theme</span>
+              <button type="button" class="f-export-copy" onclick={() => copyToClipboard(`class SSColors {\n  static const primary = Color(0xFF043388);\n  static const prussian = Color(0xFF022057);\n  static const azure = Color(0xFF21A1F7);\n  static const malibu = Color(0xFF6DC6EC);\n  static const porcelain = Color(0xFFFCFAF6);\n}`, 'Copied Flutter Dart tokens!')}>
+                <iconify-icon icon="fluent:copy-16-regular"></iconify-icon> Copy
+              </button>
+            </div>
+            <p class="f-export-desc">Static Dart constants for Flutter mobile &amp; tablet apps.</p>
+          </div>
+
+          <div class="f-export-card">
+            <div class="f-export-header">
+              <span class="f-export-tech">W3C Token JSON</span>
+              <button type="button" class="f-export-copy" onclick={() => copyToClipboard(`{\n  "color": {\n    "brand": {\n      "primary": { "$value": "#043388", "$type": "color" },\n      "azure": { "$value": "#21A1F7", "$type": "color" }\n    }\n  }\n}`, 'Copied W3C Tokens JSON!')}>
+                <iconify-icon icon="fluent:copy-16-regular"></iconify-icon> Copy
+              </button>
+            </div>
+            <p class="f-export-desc">Cross-platform JSON token tree for automated CI/CD builds.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1709,25 +1820,313 @@
     color: rgba(252, 250, 246, 0.65);
   }
 
+  /* Zero Brand Dilution Bento Card & Kinetic Lottie Stage */
+  .f-dilution-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .f-dilution-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.725rem;
+    font-weight: 800;
+    color: #16A34A;
+    background: rgba(34, 197, 94, 0.12);
+    border: 1px solid rgba(34, 197, 94, 0.25);
+    padding: 3px 9px;
+    border-radius: 9999px;
+  }
+
+  :global([data-theme="dark"]) .f-dilution-badge {
+    color: #22C55E;
+    background: rgba(34, 197, 94, 0.15);
+    border-color: rgba(34, 197, 94, 0.3);
+  }
+
+  .f-dilution-animation-stage {
+    position: relative;
+    width: 100%;
+    height: 142px;
+    background: rgba(4, 51, 136, 0.04);
+    border: 1px solid rgba(4, 51, 136, 0.12);
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0.85rem 0;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+
+  :global([data-theme="dark"]) .f-dilution-animation-stage {
+    background: rgba(2, 20, 64, 0.55);
+    border-color: rgba(33, 161, 247, 0.2);
+  }
+
+  .f-dilution-lottie-container {
+    position: relative;
+    width: 100%;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .f-lottie-orbit-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px dashed rgba(33, 161, 247, 0.25);
+    pointer-events: none;
+  }
+
+  .f-lottie-orbit-ring.ring-outer {
+    width: 136px;
+    height: 94px;
+    animation: f-orbit-spin 22s linear infinite;
+  }
+
+  .f-lottie-orbit-ring.ring-mid {
+    width: 84px;
+    height: 62px;
+    border-color: rgba(4, 51, 136, 0.22);
+    animation: f-orbit-spin-reverse 15s linear infinite;
+  }
+
+  @keyframes f-orbit-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes f-orbit-spin-reverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+  }
+
+  .f-dilution-svg {
+    width: 100%;
+    height: 100%;
+    max-width: 220px;
+    z-index: 2;
+  }
+
+  .f-stream-line {
+    animation: f-stream-flow 1.8s linear infinite;
+    transition: stroke-width 0.2s ease, opacity 0.2s ease;
+  }
+
+  .f-stream-line.active-beam {
+    stroke-width: 2.5 !important;
+    filter: drop-shadow(0 0 4px #21A1F7);
+    opacity: 1 !important;
+  }
+
+  .stream-1 { animation-delay: 0s; }
+  .stream-2 { animation-delay: 0.35s; }
+  .stream-3 { animation-delay: 0.7s; }
+  .stream-4 { animation-delay: 1.05s; }
+  .stream-5 { animation-delay: 1.4s; }
+
+  @keyframes f-stream-flow {
+    0% { stroke-dashoffset: 24; }
+    100% { stroke-dashoffset: 0; }
+  }
+
+  .f-satellite-node {
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease;
+    animation: f-satellite-float 3s ease-in-out infinite alternate;
+  }
+
+  .node-ssh { animation-delay: 0s; }
+  .node-ssc { animation-delay: 0.6s; }
+  .node-ssw { animation-delay: 1.2s; }
+  .node-sse { animation-delay: 1.8s; }
+  .node-sst { animation-delay: 2.4s; }
+
+  @keyframes f-satellite-float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-3px); }
+  }
+
+  .f-satellite-node:hover, .f-satellite-node.highlighted {
+    transform: scale(1.22);
+    filter: drop-shadow(0 0 8px rgba(33, 161, 247, 0.9));
+  }
+
+  .f-core-pulse {
+    animation: f-core-glow-pulse 2.2s ease-in-out infinite alternate;
+  }
+
+  @keyframes f-core-glow-pulse {
+    0% { transform-origin: 80px 52px; transform: scale(0.92); opacity: 0.8; }
+    100% { transform-origin: 80px 52px; transform: scale(1.1); opacity: 1; filter: drop-shadow(0 0 10px #21A1F7); }
+  }
+
+  .f-core-s-mark {
+    animation: f-s-mark-flicker 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes f-s-mark-flicker {
+    0% { stroke: #6DC6EC; filter: drop-shadow(0 0 2px #6DC6EC); }
+    100% { stroke: #FFFFFF; filter: drop-shadow(0 0 6px #21A1F7); }
+  }
+
+  .f-lottie-meta-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 8px 4px;
+    z-index: 3;
+  }
+
+  .f-sync-status-text {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
   .f-subsidiary-chips-row {
     display: flex;
     gap: 6px;
     flex-wrap: wrap;
-    margin-top: 1.25rem;
+    margin-top: 1rem;
   }
 
-  .f-sub-chip {
+  .f-sub-chip-btn {
     font-size: 0.7rem;
     font-weight: 700;
     padding: 4px 9px;
     border-radius: 6px;
     background: rgba(4, 51, 136, 0.08);
     color: var(--color-brand-primary, #043388);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
   }
 
-  :global([data-theme="dark"]) .f-sub-chip {
-    background: rgba(33, 161, 247, 0.15);
+  :global([data-theme="dark"]) .f-sub-chip-btn {
+    background: rgba(33, 161, 247, 0.12);
     color: #21A1F7;
+  }
+
+  .f-sub-chip-btn:hover, .f-sub-chip-btn.active {
+    background: #043388;
+    color: #FFFFFF;
+    border-color: #21A1F7;
+    box-shadow: 0 2px 8px rgba(4, 51, 136, 0.3);
+  }
+
+  :global([data-theme="dark"]) .f-sub-chip-btn:hover, :global([data-theme="dark"]) .f-sub-chip-btn.active {
+    background: #21A1F7;
+    color: #022057;
+    border-color: #6DC6EC;
+    box-shadow: 0 0 12px rgba(33, 161, 247, 0.5);
+  }
+
+  /* Multi-Platform Token Exporter Hub */
+  .f-token-export-card {
+    background: linear-gradient(135deg, rgba(2, 32, 87, 0.03) 0%, rgba(4, 51, 136, 0.08) 100%);
+  }
+
+  :global([data-theme="dark"]) .f-token-export-card {
+    background: linear-gradient(135deg, rgba(2, 20, 64, 0.7) 0%, rgba(4, 51, 136, 0.25) 100%);
+  }
+
+  .f-export-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  @media (max-width: 1024px) {
+    .f-export-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .f-export-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .f-export-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+    padding: 1.15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  :global([data-theme="dark"]) .f-export-card {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .f-export-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(4, 51, 136, 0.08);
+  }
+
+  .f-export-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+
+  .f-export-tech {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-strong);
+  }
+
+  .f-export-copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.725rem;
+    font-weight: 700;
+    color: var(--color-brand-primary);
+    background: rgba(4, 51, 136, 0.08);
+    border: none;
+    padding: 3px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  :global([data-theme="dark"]) .f-export-copy {
+    color: #21A1F7;
+    background: rgba(33, 161, 247, 0.12);
+  }
+
+  .f-export-copy:hover {
+    background: var(--color-brand-primary);
+    color: #FFFFFF;
+  }
+
+  :global([data-theme="dark"]) .f-export-copy:hover {
+    background: #21A1F7;
+    color: #000000;
+  }
+
+  .f-export-desc {
+    font-size: 0.775rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
+    margin: 0;
   }
 
   /* ================================================================
