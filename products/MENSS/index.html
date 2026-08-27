@@ -173,6 +173,47 @@
             color: var(--brand-hero-from);
             border-bottom: 2px solid var(--brand-hero-from);
         }
+
+        /* Sidebar Navigation Styles */
+        .cat-sidebar-section { padding: 0 var(--f-space-4) var(--f-space-3); }
+        .cat-sidebar-heading {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-neutral-fg-3);
+            margin-bottom: var(--f-space-2);
+            padding: 0 var(--f-space-2);
+        }
+        .cat-nav { list-style: none; padding: 0; margin: 0; }
+        .cat-nav li { margin-bottom: 2px; }
+        .cat-nav a {
+            display: flex;
+            align-items: center;
+            gap: var(--f-space-2);
+            padding: var(--f-space-2) var(--f-space-3);
+            border-radius: var(--f-radius-md);
+            color: var(--color-neutral-fg-2);
+            text-decoration: none;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            transition: all var(--f-duration-fast);
+        }
+        .cat-nav a:hover {
+            background: var(--color-neutral-bg-4);
+            color: var(--color-neutral-fg-1);
+        }
+        .cat-nav a.active {
+            background: var(--color-brand-subtle);
+            color: var(--color-brand-primary);
+            font-weight: 600;
+        }
+        .cat-icon {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
     </style>
 </head>
 <body>
@@ -203,16 +244,60 @@
         </div>
     </nav>
 
-    <!-- 1. BRAND DEFAULT VIEW & HERO (FULL WIDTH) -->
-    <header class="brand-master-hero" role="banner">
-        <div class="container-fluid px-3 px-md-5">
-            <div class="d-flex flex-wrap align-items-center justify-between gap-3 mb-3">
-                <div class="d-flex align-items-center gap-2">
-                    <span class="badge bg-light text-dark font-monospace text-uppercase" style="font-size:0.7rem;letter-spacing:1px;">Brand Pillar Hub</span>
-                    <span class="badge bg-primary text-white" style="font-size:0.7rem;">05-SSE · 02-SSC</span>
-                </div>
-                <span class="text-white opacity-75 font-monospace text-xs" style="font-size:0.75rem;">SuamiSihat™ Portfolio Pillar</span>
+    <!-- Page Layout with Sidebar -->
+    <div class="f-page-layout" id="pageLayout">
+        <button class="f-sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+            <iconify-icon icon="fluent:chevron-left-16-regular"></iconify-icon>
+        </button>
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="f-sidebar acrylic" id="pageSidebar" aria-label="MENSS Hub navigation">
+            <div class="cat-sidebar-section">
+                <p class="cat-sidebar-heading">MENSS Hub</p>
+                <ul class="cat-nav">
+                    <li><a href="#section-history" class="active"><span class="cat-icon"><iconify-icon icon="fluent:book-compass-24-regular"></iconify-icon></span>1. Brand History</a></li>
+                    <li><a href="#section-assets"><span class="cat-icon"><iconify-icon icon="fluent:color-24-regular"></iconify-icon></span>2. Assets &amp; Guidelines</a></li>
+                    <li><a href="#section-products"><span class="cat-icon"><iconify-icon icon="fluent:box-multiple-24-regular"></iconify-icon></span>3. Sub-Products (5 Lines)</a></li>
+                    <li><a href="#section-synergy"><span class="cat-icon"><iconify-icon icon="fluent:apps-list-detail-24-regular"></iconify-icon></span>4. Synergy &amp; Bundles</a></li>
+                    <li><a href="#section-cta"><span class="cat-icon"><iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon></span>5. Downloads &amp; Shop</a></li>
+                </ul>
             </div>
+            <div class="cat-sidebar-section">
+                <p class="cat-sidebar-heading">Brand Portfolio</p>
+                <ul class="cat-nav">
+                    <li><a href="../Androlab/"><span class="cat-icon"><iconify-icon icon="fluent:pill-24-regular"></iconify-icon></span>ANDROLAB</a></li>
+                    <li><a href="#" class="active"><span class="cat-icon"><iconify-icon icon="fluent:heart-pulse-24-regular"></iconify-icon></span>MENSS</a></li>
+                    <li><a href="../Mensculine/"><span class="cat-icon"><iconify-icon icon="fluent:globe-24-regular"></iconify-icon></span>Mensculine</a></li>
+                    <li><a href="../DrMitRing/"><span class="cat-icon"><iconify-icon icon="fluent:stethoscope-24-regular"></iconify-icon></span>Dr Mit Ring®</a></li>
+                    <li><a href="../Rejal/"><span class="cat-icon"><iconify-icon icon="fluent:leaf-three-24-regular"></iconify-icon></span>REJAL</a></li>
+                    <li><a href="../Pertabi/"><span class="cat-icon"><iconify-icon icon="fluent:people-community-24-regular"></iconify-icon></span>PERTABI</a></li>
+                </ul>
+            </div>
+            <div class="cat-sidebar-section">
+                <p class="cat-sidebar-heading">Navigate</p>
+                <ul class="cat-nav">
+                    <li><a href="../../pages/products.html"><span class="cat-icon"><iconify-icon icon="fluent:grid-24-regular"></iconify-icon></span>Products Catalogue</a></li>
+                    <li><a href="../../pages/brand-system.html"><span class="cat-icon"><iconify-icon icon="fluent:color-line-24-regular"></iconify-icon></span>Brand System</a></li>
+                    <li><a href="../../pages/brand-guidelines.html"><span class="cat-icon"><iconify-icon icon="fluent:book-open-24-regular"></iconify-icon></span>Guidelines PDF</a></li>
+                    <li><a href="../../index.html"><span class="cat-icon"><iconify-icon icon="fluent:home-24-regular"></iconify-icon></span>Home</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="f-main-content p-0" id="mainContent" style="min-width: 0;">
+
+            <!-- 1. BRAND DEFAULT VIEW & HERO (FULL WIDTH) -->
+            <header class="brand-master-hero" role="banner">
+                <div class="container-fluid px-3 px-md-5">
+                    <div class="d-flex flex-wrap align-items-center justify-between gap-3 mb-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="badge bg-light text-dark font-monospace text-uppercase" style="font-size:0.7rem;letter-spacing:1px;">Brand Pillar Hub</span>
+                            <span class="badge bg-primary text-white" style="font-size:0.7rem;">05-SSE · 02-SSC</span>
+                        </div>
+                        <span class="text-white opacity-75 font-monospace text-xs" style="font-size:0.75rem;">SuamiSihat™ Portfolio Pillar</span>
+                    </div>
+
 
             <div class="row align-items-center justify-content-between g-4">
                 <div class="col-lg-8">
@@ -726,40 +811,60 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-        <div class="container footer-container">
-            <div class="footer-grid">
-                <div class="footer-col footer-brand-col">
-                    <img src="../../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg" alt="SuamiSihat™" class="footer-logo" loading="lazy">
-                    <p class="footer-tagline">The single source of truth for the SuamiSihat™ design ecosystem.</p>
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="container footer-container">
+                <div class="footer-grid">
+                    <div class="footer-col footer-brand-col">
+                        <img src="../../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg" alt="SuamiSihat™" class="footer-logo" loading="lazy">
+                        <p class="footer-tagline">The single source of truth for the SuamiSihat™ design ecosystem.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Site</h4>
+                        <ul class="footer-links">
+                            <li><a href="../../index.html">Home</a></li>
+                            <li><a href="../../pages/brand-system.html">Brand System</a></li>
+                            <li><a href="../../pages/brand-guidelines.html">Guidelines</a></li>
+                            <li><a href="../../pages/products.html">Products</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Docs</h4>
+                        <ul class="footer-links">
+                            <li><a href="../../pages/doc.html?doc=changelog">What's New</a></li>
+                            <li><a href="../../pages/doc.html?doc=roadmap">Roadmap</a></li>
+                            <li><a href="../../pages/doc.html?doc=contribution-guide">Contribution Guide</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="footer-col">
-                    <h4 class="footer-heading">Site</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../index.html">Home</a></li>
-                        <li><a href="../../pages/brand-system.html">Brand System</a></li>
-                        <li><a href="../../pages/brand-guidelines.html">Guidelines</a></li>
-                        <li><a href="../../pages/products.html">Products</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4 class="footer-heading">Docs</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../pages/doc.html?doc=changelog">What's New</a></li>
-                        <li><a href="../../pages/doc.html?doc=roadmap">Roadmap</a></li>
-                        <li><a href="../../pages/doc.html?doc=contribution-guide">Contribution Guide</a></li>
-                    </ul>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 SuamiSihat™. SuamiSihat Holding Sdn Bhd. All Right reserved &nbsp;&middot;&nbsp; SS Design System v3.4</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 SuamiSihat™. SuamiSihat Holding Sdn Bhd. All Right reserved &nbsp;&middot;&nbsp; SS Design System v3.4</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
+
+        </div><!-- /.f-main-content -->
+    </div><!-- /.f-page-layout -->
 
     <!-- Bootstrap Bundle & Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/js/main.js?v=10" defer></script>
+    <script>
+        // Sidebar Toggle Script
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const pageLayout = document.getElementById('pageLayout');
+        if (sidebarToggle && pageLayout) {
+            sidebarToggle.addEventListener('click', () => {
+                pageLayout.classList.toggle('sidebar-minimized');
+                const icon = sidebarToggle.querySelector('iconify-icon');
+                if (icon) {
+                    icon.setAttribute('icon', pageLayout.classList.contains('sidebar-minimized') 
+                        ? 'fluent:chevron-right-16-regular' 
+                        : 'fluent:chevron-left-16-regular');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
+
