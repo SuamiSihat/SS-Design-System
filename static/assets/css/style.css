@@ -1763,25 +1763,30 @@ body.dark-mode .navbar-version-badge {
 }
 body.dark-mode .intro-tagline { border-left-color: var(--color-brand-primary); }
 
-/* ---- Footer (upgraded to full dark brand panel) ---- */
-.footer {
+/* ---- Footer (Legacy 3-column fallback) ---- */
+footer.legacy-footer {
     background: var(--gradient-brand-vertical);
     color: rgba(255,255,255,.88);
 }
-.footer-grid {
+footer.legacy-footer .footer-grid {
     border-bottom-color: rgba(255,255,255,0.12);
 }
-body.dark-mode .footer-grid { border-bottom-color: rgba(255,255,255,0.08); }
-.footer-tagline, .footer-heading, .footer-links a,
-.footer-contact, .footer-contact a, .footer-note, .footer-bottom p {
-    color: rgba(255,255,255,0.88) !important;
+body.dark-mode footer.legacy-footer .footer-grid { border-bottom-color: rgba(255,255,255,0.08); }
+footer.legacy-footer .footer-tagline, 
+footer.legacy-footer .footer-heading, 
+footer.legacy-footer .footer-links a,
+footer.legacy-footer .footer-contact, 
+footer.legacy-footer .footer-contact a, 
+footer.legacy-footer .footer-note, 
+footer.legacy-footer .footer-bottom p {
+    color: rgba(255,255,255,0.88);
 }
-.footer-heading { opacity: 0.55; }
-.footer-tagline { opacity: 0.72; }
-.footer-links a { opacity: 0.8; }
-.footer-links a:hover { opacity: 1; color: #fff !important; }
-.footer-contact a:hover { color: var(--ss-azure) !important; }
-body.dark-mode .footer-logo { opacity: 0.9; }
+footer.legacy-footer .footer-heading { opacity: 0.55; }
+footer.legacy-footer .footer-tagline { opacity: 0.72; }
+footer.legacy-footer .footer-links a { opacity: 0.8; }
+footer.legacy-footer .footer-links a:hover { opacity: 1; color: #fff; }
+footer.legacy-footer .footer-contact a:hover { color: var(--ss-azure); }
+body.dark-mode footer.legacy-footer .footer-logo { opacity: 0.9; }
 
 /* ============================================================================
    Mobile Responsive — Fluent 2 Sub-page Polish
