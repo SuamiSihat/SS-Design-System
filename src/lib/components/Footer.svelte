@@ -80,9 +80,6 @@
 </footer>
 
 <style>
-  /* ================================================================
-     Microsoft Fluent 2 Official Compact Horizon Footer Specification
-     ================================================================ */
   .fluent2-footer {
     width: 100%;
     box-sizing: border-box;
@@ -105,7 +102,6 @@
     margin: 0;
   }
 
-  /* Top Section */
   .footer-top {
     display: flex;
     justify-content: space-between;
@@ -142,4 +138,142 @@
     }
   }
 
+  .footer-link {
+    font-size: 0.825rem;
+    font-weight: 500;
+    color: var(--text-primary, #19191A);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
 
+  :global([data-theme="dark"]) .footer-link {
+    color: var(--text-primary, #FCFAF6);
+  }
+
+  .footer-link:hover {
+    color: var(--color-brand-primary, #043388);
+  }
+
+  :global([data-theme="dark"]) .footer-link:hover {
+    color: var(--color-accent, #21A1F7);
+  }
+
+  .footer-ext {
+    font-weight: 600;
+  }
+
+  .sep {
+    border: 0;
+    height: 1px;
+    background: var(--color-neutral-stroke-1, rgba(0, 0, 0, 0.08));
+    margin: 0.75rem 0 0.65rem;
+    padding: 0;
+  }
+
+  :global([data-theme="dark"]) .sep {
+    background: var(--color-neutral-stroke-1, rgba(255, 255, 255, 0.08));
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+  }
+
+  .social-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .social-icon-btn {
+    width: 26px;
+    height: 22px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--text-secondary, rgba(25, 25, 26, 0.7));
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  :global([data-theme="dark"]) .social-icon-btn {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-secondary, rgba(252, 250, 246, 0.7));
+  }
+
+  .social-icon-btn:hover {
+    background: var(--color-brand-primary, #043388);
+    color: #FFFFFF;
+  }
+
+  :global([data-theme="dark"]) .social-icon-btn:hover {
+    background: var(--color-accent, #21A1F7);
+    color: #000000;
+  }
+
+  .external-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.15rem;
+    font-size: 0.725rem;
+    color: var(--text-secondary, rgba(25, 25, 26, 0.65));
+  }
+
+  :global([data-theme="dark"]) .external-links {
+    color: var(--text-secondary, rgba(252, 250, 246, 0.65));
+  }
+
+  .feedback-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-size: 0.725rem;
+    font-family: inherit;
+    font-weight: 500;
+    color: inherit;
+    cursor: pointer;
+    transition: color 0.15s ease;
+  }
+
+  .feedback-btn:hover {
+    color: var(--color-brand-primary, #043388);
+  }
+
+  :global([data-theme="dark"]) .feedback-btn:hover {
+    color: var(--color-accent, #21A1F7);
+  }
+
+  .ext-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .ext-link:hover {
+    color: var(--text-strong, #000000);
+  }
+
+  :global([data-theme="dark"]) .ext-link:hover {
+    color: var(--text-strong, #FFFFFF);
+  }
+
+  .copy {
+    color: inherit;
+    font-weight: 400;
+  }
+</style>

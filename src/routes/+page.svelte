@@ -123,12 +123,32 @@
     </div>
 
     <div class="f-manifesto-card">
-      <p class="f-manifesto-quote">
-        &ldquo;For decades, men's wellness has been trapped between clinical intimidation and back-alley ambiguity. SuamiSihat was created to restore dignity, clinical authority, and design excellence to every man's healthcare journey.&rdquo;
-      </p>
-      <p class="f-manifesto-lead">
-        Our design language pairs <strong>deep vitality Navy (<code style="color:var(--color-brand-primary);">#043388</code>)</strong> with <strong>radiant Azure (<code style="color:#21A1F7;">#21A1F7</code>)</strong> and warm gold accents — creating an unmistakable presence across physical clinics, prescription packaging, mobile teleconsultations, and national wellness campaigns.
-      </p>
+      <div class="f-manifesto-grid">
+        <div>
+          <p class="f-manifesto-quote">
+            &ldquo;For decades, men's wellness has been trapped between clinical intimidation and back-alley ambiguity. SuamiSihat was created to restore dignity, clinical authority, and design excellence to every man's healthcare journey.&rdquo;
+          </p>
+          <p class="f-manifesto-lead">
+            Our design language pairs <strong>deep vitality Navy (<code style="color:var(--color-brand-primary);">#043388</code>)</strong> with <strong>radiant Azure (<code style="color:#21A1F7;">#21A1F7</code>)</strong> and warm gold accents — creating an unmistakable presence across physical clinics, prescription packaging, mobile teleconsultations, and national wellness campaigns.
+          </p>
+        </div>
+
+        <!-- Animated Clinical Vitality Beacon -->
+        <div class="f-manifesto-animation-pane">
+          <div class="f-lottie-wrap">
+            <dotlottie-player
+              src="https://lottie.host/80a2ba19-75a6-43d9-9524-ae13f05b00cb/nB9sM4WqgB.lottie"
+              background="transparent"
+              speed="1"
+              style="width: 140px; height: 140px;"
+              loop
+              autoplay
+            ></dotlottie-player>
+            <div class="f-lottie-pulse-ring"></div>
+          </div>
+          <span class="f-lottie-caption">Certified Medical Trust &bull; 60:30:10 Ratio</span>
+        </div>
+      </div>
     </div>
 
     <!-- 3 Core Pillars: Why Use SuamiSihat Brand System? -->
@@ -146,8 +166,11 @@
     <div class="f-pillars-grid">
       <!-- Pillar 1 -->
       <div class="f-pillar-card">
-        <div class="f-pillar-icon">
-          <iconify-icon icon="fluent:shield-checkmark-24-regular"></iconify-icon>
+        <div class="f-pillar-icon-wrap">
+          <div class="f-pillar-icon">
+            <iconify-icon icon="fluent:shield-checkmark-24-regular"></iconify-icon>
+          </div>
+          <div class="f-pillar-glow"></div>
         </div>
         <h3 class="f-pillar-title">1. Clinical Authority &amp; Dignity</h3>
         <p class="f-pillar-desc">
@@ -157,8 +180,11 @@
 
       <!-- Pillar 2 -->
       <div class="f-pillar-card">
-        <div class="f-pillar-icon">
-          <iconify-icon icon="fluent:box-multiple-24-regular"></iconify-icon>
+        <div class="f-pillar-icon-wrap">
+          <div class="f-pillar-icon">
+            <iconify-icon icon="fluent:box-multiple-24-regular"></iconify-icon>
+          </div>
+          <div class="f-pillar-glow"></div>
         </div>
         <h3 class="f-pillar-title">2. Zero Brand Dilution</h3>
         <p class="f-pillar-desc">
@@ -168,8 +194,11 @@
 
       <!-- Pillar 3 -->
       <div class="f-pillar-card">
-        <div class="f-pillar-icon">
-          <iconify-icon icon="fluent:rocket-24-regular"></iconify-icon>
+        <div class="f-pillar-icon-wrap">
+          <div class="f-pillar-icon">
+            <iconify-icon icon="fluent:rocket-24-regular"></iconify-icon>
+          </div>
+          <div class="f-pillar-glow"></div>
         </div>
         <h3 class="f-pillar-title">3. 10x Shipping Velocity</h3>
         <p class="f-pillar-desc">
@@ -244,7 +273,7 @@
           {/if}
         </div>
 
-        <!-- Live Impact Metrics -->
+        <!-- Live Impact Metrics with Micro-Glow -->
         <div class="f-case-metrics-grid">
           <div class="f-metric-card">
             <div class="f-metric-val">+300%</div>
@@ -730,37 +759,57 @@
       </div>
 
       <div class="f-type-scale-rows">
-        <div class="f-type-row" onclick={() => copyToClipboard('--text-strong', 'Copied --text-strong token!')}>
+        <button 
+          type="button" 
+          class="f-type-row" 
+          onclick={() => copyToClipboard('--text-strong', 'Copied --text-strong token!')}
+          aria-label="Copy --text-strong token"
+        >
           <div class="f-type-meta">
             <span class="f-type-name">Display (H1)</span>
             <span class="f-type-token">--text-strong</span>
           </div>
           <div class="f-type-render f-type-display">{customTypePhrase}</div>
-        </div>
+        </button>
 
-        <div class="f-type-row" onclick={() => copyToClipboard('--text-primary', 'Copied --text-primary token!')}>
+        <button 
+          type="button" 
+          class="f-type-row" 
+          onclick={() => copyToClipboard('--text-primary', 'Copied --text-primary token!')}
+          aria-label="Copy --text-primary token"
+        >
           <div class="f-type-meta">
             <span class="f-type-name">Title (H2-H3)</span>
             <span class="f-type-token">--text-primary</span>
           </div>
           <div class="f-type-render f-type-title">{customTypePhrase}</div>
-        </div>
+        </button>
 
-        <div class="f-type-row" onclick={() => copyToClipboard('--text-secondary', 'Copied --text-secondary token!')}>
+        <button 
+          type="button" 
+          class="f-type-row" 
+          onclick={() => copyToClipboard('--text-secondary', 'Copied --text-secondary token!')}
+          aria-label="Copy --text-secondary token"
+        >
           <div class="f-type-meta">
             <span class="f-type-name">Body Text</span>
             <span class="f-type-token">--text-secondary</span>
           </div>
           <div class="f-type-render f-type-body">{customTypePhrase}</div>
-        </div>
+        </button>
 
-        <div class="f-type-row" onclick={() => copyToClipboard('--text-disabled', 'Copied --text-disabled token!')}>
+        <button 
+          type="button" 
+          class="f-type-row" 
+          onclick={() => copyToClipboard('--text-disabled', 'Copied --text-disabled token!')}
+          aria-label="Copy --text-disabled token"
+        >
           <div class="f-type-meta">
             <span class="f-type-name">Caption &amp; Meta</span>
             <span class="f-type-token">--text-disabled</span>
           </div>
           <div class="f-type-render f-type-caption">{customTypePhrase}</div>
-        </div>
+        </button>
       </div>
     </div>
   </section>
@@ -933,6 +982,63 @@
     border: 1px solid rgba(255, 255, 255, 0.12);
   }
 
+  /* Manifesto Grid & Lottie Animation Pane */
+  .f-manifesto-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media (max-width: 860px) {
+    .f-manifesto-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .f-manifesto-animation-pane {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(4, 51, 136, 0.05);
+    border: 1px solid rgba(4, 51, 136, 0.12);
+    border-radius: 20px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  :global([data-theme="dark"]) .f-manifesto-animation-pane {
+    background: rgba(33, 161, 247, 0.06);
+    border-color: rgba(33, 161, 247, 0.15);
+  }
+
+  .f-lottie-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .f-lottie-caption {
+    font-size: 0.775rem;
+    font-weight: 600;
+    color: var(--color-brand-primary, #043388);
+    margin-top: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  :global([data-theme="dark"]) .f-lottie-caption {
+    color: #6DC6EC;
+  }
+
+  /* Pillar Icon Glows */
+  .f-pillar-icon-wrap {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.25rem;
+  }
+
   .f-subbrand-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -950,11 +1056,6 @@
     transition: transform 0.2s ease, border-color 0.2s ease;
   }
 
-  [data-theme="dark"] .f-subbrand-card {
-    background: rgba(18, 22, 32, 0.6);
-    border-color: rgba(255, 255, 255, 0.08);
-  }
-
   .f-subbrand-card:hover {
     transform: translateY(-2px);
     border-color: var(--color-brand-primary, #043388);
@@ -967,18 +1068,10 @@
     margin-bottom: 2px;
   }
 
-  [data-theme="dark"] .f-subbrand-code {
-    color: #21A1F7;
-  }
-
   .f-subbrand-name {
     font-size: 0.875rem;
     font-weight: 700;
     color: var(--text-strong, #000000);
-  }
-
-  [data-theme="dark"] .f-subbrand-name {
-    color: #FFFFFF;
   }
 
   .f-subbrand-role {
