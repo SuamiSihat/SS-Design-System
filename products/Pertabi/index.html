@@ -683,8 +683,9 @@
                 bannerImg.alt = `${meta.name} Features Banner`;
                 
                 const primaryLogo = document.getElementById('primaryLogo');
-                primaryLogo.src = meta.logo || 'logo_pertabi_horizontal-light.svg';
+                primaryLogo.src = meta.logo || 'logos/logo_pertabi_horizontal-light.svg';
                 primaryLogo.alt = `${meta.name} Primary Logo`;
+
 
                 // 3. Render Markdown Description
                 if (typeof marked !== 'undefined') {
