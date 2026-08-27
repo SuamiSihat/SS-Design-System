@@ -13,6 +13,7 @@
     "test": "node scripts/smoke-test.mjs && node scripts/dom-test.mjs",
     "test:smoke": "node scripts/smoke-test.mjs",
     "test:dom": "node scripts/dom-test.mjs",
+    "test:remote": "node scripts/remote-smoke-test.mjs",
     "preview": "vite preview",
     "watch": "node scripts/watch.mjs",
     "deploy": "powershell -ExecutionPolicy Bypass -File deploy.ps1"
