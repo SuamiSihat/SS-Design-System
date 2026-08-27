@@ -399,6 +399,47 @@
         #productContent {
             display: none;
         }
+
+        /* Sidebar Navigation Styles */
+        .cat-sidebar-section { padding: 0 var(--f-space-4) var(--f-space-3); }
+        .cat-sidebar-heading {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-neutral-fg-3);
+            margin-bottom: var(--f-space-2);
+            padding: 0 var(--f-space-2);
+        }
+        .cat-nav { list-style: none; padding: 0; margin: 0; }
+        .cat-nav li { margin-bottom: 2px; }
+        .cat-nav a {
+            display: flex;
+            align-items: center;
+            gap: var(--f-space-2);
+            padding: var(--f-space-2) var(--f-space-3);
+            border-radius: var(--f-radius-md);
+            color: var(--color-neutral-fg-2);
+            text-decoration: none;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            transition: all var(--f-duration-fast);
+        }
+        .cat-nav a:hover {
+            background: var(--color-neutral-bg-4);
+            color: var(--color-neutral-fg-1);
+        }
+        .cat-nav a.active {
+            background: var(--color-brand-subtle);
+            color: var(--color-brand-primary);
+            font-weight: 600;
+        }
+        .cat-icon {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
     </style>
     <link rel="stylesheet" href="../../assets/css/fluent.css?v=9">
     <link rel="stylesheet" href="../../assets/css/ss_theme.css?v=9">
@@ -410,7 +451,7 @@
 <body>
     <!-- Navigation -->
     <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-custom sticky-top glass-navbar transition-all" role="navigation" aria-label="Main navigation">
-        <div class="container">
+        <div class="container-fluid px-3 px-md-5">
             <img src="../../public/brand/logos/ss-logomark-light.svg" alt="SuamiSihat™ Icon" class="logo me-2 logo-height" loading="eager" />
             <a class="navbar-brand d-flex align-items-center gap-2" href="../../index.html" aria-label="SuamiSihat™ Home">
                 SuamiSihat™ DS <span class="navbar-version-badge">v3.4</span>
@@ -445,49 +486,91 @@
         </div>
     </nav>
 
-    <!-- Loader -->
-    <div id="loader">
-        <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
-    </div>
+    <!-- Page Layout with Sidebar -->
+    <div class="f-page-layout" id="pageLayout">
+        <button class="f-sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+            <iconify-icon icon="fluent:chevron-left-16-regular"></iconify-icon>
+        </button>
 
-    <!-- Product Content (rendered dynamically) -->
-    <div id="productContent">
-        <!-- Product Hero -->
-        <header id="heroSection" class="product-hero text-white" role="banner">
-            <div class="container">
-                <div class="breadcrumb-product">
-                    <a href="../../index.html">Home</a>
-                    <span>/</span>
-                    <a href="../../pages/products.html">Products</a>
-                    <span>/</span>
-                    <span id="breadcrumbCurrent">PERTABI</span>
+        <!-- Left Sidebar Navigation -->
+        <aside class="f-sidebar acrylic" id="pageSidebar" aria-label="PERTABI Hub navigation">
+            <div class="cat-sidebar-section">
+                <p class="cat-sidebar-heading">PERTABI Hub</p>
+                <ul class="cat-nav">
+                    <li><a href="#heroSection" class="active"><span class="cat-icon"><iconify-icon icon="fluent:book-compass-24-regular"></iconify-icon></span>1. Overview</a></li>
+                    <li><a href="#assetsSection"><span class="cat-icon"><iconify-icon icon="fluent:color-24-regular"></iconify-icon></span>2. Brand Assets</a></li>
+                    <li><a href="#merchCarouselSection"><span class="cat-icon"><iconify-icon icon="fluent:box-multiple-24-regular"></iconify-icon></span>3. Official Jersey</a></li>
+                </ul>
+            </div>
+            <div class="cat-sidebar-section">
+                <p class="cat-sidebar-heading">Brand Portfolio</p>
+                <ul class="cat-nav">
+                    <li><a href="../Androlab/"><span class="cat-icon"><iconify-icon icon="fluent:pill-24-regular"></iconify-icon></span>ANDROLAB</a></li>
+                    <li><a href="../MENSS/"><span class="cat-icon"><iconify-icon icon="fluent:heart-pulse-24-regular"></iconify-icon></span>MENSS</a></li>
+                    <li><a href="../Mensculine/"><span class="cat-icon"><iconify-icon icon="fluent:globe-24-regular"></iconify-icon></span>Mensculine</a></li>
+                    <li><a href="../DrMitRing/"><span class="cat-icon"><iconify-icon icon="fluent:stethoscope-24-regular"></iconify-icon></span>Dr Mit Ring®</a></li>
+                    <li><a href="../Rejal/"><span class="cat-icon"><iconify-icon icon="fluent:leaf-three-24-regular"></iconify-icon></span>REJAL</a></li>
+                    <li><a href="#" class="active"><span class="cat-icon"><iconify-icon icon="fluent:people-community-24-regular"></iconify-icon></span>PERTABI</a></li>
+                </ul>
+            </div>
+            <div class="cat-sidebar-section">
+                <p class="cat-sidebar-heading">Navigate</p>
+                <ul class="cat-nav">
+                    <li><a href="../../pages/products.html"><span class="cat-icon"><iconify-icon icon="fluent:grid-24-regular"></iconify-icon></span>Products Catalogue</a></li>
+                    <li><a href="../../pages/brand-system.html"><span class="cat-icon"><iconify-icon icon="fluent:color-line-24-regular"></iconify-icon></span>Brand System</a></li>
+                    <li><a href="../../pages/brand-guidelines.html"><span class="cat-icon"><iconify-icon icon="fluent:book-open-24-regular"></iconify-icon></span>Guidelines PDF</a></li>
+                    <li><a href="../../index.html"><span class="cat-icon"><iconify-icon icon="fluent:home-24-regular"></iconify-icon></span>Home</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="f-main-content p-0" id="mainContent" style="min-width: 0;">
+
+            <!-- Loader -->
+            <div id="loader">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
                 </div>
-                <h1 id="heroTitle" class="display-4 text-bold mb-2">PERTABI</h1>
-                <p id="heroTagline" class="lead opacity-80 mb-0">Persatuan Taat Bersama Isteri Malaysia</p>
-            </div>
-        </header>
-
-        <!-- Main Content -->
-        <main class="container my-5" role="main">
-            <!-- Features Banner -->
-            <div class="banner-container">
-                <img id="featuresBanner" src="banner.svg" alt="PERTABI Features Banner">
             </div>
 
-            <!-- Two-Column Layout for Overview & Brand Assets -->
-            <div class="row mb-4">
-                <!-- Left Column: Details & Logo -->
-                <div class="col-lg-5">
-                    <div class="brand-detail-logo-area">
-                        <img id="primaryLogo" src="" alt="Primary Logo">
+            <!-- Product Content (rendered dynamically) -->
+            <div id="productContent">
+                <!-- Product Hero -->
+                <header id="heroSection" class="product-hero text-white" role="banner">
+                    <div class="container-fluid px-3 px-md-5">
+                        <div class="breadcrumb-product">
+                            <a href="../../index.html">Home</a>
+                            <span>/</span>
+                            <a href="../../pages/products.html">Products</a>
+                            <span>/</span>
+                            <span id="breadcrumbCurrent">PERTABI</span>
+                        </div>
+                        <h1 id="heroTitle" class="display-4 text-bold mb-2">PERTABI</h1>
+                        <p id="heroTagline" class="lead opacity-80 mb-0">Persatuan Taat Bersama Isteri Malaysia</p>
+                    </div>
+                </header>
+
+                <!-- Main Content -->
+                <main class="container-fluid px-3 px-md-5 my-5" role="main">
+                    <!-- Features Banner -->
+                    <div class="banner-container">
+                        <img id="featuresBanner" src="banner.svg" alt="PERTABI Features Banner">
                     </div>
 
-                    <div class="product-details-card">
-                        <h2 class="h3 text-semibold mb-3">About PERTABI</h2>
-                        <div id="markdownDescription" class="md-content">
-                            <!-- MD Description Rendered Here -->
+                    <!-- Two-Column Layout for Overview & Brand Assets -->
+                    <div class="row mb-4" id="assetsSection">
+                        <!-- Left Column: Details & Logo -->
+                        <div class="col-lg-5">
+                            <div class="brand-detail-logo-area">
+                                <img id="primaryLogo" src="" alt="Primary Logo">
+                            </div>
+
+                            <div class="product-details-card">
+                                <h2 class="h3 text-semibold mb-3">About PERTABI</h2>
+                                <div id="markdownDescription" class="md-content">
+                                    <!-- MD Description Rendered Here -->
+
                         </div>
 
                         <h3 class="h5 text-semibold mt-4 mb-2">Legal Entity &amp; Alignment</h3>
@@ -583,40 +666,43 @@
         </main>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-        <div class="container footer-container">
-            <div class="footer-grid">
-                <div class="footer-col footer-brand-col">
-                    <img src="../../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg" alt="SuamiSihat™" class="footer-logo" loading="lazy">
-                    <p class="footer-tagline">The single source of truth for the SuamiSihat™ design ecosystem.</p>
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+            <div class="container footer-container">
+                <div class="footer-grid">
+                    <div class="footer-col footer-brand-col">
+                        <img src="../../public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg" alt="SuamiSihat™" class="footer-logo" loading="lazy">
+                        <p class="footer-tagline">The single source of truth for the SuamiSihat™ design ecosystem.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="../../index.html">Home</a></li>
+                            <li><a href="../../pages/brand-system.html">Brand System</a></li>
+                            <li><a href="../../pages/brand-guidelines.html">Guidelines</a></li>
+                            <li><a href="../../pages/products.html">Products</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Docs</h4>
+                        <ul class="footer-links">
+                            <li><a href="../../pages/doc.html?doc=changelog">What's New</a></li>
+                            <li><a href="../../pages/doc.html?doc=roadmap">Roadmap</a></li>
+                            <li><a href="../../pages/doc.html?doc=contribution-guide">Contribution Guide</a></li>
+                            <li><a href="../../pages/doc.html?doc=vision-mission">Vision &amp; Mission</a></li>
+                        </ul>
+                        <h4 class="footer-heading mt-4">Contact</h4>
+                        <p class="footer-contact"><iconify-icon icon="fluent:mail-24-regular" class="me-2"></iconify-icon><a href="mailto:branding@suamisihat.com">branding@suamisihat.com</a></p>
+                    </div>
                 </div>
-                <div class="footer-col">
-                    <h4 class="footer-heading">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../index.html">Home</a></li>
-                        <li><a href="../../pages/brand-system.html">Brand System</a></li>
-                        <li><a href="../../pages/brand-guidelines.html">Guidelines</a></li>
-                        <li><a href="../../pages/products.html">Products</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4 class="footer-heading">Docs</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../pages/doc.html?doc=changelog">What's New</a></li>
-                        <li><a href="../../pages/doc.html?doc=roadmap">Roadmap</a></li>
-                        <li><a href="../../pages/doc.html?doc=contribution-guide">Contribution Guide</a></li>
-                        <li><a href="../../pages/doc.html?doc=vision-mission">Vision &amp; Mission</a></li>
-                    </ul>
-                    <h4 class="footer-heading mt-4">Contact</h4>
-                    <p class="footer-contact"><iconify-icon icon="fluent:mail-24-regular" class="me-2"></iconify-icon><a href="mailto:branding@suamisihat.com">branding@suamisihat.com</a></p>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 SuamiSihat™. SuamiSihat Holding Sdn Bhd. All Right reserved &nbsp;&middot;&nbsp; SS Design System v3.4</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 SuamiSihat™. SuamiSihat Holding Sdn Bhd. All Right reserved &nbsp;&middot;&nbsp; SS Design System v3.4</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
+
+        </div><!-- /.f-main-content -->
+    </div><!-- /.f-page-layout -->
 
     <!-- Bootstrap Bundle & Marked Markdown Parser -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -625,6 +711,21 @@
     <script src="../../assets/js/gallery-helpers.js"></script>
     
     <script>
+        // Sidebar Toggle Script
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const pageLayout = document.getElementById('pageLayout');
+        if (sidebarToggle && pageLayout) {
+            sidebarToggle.addEventListener('click', () => {
+                pageLayout.classList.toggle('sidebar-minimized');
+                const icon = sidebarToggle.querySelector('iconify-icon');
+                if (icon) {
+                    icon.setAttribute('icon', pageLayout.classList.contains('sidebar-minimized') 
+                        ? 'fluent:chevron-right-16-regular' 
+                        : 'fluent:chevron-left-16-regular');
+                }
+            });
+        }
+
         /**
          * Helper: Auto-generates human-readable titles for Jersey / Merchandise files.
          */
