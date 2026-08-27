@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "npm run build:raw && vite build",
+    "build": "npm run build:raw && vite build && node scripts/sync-build.mjs",
     "build:raw": "npm run build:css && npm run build:js",
     "build:css": "node scripts/minify-css.mjs",
     "build:js": "node scripts/minify-js.mjs",
