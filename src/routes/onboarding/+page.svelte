@@ -1,106 +1,157 @@
 <script>
-  let completedItems = $state({});
+  import { onMount } from 'svelte';
 
-  const checklist = [
-    { id: 'c1', role: 'All Staff', task: 'Read and understand the 60:30:10 Visual Hierarchy and Neutral Black (#1C1C1C) rule.' },
-    { id: 'c2', role: 'All Staff', task: 'Generate your official corporate email signature using the Signature Tool.' },
-    { id: 'c3', role: 'Designers', task: 'Download the official Vector Marks Kit (.svg / .png) from the Downloads repository.' },
-    { id: 'c4', role: 'Developers', task: 'Import /assets/css/fluent.css and /assets/css/ss_theme.css into your app shell.' },
-    { id: 'c5', role: 'Clinic Team', task: 'Install SS-CAM desktop suite for Windows clinical camera integration.' }
+  const checklistItems = [
+    { id: 'd1-1', period: 'Day 1', text: 'Meet your onboard buddy and team lead' },
+    { id: 'd1-2', period: 'Day 1', text: 'Set up your @suamisihat.com work email' },
+    { id: 'd1-3', period: 'Day 1', text: 'Generate your mail signature using the Signature Generator', link: '/signature/' },
+    { id: 'd1-4', period: 'Day 1', text: 'Log into the SSNAS Dashboard and bookmark it', link: 'https://nas.suamisihat.com.my/' },
+    { id: 'd1-5', period: 'Day 1', text: 'Complete HR paperwork and emergency contact form' },
+    { id: 'd2-1', period: 'Days 2-3', text: 'Read through the Brand System (Logo Rules & Colour Tokens)', link: '/brand-system/' },
+    { id: 'd2-2', period: 'Days 2-3', text: 'Review the Brand Guidelines PDF booklets', link: '/brand-guidelines/' },
+    { id: 'd2-3', period: 'Days 2-3', text: 'Download SSCAM desktop tool for Windows', link: '/tools/' },
+    { id: 'd2-4', period: 'Days 2-3', text: 'Meet your team and schedule a 1-to-1 with your manager' },
+    { id: 'w1-1', period: 'Week 1', text: 'Understand your department KPIs and quarterly OKRs' },
+    { id: 'w1-2', period: 'Week 1', text: 'Familiarise yourself with our products in the Product Catalogue', link: '/products/' },
+    { id: 'w1-3', period: 'Week 1', text: 'Complete data privacy and patient confidentiality briefing' },
+    { id: 'w1-4', period: 'Week 1', text: 'Join relevant team channels (WhatsApp / internal groups)' },
+    { id: 'w1-5', period: 'Week 1', text: 'Share your first-week reflections with your manager' }
   ];
 
-  function toggleCheck(id) {
-    completedItems[id] = !completedItems[id];
+  let completed = $state({});
+
+  function toggle(id) {
+    completed[id] = !completed[id];
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('ss-onboarding-v1', JSON.stringify(completed));
+    }
   }
+
+  let totalItems = checklistItems.length;
+  let checkedCount = $derived(Object.values(completed).filter(Boolean).length);
+  let progressPct = $derived(totalItems ? Math.round((checkedCount / totalItems) * 100) : 0);
+
+  onMount(() => {
+    try {
+      const saved = localStorage.getItem('ss-onboarding-v1');
+      if (saved) {
+        completed = JSON.parse(saved);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  });
 </script>
 
 <svelte:head>
   <title>Staff Onboarding — SuamiSihat™ Design System</title>
 </svelte:head>
 
-<div class="container-xl py-5">
-  <!-- Header -->
-  <div class="mb-5">
-    <nav aria-label="breadcrumb" class="mb-3">
-      <ol class="breadcrumb" style="font-size: 0.8rem;">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Onboarding</li>
-      </ol>
-    </nav>
-    <div class="text-uppercase fw-bold text-primary" style="font-size: 0.8rem; letter-spacing: 0.08em;">Team Enablement</div>
-    <h1 class="display-6 fw-bold mb-2">Staff Onboarding & Guidelines</h1>
-    <p class="lead text-secondary" style="max-width: 780px;">
-      Welcome to the SuamiSihat™ team. Follow this onboarding checklist to get your digital tools, design assets, and communications set up.
+<!-- Hero Banner -->
+<div class="ob-hero" style="position:relative;overflow:hidden;background:var(--gradient-brand-vertical,#022057);padding:4rem 1.5rem 3.5rem;text-align:center;">
+  <div class="f-hero-ambient-glow" style="position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(33,161,247,0.25),transparent 70%);pointer-events:none;"></div>
+  <div style="position:relative;z-index:2;max-width:700px;margin:0 auto;">
+    <div style="display:inline-flex;align-items:center;gap:6px;font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#6DC6EC;margin-bottom:0.75rem;background:rgba(255,255,255,0.1);padding:4px 14px;border-radius:9999px;">
+      <iconify-icon icon="fluent:hand-wave-24-regular"></iconify-icon> Welcome to the team
+    </div>
+    <h1 style="font-size:clamp(2rem,4vw,3.25rem);font-weight:800;color:#FFFFFF;margin-bottom:1rem;line-height:1.2;">
+      Your First Stop at SuamiSihat™
+    </h1>
+    <p style="font-size:1.05rem;color:rgba(255,255,255,0.8);line-height:1.6;margin-bottom:2rem;">
+      Everything you need to get up to speed. Brand orientation, tools, team structure, and your first-week checklist all in one place.
     </p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="#checklist" class="btn btn-primary px-4 py-2" style="background:#21A1F7;border-color:#21A1F7;font-weight:700;border-radius:9999px;display:inline-flex;align-items:center;gap:6px;">
+        <iconify-icon icon="fluent:task-list-square-ltr-24-regular"></iconify-icon> Jump to Checklist
+      </a>
+      <a href="#brand" class="btn btn-outline-light px-4 py-2" style="font-weight:600;border-radius:9999px;display:inline-flex;align-items:center;gap:6px;">
+        <iconify-icon icon="fluent:color-24-regular"></iconify-icon> Brand Orientation
+      </a>
+    </div>
   </div>
+</div>
 
-  <div class="row g-4">
+<div class="f-page-layout container-xl py-5" style="display:grid;grid-template-columns:260px 1fr;gap:2rem;">
+  <!-- Sidebar -->
+  <aside class="f-sidebar" style="position:sticky;top:80px;height:fit-content;background:var(--color-neutral-bg-2);padding:1.5rem;border-radius:var(--f-radius-xl);border:1px solid var(--color-neutral-stroke-1);box-shadow:var(--f-shadow-2);">
+    <!-- Progress Indicator -->
+    <div style="margin-bottom:1.5rem;">
+      <div style="display:flex;justify-content:space-between;font-size:0.78rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:6px;">
+        <span>Progress</span>
+        <span>{progressPct}% complete</span>
+      </div>
+      <div style="height:8px;background:var(--color-neutral-bg-4,#E2E8F0);border-radius:9999px;overflow:hidden;">
+        <div style="width:{progressPct}%;height:100%;background:#16A34A;transition:width 0.3s ease;"></div>
+      </div>
+    </div>
+
+    <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-fg-3);margin-bottom:0.75rem;">Sections</div>
+    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.875rem;">
+      <li><a href="#welcome" style="color:var(--color-neutral-fg-2);text-decoration:none;display:flex;align-items:center;gap:8px;font-weight:600;"><span style="width:20px;height:20px;border-radius:50%;background:var(--color-brand-subtle);color:var(--color-brand-primary);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;">1</span>Welcome</a></li>
+      <li><a href="#brand" style="color:var(--color-neutral-fg-2);text-decoration:none;display:flex;align-items:center;gap:8px;font-weight:600;"><span style="width:20px;height:20px;border-radius:50%;background:var(--color-brand-subtle);color:var(--color-brand-primary);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;">2</span>Brand &amp; Identity</a></li>
+      <li><a href="#ecosystem" style="color:var(--color-neutral-fg-2);text-decoration:none;display:flex;align-items:center;gap:8px;font-weight:600;"><span style="width:20px;height:20px;border-radius:50%;background:var(--color-brand-subtle);color:var(--color-brand-primary);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;">3</span>Our Ecosystem</a></li>
+      <li><a href="#tools-sec" style="color:var(--color-neutral-fg-2);text-decoration:none;display:flex;align-items:center;gap:8px;font-weight:600;"><span style="width:20px;height:20px;border-radius:50%;background:var(--color-brand-subtle);color:var(--color-brand-primary);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;">4</span>Tools &amp; Systems</a></li>
+      <li><a href="#checklist" style="color:var(--color-brand-primary);text-decoration:none;display:flex;align-items:center;gap:8px;font-weight:700;"><span style="width:20px;height:20px;border-radius:50%;background:var(--color-brand-primary);color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;">5</span>First Week Checklist</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="f-main-content" style="padding:0;">
+    <!-- Welcome -->
+    <section id="welcome" style="margin-bottom:3.5rem;">
+      <h2 style="font-size:1.5rem;font-weight:800;color:var(--color-neutral-fg-1);margin-bottom:0.75rem;">Welcome to SuamiSihat™</h2>
+      <p style="font-size:0.95rem;color:var(--color-neutral-fg-2);line-height:1.7;">
+        We are Southeast Asia's fastest-growing men's health brand, built on the belief that every man deserves clear, dignified, and accessible healthcare. You're now part of that mission.
+      </p>
+    </section>
+
+    <!-- Brand Orientation -->
+    <section id="brand" style="margin-bottom:3.5rem;">
+      <h2 style="font-size:1.5rem;font-weight:800;color:var(--color-neutral-fg-1);margin-bottom:0.75rem;">Brand &amp; Identity Quick Links</h2>
+      <p style="font-size:0.95rem;color:var(--color-neutral-fg-2);line-height:1.7;margin-bottom:1.25rem;">
+        Everything we create adheres to our authoritative Brand System and 60:30:10 visual standard.
+      </p>
+      <div class="d-flex gap-2 flex-wrap">
+        <a href="/brand-system/" class="btn btn-sm btn-outline-primary">Explore Brand System &rarr;</a>
+        <a href="/brand-guidelines/" class="btn btn-sm btn-outline-secondary">Read Guidelines PDFs &rarr;</a>
+      </div>
+    </section>
+
     <!-- Checklist -->
-    <div class="col-lg-7">
-      <div class="card p-4 border rounded-4 shadow-sm" style="background: var(--color-layer-card, #FFFFFF);">
-        <h4 class="fw-bold mb-3" style="font-size: 1.15rem;">New Joiner Checklist</h4>
-        
-        <div class="d-flex flex-column gap-3">
-          {#each checklist as item}
-            <div 
-              class="p-3 border rounded-3 d-flex align-items-start gap-3" 
-              style="background: {completedItems[item.id] ? '#ECFDF5' : '#F8FAFC'}; transition: background 0.2s ease; cursor: pointer;"
-              onclick={() => toggleCheck(item.id)}
-              onkeydown={(e) => e.key === 'Enter' && toggleCheck(item.id)}
-              role="checkbox"
-              aria-checked={!!completedItems[item.id]}
-              tabindex="0"
-            >
-              <input 
-                type="checkbox" 
-                class="form-check-input mt-1" 
-                checked={!!completedItems[item.id]} 
-                tabindex="-1"
-                aria-label={item.task}
-              />
-              <div>
-                <span class="badge mb-1" style="background: rgba(4, 51, 136, 0.1); color: #043388; font-size: 0.7rem;">{item.role}</span>
-                <div style="font-size: 0.9rem; color: var(--color-neutral-fg-1, #1C1C1C);" class:text-decoration-line-through={completedItems[item.id]}>
-                  {item.task}
-                </div>
-              </div>
-            </div>
-          {/each}
-        </div>
-      </div>
-    </div>
+    <section id="checklist" style="margin-bottom:3.5rem;">
+      <h2 style="font-size:1.5rem;font-weight:800;color:var(--color-neutral-fg-1);margin-bottom:0.75rem;">First Week Checklist</h2>
+      <p style="font-size:0.95rem;color:var(--color-neutral-fg-2);line-height:1.7;margin-bottom:1.5rem;">
+        Check off each item as you complete it. Your progress is saved automatically in your browser.
+      </p>
 
-    <!-- Quick Tool Cards -->
-    <div class="col-lg-5">
-      <div class="card p-4 border rounded-4 shadow-sm mb-4" style="background: var(--color-layer-card, #FFFFFF);">
-        <h4 class="fw-bold mb-3" style="font-size: 1.15rem;">Essential Resources</h4>
-        <ul class="list-unstyled d-flex flex-column gap-3 mb-0" style="font-size: 0.875rem;">
-          <li>
-            <a href="/signature/" class="d-flex align-items-center gap-2 text-decoration-none fw-semibold">
-              <iconify-icon icon="lucide:mail" width="18" class="text-primary"></iconify-icon>
-              Email Signature Generator
-            </a>
-          </li>
-          <li>
-            <a href="/public/brand/downloads/" class="d-flex align-items-center gap-2 text-decoration-none fw-semibold">
-              <iconify-icon icon="lucide:download" width="18" class="text-primary"></iconify-icon>
-              Download Full Brand Asset Pack
-            </a>
-          </li>
-          <li>
-            <a href="/doc/?doc=roadmap" class="d-flex align-items-center gap-2 text-decoration-none fw-semibold">
-              <iconify-icon icon="lucide:map" width="18" class="text-primary"></iconify-icon>
-              Strategic Roadmap (2026)
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/SuamiSihat/SS-Design-System" target="_blank" class="d-flex align-items-center gap-2 text-decoration-none fw-semibold">
-              <iconify-icon icon="lucide:github" width="18" class="text-primary"></iconify-icon>
-              GitHub Design System Repository
-            </a>
-          </li>
-        </ul>
+      <div style="display:flex;flex-direction:column;gap:1.5rem;">
+        {#each ['Day 1', 'Days 2-3', 'Week 1'] as period}
+          <div style="background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);padding:1.5rem;box-shadow:var(--f-shadow-2);">
+            <h3 style="font-size:1rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--color-neutral-stroke-1);">{period}</h3>
+            <div style="display:flex;flex-direction:column;gap:0.75rem;">
+              {#each checklistItems.filter(i => i.period === period) as item}
+                <div 
+                  class="d-flex align-items-start gap-3 p-2 rounded-3" 
+                  style="cursor:pointer;background:{completed[item.id] ? 'rgba(22,163,74,0.08)' : 'transparent'};transition:background 0.2s ease;"
+                  onclick={() => toggle(item.id)}
+                  onkeydown={(e) => e.key === 'Enter' && toggle(item.id)}
+                  role="checkbox"
+                  aria-checked={!!completed[item.id]}
+                  tabindex="0"
+                >
+                  <input type="checkbox" class="form-check-input mt-1" checked={!!completed[item.id]} tabindex="-1" style="cursor:pointer;" />
+                  <span style="font-size:0.875rem;color:var(--color-neutral-fg-1);text-decoration:{completed[item.id] ? 'line-through' : 'none'};">
+                    {item.text}
+                    {#if item.link}
+                      &nbsp;<a href={item.link} style="color:var(--color-brand-primary);font-weight:600;text-decoration:underline;" onclick={(e) => e.stopPropagation()}>Open Link &rarr;</a>
+                    {/if}
+                  </span>
+                </div>
+              {/each}
+            </div>
+          </div>
+        {/each}
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 </div>

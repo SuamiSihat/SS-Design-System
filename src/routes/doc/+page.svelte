@@ -4,31 +4,50 @@
 
   let currentDoc = $state('roadmap');
   let content = $state('Loading document...');
+  let isSidebarMinimized = $state(false);
+
+  function toggleSidebar() {
+    isSidebarMinimized = !isSidebarMinimized;
+  }
 
   const docs = [
-    { id: 'roadmap', title: 'Strategic Roadmap 2026', path: '/content/roadmap.md' },
-    { id: 'brand-voice', title: 'Brand Voice & Tone', path: '/content/brand-voice.md' },
-    { id: 'changelog', title: 'System Changelog', path: '/content/changelog.md' },
-    { id: 'introduction', title: 'System Introduction', path: '/content/introduction.md' },
-    { id: 'vision-mission', title: 'Vision & Mission', path: '/content/vision-mission.md' }
+    { id: 'roadmap', title: 'Strategic Roadmap 2026', path: '/content/roadmap.md', icon: 'fluent:map-drive-24-regular' },
+    { id: 'brand-voice', title: 'Brand Voice & Tone', path: '/content/brand-voice.md', icon: 'fluent:megaphone-24-regular' },
+    { id: 'changelog', title: 'System Changelog', path: '/content/changelog.md', icon: 'fluent:clock-arrow-download-24-regular' },
+    { id: 'contribution-guide', title: 'Contribution Guide', path: '/content/contribution-guide.md', icon: 'fluent:heart-hand-24-regular' },
+    { id: 'vision-mission', title: 'Vision & Mission', path: '/content/vision-mission.md', icon: 'fluent:eye-24-regular' }
   ];
 
   async function loadDoc(id) {
     currentDoc = id;
     const docMeta = docs.find(d => d.id === id);
     if (!docMeta) {
-      content = '# Document Not Found\nThe requested document does not exist.';
+      content = '<h1>Document Not Found</h1><p>The requested document does not exist.</p>';
       return;
     }
     try {
       const res = await fetch(docMeta.path);
       if (res.ok) {
-        content = await res.text();
+        const raw = await res.text();
+        // Simple fast markdown to HTML formatter if marked is not loaded yet
+        if (typeof window !== 'undefined' && window.marked) {
+          content = window.marked.parse(raw);
+        } else {
+          content = raw
+            .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+            .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+            .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+            .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
+            .replace(/\*(.*)\*/gim, '<em>$1</em>')
+            .replace(/`([^`]+)`/gim, '<code>$1</code>')
+            .replace(/\n\n/gim, '<p></p>')
+            .replace(/\n/gim, '<br>');
+        }
       } else {
-        content = `# Error Loading Document\nCould not fetch \`${docMeta.path}\`.`;
+        content = `<h1>Error</h1><p>Could not fetch ${docMeta.path}</p>`;
       }
     } catch {
-      content = `# Error\nNetwork error loading \`${docMeta.path}\`.`;
+      content = `<h1>Error</h1><p>Network error loading ${docMeta.path}</p>`;
     }
   }
 
@@ -44,50 +63,47 @@
 </script>
 
 <svelte:head>
-  <title>Documentation Viewer — SuamiSihat™ Design System</title>
+  <title>Documentation — SuamiSihat™ Design System</title>
 </svelte:head>
 
-<div class="container-xl py-5">
-  <!-- Header -->
-  <div class="mb-4">
-    <nav aria-label="breadcrumb" class="mb-3">
-      <ol class="breadcrumb" style="font-size: 0.8rem;">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Documentation</li>
-      </ol>
-    </nav>
-    <h1 class="display-6 fw-bold mb-2">System Documentation</h1>
-  </div>
+<div class="f-page-layout" class:sidebar-minimized={isSidebarMinimized} style="display: grid; grid-template-columns: {isSidebarMinimized ? '0 1fr' : '280px 1fr'}; min-height: calc(100vh - 60px); position: relative; transition: all 0.3s ease;">
+  <!-- Sidebar Toggle Pill -->
+  <button class="f-sidebar-toggle" onclick={toggleSidebar} aria-label="Toggle sidebar" style="position: fixed; left: {isSidebarMinimized ? '12px' : '268px'}; top: 180px; width: 24px; height: 24px; border-radius: 50%; background: var(--color-neutral-bg-2); border: 1px solid var(--color-neutral-stroke-2); color: var(--color-neutral-fg-2); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1010; box-shadow: var(--f-shadow-2); transition: all 0.3s ease;">
+    <iconify-icon icon={isSidebarMinimized ? "fluent:chevron-right-16-regular" : "fluent:chevron-left-16-regular"}></iconify-icon>
+  </button>
 
-  <div class="row g-4">
-    <!-- Sidebar Navigation -->
-    <div class="col-lg-3">
-      <div class="card p-3 border rounded-4 shadow-sm" style="background: var(--color-layer-card, #FFFFFF);">
-        <div class="fw-bold text-uppercase text-secondary mb-2" style="font-size: 0.75rem; letter-spacing: 0.05em;">Documents</div>
-        <div class="d-flex flex-column gap-1">
-          {#each docs as d}
-            <button 
-              type="button" 
-              class="btn btn-sm text-start rounded-3" 
-              class:btn-primary={currentDoc === d.id}
-              class:btn-light={currentDoc !== d.id}
-              onclick={() => loadDoc(d.id)}
-              style="padding: 0.5rem 0.75rem; font-size: 0.85rem;"
-            >
-              {d.title}
-            </button>
-          {/each}
-        </div>
-      </div>
+  <!-- Sidebar -->
+  <aside class="f-sidebar" aria-label="Documentation navigation" style="display: {isSidebarMinimized ? 'none' : 'block'}; padding: 1.5rem 1rem;">
+    <div style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-fg-3); margin-bottom: 0.75rem; padding-left: 0.5rem;">Documentation Library</div>
+    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
+      {#each docs as doc}
+        <li>
+          <button 
+            type="button" 
+            class="btn btn-sm w-100 text-start d-flex align-items-center gap-2" 
+            class:btn-primary={currentDoc === doc.id} 
+            class:btn-light={currentDoc !== doc.id}
+            onclick={() => loadDoc(doc.id)}
+            style="border-radius: 8px; font-weight: 600; font-size: 0.85rem; padding: 8px 12px;"
+          >
+            <iconify-icon icon={doc.icon} style="font-size: 1.1rem; flex-shrink: 0;"></iconify-icon>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{doc.title}</span>
+          </button>
+        </li>
+      {/each}
+    </ul>
+  </aside>
+
+  <!-- Main Markdown Article Content -->
+  <main class="f-main-content" style="padding: 2.5rem; max-width: 960px;">
+    <div class="doc-breadcrumb" style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--color-neutral-fg-3); margin-bottom: 1.5rem;">
+      <a href="/" style="color: var(--color-neutral-fg-2); text-decoration: none;">Home</a>
+      <span>&rsaquo;</span>
+      <span style="color: var(--color-brand-primary); font-weight: 600;">{docs.find(d => d.id === currentDoc)?.title || 'Document'}</span>
     </div>
 
-    <!-- Markdown Content Viewer -->
-    <div class="col-lg-9">
-      <div class="card p-4 p-md-5 border rounded-4 shadow-sm" style="background: var(--color-layer-card, #FFFFFF); min-height: 500px;">
-        <div class="markdown-body" style="white-space: pre-wrap; font-family: inherit; font-size: 0.95rem; line-height: 1.65; color: var(--color-neutral-fg-1, #1C1C1C);">
-          {content}
-        </div>
-      </div>
-    </div>
-  </div>
+    <article class="markdown-body p-4 p-md-5 border rounded-4 shadow-sm" style="background: var(--color-neutral-bg-2, #FFFFFF); min-height: 500px;">
+      {@html content}
+    </article>
+  </main>
 </div>

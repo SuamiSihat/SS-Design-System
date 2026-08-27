@@ -55,7 +55,7 @@
   });
 </script>
 
-<header id="mainNavbar" class="f-navbar" role="banner">
+<header id="mainNavbar" class="f-navbar">
   <nav class="f-navbar-inner" aria-label="Global navigation">
     <!-- Brand -->
     <a class="f-navbar-brand" href="/" aria-label="Home">
