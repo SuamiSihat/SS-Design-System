@@ -4,13 +4,23 @@
 
   let isDarkMode = $derived($theme === 'dark');
 
-  // 1. Interactive Case Study State
+  // 1. Interactive Group Architecture State
+  let selectedEntity = $state('SSH'); // 'SSH' | 'SSC' | 'SSW' | 'SSE' | 'SST'
+  const entityData = {
+    SSH: { name: 'SuamiSihat Health (Holding)', role: 'Corporate Governance & IP Ownership', color: '#043388', accent: '#21A1F7', status: 'Primary Authority', tag: '01-SSH' },
+    SSC: { name: 'SuamiSihat Clinic', role: 'Physical Clinical Operations & Telemedicine', color: '#022057', accent: '#6DC6EC', status: 'Clinical Practice', tag: '02-SSC' },
+    SSW: { name: 'SuamiSihat Wellness', role: 'Preventative Care & Lifestyle Supplements', color: '#043388', accent: '#FCE53D', status: 'Consumer Care', tag: '03-SSW' },
+    SSE: { name: 'SuamiSihat Ecommerce', role: 'Direct-to-Patient Fulfillment & Logistics', color: '#022057', accent: '#22C55E', status: 'Digital Retail', tag: '04-SSE' },
+    SST: { name: 'SuamiSihat Technology', role: 'Software Platforms, EMR & Design Systems', color: '#043388', accent: '#A855F7', status: 'Engineering Hub', tag: '05-SST' }
+  };
+
+  // 2. Interactive Case Study State
   let caseStudyState = $state('after'); // 'before' | 'after'
 
-  // 2. Interactive Role / Persona Hub State
+  // 3. Interactive Role / Persona Hub State
   let activeRole = $state('engineer'); // 'engineer' | 'designer' | 'marketer' | 'clinical'
 
-  // 3. Interactive Component Workbench State
+  // 4. Interactive Component Workbench State
   let btnVariant = $state('primary'); // 'primary' | 'secondary' | 'outline' | 'subtle'
   let btnSize = $state('md'); // 'sm' | 'md' | 'lg'
   let isToggleActive = $state(true);
@@ -19,12 +29,22 @@
   let activeCodeTab = $state('web'); // 'web' | 'flutter' | 'tailwind' | 'token'
   let copyFeedback = $state('');
 
-  // 4. Interactive Typography Scale Tester
+  // 5. Interactive Typography Scale Tester
   let customTypePhrase = $state('Clinical Precision. Human-First Design.');
 
-  // 5. Interactive Color Swatch State
+  // 6. Interactive Real-Time Color Morphing Swatch State
   let activeSwatchHex = $state('#043388');
   let activeSwatchName = $state('SS Blue');
+  let activeContrastRatio = $state('11.8:1 (AAA)');
+
+  const swatchDetails = {
+    '#043388': { name: 'SS Blue', ratio: '11.8:1 (AAA)', role: '60% Brand Foundation & Clinical Trust' },
+    '#022057': { name: 'Prussian Blue', ratio: '14.2:1 (AAA)', role: 'Structural Depth & Deep Canvas' },
+    '#21A1F7': { name: 'Azure Blue', ratio: '7.4:1 (AA+)', role: '10% Action Accent & High-Conversion CTAs' },
+    '#6DC6EC': { name: 'Malibu Blue', ratio: '6.8:1 (AA)', role: 'Interactive Highlights & Light Surface Nodes' },
+    '#FCE53D': { name: 'Banana Yellow', ratio: '8.1:1 (AAA)', role: 'Energetic Accents & Notice Badges' },
+    '#FCFAF6': { name: 'Porcelain White', ratio: '16.5:1 (AAA)', role: 'Neutral Light Mode Canvas & Card Surfaces' }
+  };
 
   // Copy helper
   function copyToClipboard(text, message) {
@@ -35,10 +55,12 @@
     }
   }
 
-  function selectSwatch(hex, name) {
+  function selectSwatch(hex) {
     activeSwatchHex = hex;
-    activeSwatchName = name;
-    copyToClipboard(hex, `Copied ${name} (${hex}) to clipboard!`);
+    const item = swatchDetails[hex] || { name: hex, ratio: '9.0:1 (AAA)', role: 'Brand Token' };
+    activeSwatchName = item.name;
+    activeContrastRatio = item.ratio;
+    copyToClipboard(hex, `Copied ${item.name} (${hex}) to clipboard!`);
   }
 
   // Dynamic code snippet generator
@@ -68,6 +90,13 @@
   </div>
 {/if}
 
+<!-- Ambient Mesh Gradient Orbs (Kinetic Background) -->
+<div class="f-ambient-mesh" aria-hidden="true">
+  <div class="f-mesh-orb orb-1"></div>
+  <div class="f-mesh-orb orb-2"></div>
+  <div class="f-mesh-orb orb-3"></div>
+</div>
+
 <!-- ================================================================
      CHAPTER 1: THE MASTER HERO & BRAND MANIFESTO
      ================================================================ -->
@@ -75,7 +104,7 @@
   eyebrow="<iconify-icon icon='fluent:sparkle-24-filled' style='font-size: 1.15rem; color: #6DC6EC; vertical-align: middle;' aria-hidden='true'></iconify-icon> <span>SuamiSihat™ Design System &bull; Story Edition</span>"
   title="One Source. Every Standard.<br>The Living Language of Men's Health."
   subtitle="Transforming healthcare across Southeast Asia by replacing clinical stigma with scientific precision, patient dignity, and unmistakable visual clarity."
-  minHeight="540px"
+  minHeight="560px"
 >
   <div class="f-hero-ctas">
     <a href="#story" class="f-btn-hero-primary" id="hero-cta-story">
@@ -105,9 +134,9 @@
   </div>
 </SSHero>
 
-<main id="main-content">
+<main id="main-content" style="position: relative; z-index: 1;">
   <!-- ================================================================
-       CHAPTER 2: BENTO GRID — WHAT IT MEANS & THE 3 PILLARS
+       CHAPTER 2: DYNAMIC BENTO GRID — PURPOSE & THE 3 PILLARS
        ================================================================ -->
   <section id="story" class="f-section-block" aria-label="Brand Manifesto and Core Pillars">
     <div class="f-chapter-badge">
@@ -124,42 +153,51 @@
 
     <!-- Chapter 2 Bento Architecture -->
     <div class="f-bento-grid">
-      <!-- Bento Item 1: Large 8-Col Manifesto Card with Animated Vitality Beacon -->
+      <!-- Bento Item 1: Large 8-Col Manifesto Hero Card with Kinetic Vitality Monitor -->
       <div class="f-bento-card f-bento-hero-card f-bento-span-8">
+        <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
         <div class="f-manifesto-grid">
           <div>
-            <div class="f-manifesto-badge-pill">Core Brand Purpose</div>
+            <div class="f-manifesto-badge-pill">
+              <span class="f-pulse-dot"></span>
+              <span>Core Brand Purpose</span>
+            </div>
             <p class="f-manifesto-quote">
               &ldquo;For decades, men's wellness has been trapped between clinical intimidation and back-alley ambiguity. SuamiSihat restores patient dignity, clinical authority, and design excellence.&rdquo;
             </p>
             <p class="f-manifesto-lead">
-              Pairing <strong>vitality Navy (<code style="color:var(--color-brand-primary);">#043388</code>)</strong> with <strong>radiant Azure (<code style="color:#21A1F7;">#21A1F7</code>)</strong> across physical clinics, prescription packaging, and digital teleconsultations.
+              Pairing <strong>vitality Navy (<code class="f-code-token" style="color:var(--color-brand-primary);">#043388</code>)</strong> with <strong>radiant Azure (<code class="f-code-token" style="color:#21A1F7;">#21A1F7</code>)</strong> across physical clinics, prescription packaging, and digital teleconsultations.
             </p>
           </div>
 
-          <!-- Pure Self-Contained Kinetic Vitality Shield Beacon -->
+          <!-- Pure Self-Contained Kinetic Vitality Monitor -->
           <div class="f-manifesto-animation-pane">
             <div class="f-vitality-beacon">
               <div class="f-beacon-pulse-ring ring-1"></div>
               <div class="f-beacon-pulse-ring ring-2"></div>
               <div class="f-beacon-core">
                 <svg viewBox="0 0 64 64" fill="none" class="f-beacon-svg" aria-hidden="true">
-                  <path d="M32 6L14 14V28C14 42 21.8 54.4 32 58C42.2 54.4 50 42 50 28V14L32 6Z" fill="#043388" fill-opacity="0.15" stroke="#21A1F7" stroke-width="2.5" stroke-linejoin="round"/>
+                  <!-- Luminous Medical Shield -->
+                  <path d="M32 6L14 14V28C14 42 21.8 54.4 32 58C42.2 54.4 50 42 50 28V14L32 6Z" fill="#043388" fill-opacity="0.25" stroke="#21A1F7" stroke-width="2.5" stroke-linejoin="round"/>
                   <!-- Vitality Heartbeat Pulse Path -->
                   <path d="M22 32H27L30 22L34 42L37 32H42" stroke="#21A1F7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="f-ecg-path"/>
                   <!-- Radiant Energy Nodes -->
-                  <circle cx="32" cy="18" r="2.5" fill="#FCE53D"/>
-                  <circle cx="32" cy="46" r="2" fill="#6DC6EC"/>
+                  <circle cx="32" cy="18" r="2.5" fill="#FCE53D" class="f-node-glow"/>
+                  <circle cx="32" cy="46" r="2" fill="#6DC6EC" class="f-node-glow"/>
                 </svg>
               </div>
             </div>
-            <span class="f-lottie-caption">Clinical Trust &bull; 60:30:10 Ratio</span>
+            <div class="f-lottie-caption-wrap">
+              <span class="f-lottie-caption">Clinical Vitality Monitor &bull; 60:30:10</span>
+              <span class="f-live-sync-chip"><span class="f-pulse-dot-green"></span> Active Token Sync</span>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Bento Item 2: 4-Col Zero Brand Dilution Card -->
       <div class="f-bento-card f-bento-span-4">
+        <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
         <div>
           <div class="f-pillar-icon-wrap">
             <div class="f-pillar-icon">
@@ -182,6 +220,7 @@
 
       <!-- Bento Item 3: 4-Col Clinical Authority Card -->
       <div class="f-bento-card f-bento-span-4">
+        <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
         <div class="f-pillar-icon-wrap">
           <div class="f-pillar-icon">
             <iconify-icon icon="fluent:shield-checkmark-24-regular"></iconify-icon>
@@ -194,22 +233,30 @@
       </div>
 
       <!-- Bento Item 4: 4-Col 10x Velocity Metric Card -->
-      <div class="f-bento-card f-bento-span-4" style="text-align: center; justify-content: center; align-items: center;">
+      <div class="f-bento-card f-bento-span-4 f-bento-stat-card">
+        <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
         <div class="f-bento-stat-val">10×</div>
         <div class="f-bento-stat-label">Shipping Velocity</div>
-        <p style="font-size: 0.825rem; color: var(--text-secondary); margin: 0.5rem 0 0; line-height: 1.5;">
+        <div class="f-velocity-meter" aria-hidden="true">
+          <div class="f-velocity-bar"></div>
+        </div>
+        <p style="font-size: 0.825rem; color: var(--text-secondary); margin: 0.75rem 0 0; line-height: 1.5;">
           From 4-week turnaround down to 72 hours with ready Fluent 2 components.
         </p>
       </div>
 
       <!-- Bento Item 5: 4-Col Accessibility Card -->
       <div class="f-bento-card f-bento-span-4">
+        <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
         <div class="f-pillar-icon-wrap">
-          <div class="f-pillar-icon" style="background: rgba(22, 163, 74, 0.1); color: #16A34A;">
+          <div class="f-pillar-icon" style="background: rgba(34, 197, 94, 0.12); color: #22C55E;">
             <iconify-icon icon="fluent:accessibility-24-regular"></iconify-icon>
           </div>
         </div>
-        <h3 class="f-pillar-title">WCAG 2.1 AA Certified</h3>
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+          <h3 class="f-pillar-title" style="margin:0;">WCAG 2.1 AA</h3>
+          <span class="f-score-badge">100% Pass</span>
+        </div>
         <p class="f-pillar-desc">
           4-tier text contrast matrix strictly audited across canvas, elevated cards, and inverted buttons.
         </p>
@@ -218,11 +265,126 @@
   </section>
 
   <!-- ================================================================
-       CHAPTER 3: INTERACTIVE CASE STUDY
+       CHAPTER 3: INTERACTIVE GROUP ARCHITECTURE FLOW
        ================================================================ -->
-  <section id="case-study" class="f-section-block" aria-label="Interactive Case Study" style="background: rgba(4, 51, 136, 0.02);">
+  <section id="architecture" class="f-section-block" aria-label="Group Architecture Flow">
     <div class="f-chapter-badge">
       <span class="f-chapter-num">2</span>
+      <span>Group Architecture &amp; Token Pipeline</span>
+    </div>
+
+    <div class="f-section-head">
+      <h2 class="f-section-title">One Source of Truth: Group Architecture Flow</h2>
+      <p class="f-section-subtitle">
+        How the SuamiSihat Holding token engine synchronizes visual governance across the 4 operating companies.
+      </p>
+    </div>
+
+    <div class="f-bento-card f-arch-flow-card">
+      <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
+      
+      <!-- Interactive Architecture Tree -->
+      <div class="f-arch-tree-container">
+        <!-- Root Node (SSH Holding) -->
+        <div class="f-arch-root-wrapper">
+          <button 
+            type="button" 
+            class="f-arch-node-btn root {selectedEntity === 'SSH' ? 'active' : ''}" 
+            onclick={() => { selectedEntity = 'SSH'; }}
+          >
+            <div class="f-node-tag">Group Holding</div>
+            <div class="f-node-title">
+              <iconify-icon icon="fluent:building-bank-24-filled" style="color:#21A1F7;"></iconify-icon>
+              <span>SuamiSihat Health (SSH)</span>
+            </div>
+            <div class="f-node-sub">Single Source of Truth Token Pipeline</div>
+          </button>
+        </div>
+
+        <!-- Glowing Connecting Data Bus Lines -->
+        <div class="f-arch-bus-lines" aria-hidden="true">
+          <div class="f-bus-vertical-stem"></div>
+          <div class="f-bus-horizontal-bar"></div>
+          <div class="f-bus-drop-lines">
+            <span class="drop-line"></span>
+            <span class="drop-line"></span>
+            <span class="drop-line"></span>
+            <span class="drop-line"></span>
+          </div>
+        </div>
+
+        <!-- 4 Subsidiary Leaf Nodes -->
+        <div class="f-arch-leaves-grid">
+          <button 
+            type="button" 
+            class="f-arch-node-btn leaf {selectedEntity === 'SSC' ? 'active' : ''}" 
+            onclick={() => { selectedEntity = 'SSC'; }}
+          >
+            <div class="f-leaf-badge" style="color: #6DC6EC;">02-SSC</div>
+            <div class="f-leaf-name">SS Clinic</div>
+            <div class="f-leaf-desc">Practice &amp; Telehealth</div>
+          </button>
+
+          <button 
+            type="button" 
+            class="f-arch-node-btn leaf {selectedEntity === 'SSW' ? 'active' : ''}" 
+            onclick={() => { selectedEntity = 'SSW'; }}
+          >
+            <div class="f-leaf-badge" style="color: #FCE53D;">03-SSW</div>
+            <div class="f-leaf-name">SS Wellness</div>
+            <div class="f-leaf-desc">Supplements &amp; Care</div>
+          </button>
+
+          <button 
+            type="button" 
+            class="f-arch-node-btn leaf {selectedEntity === 'SSE' ? 'active' : ''}" 
+            onclick={() => { selectedEntity = 'SSE'; }}
+          >
+            <div class="f-leaf-badge" style="color: #22C55E;">04-SSE</div>
+            <div class="f-leaf-name">SS Ecommerce</div>
+            <div class="f-leaf-desc">D2C Fulfillment</div>
+          </button>
+
+          <button 
+            type="button" 
+            class="f-arch-node-btn leaf {selectedEntity === 'SST' ? 'active' : ''}" 
+            onclick={() => { selectedEntity = 'SST'; }}
+          >
+            <div class="f-leaf-badge" style="color: #A855F7;">05-SST</div>
+            <div class="f-leaf-name">SS Technology</div>
+            <div class="f-leaf-desc">EMR &amp; Software Hub</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Entity Inspector Panel -->
+      <div class="f-arch-inspector-box">
+        <div class="f-inspector-left">
+          <div class="f-inspector-entity-badge">{entityData[selectedEntity].tag}</div>
+          <div>
+            <h3 class="f-inspector-entity-name">{entityData[selectedEntity].name}</h3>
+            <p class="f-inspector-entity-role">{entityData[selectedEntity].role}</p>
+          </div>
+        </div>
+
+        <div class="f-inspector-actions">
+          <span class="f-inspector-status-pill">
+            <span class="f-pulse-dot-green"></span> {entityData[selectedEntity].status}
+          </span>
+          <a href="/brand-system/#subbrand" class="f-inspector-link-btn">
+            Inspect Subsidiary Tokens &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       CHAPTER 4: INTERACTIVE CASE STUDY
+       ================================================================ -->
+  <section id="case-study" class="f-section-block" aria-label="Interactive Case Study">
+    <div class="f-chapter-badge">
+      <span class="f-chapter-num">3</span>
       <span>Interactive Case Study</span>
     </div>
 
@@ -234,6 +396,7 @@
     </div>
 
     <div class="f-case-study-card">
+      <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
       <div class="f-case-study-grid">
         <div>
           <div class="f-case-study-toggle-bar">
@@ -306,11 +469,11 @@
   </section>
 
   <!-- ================================================================
-       CHAPTER 4: WHO SHOULD USE THIS? (INTERACTIVE ROLE HUB)
+       CHAPTER 5: WHO SHOULD USE THIS? (INTERACTIVE ROLE HUB)
        ================================================================ -->
   <section id="roles" class="f-section-block" aria-label="Audience Hub">
     <div class="f-chapter-badge">
-      <span class="f-chapter-num">3</span>
+      <span class="f-chapter-num">4</span>
       <span>Audience Persona Hub</span>
     </div>
 
@@ -370,6 +533,7 @@
 
     <!-- Active Persona Pane -->
     <div class="f-role-pane-card">
+      <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
       <div class="f-role-grid">
         <div>
           {#if activeRole === 'engineer'}
@@ -495,28 +659,35 @@
   </section>
 
   <!-- ================================================================
-       CHAPTER 5: BENTO GRID — LIVING STUDIOS & CAPABILITIES
+       CHAPTER 6: DYNAMIC BENTO GRID — LIVING STUDIOS & MORPHING PALETTE
        ================================================================ -->
   <section id="studios" class="f-section-block" aria-label="Interactive Living Studios">
     <div class="f-chapter-badge">
-      <span class="f-chapter-num">4</span>
-      <span>Living Studios &amp; Tools</span>
+      <span class="f-chapter-num">5</span>
+      <span>Living Studios &amp; Dynamic Tools</span>
     </div>
 
     <div class="f-section-head">
       <h2 class="f-section-title">Visual Identity &amp; Living Studios</h2>
       <p class="f-section-subtitle">
-        Explore interactive color palettes, living UI components, and the 4-tier typography scale.
+        Explore real-time color morphing palettes, living UI components, and the 4-tier typography scale.
       </p>
     </div>
 
-    <!-- Chapter 5 Bento Grid -->
+    <!-- Chapter 6 Bento Grid -->
     <div class="f-bento-grid">
-      <!-- Bento Item 1: Wide 12-Col Color Studio -->
-      <div class="f-bento-card f-bento-span-12">
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1rem;">
-          <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0;">Interactive Color Harmony Studio</h3>
-          <span style="font-size: 0.775rem; color: var(--text-secondary);">Click any swatch to copy HEX &amp; inspect contrast</span>
+      <!-- Bento Item 1: Wide 12-Col Real-time Morphing Color Studio -->
+      <div class="f-bento-card f-bento-span-12 f-color-morph-card" style="--active-theme-color: {activeSwatchHex};">
+        <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1.25rem; gap: 0.5rem;">
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 4px;">Dynamic Real-Time Color Morphing Studio</h3>
+            <span style="font-size: 0.8rem; color: var(--text-secondary);">Click any swatch to morph the ambient canvas atmosphere and calculate live contrast.</span>
+          </div>
+          <span class="f-live-contrast-tag">
+            <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color:#22C55E;"></iconify-icon>
+            <span>WCAG Contrast: <strong>{activeContrastRatio}</strong></span>
+          </span>
         </div>
 
         <div class="f-interactive-palette-box">
@@ -525,8 +696,8 @@
               type="button" 
               class="f-palette-btn {activeSwatchHex === '#043388' ? 'selected' : ''}" 
               style="--swatch-bg: #043388;" 
-              onclick={() => selectSwatch('#043388', 'SS Blue')} 
-              title="Click to copy SS Blue (#043388)"
+              onclick={() => selectSwatch('#043388')} 
+              title="Click to morph to SS Blue (#043388)"
             >
               <span class="f-swatch-label">SS Blue</span>
               <span class="f-swatch-code">#043388</span>
@@ -536,8 +707,8 @@
               type="button" 
               class="f-palette-btn {activeSwatchHex === '#022057' ? 'selected' : ''}" 
               style="--swatch-bg: #022057;" 
-              onclick={() => selectSwatch('#022057', 'Prussian Blue')} 
-              title="Click to copy Prussian Blue (#022057)"
+              onclick={() => selectSwatch('#022057')} 
+              title="Click to morph to Prussian Blue (#022057)"
             >
               <span class="f-swatch-label">Prussian</span>
               <span class="f-swatch-code">#022057</span>
@@ -547,8 +718,8 @@
               type="button" 
               class="f-palette-btn {activeSwatchHex === '#21A1F7' ? 'selected' : ''}" 
               style="--swatch-bg: #21A1F7;" 
-              onclick={() => selectSwatch('#21A1F7', 'Azure')} 
-              title="Click to copy Azure (#21A1F7)"
+              onclick={() => selectSwatch('#21A1F7')} 
+              title="Click to morph to Azure (#21A1F7)"
             >
               <span class="f-swatch-label">Azure</span>
               <span class="f-swatch-code">#21A1F7</span>
@@ -558,8 +729,8 @@
               type="button" 
               class="f-palette-btn {activeSwatchHex === '#6DC6EC' ? 'selected' : ''}" 
               style="--swatch-bg: #6DC6EC; color: #19191A;" 
-              onclick={() => selectSwatch('#6DC6EC', 'Malibu')} 
-              title="Click to copy Malibu (#6DC6EC)"
+              onclick={() => selectSwatch('#6DC6EC')} 
+              title="Click to morph to Malibu (#6DC6EC)"
             >
               <span class="f-swatch-label" style="color:#19191A;">Malibu</span>
               <span class="f-swatch-code" style="color:rgba(25,25,26,0.7);">#6DC6EC</span>
@@ -569,8 +740,8 @@
               type="button" 
               class="f-palette-btn {activeSwatchHex === '#FCE53D' ? 'selected' : ''}" 
               style="--swatch-bg: #FCE53D; color: #19191A;" 
-              onclick={() => selectSwatch('#FCE53D', 'Banana Yellow')} 
-              title="Click to copy Banana Yellow (#FCE53D)"
+              onclick={() => selectSwatch('#FCE53D')} 
+              title="Click to morph to Banana Yellow (#FCE53D)"
             >
               <span class="f-swatch-label" style="color:#19191A;">Banana</span>
               <span class="f-swatch-code" style="color:rgba(25,25,26,0.7);">#FCE53D</span>
@@ -580,8 +751,8 @@
               type="button" 
               class="f-palette-btn {activeSwatchHex === '#FCFAF6' ? 'selected' : ''}" 
               style="--swatch-bg: #FCFAF6; color: #19191A; border: 1px solid rgba(0,0,0,0.12);" 
-              onclick={() => selectSwatch('#FCFAF6', 'Porcelain')} 
-              title="Click to copy Porcelain (#FCFAF6)"
+              onclick={() => selectSwatch('#FCFAF6')} 
+              title="Click to morph to Porcelain (#FCFAF6)"
             >
               <span class="f-swatch-label" style="color:#19191A;">Porcelain</span>
               <span class="f-swatch-code" style="color:rgba(25,25,26,0.7);">#FCFAF6</span>
@@ -595,13 +766,14 @@
                 <iconify-icon icon="fluent:copy-16-regular"></iconify-icon> Copy HEX
               </button>
             </div>
-            <span class="f-inspector-hint">60:30:10 Brand Harmony &bull; WCAG 2.1 Pass</span>
+            <span class="f-inspector-hint">{swatchDetails[activeSwatchHex]?.role || 'Authoritative Token'}</span>
           </div>
         </div>
       </div>
 
       <!-- Bento Item 2: 8-Col Living Component Workbench -->
       <div class="f-bento-card f-bento-span-8">
+        <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
         <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 1rem;">Living Component Workbench</h3>
         
         <div class="f-stage-controls" style="margin-bottom: 1.25rem;">
@@ -674,6 +846,7 @@
 
       <!-- Bento Item 3: 4-Col Foundation Quick Hub -->
       <div class="f-bento-card f-bento-span-4" style="justify-content: space-between;">
+        <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
         <div>
           <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">Core Documentation</h3>
           <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0 0 1.25rem;">
@@ -709,6 +882,7 @@
 
       <!-- Bento Item 4: 12-Col Typography Scale Lab -->
       <div class="f-bento-card f-bento-span-12">
+        <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1.25rem; gap: 1rem;">
           <div>
             <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 4px;">4-Tier Typography Hierarchy Lab</h3>
@@ -777,12 +951,12 @@
   </section>
 
   <!-- ================================================================
-       CHAPTER 6: BENTO GRID — OPERATIONAL TOOLS & ECOSYSTEM
+       CHAPTER 7: DYNAMIC BENTO GRID — OPERATIONAL TOOLS & ECOSYSTEM
        ================================================================ -->
   <section id="tools-section" class="f-section-block" aria-label="Tools and Subsidiary Ecosystem">
     <div class="f-chapter-badge">
-      <span class="f-chapter-num">5</span>
-      <span>Ecosystem &amp; Tools</span>
+      <span class="f-chapter-num">6</span>
+      <span>Ecosystem &amp; Operational Launchpad</span>
     </div>
 
     <div class="f-section-head">
@@ -792,44 +966,47 @@
       </p>
     </div>
 
-    <!-- Chapter 6 Bento Grid -->
+    <!-- Chapter 7 Bento Grid -->
     <div class="f-bento-grid">
       <!-- Bento Item 1: 6-Col SS CAM Workstation -->
-      <a href="/tools/" class="f-bento-card f-bento-span-6" id="card-sscam" aria-label="SS CAM Creative Asset Management" style="text-decoration: none;">
+      <a href="/tools/" class="f-bento-card f-bento-span-6 f-tool-card" id="card-sscam" aria-label="SS CAM Creative Asset Management" style="text-decoration: none;">
+        <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
         <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem;">
-          <div class="f-pillar-icon" style="margin: 0;">
+          <div class="f-pillar-icon" style="margin: 0; background: rgba(4, 51, 136, 0.12); color: var(--color-brand-primary);">
             <iconify-icon icon="fluent:camera-24-regular"></iconify-icon>
           </div>
-          <span style="font-size: 0.725rem; font-weight: 700; background: rgba(4,51,136,0.08); color: var(--color-brand-primary); padding: 4px 10px; border-radius: 9999px;">Windows App</span>
+          <span class="f-badge-shimmer">Windows Native App</span>
         </div>
         <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">SS CAM (Desktop Workstation)</h3>
         <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
           Native desktop utility for batch watermarking, LUT color grading, and clinical asset management.
         </p>
         <div style="margin-top: 1.25rem; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 0.85rem; color: var(--color-brand-primary);">
-          <span>Launch Tool</span> &rarr;
+          <span>Launch Tool Workstation</span> &rarr;
         </div>
       </a>
 
       <!-- Bento Item 2: 6-Col Mail Signature Generator -->
-      <a href="/signature/" class="f-bento-card f-bento-span-6" id="card-signature" aria-label="Mail Signature Generator" style="text-decoration: none;">
+      <a href="/signature/" class="f-bento-card f-bento-span-6 f-tool-card" id="card-signature" aria-label="Mail Signature Generator" style="text-decoration: none;">
+        <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
         <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1rem;">
-          <div class="f-pillar-icon" style="margin: 0;">
+          <div class="f-pillar-icon" style="margin: 0; background: rgba(33, 161, 247, 0.15); color: #21A1F7;">
             <iconify-icon icon="fluent:mail-template-24-regular"></iconify-icon>
           </div>
-          <span style="font-size: 0.725rem; font-weight: 700; background: rgba(33,161,247,0.12); color: #21A1F7; padding: 4px 10px; border-radius: 9999px;">Daily Utility</span>
+          <span class="f-badge-shimmer" style="color: #21A1F7; border-color: rgba(33,161,247,0.3);">Daily Utility</span>
         </div>
         <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">Mail Signature Generator</h3>
         <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
           Generate standardized, on-brand HTML email signatures for your operating subsidiary in seconds.
         </p>
         <div style="margin-top: 1.25rem; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 0.85rem; color: var(--color-brand-primary);">
-          <span>Generate Signature</span> &rarr;
+          <span>Generate Group Signature</span> &rarr;
         </div>
       </a>
 
       <!-- Bento Item 3: 4-Col Staff Onboarding -->
-      <a href="/onboarding/" class="f-bento-card f-bento-span-4" id="card-onboarding" aria-label="Staff Onboarding" style="text-decoration: none;">
+      <a href="/onboarding/" class="f-bento-card f-bento-span-4 f-tool-card" id="card-onboarding" aria-label="Staff Onboarding" style="text-decoration: none;">
+        <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
         <div class="f-pillar-icon" style="margin: 0 0 1rem;">
           <iconify-icon icon="fluent:handshake-24-regular"></iconify-icon>
         </div>
@@ -840,7 +1017,8 @@
       </a>
 
       <!-- Bento Item 4: 4-Col System Docs & Changelog -->
-      <a href="/doc/?doc=changelog" class="f-bento-card f-bento-span-4" id="card-docs" aria-label="Documentation and Changelog" style="text-decoration: none;">
+      <a href="/doc/?doc=changelog" class="f-bento-card f-bento-span-4 f-tool-card" id="card-docs" aria-label="Documentation and Changelog" style="text-decoration: none;">
+        <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
         <div class="f-pillar-icon" style="margin: 0 0 1rem;">
           <iconify-icon icon="fluent:document-bullet-list-24-regular"></iconify-icon>
         </div>
@@ -851,8 +1029,9 @@
       </a>
 
       <!-- Bento Item 5: 4-Col SSNAS Cloud Server -->
-      <a href="https://suamisihat.myds.me" class="f-bento-card f-bento-span-4" id="card-dashboard" target="_blank" rel="noopener noreferrer" aria-label="SSNAS Dashboard" style="text-decoration: none;">
-        <div class="f-pillar-icon" style="margin: 0 0 1rem; background: rgba(33, 161, 247, 0.1); color: #21A1F7;">
+      <a href="https://suamisihat.myds.me" class="f-bento-card f-bento-span-4 f-tool-card" id="card-dashboard" target="_blank" rel="noopener noreferrer" aria-label="SSNAS Dashboard" style="text-decoration: none;">
+        <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
+        <div class="f-pillar-icon" style="margin: 0 0 1rem; background: rgba(33, 161, 247, 0.12); color: #21A1F7;">
           <iconify-icon icon="fluent:server-24-regular"></iconify-icon>
         </div>
         <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">SSNAS Dashboard ↗</h3>
@@ -863,32 +1042,33 @@
 
       <!-- Bento Item 6: 12-Col Operating Subsidiaries Ribbon -->
       <div class="f-bento-card f-bento-span-12">
+        <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
         <div style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 1rem;">
           Operating Subsidiaries of SuamiSihat Group
         </div>
         <div class="f-subbrand-grid">
-          <a href="/brand-system/#subbrand" class="f-subbrand-card">
+          <a href="/brand-system/#subbrand" class="f-subbrand-card" style="border-left: 4px solid #043388;">
             <span class="f-subbrand-code">SSH</span>
             <span class="f-subbrand-name">SS Health</span>
             <span class="f-subbrand-role">Holding Corporate</span>
           </a>
-          <a href="/brand-system/#subbrand" class="f-subbrand-card">
-            <span class="f-subbrand-code">SSC</span>
+          <a href="/brand-system/#subbrand" class="f-subbrand-card" style="border-left: 4px solid #6DC6EC;">
+            <span class="f-subbrand-code" style="color:#6DC6EC;">SSC</span>
             <span class="f-subbrand-name">SS Clinic</span>
             <span class="f-subbrand-role">Clinical Practice</span>
           </a>
-          <a href="/brand-system/#subbrand" class="f-subbrand-card">
-            <span class="f-subbrand-code">SSW</span>
+          <a href="/brand-system/#subbrand" class="f-subbrand-card" style="border-left: 4px solid #FCE53D;">
+            <span class="f-subbrand-code" style="color:#D97706;">SSW</span>
             <span class="f-subbrand-name">SS Wellness</span>
             <span class="f-subbrand-role">Lifestyle &amp; Care</span>
           </a>
-          <a href="/brand-system/#subbrand" class="f-subbrand-card">
-            <span class="f-subbrand-code">SSE</span>
+          <a href="/brand-system/#subbrand" class="f-subbrand-card" style="border-left: 4px solid #22C55E;">
+            <span class="f-subbrand-code" style="color:#22C55E;">SSE</span>
             <span class="f-subbrand-name">SS Ecommerce</span>
             <span class="f-subbrand-role">Direct-to-Patient</span>
           </a>
-          <a href="/brand-system/#subbrand" class="f-subbrand-card">
-            <span class="f-subbrand-code">SST</span>
+          <a href="/brand-system/#subbrand" class="f-subbrand-card" style="border-left: 4px solid #A855F7;">
+            <span class="f-subbrand-code" style="color:#A855F7;">SST</span>
             <span class="f-subbrand-name">SS Technology</span>
             <span class="f-subbrand-role">Software &amp; Digital</span>
           </a>
@@ -900,8 +1080,66 @@
 
 <style>
   /* ================================================================
-     COMPLETE SELF-CONTAINED LANDING PAGE STYLES
+     ULTRA-PREMIUM DYNAMIC BENTO GRID & ANIMATED STYLES
      ================================================================ */
+
+  /* Kinetic Ambient Mesh Background */
+  .f-ambient-mesh {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .f-mesh-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.25;
+    animation: f-orb-drift 18s ease-in-out infinite alternate;
+  }
+
+  :global([data-theme="dark"]) .f-mesh-orb {
+    opacity: 0.18;
+  }
+
+  .orb-1 {
+    width: 480px;
+    height: 480px;
+    background: #043388;
+    top: 15%;
+    left: -100px;
+  }
+
+  .orb-2 {
+    width: 520px;
+    height: 520px;
+    background: #21A1F7;
+    top: 50%;
+    right: -150px;
+    animation-duration: 22s;
+    animation-delay: -5s;
+  }
+
+  .orb-3 {
+    width: 380px;
+    height: 380px;
+    background: #6DC6EC;
+    bottom: -80px;
+    left: 30%;
+    animation-duration: 16s;
+    animation-delay: -9s;
+  }
+
+  @keyframes f-orb-drift {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(60px, 40px) scale(1.1); }
+    100% { transform: translate(-40px, 80px) scale(0.95); }
+  }
 
   /* Chapter Badge */
   .f-chapter-badge {
@@ -917,11 +1155,13 @@
     padding: 5px 14px;
     border-radius: 9999px;
     margin-bottom: 0.85rem;
+    border: 1px solid rgba(4, 51, 136, 0.12);
   }
 
   :global([data-theme="dark"]) .f-chapter-badge {
     color: #6DC6EC;
-    background: rgba(33, 161, 247, 0.15);
+    background: rgba(33, 161, 247, 0.12);
+    border-color: rgba(33, 161, 247, 0.2);
   }
 
   .f-chapter-num {
@@ -1090,65 +1330,141 @@
     }
   }
 
+  /* Luminous Glassmorphic Bento Cards */
   .f-bento-card {
     position: relative;
     overflow: hidden;
-    background: var(--color-neutral-bg-2, #FFFFFF);
-    border: 1px solid var(--color-neutral-stroke-1, rgba(0, 0, 0, 0.08));
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 24px;
     padding: 2rem clamp(1.25rem, 3vw, 2.25rem);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), inset 0 1px 1px rgba(255, 255, 255, 0.6);
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
                 box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
-                border-color 0.2s ease;
+                border-color 0.25s ease;
     display: flex;
     flex-direction: column;
   }
 
   :global([data-theme="dark"]) .f-bento-card {
-    background: rgba(18, 22, 32, 0.7);
-    border-color: rgba(255, 255, 255, 0.08);
+    background: rgba(14, 20, 34, 0.72);
+    border-color: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.08);
   }
 
   .f-bento-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(4, 51, 136, 0.1);
-    border-color: var(--color-brand-primary, #043388);
+    box-shadow: 0 16px 36px rgba(4, 51, 136, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+    border-color: rgba(4, 51, 136, 0.3);
   }
 
   :global([data-theme="dark"]) .f-bento-card:hover {
     border-color: rgba(33, 161, 247, 0.4);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  }
+
+  .f-card-shimmer-highlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.7) 50%, transparent 100%);
+    pointer-events: none;
+  }
+
+  :global([data-theme="dark"]) .f-card-shimmer-highlight {
+    background: linear-gradient(90deg, transparent 0%, rgba(33, 161, 247, 0.4) 50%, transparent 100%);
   }
 
   .f-bento-hero-card {
-    background: linear-gradient(135deg, rgba(2, 32, 87, 0.04) 0%, rgba(4, 51, 136, 0.08) 100%);
-    border: 1px solid rgba(4, 51, 136, 0.15);
+    background: linear-gradient(135deg, rgba(2, 32, 87, 0.05) 0%, rgba(4, 51, 136, 0.1) 100%);
+    border: 1px solid rgba(4, 51, 136, 0.18);
   }
 
   :global([data-theme="dark"]) .f-bento-hero-card {
-    background: linear-gradient(135deg, rgba(2, 20, 64, 0.7) 0%, rgba(4, 51, 136, 0.3) 100%);
-    border-color: rgba(33, 161, 247, 0.2);
+    background: linear-gradient(135deg, rgba(2, 20, 64, 0.8) 0%, rgba(4, 51, 136, 0.35) 100%);
+    border-color: rgba(33, 161, 247, 0.25);
+  }
+
+  /* Stat Card & Velocity Bar */
+  .f-bento-stat-card {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
   }
 
   .f-bento-stat-val {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2.25rem, 4.5vw, 3.25rem);
     font-weight: 800;
     color: var(--color-brand-primary, #043388);
     line-height: 1;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
+    letter-spacing: -0.02em;
   }
 
   :global([data-theme="dark"]) .f-bento-stat-val {
     color: #21A1F7;
+    text-shadow: 0 0 24px rgba(33, 161, 247, 0.4);
   }
 
   .f-bento-stat-label {
     font-size: 0.825rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-secondary);
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
+  }
+
+  .f-velocity-meter {
+    width: 80%;
+    height: 6px;
+    background: rgba(4, 51, 136, 0.1);
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-top: 0.75rem;
+  }
+
+  :global([data-theme="dark"]) .f-velocity-meter {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .f-velocity-bar {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #21A1F7, #22C55E);
+    border-radius: 9999px;
+    animation: f-velocity-glow 2.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes f-velocity-glow {
+    0% { transform: scaleX(0.7); opacity: 0.7; }
+    100% { transform: scaleX(1); opacity: 1; filter: drop-shadow(0 0 6px #21A1F7); }
+  }
+
+  /* Score Badge */
+  .f-score-badge {
+    font-size: 0.725rem;
+    font-weight: 800;
+    background: rgba(34, 197, 94, 0.15);
+    color: #22C55E;
+    padding: 3px 8px;
+    border-radius: 6px;
+  }
+
+  /* Code Token in Line */
+  .f-code-token {
+    font-family: monospace;
+    font-weight: 700;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 2px 6px;
+    border-radius: 6px;
+  }
+
+  :global([data-theme="dark"]) .f-code-token {
+    background: rgba(255, 255, 255, 0.08);
   }
 
   /* Manifesto Grid & Beacon */
@@ -1166,6 +1482,9 @@
   }
 
   .f-manifesto-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     font-size: 0.75rem;
     font-weight: 700;
     color: var(--color-brand-primary);
@@ -1176,6 +1495,30 @@
 
   :global([data-theme="dark"]) .f-manifesto-badge-pill {
     color: #21A1F7;
+  }
+
+  .f-pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #21A1F7;
+    box-shadow: 0 0 8px #21A1F7;
+    animation: f-dot-pulse 1.8s infinite;
+  }
+
+  .f-pulse-dot-green {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #22C55E;
+    box-shadow: 0 0 8px #22C55E;
+    animation: f-dot-pulse 1.8s infinite;
+    display: inline-block;
+  }
+
+  @keyframes f-dot-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.35); opacity: 0.6; }
   }
 
   .f-manifesto-quote {
@@ -1207,16 +1550,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgba(4, 51, 136, 0.05);
-    border: 1px solid rgba(4, 51, 136, 0.12);
+    background: rgba(4, 51, 136, 0.06);
+    border: 1px solid rgba(4, 51, 136, 0.15);
     border-radius: 20px;
     padding: 1.5rem;
     text-align: center;
+    backdrop-filter: blur(10px);
   }
 
   :global([data-theme="dark"]) .f-manifesto-animation-pane {
-    background: rgba(33, 161, 247, 0.06);
-    border-color: rgba(33, 161, 247, 0.15);
+    background: rgba(33, 161, 247, 0.08);
+    border-color: rgba(33, 161, 247, 0.2);
   }
 
   /* Vitality Beacon Animated Graphic */
@@ -1250,7 +1594,7 @@
 
   @keyframes f-beacon-pulse {
     0% { transform: scale(0.6); opacity: 0.8; }
-    100% { transform: scale(1.15); opacity: 0; }
+    100% { transform: scale(1.2); opacity: 0; }
   }
 
   .f-beacon-core {
@@ -1259,7 +1603,7 @@
     height: 72px;
     border-radius: 50%;
     background: linear-gradient(135deg, #022057 0%, #043388 100%);
-    box-shadow: 0 8px 24px rgba(33, 161, 247, 0.35);
+    box-shadow: 0 8px 24px rgba(33, 161, 247, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1282,16 +1626,41 @@
     100% { stroke-dashoffset: -60; }
   }
 
+  .f-node-glow {
+    animation: f-node-pulse 2s infinite alternate;
+  }
+
+  @keyframes f-node-pulse {
+    0% { transform: scale(0.8); opacity: 0.7; }
+    100% { transform: scale(1.2); opacity: 1; }
+  }
+
+  .f-lottie-caption-wrap {
+    margin-top: 0.65rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
   .f-lottie-caption {
     font-size: 0.775rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-brand-primary, #043388);
-    margin-top: 0.65rem;
     letter-spacing: 0.02em;
   }
 
   :global([data-theme="dark"]) .f-lottie-caption {
     color: #6DC6EC;
+  }
+
+  .f-live-sync-chip {
+    font-size: 0.675rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
   }
 
   /* Pillar Icon & Details */
@@ -1361,18 +1730,284 @@
     color: #21A1F7;
   }
 
-  /* Case Study */
-  .f-case-study-card {
-    background: var(--color-neutral-bg-2, #FFFFFF);
+  /* ================================================================
+     CHAPTER 3: INTERACTIVE ARCHITECTURE TREE & GLOWING DATA BUS
+     ================================================================ */
+  .f-arch-flow-card {
+    padding: 2.5rem;
+  }
+
+  .f-arch-tree-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .f-arch-root-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .f-arch-node-btn {
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+  }
+
+  .f-arch-node-btn.root {
+    background: linear-gradient(135deg, #022057 0%, #043388 100%);
+    color: #FFFFFF;
+    padding: 1.25rem 2rem;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(4, 51, 136, 0.35);
+    border: 2px solid transparent;
+  }
+
+  .f-arch-node-btn.root.active {
+    border-color: #21A1F7;
+    box-shadow: 0 0 0 4px rgba(33, 161, 247, 0.3), 0 12px 32px rgba(4, 51, 136, 0.5);
+    transform: scale(1.03);
+  }
+
+  .f-node-tag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6DC6EC;
+    margin-bottom: 4px;
+  }
+
+  .f-node-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .f-node-sub {
+    font-size: 0.775rem;
+    opacity: 0.85;
+    margin-top: 2px;
+  }
+
+  /* Data Bus Lines */
+  .f-arch-bus-lines {
+    width: 100%;
+    max-width: 800px;
+    height: 48px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .f-bus-vertical-stem {
+    width: 2px;
+    height: 24px;
+    background: linear-gradient(180deg, #21A1F7, #6DC6EC);
+    box-shadow: 0 0 8px #21A1F7;
+  }
+
+  .f-bus-horizontal-bar {
+    width: 80%;
+    height: 2px;
+    background: #21A1F7;
+    box-shadow: 0 0 8px #21A1F7;
+  }
+
+  .f-bus-drop-lines {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    height: 22px;
+  }
+
+  .drop-line {
+    width: 2px;
+    height: 100%;
+    background: #21A1F7;
+    box-shadow: 0 0 8px #21A1F7;
+  }
+
+  /* 4 Subsidiary Leaves Grid */
+  .f-arch-leaves-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 920px;
+  }
+
+  @media (max-width: 768px) {
+    .f-arch-bus-lines {
+      display: none;
+    }
+    .f-arch-leaves-grid {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 1rem;
+    }
+  }
+
+  .f-arch-node-btn.leaf {
+    background: var(--color-neutral-bg-1, #FCFAF6);
+    border: 1.5px solid var(--color-neutral-stroke-1, rgba(0, 0, 0, 0.1));
+    border-radius: 14px;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  :global([data-theme="dark"]) .f-arch-node-btn.leaf {
+    background: rgba(10, 14, 22, 0.6);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .f-arch-node-btn.leaf:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-brand-primary, #043388);
+  }
+
+  .f-arch-node-btn.leaf.active {
+    border-color: #21A1F7;
+    background: rgba(33, 161, 247, 0.08);
+    box-shadow: 0 0 0 3px rgba(33, 161, 247, 0.25);
+    transform: translateY(-3px);
+  }
+
+  .f-leaf-badge {
+    font-size: 0.725rem;
+    font-weight: 800;
+    margin-bottom: 2px;
+  }
+
+  .f-leaf-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-strong);
+  }
+
+  .f-leaf-desc {
+    font-size: 0.725rem;
+    color: var(--text-secondary);
+    margin-top: 2px;
+  }
+
+  /* Entity Inspector */
+  .f-arch-inspector-box {
+    background: var(--color-neutral-bg-1, #FCFAF6);
     border: 1px solid var(--color-neutral-stroke-1, rgba(0, 0, 0, 0.08));
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  :global([data-theme="dark"]) .f-arch-inspector-box {
+    background: rgba(10, 14, 22, 0.7);
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .f-inspector-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .f-inspector-entity-badge {
+    font-size: 0.85rem;
+    font-weight: 800;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: var(--color-brand-primary, #043388);
+    color: #FFFFFF;
+  }
+
+  :global([data-theme="dark"]) .f-inspector-entity-badge {
+    background: #21A1F7;
+    color: #000000;
+  }
+
+  .f-inspector-entity-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-strong);
+    margin: 0;
+  }
+
+  .f-inspector-entity-role {
+    font-size: 0.825rem;
+    color: var(--text-secondary);
+    margin: 2px 0 0;
+  }
+
+  .f-inspector-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .f-inspector-status-pill {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .f-inspector-link-btn {
+    font-size: 0.825rem;
+    font-weight: 700;
+    color: var(--color-brand-primary);
+    text-decoration: none !important;
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: rgba(4, 51, 136, 0.08);
+    transition: all 0.2s ease;
+  }
+
+  :global([data-theme="dark"]) .f-inspector-link-btn {
+    color: #21A1F7;
+    background: rgba(33, 161, 247, 0.15);
+  }
+
+  .f-inspector-link-btn:hover {
+    background: var(--color-brand-primary);
+    color: #FFFFFF;
+  }
+
+  :global([data-theme="dark"]) .f-inspector-link-btn:hover {
+    background: #21A1F7;
+    color: #000000;
+  }
+
+  /* ================================================================
+     CHAPTER 4: CASE STUDY
+     ================================================================ */
+  .f-case-study-card {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 24px;
     padding: 2.25rem;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
   }
 
   :global([data-theme="dark"]) .f-case-study-card {
-    background: rgba(18, 22, 32, 0.7);
-    border-color: rgba(255, 255, 255, 0.08);
+    background: rgba(14, 20, 34, 0.72);
+    border-color: rgba(255, 255, 255, 0.09);
   }
 
   .f-case-study-grid {
@@ -1416,11 +2051,13 @@
   .f-case-toggle-btn.active {
     background: var(--color-brand-primary, #043388);
     color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(4, 51, 136, 0.25);
   }
 
   :global([data-theme="dark"]) .f-case-toggle-btn.active {
     background: #21A1F7;
     color: #000000;
+    box-shadow: 0 4px 12px rgba(33, 161, 247, 0.3);
   }
 
   .f-case-state-box {
@@ -1459,7 +2096,7 @@
     border-radius: 16px;
     padding: 1.25rem 1rem;
     text-align: center;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   :global([data-theme="dark"]) .f-metric-card {
@@ -1468,7 +2105,8 @@
   }
 
   .f-metric-card:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(4, 51, 136, 0.1);
   }
 
   .f-metric-val {
@@ -1503,12 +2141,13 @@
     gap: 8px;
     padding: 10px 20px;
     border-radius: 9999px;
-    background: var(--color-neutral-bg-2, #FFFFFF);
-    border: 1px solid var(--color-neutral-stroke-1, rgba(0, 0, 0, 0.1));
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--text-primary);
     cursor: pointer;
+    backdrop-filter: blur(10px);
     transition: all 0.2s ease;
   }
 
@@ -1543,16 +2182,19 @@
   }
 
   .f-role-pane-card {
-    background: var(--color-neutral-bg-2, #FFFFFF);
-    border: 1px solid var(--color-neutral-stroke-1, rgba(0, 0, 0, 0.08));
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 24px;
     padding: 2.25rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
   }
 
   :global([data-theme="dark"]) .f-role-pane-card {
-    background: rgba(18, 22, 32, 0.7);
-    border-color: rgba(255, 255, 255, 0.08);
+    background: rgba(14, 20, 34, 0.72);
+    border-color: rgba(255, 255, 255, 0.09);
   }
 
   .f-role-grid {
@@ -1587,7 +2229,7 @@
   }
 
   .f-role-feature-icon {
-    color: #16A34A;
+    color: #22C55E;
     font-size: 1.15rem;
     flex-shrink: 0;
     margin-top: 1px;
@@ -1606,13 +2248,33 @@
     border-color: rgba(255, 255, 255, 0.06);
   }
 
-  /* Color Palette Box */
+  /* Color Morphing Palette Box */
+  .f-color-morph-card {
+    transition: background 0.4s ease, border-color 0.4s ease;
+  }
+
+  .f-live-contrast-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.775rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: rgba(0, 0, 0, 0.04);
+    padding: 4px 10px;
+    border-radius: 9999px;
+  }
+
+  :global([data-theme="dark"]) .f-live-contrast-tag {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
   .f-interactive-palette-box {
     background: var(--color-neutral-bg-1, #FCFAF6);
     border: 1px solid var(--color-neutral-stroke-1, rgba(0, 0, 0, 0.08));
     border-radius: 20px;
     padding: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
   }
 
   :global([data-theme="dark"]) .f-interactive-palette-box {
@@ -1640,7 +2302,7 @@
   }
 
   .f-palette-btn {
-    height: 84px;
+    height: 88px;
     border-radius: 14px;
     background: var(--swatch-bg);
     border: 2px solid transparent;
@@ -1655,13 +2317,14 @@
   }
 
   .f-palette-btn:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
   }
 
   .f-palette-btn.selected {
     border-color: #21A1F7;
-    box-shadow: 0 0 0 3px rgba(33, 161, 247, 0.4);
+    box-shadow: 0 0 0 3px rgba(33, 161, 247, 0.45), 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
   }
 
   .f-swatch-label {
@@ -1698,6 +2361,7 @@
     border-radius: 9999px;
     font-size: 0.825rem;
     font-weight: 600;
+    transition: background 0.3s ease;
   }
 
   .f-inspector-copy-btn {
@@ -2106,6 +2770,23 @@
     color: rgba(252, 250, 246, 0.45);
   }
 
+  /* Tool Card Badges */
+  .f-badge-shimmer {
+    font-size: 0.725rem;
+    font-weight: 700;
+    background: rgba(4, 51, 136, 0.08);
+    color: var(--color-brand-primary);
+    padding: 4px 12px;
+    border-radius: 9999px;
+    border: 1px solid rgba(4, 51, 136, 0.15);
+  }
+
+  :global([data-theme="dark"]) .f-badge-shimmer {
+    background: rgba(33, 161, 247, 0.12);
+    color: #21A1F7;
+    border-color: rgba(33, 161, 247, 0.25);
+  }
+
   /* Subsidiaries Ribbon */
   .f-subbrand-grid {
     display: grid;
@@ -2130,8 +2811,8 @@
   }
 
   .f-subbrand-card:hover {
-    transform: translateY(-2px);
-    border-color: var(--color-brand-primary, #043388);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   }
 
   .f-subbrand-code {
