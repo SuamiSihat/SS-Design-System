@@ -1,0 +1,34 @@
+{
+  "name": "nuCaffe®",
+  "tagline": "Functional Physta® Tongkat Ali Coffee (While Stocks Last)",
+  "logo": "logo_nuCaffe.svg",
+  "banner": "banner.svg",
+  "heroGradient": "linear-gradient(135deg, #1C1C1C 0%, #3D1C18 50%, #DF2127 100%)",
+  "colors": {
+    "primary": "#1C1C1C",
+    "accent": "#DF2127",
+    "latteCrema": "#C59B6D",
+    "canvas": "#FBFBFB"
+  },
+  "status": "While Stocks Last",
+  "ownership": {
+    "tags": ["SS Health Owned", "SS Ecom", "FMCG Superfood", "While Stocks Last"],
+    "text": "nuCaffe® is an in-house functional coffee brand operated under SuamiSihat E-Commerce (05-SSE) available while stocks last."
+  },
+  "subProducts": [
+    {
+      "id": "black",
+      "name": "nuCaffe Black",
+      "tagline": "Premium Dark Roast Instant Coffee with Physta® Tongkat Ali (Zero Added Sugar)"
+    },
+    {
+      "id": "latte",
+      "name": "nuCaffe Latte",
+      "tagline": "Smooth Creamy White Roast Coffee with Physta® Tongkat Ali"
+    }
+  ],
+  "assets": [
+    "logo_nuCaffe.svg",
+    "logo_nucaffeWhite.svg"
+  ]
+}

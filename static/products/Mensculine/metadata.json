@@ -1,0 +1,21 @@
+{
+  "name": "Mensculine",
+  "tagline": "Premium Everyday Grooming & Personal Care",
+  "logo": "logo_mensculine_primary.svg",
+  "banner": "banner.svg",
+  "heroGradient": "linear-gradient(135deg, #1C1C1C 0%, #038AFA 100%)",
+  "colors": {
+    "primary": "#1C1C1C",
+    "accent": "#038AFA",
+    "surface": "#F1F1F1"
+  },
+  "ownership": {
+    "tags": ["SS Health Owned", "SS Ecom", "Global Export"],
+    "text": "Mensculine is the international export brand identity of SuamiSihat™."
+  },
+  "assets": [
+    "logo_mensculine_primary.svg",
+    "logo_mensculine_secondary.svg",
+    "logo_mensculine_text.svg"
+  ]
+}

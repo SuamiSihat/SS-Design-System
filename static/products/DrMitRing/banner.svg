@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="dmrBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1C1C1C"/>
+      <stop offset="50%" stop-color="#23963B"/>
+      <stop offset="100%" stop-color="#6AB845"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="400" fill="url(#dmrBg)"/>
+  <circle cx="950" cy="200" r="160" fill="none" stroke="rgba(147, 198, 66, 0.45)" stroke-width="40"/>
+  <circle cx="950" cy="200" r="90" fill="none" stroke="rgba(251, 251, 251, 0.2)" stroke-width="12"/>
+  <text x="80" y="190" font-family="'Segoe UI Variable', 'Inter', sans-serif" font-size="56" font-weight="700" fill="#FBFBFB" letter-spacing="-1">Dr Mit Ring®</text>
+  <text x="80" y="240" font-family="'Segoe UI Variable', 'Inter', sans-serif" font-size="22" font-weight="500" fill="#93C642">Clinical Mechanical Erection Support Device · By Dr. Ismail Tambi</text>
+</svg>

@@ -1,0 +1,1862 @@
+/* ==========================================================================
+   SS Brand Assets - Main Stylesheet
+   ========================================================================== */
+
+/* ==========================================================================
+   CSS Variables & Theme Configuration
+   ========================================================================== */
+
+:root {
+    /* Theme Colors */
+    --primary-color: #043388;
+    --background-color: #f8f8f8;
+    --text-color: #3C3C3B; /* Grey 90 for readability */
+    --heading-color: #022057; /* Prussian Blue */
+    --card-background: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.05);
+    --footer-background: #6DC6EC;
+    --footer-text: #022057; /* Navy text on light blue footer */
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Border Radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 6px;
+    --border-radius-lg: 8px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Z-index */
+    --z-feedback: 1000;
+    --z-navbar: 1030;
+}
+
+/* Dark Mode Theme */
+.dark-mode {
+    --primary-color: #6DC6EC;
+    --background-color: #0a1128; /* Sleek dark navy-black */
+    --text-color: #e2e8f0; /* White-grey text */
+    --heading-color: #ffffff;
+    --card-background: #1c2541; /* Navy dark card background */
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --footer-background: #0a1128;
+    --footer-text: #ffffff;
+    
+    /* Theme overrides for ss_theme.css variables */
+    --text-dark: #e2e8f0;
+    --background: #0a1128;
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   Base Styles & Typography
+   ========================================================================== */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px; /* Padds scroll anchors below sticky navbar */
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+p {
+    margin: 0 0 var(--spacing-xs);
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Segoe UI Variable', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--heading-color);
+    transition: color var(--transition-normal);
+}
+
+/* ==========================================================================
+   Layout Components
+   ========================================================================== */
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: var(--spacing-lg);
+}
+
+.footer {
+    text-align: center;
+    padding: var(--spacing-sm);
+    font-size: 0.9rem;
+    background: var(--footer-background);
+    color: var(--footer-text);
+    margin-top: var(--spacing-lg);
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+.footer p {
+    color: inherit !important;
+    margin: 0;
+}
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+/* Glassmorphism Navbar */
+.glass-navbar {
+    background-color: rgba(255, 255, 255, 0.85) !important; /* White glass for light mode */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-navbar.navbar-scrolled {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: var(--f-shadow-8);
+}
+
+body.dark-mode .glass-navbar {
+    background-color: rgba(10, 17, 40, 0.85) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .glass-navbar.navbar-scrolled {
+    background-color: rgba(10, 17, 40, 0.98) !important;
+}
+
+/* Nav Link Hover & Active Effects */
+.glass-navbar .nav-link {
+    position: relative;
+    padding: 0.5rem 0.8rem !important; /* Slightly tighter padding to prevent wrapping */
+    margin: 0 0.1rem;
+    color: var(--primary-color) !important;
+    transition: color 0.3s ease;
+    font-weight: 500;
+    white-space: nowrap; /* Prevent "Sub-brand" from wrapping */
+}
+
+body.dark-mode .glass-navbar .nav-link,
+body.dark-mode .glass-navbar .navbar-brand,
+body.dark-mode .glass-navbar .fa-bars,
+body.dark-mode .glass-navbar .fa-lightbulb {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.glass-navbar .nav-link:hover,
+.glass-navbar .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+body.dark-mode .glass-navbar .nav-link:hover,
+body.dark-mode .glass-navbar .nav-link.active,
+body.dark-mode .glass-navbar .fa-bars:hover,
+body.dark-mode .glass-navbar .fa-sun:hover {
+    color: #ffffff !important;
+}
+
+.glass-navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--accent); /* Celestial Blue */
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: var(--f-radius-sm);
+}
+
+.glass-navbar .nav-link:hover::after,
+.glass-navbar .nav-link.active::after {
+    width: 80%;
+}
+
+/* ==========================================================================
+   Navigation Styles
+   ========================================================================== */
+
+
+
+/* ==========================================================================
+   Card Components
+   ========================================================================== */
+
+/* Base Card Styles */
+.color-card,
+.font-card,
+.logo-card {
+    background: var(--card-background);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 2px 8px var(--card-shadow);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+}
+
+.color-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-sm);
+}
+
+.color-card:hover,
+.font-card:hover {
+    box-shadow: 0 8px 25px var(--card-shadow);
+}
+
+/* ==========================================================================
+   Color System Components
+   ========================================================================== */
+
+/* Color Grid Layout */
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--spacing-md);
+}
+
+/* Color Swatch */
+.color-swatch {
+    width: 100%;
+    height: 100px;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: var(--spacing-sm);
+    transition: transform var(--transition-fast);
+}
+
+.color-card:hover .color-swatch {
+    transform: scale(1.02);
+}
+
+.color-card p {
+    font-size: 14px;
+    margin: 0.25rem 0;
+}
+
+/* Color Strip Container */
+.color-strip-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-family: Arial, sans-serif;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+
+@media (max-width: 992px) {
+    .color-strip-container {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
+}
+
+/* Individual Color Strips */
+.color-strip {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 15px;
+    box-sizing: border-box;
+    min-height: 180px;
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+}
+
+.color-strip:hover {
+    transform: scale(1.02);
+}
+
+.color-strip h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.color-strip p {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+.color-strip.large-label {
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+/* ==========================================================================
+   Logo Interactive Components
+   ========================================================================== */
+
+.logo-card {
+    display: flex;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+}
+
+/* Color Selection List */
+.color-list {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-xs);
+    background: var(--background-color);
+    transition: background-color var(--transition-normal);
+}
+
+.color-list button {
+    border: none;
+    color: #fff;
+    font-size: 13px;
+    padding: 0.6rem;
+    margin-bottom: var(--spacing-xs);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    text-align: left;
+    transition: all var(--transition-fast);
+}
+
+.color-list button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+    box-shadow: var(--f-shadow-4);
+}
+
+/* Logo Display Area */
+.logo-display {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    background-color: #043388;
+    border-radius: var(--border-radius-md);
+    margin: 10px 0 15px;
+    transition: background-color var(--transition-normal);
+}
+
+.logo-display img {
+    max-width: 80%;
+    height: auto;
+    transition: transform var(--transition-fast);
+}
+
+.logo-display:hover img {
+    transform: scale(1.05);
+}
+
+/* Dark Mode Logo Components */
+body.dark-mode .color-list {
+    background: var(--card-background);
+}
+
+body.dark-mode .color-list button {
+    color: var(--text-color);
+}
+
+/* ==========================================================================
+   Typography Components
+   ========================================================================== */
+
+/* Font Card Styles */
+.font-card {
+    height: 100%;
+    padding: var(--spacing-md);
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    border: var(--f-stroke-thin) solid var(--color-neutral-stroke-1);
+    background: var(--card-background);
+    border-radius: var(--border-radius-lg);
+    transition: all var(--transition-normal);
+}
+
+.font-card:hover {
+    box-shadow: var(--f-shadow-16);
+    border-color: transparent;
+}
+
+.font-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.font-preview {
+    font-size: 1rem;
+    line-height: 1.4;
+    flex-grow: 1;
+    margin-bottom: var(--spacing-xs);
+    opacity: 0.9;
+}
+
+.font-details {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+/* Font Family Classes */
+.poppins { 
+    font-family: 'Poppins', sans-serif; 
+}
+
+.helvetica { 
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
+}
+
+.calibri { 
+    font-family: 'Calibri', 'Segoe UI', sans-serif; 
+}
+
+.montserrat { 
+    font-family: 'Montserrat', sans-serif; 
+}
+
+/* ==========================================================================
+   Dark Mode Text Overrides
+   ========================================================================== */
+
+body.dark-mode {
+    color: var(--text-color);
+}
+
+body.dark-mode :is(h1, h2, h3, h4, h5, h6, .navbar-brand) {
+    color: var(--heading-color) !important;
+}
+
+body.dark-mode :is(p, li) {
+    color: var(--text-color);
+}
+
+body.dark-mode .navbar-custom .nav-link {
+    color: #ffffff !important;
+}
+
+body.dark-mode .navbar-custom .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Ensure list-group-item works in light and dark mode */
+.list-group-item {
+    background-color: var(--card-background) !important;
+    color: var(--text-color) !important;
+    border-color: var(--border, rgba(0, 0, 0, 0.125)) !important;
+    transition: all var(--transition-normal);
+}
+
+.list-group-item:hover {
+    background-color: var(--background-color) !important;
+    color: var(--primary-color) !important;
+}
+
+/* ==========================================================================
+   Interactive Feedback Components
+   ========================================================================== */
+
+/* Copy Feedback Animation */
+@keyframes fadeInOut {
+    0%, 100% { 
+        opacity: 0; 
+        bottom: 0; 
+    }
+    20%, 80% { 
+        opacity: 1; 
+        bottom: 20px; 
+    }
+}
+
+.hierarchy-item {
+    position: relative;
+    padding-top: 20px;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hierarchy-item:hover {
+    transform: scale(1.1);
+}
+
+.copy-feedback {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: var(--border-radius-sm);
+    z-index: var(--z-feedback);
+    animation: fadeInOut 2s ease-in-out;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: var(--f-shadow-8);
+}
+
+/* ==========================================================================
+   Scroll & Hover Animations
+   ========================================================================== */
+
+/* Base state for scroll animation */
+body.js-ready .sub-brand-card:not(.is-visible), 
+body.js-ready .logo-card:not(.is-visible), 
+body.js-ready .color-card:not(.is-visible), 
+body.js-ready .font-card:not(.is-visible) {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Scroll Animation Transitions */
+.sub-brand-card, 
+.logo-card, 
+.color-card, 
+.font-card {
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+/* Visible state */
+.sub-brand-card.is-visible, 
+.logo-card.is-visible, 
+.color-card.is-visible, 
+.font-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover state */
+.sub-brand-card.is-visible:hover, 
+.logo-card.is-visible:hover, 
+.font-card.is-visible:hover {
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1) !important;
+}
+
+body.dark-mode .sub-brand-card.is-visible:hover, 
+body.dark-mode .logo-card.is-visible:hover, 
+body.dark-mode .font-card.is-visible:hover {
+    box-shadow: 0 12px 24px rgba(0,0,0,0.4) !important;
+}
+
+/* Remove excessive hover from color card */
+.color-card.is-visible:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .container {
+        padding: var(--spacing-sm);
+    }
+    
+    .color-strip-container {
+        flex-direction: column;
+    }
+    
+    .color-strip {
+        min-height: 100px;
+    }
+    
+    .color-strip.large-label {
+        font-size: 32px;
+    }
+    
+    .logo-card {
+        flex-direction: column;
+    }
+    
+    .color-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .color-list button {
+        margin: 0.25rem;
+        min-width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .color-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .font-card {
+        padding: var(--spacing-sm);
+    }
+    
+    .copy-feedback {
+        left: 10px;
+        right: 10px;
+        transform: none;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Inline Style Replacements
+   ========================================================================== */
+
+/* Logo height */
+.logo-height {
+    height: 50px;
+}
+
+/* Logo card padding */
+.logo-card-padding {
+    padding: 15px;
+}
+
+/* Logo card dark background */
+.logo-card-dark-bg {
+    padding: 15px;
+    background-color: #022057;
+}
+
+/* Interactive logo button colors */
+.logo-btn-black {
+    background-color: #000000;
+}
+
+.logo-btn-prussian-blue {
+    background-color: #022057;
+}
+
+.logo-btn-blue {
+    background-color: #043388;
+}
+
+.logo-btn-azure {
+    background-color: #21A1F7;
+}
+
+.logo-btn-malibu {
+    background-color: #6DC6EC;
+}
+
+.logo-btn-banana {
+    background-color: #FCE53D;
+    color: #21A1F7 !important;
+}
+
+.logo-btn-arylide {
+    background-color: #E5D15C;
+    color: #21A1F7 !important;
+}
+
+.logo-btn-fawn {
+    background-color: #CCAC8D;
+}
+
+.logo-btn-lion {
+    background-color: #BD9A73;
+}
+
+.logo-btn-mono {
+    background-color: #CCCCCC;
+    color: #ffffff !important;
+}
+
+.logo-btn-white {
+    background-color: #ffffff;
+    color: #022057 !important;
+}
+
+/* Color swatch backgrounds */
+.color-swatch-prussian-blue {
+    background-color: #022057;
+}
+
+.color-swatch-blue {
+    background-color: #043388;
+}
+
+.color-swatch-azure {
+    background-color: #21A1F7;
+}
+
+.color-swatch-malibu {
+    background-color: #6DC6EC;
+}
+
+.color-swatch-lion {
+    background-color: #BD9A73;
+}
+
+.color-swatch-fawn {
+    background-color: #CCAC8D;
+}
+
+.color-swatch-arylide-yellow {
+    background-color: #E5D15C;
+}
+
+.color-swatch-banana-yellow {
+    background-color: #FCE53D;
+}
+
+/* Color strip backgrounds */
+.color-strip-black {
+    background-color: #000000;
+}
+
+.color-strip-grey-20 {
+    background-color: #CCCCCC;
+    color: #000;
+}
+
+.color-strip-grey-40 {
+    background-color: #999999;
+}
+
+.color-strip-grey-60 {
+    background-color: #666666;
+}
+
+.color-strip-grey-80 {
+    background-color: #575756;
+}
+
+.color-strip-grey-90 {
+    background-color: #3C3C3B;
+}
+
+.color-strip-white {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Icon heights */
+.icon-height-100 {
+    height: 100px;
+}
+
+.icon-height-250 {
+    height: 250px;
+}
+
+/* Button margin */
+.btn-margin-top {
+    margin-top: 15px;
+}
+
+/* Additional icon height for error pages */
+.icon-height-250 {
+    height: 250px;
+}
+
+@media print {
+    .navbar,
+    .copy-feedback,
+    .color-list button {
+        display: none !important;
+    }
+    
+    .color-card,
+    .font-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
+
+/* ==========================================================================
+   Sub-brand Section Components
+   ========================================================================== */
+
+.sub-brand-architecture-card {
+    background: var(--card-background) !important;
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--border, rgba(0,0,0,0.08)) !important;
+    transition: all var(--transition-normal);
+}
+
+.sub-brand-card {
+    background: var(--card-background) !important;
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--border, rgba(0,0,0,0.08)) !important;
+    transition: all var(--transition-normal);
+}
+
+.sub-brand-card:hover {
+    box-shadow: 0 10px 25px var(--card-shadow) !important;
+}
+
+.sub-brand-card .card-title {
+    color: var(--heading-color) !important;
+}
+
+.sub-brand-card .card-text {
+    color: var(--text-color) !important;
+    opacity: 0.85;
+}
+
+body.dark-mode .text-muted {
+    color: var(--text-color) !important;
+    opacity: 0.7;
+}
+
+.sub-brand-logo-display {
+    transition: background-color var(--transition-normal);
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .sub-brand-logo-display {
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Make sure the badges inside sub-brand cards are readable in both themes */
+.sub-brand-card .badge {
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* ==========================================================================
+   Scroll to Top Button
+   ========================================================================== */
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
+    z-index: var(--z-feedback);
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    background-color: var(--primary-color);
+    filter: brightness(1.2);
+    transform: translateY(-3px);
+}
+
+body.dark-mode .scroll-to-top {
+    background-color: var(--primary-color);
+    color: #0a1128;
+}
+
+
+/* ==========================================================================
+   Navbar Version Badge
+   ========================================================================== */
+
+.navbar-version-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: var(--f-radius-2xl);
+    background-color: var(--accent);
+    color: #fff;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    vertical-align: middle;
+    line-height: 1.4;
+    margin-left: 4px;
+}
+
+body.dark-mode .navbar-version-badge {
+    background-color: rgba(109, 198, 236, 0.15);
+    color: var(--baby-blue);
+    border: 1px solid rgba(109, 198, 236, 0.3);
+}
+
+/* ==========================================================================
+   Hero Section — Version Badge & CTAs
+   ========================================================================== */
+
+.hero-version-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: var(--f-radius-3xl);
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    backdrop-filter: blur(8px);
+    letter-spacing: 0.02em;
+}
+
+.hero-ctas {
+    gap: 1rem;
+}
+
+.hero-cta-primary {
+    background-color: #fff !important;
+    color: var(--royal-blue-traditional) !important;
+    font-weight: 600;
+    border-radius: var(--f-radius-md);
+    padding: 0.75rem 2rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 2px solid transparent !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.hero-cta-primary:hover {
+    background-color: var(--royal-blue-traditional) !important;
+    color: #fff !important;
+    border-color: #fff !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.hero-cta-secondary {
+    border: 2px solid rgba(255, 255, 255, 0.7) !important;
+    color: #fff !important;
+    font-weight: 600;
+    border-radius: var(--f-radius-md);
+    padding: 0.75rem 2rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(4px);
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.hero-cta-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-color: #fff !important;
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   Section Intro & Tagline Typography
+   ========================================================================== */
+
+.section-intro {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--text-color);
+    max-width: 720px;
+}
+
+.intro-tagline {
+    font-style: italic;
+    opacity: 0.7;
+    font-size: var(--text-base);
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    margin-top: 1rem;
+}
+
+body.dark-mode .intro-tagline {
+    opacity: 0.6;
+    border-left-color: var(--baby-blue);
+}
+
+/* ==========================================================================
+   Vision & Mission Grid
+   ========================================================================== */
+
+.vision-mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .vision-mission-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.vm-card {
+    background: var(--card-background);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    box-shadow: 0 2px 16px var(--card-shadow);
+    border: 1px solid var(--border, rgba(0, 0, 0, 0.06));
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.vm-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+}
+
+.vision-card::before {
+    background: var(--gradient-blue);
+}
+
+.mission-card::before {
+    background: var(--gradient-yellow);
+}
+
+.vm-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px var(--card-shadow);
+}
+
+.vm-icon {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: var(--f-radius-lg);
+}
+
+.vision-card .vm-icon {
+    color: var(--egyptian-blue);
+    background: rgba(4, 51, 136, 0.08);
+}
+
+.mission-card .vm-icon {
+    color: var(--lion);
+    background: rgba(189, 154, 115, 0.12);
+}
+
+body.dark-mode .vision-card .vm-icon {
+    color: var(--baby-blue);
+    background: rgba(109, 198, 236, 0.1);
+}
+
+body.dark-mode .mission-card .vm-icon {
+    color: var(--tan);
+    background: rgba(204, 172, 141, 0.1);
+}
+
+.vm-title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--heading-color);
+    margin-bottom: 0.75rem;
+}
+
+.vm-text {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--text-color);
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   Docs Dropdown — SS Themed
+   ========================================================================== */
+
+.ss-dropdown {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--f-shadow-16);
+    padding: 0.5rem;
+    min-width: 210px;
+}
+
+.ss-dropdown .dropdown-item {
+    border-radius: var(--border-radius-md);
+    color: var(--text-color);
+    transition: all var(--transition-fast);
+    padding: 0.5rem 0.85rem;
+    font-size: var(--text-sm);
+}
+
+.ss-dropdown .dropdown-item:hover,
+.ss-dropdown .dropdown-item:focus {
+    background-color: rgba(4, 51, 136, 0.07);
+    color: var(--primary-color);
+}
+
+.ss-dropdown .dropdown-divider {
+    margin: 0.25rem 0.5rem;
+}
+
+body.dark-mode .ss-dropdown {
+    background: var(--card-background);
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: var(--f-shadow-28);
+}
+
+body.dark-mode .ss-dropdown .dropdown-item {
+    color: var(--text-color);
+}
+
+body.dark-mode .ss-dropdown .dropdown-item:hover,
+body.dark-mode .ss-dropdown .dropdown-item:focus {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: var(--baby-blue);
+}
+
+body.dark-mode .ss-dropdown .dropdown-divider {
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ==========================================================================
+   Footer — 3-Column Grid
+   ========================================================================== */
+
+.footer {
+    padding: 0 !important;
+    text-align: left;
+}
+
+.footer-container {
+    padding-top: 3rem;
+    padding-bottom: 0;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(2, 32, 87, 0.2);
+}
+
+body.dark-mode .footer-grid {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .footer-brand-col {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-tagline {
+        border-left: 3px solid var(--accent);
+        padding-left: 1rem;
+        margin-top: 1rem;
+    }
+}
+
+body.dark-mode .intro-tagline {
+    opacity: 0.6;
+    border-left-color: var(--baby-blue);
+}
+
+/* ==========================================================================
+   Vision & Mission Grid
+   ========================================================================== */
+
+.vision-mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .vision-mission-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.vm-card {
+    background: var(--card-background);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    box-shadow: 0 2px 16px var(--card-shadow);
+    border: 1px solid var(--border, rgba(0, 0, 0, 0.06));
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.vm-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+}
+
+.vision-card::before {
+    background: var(--gradient-blue);
+}
+
+.mission-card::before {
+    background: var(--gradient-yellow);
+}
+
+.vm-card:hover {
+    box-shadow: var(--f-shadow-brand-sm);
+}
+
+.vm-icon {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: var(--f-radius-lg);
+}
+
+.vision-card .vm-icon {
+    color: var(--egyptian-blue);
+    background: rgba(4, 51, 136, 0.08);
+}
+
+.mission-card .vm-icon {
+    color: var(--lion);
+    background: rgba(189, 154, 115, 0.12);
+}
+
+body.dark-mode .vision-card .vm-icon {
+    color: var(--baby-blue);
+    background: rgba(109, 198, 236, 0.1);
+}
+
+body.dark-mode .mission-card .vm-icon {
+    color: var(--tan);
+    background: rgba(204, 172, 141, 0.1);
+}
+
+.vm-title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--heading-color);
+    margin-bottom: 0.75rem;
+}
+
+.vm-text {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--text-color);
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   Docs Dropdown — SS Themed
+   ========================================================================== */
+
+.ss-dropdown {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--f-shadow-16);
+    padding: 0.5rem;
+    min-width: 210px;
+}
+
+.ss-dropdown .dropdown-item {
+    border-radius: var(--border-radius-md);
+    color: var(--text-color);
+    transition: all var(--transition-fast);
+    padding: 0.5rem 0.85rem;
+    font-size: var(--text-sm);
+}
+
+.ss-dropdown .dropdown-item:hover,
+.ss-dropdown .dropdown-item:focus {
+    background-color: rgba(4, 51, 136, 0.07);
+    color: var(--primary-color);
+}
+
+.ss-dropdown .dropdown-divider {
+    margin: 0.25rem 0.5rem;
+}
+
+body.dark-mode .ss-dropdown {
+    background: var(--card-background);
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: var(--f-shadow-28);
+}
+
+body.dark-mode .ss-dropdown .dropdown-item {
+    color: var(--text-color);
+}
+
+body.dark-mode .ss-dropdown .dropdown-item:hover,
+body.dark-mode .ss-dropdown .dropdown-item:focus {
+    background-color: rgba(255, 255, 255, 0.06);
+    color: var(--baby-blue);
+}
+
+body.dark-mode .ss-dropdown .dropdown-divider {
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ==========================================================================
+   Footer — 3-Column Grid
+   ========================================================================== */
+
+.footer {
+    padding: 0 !important;
+    text-align: left;
+}
+
+.footer-container {
+    padding-top: 3rem;
+    padding-bottom: 0;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(2, 32, 87, 0.2);
+}
+
+body.dark-mode .footer-grid {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .footer-brand-col {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.footer-logo {
+    height: 72px;
+    width: auto;
+    margin-bottom: 1.25rem;
+    opacity: 0.9;
+}
+
+.footer-tagline {
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+    color: var(--footer-text) !important;
+    opacity: 0.72;
+    max-width: 230px;
+    margin: 0;
+}
+
+.footer-heading {
+    font-size: 0.7rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--footer-text) !important;
+    margin-bottom: 0.85rem;
+    opacity: 0.55;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.5rem;
+}
+
+.footer-links li {
+    margin-bottom: 0.45rem;
+}
+
+.footer-links a {
+    font-size: var(--text-sm);
+    color: var(--footer-text);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast), padding-left var(--transition-fast);
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    padding-left: 4px;
+}
+
+.footer-contact {
+    font-size: var(--text-sm);
+    color: var(--footer-text) !important;
+    margin-bottom: 0.3rem;
+    opacity: 0.85;
+}
+
+.footer-contact a {
+    color: var(--footer-text);
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.footer-note {
+    font-size: var(--text-xs);
+    color: var(--footer-text) !important;
+    opacity: 0.48;
+    margin: 0;
+}
+
+.footer-bottom {
+    padding: 1.2rem 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: var(--text-xs);
+    color: var(--footer-text) !important;
+    margin: 0;
+    opacity: 0.6;
+    letter-spacing: 0.02em;
+}
+
+/* Dark mode footer logo visibility (handled by JS src swap) */
+body.dark-mode .footer-logo {
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   Fluent 2 Upgrade Layer — appended to style.css
+   Bridges old variables to Fluent 2 tokens. Load after fluent.css + ss_theme.css.
+   All existing class names are preserved for backward compat with sub-pages.
+   ========================================================================== */
+
+/* ---- Re-alias legacy root variables to Fluent tokens ---- */
+:root {
+    --primary-color:      var(--color-brand-primary);
+    --background-color:   var(--color-neutral-bg-1);
+    --text-color:         var(--color-neutral-fg-2);
+    --heading-color:      var(--color-neutral-fg-1);
+    --card-background:    var(--color-neutral-bg-2);
+    --card-shadow:        rgba(4,51,136,0.10);
+    /* NOTE: --footer-background and --footer-text are intentionally NOT
+       re-aliased here. They are correctly defined in the first :root block
+       (#6DC6EC light-blue for light mode, #0a1128 for dark mode). Overriding
+       them here with var(--color-brand-dark) would break the footer logo
+       selection (LogoSelector picks _dark.svg on the dark navy, but the
+       footer is supposed to be the light sky-blue #6DC6EC). */
+    --border:             var(--color-neutral-stroke-1);
+    --accent:             var(--color-brand-light);
+    --border-radius-sm:   var(--f-radius-sm);
+    --border-radius-md:   var(--f-radius-md);
+    --border-radius-lg:   var(--f-radius-xl);
+    --transition-fast:    var(--f-duration-fast) var(--f-curve-easy-ease);
+    --transition-normal:  var(--f-duration-normal) var(--f-curve-easy-ease);
+    --transition-slow:    var(--f-duration-slow)  var(--f-curve-easy-ease);
+}
+
+/* ---- Fluent Glassmorphic Navbar upgrade ---- */
+.glass-navbar {
+    background-color: var(--color-layer-acrylic) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--color-neutral-stroke-1);
+    box-shadow: none;
+    transition: all var(--f-duration-slow) var(--f-curve-easy-ease);
+}
+.glass-navbar.navbar-scrolled {
+    background-color: var(--color-layer-acrylic) !important;
+    box-shadow: var(--f-shadow-8);
+}
+body.dark-mode .glass-navbar {
+    background-color: var(--color-layer-acrylic) !important;
+    border-bottom-color: var(--color-neutral-stroke-1);
+}
+body.dark-mode .glass-navbar.navbar-scrolled {
+    background-color: var(--color-layer-acrylic) !important;
+    box-shadow: var(--f-shadow-16);
+}
+.glass-navbar .nav-link {
+    color: var(--color-neutral-fg-1) !important;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: var(--f-radius-md);
+    transition: color var(--f-duration-fast) var(--f-curve-easy-ease),
+                background var(--f-duration-fast) var(--f-curve-easy-ease);
+}
+.glass-navbar .nav-link:hover,
+.glass-navbar .nav-link.active {
+    color: var(--color-brand-primary) !important;
+    background: var(--color-brand-subtle);
+}
+.glass-navbar .nav-link::after {
+    background-color: var(--color-brand-light);
+    height: 2px;
+    border-radius: var(--f-radius-full);
+}
+body.dark-mode .glass-navbar .nav-link {
+    color: var(--color-neutral-fg-1) !important;
+}
+body.dark-mode .glass-navbar .nav-link:hover,
+body.dark-mode .glass-navbar .nav-link.active {
+    color: var(--color-brand-primary) !important;
+    background: var(--color-brand-subtle);
+}
+
+/* ---- Theme toggle button — glass-navbar pages ---- */
+/* .btn#themeToggle has no color from Bootstrap — define it explicitly */
+.glass-navbar #themeToggle,
+.navbar-custom #themeToggle {
+    color: var(--color-neutral-fg-2);
+    background: transparent;
+    border: 1px solid var(--color-neutral-stroke-1);
+    border-radius: var(--f-radius-md);
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color var(--f-duration-fast) var(--f-curve-easy-ease),
+                background var(--f-duration-fast) var(--f-curve-easy-ease),
+                border-color var(--f-duration-fast) var(--f-curve-easy-ease);
+    flex-shrink: 0;
+}
+.glass-navbar #themeToggle:hover,
+.navbar-custom #themeToggle:hover {
+    color: var(--color-brand-primary);
+    background: var(--color-brand-subtle);
+    border-color: var(--color-brand-light);
+}
+/* Dark mode: keep icon visible on dark navbar */
+body.dark-mode .glass-navbar #themeToggle,
+body.dark-mode .navbar-custom #themeToggle {
+    color: var(--color-neutral-fg-2);
+    border-color: var(--color-neutral-stroke-1);
+}
+
+/* ---- Card components — Fluent elevation ---- */
+.color-card, .font-card, .logo-card {
+    background: var(--color-neutral-bg-2);
+    border: 1px solid var(--color-neutral-stroke-1);
+    border-radius: var(--f-radius-xl);
+    box-shadow: var(--f-shadow-2);
+    transition: transform var(--f-duration-gentle) var(--f-curve-spring),
+                box-shadow var(--f-duration-gentle) var(--f-curve-spring),
+                border-color var(--f-duration-fast) var(--f-curve-easy-ease);
+}
+.color-card:hover, .font-card:hover {
+    box-shadow: var(--f-shadow-brand-md);
+    border-color: var(--color-brand-subtle-hover);
+}
+.font-card { border: 1px solid var(--color-neutral-stroke-1); color: var(--color-neutral-fg-1); }
+
+/* Sub-brand cards */
+.sub-brand-card, .sub-brand-architecture-card {
+    background: var(--color-neutral-bg-2) !important;
+    border: 1px solid var(--color-neutral-stroke-1) !important;
+    border-radius: var(--f-radius-xl);
+    box-shadow: var(--f-shadow-2);
+    transition: transform var(--f-duration-gentle) var(--f-curve-spring),
+                box-shadow var(--f-duration-gentle) var(--f-curve-spring),
+                border-color var(--f-duration-fast) var(--f-curve-easy-ease);
+}
+.sub-brand-card:hover {
+    box-shadow: var(--f-shadow-brand-sm) !important;
+    border-color: var(--color-brand-subtle-hover) !important;
+}
+.sub-brand-card .card-title { color: var(--color-neutral-fg-1) !important; }
+.sub-brand-card .card-text  { color: var(--color-neutral-fg-2) !important; opacity: 1; }
+
+/* Vision / Mission cards */
+.vm-card {
+    background: var(--color-neutral-bg-2);
+    border-radius: var(--f-radius-xl);
+    border: 1px solid var(--color-neutral-stroke-1);
+    box-shadow: var(--f-shadow-2);
+    transition: transform var(--f-duration-gentle) var(--f-curve-spring),
+                box-shadow var(--f-duration-gentle) var(--f-curve-spring);
+}
+.vm-card:hover {
+    box-shadow: var(--f-shadow-brand-sm);
+}
+.vm-title { color: var(--color-neutral-fg-1); }
+.vm-text  { color: var(--color-neutral-fg-2); opacity: 1; }
+
+/* Scroll animations — use Fluent curves */
+.sub-brand-card, .logo-card, .color-card, .font-card {
+    transition:
+        opacity   var(--f-duration-slow) var(--f-curve-decelerate),
+        transform var(--f-duration-slow) var(--f-curve-decelerate),
+        box-shadow var(--f-duration-gentle) var(--f-curve-spring),
+        border-color var(--f-duration-fast) var(--f-curve-easy-ease);
+}
+
+/* ---- Dropdown ---- */
+.ss-dropdown {
+    background: var(--color-neutral-bg-2);
+    border: 1px solid var(--color-neutral-stroke-1);
+    border-radius: var(--f-radius-lg);
+    box-shadow: var(--f-shadow-16);
+    padding: var(--f-space-2);
+}
+.ss-dropdown .dropdown-item {
+    border-radius: var(--f-radius-md);
+    color: var(--color-neutral-fg-1);
+    font-size: 0.875rem;
+    transition: background var(--f-duration-fast) var(--f-curve-easy-ease),
+                color var(--f-duration-fast) var(--f-curve-easy-ease);
+}
+.ss-dropdown .dropdown-item:hover,
+.ss-dropdown .dropdown-item:focus {
+    background: var(--color-brand-subtle);
+    color: var(--color-brand-primary);
+}
+body.dark-mode .ss-dropdown {
+    background: var(--color-neutral-bg-3);
+    border-color: var(--color-neutral-stroke-1);
+    box-shadow: var(--f-shadow-28);
+}
+body.dark-mode .ss-dropdown .dropdown-item { color: var(--color-neutral-fg-1); }
+body.dark-mode .ss-dropdown .dropdown-item:hover,
+body.dark-mode .ss-dropdown .dropdown-item:focus {
+    background: var(--color-brand-subtle);
+    color: var(--color-brand-primary);
+}
+body.dark-mode .ss-dropdown .dropdown-divider { border-color: var(--color-neutral-stroke-1); }
+
+/* ---- Scroll-to-top (Fluent upgrade) ---- */
+.scroll-to-top {
+    background: var(--color-brand-primary);
+    border-radius: var(--f-radius-full);
+    box-shadow: var(--f-shadow-8);
+    transition: all var(--f-duration-gentle) var(--f-curve-spring);
+}
+.scroll-to-top.show,
+.scroll-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.scroll-to-top:hover {
+    background: var(--color-brand-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--f-shadow-16);
+    filter: none;
+}
+
+/* ---- Copy feedback toast ---- */
+.copy-feedback {
+    background: var(--color-neutral-fg-1);
+    color: var(--color-neutral-bg-2);
+    border-radius: var(--f-radius-lg);
+    box-shadow: var(--f-shadow-16);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* ---- Navbar version badge ---- */
+.navbar-version-badge {
+    background: var(--color-brand-subtle);
+    color: var(--color-brand-primary);
+    border-radius: var(--f-radius-full);
+}
+body.dark-mode .navbar-version-badge {
+    background: var(--color-brand-subtle);
+    color: var(--color-brand-primary);
+    border: none;
+}
+
+/* ---- list-group-item ---- */
+.list-group-item {
+    background: var(--color-neutral-bg-2) !important;
+    color: var(--color-neutral-fg-1) !important;
+    border-color: var(--color-neutral-stroke-1) !important;
+    transition: background var(--f-duration-fast) var(--f-curve-easy-ease),
+                color var(--f-duration-fast) var(--f-curve-easy-ease);
+}
+.list-group-item:hover {
+    background: var(--color-neutral-bg-3) !important;
+    color: var(--color-brand-primary) !important;
+}
+
+/* ---- text-muted override ---- */
+.text-muted, body.dark-mode .text-muted {
+    color: var(--color-neutral-fg-3) !important;
+    opacity: 1;
+}
+
+/* ---- Section intro / tagline ---- */
+.section-intro { color: var(--color-neutral-fg-2); }
+.intro-tagline {
+    border-left-color: var(--color-brand-light);
+    color: var(--color-neutral-fg-2);
+    opacity: 1;
+}
+body.dark-mode .intro-tagline { border-left-color: var(--color-brand-primary); }
+
+/* ---- Footer (upgraded to full dark brand panel) ---- */
+.footer {
+    background: var(--gradient-brand-vertical);
+    color: rgba(255,255,255,.88);
+}
+.footer-grid {
+    border-bottom-color: rgba(255,255,255,0.12);
+}
+body.dark-mode .footer-grid { border-bottom-color: rgba(255,255,255,0.08); }
+.footer-tagline, .footer-heading, .footer-links a,
+.footer-contact, .footer-contact a, .footer-note, .footer-bottom p {
+    color: rgba(255,255,255,0.88) !important;
+}
+.footer-heading { opacity: 0.55; }
+.footer-tagline { opacity: 0.72; }
+.footer-links a { opacity: 0.8; }
+.footer-links a:hover { opacity: 1; color: #fff !important; }
+.footer-contact a:hover { color: var(--ss-azure) !important; }
+body.dark-mode .footer-logo { opacity: 0.9; }
+
+/* ============================================================================
+   Mobile Responsive — Fluent 2 Sub-page Polish
+   Applies to all Bootstrap-based pages (brand-system, doc, products, etc.)
+   ============================================================================ */
+
+/* Navbar brand: clip long name on small screens */
+@media (max-width: 576px) {
+  .navbar-brand { font-size: 0.85rem !important; }
+  .navbar-version-badge { display: none; }
+  .navbar-custom .container-fluid { padding-left: var(--f-space-3); padding-right: var(--f-space-3); }
+}
+
+/* Reduce body padding on very small screens */
+@media (max-width: 480px) {
+  .container, .container-fluid { padding-left: var(--f-space-4) !important; padding-right: var(--f-space-4) !important; }
+}
+
+/* Brand system sidebar: better mobile scroll */
+@media (max-width: 900px) {
+  .brand-main { padding: var(--f-space-5) var(--f-space-4) !important; }
+  .brand-sidebar-nav a { font-size: 0.8rem; padding: var(--f-space-2) var(--f-space-3); }
+}
+
+/* Cards: full-width on small screens */
+@media (max-width: 576px) {
+  .card { border-radius: var(--f-radius-lg) !important; }
+  .row.mt-12 { margin-top: var(--f-space-6) !important; }
+}
+
+/* Typography: base size bump for readability */
+body {
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Section headings: tighter on mobile */
+@media (max-width: 576px) {
+  .text-3xl  { font-size: 1.5rem !important; }
+  .section-intro { font-size: 0.95rem !important; }
+}
+
+/* Footer on mobile: center align */
+@media (max-width: 576px) {
+  footer .row { text-align: center; }
+  footer .col-md-4 { margin-bottom: var(--f-space-4); }
+}
+
+/* ================================================================
+   ACCESSIBILITY UTILITIES — WCAG 2.1 AA
+   ================================================================ */
+
+/* Screen-reader only (visually hidden but accessible) */
+.f-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Skip to main content link */
+.f-skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: var(--f-color-brand-primary, #022461);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 0 0 var(--f-radius-md) var(--f-radius-md);
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.f-skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--f-color-accent, #21a1f7);
+  outline-offset: 2px;
+}
+
+/* Global focus-visible ring — WCAG 2.4.11 */
+:focus-visible {
+  outline: 3px solid var(--f-color-accent, #21a1f7);
+  outline-offset: 3px;
+  border-radius: var(--f-radius-sm);
+}
+
+/* Override outline:none in favour of focus-visible only */
+:focus:not(:focus-visible) {
+  outline: none;
+}
