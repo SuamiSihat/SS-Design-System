@@ -148,7 +148,7 @@
 <!-- ================================================================
      Hero Section
      ================================================================ -->
-<section class="f-hero" role="region" aria-label="Hub introduction">
+<section class="f-hero" aria-label="Hub introduction">
   <!-- Interactive Wave & Particle Canvas Background -->
   <canvas bind:this={canvas} id="heroWaveCanvas" class="hero-wave-canvas"></canvas>
 
