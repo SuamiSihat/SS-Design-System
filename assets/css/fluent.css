@@ -26,6 +26,10 @@
   --ss-menss-black:     #030404;   /* MENSS Foundation Carbon Obsidian */
   --ss-menss-cyan:      #0E92CC;   /* MENSS Precision Cyan Blue */
   --ss-menss-white:     #FEFEFE;   /* MENSS Light Neutral Pure Contrast */
+  --ss-drmitring-lime:  #93C642;   /* Dr Mit Ring® Medical Light Lime */
+  --ss-drmitring-green: #6AB845;   /* Dr Mit Ring® Primary Brand Green */
+  --ss-drmitring-deep:  #23963B;   /* Dr Mit Ring® Deep Medical Emerald */
+  --ss-drmitring-canvas:#FBFBFB;   /* Dr Mit Ring® Pure Light Canvas */
 
   /* -- Fluent Neutral Ramp ----------------------------------------------- */
   --f-neutral-0:    #FFFFFF;

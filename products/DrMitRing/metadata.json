@@ -3,7 +3,14 @@
   "tagline": "Clinical Mechanical Erection Support Device",
   "logo": "logo_drmitring.svg",
   "banner": "banner.svg",
-  "heroGradient": "linear-gradient(135deg, #022057 0%, #00B8D9 100%)",
+  "heroGradient": "linear-gradient(135deg, #1C1C1C 0%, #23963B 50%, #6AB845 100%)",
+  "colors": {
+    "primary": "#6AB845",
+    "lightLime": "#93C642",
+    "deepGreen": "#23963B",
+    "neutralBlack": "#1C1C1C",
+    "canvasWhite": "#FBFBFB"
+  },
   "ownership": {
     "tags": ["SS Ecom", "SS Clinic", "Dr. Ismail Tambi Lineage"],
     "text": "Dr Mit Ring® is a specialized clinical mechanical device invented by Dr. Ismail Tambi and distributed globally across SuamiSihat channels."
