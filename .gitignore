@@ -26,8 +26,9 @@ deploy.config.ps1
 *.bak
 
 # Agents & AI Assist Metadata
-.agents/
 .gemini/
+.agents/*
+!.agents/AGENTS.md
 
 # Logs and Temporary Files
 *.log
