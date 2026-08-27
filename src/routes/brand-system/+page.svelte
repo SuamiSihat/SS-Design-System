@@ -3,6 +3,7 @@
   import CodeBox from '$lib/components/CodeBox.svelte';
 
   let activeTab = $state('colors');
+  let exportPlatform = $state('tailwind');
 </script>
 
 <svelte:head>
@@ -60,7 +61,7 @@
         class:btn-outline-secondary={activeTab !== 'export'}
         onclick={() => (activeTab = 'export')}
       >
-        Token Exports (JSON/CSS)
+        Multi-Platform Exports
       </button>
     </div>
   </div>
@@ -200,27 +201,159 @@
     </section>
   {/if}
 
-  <!-- TAB: EXPORTS -->
+  <!-- TAB: MULTI-PLATFORM EXPORTS -->
   {#if activeTab === 'export'}
     <section class="mb-5">
       <div class="card p-4 border rounded-4 shadow-sm mb-4" style="background: var(--color-layer-card, #FFFFFF);">
-        <h4 class="fw-bold mb-2">Raw W3C Tokens JSON</h4>
-        <p class="text-secondary mb-3" style="font-size: 0.85rem;">
-          Directly consumable by Style Dictionary, Expo / React Native, Flutter, and WPF build tools.
-        </p>
-        <a href="/assets/tokens/tokens.json" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill px-3 align-self-start mb-3">
-          <iconify-icon icon="lucide:download" width="14"></iconify-icon> Open /assets/tokens/tokens.json
-        </a>
-        <CodeBox 
-          title="Sample tokens.json snippet"
-          language="json"
-          code={`{
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+          <div>
+            <h4 class="fw-bold mb-1">Multi-Platform Token Code Snippets</h4>
+            <p class="text-secondary mb-0" style="font-size: 0.85rem;">
+              Export 60:30:10 color tokens directly into your project's native syntax.
+            </p>
+          </div>
+          <div class="d-flex gap-1">
+            <button 
+              type="button" 
+              class="btn btn-sm"
+              class:btn-primary={exportPlatform === 'tailwind'}
+              class:btn-outline-secondary={exportPlatform !== 'tailwind'}
+              onclick={() => (exportPlatform = 'tailwind')}
+            >
+              Tailwind CSS
+            </button>
+            <button 
+              type="button" 
+              class="btn btn-sm"
+              class:btn-primary={exportPlatform === 'flutter'}
+              class:btn-outline-secondary={exportPlatform !== 'flutter'}
+              onclick={() => (exportPlatform = 'flutter')}
+            >
+              Flutter
+            </button>
+            <button 
+              type="button" 
+              class="btn btn-sm"
+              class:btn-primary={exportPlatform === 'wpf'}
+              class:btn-outline-secondary={exportPlatform !== 'wpf'}
+              onclick={() => (exportPlatform = 'wpf')}
+            >
+              WPF XAML
+            </button>
+            <button 
+              type="button" 
+              class="btn btn-sm"
+              class:btn-primary={exportPlatform === 'css'}
+              class:btn-outline-secondary={exportPlatform !== 'css'}
+              onclick={() => (exportPlatform = 'css')}
+            >
+              CSS Vars
+            </button>
+            <button 
+              type="button" 
+              class="btn btn-sm"
+              class:btn-primary={exportPlatform === 'json'}
+              class:btn-outline-secondary={exportPlatform !== 'json'}
+              onclick={() => (exportPlatform = 'json')}
+            >
+              W3C JSON
+            </button>
+          </div>
+        </div>
+
+        {#if exportPlatform === 'tailwind'}
+          <CodeBox 
+            title="Tailwind CSS theme.extend.colors"
+            language="javascript"
+            code={`// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        canvas: { light: '#F8FAFC', surface: '#FFFFFF', dark: '#090D16' },
+        ss: {
+          prussian: '#022057', // 30% Structural anchor
+          blue: '#043388',     // 30% Brand secondary
+          azure: '#21A1F7',    // 10% Primary conversion CTA
+          banana: '#F7E143',   // 10% Vitality energy
+          black: '#1C1C1C'     // Strict neutral text
+        }
+      }
+    }
+  }
+};`}
+          />
+        {/if}
+
+        {#if exportPlatform === 'flutter'}
+          <CodeBox 
+            title="Flutter Dart Theme Palette"
+            language="dart"
+            code={`// suamisihat_theme.dart
+import 'package:flutter/material.dart';
+
+class SSColors {
+  static const Color canvasLight = Color(0xFFF8FAFC);
+  static const Color prussianBlue = Color(0xFF022057); // 30% Structure
+  static const Color ssBlue = Color(0xFF043388);       // 30% Brand
+  static const Color azureBlue = Color(0xFF21A1F7);    // 10% Primary CTA
+  static const Color bananaYellow = Color(0xFFF7E143); // 10% Highlight
+  static const Color neutralBlack = Color(0xFF1C1C1C); // Typography standard
+}`}
+          />
+        {/if}
+
+        {#if exportPlatform === 'wpf'}
+          <CodeBox 
+            title="Windows WPF XAML ResourceDictionary"
+            language="xml"
+            code={`<!-- SuamiSihatTheme.xaml -->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="SSCanvasLightBrush" Color="#F8FAFC"/>
+    <SolidColorBrush x:Key="SSPrussianBlueBrush" Color="#022057"/>
+    <SolidColorBrush x:Key="SSBlueBrush" Color="#043388"/>
+    <SolidColorBrush x:Key="SSAzureCTA" Color="#21A1F7"/>
+    <SolidColorBrush x:Key="SSBananaEnergy" Color="#F7E143"/>
+    <SolidColorBrush x:Key="SSNeutralBlack" Color="#1C1C1C"/>
+</ResourceDictionary>`}
+          />
+        {/if}
+
+        {#if exportPlatform === 'css'}
+          <CodeBox 
+            title="CSS Custom Properties (:root)"
+            language="css"
+            code={`:root {
+  /* 60% Foundation */
+  --ss-canvas-light: #F8FAFC;
+  --ss-surface-white: #FFFFFF;
+  
+  /* 30% Structural Trust */
+  --ss-prussian-blue: #022057;
+  --ss-blue-primary: #043388;
+  
+  /* 10% Primary Conversion */
+  --ss-azure-cta: #21A1F7;
+  --ss-banana-vitality: #F7E143;
+  
+  /* Neutral Typography */
+  --ss-neutral-black: #1C1C1C;
+}`}
+          />
+        {/if}
+
+        {#if exportPlatform === 'json'}
+          <CodeBox 
+            title="W3C tokens.json"
+            language="json"
+            code={`{
   "color": {
     "brand": {
-      "primary": { "value": "#022057", "type": "color" },
-      "secondary": { "value": "#043388", "type": "color" },
-      "accent": { "value": "#21A1F7", "type": "color" },
-      "vitality": { "value": "#F7E143", "type": "color" }
+      "prussian": { "value": "#022057", "type": "color" },
+      "primary": { "value": "#043388", "type": "color" },
+      "azure": { "value": "#21A1F7", "type": "color" },
+      "banana": { "value": "#F7E143", "type": "color" }
     },
     "neutral": {
       "black": { "value": "#1C1C1C", "type": "color" },
@@ -228,7 +361,8 @@
     }
   }
 }`}
-        />
+          />
+        {/if}
       </div>
     </section>
   {/if}
