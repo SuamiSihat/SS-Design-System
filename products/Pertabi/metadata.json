@@ -1,7 +1,7 @@
 {
   "name": "PERTABI",
   "tagline": "Persatuan Taat Bersama Isteri Malaysia · Taat Setia Progresif",
-  "logo": "logo_pertabi_horizontal-light.svg",
+  "logo": "logos/logo_pertabi_horizontal-light.svg",
   "banner": "banner.svg",
   "heroGradient": "linear-gradient(135deg, #1D3464 0%, #0D1E3D 100%)",
   "ownership": {
@@ -9,14 +9,15 @@
     "text": "Persatuan Taat Bersama Isteri Malaysia (PERTABI — PPM-023-10-15122021) is a national-level society registered under Section 7 of the Societies Act 1966, dedicated to advancing husband welfare, family communication, and household health across Malaysia."
   },
   "brandAssets": [
-    "logo_pertabi_horizontal-light.svg",
-    "logo_pertabi_horizontal-dark.svg",
-    "logo_pertabi_vertical.svg"
+    "logos/logo_pertabi_horizontal-light.svg",
+    "logos/logo_pertabi_horizontal-dark.svg",
+    "logos/logo_pertabi_vertical.svg"
   ],
-  "merchandiseFolder": "Jersey",
+  "merchandiseFolder": "sub-products/jersey",
   "merchandise": [
-    "Jersey/Pertabi_jersy_1.png",
-    "Jersey/Pertabi_jersy_2.png",
-    "Jersey/Pertabi_jersy_3.png"
+    "sub-products/jersey/gallery/Pertabi_jersy_1.png",
+    "sub-products/jersey/gallery/Pertabi_jersy_2.png",
+    "sub-products/jersey/gallery/Pertabi_jersy_3.png"
   ]
 }
+
