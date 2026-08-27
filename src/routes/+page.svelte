@@ -196,113 +196,107 @@
         </div>
       </div>
 
-      <!-- Bento Item 2: 4-Col Zero Brand Dilution Card with Lottie/Kinetic Animation -->
-      <div class="f-bento-card f-bento-span-4 f-dilution-card">
+      <!-- Bento Item 2: 4-Col Full Animated Kinetic & Lottie Canvas (Zero Text) -->
+      <div class="f-bento-card f-bento-span-4 f-bento-full-animated" aria-label="Zero Brand Dilution Interactive Kinetic Visualization">
         <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
-        <div>
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
-            <div class="f-pillar-icon-wrap" style="margin-bottom: 0;">
-              <div class="f-pillar-icon" style="background: rgba(33, 161, 247, 0.12); color: #21A1F7;">
-                <iconify-icon icon="fluent:box-multiple-24-regular"></iconify-icon>
-              </div>
-            </div>
-            <span class="f-dilution-badge">
-              <span class="f-pulse-dot-green"></span> 0.00% Drift
-            </span>
-          </div>
+        
+        <!-- Edge-to-Edge Animated Kinetic Quantum Sphere & Token Alignment Engine -->
+        <div class="f-full-anim-stage">
+          <!-- Multi-tier Ambient Glow & Pulsing Concentric Energy Rings -->
+          <div class="f-anim-ambient-glow"></div>
+          <div class="f-quantum-ring ring-1"></div>
+          <div class="f-quantum-ring ring-2"></div>
+          <div class="f-quantum-ring ring-3"></div>
 
-          <h3 class="f-pillar-title">Zero Brand Dilution</h3>
-          <p class="f-pillar-desc">
-            5 operating subsidiaries and 8+ product lines synchronized under 1 authoritative token engine.
-          </p>
+          <!-- Ultra-Detailed Vector Kinetic Lottie Engine (Zero Text) -->
+          <svg viewBox="0 0 200 200" class="f-full-anim-svg" aria-hidden="true">
+            <defs>
+              <!-- Radial Core Gradient -->
+              <radialGradient id="prismRadial" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#21A1F7" stop-opacity="1"/>
+                <stop offset="45%" stop-color="#043388" stop-opacity="0.95"/>
+                <stop offset="100%" stop-color="#022057" stop-opacity="0"/>
+              </radialGradient>
 
-          <!-- Dynamic Lottie / Kinetic Quantum Token Alignment Animation Stage -->
-          <div class="f-dilution-animation-stage" aria-label="Brand Token Synchronization Animation">
-            <div class="f-dilution-lottie-container">
-              <!-- Orbital Rotating Alignment Rings -->
-              <div class="f-lottie-orbit-ring ring-outer"></div>
-              <div class="f-lottie-orbit-ring ring-mid"></div>
+              <!-- Convergence Laser Beams for 5 Operating Entities -->
+              <linearGradient id="beamSSH_full" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#21A1F7" stop-opacity="1"/>
+                <stop offset="100%" stop-color="#043388" stop-opacity="0.2"/>
+              </linearGradient>
+              <linearGradient id="beamSSC_full" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#6DC6EC" stop-opacity="1"/>
+                <stop offset="100%" stop-color="#043388" stop-opacity="0.2"/>
+              </linearGradient>
+              <linearGradient id="beamSSW_full" x1="100%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#FCE53D" stop-opacity="1"/>
+                <stop offset="100%" stop-color="#043388" stop-opacity="0.2"/>
+              </linearGradient>
+              <linearGradient id="beamSSE_full" x1="100%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" stop-color="#22C55E" stop-opacity="1"/>
+                <stop offset="100%" stop-color="#043388" stop-opacity="0.2"/>
+              </linearGradient>
+              <linearGradient id="beamSST_full" x1="50%" y1="100%" x2="50%" y2="0%">
+                <stop offset="0%" stop-color="#A855F7" stop-opacity="1"/>
+                <stop offset="100%" stop-color="#043388" stop-opacity="0.2"/>
+              </linearGradient>
 
-              <!-- Radiating Particle Sync Rays & Converging Subsidiary Nodes -->
-              <svg viewBox="0 0 160 110" class="f-dilution-svg" aria-hidden="true">
-                <defs>
-                  <linearGradient id="beamSSH" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#043388" stop-opacity="0.9"/>
-                    <stop offset="100%" stop-color="#21A1F7" stop-opacity="0.3"/>
-                  </linearGradient>
-                  <linearGradient id="beamSSC" x1="0%" y1="100%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#6DC6EC" stop-opacity="0.9"/>
-                    <stop offset="100%" stop-color="#21A1F7" stop-opacity="0.3"/>
-                  </linearGradient>
-                  <linearGradient id="beamSSW" x1="100%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#FCE53D" stop-opacity="0.9"/>
-                    <stop offset="100%" stop-color="#21A1F7" stop-opacity="0.3"/>
-                  </linearGradient>
-                  <linearGradient id="beamSSE" x1="100%" y1="100%" x2="0%" y2="0%">
-                    <stop offset="0%" stop-color="#22C55E" stop-opacity="0.9"/>
-                    <stop offset="100%" stop-color="#21A1F7" stop-opacity="0.3"/>
-                  </linearGradient>
-                  <linearGradient id="beamSST" x1="50%" y1="100%" x2="50%" y2="0%">
-                    <stop offset="0%" stop-color="#A855F7" stop-opacity="0.9"/>
-                    <stop offset="100%" stop-color="#21A1F7" stop-opacity="0.3"/>
-                  </linearGradient>
-                  <filter id="coreGlowPrism" x="-30%" y="-30%" width="160%" height="160%">
-                    <feGaussianBlur stdDeviation="3" result="blur"/>
-                    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-                  </filter>
-                </defs>
+              <!-- Neon Glow Filters -->
+              <filter id="superGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="4" result="blur1"/>
+                <feGaussianBlur stdDeviation="8" result="blur2"/>
+                <feMerge>
+                  <feMergeNode in="blur2"/>
+                  <feMergeNode in="blur1"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
 
-                <!-- Convergence Laser Streams -->
-                <line x1="22" y1="22" x2="80" y2="52" stroke="url(#beamSSH)" stroke-width="1.8" stroke-dasharray="4 3" class="f-stream-line stream-1 {activeDilutionEntity === 'SSH' ? 'active-beam' : ''}"/>
-                <line x1="22" y1="84" x2="80" y2="52" stroke="url(#beamSSC)" stroke-width="1.8" stroke-dasharray="4 3" class="f-stream-line stream-2 {activeDilutionEntity === 'SSC' ? 'active-beam' : ''}"/>
-                <line x1="138" y1="22" x2="80" y2="52" stroke="url(#beamSSW)" stroke-width="1.8" stroke-dasharray="4 3" class="f-stream-line stream-3 {activeDilutionEntity === 'SSW' ? 'active-beam' : ''}"/>
-                <line x1="138" y1="84" x2="80" y2="52" stroke="url(#beamSSE)" stroke-width="1.8" stroke-dasharray="4 3" class="f-stream-line stream-4 {activeDilutionEntity === 'SSE' ? 'active-beam' : ''}"/>
-                <line x1="80" y1="96" x2="80" y2="52" stroke="url(#beamSST)" stroke-width="1.8" stroke-dasharray="4 3" class="f-stream-line stream-5 {activeDilutionEntity === 'SST' ? 'active-beam' : ''}"/>
+            <!-- Precision Crosshair Compass Grid -->
+            <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(33, 161, 247, 0.18)" stroke-width="1" stroke-dasharray="2 6" class="f-grid-rotate"/>
+            <circle cx="100" cy="100" r="62" fill="none" stroke="rgba(33, 161, 247, 0.28)" stroke-width="1.2" stroke-dasharray="8 4" class="f-grid-rotate-reverse"/>
+            <circle cx="100" cy="100" r="40" fill="none" stroke="rgba(109, 198, 236, 0.38)" stroke-width="1" class="f-pulse-circle"/>
 
-                <!-- 5 Subsidiary Satellites with Brand Colors -->
-                <g class="f-satellite-node node-ssh {activeDilutionEntity === 'SSH' ? 'highlighted' : ''}" onclick={() => activeDilutionEntity = 'SSH'} onkeydown={(e) => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activeDilutionEntity = 'SSH'; } }} role="button" tabindex="0" aria-label="Select SuamiSihat Holding">
-                  <circle cx="22" cy="22" r="8" fill="#043388" stroke="#21A1F7" stroke-width="1.5"/>
-                  <text x="22" y="25" font-size="5.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">SSH</text>
-                </g>
-                <g class="f-satellite-node node-ssc {activeDilutionEntity === 'SSC' ? 'highlighted' : ''}" onclick={() => activeDilutionEntity = 'SSC'} onkeydown={(e) => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activeDilutionEntity = 'SSC'; } }} role="button" tabindex="0" aria-label="Select SS Clinic">
-                  <circle cx="22" cy="84" r="8" fill="#022057" stroke="#6DC6EC" stroke-width="1.5"/>
-                  <text x="22" y="87" font-size="5.5" font-weight="bold" fill="#6DC6EC" text-anchor="middle">SSC</text>
-                </g>
-                <g class="f-satellite-node node-ssw {activeDilutionEntity === 'SSW' ? 'highlighted' : ''}" onclick={() => activeDilutionEntity = 'SSW'} onkeydown={(e) => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activeDilutionEntity = 'SSW'; } }} role="button" tabindex="0" aria-label="Select SS Wellness">
-                  <circle cx="138" cy="22" r="8" fill="#043388" stroke="#FCE53D" stroke-width="1.5"/>
-                  <text x="138" y="25" font-size="5.5" font-weight="bold" fill="#FCE53D" text-anchor="middle">SSW</text>
-                </g>
-                <g class="f-satellite-node node-sse {activeDilutionEntity === 'SSE' ? 'highlighted' : ''}" onclick={() => activeDilutionEntity = 'SSE'} onkeydown={(e) => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activeDilutionEntity = 'SSE'; } }} role="button" tabindex="0" aria-label="Select SS Ecommerce">
-                  <circle cx="138" cy="84" r="8" fill="#022057" stroke="#22C55E" stroke-width="1.5"/>
-                  <text x="138" y="87" font-size="5.5" font-weight="bold" fill="#22C55E" text-anchor="middle">SSE</text>
-                </g>
-                <g class="f-satellite-node node-sst {activeDilutionEntity === 'SST' ? 'highlighted' : ''}" onclick={() => activeDilutionEntity = 'SST'} onkeydown={(e) => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activeDilutionEntity = 'SST'; } }} role="button" tabindex="0" aria-label="Select SS Technology">
-                  <circle cx="80" cy="96" r="7.5" fill="#043388" stroke="#A855F7" stroke-width="1.5"/>
-                  <text x="80" y="99" font-size="5" font-weight="bold" fill="#A855F7" text-anchor="middle">SST</text>
-                </g>
+            <!-- Synchronized Laser Data Conduits -->
+            <line x1="30" y1="40" x2="100" y2="100" stroke="url(#beamSSH_full)" stroke-width="2.2" stroke-dasharray="6 4" class="f-laser-stream laser-1"/>
+            <line x1="30" y1="160" x2="100" y2="100" stroke="url(#beamSSC_full)" stroke-width="2.2" stroke-dasharray="6 4" class="f-laser-stream laser-2"/>
+            <line x1="170" y1="40" x2="100" y2="100" stroke="url(#beamSSW_full)" stroke-width="2.2" stroke-dasharray="6 4" class="f-laser-stream laser-3"/>
+            <line x1="170" y1="160" x2="100" y2="100" stroke="url(#beamSSE_full)" stroke-width="2.2" stroke-dasharray="6 4" class="f-laser-stream laser-4"/>
+            <line x1="100" y1="178" x2="100" y2="100" stroke="url(#beamSST_full)" stroke-width="2.2" stroke-dasharray="6 4" class="f-laser-stream laser-5"/>
 
-                <!-- Central Master Token Core -->
-                <circle cx="80" cy="52" r="16" fill="url(#beamSSH)" filter="url(#coreGlowPrism)" class="f-core-pulse"/>
-                <circle cx="80" cy="52" r="11" fill="#022057" stroke="#21A1F7" stroke-width="2"/>
-                <path d="M77 47C77 45.5 78.5 44.5 80 44.5C81.5 44.5 83 45.5 83 47C83 49 77 51 77 55C77 58.5 80 59.5 82 59.5C83.5 59.5 84.5 58.8 84.5 58.8" stroke="#6DC6EC" stroke-width="1.8" stroke-linecap="round" fill="none" class="f-core-s-mark"/>
-              </svg>
-            </div>
+            <!-- 5 Orbiting Kinetic Energy Spheres (Color-Coded Subsidiaries) -->
+            <g class="f-anim-node node-1" filter="url(#superGlow)">
+              <circle cx="30" cy="40" r="10" fill="#022057" stroke="#21A1F7" stroke-width="2.5"/>
+              <circle cx="30" cy="40" r="4" fill="#21A1F7" class="f-node-pulse-dot"/>
+            </g>
+            <g class="f-anim-node node-2" filter="url(#superGlow)">
+              <circle cx="30" cy="160" r="10" fill="#022057" stroke="#6DC6EC" stroke-width="2.5"/>
+              <circle cx="30" cy="160" r="4" fill="#6DC6EC" class="f-node-pulse-dot"/>
+            </g>
+            <g class="f-anim-node node-3" filter="url(#superGlow)">
+              <circle cx="170" cy="40" r="10" fill="#022057" stroke="#FCE53D" stroke-width="2.5"/>
+              <circle cx="170" cy="40" r="4" fill="#FCE53D" class="f-node-pulse-dot"/>
+            </g>
+            <g class="f-anim-node node-4" filter="url(#superGlow)">
+              <circle cx="170" cy="160" r="10" fill="#022057" stroke="#22C55E" stroke-width="2.5"/>
+              <circle cx="170" cy="160" r="4" fill="#22C55E" class="f-node-pulse-dot"/>
+            </g>
+            <g class="f-anim-node node-5" filter="url(#superGlow)">
+              <circle cx="100" cy="178" r="9" fill="#022057" stroke="#A855F7" stroke-width="2.5"/>
+              <circle cx="100" cy="178" r="3.5" fill="#A855F7" class="f-node-pulse-dot"/>
+            </g>
 
-            <div class="f-lottie-meta-bar">
-              <span class="f-sync-status-text">
-                <iconify-icon icon="fluent:lock-closed-16-regular" style="color:#22C55E;"></iconify-icon>
-                <span>{entityData[activeDilutionEntity]?.name.split(' (')[0] || 'Holding Token Core'} &bull; 100% Locked</span>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="f-subsidiary-chips-row">
-          <button type="button" class="f-sub-chip-btn {activeDilutionEntity === 'SSH' ? 'active' : ''}" onclick={() => activeDilutionEntity = 'SSH'}>SSH</button>
-          <button type="button" class="f-sub-chip-btn {activeDilutionEntity === 'SSC' ? 'active' : ''}" onclick={() => activeDilutionEntity = 'SSC'}>SSC</button>
-          <button type="button" class="f-sub-chip-btn {activeDilutionEntity === 'SSW' ? 'active' : ''}" onclick={() => activeDilutionEntity = 'SSW'}>SSW</button>
-          <button type="button" class="f-sub-chip-btn {activeDilutionEntity === 'SSE' ? 'active' : ''}" onclick={() => activeDilutionEntity = 'SSE'}>SSE</button>
-          <button type="button" class="f-sub-chip-btn {activeDilutionEntity === 'SST' ? 'active' : ''}" onclick={() => activeDilutionEntity = 'SST'}>SST</button>
+            <!-- Master Quantum Token Heart & S-Mark Prism Core -->
+            <circle cx="100" cy="100" r="28" fill="url(#prismRadial)" filter="url(#superGlow)" class="f-master-aura"/>
+            <circle cx="100" cy="100" r="20" fill="#021440" stroke="#21A1F7" stroke-width="2.5" class="f-master-core"/>
+            
+            <!-- Radiating Mars & Vitality Glyphs in Orbital Path -->
+            <path d="M96 90C96 87.5 98 86 100 86C102 86 104 87.5 104 90C104 93 96 96 96 102C96 107 100 108.5 103 108.5C105 108.5 106.5 107.5 106.5 107.5" stroke="#6DC6EC" stroke-width="2.8" stroke-linecap="round" fill="none" class="f-master-s-mark"/>
+            <circle cx="100" cy="74" r="2.5" fill="#FCE53D" class="f-quantum-sparkle sparkle-1"/>
+            <circle cx="124" cy="100" r="2" fill="#21A1F7" class="f-quantum-sparkle sparkle-2"/>
+            <circle cx="100" cy="126" r="2" fill="#22C55E" class="f-quantum-sparkle sparkle-3"/>
+            <circle cx="76" cy="100" r="2" fill="#6DC6EC" class="f-quantum-sparkle sparkle-4"/>
+          </svg>
         </div>
       </div>
 
@@ -1820,80 +1814,83 @@
     color: rgba(252, 250, 246, 0.65);
   }
 
-  /* Zero Brand Dilution Bento Card & Kinetic Lottie Stage */
-  .f-dilution-card {
+  /* Full-Bleed Animated Bento Card (Zero Text) */
+  .f-bento-full-animated {
+    padding: 0 !important;
+    overflow: hidden !important;
+    min-height: 280px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .f-dilution-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.725rem;
-    font-weight: 800;
-    color: #16A34A;
-    background: rgba(34, 197, 94, 0.12);
-    border: 1px solid rgba(34, 197, 94, 0.25);
-    padding: 3px 9px;
-    border-radius: 9999px;
-  }
-
-  :global([data-theme="dark"]) .f-dilution-badge {
-    color: #22C55E;
-    background: rgba(34, 197, 94, 0.15);
-    border-color: rgba(34, 197, 94, 0.3);
-  }
-
-  .f-dilution-animation-stage {
-    position: relative;
-    width: 100%;
-    height: 142px;
-    background: rgba(4, 51, 136, 0.04);
-    border: 1px solid rgba(4, 51, 136, 0.12);
-    border-radius: 18px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0.85rem 0;
+    background: radial-gradient(circle at 50% 50%, rgba(4, 51, 136, 0.18) 0%, rgba(2, 32, 87, 0.06) 70%, transparent 100%);
+    border: 1px solid rgba(33, 161, 247, 0.25);
+    position: relative;
+    box-shadow: 0 8px 32px rgba(4, 51, 136, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  }
+
+  :global([data-theme="dark"]) .f-bento-full-animated {
+    background: radial-gradient(circle at 50% 50%, rgba(4, 51, 136, 0.45) 0%, rgba(2, 20, 64, 0.85) 70%, #021440 100%);
+    border-color: rgba(33, 161, 247, 0.35);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .f-full-anim-stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
-    backdrop-filter: blur(10px);
   }
 
-  :global([data-theme="dark"]) .f-dilution-animation-stage {
-    background: rgba(2, 20, 64, 0.55);
-    border-color: rgba(33, 161, 247, 0.2);
+  .f-anim-ambient-glow {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(33, 161, 247, 0.35) 0%, rgba(4, 51, 136, 0.15) 50%, transparent 70%);
+    filter: blur(30px);
+    animation: f-glow-breath 4s ease-in-out infinite alternate;
   }
 
-  .f-dilution-lottie-container {
-    position: relative;
-    width: 100%;
-    height: 105px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  @keyframes f-glow-breath {
+    0% { transform: scale(0.85); opacity: 0.6; }
+    100% { transform: scale(1.25); opacity: 1; }
   }
 
-  .f-lottie-orbit-ring {
+  .f-quantum-ring {
     position: absolute;
     border-radius: 50%;
-    border: 1px dashed rgba(33, 161, 247, 0.25);
+    border: 1px solid rgba(33, 161, 247, 0.2);
     pointer-events: none;
   }
 
-  .f-lottie-orbit-ring.ring-outer {
-    width: 136px;
-    height: 94px;
-    animation: f-orbit-spin 22s linear infinite;
+  .f-quantum-ring.ring-1 {
+    width: 210px;
+    height: 210px;
+    border-style: dashed;
+    animation: f-orbit-spin 26s linear infinite;
   }
 
-  .f-lottie-orbit-ring.ring-mid {
-    width: 84px;
-    height: 62px;
-    border-color: rgba(4, 51, 136, 0.22);
-    animation: f-orbit-spin-reverse 15s linear infinite;
+  .f-quantum-ring.ring-2 {
+    width: 150px;
+    height: 150px;
+    border-color: rgba(109, 198, 236, 0.25);
+    animation: f-orbit-spin-reverse 18s linear infinite;
+  }
+
+  .f-quantum-ring.ring-3 {
+    width: 90px;
+    height: 90px;
+    border: 1.5px solid rgba(33, 161, 247, 0.4);
+    animation: f-pulse-ring 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  }
+
+  @keyframes f-pulse-ring {
+    0% { transform: scale(0.7); opacity: 0.8; }
+    100% { transform: scale(1.3); opacity: 0; }
   }
 
   @keyframes f-orbit-spin {
@@ -1906,129 +1903,120 @@
     to { transform: rotate(0deg); }
   }
 
-  .f-dilution-svg {
+  .f-full-anim-svg {
     width: 100%;
     height: 100%;
-    max-width: 220px;
+    max-width: 280px;
+    max-height: 280px;
+    position: relative;
     z-index: 2;
   }
 
-  .f-stream-line {
-    animation: f-stream-flow 1.8s linear infinite;
-    transition: stroke-width 0.2s ease, opacity 0.2s ease;
+  .f-grid-rotate {
+    transform-origin: 100px 100px;
+    animation: f-orbit-spin 40s linear infinite;
   }
 
-  .f-stream-line.active-beam {
-    stroke-width: 2.5 !important;
-    filter: drop-shadow(0 0 4px #21A1F7);
-    opacity: 1 !important;
+  .f-grid-rotate-reverse {
+    transform-origin: 100px 100px;
+    animation: f-orbit-spin-reverse 30s linear infinite;
   }
 
-  .stream-1 { animation-delay: 0s; }
-  .stream-2 { animation-delay: 0.35s; }
-  .stream-3 { animation-delay: 0.7s; }
-  .stream-4 { animation-delay: 1.05s; }
-  .stream-5 { animation-delay: 1.4s; }
+  .f-pulse-circle {
+    transform-origin: 100px 100px;
+    animation: f-pulse-scale 2.5s ease-in-out infinite alternate;
+  }
 
-  @keyframes f-stream-flow {
-    0% { stroke-dashoffset: 24; }
+  @keyframes f-pulse-scale {
+    0% { transform: scale(0.92); opacity: 0.5; }
+    100% { transform: scale(1.08); opacity: 0.9; }
+  }
+
+  .f-laser-stream {
+    animation: f-laser-flow 1.5s linear infinite;
+  }
+
+  .laser-1 { animation-delay: 0s; }
+  .laser-2 { animation-delay: 0.3s; }
+  .laser-3 { animation-delay: 0.6s; }
+  .laser-4 { animation-delay: 0.9s; }
+  .laser-5 { animation-delay: 1.2s; }
+
+  @keyframes f-laser-flow {
+    0% { stroke-dashoffset: 20; }
     100% { stroke-dashoffset: 0; }
   }
 
-  .f-satellite-node {
+  .f-anim-node {
     cursor: pointer;
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease;
-    animation: f-satellite-float 3s ease-in-out infinite alternate;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.25s ease;
+    animation: f-node-float 3.5s ease-in-out infinite alternate;
   }
 
-  .node-ssh { animation-delay: 0s; }
-  .node-ssc { animation-delay: 0.6s; }
-  .node-ssw { animation-delay: 1.2s; }
-  .node-sse { animation-delay: 1.8s; }
-  .node-sst { animation-delay: 2.4s; }
+  .node-1 { animation-delay: 0s; }
+  .node-2 { animation-delay: 0.7s; }
+  .node-3 { animation-delay: 1.4s; }
+  .node-4 { animation-delay: 2.1s; }
+  .node-5 { animation-delay: 2.8s; }
 
-  @keyframes f-satellite-float {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-3px); }
+  @keyframes f-node-float {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(0, -5px); }
   }
 
-  .f-satellite-node:hover, .f-satellite-node.highlighted {
-    transform: scale(1.22);
-    filter: drop-shadow(0 0 8px rgba(33, 161, 247, 0.9));
+  .f-anim-node:hover {
+    transform: scale(1.25);
+    filter: drop-shadow(0 0 12px rgba(33, 161, 247, 1));
   }
 
-  .f-core-pulse {
-    animation: f-core-glow-pulse 2.2s ease-in-out infinite alternate;
+  .f-node-pulse-dot {
+    animation: f-dot-glow 1.8s infinite alternate;
   }
 
-  @keyframes f-core-glow-pulse {
-    0% { transform-origin: 80px 52px; transform: scale(0.92); opacity: 0.8; }
-    100% { transform-origin: 80px 52px; transform: scale(1.1); opacity: 1; filter: drop-shadow(0 0 10px #21A1F7); }
+  @keyframes f-dot-glow {
+    0% { transform-origin: center; transform: scale(0.8); opacity: 0.6; }
+    100% { transform-origin: center; transform: scale(1.3); opacity: 1; filter: drop-shadow(0 0 4px #FFFFFF); }
   }
 
-  .f-core-s-mark {
-    animation: f-s-mark-flicker 3s ease-in-out infinite alternate;
+  .f-master-aura {
+    animation: f-master-glow-pulse 3s ease-in-out infinite alternate;
   }
 
-  @keyframes f-s-mark-flicker {
+  @keyframes f-master-glow-pulse {
+    0% { transform-origin: 100px 100px; transform: scale(0.88); opacity: 0.75; }
+    100% { transform-origin: 100px 100px; transform: scale(1.18); opacity: 1; filter: drop-shadow(0 0 16px #21A1F7); }
+  }
+
+  .f-master-core {
+    animation: f-core-scale-beat 2.2s ease-in-out infinite alternate;
+  }
+
+  @keyframes f-core-scale-beat {
+    0% { transform-origin: 100px 100px; transform: scale(0.96); }
+    100% { transform-origin: 100px 100px; transform: scale(1.05); filter: drop-shadow(0 0 8px #6DC6EC); }
+  }
+
+  .f-master-s-mark {
+    animation: f-s-mark-radiance 2.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes f-s-mark-radiance {
     0% { stroke: #6DC6EC; filter: drop-shadow(0 0 2px #6DC6EC); }
-    100% { stroke: #FFFFFF; filter: drop-shadow(0 0 6px #21A1F7); }
+    100% { stroke: #FFFFFF; filter: drop-shadow(0 0 8px #21A1F7); }
   }
 
-  .f-lottie-meta-bar {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2px 8px 4px;
-    z-index: 3;
+  .f-quantum-sparkle {
+    animation: f-sparkle-orbit 4s ease-in-out infinite alternate;
   }
 
-  .f-sync-status-text {
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: var(--text-secondary);
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-  }
+  .sparkle-1 { animation-delay: 0s; }
+  .sparkle-2 { animation-delay: 1s; }
+  .sparkle-3 { animation-delay: 2s; }
+  .sparkle-4 { animation-delay: 3s; }
 
-  .f-subsidiary-chips-row {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-  }
-
-  .f-sub-chip-btn {
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 4px 9px;
-    border-radius: 6px;
-    background: rgba(4, 51, 136, 0.08);
-    color: var(--color-brand-primary, #043388);
-    border: 1px solid transparent;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  :global([data-theme="dark"]) .f-sub-chip-btn {
-    background: rgba(33, 161, 247, 0.12);
-    color: #21A1F7;
-  }
-
-  .f-sub-chip-btn:hover, .f-sub-chip-btn.active {
-    background: #043388;
-    color: #FFFFFF;
-    border-color: #21A1F7;
-    box-shadow: 0 2px 8px rgba(4, 51, 136, 0.3);
-  }
-
-  :global([data-theme="dark"]) .f-sub-chip-btn:hover, :global([data-theme="dark"]) .f-sub-chip-btn.active {
-    background: #21A1F7;
-    color: #022057;
-    border-color: #6DC6EC;
-    box-shadow: 0 0 12px rgba(33, 161, 247, 0.5);
+  @keyframes f-sparkle-orbit {
+    0% { transform-origin: 100px 100px; transform: rotate(0deg) scale(0.7); opacity: 0.5; }
+    100% { transform-origin: 100px 100px; transform: rotate(180deg) scale(1.3); opacity: 1; }
   }
 
   /* Multi-Platform Token Exporter Hub */
