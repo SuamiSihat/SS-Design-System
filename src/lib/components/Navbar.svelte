@@ -43,26 +43,33 @@
       document.documentElement.setAttribute('data-theme', 'dark');
       document.body.classList.add('dark-mode');
     }
+
+    const handleScroll = () => {
+      const nav = document.getElementById('mainNavbar');
+      if (nav) {
+        nav.classList.toggle('scrolled', window.scrollY > 8);
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   });
 </script>
 
-<nav class="f-navbar" id="mainNavbar" aria-label="Main Navigation">
-  <div class="f-navbar-inner">
-    <a href="/" class="f-navbar-brand" aria-label="SuamiSihat Design System Home">
-      <img src="/public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_light.svg"
-           data-light-src="/public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_light.svg"
-           data-dark-src="/public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg"
-           alt="SuamiSihat™" height="32" width="auto">
-      <span class="f-navbar-brand-name d-none d-sm-inline">SuamiSihat™ <span style="font-weight:400;opacity:0.75;">Design System</span></span>
+<header id="mainNavbar" class="f-navbar" role="banner">
+  <nav class="f-navbar-inner" aria-label="Global navigation">
+    <!-- Brand -->
+    <a class="f-navbar-brand" href="/" aria-label="Home">
+      <img src="/public/brand/logos/ss-logomark-light.svg" class="logo" alt="SuamiSihat™ Icon" aria-hidden="true" loading="eager" style="height: 28px;">
+      <span class="f-navbar-brand-name">SuamiSihat™ Design System</span>
       <span class="f-navbar-version">v3.5</span>
     </a>
 
-    <!-- Desktop nav links -->
-    <ul class="f-nav-links d-none d-lg-flex" role="menubar">
+    <!-- Nav links (hidden on small screens, toggled by JS) -->
+    <ul class="f-nav-links d-none d-lg-flex" id="navLinks" role="menubar">
       {#each navLinks as link}
         <li role="none">
-          <a href={link.href} 
-             class="f-nav-link" 
+          <a class="f-nav-link" 
+             href={link.href} 
              class:active={$page.url.pathname === link.href || ($page.url.pathname !== '/' && $page.url.pathname.startsWith(link.href))}
              role="menuitem">
             {link.label}
@@ -71,25 +78,15 @@
       {/each}
     </ul>
 
-    <!-- Theme toggle button -->
-    <button class="f-theme-btn ms-auto ms-lg-2" 
-            onclick={toggleTheme}
-            id="themeToggleBtn"
-            title="Toggle Light/Dark Theme"
-            aria-label="Toggle theme">
-      <iconify-icon icon={isDarkMode ? "fluent:weather-sunny-24-regular" : "fluent:weather-moon-24-regular"} width="18"></iconify-icon>
+    <!-- Controls -->
+    <button id="themeToggle" class="f-theme-btn" onclick={toggleTheme} aria-label="Toggle dark mode" aria-pressed={isDarkMode}>
+      <iconify-icon icon={isDarkMode ? "fluent:weather-sunny-24-regular" : "fluent:weather-moon-24-regular"} style="font-size:1.1rem"></iconify-icon>
     </button>
-
-    <!-- Mobile menu trigger -->
-    <button class="f-mobile-menu-btn d-lg-none" 
-            id="mobileMenuBtn" 
-            onclick={openDrawer}
-            aria-label="Open Navigation Menu"
-            aria-expanded={drawerOpen}>
-      <iconify-icon icon="fluent:navigation-24-regular" width="20"></iconify-icon>
+    <button id="mobileMenuBtn" class="f-mobile-menu-btn d-lg-none" onclick={openDrawer} aria-label="Open navigation menu" aria-expanded={drawerOpen} aria-controls="mobileDrawer">
+      <iconify-icon icon="fluent:navigation-24-regular" style="font-size:1.2rem"></iconify-icon>
     </button>
-  </div>
-</nav>
+  </nav>
+</header>
 
 <!-- Mobile Drawer Overlay -->
 {#if drawerOpen}
@@ -102,29 +99,39 @@
   </div>
   
   <aside class="f-drawer open" id="mobileDrawer" aria-label="Mobile Navigation">
-    <div class="f-drawer-header" style="display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;border-bottom:1px solid var(--color-neutral-stroke-1);">
-      <span class="f-navbar-brand-name">Navigation</span>
-      <button class="f-drawer-close" 
-              onclick={closeDrawer}
-              style="background:none;border:none;color:var(--color-neutral-fg-1);cursor:pointer;padding:4px;"
-              aria-label="Close Navigation Menu">
-        <iconify-icon icon="fluent:dismiss-24-regular" width="22"></iconify-icon>
+    <div class="f-drawer-header">
+      <span class="f-drawer-brand">SuamiSihat™ Design System</span>
+      <button id="drawerClose" class="f-drawer-close" onclick={closeDrawer} aria-label="Close menu">
+        <iconify-icon icon="fluent:dismiss-24-regular" aria-hidden="true"></iconify-icon>
       </button>
     </div>
-    <nav class="f-drawer-body" style="padding:1rem 1.25rem;display:flex;flex-direction:column;gap:0.5rem;">
-      {#each navLinks as link}
-        <a href={link.href} 
-           class="f-drawer-link" 
-           class:active={$page.url.pathname === link.href}
-           onclick={closeDrawer}
-           style="padding:0.6rem 0.8rem;border-radius:var(--f-radius-md);text-decoration:none;font-weight:600;color:var(--color-neutral-fg-1);">
-          {link.label}
-        </a>
-      {/each}
-      <hr style="border-color:var(--color-neutral-stroke-1);margin:0.5rem 0;">
-      <a href="/signature/" class="f-drawer-link" onclick={closeDrawer} style="padding:0.6rem 0.8rem;text-decoration:none;color:var(--color-neutral-fg-2);">Mail Signature</a>
-      <a href="/tools/" class="f-drawer-link" onclick={closeDrawer} style="padding:0.6rem 0.8rem;text-decoration:none;color:var(--color-neutral-fg-2);">SS CAM &amp; Tools</a>
-      <a href="/onboarding/" class="f-drawer-link" onclick={closeDrawer} style="padding:0.6rem 0.8rem;text-decoration:none;color:var(--color-neutral-fg-2);">Onboarding</a>
-    </nav>
+    <div class="f-drawer-nav">
+      <a class="f-drawer-link" href="/brand-system/" onclick={closeDrawer}>
+        <iconify-icon icon="fluent:color-24-regular" aria-hidden="true"></iconify-icon>Brand System
+      </a>
+      <a class="f-drawer-link" href="/brand-guidelines/" onclick={closeDrawer}>
+        <iconify-icon icon="fluent:book-open-24-regular" aria-hidden="true"></iconify-icon>Brand Guidelines
+      </a>
+      <a class="f-drawer-link" href="/components/" onclick={closeDrawer}>
+        <iconify-icon icon="fluent:puzzle-piece-24-regular" aria-hidden="true"></iconify-icon>Components
+      </a>
+      <a class="f-drawer-link" href="/products/" onclick={closeDrawer}>
+        <iconify-icon icon="fluent:cube-multiple-24-regular" aria-hidden="true"></iconify-icon>Products
+      </a>
+      <div class="f-drawer-divider"></div>
+      <a class="f-drawer-link" href="/doc/?doc=changelog" onclick={closeDrawer}>
+        <iconify-icon icon="fluent:document-text-24-regular" aria-hidden="true"></iconify-icon>Documentation
+      </a>
+      <a class="f-drawer-link" href="/onboarding/" onclick={closeDrawer}>
+        <iconify-icon icon="fluent:person-star-24-regular" aria-hidden="true"></iconify-icon>Staff Onboarding
+      </a>
+      <a class="f-drawer-link" href="/signature/" onclick={closeDrawer}>
+        <iconify-icon icon="fluent:mail-template-24-regular" aria-hidden="true"></iconify-icon>Mail Signature
+      </a>
+      <a class="f-drawer-link" href="/tools/" onclick={closeDrawer}>
+        <iconify-icon icon="fluent:camera-24-regular" aria-hidden="true"></iconify-icon>SS CAM Tools
+      </a>
+    </div>
+    <div class="f-drawer-footer">SuamiSihat™ Design System v3.5</div>
   </aside>
 {/if}
