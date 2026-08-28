@@ -36,6 +36,7 @@ flowchart TD
 > **"Fluent 2 provides the interaction system and structural logic. SuamiSihat provides the soul, visual identity, and clinical authority."**
 
 This architectural separation completely resolves the two primary failure modes in multi-page and AI-assisted development:
+
 1. **Prompt Dilution** — Developers and AI agents no longer spend prompt budget reproducing 3,000 words of design guidelines.
 2. **Brand Drift** — Ensures future pages (landing pages, product hubs, clinical portals, checkout flows) never diverge in look, feel, or interactive behavior.
 
@@ -46,7 +47,7 @@ This architectural separation completely resolves the two primary failure modes 
 To prevent Fluent 2 from visually dominating SuamiSihat's distinct clinical-masculine character, every design decision is assigned to an authoritative source:
 
 | Design Decision | Authoritative Source | Implementation Rule |
-|---|---|---|
+| --------------- | -------------------- | ------------------- |
 | **Brand Personality** | **SuamiSihat™** | Confident, clinical, masculine, premium, discreet. |
 | **Logo & Marks** | **SuamiSihat™** | Governed by background brightness rules (HSL L ≥ 50% vs L < 50%). |
 | **Brand Palette & Accents** | **SuamiSihat™** | Prussian Blue (`#022057`), SS Blue (`#043388`), Azure (`#21A1F7`), Banana CTA (`#FCE53D`). |
@@ -98,7 +99,9 @@ When building components or full page templates, adhere to this strict hierarchy
 The SuamiSihat™ design system is structured into three clear tiers:
 
 ### 01. Foundation
+
 *The global source of truth across all platforms:*
+
 - **Introduction & Philosophy**
 - **Brand Principles**
 - **Brand × Fluent 2 Integration Rules** (This contract)
@@ -111,7 +114,9 @@ The SuamiSihat™ design system is structured into three clear tiers:
 - **Accessibility** (WCAG 2.2 AA standard)
 
 ### 02. Brand
+
 *The dedicated brand identity and visual guidelines:*
+
 - **Brand Overview & Positioning**
 - **Brand Architecture** (Holding, Operating Subsidiaries, Partner Networks)
 - **Logo & Logomark** (Safe zones, minimum sizes, math geometry)
@@ -122,7 +127,9 @@ The SuamiSihat™ design system is structured into three clear tiers:
 - **Voice & Tone Guidelines**
 
 ### 03. Design System
+
 *Reusable, production-grade UI assets:*
+
 - **Design Tokens** (Global, Alias, Component)
 - **Components** (`ss-hero`, buttons, cards, dialogs, inputs, tabs, badges)
 - **Patterns** (Sticky sub-navigation, e-commerce cards, lightbox gallery, command palette)
@@ -150,7 +157,7 @@ SuamiSihat uses Fluent 2's semantic token architecture adapted with SuamiSihat b
 The design system enforces four levels of text emphasis across light and dark interfaces:
 
 | Level | Token | Light Mode | Dark Mode | Role |
-|---|---|---|---|---|
+| ----- | ----- | ---------- | --------- | ---- |
 | **Level 1 — Strong** | `--text-strong` | `#000000` | `#FFFFFF` | Maximum emphasis — H1, key numbers, prices, critical CTAs. |
 | **Level 2 — Primary** | `--text-primary` | `#19191A` | `#FCFAF6` | Default readable content — body text, H2–H6, navigation. |
 | **Level 3 — Secondary** | `--text-secondary` | `rgba(25, 25, 26, 0.65)` | `rgba(252, 250, 246, 0.65)` | Metadata, timestamps, helper subtitles. |

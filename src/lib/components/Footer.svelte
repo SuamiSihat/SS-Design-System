@@ -28,19 +28,6 @@
         </a>
       </div>
 
-      <div>
-        <p class="f-footer-heading">Resources</p>
-        <ul class="f-footer-links">
-            <li><a href="/doc/?doc=changelog">What's New</a></li>
-            <li><a href="/doc/?doc=roadmap">Roadmap</a></li>
-            <li><a href="/doc/?doc=brand-fluent2">Brand × Fluent 2</a></li>
-            <li><a href="/doc/?doc=contribution-guide">Contribution Guide</a></li>
-            <li><a href="/doc/?doc=vision-mission">Vision &amp; Mission</a></li>
-            <li><a href="https://nas.suamisihat.com.my/" target="_blank" rel="noopener noreferrer">SSNAS Dashboard ↗</a></li>
-            <li><a href="https://suamisihat.com.my/brand-assets/" target="_blank" rel="noopener noreferrer">Official Brand Assets ↗</a></li>
-        </ul>
-      </div>
-
       <ul class="f2-footer-links" aria-label="Bottom navigation">
         <li><a href="/" class="f2-footer-link">Home</a></li>
         <li><a href="/brand-system/" class="f2-footer-link">Brand System</a></li>
