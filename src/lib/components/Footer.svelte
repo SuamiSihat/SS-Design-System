@@ -15,7 +15,7 @@
   }
 </script>
 
-<footer id="fluent2-footer" class="fluent2-footer">
+<footer id="fluent2-footer" class="fluent2-footer f-footer">
   <div class="f2-footer-content">
     <!-- Top Section: Wordmark on Left, Primary Nav Links on Right -->
     <section class="f2-footer-top">
@@ -26,6 +26,19 @@
                class="f2-footer-logo" 
                loading="lazy">
         </a>
+      </div>
+
+      <div>
+        <p class="f-footer-heading">Resources</p>
+        <ul class="f-footer-links">
+            <li><a href="/doc/?doc=changelog">What's New</a></li>
+            <li><a href="/doc/?doc=roadmap">Roadmap</a></li>
+            <li><a href="/doc/?doc=brand-fluent2">Brand × Fluent 2</a></li>
+            <li><a href="/doc/?doc=contribution-guide">Contribution Guide</a></li>
+            <li><a href="/doc/?doc=vision-mission">Vision &amp; Mission</a></li>
+            <li><a href="https://nas.suamisihat.com.my/" target="_blank" rel="noopener noreferrer">SSNAS Dashboard ↗</a></li>
+            <li><a href="https://suamisihat.com.my/brand-assets/" target="_blank" rel="noopener noreferrer">Official Brand Assets ↗</a></li>
+        </ul>
       </div>
 
       <ul class="f2-footer-links" aria-label="Bottom navigation">
@@ -80,6 +93,26 @@
 </footer>
 
 <style>
+  .f-footer {
+    position: relative;
+    background: var(--surface-canvas, #FCFAF6);
+    padding: 3.5rem clamp(1.5rem, 5vw, 5rem) 2rem;
+  }
+
+  .f-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #022057 0%, #21A1F7 50%, #043388 100%);
+  }
+
+  :global([data-theme="dark"]) .f-footer {
+    background: var(--surface-canvas-dark, #0D1220);
+  }
+
   .fluent2-footer {
     width: 100%;
     box-sizing: border-box;

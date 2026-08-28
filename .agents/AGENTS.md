@@ -112,3 +112,46 @@ The `ss-hero` component is the **official default background and container stand
 | **10% Kinetic Motion** | 2D interactive canvas wave (`#heroWaveCanvas` / `.hero-wave-canvas`) featuring floating Mars `♂` symbols, radiant Azure `#21A1F7` & Gold `#F7E143` energy nodes, and gentle cursor parallax responsiveness |
 | **Motion Accessibility** | Respects `prefers-reduced-motion`; renders static glowing gradient if reduced motion is preferred |
 
+---
+
+## Architectural Contract & Build Rules
+
+### Rule 7 — Brand × Fluent 2 Integration Contract
+The SuamiSihat™ Design System follows a strict two-layer architectural hierarchy:
+
+> *"Fluent 2 provides the interaction system and structural logic. SuamiSihat provides the soul, visual identity, and clinical authority."*
+
+#### Boundary & Decision Matrix
+
+| Design Decision | Source of Truth | Implementation Rule |
+|---|---|---|
+| **Brand Personality** | SuamiSihat™ | Confident, clinical, masculine, premium, discreet. |
+| **Logo & Brand Marks** | SuamiSihat™ | Brightness-aware selection (`_light.svg` on HSL L ≥ 50%, `_dark.svg` on HSL L < 50%). |
+| **Colour Palette** | SuamiSihat™ | Prussian Blue `#022057`, SS Blue `#043388`, Azure `#21A1F7`, Banana Yellow `#FCE53D`. |
+| **Typography** | SuamiSihat™ | Outfit (Headings) + Inter (Body/UI) with 4-tier text tokens. |
+| **Component Anatomy** | Fluent 2 | Standard compound slots (icon start/end, content, action, badge). |
+| **Interaction States** | Fluent 2 | Rest, Hover, Pressed, Selected, Focused, Disabled state machines. |
+| **Accessibility (a11y)**| Fluent 2 + WCAG | WCAG 2.2 AA compliant, 2px high-contrast offset focus rings. |
+| **Motion Principles** | Fluent 2 | Fast 150ms / Medium 250ms with `cubic-bezier(0.1, 0.9, 0.2, 1.0)`. |
+| **Spatial Grid** | Fluent 2 | 8px base spatial grid (`--f-space-*`) and 12-column responsive layout. |
+
+#### System Precedence
+1. **SuamiSihat Brand System** (Highest priority — colours, marks, typography, voice)
+2. **SuamiSihat Design Tokens** (Semantic CSS custom properties)
+3. **Fluent 2 Interaction and Component Principles** (State transitions, elevation, focus rings, accessibility)
+4. **Page-Specific Requirements** (Content layouts, form flows, marketing blocks)
+
+---
+
+### Rule 8 — Mandatory Source of Truth Block for AI & Page Prompts
+When prompting or implementing any new landing page, campaign funnel, product hub, or feature, always enforce this concise standard block to prevent prompt dilution and brand drift:
+
+```markdown
+### Design System — Mandatory Source of Truth
+This page must be designed and built using the **SuamiSihat™ Brand & Design System** (`assets.suamisihat.myds.me`):
+- **Visual Identity (SuamiSihat)**: Use established brand colours (`#043388`, `#022057`, `#21A1F7`, `#F7E143`), Outfit/Inter typography, 4-tier text contrast hierarchy (`--text-strong`, `--text-primary`, `--text-secondary`, `--text-disabled`), and brightness-aware SVG logo selection.
+- **Interaction Layer (Fluent 2)**: All components, states (`hover`, `pressed`, `focus`), elevation levels, and spatial layouts follow Fluent 2 component specifications and accessibility contracts.
+- **System Precedence**: SuamiSihat Brand DNA > Design Tokens > Fluent 2 Component Anatomy > Page Content.
+```
+
+

@@ -102,15 +102,15 @@
      CHAPTER 1: THE MASTER HERO & BRAND MANIFESTO
      ================================================================ -->
 <SSHero
-  eyebrow="<iconify-icon icon='fluent:sparkle-24-filled' style='font-size: 1.15rem; color: #6DC6EC; vertical-align: middle;' aria-hidden='true'></iconify-icon> <span>SuamiSihat™ Design System &bull; Story Edition</span>"
-  title="One Source. Every Standard.<br>The Living Language of Men's Health."
-  subtitle="Transforming healthcare across Southeast Asia by replacing clinical stigma with scientific precision, patient dignity, and unmistakable visual clarity."
+  eyebrow="<iconify-icon icon='fluent:design-ideas-24-regular' style='font-size: 1.15rem; color: #6DC6EC; vertical-align: middle;' aria-hidden='true'></iconify-icon> <span>SuamiSihat™ Design System &bull; v3.5.1</span>"
+  title="The Single Source of Truth<br>for Design at SuamiSihat™."
+  subtitle="Design tokens, Fluent 2 components, brand guidelines, and multi-platform export tools — everything your team needs to build consistent, on-brand products faster."
   minHeight="560px"
 >
   <div class="f-hero-ctas">
-    <a href="#story" class="f-btn-hero-primary" id="hero-cta-story">
-      <iconify-icon icon="fluent:book-compass-24-regular" aria-hidden="true"></iconify-icon>
-      Read Brand Story
+    <a href="/brand-system/" class="f-btn-hero-primary" id="hero-cta-brand">
+      <iconify-icon icon="fluent:color-24-regular" aria-hidden="true"></iconify-icon>
+      Explore Brand System
     </a>
     <a href="/components/" class="f-btn-hero-secondary" id="hero-cta-components">
       <iconify-icon icon="fluent:puzzle-piece-24-regular" aria-hidden="true"></iconify-icon>
@@ -121,17 +121,37 @@
   <!-- Minimal Glass Trust Badges -->
   <div class="f-hero-badges">
     <span class="f-hero-badge-item">
-      <iconify-icon icon="fluent:organization-24-regular" aria-hidden="true"></iconify-icon> 5 Operating Entities
+      <iconify-icon icon="fluent:color-swatch-24-regular" aria-hidden="true"></iconify-icon> Design Tokens
     </span>
     <span class="f-hero-badge-item">
-      <iconify-icon icon="fluent:layer-24-regular" aria-hidden="true"></iconify-icon> 24+ Fluent 2 Tokens
+      <iconify-icon icon="fluent:puzzle-piece-24-regular" aria-hidden="true"></iconify-icon> 24+ Components
     </span>
     <span class="f-hero-badge-item">
-      <iconify-icon icon="fluent:accessibility-24-regular" aria-hidden="true"></iconify-icon> WCAG AA Certified
+      <iconify-icon icon="fluent:accessibility-24-regular" aria-hidden="true"></iconify-icon> WCAG AA
     </span>
     <span class="f-hero-badge-item">
-      <iconify-icon icon="fluent:code-circle-24-regular" aria-hidden="true"></iconify-icon> 100% Token Sync
+      <iconify-icon icon="fluent:phone-laptop-24-regular" aria-hidden="true"></iconify-icon> 4 Platforms
     </span>
+  </div>
+
+  <!-- Stat Rail -->
+  <div class="f-hero-stat-rail">
+    <div class="f-hero-stat-item">
+      <span class="f-hero-stat-val">v3.5.1</span>
+      <span class="f-hero-stat-label">Current Release</span>
+    </div>
+    <div class="f-hero-stat-item">
+      <span class="f-hero-stat-val">124</span>
+      <span class="f-hero-stat-label">Tests Passing</span>
+    </div>
+    <div class="f-hero-stat-item">
+      <span class="f-hero-stat-val">5</span>
+      <span class="f-hero-stat-label">Sub-brands</span>
+    </div>
+    <div class="f-hero-stat-item">
+      <span class="f-hero-stat-val">4</span>
+      <span class="f-hero-stat-label">Platforms</span>
+    </div>
   </div>
 </SSHero>
 
@@ -139,35 +159,35 @@
   <!-- ================================================================
        CHAPTER 2: DYNAMIC BENTO GRID — PURPOSE & THE 3 PILLARS
        ================================================================ -->
-  <section id="story" class="f-section-block" aria-label="Brand Manifesto and Core Pillars">
-    <div class="f-chapter-badge">
-      <span class="f-chapter-num">1</span>
-      <span>The Brand Manifesto &amp; Pillars</span>
+  <section id="story" class="f-section-block" aria-label="Design System Principles and Core Pillars">
+    <div class="f-section-overline">
+      <span class="f-overline-label">Design Principles &amp; Core Pillars</span>
+      <span class="f-overline-rule" aria-hidden="true"></span>
     </div>
 
     <div class="f-section-head">
-      <h2 class="f-section-title">What SuamiSihat Means as a Brand</h2>
+      <h2 class="f-section-title">Built to Ship Faster. Designed to Stay Consistent.</h2>
       <p class="f-section-subtitle">
-        In men's healthcare, design is not merely decoration — it is the bridge between vulnerability and medical trust.
+        Three foundational pillars govern every decision in the SuamiSihat™ Design System — from a single token to a full product page.
       </p>
     </div>
 
     <!-- Chapter 2 Bento Architecture -->
     <div class="f-bento-grid">
       <!-- Bento Item 1: Large 8-Col Manifesto Hero Card with Kinetic Vitality Monitor -->
-      <div class="f-bento-card f-bento-hero-card f-bento-span-8">
+      <div class="f-bento-card f-bento-card--hero f-bento-hero-card f-bento-span-8">
         <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
         <div class="f-manifesto-grid">
           <div>
             <div class="f-manifesto-badge-pill">
               <span class="f-pulse-dot"></span>
-              <span>Core Brand Purpose</span>
+              <span>Why This System Exists</span>
             </div>
             <p class="f-manifesto-quote">
-              &ldquo;For decades, men's wellness has been trapped between clinical intimidation and back-alley ambiguity. SuamiSihat restores patient dignity, clinical authority, and design excellence.&rdquo;
+              &ldquo;Before this system, 5 subsidiaries shipped products with 7 conflicting shades of blue. Now a single W3C token JSON updates CSS, Flutter, Tailwind, and WPF simultaneously &mdash; in one commit.&rdquo;
             </p>
             <p class="f-manifesto-lead">
-              Pairing <strong>vitality Navy (<code class="f-code-token" style="color:var(--color-brand-primary);">#043388</code>)</strong> with <strong>radiant Azure (<code class="f-code-token" style="color:#21A1F7;">#21A1F7</code>)</strong> across physical clinics, prescription packaging, and digital teleconsultations.
+              The design system enforces <strong>Clinical Authority</strong> through strict token hierarchy, <strong>10&times; Velocity</strong> via pre-built Fluent 2 components, and <strong>Zero Brand Drift</strong> through a single source of truth shared across all subsidiaries.
             </p>
           </div>
 
@@ -310,20 +330,20 @@
         </div>
         <h3 class="f-pillar-title">Clinical Authority</h3>
         <p class="f-pillar-desc">
-          Strict color pairings and 1X clearspace rules engineered to reassure patients of medical expertise.
+          Strict colour pairings and 1X clearspace rules that signal medical expertise — across clinic signage, product packaging, and digital touchpoints.
         </p>
       </div>
 
       <!-- Bento Item 4: 4-Col 10x Velocity Metric Card -->
       <div class="f-bento-card f-bento-span-4 f-bento-stat-card">
         <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
-        <div class="f-bento-stat-val">10×</div>
+        <div class="f-bento-stat-val">10&times;</div>
         <div class="f-bento-stat-label">Shipping Velocity</div>
         <div class="f-velocity-meter" aria-hidden="true">
           <div class="f-velocity-bar"></div>
         </div>
         <p style="font-size: 0.825rem; color: var(--text-secondary); margin: 0.75rem 0 0; line-height: 1.5;">
-          From 4-week turnaround down to 72 hours with ready Fluent 2 components.
+          Pre-built Fluent 2 components cut new page creation from 4-week briefs to 72-hour deploys.
         </p>
       </div>
 
@@ -350,9 +370,9 @@
        CHAPTER 3: INTERACTIVE GROUP ARCHITECTURE FLOW
        ================================================================ -->
   <section id="architecture" class="f-section-block" aria-label="Group Architecture Flow">
-    <div class="f-chapter-badge">
-      <span class="f-chapter-num">2</span>
-      <span>Group Architecture &amp; Token Pipeline</span>
+    <div class="f-section-overline">
+      <span class="f-overline-label">Group Architecture &amp; Token Pipeline</span>
+      <span class="f-overline-rule" aria-hidden="true"></span>
     </div>
 
     <div class="f-section-head">
@@ -465,9 +485,9 @@
        CHAPTER 4: INTERACTIVE CASE STUDY
        ================================================================ -->
   <section id="case-study" class="f-section-block" aria-label="Interactive Case Study">
-    <div class="f-chapter-badge">
-      <span class="f-chapter-num">3</span>
-      <span>Interactive Case Study</span>
+    <div class="f-section-overline">
+      <span class="f-overline-label">Interactive Case Study</span>
+      <span class="f-overline-rule" aria-hidden="true"></span>
     </div>
 
     <div class="f-section-head">
@@ -554,9 +574,9 @@
        CHAPTER 5: WHO SHOULD USE THIS? (INTERACTIVE ROLE HUB)
        ================================================================ -->
   <section id="roles" class="f-section-block" aria-label="Audience Hub">
-    <div class="f-chapter-badge">
-      <span class="f-chapter-num">4</span>
-      <span>Audience Persona Hub</span>
+    <div class="f-section-overline">
+      <span class="f-overline-label">Audience Persona Hub</span>
+      <span class="f-overline-rule" aria-hidden="true"></span>
     </div>
 
     <div class="f-section-head">
@@ -744,9 +764,9 @@
        CHAPTER 6: DYNAMIC BENTO GRID — LIVING STUDIOS & MORPHING PALETTE
        ================================================================ -->
   <section id="studios" class="f-section-block" aria-label="Interactive Living Studios">
-    <div class="f-chapter-badge">
-      <span class="f-chapter-num">5</span>
-      <span>Living Studios &amp; Dynamic Tools</span>
+    <div class="f-section-overline">
+      <span class="f-overline-label">Living Studios &amp; Dynamic Tools</span>
+      <span class="f-overline-rule" aria-hidden="true"></span>
     </div>
 
     <div class="f-section-head">
@@ -759,7 +779,7 @@
     <!-- Chapter 6 Bento Grid -->
     <div class="f-bento-grid">
       <!-- Bento Item 1: Wide 12-Col Real-time Morphing Color Studio -->
-      <div class="f-bento-card f-bento-span-12 f-color-morph-card" style="--active-theme-color: {activeSwatchHex};">
+      <div class="f-bento-card f-bento-card--hero f-bento-span-12 f-color-morph-card" style="--active-theme-color: {activeSwatchHex};">
         <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1.25rem; gap: 0.5rem;">
           <div>
@@ -1036,9 +1056,9 @@
        CHAPTER 7: DYNAMIC BENTO GRID — OPERATIONAL TOOLS & ECOSYSTEM
        ================================================================ -->
   <section id="tools-section" class="f-section-block" aria-label="Tools and Subsidiary Ecosystem">
-    <div class="f-chapter-badge">
-      <span class="f-chapter-num">6</span>
-      <span>Ecosystem &amp; Operational Launchpad</span>
+    <div class="f-section-overline">
+      <span class="f-overline-label">Ecosystem &amp; Operational Launchpad</span>
+      <span class="f-overline-rule" aria-hidden="true"></span>
     </div>
 
     <div class="f-section-head">
@@ -1106,7 +1126,7 @@
         </div>
         <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">System Docs &amp; Log</h3>
         <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
-          v3.5 release notes, architecture roadmap, and brand voice standards.
+          v3.5.1 release notes, architecture roadmap, and brand voice standards.
         </p>
       </a>
 
@@ -1133,7 +1153,7 @@
             <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-strong); margin: 0;">Instant Token Bundles for Production Teams</h3>
           </div>
           <span class="f-badge-shimmer" style="color: #22C55E; border-color: rgba(34,197,94,0.3);">
-            <iconify-icon icon="fluent:checkmark-circle-16-filled"></iconify-icon> W3C Spec v3.5 Compliant
+            <iconify-icon icon="fluent:checkmark-circle-16-filled"></iconify-icon> W3C Spec v3.5.1 Compliant
           </span>
         </div>
         
@@ -1188,13 +1208,13 @@
      ULTRA-PREMIUM DYNAMIC BENTO GRID & ANIMATED STYLES
      ================================================================ */
 
-  /* Kinetic Ambient Mesh Background */
+  /* Kinetic Ambient Mesh Background — scoped to hero zone only */
   .f-ambient-mesh {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 640px;
     overflow: hidden;
     pointer-events: none;
     z-index: 0;
@@ -1203,13 +1223,13 @@
   .f-mesh-orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(90px);
-    opacity: 0.25;
+    filter: blur(110px);
+    opacity: 0.18;
     animation: f-orb-drift 18s ease-in-out infinite alternate;
   }
 
   :global([data-theme="dark"]) .f-mesh-orb {
-    opacity: 0.18;
+    opacity: 0.12;
   }
 
   .orb-1 {
@@ -1246,7 +1266,35 @@
     100% { transform: translate(-40px, 80px) scale(0.95); }
   }
 
-  /* Chapter Badge */
+  /* Editorial Section Overline (replaces chapter badge) */
+  .f-section-overline {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .f-overline-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #21A1F7;
+    white-space: nowrap;
+  }
+
+  :global([data-theme="dark"]) .f-overline-label {
+    color: #6DC6EC;
+  }
+
+  .f-overline-rule {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(33, 161, 247, 0.35) 0%, transparent 100%);
+    max-width: 200px;
+  }
+
+  /* Legacy chapter badge — keep for compatibility if any remain */
   .f-chapter-badge {
     display: inline-flex;
     align-items: center;
@@ -1269,43 +1317,26 @@
     border-color: rgba(33, 161, 247, 0.2);
   }
 
-  .f-chapter-num {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: var(--color-brand-primary, #043388);
-    color: #FFFFFF;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.65rem;
-    font-weight: 800;
-  }
-
-  :global([data-theme="dark"]) .f-chapter-num {
-    background: #21A1F7;
-    color: #000000;
-  }
-
   /* Section Blocks */
   .f-section-block {
     width: 100%;
     box-sizing: border-box;
-    padding: 4.5rem clamp(1.5rem, 5vw, 5rem) 2.5rem;
+    padding: 5.5rem clamp(1.5rem, 5vw, 5rem) 3rem;
     margin: 0;
   }
 
   .f-section-head {
-    margin-bottom: 2.25rem;
+    margin-bottom: 2.5rem;
+    max-width: 760px;
   }
 
   .f-section-title {
-    font-size: clamp(1.75rem, 3.75vw, 2.5rem);
+    font-size: clamp(2rem, 4.5vw, 3.25rem);
     font-weight: 800;
     color: var(--text-strong, #000000);
-    letter-spacing: -0.025em;
-    margin: 0 0 0.5rem;
-    line-height: 1.18;
+    letter-spacing: -0.03em;
+    margin: 0 0 0.85rem;
+    line-height: 1.12;
   }
 
   :global([data-theme="dark"]) .f-section-title {
@@ -1313,11 +1344,11 @@
   }
 
   .f-section-subtitle {
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: var(--text-secondary, rgba(25, 25, 26, 0.65));
     margin: 0;
-    max-width: 720px;
-    line-height: 1.6;
+    max-width: 680px;
+    line-height: 1.65;
   }
 
   :global([data-theme="dark"]) .f-section-subtitle {
@@ -1337,22 +1368,26 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 24px;
+    padding: 13px 28px;
     border-radius: 9999px;
-    background: #21A1F7;
+    background: linear-gradient(90deg, #21A1F7 0%, #6DC6EC 100%);
+    background-size: 200% 100%;
+    background-position: 0% 50%;
     color: #022057;
     font-weight: 700;
     font-size: 0.95rem;
     text-decoration: none !important;
     border: none;
     cursor: pointer;
-    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                background-position 0.4s ease;
   }
 
   .f-btn-hero-primary:hover {
-    background: #6DC6EC;
+    background-position: 100% 50%;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(33, 161, 247, 0.4);
+    box-shadow: 0 10px 28px rgba(33, 161, 247, 0.45);
   }
 
   .f-btn-hero-secondary {
@@ -1361,39 +1396,77 @@
     gap: 8px;
     padding: 12px 24px;
     border-radius: 9999px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #FFFFFF;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.92);
     font-weight: 600;
     font-size: 0.95rem;
     text-decoration: none !important;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(10px);
-    transition: transform 0.2s ease, background 0.2s ease;
+    border: 1.5px solid rgba(255, 255, 255, 0.38);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.2s ease,
+                color 0.2s ease;
   }
 
   .f-btn-hero-secondary:hover {
-    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(33, 161, 247, 0.7);
+    color: #21A1F7;
     transform: translateY(-2px);
   }
 
   .f-hero-badges {
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2rem;
   }
 
   .f-hero-badge-item {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: 0.775rem;
+    font-size: 0.75rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.85);
-    background: rgba(255, 255, 255, 0.08);
-    padding: 6px 14px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.07);
+    padding: 5px 13px;
     border-radius: 9999px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Hero Stat Rail */
+  .f-hero-stat-rail {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 2rem 0 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .f-hero-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .f-hero-stat-val {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .f-hero-stat-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
   }
 
   /* Bento Grid */
@@ -1426,12 +1499,24 @@
 
   @media (max-width: 1024px) {
     .f-bento-span-8, .f-bento-span-6 { grid-column: span 6; }
-    .f-bento-span-4 { grid-column: span 3; }
+    .f-bento-span-4 { grid-column: span 6; }
   }
 
   @media (max-width: 768px) {
     .f-bento-span-12, .f-bento-span-8, .f-bento-span-6, .f-bento-span-4 {
       grid-column: span 1 !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .f-section-block {
+      padding: 3.5rem 1.25rem 2rem;
+    }
+    .f-section-head {
+      max-width: 100%;
+    }
+    .f-bento-grid {
+      gap: 0.875rem;
     }
   }
 
@@ -1455,19 +1540,42 @@
 
   :global([data-theme="dark"]) .f-bento-card {
     background: rgba(14, 20, 34, 0.72);
-    border-color: rgba(255, 255, 255, 0.09);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.06);
   }
 
   .f-bento-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(4, 51, 136, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.9);
-    border-color: rgba(4, 51, 136, 0.3);
+    box-shadow: 0 16px 40px rgba(4, 51, 136, 0.14), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+    border-color: rgba(4, 51, 136, 0.28);
   }
 
   :global([data-theme="dark"]) .f-bento-card:hover {
-    border-color: rgba(33, 161, 247, 0.4);
-    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    border-color: rgba(33, 161, 247, 0.35);
+    box-shadow: 0 20px 52px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.12);
+  }
+
+  /* Bento Tier: Hero (elevated, glowing) */
+  .f-bento-card--hero {
+    box-shadow: 0 8px 32px rgba(4, 51, 136, 0.1), 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+    border-color: rgba(4, 51, 136, 0.16);
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  :global([data-theme="dark"]) .f-bento-card--hero {
+    background: rgba(2, 20, 64, 0.82);
+    border-color: rgba(33, 161, 247, 0.22);
+    box-shadow: 0 12px 40px rgba(33, 161, 247, 0.12), 0 4px 16px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  }
+
+  .f-bento-card--hero:hover {
+    box-shadow: 0 20px 52px rgba(4, 51, 136, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+    border-color: rgba(4, 51, 136, 0.35);
+  }
+
+  :global([data-theme="dark"]) .f-bento-card--hero:hover {
+    box-shadow: 0 24px 60px rgba(33, 161, 247, 0.2), 0 6px 20px rgba(0, 0, 0, 0.5);
+    border-color: rgba(33, 161, 247, 0.45);
   }
 
   .f-card-shimmer-highlight {
@@ -1499,6 +1607,7 @@
     text-align: center;
     justify-content: center;
     align-items: center;
+    min-height: 180px;
   }
 
   .f-bento-stat-val {

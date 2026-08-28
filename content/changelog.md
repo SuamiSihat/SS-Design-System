@@ -4,6 +4,34 @@
 
 ---
 
+## v3.5.1 — August 2026
+
+### Brand × Fluent 2 Architectural Contract, Dedicated System Documentation & Prompt Hardening
+
+Architectural refinement and source-of-truth standardization introducing the formal **Brand × Fluent 2 Integration Contract**, structured 3-tier Information Architecture (`01. Foundation`, `02. Brand`, `03. Design System`), and prompt optimization rules to eliminate prompt dilution and brand drift across all platforms and AI workflows.
+
+### New Features & Improvements in v3.5.1
+
+- **Brand × Fluent 2 Architectural Integration Contract (`/content/brand-fluent2.md`)**:
+  - Established the foundational axiom: *"Fluent 2 provides the interaction system and structural logic. SuamiSihat provides the soul, visual identity, and clinical authority."*
+  - Formulated the authoritative **Boundary & Decision Matrix** explicitly demarcating SuamiSihat brand ownership (Personality, Logos, Colors, Typography, Packshots, Voice) vs. Fluent 2 interaction ownership (Component Anatomy, State Machines, WCAG 2.2 AA Accessibility, Motion Curves, 8px Spatial Grid).
+  - Defined the 4-tier System Precedence: SuamiSihat Brand DNA > SuamiSihat Design Tokens > Fluent 2 Component Anatomy > Page Content.
+  - Added dedicated documentation page to the interactive documentation suite at `/doc/?doc=brand-fluent2`.
+  - Added Section `00 · Architectural Contract` (`#brand-fluent2`) and sidebar navigation directly to the Brand System portal (`/brand-system/#brand-fluent2`).
+
+- **Agent Rules & Prompt Hardening (`.agents/AGENTS.md`)**:
+  - Added **Rule 7 (Brand × Fluent 2 Integration Contract)** to the design system agent instructions.
+  - Added **Rule 8 (Mandatory Source of Truth Block)** providing a standardized, concise prompt snippet for future landing pages, product hubs, and campaign funnels to eliminate prompt dilution and prevent brand drift.
+
+- **Information Architecture (IA) Alignment (`assets.suamisihat.myds.me`)**:
+  - Structured the system into three logical tiers: `01. Foundation` (Principles, Contract, Colors, Typography, Spacing, Elevation, Motion, Accessibility), `02. Brand` (Positioning, Architecture, Logos, Guidelines, Art Direction), and `03. Design System` (Tokens, Components, Patterns, Templates).
+
+- **Global Navigation & Search Upgrades (`Navbar.svelte`)**:
+  - Added `Brand × Fluent 2` to the Docs navigation dropdown menu and the Command Palette (`Ctrl+K`) search index.
+  - Updated system version references to `v3.5.1` across the ecosystem.
+
+---
+
 ## v3.5 — August 2026
 
 ### SvelteKit 2 and Svelte 5 Migration, Living Component Hub and Art Direction Restoration

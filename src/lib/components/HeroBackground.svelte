@@ -104,7 +104,7 @@
   <div class="f-hero-content" style="position: relative; z-index: 2; max-width: 900px; margin: 0 auto; padding: 2.5rem; background: rgba(9, 13, 22, 0.72); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 1.25rem; backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); box-shadow: 0 20px 45px rgba(0,0,0,0.5);">
     <div style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #21A1F7; background: rgba(33, 161, 247, 0.12); border: 1px solid rgba(33, 161, 247, 0.35); padding: 0.35rem 0.9rem; border-radius: 9999px; margin-bottom: 1.25rem;">
       <span style="width: 8px; height: 8px; border-radius: 50%; background: #21A1F7; display: inline-block;"></span>
-      {isStandbyMode ? 'STANDBY & REPOSITORY READY' : 'OFFICIAL DESIGN SYSTEM v3.5.0 (SVELTEKIT)'}
+      {isStandbyMode ? 'STANDBY & REPOSITORY READY' : 'OFFICIAL DESIGN SYSTEM v3.5.1 (SVELTEKIT)'}
     </div>
 
     <h1 style="font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; color: #FFFFFF; line-height: 1.15; margin-bottom: 1rem; letter-spacing: -0.02em;">
