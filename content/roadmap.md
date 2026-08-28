@@ -13,16 +13,17 @@ Welcome to the **SuamiSihat™ Design System Roadmap**. This document outlines o
 
 ---
 
-## 🎯 Current Status (v3.5.0 — LIVING SYSTEM HUB)
+## 🎯 Current Status (v3.5.1 — LIVING SYSTEM HUB)
 
 | Metric | Status |
 | :--- | :--- |
-| **Release Version** | `v3.5.0` |
+| **Release Version** | `v3.5.1` |
 | **Framework Engine** | SvelteKit 2 + Svelte 5 (Runes `$state`, `$derived`, `$props`) |
+| **Architectural Contract** | 🟢 **Brand × Fluent 2 Integration Contract Enforced** |
 | **Living Pages** | 100% SvelteKit Ported (Catalogue, Brand System, Docs, Components, Tools, Signature, Guidelines, Onboarding) |
 | **Product Hubs** | 14 Product Portfolio + Dynamic `[slug]` Brand Hubs with Interactive Galleries |
 | **Markdown Engine** | Full GFM (Marked 9.1.6) + Mermaid Diagrams + Dynamic Auto-TOC |
-| **Test Coverage** | 🟢 **118/118 Automated Test Assertions Passing (100%)** |
+| **Test Coverage** | 🟢 **122/122 Automated Test Assertions Passing (100%)** |
 | **Audit Status** | 🟢 **PRODUCTION READY** |
 
 ---
@@ -30,24 +31,25 @@ Welcome to the **SuamiSihat™ Design System Roadmap**. This document outlines o
 ## 🗺️ Release Roadmap & Milestones
 
 ```text
- [v1.0 - v2.1]         [v3.0 - v3.4]            [v3.5]                [v3.6 - v4.0]
+ [v1.0 - v2.1]         [v3.0 - v3.4]            [v3.5.1]               [v3.6 - v4.0]
  Baseline Web        Fluent 2 Overhaul     Living SvelteKit Hub     Multi-Platform SDKs
  ───────┬───────     ──────────┬────────   ──────────┬─────────     ──────────┬───────────
         │                      │                     │                        │
-  Static Baseline       Multi-Platform       Svelte 5 Runes           NPM / Pub Packages
-  Dark Mode Prototype   AI Agent Skills      Dynamic Brand Hubs       Tailwind v4 Plugin
-  Wordmark Assets       QA Audit Suite       Full Markdown Engine     i18n (BM / EN)
-                        14 Audit Reports     118-Point Test Suite     APCA Contrast Tools
+  Static Baseline       Multi-Platform       Brand × Fluent 2         NPM / Pub Packages
+  Dark Mode Prototype   AI Agent Skills      Svelte 5 Runes           Tailwind v4 Plugin
+  Wordmark Assets       QA Audit Suite       Dynamic Brand Hubs       i18n (BM / EN)
+                        14 Audit Reports     Prompt Hardening Rules   APCA Contrast Tools
 ```
 
 ---
 
 ## 📋 Milestone Breakdown
 
-### ✅ Completed Milestones (v3.5.0)
+### ✅ Completed Milestones (v3.5.1)
 
 | ID | Milestone or Feature | Component | Description | Status |
 | :--- | :--- | :--- | :--- | :--- |
+| `BRAND-FLUENT2` | Brand × Fluent 2 Architectural Contract | Architecture / Core | Codified boundary matrix, 3-tier IA (`01. Foundation`, `02. Brand`, `03. Design System`), and prompt hardening rules in `.agents/AGENTS.md` and `/doc/?doc=brand-fluent2`. | **Completed** |
 | `SVELTEKIT-MIGRATION` | SvelteKit 2 + Svelte 5 Living Hub | Core Engine | Migrated all static HTML pages into modular SvelteKit components with client-side routing, Runes reactivity, and static adapter (SSG). | **Completed** |
 | `PROD-CATALOGUE` | 14-Product Portfolio & Brand Hubs | Products | Restored 14 product brands across 3 sections with dynamic `[slug]` brand hubs, SKU cards, and interactive photo lightboxes. | **Completed** |
 | `TEXT-HIERARCHY` | 4-Tier Text Hierarchy Standards | Tokens / CSS | Codified `--text-strong`, `--text-primary`, `--text-secondary`, `--text-disabled` across light/dark surfaces with comprehensive documentation. | **Completed** |

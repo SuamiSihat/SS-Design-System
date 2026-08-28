@@ -1,5 +1,5 @@
 /**
- * SuamiSihat™ Design System — Comprehensive DOM & Structural Test Suite (v3.5.0)
+ * SuamiSihat™ Design System — Comprehensive DOM & Structural Test Suite (v3.5.1)
  * Validates DOM hierarchy, critical semantic elements, attributes, anchors, logo rules, and dark mode tokens.
  *
  * Usage: node scripts/dom-test.mjs
@@ -109,6 +109,8 @@ testDom('Component Library (build/components/index.html)', componentsHtml, [
 // 3. Brand System DOM Testing
 const brandSystemHtml = loadHtml('build/brand-system/index.html');
 testDom('Brand System (build/brand-system/index.html)', brandSystemHtml, [
+  { desc: 'Contains Brand × Fluent 2 Architectural Contract section', pattern: /brand-fluent2|Fluent 2 provides the interaction system/i },
+  { desc: 'Contains Source of Truth & Boundary Matrix', pattern: /Boundary Matrix|Authoritative Source/i },
   { desc: 'Contains interactive logo variant selector', pattern: /Logo Contrast Tester|Primary Logo|Secondary Logo/i },
   { desc: 'Contains Logo Clear Space and 1X exclusion rule or guidelines', pattern: /Clear Space|clear space|safe_zone\.svg/i },
   { desc: 'Contains safe_zone.svg and ss_logo_proportions.svg diagrams', pattern: /safe_zone\.svg.*ss_logo_proportions\.svg/s },

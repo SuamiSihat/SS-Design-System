@@ -19,6 +19,7 @@
   ];
 
   const docsLinksGroup1 = [
+    { label: 'Brand × Fluent 2', href: '/doc/?doc=brand-fluent2', icon: 'fluent:puzzle-piece-24-regular' },
     { label: 'Onboarding Guide', href: '/onboarding/', icon: 'fluent:person-star-24-regular' },
     { label: "What's New", href: '/doc/?doc=changelog', icon: 'fluent:clock-arrow-download-24-regular' },
     { label: 'Roadmap', href: '/doc/?doc=roadmap', icon: 'fluent:map-drive-24-regular' },
@@ -33,6 +34,10 @@
   ];
 
   const searchIndex = [
+    // Architecture & Contract
+    { title: 'Brand × Fluent 2 Architectural Contract', cat: 'Docs', href: '/doc/?doc=brand-fluent2', desc: 'Boundary matrix, source-of-truth rules, component anatomy, and state machine standard' },
+    { title: 'Brand × Fluent 2 (Brand System Section)', cat: 'Tokens', href: '/brand-system/#brand-fluent2', desc: 'Interactive boundary matrix and two-layer system hierarchy' },
+
     // Brand Tokens
     { title: 'Brand Colors & 60:30:10 Rule', cat: 'Tokens', href: '/brand-system/#colors', desc: 'Prussian Blue (#022057), SS Blue (#043388), Azure (#21A1F7), Banana Yellow (#FCE53D)' },
     { title: 'Logo System & Proportions', cat: 'Tokens', href: '/brand-system/#logos', desc: 'Safe exclusion zone (1X), math proportions, and please do / don\'t rules' },
@@ -172,7 +177,7 @@
     <a class="f-navbar-brand" href="/" aria-label="Home">
       <img src={isDarkMode ? "/public/brand/logos/ss-logomark-dark.svg" : "/public/brand/logos/ss-logomark-light.svg"} class="logo" alt="SuamiSihat™ Icon" aria-hidden="true" loading="eager" style="height: 28px;">
       <span class="f-navbar-brand-name">SS Design System</span>
-      <span class="f-navbar-version">v3.5</span>
+      <span class="f-navbar-version">v3.5.1</span>
     </a>
 
     <!-- Nav links (hidden on small screens) -->
@@ -401,7 +406,7 @@
         {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
       </button>
     </div>
-    <div class="f-drawer-footer">SuamiSihat™ Design System v3.5</div>
+    <div class="f-drawer-footer">SuamiSihat™ Design System v3.5.1</div>
   </aside>
 {/if}
 

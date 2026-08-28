@@ -2,7 +2,7 @@
 
 **The Authoritative Visual Language, W3C Token Architecture & Multi-Platform Component Standard for the SuamiSihat™ Digital Health Ecosystem.**
 
-[![Release](https://img.shields.io/badge/Release-v3.5.0-043388.svg?style=for-the-badge&logo=github)](https://github.com/SuamiSihat/SS-Design-System/releases)
+[![Release](https://img.shields.io/badge/Release-v3.5.1-043388.svg?style=for-the-badge&logo=github)](https://github.com/SuamiSihat/SS-Design-System/releases)
 [![License](https://img.shields.io/badge/License-MIT-6DC6EC.svg?style=for-the-badge)](LICENSE)
 [![Framework](https://img.shields.io/badge/Framework-SvelteKit%202%20•%20Svelte%205-FF3E00.svg?style=for-the-badge&logo=svelte)](https://svelte.dev/)
 [![Design Language](https://img.shields.io/badge/Design%20Language-Microsoft%20Fluent%202-022057.svg?style=for-the-badge&logo=windows)](https://fluent2.microsoft.design/)
@@ -345,7 +345,7 @@ npm test
 
 ```bash
 # Execute deployment script to Synology NAS Web Station
-powershell -ExecutionPolicy Bypass -File deploy.ps1 -Message "feat: release v3.5.0 update"
+powershell -ExecutionPolicy Bypass -File deploy.ps1 -Message "feat: release v3.5.1 update"
 ```
 
 ---

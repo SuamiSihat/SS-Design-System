@@ -1,5 +1,5 @@
 /**
- * SuamiSihat™ Design System — Production Smoke Test Suite (v3.5.0)
+ * SuamiSihat™ Design System — Production Smoke Test Suite (v3.5.1)
  * Validates SvelteKit SSG outputs, routing integrity, raw asset CDN delivery, and token exports.
  *
  * Usage: node scripts/smoke-test.mjs
@@ -53,7 +53,7 @@ function checkFileContains(relPath, searchStr, desc) {
 }
 
 console.log('\n======================================================');
-console.log('  🧪 SuamiSihat™ Design System — Smoke Test Suite (v3.5.0)');
+console.log('  🧪 SuamiSihat™ Design System — Smoke Test Suite (v3.5.1)');
 console.log('======================================================\n');
 
 // -----------------------------------------------------------------------------
@@ -97,6 +97,7 @@ checkFileExists('build/content/brand-voice.md', 100);
 checkFileExists('build/content/changelog.md', 100);
 checkFileExists('build/content/text-color-guide.md', 100);
 checkFileExists('build/content/ss-hero-guide.md', 100);
+checkFileExists('build/content/brand-fluent2.md', 100);
 
 // -----------------------------------------------------------------------------
 // Test Group 4: JSON Token Syntax Integrity
@@ -126,6 +127,6 @@ console.log('======================================================\n');
 if (failedTests > 0) {
   process.exit(1);
 } else {
-  console.log('\x1b[32m🎉 All smoke test assertions PASSED with 100% success! SvelteKit v3.5.0 is healthy and production-ready.\x1b[0m\n');
+  console.log('\x1b[32m🎉 All smoke test assertions PASSED with 100% success! SvelteKit v3.5.1 is healthy and production-ready.\x1b[0m\n');
   process.exit(0);
 }
