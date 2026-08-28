@@ -2,6 +2,31 @@
 
 > **SuamiSihat™ Design System** is the **master project, master documentation, and master guideline** for the entire SS ecosystem — web, Expo/React Native mobile apps, and all internal tools. This changelog is the authoritative record of every change. All platforms derive from this system.
 
+## v3.6.0 — August 2026
+
+### Medium.com Editorial Documentation Suite, 3-Column Layout & Outline TOC
+
+Major documentation engine upgrade transforming the documentation viewer into a modern 3-column architecture featuring a Medium.com editorial aesthetic, sticky Right Pane Outline TOC, live scroll position tracking, and full-width center column alignment.
+
+### New Features & Improvements in v3.6.0
+
+- **3-Column Documentation Architecture (`/doc/`)**:
+  - Implemented 3-column layout grid (`Left Navigation Sidebar (260px) | Full-Width Center Article (Flex) | Sticky Right Outline TOC Pane (250px)`).
+  - Created dedicated sticky Right Pane Outline (`.f-toc-right-pane`) with scroll position tracking (`activeHeadingId`) that automatically highlights the current section as the user reads down the page.
+  - Smooth 1-click offset navigation when clicking any outline heading item.
+
+- **Medium.com Editorial Aesthetic & Meta Header Bar**:
+  - Added Medium-style Article Metadata Header Bar (`.medium-article-meta`) featuring the official SuamiSihat logomark badge, `SuamiSihat™ Art Direction` publisher name, `Official Standard` pill, dynamic word count read time (e.g. `4 min read`), date (`August 2026`), and system version.
+  - Implemented 1-click **Share** button that copies the direct article URL with live toast confirmation (`Copied Link!`).
+  - Upgraded prose typography to Medium publication standards: 800-weight editorial headlines (`font-size: clamp(2.2rem, 4vw, 3.15rem)`), Georgia/serif pull quotes with left brand accent bar (`blockquote:not(.callout-card)`), and generous 1.8 line height.
+
+- **Pixel-Perfect 100% Full-Width Alignment**:
+  - Wrapped breadcrumb, Medium metadata bar, title, callout alert cards, code copy toolbars, responsive tables, and prose paragraphs in a unified `.doc-article-container`.
+  - Expanded center column to 100% full width (`max-width: 100%`) for maximum reading legibility and content space between sidebars.
+
+- **Clean Navigation Sidebar**:
+  - Focused the documentation sidebar strictly on Core Documentation standards, removing legacy operating subsidiary items.
+
 ---
 
 ## v3.5.1 — August 2026
@@ -18,6 +43,14 @@ Architectural refinement and source-of-truth standardization introducing the for
   - Defined the 4-tier System Precedence: SuamiSihat Brand DNA > SuamiSihat Design Tokens > Fluent 2 Component Anatomy > Page Content.
   - Added dedicated documentation page to the interactive documentation suite at `/doc/?doc=brand-fluent2`.
   - Added Section `00 · Architectural Contract` (`#brand-fluent2`) and sidebar navigation directly to the Brand System portal (`/brand-system/#brand-fluent2`).
+
+- **Colour Composition Standard (`/content/color-composition-guide.md`)**:
+  - Published authoritative guideline **"Colour Composition: Why SuamiSihat Should Standardise on 60:30:10"**.
+  - Established **60:30:10 as the primary colour-composition rule** for brand communications, campaigns, marketing, packaging, and editorial layouts.
+  - Retained **80:20 as a secondary composition model** for dense UI, health dashboards, and minimal functional interfaces.
+  - Mapped SuamiSihat brand semantics to composition roles (60% Canvas/Void Foundation, 30% SS Prussian/SS Blue Structure, 10% Azure/Banana/Lion Accents).
+  - Integrated full decision matrix, quadrant chart, failure mode prevention, and art direction frameworks.
+  - Registered in documentation navigation (`/doc/?doc=color-composition-guide`) and global Spotlight search (`Ctrl+K`).
 
 - **Agent Rules & Prompt Hardening (`.agents/AGENTS.md`)**:
   - Added **Rule 7 (Brand × Fluent 2 Integration Contract)** to the design system agent instructions.

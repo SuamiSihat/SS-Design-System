@@ -20,6 +20,7 @@
 
   const docsLinksGroup1 = [
     { label: 'Brand × Fluent 2', href: '/doc/?doc=brand-fluent2', icon: 'fluent:puzzle-piece-24-regular' },
+    { label: 'Colour Composition', href: '/doc/?doc=color-composition-guide', icon: 'fluent:color-fill-24-regular' },
     { label: 'Onboarding Guide', href: '/onboarding/', icon: 'fluent:person-star-24-regular' },
     { label: "What's New", href: '/doc/?doc=changelog', icon: 'fluent:clock-arrow-download-24-regular' },
     { label: 'Roadmap', href: '/doc/?doc=roadmap', icon: 'fluent:map-drive-24-regular' },
@@ -36,6 +37,7 @@
   const searchIndex = [
     // Architecture & Contract
     { title: 'Brand × Fluent 2 Architectural Contract', cat: 'Docs', href: '/doc/?doc=brand-fluent2', desc: 'Boundary matrix, source-of-truth rules, component anatomy, and state machine standard' },
+    { title: 'Colour Composition Standard (60:30:10 vs 80:20)', cat: 'Docs', href: '/doc/?doc=color-composition-guide', desc: '60:30:10 primary brand composition rule, 80:20 UI model, decision framework, and accent roles' },
     { title: 'Brand × Fluent 2 (Brand System Section)', cat: 'Tokens', href: '/brand-system/#brand-fluent2', desc: 'Interactive boundary matrix and two-layer system hierarchy' },
 
     // Brand Tokens
