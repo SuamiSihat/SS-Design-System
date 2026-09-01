@@ -1,47 +1,48 @@
-# About This System
+# About the SuamiSihat™ Design System
 
-The SS Design System is our shared creative language — built so every designer, developer, and marketer is always working from the same page, no matter the platform or project.
-
----
-
-## What's Inside
-
-Inside, you'll find SuamiSihat™'s foundational brand elements:
-
-- **Logo System** — Master brand, parent corporate, and subsidiary marks with clear space rules
-- **Colour Palette** — Primary blues, secondary golds, and neutrals with multi-space specs (HEX, RGB, CMYK, Lab, BAL/RAL, Pantone)
-- **Text Color & Hierarchy** — 4-tier text emphasis system (`--text-strong`, `--text-primary`, `--text-secondary`, `--text-disabled`)
-- **Typography** — Our typeface stack, weights, and usage hierarchy
-- **Brand Architecture** — 1 Master Brand (SuamiSihat™), 1 Parent Corporate Company (SuamiSihat™ Holding Sdn. Bhd. / SS Health), and 4 Operating Subsidiaries (SS Clinic, SS Wellness, SS Ecommerce, SS Technology)
-- **Icons & Logo Usage** — Safe zones, Do's & Don'ts, incorrect usage examples, and icon variants
-- **Downloads** — All official brand kits packaged and version-controlled
+The **SuamiSihat™ Design System** is our authoritative creative and architectural language. It ensures that every designer, software engineer, medical writer, and marketing specialist builds from a single, unified foundation across all clinical and digital touchpoints.
 
 ---
 
-## Who This Is For
+## System Contents
 
-| Audience | Use This System To |
+The system establishes the foundational standards for the entire SuamiSihat™ ecosystem:
+
+- **Logo Governance** — Master brand, parent holding, and subsidiary marks with strict clear-space and contrast rules.
+- **Color Architecture** — 60:30:10 visual color allocation, semantic tokens, and WCAG AA/AAA certified palettes.
+- **Typography Standards** — Primary typefaces, hierarchy scales, and the mandatory Neutral Black (`#1C1C1C`) readability standard.
+- **Corporate Architecture** — Master Brand (`SuamiSihat™`), Parent Entity (`SuamiSihat Holding Sdn. Bhd.`), and Operating Subsidiaries (Healthcare, Group, Technology, and Ecommerce).
+- **Component Primitives** — Microsoft Fluent 2-aligned interface elements, states, and accessibility tokens.
+- **Brand Kits & Downloads** — Official vector logos, stationery templates, and design assets packaged for production.
+
+---
+
+## Stakeholder Guide
+
+| Role | Primary System Focus |
 |---|---|
-| **Designers** | Maintain visual consistency across every deliverable |
-| **Developers** | Implement brand tokens and components correctly |
-| **Marketers** | Apply the brand correctly in campaigns and collateral |
-| **Partners & Agencies** | Understand the brand before you build |
+| **Designers & Creatives** | Maintain visual balance, 60:30:10 allocation, and asset fidelity across all collateral. |
+| **Software Engineers** | Consume standardized W3C design tokens and Fluent 2 component patterns across Web, Mobile, and Desktop. |
+| **Marketing & Growth** | Apply approved brand voice, medical disclaimer standards, and trademark rules in campaign assets. |
+| **Partners & Affiliates** | Understand brand standards and usage boundaries prior to integration or collateral publication. |
 
 ---
 
-## How to Use This System
+## Operating Principles
 
-Start with the sections relevant to your work. If you're building a digital product, start with Colour and Typography. If you're creating print materials, start with the Logomark and Sub-brands.
+Start with the domain relevant to your workflow:
+- **Digital Applications:** Consult the Color Palette, Typography Tokens, and Component Library.
+- **Print & Physical Spaces:** Refer to Logo Governance, Clear Space Specifications, and Interior Guidelines.
 
-> When in doubt — less is more. Stick to the primary palette, primary typefaces, and approved logo variants. The system is designed to keep things looking intentional with minimal effort.
+> **Guiding Principle:** Restraint is the hallmark of modern healthcare. Stick to the certified primary palette, typography hierarchy, and approved logo variants to ensure every touchpoint conveys clinical trust and dignity.
 
 ---
 
-## Need Help?
+## Brand Governance & Support
 
-For anything beyond the scope of this document:
+For asset requests, brand reviews, or system inquiries:
 
 - **Email:** [branding@suamisihat.com](mailto:branding@suamisihat.com)
-- **Response time:** 24–48 hours
+- **Response Commitment:** Within 24–48 business hours
+- **Reference:** [Contribution Guide](doc.html?doc=contribution-guide)
 
-See also: [Contribution Guide](doc.html?doc=contribution-guide)

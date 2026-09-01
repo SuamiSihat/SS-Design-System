@@ -1,43 +1,56 @@
-# Contribution Guide
+# Design System Contribution & Governance Guide
 
-The **SuamiSihat™ Design System** is a living ecosystem. It evolves continuously with clinical feedback, UI/UX innovations, and multi-platform app requirements. We welcome contributions from developers, designers, brand custodians, and medical stakeholders.
-
----
-
-## How to Request a Change
-
-Whether you've identified a bug, require a new UI component, or want to enhance copy or clinical guides, here is the standard workflow:
-
-### Option 1 — Open an Issue or Email
-
-For general proposals or questions:
-
-- **Email**: [branding@suamisihat.com](mailto:branding@suamisihat.com)
-- **Details to Include**:
-  - **What**: Exact component, token, or documentation section.
-  - **Why**: Clinical use case, user feedback, or platform requirement.
-  - **Proposed Solution**: Mockup, code snippet, or suggested copy.
-
-### Option 2 — Direct Pull Request
-
-If you have repository access and wish to contribute code or documentation directly:
-
-1. Create a feature branch: `git checkout -b feat/your-feature-name`
-2. Implement your changes following our [Architecture and Coding Standards](#architecture-and-coding-standards).
-3. Verify that the full automated test suite passes: `npm test`
-4. Submit a Pull Request targeting `main`.
+The **SuamiSihat™ Design System** is an evolving ecosystem asset. We welcome contributions, bug reports, and enhancement proposals from designers, software engineers, clinical practitioners, and operational teams.
 
 ---
 
-## Architecture and Coding Standards
+## How to Propose Changes
 
-### 1. The 60:30:10 Visual Allocation Standard
+### 1. Brand Review Submission (Fast Track)
+For new component requests, asset updates, or copy refinements, email the brand governance team at **[branding@suamisihat.com](mailto:branding@suamisihat.com)** including:
+- **Scope of Change:** Specify the affected component, route, or documentation section.
+- **Business or Clinical Rationale:** Detail the use case, clinical requirement, or user feedback.
+- **Proposed Solution:** Provide mockups, screenshots, or suggested wording.
 
-Every screen and component must adhere strictly to the 60:30:10 proportion:
+*The Brand Governance team reviews all submissions within 24–48 business hours.*
 
-- **60% Clinical Canvas**: Light surfaces (`#F8FAFC`, `#FFFFFF`) or dark void (`#090D16`, `#141414`).
-- **30% Structural Trust**: Prussian Blue (`#022057`) and SS Blue (`#043388`) for headers, container cards, and navbars.
-- **10% Conversion Accent**: Azure Blue (`#21A1F7`) and Banana Yellow (`#F7E143`) strictly for primary conversion CTAs.
+### 2. Direct Documentation Contributions
+Approved contributors with repository access may propose editorial and documentation changes directly within the `/content/` directory:
+
+```text
+content/
+├── vision-mission.md        # Corporate vision, mission, and design principles
+├── introduction.md          # System scope and stakeholder guide
+├── brand-voice.md           # Editorial standards and approved terminology
+├── roadmap.md               # Strategic release milestones
+├── changelog.md             # Authoritative release history
+└── sub-brands/              # Entity and subsidiary brand kits
+```
+
+> **Governance Note:** Markdown edits update the dynamic documentation engine. Visual token modifications, component changes, and logo updates must pass the official Brand Governance review.
+
+---
+
+## Contribution & Approval Matrix
+
+| Contribution Type | Review Pathway | Gatekeeper |
+|---|---|---|
+| **Editorial & Copy Updates** | Direct documentation PR or email review | Editorial Team |
+| **New UI Component Proposals** | Design review + accessibility audit (WCAG AA) | Lead UI/UX Architect |
+| **Color & Token Adjustments** | 60:30:10 verification & token pipeline update | Brand Director |
+| **Logo & Trademark Assets** | Executive brand board approval required | Brand Governance Board |
+
+---
+
+## Brand Integrity Guardrails
+
+To protect SuamiSihat™ brand equity:
+- **Never alter official logos:** Do not rotate, recolor, add drop shadows, or distort vector logomarks.
+- **Preserve typography discipline:** Strictly maintain Neutral Black (`#1C1C1C`) for body text and headers.
+- **Enforce the 60:30:10 rule:** Avoid multiple competing high-intensity accent buttons on a single view.
+- **Respect patient confidentiality:** Ensure demo assets, screenshots, and test data use simulated, non-identifiable information.
+
+---
 
 ### 2. 4-Tier Text Hierarchy Standards
 

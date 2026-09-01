@@ -1,45 +1,46 @@
 # Vision & Mission
 
-The *why* behind everything we build. Our vision and mission aren't just words on a wall — they're the filters we run every design decision through.
+Our vision and mission define every strategic and creative decision across the SuamiSihat™ ecosystem. They guide our visual language, clinical protocols, and patient communications.
 
 ---
 
-## Our Vision
+## Strategic Vision
 
-> To be the most trusted men's health brand in Southeast Asia — recognised for clinical precision, human-first design, and the courage to redefine what healthcare looks like.
+> **"To be the most trusted men's health ecosystem in Southeast Asia — recognized for clinical precision, human-centered design, and the leadership to transform how men care for their health."**
 
-We're not building just another health brand. We're building the brand that changes how men in Southeast Asia think about their health — and makes them proud to take it seriously.
-
----
-
-## Our Mission
-
-> To empower every touchpoint of the SuamiSihat™ ecosystem with a design language that is consistent, accessible, and purposefully built — so every product, platform, and patient interaction reflects who we are.
-
-Our design system exists to make this real. When a patient sees our clinic signage, opens our app, or receives our packaging, they should feel the same brand — confident, clear, and human.
+We are establishing a modern benchmark for men's healthcare: transforming proactive wellness from a sensitive concern into a confident, empowered, and dignified lifestyle.
 
 ---
 
-## What This Means for Design
+## Core Mission
 
-| Principle | What It Looks Like |
+> **"To empower every touchpoint of the SuamiSihat™ ecosystem with a unified, accessible, and purposeful design language — ensuring that every consultation, digital platform, and product experience reflects our commitment to patient trust."**
+
+When a patient visits our clinics, engages with our mobile applications, or opens our packaging, they experience an unwavering standard of care: professional, empathetic, and discreet.
+
+---
+
+## Design Principles in Practice
+
+| Principle | Practical Expression |
 |---|---|
-| **Clinical Trust** | Clean layouts, precise typography, no visual noise |
-| **Human-First** | Warm colour accents, approachable copy, inclusive sizing |
-| **Consistent** | Same tokens, same components, same voice — everywhere |
-| **Purposeful** | Every design choice has a reason; nothing is decoration |
+| **Clinical Authority** | Uncluttered layouts, rigorous typography hierarchy, and evidence-grounded presentation. |
+| **Human-Centered Care** | Welcoming visual warmth, empathetic copy, and inclusive digital accessibility. |
+| **Systemic Consistency** | Unified design tokens, reusable component architecture, and coherent voice across platforms. |
+| **Functional Purpose** | Every visual element and interaction serves a defined clinical or informational objective. |
 
 ---
 
-## How Vision Shapes the System
+## Architectural Alignment
 
-The SS Design System isn't a style guide — it's a living commitment to these principles. Every component, colour token, and typeface choice flows from this foundation.
+The SuamiSihat™ Design System translates these principles into verified digital assets:
 
-- **SS Prussian Blue** anchors clinical authority
-- **Poppins** brings warmth to technical precision
-- **Our logo** is engineered, not decorative
-- **Sub-brand voices** extend the mission without diluting it
+- **Prussian Blue (`#022057`)** anchors corporate governance and medical credibility.
+- **SS Blue (`#043388`)** delivers primary brand recognition across clinical services.
+- **Neutral Black (`#1C1C1C`)** guarantees reading comfort without harsh screen contrast.
+- **Sub-Brand Identity Rules** maintain ecosystem cohesion while empowering specialized service lines.
 
 ---
 
-*For questions about our brand direction, reach out at [branding@suamisihat.com](mailto:branding@suamisihat.com).*
+*For inquiries regarding brand governance or clinical design integration, contact [branding@suamisihat.com](mailto:branding@suamisihat.com).*
+
