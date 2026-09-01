@@ -181,13 +181,13 @@
           <div>
             <div class="f-manifesto-badge-pill">
               <span class="f-pulse-dot"></span>
-              <span>Why This System Exists</span>
+              <span>System Purpose &amp; Governance</span>
             </div>
             <p class="f-manifesto-quote">
-              &ldquo;Before this system, 5 subsidiaries shipped products with 7 conflicting shades of blue. Now a single W3C token JSON updates CSS, Flutter, Tailwind, and WPF simultaneously &mdash; in one commit.&rdquo;
+              &ldquo;A unified design system engineered to establish clinical authority, protect brand equity, and ensure seamless patient experiences across all digital and physical environments.&rdquo;
             </p>
             <p class="f-manifesto-lead">
-              The design system enforces <strong>Clinical Authority</strong> through strict token hierarchy, <strong>10&times; Velocity</strong> via pre-built Fluent 2 components, and <strong>Zero Brand Drift</strong> through a single source of truth shared across all subsidiaries.
+              The SuamiSihat™ Design System serves as the authoritative single source of truth across all operating subsidiaries &mdash; synchronizing design tokens, component architecture, and accessibility standards across Web, Mobile, and Desktop platforms.
             </p>
           </div>
 
@@ -525,10 +525,10 @@
                 <span>Fragmented Silos &amp; Inconsistent Patient Touchpoints</span>
               </div>
               <ul class="f-case-points-list">
-                <li>&bull; <strong>Color Drift:</strong> 7 conflicting shades of blue across clinic signage, boxes, and web.</li>
-                <li>&bull; <strong>Slow Launches:</strong> Average of 4 weeks to create and clear a new product landing page.</li>
-                <li>&bull; <strong>Code Duplication:</strong> Developers re-implemented button and modal styles from scratch for every app.</li>
-                <li>&bull; <strong>Compliance Gaps:</strong> Inconsistent contrast on mobile screens failing accessibility audits.</li>
+                <li>&bull; <strong>Brand Inconsistency:</strong> Unstandardized color palettes across physical clinics, product packaging, and digital channels.</li>
+                <li>&bull; <strong>Development Overhead:</strong> Extended implementation timelines due to lack of unified component libraries.</li>
+                <li>&bull; <strong>Code Redundancy:</strong> Separate styling implementations duplicated across web and native mobile codebases.</li>
+                <li>&bull; <strong>Accessibility Variations:</strong> Inconsistent contrast ratios on digital screens prior to tokenized standards.</li>
               </ul>
             </div>
           {:else}
@@ -538,10 +538,10 @@
                 <span>Single Source of Truth &amp; Automated Multi-Platform Sync</span>
               </div>
               <ul class="f-case-points-list">
-                <li>&bull; <strong>W3C Token Pipeline:</strong> 1 master JSON updates CSS, Tailwind, Flutter, and WPF simultaneously.</li>
-                <li>&bull; <strong>3-Day Turnaround:</strong> Pre-built Fluent 2 components cut landing page creation from 4 weeks to 72 hours.</li>
-                <li>&bull; <strong>100% Brand Consistency:</strong> ANDROLAB, MENSS, Mensculine, and Rejal packaging approved with zero drift.</li>
-                <li>&bull; <strong>WCAG 2.1 AA Certified:</strong> Strict 4-tier contrast pairing audited on every component.</li>
+                <li>&bull; <strong>Unified Token Architecture:</strong> Centralized design tokens synchronizing Web, Mobile (Flutter/Expo), and Desktop (WPF).</li>
+                <li>&bull; <strong>Rapid Deployment:</strong> Standardized Fluent 2 components accelerating production cycles from weeks to days.</li>
+                <li>&bull; <strong>Ecosystem Integrity:</strong> ANDROLAB, MENSS, Mensculine, and REJAL brand assets aligned with zero dilution.</li>
+                <li>&bull; <strong>WCAG 2.1 AA Certified:</strong> Strict 4-tier contrast pairing audited across all light and dark interfaces.</li>
               </ul>
             </div>
           {/if}
