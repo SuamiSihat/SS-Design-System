@@ -97,7 +97,7 @@ async function run() {
     '#FCFAF6'
   ]);
   await checkPageContent('/signature/', [
-    'Signature Generator',
+    'Signature Studio',
     'SSH'
   ]);
   await checkPageContent('/onboarding/', [
