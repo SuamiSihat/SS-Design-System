@@ -30,6 +30,7 @@
   const docsLinksGroup2 = [
     { label: 'Vision & Mission', href: '/doc/?doc=vision-mission', icon: 'fluent:eye-24-regular' },
     { label: 'Brand Voice', href: '/doc/?doc=brand-voice', icon: 'fluent:megaphone-24-regular' },
+    { label: 'Clinic Positioning', href: '/doc/?doc=clinic-positioning', icon: 'fluent:building-24-regular' },
     { label: 'Mail Signature', href: '/signature/', icon: 'fluent:mail-template-24-regular' },
     { label: 'SS CAM & Tools', href: '/tools/', icon: 'fluent:camera-24-regular' }
   ];
@@ -72,7 +73,9 @@
     { title: 'WCAG Color Contrast Ratio Tool', cat: 'Tools', href: '/tools/#contrast-tool', desc: 'Real-time foreground & background accessibility contrast tester' },
     { title: 'Brand Guidelines Booklets', cat: 'Guides', href: '/brand-guidelines/', desc: 'Logo & Concept and Interior Design official booklets' },
     { title: 'What\'s New (Changelog)', cat: 'Docs', href: '/doc/?doc=changelog', desc: 'Version history, release notes, and latest updates' },
-    { title: 'Vision & Mission Statement', cat: 'Docs', href: '/doc/?doc=vision-mission', desc: 'Canonical corporate purpose, vision, and core values' }
+    { title: 'Vision & Mission Statement', cat: 'Docs', href: '/doc/?doc=vision-mission', desc: 'Canonical corporate purpose, vision, and core values' },
+    { title: 'SS Clinic Brand Positioning', cat: 'Docs', href: '/doc/?doc=clinic-positioning', desc: "The Husband's Health Authority - competitive analysis, tagline architecture, Brand Chorus, dual-market playbooks and 18-month roadmap" },
+    { title: "Clinic Brand Promise Stamp", cat: 'Docs', href: '/doc/?doc=clinic-positioning', desc: "Check Dulu. Rawat Dengan Tepat. Tiada Janji Palsu. No-BS positioning, honest broker stance, forbidden copy guidelines" }
   ];
 
   let filteredResults = $derived(
@@ -724,3 +727,5 @@
     color: #21A1F7;
   }
 </style>
+
+
