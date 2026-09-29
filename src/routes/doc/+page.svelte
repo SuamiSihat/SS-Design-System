@@ -17,18 +17,30 @@
 
   const docCategories = [
     {
-      label: 'Core Documentation',
+      label: 'Brand Strategy & Vision',
+      items: [
+        { id: 'vision-mission',      title: 'Vision & Mission',          path: '/content/vision-mission.md',       icon: 'fluent:eye-24-regular' },
+        { id: 'clinic-positioning',  title: 'Clinic Brand Positioning',  path: '/content/clinic-positioning.md',   icon: 'fluent:shield-checkmark-24-regular' },
+        { id: 'brand-voice',         title: 'Brand Voice & Tone',       path: '/content/brand-voice.md',          icon: 'fluent:megaphone-24-regular' },
+        { id: 'diagnostic-funnel',   title: 'Diagnostic Funnel Standard', path: '/content/diagnostic-funnel.md', icon: 'fluent:filter-24-regular' },
+        { id: 'roadmap',             title: 'Strategic Roadmap 2026',  path: '/content/roadmap.md',             icon: 'fluent:map-drive-24-regular' }
+      ]
+    },
+    {
+      label: 'Design & Visual System',
       items: [
         { id: 'introduction',        title: 'Introduction & Standards', path: '/content/introduction.md',       icon: 'fluent:home-24-regular' },
-        { id: 'brand-fluent2',        title: 'Brand × Fluent 2 Contract', path: '/content/brand-fluent2.md',      icon: 'fluent:puzzle-piece-24-regular' },
-        { id: 'ss-hero-guide',       title: 'Hero Banner Standard (ss-hero)', path: '/content/ss-hero-guide.md', icon: 'fluent:sparkle-24-regular' },
-        { id: 'text-color-guide',    title: 'Text Color & Hierarchy Guide', path: '/content/text-color-guide.md', icon: 'fluent:text-color-24-regular' },
+        { id: 'brand-fluent2',        title: 'Brand x Fluent 2 Contract', path: '/content/brand-fluent2.md',      icon: 'fluent:puzzle-piece-24-regular' },
         { id: 'color-composition-guide', title: 'Colour Composition Standard (60:30:10)', path: '/content/color-composition-guide.md', icon: 'fluent:color-fill-24-regular' },
-        { id: 'roadmap',             title: 'Strategic Roadmap 2026',  path: '/content/roadmap.md',             icon: 'fluent:map-drive-24-regular' },
-        { id: 'brand-voice',         title: 'Brand Voice & Tone',       path: '/content/brand-voice.md',          icon: 'fluent:megaphone-24-regular' },
-        { id: 'changelog',           title: 'System Changelog',          path: '/content/changelog.md',            icon: 'fluent:clock-arrow-download-24-regular' },
+        { id: 'text-color-guide',    title: 'Text Color & Hierarchy Guide', path: '/content/text-color-guide.md', icon: 'fluent:text-color-24-regular' },
+        { id: 'ss-hero-guide',       title: 'Hero Banner Standard (ss-hero)', path: '/content/ss-hero-guide.md', icon: 'fluent:sparkle-24-regular' }
+      ]
+    },
+    {
+      label: 'Governance & Operations',
+      items: [
         { id: 'contribution-guide',  title: 'Contribution Guide',        path: '/content/contribution-guide.md',   icon: 'fluent:heart-hand-24-regular' },
-        { id: 'vision-mission',      title: 'Vision & Mission',          path: '/content/vision-mission.md',       icon: 'fluent:eye-24-regular' }
+        { id: 'changelog',           title: 'System Changelog',          path: '/content/changelog.md',            icon: 'fluent:clock-arrow-download-24-regular' }
       ]
     }
   ];
