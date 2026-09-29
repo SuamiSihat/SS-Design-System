@@ -31,6 +31,7 @@
     { label: 'Vision & Mission', href: '/doc/?doc=vision-mission', icon: 'fluent:eye-24-regular' },
     { label: 'Brand Voice', href: '/doc/?doc=brand-voice', icon: 'fluent:megaphone-24-regular' },
     { label: 'Clinic Positioning', href: '/doc/?doc=clinic-positioning', icon: 'fluent:building-24-regular' },
+    { label: 'Diagnostic Funnel', href: '/doc/?doc=diagnostic-funnel', icon: 'fluent:clipboard-pulse-24-regular' },
     { label: 'Mail Signature', href: '/signature/', icon: 'fluent:mail-template-24-regular' },
     { label: 'SS CAM & Tools', href: '/tools/', icon: 'fluent:camera-24-regular' }
   ];
@@ -75,7 +76,9 @@
     { title: 'What\'s New (Changelog)', cat: 'Docs', href: '/doc/?doc=changelog', desc: 'Version history, release notes, and latest updates' },
     { title: 'Vision & Mission Statement', cat: 'Docs', href: '/doc/?doc=vision-mission', desc: 'Canonical corporate purpose, vision, and core values' },
     { title: 'SS Clinic Brand Positioning', cat: 'Docs', href: '/doc/?doc=clinic-positioning', desc: "The Husband's Health Authority - competitive analysis, tagline architecture, Brand Chorus, dual-market playbooks and 18-month roadmap" },
-    { title: "Clinic Brand Promise Stamp", cat: 'Docs', href: '/doc/?doc=clinic-positioning', desc: "Check Dulu. Rawat Dengan Tepat. Tiada Janji Palsu. No-BS positioning, honest broker stance, forbidden copy guidelines" }
+    { title: "Clinic Brand Promise Stamp", cat: 'Docs', href: '/doc/?doc=clinic-positioning', desc: "Check Dulu. Rawat Dengan Tepat. Tiada Janji Palsu. No-BS positioning, honest broker stance, forbidden copy guidelines" },
+    { title: 'Diagnostic Funnel (Ujian Skor Kesihatan Suami)', cat: 'Docs', href: '/doc/?doc=diagnostic-funnel', desc: '7-step diagnostic-first patient journey, Formaloo quiz positioning, prohibited copy, approved entry copy suite and funnel benchmarks' },
+    { title: 'SS Clinic Copy Standards & Prohibited Keywords', cat: 'Docs', href: '/doc/?doc=brand-voice', desc: 'Permanently blacklisted shame-trigger phrases, Brand Chorus doctrine, regional voice variants (SJ vs KB), em-dash and all-caps prohibition' }
   ];
 
   let filteredResults = $derived(
