@@ -78,7 +78,7 @@ console.log('\n⚡ 2. Validating SvelteKit Runtime & Client Bundles:');
 checkFileContains('build/index.html', '_app/immutable/', 'Index contains SvelteKit immutable bundle references');
 checkFileContains('build/index.html', 'SuamiSihat', 'Index contains SuamiSihat brand title in rendered DOM');
 checkFileContains('build/brand-guidelines/index.html', '60:30:10', 'Brand guidelines contains 60:30:10 rule');
-checkFileContains('build/signature/index.html', 'Live Signature Preview', 'Signature page contains preview component');
+checkFileContains('build/signature/index.html', 'Live Mail Client Preview', 'Signature page contains preview component');
 
 // -----------------------------------------------------------------------------
 // Test Group 3: Raw Static Asset CDN Delivery (Multi-Platform Consumers)
