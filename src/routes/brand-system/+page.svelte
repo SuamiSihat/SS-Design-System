@@ -753,9 +753,6 @@ class SSColors {
               <div 
                 class="bs-swatch-card" 
                 onclick={() => copyHex(color.hex, color.name)} 
-                role="button" 
-                tabindex="0" 
-                onkeydown={(e) => e.key === 'Enter' && copyHex(color.hex, color.name)} 
                 style="background:var(--color-neutral-bg-2); border:1px solid var(--color-neutral-stroke-1); border-radius:var(--f-radius-xl); overflow:hidden; cursor:pointer; box-shadow:var(--f-shadow-2); transition:transform 0.15s ease, box-shadow 0.15s ease;"
               >
                 <!-- Color Bar Header -->

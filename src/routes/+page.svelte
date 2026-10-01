@@ -217,7 +217,7 @@
       </div>
 
       <!-- Bento Item 2: 4-Col Full Animated Kinetic & Lottie Canvas (Zero Text) -->
-      <div class="f-bento-card f-bento-span-4 f-bento-full-animated" aria-label="Zero Brand Dilution Interactive Kinetic Visualization">
+      <div class="f-bento-card f-bento-span-4 f-bento-full-animated" role="img" aria-label="Zero Brand Dilution Interactive Kinetic Visualization">
         <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
         
         <!-- Edge-to-Edge Animated Kinetic Quantum Sphere & Token Alignment Engine -->

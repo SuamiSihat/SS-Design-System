@@ -329,7 +329,7 @@
 
       {#if isLoading}
         <!-- Skeleton loader -->
-        <div class="doc-skeleton" aria-busy="true" aria-label="Loading document">
+        <div class="doc-skeleton" role="status" aria-busy="true" aria-label="Loading document">
           <div class="skeleton-line skeleton-h1"></div>
           <div class="skeleton-line skeleton-p"></div>
           <div class="skeleton-line skeleton-p" style="width: 80%;"></div>

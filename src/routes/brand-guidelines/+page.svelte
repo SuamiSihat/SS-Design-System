@@ -106,10 +106,7 @@
     <!-- Book 1: Logo & Concept -->
     <div class="book-horizontal-card" 
          onclick={() => openBook('logo')} 
-         onkeydown={(e) => e.key === 'Enter' && openBook('logo')}
-         role="button" 
-         tabindex="0" 
-         aria-label="Open Logo & Concept Guideline">
+         onkeydown={(e) => e.key === 'Enter' && openBook('logo')}>
       <div class="book-thumbnail-wrap">
         <img src="/brand-guidelines/cover-logo-concept.png" alt="Logo & Concept Guideline Cover" class="book-cover-img" loading="eager" />
         <div class="book-cover-overlay">
@@ -126,7 +123,7 @@
           Authoritative visual identity standard covering the SuamiSihat™ logomark, 1X exclusion space, typography scales, and multi-platform color hierarchies.
         </p>
         <div class="book-actions">
-          <button class="ss-btn ss-btn-primary ss-btn-sm" onclick={(e) => { e.stopPropagation(); openBook('logo'); }}>
+          <button class="ss-btn ss-btn-primary ss-btn-sm" onclick={(e) => { e.stopPropagation(); openBook('logo'); }} aria-label="Read Logo & Concept Guideline Online">
             <iconify-icon icon="fluent:book-open-24-regular"></iconify-icon> Read Online
           </button>
           <a href="/brand-guidelines/Brand Guideline - Logo & Concept.pdf" download class="ss-btn ss-btn-secondary ss-btn-sm" onclick={(e) => e.stopPropagation()}>
@@ -139,10 +136,7 @@
     <!-- Book 2: Interior Design -->
     <div class="book-horizontal-card" 
          onclick={() => openBook('interior')} 
-         onkeydown={(e) => e.key === 'Enter' && openBook('interior')}
-         role="button" 
-         tabindex="0" 
-         aria-label="Open Interior Design Guideline">
+         onkeydown={(e) => e.key === 'Enter' && openBook('interior')}>
       <div class="book-thumbnail-wrap">
         <img src="/brand-guidelines/cover-interior-design.png" alt="Interior Design Guideline Cover" class="book-cover-img" loading="eager" />
         <div class="book-cover-overlay">
