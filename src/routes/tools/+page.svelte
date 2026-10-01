@@ -287,14 +287,14 @@
             <div class="col-6">
               <label for="fg-hex" style="font-size:0.75rem;font-weight:600;color:var(--color-neutral-fg-2);display:block;margin-bottom:4px;">Foreground Color</label>
               <div style="display:flex;gap:6px;align-items:center;">
-                <input type="color" bind:value={hexInput} style="width:36px;height:36px;padding:0;border:none;border-radius:6px;cursor:pointer;" />
+                <input type="color" aria-label="Choose foreground color" bind:value={hexInput} style="width:36px;height:36px;padding:0;border:none;border-radius:6px;cursor:pointer;" />
                 <input id="fg-hex" type="text" bind:value={hexInput} class="ss-input" style="font-family:monospace;font-size:0.85rem;" />
               </div>
             </div>
             <div class="col-6">
               <label for="bg-hex" style="font-size:0.75rem;font-weight:600;color:var(--color-neutral-fg-2);display:block;margin-bottom:4px;">Background Color</label>
               <div style="display:flex;gap:6px;align-items:center;">
-                <input type="color" bind:value={bgHex} style="width:36px;height:36px;padding:0;border:none;border-radius:6px;cursor:pointer;" />
+                <input type="color" aria-label="Choose background color" bind:value={bgHex} style="width:36px;height:36px;padding:0;border:none;border-radius:6px;cursor:pointer;" />
                 <input id="bg-hex" type="text" bind:value={bgHex} class="ss-input" style="font-family:monospace;font-size:0.85rem;" />
               </div>
             </div>

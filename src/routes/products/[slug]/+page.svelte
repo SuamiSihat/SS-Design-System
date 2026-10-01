@@ -358,18 +358,20 @@
         </div>
 
         <div class="brand-section-card p-0" style="overflow: hidden; padding: 0;">
-          <div
-            class="ss-gallery-stage"
-            onclick={() => openLightbox(selectedGalleryIndex)}
-            role="button"
-            tabindex="0"
-            onkeydown={(e) => e.key === 'Enter' && openLightbox(selectedGalleryIndex)}
-            title="Click to zoom in full-screen lightbox"
-          >
-            <span class="ss-gallery-zoom-badge">
-              <iconify-icon icon="fluent:full-screen-maximize-24-regular"></iconify-icon> Click to Zoom
-            </span>
-            <img class="ss-gallery-stage-img" src={product.gallery[selectedGalleryIndex].src} alt={product.gallery[selectedGalleryIndex].title} loading="eager" />
+          <div style="position: relative;">
+            <div
+              class="ss-gallery-stage"
+              onclick={() => openLightbox(selectedGalleryIndex)}
+              role="button"
+              tabindex="0"
+              onkeydown={(e) => e.key === 'Enter' && openLightbox(selectedGalleryIndex)}
+              title="Click to zoom in full-screen lightbox"
+            >
+              <span class="ss-gallery-zoom-badge">
+                <iconify-icon icon="fluent:full-screen-maximize-24-regular"></iconify-icon> Click to Zoom
+              </span>
+              <img class="ss-gallery-stage-img" src={product.gallery[selectedGalleryIndex].src} alt={product.gallery[selectedGalleryIndex].title} loading="eager" />
+            </div>
             
             {#if product.gallery.length > 1}
               <button class="ss-carousel-btn prev" type="button" aria-label="Previous image" onclick={(e) => { e.stopPropagation(); prevGalleryImage(); }}>

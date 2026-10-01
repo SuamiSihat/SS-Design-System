@@ -321,20 +321,15 @@
               {#each checklistItems.filter(i => i.period === period) as item}
                 <div 
                   class="d-flex align-items-start gap-3 p-2 rounded-3" 
-                  style="cursor:pointer;background:{completed[item.id] ? 'rgba(22,163,74,0.08)' : 'transparent'};transition:background 0.2s ease;"
-                  onclick={() => toggle(item.id)}
-                  onkeydown={(e) => e.key === 'Enter' && toggle(item.id)}
-                  role="checkbox"
-                  aria-checked={!!completed[item.id]}
-                  tabindex="0"
+                  style="background:{completed[item.id] ? 'rgba(22,163,74,0.08)' : 'transparent'};transition:background 0.2s ease;"
                 >
-                  <input type="checkbox" class="form-check-input mt-1" checked={!!completed[item.id]} tabindex="-1" style="cursor:pointer;" />
-                  <span style="font-size:0.875rem;color:var(--color-neutral-fg-1);text-decoration:{completed[item.id] ? 'line-through' : 'none'};">
+                  <input type="checkbox" id="chk-{item.id}" class="form-check-input mt-1" checked={!!completed[item.id]} onchange={() => toggle(item.id)} style="cursor:pointer;" />
+                  <label for="chk-{item.id}" style="font-size:0.875rem;color:var(--color-neutral-fg-1);text-decoration:{completed[item.id] ? 'line-through' : 'none'}; cursor:pointer; flex: 1; user-select: none;">
                     {item.text}
-                    {#if item.link}
-                      &nbsp;<a href={item.link} style="color:var(--color-brand-primary);font-weight:600;text-decoration:underline;" onclick={(e) => e.stopPropagation()}>Open Link &rarr;</a>
-                    {/if}
-                  </span>
+                  </label>
+                  {#if item.link}
+                    <a href={item.link} style="color:var(--color-brand-primary);font-size:0.875rem;font-weight:600;text-decoration:underline;flex-shrink:0;margin-top:2px;">Open Link &rarr;</a>
+                  {/if}
                 </div>
               {/each}
             </div>

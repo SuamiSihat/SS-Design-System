@@ -14,6 +14,10 @@
   });
 </script>
 
+<svelte:head>
+  <title>SuamiSihat™ Design System</title>
+</svelte:head>
+
 {#if $gateState.isReady && !$gateState.isUnlocked}
   <GatekeeperPuzzle />
 {/if}
