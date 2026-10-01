@@ -2,16 +2,23 @@
   import { onMount } from 'svelte';
   import Navbar from '$lib/components/Navbar.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import GatekeeperPuzzle from '$lib/components/GatekeeperPuzzle.svelte';
   import { initTheme } from '$lib/stores/theme.js';
+  import { gateState, initGate } from '$lib/stores/gate.js';
 
   let { children } = $props();
 
   onMount(() => {
     initTheme();
+    initGate();
   });
 </script>
 
-<div class="f-app-shell">
+{#if $gateState.isReady && !$gateState.isUnlocked}
+  <GatekeeperPuzzle />
+{/if}
+
+<div class="f-app-shell" class:f-locked={!$gateState.isUnlocked}>
   <Navbar />
   <div class="f-content-wrapper">
     {@render children?.()}
@@ -26,6 +33,15 @@
     min-height: 100vh;
     background-color: var(--color-neutral-bg-1, #F8FAFC);
     color: var(--color-neutral-fg-1, #1C1C1C);
+    transition: opacity 0.3s ease;
+  }
+
+  .f-app-shell.f-locked {
+    visibility: hidden;
+    height: 0;
+    max-height: 0;
+    overflow: hidden;
+    pointer-events: none;
   }
 
   .f-content-wrapper {
