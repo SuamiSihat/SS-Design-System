@@ -1,0 +1,4 @@
+# SuamiSihat™ Internal Design System & Brand Asset Portal
+# Strictly Disallow Web Crawlers & Public Search Indexing
+User-agent: *
+Disallow: /
