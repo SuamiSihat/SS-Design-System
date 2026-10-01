@@ -177,10 +177,10 @@ testDom('Product Hub: ANDROLAB (build/products/androlab/index.html)', androlabHt
 // 8. Email Signature Generator DOM Testing
 const signatureHtml = loadHtml('build/signature/index.html');
 testDom('Signature Generator (build/signature/index.html)', signatureHtml, [
-  { desc: 'Contains Quick Entity Selector chips', pattern: /Quick Entity Selector/i },
+  { desc: 'Contains Corporate Entity Selector chips', pattern: /Select Corporate Entity|Quick Entity Selector/i },
   { desc: 'Contains multiple operating subsidiary chips (01-SSH, 02-SSC, 03-SSW, etc.)', pattern: /01-SSH.*02-SSC.*03-SSW/s },
   { desc: 'Contains formatted signature copy button', pattern: /Copy Formatted Signature/i },
-  { desc: 'Contains confidentiality disclaimer toggle', pattern: /Include Confidentiality Disclaimer/i }
+  { desc: 'Contains CTA or add-ons toggle', pattern: /Include Call-to-Action|Include Confidentiality Disclaimer/i }
 ]);
 
 // 9. Global Navigation & Spotlight Command Palette DOM Testing
