@@ -4,277 +4,323 @@
   "name": "REJAL",
   "folder": "Rejal",
   "status": "Active",
-  "tagline": "Heritage superfoods from Malaysian forests, made for today's table",
-  "entity": "05-SSE · SuamiSihat E-Commerce",
+  "tagline": "Heritage superfoods · Kesihatan itu satu pelaburan",
+  "entity": "05-SSE · SuamiSihat Ecommerce Sdn Bhd",
   "category": "Heritage functional food",
   "hero": {
-    "from": "#1C1C1C",
-    "to": "#3A2E14",
-    "accent": "#C8A14A"
+    "from": "#231F20",
+    "to": "#2E2A2B",
+    "accent": "#4480C2"
   },
   "definition": {
-    "summary": "REJAL is SuamiSihat's heritage functional-food brand. It packs traditional Malaysian pantry staples, wild Tualang honey and single-clove garlic (bawang lanang) preserved in honey, plus a stevia sweetener, in modern, sealed packaging for everyday use.",
+    "summary": "REJAL™ is SuamiSihat's heritage food brand: wild Tualang honey, single-clove garlic (bawang lanang) steeped in Tualang honey, and a stevia sweetener, presented with Malay heritage and restraint. Sold as food, never as medicine.",
     "facts": [
       {
         "label": "Category",
-        "value": "Food products (functional food, not medicine)"
+        "value": "Food products (Food Act 1983 / Food Regulations 1985), not medicine"
       },
       {
         "label": "Operating entity",
-        "value": "05-SSE · SuamiSihat E-Commerce"
+        "value": "05-SSE · distributed by SuamiSihat Ecommerce Sdn Bhd"
+      },
+      {
+        "label": "Tagline (Jawi)",
+        "value": "Kesihatan itu satu pelaburan"
       },
       {
         "label": "Former name",
         "value": "Rijal (retired; do not use)"
       },
       {
-        "label": "Audience",
-        "value": "Health-conscious Malaysian households and men looking for traditional, natural pantry products"
-      },
-      {
-        "label": "Channels",
-        "value": "SuamiSihat online store and partner marketplaces"
+        "label": "Trademark",
+        "value": "REJAL TM2025030647, class 30, under objection hearing: use ™ only, never ®"
       },
       {
         "label": "Packaging",
-        "value": "Glass jar, matte black wraparound label, gold lid with QUALITY SEAL tamper band"
+        "value": "Existing 2026 label design retained: matte black label, Rejal Blue emblem ribbon, gold cap and QUALITY SEAL band"
+      },
+      {
+        "label": "Net content rule",
+        "value": "Honey and bawang lanang are declared by weight (g / kg); jar capacity is an internal name only"
       }
     ],
     "range": [
       {
-        "name": "REJAL Bawang Lanang + Madu",
+        "name": "REJAL Bawang Lanang + Madu Tualang (mini jar)",
         "type": "Garlic in honey",
-        "desc": "Single-clove garlic (bawang lanang) preserved in honey. Label artwork supplied for RBL25, RBL35, RBL250 and RBL500 jar sizes."
+        "desc": "Internal name 35ml. Label RBL35 (80 × 26 mm). Net weight in grams to be confirmed by weighing a filled jar."
       },
       {
-        "name": "REJAL Madu Tualang",
+        "name": "REJAL Bawang Lanang + Madu Tualang 240 g",
+        "type": "Garlic in honey",
+        "desc": "130 g bawang lanang + 110 g Madu Tualang. Label RBL240 (200 × 60 mm), ribbon QUALITY | NATURAL."
+      },
+      {
+        "name": "REJAL Bawang Lanang + Madu Tualang (500ml jar)",
+        "type": "Garlic in honey",
+        "desc": "Internal name 450ml. New label needed; declare filled net weight in grams."
+      },
+      {
+        "name": "REJAL Madu Tualang Asli 500 g / 1 kg",
         "type": "Wild honey",
-        "desc": "Wild Tualang honey from Pahang. Label artwork supplied for the RBL1K jar."
+        "desc": "Wild Tualang honey from the forests of Pahang (Apis dorsata). Label RBL1K (200 × 150 mm)."
       },
       {
-        "name": "REJAL Stevia",
+        "name": "REJAL Stevia 10 ml",
         "type": "Sweetener",
-        "desc": "Stevia-based zero-calorie sweetener for drinks and cooking."
+        "desc": "Pemanis Stevia Original: stevia and monk fruit extract. Box 43 × 43 × 83 mm, bottle label 73 × 27 mm."
       }
     ],
-    "claimsReview": "Older copy stated lab values (phenolic content, diastase number, S-allyl-cysteine increase) and cardiovascular or nitric-oxide benefits. These are health claims under the Food Regulations 1985 and must not be used until substantiated and approved. Describe ingredients, origin and use only."
+    "claimsReview": "Never publish: 'melancarkan darah', 'tenaga batin', immunity, cardiovascular, digestive or nitric-oxide benefits, 'organic', lab values (TPC, diastase, SAC %). Describe ingredients, origin and use only. Every label needs kcal/kJ nutrition, a real serving size, net weight, the infant warning on honey, and Halal/MeSTI only from that manufacturer's own valid certificate."
   },
   "images": [
     {
-      "src": "/products/Rejal/sub-products/bawang-lanang/gallery/rejal-bawang-lanang-clean-background.jpeg",
-      "alt": "REJAL Bawang Lanang + Madu jar with black label and gold lid, honey splashing around it on a white background",
-      "caption": "Hero packshot, Bawang Lanang + Madu 250 g"
+      "src": "/products/Rejal/gallery/rejal-madu-tualang-1kg-500g.jpg",
+      "alt": "Two REJAL Madu Tualang Asli bottles, 1 kg and 500 g, with black labels, blue tengkolok emblem and copper caps on white",
+      "caption": "Madu Tualang Asli 1 kg and 500 g"
     },
     {
-      "src": "/products/Rejal/sub-products/bawang-lanang/gallery/rejal-bawang-lanang-premium-product-photo-luxury.jpeg",
-      "alt": "REJAL jar on a sage green surface beside garlic bulbs and a wooden honey dipper",
-      "caption": "Lifestyle still life"
+      "src": "/products/Rejal/gallery/rejal-bawang-lanang-jar.jpg",
+      "alt": "REJAL Bawang Lanang + Madu jar with black label, QUALITY NATURAL ribbon and gold QUALITY SEAL band on white",
+      "caption": "Bawang Lanang + Madu jar"
     },
     {
-      "src": "/products/Rejal/sub-products/bawang-lanang/gallery/rejal-bawang-lanang-garlic-and-honey-jar-action.jpeg",
-      "alt": "REJAL jar tilting as garlic cloves and honeycomb fall into it against a dark red background",
-      "caption": "Campaign action shot"
-    },
-    {
-      "src": "/products/Rejal/sub-products/bawang-lanang/gallery/rejal-bawang-lanang-macro-product-photography-texture-2.jpeg",
-      "alt": "Close-up of honey-coated single-clove garlic inside the jar",
-      "caption": "Texture macro"
-    },
-    {
-      "src": "/products/Rejal/sub-products/bawang-lanang/gallery/rejal-bawang-lanang-product-held-in-hand-4.jpeg",
-      "alt": "Hand holding a REJAL Bawang Lanang + Madu jar in a bright kitchen",
-      "caption": "In-hand scale reference"
-    },
-    {
-      "src": "/products/Rejal/sub-products/madu-tualang/gallery/rejal-madu-tualang-honey-bottle-product-mockup.jpeg",
-      "alt": "REJAL Madu Tualang honey bottle mock-up",
-      "caption": "Madu Tualang packaging mock-up"
+      "src": "/products/Rejal/gallery/rejal-bawang-lanang-mini-jar.jpg",
+      "alt": "REJAL Bawang Lanang + Madu mini jar with black label, Jawi tagline and gold-and-black QUALITY SEAL cap on white",
+      "caption": "Bawang Lanang + Madu mini jar"
     }
   ],
   "positioning": {
-    "statement": "For Malaysian families who trust what their grandparents ate, REJAL brings wild honey and honey-preserved garlic from our own forests to the modern kitchen, sealed and traceable, without hype.",
+    "statement": "Warisan Melayu, untuk lelaki yang melabur dalam kesihatan. REJAL brings wild Tualang honey and honey-steeped bawang lanang from Malaysian forests to the modern table, with dignity and without hype.",
     "pillars": [
       {
-        "title": "Rooted in heritage",
-        "text": "Recipes and ingredients Malaysians already know: Tualang honey, bawang lanang, preserved the traditional way."
+        "title": "Malay heritage",
+        "text": "The tengkolok stands for dignity and tradition. Recipes and ingredients Malaysians already know."
       },
       {
         "title": "Honest sourcing",
         "text": "Say where it comes from and what is in the jar. Origin and ingredients are the story, not promises."
       },
       {
-        "title": "Modern standard",
-        "text": "Sealed jars, clean labels and batch information. Heritage food, presented with care."
+        "title": "Quietly premium",
+        "text": "Matte black, one blue emblem, gold only as a material finish. Restraint reads as quality."
       }
     ],
     "voice": [
-      "Warm and proud, like a family recipe passed on",
+      "Dignified and warm, like a family recipe passed on",
       "Plain-spoken: ingredients, origin, how to enjoy it",
-      "Bilingual by default (BM first, English second)"
+      "Bahasa Malaysia first, English second"
     ],
     "avoid": [
-      "Medical or cure language (ubat, sembuh, merawat, kuat batin)",
-      "Lab numbers or percentages without approved substantiation",
-      "Exaggeration such as 'paling mujarab' or 'No. 1'"
+      "Medical or sexual-health language (ubat, melancarkan darah, tenaga batin, kuat)",
+      "'Organic' or green 'natural' cues without certification",
+      "Lab numbers or percentages without a report on file",
+      "Using ® next to REJAL"
     ]
   },
   "colorScheme": {
     "foundation": {
       "share": 60,
-      "role": "Rejal Black label and dark photography backdrops",
+      "role": "Rejal Black label and dark backgrounds",
       "colors": [
         {
           "name": "Rejal Black",
-          "hex": "#1C1C1C",
-          "use": "Label, hero backgrounds, logo on light"
+          "hex": "#231F20",
+          "use": "Labels, hero backgrounds (PANTONE Neutral Black C)"
         },
         {
-          "name": "Porcelain",
-          "hex": "#FCFAF6",
-          "use": "Light canvases for documents and web"
+          "name": "White",
+          "hex": "#FFFFFF",
+          "use": "Type on black, light canvases"
         }
       ]
     },
     "structure": {
       "share": 30,
-      "role": "Heritage Gold: lid, foil, dividers and headline accents",
+      "role": "White type and the REJAL wordmark on black",
       "colors": [
         {
-          "name": "Heritage Gold",
-          "hex": "#C8A14A",
-          "use": "Gold on black: rules, icons, large headings"
+          "name": "White",
+          "hex": "#FFFFFF",
+          "use": "Wordmark, body text on black"
         },
         {
-          "name": "Heritage Gold Deep",
-          "hex": "#7A5C1E",
-          "use": "Gold text on light backgrounds"
+          "name": "Rejal Black Raised",
+          "hex": "#2E2A2B",
+          "use": "Raised panels on black (web)"
         }
       ]
     },
     "accent": {
       "share": 10,
-      "role": "Quality Blue: the single QUALITY · NATURAL band",
+      "role": "Rejal Blue: emblem disc and QUALITY ribbon",
       "colors": [
         {
-          "name": "Quality Blue",
-          "hex": "#7CA2C6",
-          "use": "One highlight band or badge per layout"
+          "name": "Rejal Blue",
+          "hex": "#4480C2",
+          "use": "Emblem and ribbon, graphics only (PANTONE 660 C)"
+        },
+        {
+          "name": "Rejal Blue Deep",
+          "hex": "#2F6DB0",
+          "use": "Links and buttons on light (PANTONE 7683 C)"
+        },
+        {
+          "name": "Rejal Blue Light",
+          "hex": "#7FAEE0",
+          "use": "Links on black (PANTONE 284 C)"
         }
       ]
     },
     "pairings": [
       {
-        "text": "#FCFAF6",
-        "background": "#1C1C1C",
+        "text": "#FFFFFF",
+        "background": "#231F20",
         "use": "Body text on Rejal Black"
       },
       {
-        "text": "#C8A14A",
-        "background": "#1C1C1C",
-        "use": "Gold headings and rules on black"
+        "text": "#231F20",
+        "background": "#FFFFFF",
+        "use": "Body text on white"
       },
       {
-        "text": "#1C1C1C",
-        "background": "#C8A14A",
-        "use": "Black text on a gold badge"
+        "text": "#FFFFFF",
+        "background": "#2F6DB0",
+        "use": "Button text on Rejal Blue Deep"
       },
       {
-        "text": "#1C1C1C",
-        "background": "#7CA2C6",
-        "use": "Text on the Quality Blue band"
+        "text": "#2F6DB0",
+        "background": "#FFFFFF",
+        "use": "Links on white"
       },
       {
-        "text": "#7A5C1E",
-        "background": "#FCFAF6",
-        "use": "Gold-tone text on Porcelain"
+        "text": "#7FAEE0",
+        "background": "#231F20",
+        "use": "Links on Rejal Black"
       },
       {
-        "text": "#1C1C1C",
-        "background": "#FCFAF6",
-        "use": "Body text on Porcelain"
+        "text": "#FFFFFF",
+        "background": "#4480C2",
+        "use": "Ribbon labels (QUALITY / ORIGINAL), large text only",
+        "largeTextOnly": true
+      },
+      {
+        "text": "#C9A24A",
+        "background": "#231F20",
+        "use": "Heritage Gold accent text on black"
+      },
+      {
+        "text": "#8A6A1F",
+        "background": "#FFFFFF",
+        "use": "Heritage Gold Deep text on white"
       }
     ],
-    "note": "White text on Quality Blue fails contrast (2.7:1); the band always takes Rejal Black text. Honey amber (#E0BD6F) appears in photography only, never as a text or UI colour."
+    "note": "Heritage Gold (#C9A24A, foil ≈ PANTONE 871 C) is a finish only: gold caps, the QUALITY SEAL band and optional foil on premium runs. Never flat yellow, never a UI fill. No green (implies 'organic'; green belongs to Dr Mit Ring). Tokens: static/assets/tokens/product-brands.tokens.json."
   },
   "pattern": {
-    "name": "Tualang Honeycomb",
+    "name": "REJAL repeat texture",
     "file": "/products/Rejal/pattern.svg",
-    "description": "Hexagonal honeycomb outline in Heritage Gold at 55% opacity on Rejal Black, with alternating solid cells. Echoes wild Tualang hives.",
+    "description": "Staggered rows of the condensed REJAL wordmark in dark grey (#3A3536) on Rejal Black, as used on the Stevia box flaps and back panels.",
     "usage": [
-      "Use on Rejal Black only, as a background band behind headings or on packaging sides",
-      "Keep text off the pattern unless it sits on a solid Rejal Black panel",
-      "Never recolour the honeycomb or run it behind the REJAL wordmark",
-      "Scale the tile so a cell is at least 24 px on screen"
+      "Use on Rejal Black only: box flaps, back panels, web section backgrounds",
+      "Keep text on a solid Rejal Black panel, never directly on the texture",
+      "Never run the texture behind the main wordmark or emblem",
+      "Do not recolour the texture; it stays a quiet tone-on-tone"
     ]
   },
   "guideline": {
     "logos": [
       {
         "label": "REJAL wordmark (black)",
-        "file": "/products/Rejal/logos/logo_rejal.svg",
-        "use": "Light backgrounds. On Rejal Black, use the reversed (white) wordmark as printed on pack."
+        "file": "/products/Rejal/logos/rejal-wordmark-black.svg",
+        "use": "On white and light surfaces"
+      },
+      {
+        "label": "REJAL wordmark (white)",
+        "file": "/products/Rejal/logos/rejal-wordmark-white.svg",
+        "use": "Primary: on Rejal Black and dark photography"
+      },
+      {
+        "label": "Emblem: tengkolok, Jawi arc and QUALITY | ORIGINAL ribbon",
+        "file": "/products/Rejal/logos/rejal-emblem-quality-original-on-dark.svg",
+        "use": "Dark backgrounds only (the ring gap is transparent)"
       }
     ],
-    "clearSpace": "Keep clear space equal to the cap height of the wordmark on every side. Nothing (text, edges, other logos) enters this zone.",
-    "minimumSize": "Digital 96 px wide; print 25 mm wide",
+    "clearSpace": "Keep half the height of the wordmark letters (½ X) clear on every side. No text, badges or edges inside this zone.",
+    "minimumSize": "Wordmark 18 mm / 72 px wide; emblem lockup 30 mm / 120 px; tengkolok alone 12 mm / 48 px (raster: do not enlarge past 30 mm until the vector version exists)",
     "do": [
-      "Place the wordmark in black on light surfaces and in white on Rejal Black",
-      "Pair the wordmark with the QUALITY · NATURAL band only as on pack",
-      "Show the real product: honey, garlic and the sealed jar"
+      "White wordmark on Rejal Black, black wordmark on white",
+      "Keep the centre stack order: Jawi arc, REJAL, emblem ribbon, product name, size box",
+      "Show the real product with a readable label"
     ],
     "dont": [
-      "Do not use the old 'Rijal' spelling",
-      "Do not set the wordmark in gold or blue",
-      "Do not stretch, outline or add shadows to the wordmark",
-      "Do not place claims such as 'ubat' next to the logo"
+      "Do not use the old 'Rijal' spelling or ® next to REJAL",
+      "Do not recolour the wordmark (never green or gold) or stretch it",
+      "Do not place the emblem on white",
+      "Do not use AI-rendered packaging or place claims next to the logo"
     ],
     "typography": {
-      "display": "Poppins SemiBold / Bold for headlines and key numbers; Montserrat for subtitles and labels",
-      "body": "Helvetica Neue for print body copy; Inter on the web; Calibri in Office documents",
-      "note": "Typefaces follow Brand System section 04. Never retype a wordmark; always place the supplied logo file."
+      "display": "Bold condensed caps for the wordmark and product names (Bebas Neue as digital stand-in); Poppins Medium caps, tracked +300, for section labels",
+      "body": "Poppins Regular; mandatory label text at least 6 pt",
+      "note": "Never retype the wordmark or the Jawi tagline; always place the supplied files."
     },
-    "photography": "Warm light, real ingredients, honey in motion. Backdrops: Rejal Black, warm cream, sage green or natural wood."
+    "photography": "Real product, warm low-key light, dark stone or aged wood, raw ingredients in shot. Cut-outs on white for marketplaces. No AI renders."
   },
   "downloads": [
     {
-      "label": "REJAL wordmark",
-      "file": "/products/Rejal/logos/logo_rejal.svg",
+      "label": "Brand guidelines: Rejal and Dr Mit Ring v1.0",
+      "file": "/brand-guidelines/rejal-drmitring-brand-guidelines-v1.0.pdf",
+      "format": "PDF"
+    },
+    {
+      "label": "REJAL wordmark (white)",
+      "file": "/products/Rejal/logos/rejal-wordmark-white.svg",
       "format": "SVG"
     },
     {
-      "label": "Brand pattern: Tualang Honeycomb",
+      "label": "REJAL wordmark (black)",
+      "file": "/products/Rejal/logos/rejal-wordmark-black.svg",
+      "format": "SVG"
+    },
+    {
+      "label": "REJAL emblem, Quality | Original (dark backgrounds)",
+      "file": "/products/Rejal/logos/rejal-emblem-quality-original-on-dark.svg",
+      "format": "SVG"
+    },
+    {
+      "label": "Tengkolok (raster, 227 × 154 px)",
+      "file": "/products/Rejal/logos/rejal-emblem-tengkolok.png",
+      "format": "PNG"
+    },
+    {
+      "label": "Brand pattern",
       "file": "/products/Rejal/pattern.svg",
       "format": "SVG"
     },
     {
-      "label": "Label RBL25 (80 × 20 mm)",
-      "file": "/products/Rejal/sub-products/bawang-lanang/downloads/RBL25-80x20mm.pdf",
-      "format": "PDF"
-    },
-    {
-      "label": "Label RBL35 (80 × 26 mm)",
+      "label": "Label RBL35, Bawang Lanang mini jar (80 × 26 mm)",
       "file": "/products/Rejal/sub-products/bawang-lanang/downloads/RBL35-80x26mm.pdf",
       "format": "PDF"
     },
     {
-      "label": "Label RBL250 (200 × 60 mm)",
-      "file": "/products/Rejal/sub-products/bawang-lanang/downloads/RBL250-200mmx60mm.pdf",
+      "label": "Label RBL240, Bawang Lanang 240 g (200 × 60 mm)",
+      "file": "/products/Rejal/sub-products/bawang-lanang/downloads/RBL240-200x60mm.pdf",
       "format": "PDF"
     },
     {
-      "label": "Label RBL500 (150 × 120 mm)",
-      "file": "/products/Rejal/sub-products/bawang-lanang/downloads/RBL500-150x120mm.pdf",
-      "format": "PDF"
-    },
-    {
-      "label": "Label RBL1K Madu Tualang (200 × 150 mm)",
+      "label": "Label RBL1K, Madu Tualang 1 kg (200 × 150 mm)",
       "file": "/products/Rejal/sub-products/madu-tualang/downloads/RBL1K-200x150mm.pdf",
       "format": "PDF"
     },
     {
-      "label": "Label REJAL Stevia",
-      "file": "/products/Rejal/sub-products/stevia/downloads/RS-Stevia-Rejal.pdf",
+      "label": "Stevia box and bottle label V3",
+      "file": "/products/Rejal/sub-products/stevia/downloads/rejal-stevia-box-label-v3.pdf",
       "format": "PDF"
+    },
+    {
+      "label": "Design tokens (Rejal and Dr Mit Ring)",
+      "file": "/assets/tokens/product-brands.tokens.json",
+      "format": "JSON"
     }
   ]
 }

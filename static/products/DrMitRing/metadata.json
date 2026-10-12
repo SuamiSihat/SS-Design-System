@@ -4,136 +4,151 @@
   "name": "Dr Mit Ring®",
   "folder": "DrMitRing",
   "status": "Active",
-  "tagline": "The condom fastener from Dr. Ismail Tambi",
-  "entity": "05-SSE · SuamiSihat E-Commerce, with 02-SSC SS Clinic",
-  "category": "Intimate accessory (condom fastener)",
+  "tagline": "Condom fastener · Direka oleh SuamiSihat",
+  "entity": "05-SSE · SuamiSihat Ecommerce Sdn Bhd",
+  "category": "Condom accessory (condom fastener)",
   "hero": {
     "from": "#1C1C1C",
-    "to": "#23963B",
+    "to": "#1A7A30",
     "accent": "#6AB845"
   },
   "definition": {
-    "summary": "Dr Mit Ring® is a reusable silicone condom fastener (alat penahan kondom). It is slipped on after a condom is in place and keeps the condom from slipping. It was developed by andrologist Dr. Ismail Tambi and is sold through SuamiSihat channels.",
+    "summary": "Dr Mit Ring® is a reusable soft silicone condom fastener (alat penahan kondom). It is slipped on after a condom is in place and helps keep the condom from slipping. Designed by SuamiSihat and sold through SuamiSihat channels.",
     "facts": [
       {
         "label": "What it is",
-        "value": "Rounded silicone ring, indented inner wall at the base and thicker upper edge (per pack)"
+        "value": "Condom accessory: rounded lime silicone ring, worn over a condom"
+      },
+      {
+        "label": "What it is not",
+        "value": "Not a medical device, treatment or performance product"
       },
       {
         "label": "Pack contents",
-        "value": "2 rings per box"
+        "value": "2 rings per box, foil sachets ('Asian Size')"
       },
       {
         "label": "Reuse",
-        "value": "Up to 3 to 5 uses depending on use (per pack)"
+        "value": "3 to 5 uses with proper care"
       },
       {
         "label": "Care",
         "value": "Rinse under running water, do not soak, dry with a clean towel, store in a clean dry container"
       },
       {
-        "label": "Inventor",
-        "value": "Dr. Ismail Tambi"
+        "label": "Credit line",
+        "value": "Direka oleh SuamiSihat"
       },
       {
-        "label": "Pack languages",
-        "value": "English and Bahasa Melayu"
+        "label": "Trademark",
+        "value": "DR MIT RING® TM2023032015, class 10, registered to 20 Oct 2033"
       }
     ],
     "range": [
       {
         "name": "Dr Mit Ring® (2 rings)",
         "type": "Condom fastener",
-        "desc": "Retail box with two reusable rings and bilingual instructions."
+        "desc": "Retail box with two reusable rings in foil sachets and bilingual instructions."
       }
     ],
-    "claimsReview": "The pack lists benefits (longer erection, preventing venous leakage, delaying premature ejaculation) and badges such as 'Andrologically tested'. Earlier repo copy also called it a 'patented' ED device with sterilisation and wear-time specs that are not on the pack. All benefit claims must be checked against the device's registration status before use in marketing. Lead with what it is: a condom fastener."
+    "claimsReview": "Path A: the product stays a condom accessory. Never publish erection, hardness, stamina, ejaculation timing, venous leakage or 'no side effects' claims, 'Andrologically tested', 'patented' or 'clinically proven', or any doctor's name or photo. The current box badges and leaflet benefits are being removed in the next print run."
   },
   "images": [
     {
-      "src": "/products/DrMitRing/gallery/drmitring-packaging-outer-dieline.jpg",
-      "alt": "Dr Mit Ring box dieline in green with the white 'dr mit ring' wordmark, a black hand silhouette and a yellow '2 rings' badge",
-      "caption": "Outer box artwork (dieline, 20 May 2026)"
+      "src": "/products/DrMitRing/gallery/drmitring-packs-flatlay.jpg",
+      "alt": "Two green Dr Mit Ring boxes and a lime ring on a foil sachet lying on weathered concrete",
+      "caption": "Current packs and ring (2026)"
     },
     {
-      "src": "/products/DrMitRing/gallery/drmitring-packaging-inner-instructions.jpg",
-      "alt": "Inside panel of the Dr Mit Ring box with English and Malay instructions and line drawings",
-      "caption": "Inner panel: instructions and care"
+      "src": "/products/DrMitRing/gallery/drmitring-box.jpg",
+      "alt": "Front of the green Dr Mit Ring box with the white 'dr mit ring' wordmark on a black pill and the CONDOM FASTENER descriptor",
+      "caption": "Current box front"
+    },
+    {
+      "src": "/products/DrMitRing/gallery/drmitring-ring-sachet.jpg",
+      "alt": "Lime green Dr Mit Ring silicone ring on a silver foil sachet printed 'Dr. Mit Asian Size Best Before 2028'",
+      "caption": "Ring and sachet"
     }
   ],
   "positioning": {
-    "statement": "For couples who want protection that stays put, Dr Mit Ring® is the simple, drug-free condom fastener from Dr. Ismail Tambi's andrology practice, discreet, reusable and easy to care for.",
+    "statement": "Aksesori kondom yang discreet, boleh guna semula, direka di Malaysia. For couples who want protection that stays in place, Dr Mit Ring® is a simple, reusable condom fastener, presented with discretion.",
     "pillars": [
       {
-        "title": "Doctor-developed",
-        "text": "Created by Dr. Ismail Tambi. Lead with his expertise, stated factually."
+        "title": "Discreet",
+        "text": "Calm, respectful, product-only imagery. Discretion is what reads as premium in this category."
       },
       {
-        "title": "Simple and drug-free",
-        "text": "A physical accessory: no pills, nothing to swallow. Explain how to use it in plain steps."
+        "title": "Simple and reusable",
+        "text": "A physical accessory: slip on after the condom, rinse, dry, reuse 3 to 5 times. Explain in plain steps."
       },
       {
-        "title": "Discreet confidence",
-        "text": "Calm, respectful tone. Clinical green, clean diagrams, no explicit imagery."
+        "title": "Designed by SuamiSihat",
+        "text": "Sign off with 'Direka oleh SuamiSihat'. No individual doctor endorsement."
       }
     ],
     "voice": [
-      "Calm and clinical, never crude",
+      "Calm and clean, never crude",
       "Instructional: short steps, clear care advice",
-      "Respectful of couples; inclusive of both partners"
+      "Bahasa Malaysia first; respectful of both partners"
     ],
     "avoid": [
-      "Treatment or cure language for erectile dysfunction or premature ejaculation",
-      "Unverified badges or words such as 'patented', 'certified' or 'clinically proven'",
-      "Explicit or suggestive imagery; use the hand silhouette and line drawings"
+      "Erection, hardness, stamina, 'tahan lama', ejaculation or 'pancut / muntah' wording",
+      "Doctor names, photos or 'doctor recommended'",
+      "Unverified badges: 'Andrologically tested', 'patented', 'clinically proven'",
+      "Explicit or suggestive imagery"
     ]
   },
   "colorScheme": {
     "foundation": {
       "share": 60,
-      "role": "Dr Mit Green field, as on the box",
+      "role": "Canvas and lime field (web: off-white canvas; pack: lime field)",
       "colors": [
         {
-          "name": "Dr Mit Green",
+          "name": "Canvas",
+          "hex": "#FBFBFB",
+          "use": "Web and document canvas"
+        },
+        {
+          "name": "Dr Mit Lime",
           "hex": "#6AB845",
-          "use": "Primary brand field"
-        },
-        {
-          "name": "Lime",
-          "hex": "#93C642",
-          "use": "Gradient highlight"
-        },
-        {
-          "name": "Deep Green",
-          "hex": "#23963B",
-          "use": "Gradient shadow, large text background"
+          "use": "Signal colour, pack field (PANTONE 360 C)"
         }
       ]
     },
     "structure": {
       "share": 30,
-      "role": "Neutral Black for silhouette, wordmark badge and text",
+      "role": "Neutral Black for text, wordmark pill and illustration",
       "colors": [
         {
           "name": "Neutral Black",
           "hex": "#1C1C1C",
-          "use": "Text on green, hand silhouette, logo badge"
+          "use": "Text, wordmark pill (Neutral Black C)"
         },
         {
-          "name": "Canvas White",
-          "hex": "#FBFBFB",
-          "use": "Light canvas for web and documents"
+          "name": "Deep Green",
+          "hex": "#23963B",
+          "use": "Pack shapes, large text only (PANTONE 355 C)"
+        },
+        {
+          "name": "Deep Green AA",
+          "hex": "#1A7A30",
+          "use": "White text, buttons, links (PANTONE 356 C)"
         }
       ]
     },
     "accent": {
       "share": 10,
-      "role": "Signal Yellow for one quantity or offer badge",
+      "role": "Light lime tints and one yellow count chip",
       "colors": [
         {
-          "name": "Signal Yellow",
-          "hex": "#FCE53D",
-          "use": "'2 rings' badge or a single offer flag"
+          "name": "Light Lime",
+          "hex": "#ACCF6A",
+          "use": "Tints, illustration (PANTONE 367 C)"
+        },
+        {
+          "name": "Yellow",
+          "hex": "#FFE53B",
+          "use": "Count chip on black only (PANTONE 102 C)"
         }
       ]
     },
@@ -141,36 +156,41 @@
       {
         "text": "#1C1C1C",
         "background": "#6AB845",
-        "use": "Body text on Dr Mit Green"
+        "use": "Text on Dr Mit Lime"
+      },
+      {
+        "text": "#FFFFFF",
+        "background": "#1A7A30",
+        "use": "Buttons and text on Deep Green AA"
       },
       {
         "text": "#1C1C1C",
-        "background": "#93C642",
-        "use": "Text on Lime"
+        "background": "#FBFBFB",
+        "use": "Body text on Canvas"
+      },
+      {
+        "text": "#1A7A30",
+        "background": "#FBFBFB",
+        "use": "Links on Canvas"
+      },
+      {
+        "text": "#6AB845",
+        "background": "#1C1C1C",
+        "use": "Lime text on black"
+      },
+      {
+        "text": "#FFE53B",
+        "background": "#1C1C1C",
+        "use": "Yellow highlight on black"
       },
       {
         "text": "#FFFFFF",
         "background": "#23963B",
-        "use": "White headings on Deep Green (24 px+ or 19 px bold)",
+        "use": "White headings on Deep Green, large text only",
         "largeTextOnly": true
-      },
-      {
-        "text": "#1C1C1C",
-        "background": "#FCE53D",
-        "use": "Badge text on Signal Yellow"
-      },
-      {
-        "text": "#FFFFFF",
-        "background": "#1C1C1C",
-        "use": "Wordmark badge and text on black"
-      },
-      {
-        "text": "#1A7F33",
-        "background": "#FBFBFB",
-        "use": "Green text on Canvas White"
       }
     ],
-    "note": "On the packaging, small white text sits on green. For new artwork use Neutral Black for anything under 24 px; white is allowed only for large headings on Deep Green. Use Green Text #1A7F33 when green type is needed on white."
+    "note": "Never white on lime (2.45:1) or yellow on lime (1.93:1). The premium update moves the box to matte off-white or black with lime as the signal colour only. Tokens: static/assets/tokens/product-brands.tokens.json."
   },
   "pattern": {
     "name": "Ring Ripple",
@@ -186,46 +206,51 @@
   "guideline": {
     "logos": [
       {
-        "label": "Dr Mit Ring wordmark",
+        "label": "Dr Mit Ring wordmark pill",
         "file": "/products/DrMitRing/logos/logo_drmitring.svg",
-        "use": "White lowercase wordmark; place on Neutral Black or Deep Green"
+        "use": "White outline pill and letters on black; on lime, always on a filled black pill"
       }
     ],
-    "clearSpace": "Keep clear space equal to the cap height of the wordmark on every side. Nothing (text, edges, other logos) enters this zone.",
-    "minimumSize": "Digital 120 px wide; print 30 mm wide",
+    "clearSpace": "Keep half the pill height clear on every side.",
+    "minimumSize": "20 mm / 80 px wide",
     "do": [
-      "Show the wordmark white on its black rounded badge or on Deep Green",
-      "Use the line-drawing instructions style from the inner panel for how-to content",
-      "Keep the 2-rings badge in Signal Yellow with black text"
+      "Place the pill on black, or as a filled black pill on lime",
+      "Set 'CONDOM FASTENER' above the pill on packs and listings",
+      "Sign off 'Dr Mit Ring® · Direka oleh SuamiSihat'"
     ],
     "dont": [
-      "Do not place the white wordmark on Lime or Canvas White",
-      "Do not use photography that is explicit or shows anatomy",
-      "Do not add claims or certification badges that are not approved",
-      "Do not recolour the ring green outside the palette"
+      "Do not place the transparent pill directly on lime or white",
+      "Do not add a doctor's name or photo",
+      "Do not retype, recolour or stretch the wordmark",
+      "Do not add unapproved badges or performance claims"
     ],
     "typography": {
-      "display": "Poppins SemiBold / Bold for headlines and key numbers; Montserrat for subtitles and labels",
-      "body": "Helvetica Neue for print body copy; Inter on the web; Calibri in Office documents",
-      "note": "Typefaces follow Brand System section 04. Never retype a wordmark; always place the supplied logo file."
+      "display": "Poppins ExtraBold / Black headlines; Poppins SemiBold caps, tracked +240, for the descriptor",
+      "body": "Poppins Regular",
+      "note": "The brush-script ad font is retired. Never retype the wordmark."
     },
-    "photography": "Product-only or packaging shots on Canvas White or green. Instructional line drawings for usage."
+    "photography": "Product-only: packs and ring on clean off-white or textured neutral surfaces. No anatomy, no explicit or suggestive imagery."
   },
   "downloads": [
+    {
+      "label": "Brand guidelines: Rejal and Dr Mit Ring v1.0",
+      "file": "/brand-guidelines/rejal-drmitring-brand-guidelines-v1.0.pdf",
+      "format": "PDF"
+    },
     {
       "label": "Dr Mit Ring wordmark",
       "file": "/products/DrMitRing/logos/logo_drmitring.svg",
       "format": "SVG"
     },
     {
-      "label": "Brand pattern: Ring Ripple",
+      "label": "Brand pattern",
       "file": "/products/DrMitRing/pattern.svg",
       "format": "SVG"
     },
     {
-      "label": "Packaging artwork (20 May 2026)",
-      "file": "/products/DrMitRing/downloads/drmitring-packaging-2026-05-20.pdf",
-      "format": "PDF"
+      "label": "Design tokens (Rejal and Dr Mit Ring)",
+      "file": "/assets/tokens/product-brands.tokens.json",
+      "format": "JSON"
     }
   ]
 }

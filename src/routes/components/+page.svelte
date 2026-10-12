@@ -1213,7 +1213,7 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
       <h2 class="cl-section-title">Alerts &amp; Notice Banners</h2>
       <div style="display:flex; flex-direction:column; gap:10px;">
         <div class="ss-alert ss-alert-info"><iconify-icon icon="fluent:info-24-regular" style="color:var(--color-text-accent); font-size:18px;"></iconify-icon><div><strong>Clinical Info:</strong> Blood biomarker testing requires minimum 8-hour fasting.</div></div>
-        <div class="ss-alert ss-alert-success"><iconify-icon icon="fluent:checkmark-circle-24-regular" style="color:var(--color-success-fg); font-size:18px;"></iconify-icon><div><strong>Success:</strong> Consultation session booked with Dr. Ismail Tambi.</div></div>
+        <div class="ss-alert ss-alert-success"><iconify-icon icon="fluent:checkmark-circle-24-regular" style="color:var(--color-success-fg); font-size:18px;"></iconify-icon><div><strong>Success:</strong> Consultation session booked with SS Clinic.</div></div>
         <div class="ss-alert ss-alert-warning"><iconify-icon icon="fluent:warning-24-regular" style="color:#CA8A04; font-size:18px;"></iconify-icon><div><strong>Warning:</strong> TRT prescriptions require recurring 90-day haematology screening.</div></div>
         <div class="ss-alert ss-alert-danger"><iconify-icon icon="fluent:error-circle-24-regular" style="color:var(--color-error-fg); font-size:18px;"></iconify-icon><div><strong>Error:</strong> Medical device order validation failed. Invalid staff ID.</div></div>
       </div>
