@@ -123,7 +123,7 @@
   <!-- Minimal Glass Trust Badges -->
   <div class="f-hero-badges">
     <span class="f-hero-badge-item">
-      <iconify-icon icon="fluent:color-swatch-24-regular" aria-hidden="true"></iconify-icon> Design Tokens
+      <iconify-icon icon="fluent:color-24-regular" aria-hidden="true"></iconify-icon> Design Tokens
     </span>
     <span class="f-hero-badge-item">
       <iconify-icon icon="fluent:puzzle-piece-24-regular" aria-hidden="true"></iconify-icon> 24+ Components

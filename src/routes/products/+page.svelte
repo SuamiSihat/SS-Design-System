@@ -1,5 +1,6 @@
 <script>
   import { onMount, tick } from 'svelte';
+  import { getProduct } from '$lib/products/index.js';
 
   let searchQuery = $state('');
   let selectedFilter = $state('all');   // 'all' | category slug
@@ -271,6 +272,16 @@
       ]
     }
   ];
+
+  // Brands with a guideline page take their description from static/products/<Brand>/metadata.json,
+  // so the catalogue and the brand page never disagree.
+  for (const s of ssSections) {
+    for (const prod of s.products) {
+      const slug = prod.href?.match(/^\/products\/([a-z0-9-]+)\/$/)?.[1];
+      const meta = slug && getProduct(slug);
+      if (meta && meta.name === prod.name) prod.desc = meta.definition.summary;
+    }
+  }
 
   // Flatten for search
   const allProducts = ssSections.flatMap(s => s.products.map(p => ({ ...p, sectionId: s.id })));

@@ -81,8 +81,8 @@
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = p.isGold ? `rgba(247, 225, 67, ${p.alpha})` : `rgba(33, 161, 247, ${p.alpha * 0.8})`;
-        ctx.shadowColor = p.isGold ? '#F7E143' : '#21A1F7';
+        ctx.fillStyle = p.isGold ? `rgba(252, 229, 61, ${p.alpha})` : `rgba(33, 161, 247, ${p.alpha * 0.8})`;
+        ctx.shadowColor = p.isGold ? '#FCE53D' : '#21A1F7';
         ctx.shadowBlur = 10;
         ctx.fill();
       });

@@ -31,7 +31,7 @@ The hero banner strictly abides by the **60:30:10 Design System Hierarchy**:
 The kinetic background renders via an HTML5 2D Canvas engine:
 - **Sine Vitality Waveform**: Multi-layered flowing wave oscillating at 60 FPS, with vertical amplitudes adjusting smoothly.
 - **Mars Gender Nodes (male sign)**: Floating masculine biological glyphs drifting vertically and reacting to cursor displacement.
-- **Energy Spark Nodes**: Azure (`#21A1F7`) and Banana Yellow (`#F7E143`) particles pulsing with soft glow halos.
+- **Energy Spark Nodes**: Azure (`#21A1F7`) and Banana Yellow (`#FCE53D`) particles pulsing with soft glow halos.
 - **Cursor Interactive Parallax**: Mouse tracking gently lifts wave crests and attracts nearby particles toward the cursor.
 - **Accessibility Safeguard**: Automatically pauses motion when `prefers-reduced-motion: reduce` is detected.
 

@@ -1,23 +1,218 @@
 {
+  "schema": 2,
+  "slug": "pertabi",
   "name": "PERTABI",
-  "tagline": "Persatuan Taat Bersama Isteri Malaysia · Taat Setia Progresif",
-  "logo": "logos/logo_pertabi_horizontal-light.svg",
-  "banner": "banner.svg",
-  "heroGradient": "linear-gradient(135deg, #1D3464 0%, #0D1E3D 100%)",
-  "ownership": {
-    "tags": ["ROS Registered NGO", "National Society", "Partner Network"],
-    "text": "Persatuan Taat Bersama Isteri Malaysia (PERTABI — PPM-023-10-15122021) is a national-level society registered under Section 7 of the Societies Act 1966, dedicated to advancing husband welfare, family communication, and household health across Malaysia."
+  "folder": "Pertabi",
+  "status": "Partner",
+  "tagline": "Persatuan Taat Bersama Isteri Malaysia",
+  "entity": "Partner network (registered society)",
+  "category": "Community partner (NGO)",
+  "hero": {
+    "from": "#1D3464",
+    "to": "#0D1E3D",
+    "accent": "#66BED8"
   },
-  "brandAssets": [
-    "logos/logo_pertabi_horizontal-light.svg",
-    "logos/logo_pertabi_horizontal-dark.svg",
-    "logos/logo_pertabi_vertical.svg"
+  "definition": {
+    "summary": "PERTABI (Persatuan Taat Bersama Isteri Malaysia) is a national society registered under the Societies Act 1966 (PPM-023-10-15122021) that promotes husbands' welfare and family communication. SuamiSihat supports it as a community partner.",
+    "facts": [
+      {
+        "label": "Registration",
+        "value": "PPM-023-10-15122021, Societies Act 1966, Section 7"
+      },
+      {
+        "label": "Relationship",
+        "value": "Partner network, not a SuamiSihat product"
+      },
+      {
+        "label": "Motto",
+        "value": "Taat Setia Progresif"
+      },
+      {
+        "label": "Merchandise",
+        "value": "Official jersey"
+      }
+    ],
+    "range": [
+      {
+        "name": "PERTABI Official Jersey",
+        "type": "Merchandise",
+        "desc": "Sublimated sports jersey for community events."
+      }
+    ]
+  },
+  "images": [
+    {
+      "src": "/products/Pertabi/sub-products/jersey/gallery/pertabi-jersey-1-web.jpg",
+      "alt": "PERTABI official jersey, front view",
+      "caption": "Jersey front"
+    },
+    {
+      "src": "/products/Pertabi/sub-products/jersey/gallery/pertabi-jersey-2-web.jpg",
+      "alt": "PERTABI official jersey, back view",
+      "caption": "Jersey back"
+    },
+    {
+      "src": "/products/Pertabi/sub-products/jersey/gallery/pertabi-jersey-3-web.jpg",
+      "alt": "Close-up of the PERTABI crest and collar",
+      "caption": "Crest detail"
+    }
   ],
-  "merchandiseFolder": "sub-products/jersey",
-  "merchandise": [
-    "sub-products/jersey/gallery/Pertabi_jersy_1.png",
-    "sub-products/jersey/gallery/Pertabi_jersy_2.png",
-    "sub-products/jersey/gallery/Pertabi_jersy_3.png"
+  "positioning": {
+    "statement": "PERTABI brings husbands together to support their families, and SuamiSihat stands beside it as a health partner.",
+    "pillars": [
+      {
+        "title": "Togetherness",
+        "text": "Husbands and wives, side by side."
+      },
+      {
+        "title": "Community first",
+        "text": "Events, runs and gatherings."
+      },
+      {
+        "title": "Respect for the society",
+        "text": "PERTABI owns its identity; SuamiSihat co-brands, never replaces."
+      }
+    ],
+    "voice": [
+      "Warm, communal",
+      "Bahasa Melayu first",
+      "Respectful"
+    ],
+    "avoid": [
+      "Using PERTABI to sell products",
+      "Altering the society's logo",
+      "Implying PERTABI endorses specific products"
+    ]
+  },
+  "colorScheme": {
+    "foundation": {
+      "share": 60,
+      "role": "PERTABI Navy",
+      "colors": [
+        {
+          "name": "PERTABI Navy",
+          "hex": "#1D3464",
+          "use": "Backgrounds"
+        },
+        {
+          "name": "White",
+          "hex": "#FFFFFF",
+          "use": "Light canvases"
+        }
+      ]
+    },
+    "structure": {
+      "share": 30,
+      "role": "White structure on navy",
+      "colors": [
+        {
+          "name": "White",
+          "hex": "#FFFFFF",
+          "use": "Text and panels on navy"
+        }
+      ]
+    },
+    "accent": {
+      "share": 10,
+      "role": "Sky Blue",
+      "colors": [
+        {
+          "name": "Sky Blue",
+          "hex": "#66BED8",
+          "use": "Rings, icons, one highlight on navy"
+        }
+      ]
+    },
+    "pairings": [
+      {
+        "text": "#FFFFFF",
+        "background": "#1D3464",
+        "use": "Text on navy"
+      },
+      {
+        "text": "#66BED8",
+        "background": "#1D3464",
+        "use": "Sky Blue on navy"
+      },
+      {
+        "text": "#1D3464",
+        "background": "#66BED8",
+        "use": "Navy on a Sky Blue badge"
+      },
+      {
+        "text": "#1D3464",
+        "background": "#FFFFFF",
+        "use": "Navy text on white"
+      }
+    ],
+    "note": "Sky Blue is for navy backgrounds; on white use PERTABI Navy for text."
+  },
+  "pattern": {
+    "name": "Togetherness Rings",
+    "file": "/products/Pertabi/pattern.svg",
+    "description": "Pairs of interlocking Sky Blue rings on PERTABI Navy.",
+    "usage": [
+      "Use on event banners and jersey trims",
+      "Keep text on solid navy",
+      "Co-branded material needs PERTABI approval"
+    ]
+  },
+  "guideline": {
+    "logos": [
+      {
+        "label": "Horizontal (light backgrounds)",
+        "file": "/products/Pertabi/logos/logo_pertabi_horizontal-light.svg",
+        "use": "Light"
+      },
+      {
+        "label": "Horizontal (dark backgrounds)",
+        "file": "/products/Pertabi/logos/logo_pertabi_horizontal-dark.svg",
+        "use": "Dark"
+      },
+      {
+        "label": "Vertical",
+        "file": "/products/Pertabi/logos/logo_pertabi_vertical.svg",
+        "use": "Stacked"
+      }
+    ],
+    "clearSpace": "Keep clear space equal to the cap height of the wordmark on every side. Nothing (text, edges, other logos) enters this zone.",
+    "minimumSize": "Digital 120 px wide; print 30 mm wide",
+    "do": [
+      "Get PERTABI sign-off for co-branded work",
+      "Place SuamiSihat as 'supported by'",
+      "Use the society's full name on first mention"
+    ],
+    "dont": [
+      "Do not modify the crest",
+      "Do not use PERTABI in product advertising",
+      "Do not place the logo on busy photography"
+    ],
+    "typography": {
+      "display": "Poppins SemiBold / Bold (SuamiSihat master display face)",
+      "body": "Inter Regular / Medium for UI and long copy",
+      "note": "Never retype a wordmark; always place the supplied logo file."
+    }
+  },
+  "downloads": [
+    {
+      "label": "Horizontal logo (light)",
+      "file": "/products/Pertabi/logos/logo_pertabi_horizontal-light.svg",
+      "format": "SVG"
+    },
+    {
+      "label": "Horizontal logo (dark)",
+      "file": "/products/Pertabi/logos/logo_pertabi_horizontal-dark.svg",
+      "format": "SVG"
+    },
+    {
+      "label": "Vertical logo",
+      "file": "/products/Pertabi/logos/logo_pertabi_vertical.svg",
+      "format": "SVG"
+    },
+    {
+      "label": "Brand pattern",
+      "file": "/products/Pertabi/pattern.svg",
+      "format": "SVG"
+    }
   ]
 }
-

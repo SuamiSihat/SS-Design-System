@@ -1,0 +1,184 @@
+{
+  "schema": 2,
+  "slug": "isterisihat",
+  "name": "Isteri Sihat",
+  "folder": "IsteriSihat",
+  "status": "Partner",
+  "tagline": "Women's health companion platform",
+  "entity": "Partner network",
+  "category": "Women's health partner",
+  "hero": {
+    "from": "#4A1530",
+    "to": "#6B1A3A",
+    "accent": "#D065A5"
+  },
+  "definition": {
+    "summary": "Isteri Sihat is a women's health companion platform in SuamiSihat's partner network, giving wives and couples a trusted place for women's health information.",
+    "facts": [
+      {
+        "label": "Relationship",
+        "value": "Partner network"
+      },
+      {
+        "label": "Audience",
+        "value": "Wives and couples"
+      },
+      {
+        "label": "Role",
+        "value": "Companion to SuamiSihat's men's health services"
+      }
+    ],
+    "range": []
+  },
+  "images": [
+    {
+      "src": "/products/IsteriSihat/gallery/isterisihat-brand-card.jpg",
+      "alt": "Isteri Sihat logo on a white card over a plum petal pattern",
+      "caption": "Brand card (photography pending)",
+      "placeholder": true
+    }
+  ],
+  "positioning": {
+    "statement": "Isteri Sihat looks after the other half of the household's health, so couples can care for each other.",
+    "pillars": [
+      {
+        "title": "Couples' health",
+        "text": "Complements SuamiSihat for the whole household."
+      },
+      {
+        "title": "Warm and caring",
+        "text": "Soft orchid and plum tones."
+      },
+      {
+        "title": "Trusted information",
+        "text": "Clear, reviewed content."
+      }
+    ],
+    "voice": [
+      "Warm and supportive",
+      "Plain Bahasa Melayu",
+      "Respectful"
+    ],
+    "avoid": [
+      "Fear-based messaging",
+      "Treatment claims",
+      "Stereotyped imagery of women"
+    ]
+  },
+  "colorScheme": {
+    "foundation": {
+      "share": 60,
+      "role": "Plum",
+      "colors": [
+        {
+          "name": "Plum",
+          "hex": "#4A1530",
+          "use": "Backgrounds"
+        },
+        {
+          "name": "Porcelain",
+          "hex": "#FCFAF6",
+          "use": "Light canvases"
+        }
+      ]
+    },
+    "structure": {
+      "share": 30,
+      "role": "Black wordmark structure",
+      "colors": [
+        {
+          "name": "Black",
+          "hex": "#1C1C1C",
+          "use": "Wordmark and text on light"
+        }
+      ]
+    },
+    "accent": {
+      "share": 10,
+      "role": "Orchid",
+      "colors": [
+        {
+          "name": "Orchid",
+          "hex": "#D065A5",
+          "use": "Monogram and one highlight"
+        },
+        {
+          "name": "Orchid Text",
+          "hex": "#A63A7C",
+          "use": "Orchid text on white"
+        }
+      ]
+    },
+    "pairings": [
+      {
+        "text": "#FCFAF6",
+        "background": "#4A1530",
+        "use": "Text on Plum"
+      },
+      {
+        "text": "#1C1C1C",
+        "background": "#D065A5",
+        "use": "Black on an Orchid badge"
+      },
+      {
+        "text": "#A63A7C",
+        "background": "#FFFFFF",
+        "use": "Orchid text on white"
+      },
+      {
+        "text": "#FFFFFF",
+        "background": "#4A1530",
+        "use": "White on Plum"
+      }
+    ],
+    "note": "Orchid on Plum is 4.2:1; use it for icons and large text only."
+  },
+  "pattern": {
+    "name": "Orchid Petals",
+    "file": "/products/IsteriSihat/pattern.svg",
+    "description": "Soft Orchid petals on Plum.",
+    "usage": [
+      "Use on plum backgrounds",
+      "Keep text on solid panels",
+      "Do not add other flower colours"
+    ]
+  },
+  "guideline": {
+    "logos": [
+      {
+        "label": "Isteri Sihat logo",
+        "file": "/products/Partner-Brands/logos/logo_isterisihat.svg",
+        "use": "Light backgrounds"
+      }
+    ],
+    "clearSpace": "Keep clear space equal to the cap height of the wordmark on every side. Nothing (text, edges, other logos) enters this zone.",
+    "minimumSize": "Digital 120 px wide; print 30 mm wide",
+    "do": [
+      "Place on white or Porcelain",
+      "Pair with SuamiSihat as a couples' offer",
+      "Get partner approval"
+    ],
+    "dont": [
+      "Do not place the black wordmark on Plum",
+      "Do not recolour the monogram",
+      "Do not use clinical claims"
+    ],
+    "typography": {
+      "display": "Poppins SemiBold / Bold (SuamiSihat master display face)",
+      "body": "Inter Regular / Medium for UI and long copy",
+      "note": "Never retype a wordmark; always place the supplied logo file."
+    }
+  },
+  "downloads": [
+    {
+      "label": "Isteri Sihat logo",
+      "file": "/products/Partner-Brands/logos/logo_isterisihat.svg",
+      "format": "SVG"
+    },
+    {
+      "label": "Brand pattern",
+      "file": "/products/IsteriSihat/pattern.svg",
+      "format": "SVG"
+    }
+  ]
+}

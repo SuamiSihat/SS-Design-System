@@ -1,0 +1,184 @@
+{
+  "schema": 2,
+  "slug": "husbandclinic",
+  "name": "Husband Clinic",
+  "folder": "HusbandClinic",
+  "status": "Partner",
+  "tagline": "Men's health clinic partner network",
+  "entity": "Partner network",
+  "category": "Clinic partner",
+  "hero": {
+    "from": "#022057",
+    "to": "#032A6A",
+    "accent": "#058CF9"
+  },
+  "definition": {
+    "summary": "Husband Clinic is a men's health clinic brand in SuamiSihat's partner network. SuamiSihat refers patients and supplies brand-compliant materials for joint activity.",
+    "facts": [
+      {
+        "label": "Relationship",
+        "value": "Partner network, separately operated"
+      },
+      {
+        "label": "Services",
+        "value": "Men's health consultations (per partner)"
+      },
+      {
+        "label": "Co-branding",
+        "value": "Partner logo shown with 'in partnership with SuamiSihat'"
+      }
+    ],
+    "range": []
+  },
+  "images": [
+    {
+      "src": "/products/HusbandClinic/gallery/husbandclinic-brand-card.jpg",
+      "alt": "Husband Clinic logo on a white card over a navy cross-grid pattern",
+      "caption": "Brand card (clinic photography pending)",
+      "placeholder": true
+    }
+  ],
+  "positioning": {
+    "statement": "Husband Clinic gives men a straightforward place to talk about their health, supported by the SuamiSihat network.",
+    "pillars": [
+      {
+        "title": "Approachable care",
+        "text": "Plain language, no judgement."
+      },
+      {
+        "title": "Partner network",
+        "text": "Part of SuamiSihat's referral network."
+      },
+      {
+        "title": "Privacy",
+        "text": "Discretion in every touchpoint."
+      }
+    ],
+    "voice": [
+      "Reassuring",
+      "Plain",
+      "Professional"
+    ],
+    "avoid": [
+      "Treatment promises",
+      "Comparative claims against other clinics",
+      "Patient testimonials without consent"
+    ]
+  },
+  "colorScheme": {
+    "foundation": {
+      "share": 60,
+      "role": "Prussian Navy",
+      "colors": [
+        {
+          "name": "Prussian Navy",
+          "hex": "#022057",
+          "use": "Backgrounds"
+        },
+        {
+          "name": "White",
+          "hex": "#FFFFFF",
+          "use": "Light canvases"
+        }
+      ]
+    },
+    "structure": {
+      "share": 30,
+      "role": "Black wordmark structure",
+      "colors": [
+        {
+          "name": "Black",
+          "hex": "#1C1C1C",
+          "use": "HUSBAND wordmark and text on light"
+        }
+      ]
+    },
+    "accent": {
+      "share": 10,
+      "role": "Clinic Blue",
+      "colors": [
+        {
+          "name": "Clinic Blue",
+          "hex": "#058CF9",
+          "use": "CLINIC tag and one highlight"
+        },
+        {
+          "name": "Clinic Blue Text",
+          "hex": "#0068C9",
+          "use": "Blue text on white"
+        }
+      ]
+    },
+    "pairings": [
+      {
+        "text": "#FFFFFF",
+        "background": "#022057",
+        "use": "Text on navy"
+      },
+      {
+        "text": "#058CF9",
+        "background": "#022057",
+        "use": "Blue on navy (4.55:1)"
+      },
+      {
+        "text": "#1C1C1C",
+        "background": "#058CF9",
+        "use": "Black on a blue badge"
+      },
+      {
+        "text": "#0068C9",
+        "background": "#FFFFFF",
+        "use": "Blue text on white"
+      }
+    ],
+    "note": "Clinic Blue sits right on the limit against navy; keep it to 14 px or larger."
+  },
+  "pattern": {
+    "name": "Clinic Cross Grid",
+    "file": "/products/HusbandClinic/pattern.svg",
+    "description": "Small plus marks in Malibu on Prussian Navy.",
+    "usage": [
+      "Use on navy backgrounds only",
+      "Keep text on solid areas",
+      "Do not use red crosses"
+    ]
+  },
+  "guideline": {
+    "logos": [
+      {
+        "label": "Husband Clinic logo",
+        "file": "/products/Partner-Brands/logos/logo_husbandclinic.svg",
+        "use": "Light backgrounds"
+      }
+    ],
+    "clearSpace": "Keep clear space equal to the cap height of the wordmark on every side. Nothing (text, edges, other logos) enters this zone.",
+    "minimumSize": "Digital 120 px wide; print 30 mm wide",
+    "do": [
+      "Place the logo on white or a white panel",
+      "Use 'in partnership with SuamiSihat' lock-up",
+      "Get partner approval"
+    ],
+    "dont": [
+      "Do not place the black wordmark on navy",
+      "Do not alter the CLINIC tag",
+      "Do not use clinical claims"
+    ],
+    "typography": {
+      "display": "Poppins SemiBold / Bold (SuamiSihat master display face)",
+      "body": "Inter Regular / Medium for UI and long copy",
+      "note": "Never retype a wordmark; always place the supplied logo file."
+    }
+  },
+  "downloads": [
+    {
+      "label": "Husband Clinic logo",
+      "file": "/products/Partner-Brands/logos/logo_husbandclinic.svg",
+      "format": "SVG"
+    },
+    {
+      "label": "Brand pattern",
+      "file": "/products/HusbandClinic/pattern.svg",
+      "format": "SVG"
+    }
+  ]
+}

@@ -75,7 +75,7 @@ Major architectural and art direction release migrating the design system to Sve
 
 - **Default Hero Component Standard (`ss-hero`)**:
   - Standardized `.ss-hero` and `<SSHero />` as the official default background and container component for all hero banners, landing headers, and product master headers across SuamiSihat™.
-  - Embedded the interactive 2D kinetic vitality wave canvas (`#heroWaveCanvas` / `.hero-wave-canvas`) featuring floating Mars (male sign) symbols, radiant Azure (`#21A1F7`) and Gold (`#F7E143`) energy nodes, and ambient pulsing glow (`.ss-hero-ambient-glow`).
+  - Embedded the interactive 2D kinetic vitality wave canvas (`#heroWaveCanvas` / `.hero-wave-canvas`) featuring floating Mars (male sign) symbols, radiant Azure (`#21A1F7`) and Gold (`#FCE53D`) energy nodes, and ambient pulsing glow (`.ss-hero-ambient-glow`).
   - Added full multi-framework integration guides (SvelteKit, Vanilla HTML/CSS, Expo React Native, Flutter) to the Component Library (`/components/#ss-hero`) and Brand System (`/brand-system/#patterns`).
   - Added Agent Rule 6 (`ss-hero` Hero Standard) enforcing the 60% brand vertical gradient, 30% ambient glow bloom, and 10% kinetic vitality wave canvas.
 

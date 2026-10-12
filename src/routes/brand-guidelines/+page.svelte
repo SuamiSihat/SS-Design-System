@@ -251,7 +251,7 @@
           <div style="padding: 1.25rem; border: 1px solid var(--color-neutral-stroke-1); border-left: 4px solid #21A1F7; border-radius: var(--f-radius-md); background: var(--color-neutral-bg-1); height: 100%;">
             <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-neutral-fg-1); margin-bottom: 0.5rem;">10% Primary Conversion Accent</h3>
             <p style="font-size: 0.8rem; color: var(--color-neutral-fg-2); line-height: 1.5; margin: 0;">
-              Azure Blue (<code>#21A1F7</code>) &amp; Banana Yellow (<code>#F7E143</code>). Strictly reserved for dominant patient conversion CTAs (e.g. &ldquo;BOOK APPOINTMENT&rdquo;).
+              Azure Blue (<code>#21A1F7</code>) &amp; Banana Yellow (<code>#FCE53D</code>). Strictly reserved for dominant patient conversion CTAs (e.g. &ldquo;BOOK APPOINTMENT&rdquo;).
             </p>
           </div>
         </div>

@@ -450,7 +450,7 @@ class SSColors {
         <li><a href="#subbrand" class="cl-sidebar-link"><iconify-icon icon="fluent:layer-diagonal-24-regular"></iconify-icon> Sub-Brands</a></li>
         <li><a href="#icons" class="cl-sidebar-link"><iconify-icon icon="fluent:shapes-24-regular"></iconify-icon> Icons & Usage</a></li>
         <li><a href="#downloads" class="cl-sidebar-link"><iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon> Download Kits</a></li>
-        <li><a href="#client-representation" class="cl-sidebar-link"><iconify-icon icon="fluent:shield-person-24-regular"></iconify-icon> Client Dignity</a></li>
+        <li><a href="#client-representation" class="cl-sidebar-link"><iconify-icon icon="fluent:person-shield-24-regular"></iconify-icon> Client Dignity</a></li>
         <li><a href="#tokens-export" class="cl-sidebar-link"><iconify-icon icon="fluent:code-24-regular"></iconify-icon> Tokens Export</a></li>
       </ul>
     </aside>
@@ -1090,7 +1090,7 @@ class SSColors {
                 <div style="background:var(--color-neutral-bg-1); padding:1rem; border-radius:var(--f-radius-lg); border:1px solid var(--color-neutral-stroke-1);">
                   <div style="font-size:0.75rem; font-weight:700; color:var(--color-brand-primary); margin-bottom:4px;">10% Kinetic Vitality</div>
                   <div style="font-size:0.825rem; color:var(--color-neutral-fg-1); font-weight:600; margin-bottom:4px;">Interactive Mars Particles</div>
-                  <div style="font-size:0.75rem; color:var(--color-neutral-fg-3);">Interactive canvas wave (<code>.hero-wave-canvas</code>) with radiant Azure (<code>#21A1F7</code>) &amp; Gold (<code>#F7E143</code>) nodes and cursor tracking.</div>
+                  <div style="font-size:0.75rem; color:var(--color-neutral-fg-3);">Interactive canvas wave (<code>.hero-wave-canvas</code>) with radiant Azure (<code>#21A1F7</code>) &amp; Gold (<code>#FCE53D</code>) nodes and cursor tracking.</div>
                 </div>
               </div>
               <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; background:var(--color-brand-subtle); padding:0.875rem 1.25rem; border-radius:var(--f-radius-md);">

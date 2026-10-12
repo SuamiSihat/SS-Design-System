@@ -158,7 +158,7 @@
           // Energy nodes
           if (x % 50 === 0) {
             ctx.save();
-            ctx.fillStyle = s === 0 ? '#F7E143' : (dark ? '#6DC6EC' : '#ffffff');
+            ctx.fillStyle = s === 0 ? '#FCE53D' : (dark ? '#6DC6EC' : '#ffffff');
             ctx.globalAlpha = 0.3 + 0.2 * Math.sin(x + 3 * time);
             ctx.beginPath();
             ctx.arc(x, y, s === 0 ? 2.5 : 2, 0, Math.PI * 2);
@@ -199,7 +199,7 @@
         ctx.translate(star.x + pushX, star.y + pushY);
         ctx.rotate(star.rotation);
         ctx.globalAlpha = currentOpacity;
-        const starCol = star.isGold ? '#F7E143' : (dark ? '#21A1F7' : '#FFFFFF');
+        const starCol = star.isGold ? '#FCE53D' : (dark ? '#21A1F7' : '#FFFFFF');
         ctx.strokeStyle = starCol;
         ctx.fillStyle = starCol;
         ctx.lineWidth = 1.2;

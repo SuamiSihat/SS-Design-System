@@ -25,7 +25,7 @@
     { label: 'Onboarding Guide', href: '/onboarding/', icon: 'fluent:person-star-24-regular' },
     { label: "What's New", href: '/doc/?doc=changelog', icon: 'fluent:clock-arrow-download-24-regular' },
     { label: 'Roadmap', href: '/doc/?doc=roadmap', icon: 'fluent:map-drive-24-regular' },
-    { label: 'Contribution Guide', href: '/doc/?doc=contribution-guide', icon: 'fluent:heart-hand-24-regular' }
+    { label: 'Contribution Guide', href: '/doc/?doc=contribution-guide', icon: 'fluent:person-heart-24-regular' }
   ];
 
   const docsLinksGroup2 = [

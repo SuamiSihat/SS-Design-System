@@ -1,21 +1,215 @@
 {
+  "schema": 2,
+  "slug": "mensculine",
   "name": "Mensculine",
-  "tagline": "Premium Everyday Grooming & Personal Care",
-  "logo": "logo_mensculine_primary.svg",
-  "banner": "banner.svg",
-  "heroGradient": "linear-gradient(135deg, #1C1C1C 0%, #038AFA 100%)",
-  "colors": {
-    "primary": "#1C1C1C",
-    "accent": "#038AFA",
-    "surface": "#F1F1F1"
+  "folder": "Mensculine",
+  "status": "Active",
+  "tagline": "SuamiSihat's men's care brand for export markets",
+  "entity": "05-SSE · SuamiSihat E-Commerce (international)",
+  "category": "Men's personal care (export)",
+  "hero": {
+    "from": "#1C1C1C",
+    "to": "#0A1A3A",
+    "accent": "#038AFA"
   },
-  "ownership": {
-    "tags": ["SS Health Owned", "SS Ecom", "Global Export"],
-    "text": "Mensculine is the international export brand identity of SuamiSihat™."
+  "definition": {
+    "summary": "Mensculine is the international identity for SuamiSihat men's care products sold outside Malaysia, starting with Mensculine Care Cream.",
+    "facts": [
+      {
+        "label": "Operating entity",
+        "value": "05-SSE SuamiSihat E-Commerce"
+      },
+      {
+        "label": "Markets",
+        "value": "Export and cross-border marketplaces"
+      },
+      {
+        "label": "Lead product",
+        "value": "Mensculine Care Cream (topical)"
+      },
+      {
+        "label": "Logo set",
+        "value": "Primary, secondary and text lockups, each in light and dark"
+      }
+    ],
+    "range": [
+      {
+        "name": "Mensculine Care Cream",
+        "type": "Topical care",
+        "desc": "Topical care cream; successor formulation to the archived Xprimal line."
+      }
+    ],
+    "claimsReview": "Ingredient and effect statements must follow each export market's cosmetic rules."
   },
-  "assets": [
-    "logo_mensculine_primary.svg",
-    "logo_mensculine_secondary.svg",
-    "logo_mensculine_text.svg"
+  "images": [
+    {
+      "src": "/products/Mensculine/gallery/mensculine-brand-card.jpg",
+      "alt": "Mensculine logo on a white card over the blue chevron pattern",
+      "caption": "Brand card (product photography pending)",
+      "placeholder": true
+    }
+  ],
+  "positioning": {
+    "statement": "For men abroad who want straightforward care from a specialist, Mensculine carries SuamiSihat's know-how in a clean, international look.",
+    "pillars": [
+      {
+        "title": "International",
+        "text": "English-first, market-ready packaging."
+      },
+      {
+        "title": "Specialist heritage",
+        "text": "From SuamiSihat's men's health expertise."
+      },
+      {
+        "title": "Bold simplicity",
+        "text": "Black, white and one vivid blue."
+      }
+    ],
+    "voice": [
+      "Confident, concise",
+      "International English",
+      "Practical"
+    ],
+    "avoid": [
+      "Market-specific claims that are not cleared",
+      "Slang or local idioms",
+      "Explicit imagery"
+    ]
+  },
+  "colorScheme": {
+    "foundation": {
+      "share": 60,
+      "role": "Obsidian Black",
+      "colors": [
+        {
+          "name": "Obsidian Black",
+          "hex": "#1C1C1C",
+          "use": "Backgrounds and text"
+        },
+        {
+          "name": "Light Surface",
+          "hex": "#F1F1F1",
+          "use": "Light canvases"
+        }
+      ]
+    },
+    "structure": {
+      "share": 30,
+      "role": "Light Surface and white structure",
+      "colors": [
+        {
+          "name": "White",
+          "hex": "#FFFFFF",
+          "use": "Cards and panels on black"
+        }
+      ]
+    },
+    "accent": {
+      "share": 10,
+      "role": "Vivid Blue accent",
+      "colors": [
+        {
+          "name": "Vivid Blue",
+          "hex": "#038AFA",
+          "use": "Icon in logo, one highlight on black"
+        },
+        {
+          "name": "Blue Text",
+          "hex": "#0068C9",
+          "use": "Blue text on light"
+        }
+      ]
+    },
+    "pairings": [
+      {
+        "text": "#F1F1F1",
+        "background": "#1C1C1C",
+        "use": "Text on Obsidian"
+      },
+      {
+        "text": "#038AFA",
+        "background": "#1C1C1C",
+        "use": "Blue highlight on Obsidian"
+      },
+      {
+        "text": "#1C1C1C",
+        "background": "#038AFA",
+        "use": "Black text on a blue badge"
+      },
+      {
+        "text": "#0068C9",
+        "background": "#F1F1F1",
+        "use": "Blue text on light"
+      }
+    ],
+    "note": "White on Vivid Blue is 3.5:1; use Obsidian text on blue."
+  },
+  "pattern": {
+    "name": "Chevron Drive",
+    "file": "/products/Mensculine/pattern.svg",
+    "description": "Stacked Vivid Blue chevrons on Obsidian, pointing forward.",
+    "usage": [
+      "Use on dark bands and packaging sides",
+      "Keep copy on solid panels",
+      "Do not rotate chevrons"
+    ]
+  },
+  "guideline": {
+    "logos": [
+      {
+        "label": "Primary (light backgrounds)",
+        "file": "/products/Mensculine/logos/logo_mensculine_primary_light.svg",
+        "use": "Light"
+      },
+      {
+        "label": "Primary (dark backgrounds)",
+        "file": "/products/Mensculine/logos/logo_mensculine_primary_dark.svg",
+        "use": "Dark"
+      },
+      {
+        "label": "Secondary",
+        "file": "/products/Mensculine/logos/logo_mensculine_secondary.svg",
+        "use": "Compact"
+      },
+      {
+        "label": "Text lockup",
+        "file": "/products/Mensculine/logos/logo_mensculine_text.svg",
+        "use": "Wordmark only"
+      }
+    ],
+    "clearSpace": "Keep clear space equal to the cap height of the wordmark on every side. Nothing (text, edges, other logos) enters this zone.",
+    "minimumSize": "Digital 120 px wide; print 30 mm wide",
+    "do": [
+      "Use the light or dark lockup to match the background",
+      "Keep Vivid Blue to the icon and one highlight",
+      "Use English as the primary language"
+    ],
+    "dont": [
+      "Do not mix light and dark lockups",
+      "Do not recolour the icon",
+      "Do not use the archived Xprimal identity"
+    ],
+    "typography": {
+      "display": "Poppins SemiBold / Bold (SuamiSihat master display face)",
+      "body": "Inter Regular / Medium for UI and long copy",
+      "note": "Never retype a wordmark; always place the supplied logo file."
+    }
+  },
+  "downloads": [
+    {
+      "label": "Logo pack",
+      "file": "/products/Mensculine/downloads/logo_mensculine.zip",
+      "format": "ZIP"
+    },
+    {
+      "label": "Primary logo",
+      "file": "/products/Mensculine/logos/logo_mensculine_primary.svg",
+      "format": "SVG"
+    },
+    {
+      "label": "Brand pattern",
+      "file": "/products/Mensculine/pattern.svg",
+      "format": "SVG"
+    }
   ]
 }

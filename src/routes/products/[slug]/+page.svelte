@@ -1,868 +1,558 @@
 <script>
-  import { renderIconShortcodes } from '$lib/utils/markdown-icons.js';
-  import { readableTextOn } from '$lib/utils/contrast.js';
-  import { onMount, tick } from 'svelte';
-  import { page } from '$app/stores';
+  import { contrastRatio } from '$lib/utils/contrast.js';
+  import { SECTIONS } from '$lib/products/index.js';
 
   let { data } = $props();
-  const product = $derived(data.product);
-  const slug = $derived(data.slug);
+  const p = $derived(data.product);
 
-  let renderedContent = $state('');
-  let isSidebarMinimized = $state(false);
-  let activeSection = $state('section-history');
-  let selectedGalleryIndex = $state(0);
-  let isLightboxOpen = $state(false);
+  /** 60:30:10 roles in display order */
+  const roles = $derived([
+    { key: 'foundation', label: 'Foundation', ...p.colorScheme.foundation },
+    { key: 'structure', label: 'Structure', ...p.colorScheme.structure },
+    { key: 'accent', label: 'Accent', ...p.colorScheme.accent }
+  ]);
 
-  function openLightbox(idx = 0) {
-    selectedGalleryIndex = idx;
-    isLightboxOpen = true;
-    if (typeof document !== 'undefined') {
-      document.body.style.overflow = 'hidden';
+  let copied = $state('');
+  async function copyHex(hex) {
+    try {
+      await navigator.clipboard.writeText(hex);
+      copied = hex;
+      setTimeout(() => (copied = ''), 1600);
+    } catch {
+      copied = '';
     }
   }
 
-  function closeLightbox() {
-    isLightboxOpen = false;
-    if (typeof document !== 'undefined') {
-      document.body.style.overflow = '';
-    }
+  /** @type {HTMLDialogElement | undefined} */
+  let dialog = $state();
+  let current = $state(0);
+  function openImage(i) {
+    current = i;
+    dialog?.showModal();
+  }
+  function step(d) {
+    current = (current + d + p.images.length) % p.images.length;
   }
 
-  function prevGalleryImage() {
-    if (!product?.gallery?.length) return;
-    selectedGalleryIndex = (selectedGalleryIndex - 1 + product.gallery.length) % product.gallery.length;
-  }
+  const ratioLabel = (pair) => {
+    const r = contrastRatio(pair.text, pair.background);
+    return { value: r.toFixed(1), level: r >= 7 ? 'AAA' : r >= 4.5 ? 'AA' : 'AA large' };
+  };
 
-  function nextGalleryImage() {
-    if (!product?.gallery?.length) return;
-    selectedGalleryIndex = (selectedGalleryIndex + 1) % product.gallery.length;
-  }
-
-  const portfolioLinks = [
-    { slug: 'androlab',    label: 'ANDROLAB',     icon: 'fluent:pill-24-regular' },
-    { slug: 'menss',       label: 'MENSS',         icon: 'fluent:heart-pulse-24-regular' },
-    { slug: 'mensculine',  label: 'Mensculine',    icon: 'fluent:globe-24-regular' },
-    { slug: 'drmitring',   label: 'Dr Mit Ring®',  icon: 'fluent:stethoscope-24-regular' },
-    { slug: 'rejal',       label: 'REJAL',         icon: 'fluent:leaf-three-24-regular' },
-    { slug: 'nucaffe',     label: 'nuCaffe®',     icon: 'fluent:drink-coffee-24-regular' },
-    { slug: 'pertabi',     label: 'PERTABI',       icon: 'fluent:people-community-24-regular' }
-  ];
-
-  onMount(async () => {
-    // Scroll spy
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) activeSection = e.target.id;
-      });
-    }, { rootMargin: '-20% 0px -70% 0px' });
-    document.querySelectorAll('[data-section]').forEach(el => obs.observe(el));
-
-    // Render markdown content if present
-    if (data.content && typeof window !== 'undefined' && window.marked) {
-      window.marked.setOptions({ gfm: true, breaks: false });
-      renderedContent = renderIconShortcodes(window.marked.parse(data.content));
-      await tick();
-      // Render mermaid if any
-      if (window.mermaid) {
-        try {
-          window.mermaid.initialize({ startOnLoad: false, theme: 'neutral' });
-          const el = document.getElementById('brand-md-content');
-          if (el) {
-            el.querySelectorAll('pre code.language-mermaid').forEach(block => {
-              const div = document.createElement('div');
-              div.className = 'mermaid';
-              div.textContent = block.textContent;
-              block.closest('pre').replaceWith(div);
-            });
-            await window.mermaid.run({ nodes: el.querySelectorAll('.mermaid') });
-          }
-        } catch {}
-      }
-    }
-
-    return () => obs.disconnect();
-  });
+  const fileName = (f) => f.split('/').pop();
 </script>
 
 <svelte:head>
-  {#if product}
-    <title>{product.name} Brand Hub — SuamiSihat™ Design System</title>
-    <meta name="description" content="SuamiSihat™ Design System — {product.name}: {product.tagline}" />
-  {:else}
-    <title>Brand Not Found — SuamiSihat™ Design System</title>
-  {/if}
+  <title>{p.name} brand guideline · SuamiSihat Design System</title>
+  <meta name="description" content={p.definition.summary} />
 </svelte:head>
 
-<!-- ─── 404 State ──────────────────────────────────────────────── -->
-{#if !product}
-  <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;gap:1rem;text-align:center;padding:3rem;">
-    <iconify-icon icon="fluent:cube-dismiss-24-regular" style="font-size:3rem;color:var(--color-neutral-fg-3);"></iconify-icon>
-    <h1 style="font-size:2rem;font-weight:700;color:var(--color-neutral-fg-1);">Brand Not Found</h1>
-    <p style="color:var(--color-neutral-fg-2);">The product brand hub "<code>{slug}</code>" does not exist in this Design System.</p>
-    <a href="/products/" class="btn btn-primary"><iconify-icon icon="fluent:arrow-left-16-regular" aria-hidden="true"></iconify-icon> Back to Product Catalogue</a>
-  </div>
-{:else}
-
-<!-- ─── Full-Width Hero ────────────────────────────────────────── -->
-<div
-  class="brand-master-hero"
-  style="background: linear-gradient(135deg, {product.hero.from} 0%, {product.hero.mid} 60%, {product.hero.to} 100%);"
->
-  <div class="brand-hero-inner">
-    <nav class="brand-breadcrumb brand-breadcrumb--light" aria-label="Breadcrumb" style="margin-bottom: 1.5rem;">
-      <a href="/" style="color:rgba(255,255,255,0.7);">Home</a>
-      <iconify-icon icon="fluent:chevron-right-12-regular" style="color:rgba(255,255,255,0.5);"></iconify-icon>
-      <a href="/products/" style="color:rgba(255,255,255,0.7);">Products</a>
-      <iconify-icon icon="fluent:chevron-right-12-regular" style="color:rgba(255,255,255,0.5);"></iconify-icon>
-      <span style="color:#fff;font-weight:600;">{product.name}</span>
+<!-- Hero -->
+<header class="pb-hero" style="--hero-from:{p.hero.from}; --hero-to:{p.hero.to}; --pattern:url('{p.pattern.file}');">
+  <div class="pb-hero-pattern" aria-hidden="true"></div>
+  <div class="pb-hero-inner">
+    <nav class="pb-crumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <iconify-icon icon="fluent:chevron-right-12-regular" aria-hidden="true"></iconify-icon>
+      <a href="/products/">Products</a>
+      <iconify-icon icon="fluent:chevron-right-12-regular" aria-hidden="true"></iconify-icon>
+      <span aria-current="page">{p.name}</span>
     </nav>
-
-    <div class="brand-hero-content">
-      <div class="brand-hero-logo-wrap">
-        <img src={product.logoLight} alt="{product.name} logo" class="brand-hero-logo" loading="eager" />
+    <div class="pb-hero-body">
+      <div class="pb-hero-logo">
+        <img src={p.guideline.logos[0].file} alt="{p.name} logo" />
       </div>
-      <div class="brand-hero-text">
-        <div class="brand-hero-type">{product.type} · {product.entity}</div>
-        <h1 class="brand-hero-title">{product.name}</h1>
-        <p class="brand-hero-tagline">{product.tagline}</p>
-        <div class="brand-hero-actions">
-          <a href="#section-assets" class="btn-brand-hero-primary">
-            <iconify-icon icon="fluent:color-24-regular"></iconify-icon>
-            Brand Assets
-          </a>
-          <a href="#section-products" class="btn-brand-hero-outline">
-            <iconify-icon icon="fluent:box-multiple-24-regular"></iconify-icon>
-            Sub-Products
-          </a>
-          <a href="/products/" class="btn-brand-hero-outline">
-            <iconify-icon icon="fluent:grid-24-regular"></iconify-icon>
-            All Brands
-          </a>
-        </div>
+      <div class="pb-hero-text">
+        <p class="pb-hero-meta">
+          <span class="pb-chip">{p.status}</span>
+          <span>{p.category}</span>
+        </p>
+        <h1>{p.name}</h1>
+        <p class="pb-hero-tagline">{p.tagline}</p>
+        <p class="pb-hero-entity">
+          <iconify-icon icon="fluent:organization-16-regular" aria-hidden="true"></iconify-icon>
+          {p.entity}
+        </p>
       </div>
     </div>
   </div>
-</div>
+</header>
 
-<!-- ─── Sticky Sub-nav ─────────────────────────────────────────── -->
-<nav class="sub-nav-sticky" aria-label="Brand page sections">
-  <div class="sub-nav-inner">
-    <ul class="sub-nav-links">
-      <li><a href="#section-history"  class:active={activeSection === 'section-history'}>1. Brand History</a></li>
-      <li><a href="#section-assets"   class:active={activeSection === 'section-assets'}>2. Assets & Guidelines</a></li>
-      <li><a href="#section-products" class:active={activeSection === 'section-products'}>3. Sub-Products</a></li>
-      {#if product.gallery?.length > 0}
-        <li><a href="#section-gallery" class:active={activeSection === 'section-gallery'}>4. Visual Gallery</a></li>
-      {/if}
-      <li><a href="#section-synergy"  class:active={activeSection === 'section-synergy'}>{product.gallery?.length > 0 ? '5' : '4'}. Synergy & Bundles</a></li>
-      <li><a href="#section-cta"      class:active={activeSection === 'section-cta'}>{product.gallery?.length > 0 ? '6' : '5'}. Downloads & Shop</a></li>
-    </ul>
-  </div>
+<!-- Section navigation -->
+<nav class="pb-sections" aria-label="{p.name} guideline sections">
+  <ol>
+    {#each SECTIONS as s, i}
+      <li>
+        <a href="#{s.id}">
+          <span class="pb-num" aria-hidden="true">{i + 1}</span>
+          <iconify-icon icon={s.icon} aria-hidden="true"></iconify-icon>
+          {s.label}
+        </a>
+      </li>
+    {/each}
+  </ol>
 </nav>
 
-<!-- ─── Page Layout with Sidebar ──────────────────────────────── -->
-<div
-  class="f-page-layout"
-  class:sidebar-minimized={isSidebarMinimized}
-  style="display: grid; grid-template-columns: {isSidebarMinimized ? 'minmax(0, 1fr)' : '260px minmax(0, 1fr)'}; min-height: 60vh; position: relative; transition: grid-template-columns 0.3s ease; width: 100%;"
->
-  <!-- Sidebar Toggle Pill -->
-  <button
-    type="button"
-    class="f-sidebar-toggle"
-    onclick={() => isSidebarMinimized = !isSidebarMinimized}
-    aria-label={isSidebarMinimized ? "Expand sidebar" : "Minimize sidebar"}
-    style="position: fixed; left: {isSidebarMinimized ? '12px' : '248px'}; top: 50vh; width: 24px; height: 24px; border-radius: 50%; background: var(--color-neutral-bg-2); border: 1px solid var(--color-neutral-stroke-2); color: var(--color-neutral-fg-2); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1010; box-shadow: var(--f-shadow-2); transition: all 0.3s ease;"
-  >
-    <iconify-icon icon={isSidebarMinimized ? "fluent:chevron-right-16-regular" : "fluent:chevron-left-16-regular"}></iconify-icon>
-  </button>
+<main class="pb-main" id="main-content">
+  <!-- 1. Definition -->
+  <section id="definition" class="pb-section" aria-labelledby="h-definition">
+    <h2 id="h-definition"><span class="pb-num">1</span> Product definition</h2>
+    <p class="pb-lead">{p.definition.summary}</p>
 
-  <!-- Left Sidebar -->
-  {#if !isSidebarMinimized}
-    <aside class="f-sidebar acrylic" aria-label="Brand navigation" style="overflow-y: auto;">
-      <!-- Brand Navigation -->
-      <div class="cat-sidebar-section">
-        <p class="cat-sidebar-heading">Brand Navigation</p>
-        <ul class="cat-nav">
-          <li><a href="#section-history"  class:active={activeSection === 'section-history'}><span class="cat-icon"><iconify-icon icon="fluent:book-compass-24-regular"></iconify-icon></span>1. Brand History</a></li>
-          <li><a href="#section-assets"   class:active={activeSection === 'section-assets'}><span class="cat-icon"><iconify-icon icon="fluent:color-24-regular"></iconify-icon></span>2. Assets & Guidelines</a></li>
-          <li><a href="#section-products" class:active={activeSection === 'section-products'}><span class="cat-icon"><iconify-icon icon="fluent:box-multiple-24-regular"></iconify-icon></span>3. Sub-Products</a></li>
-          {#if product.gallery?.length > 0}
-            <li><a href="#section-gallery" class:active={activeSection === 'section-gallery'}><span class="cat-icon"><iconify-icon icon="fluent:image-multiple-24-regular"></iconify-icon></span>4. Visual Gallery</a></li>
-          {/if}
-          <li><a href="#section-synergy"  class:active={activeSection === 'section-synergy'}><span class="cat-icon"><iconify-icon icon="fluent:apps-list-detail-24-regular"></iconify-icon></span>{product.gallery?.length > 0 ? '5' : '4'}. Synergy & Bundles</a></li>
-          <li><a href="#section-cta"      class:active={activeSection === 'section-cta'}><span class="cat-icon"><iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon></span>{product.gallery?.length > 0 ? '6' : '5'}. Downloads & Shop</a></li>
-        </ul>
-      </div>
-
-      <!-- Brand Portfolio -->
-      <div class="cat-sidebar-section">
-        <p class="cat-sidebar-heading">Brand Portfolio</p>
-        <ul class="cat-nav">
-          {#each portfolioLinks as link}
-            <li>
-              <a href="/products/{link.slug}/" class:active={slug === link.slug}>
-                <span class="cat-icon"><iconify-icon icon={link.icon}></iconify-icon></span>
-                {link.label}
-              </a>
-            </li>
-          {/each}
-        </ul>
-      </div>
-
-      <!-- Navigate -->
-      <div class="cat-sidebar-section">
-        <p class="cat-sidebar-heading">Navigate</p>
-        <ul class="cat-nav">
-          <li><a href="/products/"><span class="cat-icon"><iconify-icon icon="fluent:grid-24-regular"></iconify-icon></span>Products Catalogue</a></li>
-          <li><a href="/brand-system/"><span class="cat-icon"><iconify-icon icon="fluent:color-line-24-regular"></iconify-icon></span>Brand System</a></li>
-          <li><a href="/brand-guidelines/"><span class="cat-icon"><iconify-icon icon="fluent:book-open-24-regular"></iconify-icon></span>Guidelines PDF</a></li>
-          <li><a href="/"><span class="cat-icon"><iconify-icon icon="fluent:home-24-regular"></iconify-icon></span>Home</a></li>
-        </ul>
-      </div>
-    </aside>
-  {/if}
-
-  <!-- Main Content -->
-  <main class="brand-hub-main" id="main-content">
-
-    <!-- ── Section 1: Brand History / Markdown Content ─────────── -->
-    <section id="section-history" data-section class="brand-section">
-      <div class="brand-section-header">
-        <div class="brand-section-icon" style="background: rgba(4,51,136,0.08); color: var(--color-brand-primary);">
-          <iconify-icon icon="fluent:book-compass-24-regular"></iconify-icon>
-        </div>
+    <dl class="pb-facts">
+      {#each p.definition.facts as f}
         <div>
-          <h2 class="brand-section-title">Brand History & Context</h2>
-          <p class="brand-section-desc">Origin story, positioning, and market context for {product.name}</p>
+          <dt>{f.label}</dt>
+          <dd>{f.value}</dd>
         </div>
-      </div>
+      {/each}
+    </dl>
 
-      {#if renderedContent}
-        <!-- Full markdown content from /content/products/[slug].md -->
-        <div id="brand-md-content" class="markdown-body brand-section-card">
-          {@html renderedContent}
-        </div>
-      {:else}
-        <!-- Fallback when no markdown file exists yet -->
-        <div class="brand-section-card brand-placeholder">
-          <iconify-icon icon="fluent:document-add-24-regular" style="font-size:2rem;color:var(--color-neutral-fg-3);display:block;margin-bottom:0.75rem;"></iconify-icon>
-          <p style="color:var(--color-neutral-fg-2);margin:0;">
-            Brand narrative content for <strong>{product.name}</strong> is coming soon.
-            Create <code>/content/products/{slug}.md</code> to add brand history, positioning, and documentation here.
-          </p>
-        </div>
-      {/if}
-    </section>
-
-    <!-- ── Section 2: Assets & Guidelines ─────────────────────── -->
-    <section id="section-assets" data-section class="brand-section">
-      <div class="brand-section-header">
-        <div class="brand-section-icon" style="background: rgba(4,51,136,0.08); color: var(--color-brand-primary);">
-          <iconify-icon icon="fluent:color-24-regular"></iconify-icon>
-        </div>
-        <div>
-          <h2 class="brand-section-title">Assets & Guidelines</h2>
-          <p class="brand-section-desc">Logo variants, color tokens, and usage rules</p>
-        </div>
-      </div>
-
-      <div class="brand-section-card">
-        <!-- Logo tile -->
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem;">
-          <div class="logo-preview-tile logo-tile-white">
-            <img src={product.logoLight} alt="{product.name} logo on white" style="max-height:60px;max-width:100%;object-fit:contain;" />
-            <span class="logo-tile-label">Light Background</span>
-          </div>
-          <div class="logo-preview-tile logo-tile-dark" style="background: {product.hero.from};">
-            <img src={product.logoDark} alt="{product.name} logo on dark" style="max-height:60px;max-width:100%;object-fit:contain;" />
-            <span class="logo-tile-label" style="color:rgba(255,255,255,0.7);">Dark Background</span>
-          </div>
-        </div>
-
-        <!-- Color accent swatch -->
-        <div style="margin-bottom:1rem;">
-          <p style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-neutral-fg-3);margin-bottom:0.5rem;">Brand Accent</p>
-          <div class="token-swatch" style="background: {product.accent}; color: {readableTextOn(product.accent)}; max-width: 280px;">
-            <span style="font-size:0.85rem;font-weight:600;">{product.name} Accent</span>
-            <code style="font-size:0.75rem;color:inherit;">{product.accent}</code>
-          </div>
-        </div>
-
-        <!-- Download logo button -->
-        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a href={product.logoLight} download class="product-assets-btn">
-            <iconify-icon icon="fluent:arrow-download-16-regular"></iconify-icon>
-            Download Logo SVG
-          </a>
-          <a href="/products/" class="btn-outline-small">
-            <iconify-icon icon="fluent:arrow-left-16-regular"></iconify-icon>
-            Back to Catalogue
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── Section 3: Sub-Products ─────────────────────────────── -->
-    {#if product.subProducts?.length > 0}
-      <section id="section-products" data-section class="brand-section">
-        <div class="brand-section-header">
-          <div class="brand-section-icon" style="background: rgba(4,51,136,0.08); color: var(--color-brand-primary);">
-            <iconify-icon icon="fluent:box-multiple-24-regular"></iconify-icon>
-          </div>
-          <div>
-            <h2 class="brand-section-title">Sub-Products & SKUs</h2>
-            <p class="brand-section-desc">{product.subProducts.length} product line{product.subProducts.length > 1 ? 's' : ''} under {product.name}</p>
-          </div>
-        </div>
-
-        <div style="display:flex;flex-direction:column;gap:1rem;">
-          {#each product.subProducts as sub}
-            <article class="product-spec-article">
-              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:0.5rem;">
-                <h3 style="font-size:1.1rem;font-weight:600;color:var(--color-neutral-fg-1);margin:0;">{sub.name}</h3>
-                <span style="font-size:0.7rem;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--color-brand-subtle);color:var(--color-brand-primary);white-space:nowrap;flex-shrink:0;">{sub.type}</span>
-              </div>
-              <p style="font-size:0.875rem;color:var(--color-neutral-fg-2);line-height:1.6;margin:0;">{sub.desc}</p>
-            </article>
-          {/each}
-        </div>
-      </section>
-    {:else}
-      <section id="section-products" data-section class="brand-section">
-        <div class="brand-section-header">
-          <div class="brand-section-icon" style="background: rgba(4,51,136,0.08); color: var(--color-brand-primary);">
-            <iconify-icon icon="fluent:box-multiple-24-regular"></iconify-icon>
-          </div>
-          <div>
-            <h2 class="brand-section-title">Sub-Products & SKUs</h2>
-            <p class="brand-section-desc">Product lines under {product.name}</p>
-          </div>
-        </div>
-        <div class="brand-section-card brand-placeholder">
-          <p style="color:var(--color-neutral-fg-2);margin:0;">Sub-product details for <strong>{product.name}</strong> will be listed here.</p>
-        </div>
-      </section>
+    {#if p.definition.range.length}
+      <h3>Range</h3>
+      <ul class="pb-range">
+        {#each p.definition.range as r}
+          <li class="pb-card">
+            <span class="pb-tag">{r.type}</span>
+            <strong>{r.name}</strong>
+            <p>{r.desc}</p>
+          </li>
+        {/each}
+      </ul>
     {/if}
 
-    <!-- ── Section 4: Visual Gallery & 3D Showcase ───────────── -->
-    {#if product.gallery?.length > 0}
-      <section id="section-gallery" data-section class="brand-section">
-        <div class="brand-section-header">
-          <div class="brand-section-icon" style="background: rgba(4,51,136,0.08); color: var(--color-brand-primary);">
-            <iconify-icon icon="fluent:image-multiple-24-regular"></iconify-icon>
-          </div>
-          <div>
-            <h2 class="brand-section-title">Product Renders & Photography</h2>
-            <p class="brand-section-desc">Interactive 3D studio packshots, packaging renders, and lifestyle photography ({product.gallery.length} asset{product.gallery.length > 1 ? 's' : ''})</p>
-          </div>
+    {#if p.definition.claimsReview}
+      <aside class="pb-callout" aria-label="Claims review">
+        <iconify-icon icon="fluent:warning-24-filled" aria-hidden="true"></iconify-icon>
+        <div>
+          <strong>Claims review required</strong>
+          <p>{p.definition.claimsReview}</p>
         </div>
+      </aside>
+    {/if}
+  </section>
 
-        <div class="brand-section-card p-0" style="overflow: hidden; padding: 0;">
-          <div style="position: relative;">
-            <div
-              class="ss-gallery-stage"
-              onclick={() => openLightbox(selectedGalleryIndex)}
-              role="button"
-              tabindex="0"
-              onkeydown={(e) => e.key === 'Enter' && openLightbox(selectedGalleryIndex)}
-              title="Click to zoom in full-screen lightbox"
-            >
-              <span class="ss-gallery-zoom-badge">
-                <iconify-icon icon="fluent:full-screen-maximize-24-regular"></iconify-icon> Click to Zoom
-              </span>
-              <img class="ss-gallery-stage-img" src={product.gallery[selectedGalleryIndex].src} alt={product.gallery[selectedGalleryIndex].title} loading="eager" />
-            </div>
-            
-            {#if product.gallery.length > 1}
-              <button class="ss-carousel-btn prev" type="button" aria-label="Previous image" onclick={(e) => { e.stopPropagation(); prevGalleryImage(); }}>
-                <iconify-icon icon="fluent:chevron-left-24-regular"></iconify-icon>
-              </button>
-              <button class="ss-carousel-btn next" type="button" aria-label="Next image" onclick={(e) => { e.stopPropagation(); nextGalleryImage(); }}>
-                <iconify-icon icon="fluent:chevron-right-24-regular"></iconify-icon>
-              </button>
-            {/if}
-          </div>
-
-          <div class="ss-gallery-meta">
-            <div>
-              <div class="ss-gallery-meta-title">{product.gallery[selectedGalleryIndex].title}</div>
-              <p class="ss-gallery-meta-sub">{product.gallery[selectedGalleryIndex].sub}</p>
-            </div>
-            <span class="badge bg-primary bg-opacity-10 text-primary font-monospace" style="font-size:0.75rem; padding: 4px 10px; border-radius: 6px;">
-              Asset {selectedGalleryIndex + 1} of {product.gallery.length}
+  <!-- 2. Images -->
+  <section id="images" class="pb-section" aria-labelledby="h-images">
+    <h2 id="h-images"><span class="pb-num">2</span> Product images</h2>
+    <ul class="pb-gallery">
+      {#each p.images as img, i}
+        <li>
+          <button type="button" class="pb-shot" onclick={() => openImage(i)}>
+            <img src={img.src} alt={img.alt} loading="lazy" />
+            <span class="pb-shot-caption">
+              {img.caption}
+              {#if img.placeholder}<span class="pb-tag pb-tag-warn">Photography pending</span>{/if}
             </span>
-          </div>
-
-          {#if product.gallery.length > 1}
-            <div class="ss-gallery-thumbs">
-              {#each product.gallery as item, idx}
-                <button
-                  class="ss-gallery-thumb"
-                  class:active={selectedGalleryIndex === idx}
-                  type="button"
-                  onclick={() => selectedGalleryIndex = idx}
-                  aria-label={`View ${item.title}`}
-                >
-                  <img src={item.src} alt={item.title} loading="lazy" />
-                </button>
-              {/each}
-            </div>
-          {/if}
-        </div>
-      </section>
+          </button>
+        </li>
+      {/each}
+    </ul>
+    {#if p.guideline.photography}
+      <p class="pb-note"><iconify-icon icon="fluent:camera-16-regular" aria-hidden="true"></iconify-icon> {p.guideline.photography}</p>
     {/if}
+  </section>
 
-    <!-- ── Section 5: Synergy & Bundles ───────────────────────── -->
-    <section id="section-synergy" data-section class="brand-section">
-      <div class="brand-section-header">
-        <div class="brand-section-icon" style="background: rgba(4,51,136,0.08); color: var(--color-brand-primary);">
-          <iconify-icon icon="fluent:apps-list-detail-24-regular"></iconify-icon>
-        </div>
-        <div>
-          <h2 class="brand-section-title">Synergy & Bundles</h2>
-          <p class="brand-section-desc">Cross-brand collaborations, bundle strategies, and ecosystem synergies</p>
-        </div>
+  <!-- 3. Positioning -->
+  <section id="positioning" class="pb-section" aria-labelledby="h-positioning">
+    <h2 id="h-positioning"><span class="pb-num">3</span> Brand positioning</h2>
+    <blockquote class="pb-statement">{p.positioning.statement}</blockquote>
+    <ul class="pb-pillars">
+      {#each p.positioning.pillars as pillar, i}
+        <li class="pb-card">
+          <span class="pb-pillar-num">0{i + 1}</span>
+          <strong>{pillar.title}</strong>
+          <p>{pillar.text}</p>
+        </li>
+      {/each}
+    </ul>
+    <div class="pb-two">
+      <div class="pb-card">
+        <h3><iconify-icon icon="fluent:chat-24-regular" aria-hidden="true"></iconify-icon> Voice</h3>
+        <ul class="pb-list pb-list-yes">
+          {#each p.positioning.voice as v}<li><iconify-icon icon="fluent:checkmark-circle-16-filled" aria-hidden="true"></iconify-icon>{v}</li>{/each}
+        </ul>
       </div>
-      <div class="brand-section-card brand-placeholder">
-        <p style="color:var(--color-neutral-fg-2);margin:0;">Bundle documentation for <strong>{product.name}</strong> will appear here. See <a href="/brand-system/">Brand System</a> for ecosystem positioning.</p>
+      <div class="pb-card">
+        <h3><iconify-icon icon="fluent:prohibited-24-regular" aria-hidden="true"></iconify-icon> Avoid</h3>
+        <ul class="pb-list pb-list-no">
+          {#each p.positioning.avoid as v}<li><iconify-icon icon="fluent:dismiss-circle-16-filled" aria-hidden="true"></iconify-icon>{v}</li>{/each}
+        </ul>
       </div>
-    </section>
-
-    <!-- ── Section 6: Downloads & Shop ────────────────────────── -->
-    <section id="section-cta" data-section class="brand-section">
-      <div class="brand-section-header">
-        <div class="brand-section-icon" style="background: rgba(4,51,136,0.08); color: var(--color-brand-primary);">
-          <iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon>
-        </div>
-        <div>
-          <h2 class="brand-section-title">Downloads & Shop</h2>
-          <p class="brand-section-desc">Brand asset downloads and official purchase channels</p>
-        </div>
-      </div>
-      <div class="brand-section-card">
-        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
-          <a href={product.logoLight} download class="product-assets-btn">
-            <iconify-icon icon="fluent:arrow-download-16-regular"></iconify-icon>
-            Logo SVG (Light)
-          </a>
-          <a href={product.logoDark} download class="product-assets-btn">
-            <iconify-icon icon="fluent:arrow-download-16-regular"></iconify-icon>
-            Logo SVG (Dark)
-          </a>
-          <a href="https://suamisihat.com.my" target="_blank" rel="noopener noreferrer" class="product-assets-btn" style="background: var(--color-action-bg); color: var(--color-on-action); border-color: transparent;">
-            <iconify-icon icon="fluent:open-24-regular"></iconify-icon>
-            Shop at SuamiSihat.com.my <iconify-icon icon="fluent:open-16-regular" aria-hidden="true"></iconify-icon>
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-</div>
-
-<!-- ─── Lightbox Modal ────────────────────────────────────────── -->
-{#if isLightboxOpen && product?.gallery?.[selectedGalleryIndex]}
-  <div class="lightbox-overlay" onclick={closeLightbox} role="dialog" aria-modal="true" aria-label="Product Image Lightbox">
-    <button class="lightbox-close" onclick={closeLightbox} aria-label="Close fullscreen view">
-      <iconify-icon icon="fluent:dismiss-24-regular"></iconify-icon>
-    </button>
-    
-    <!-- svelte-ignore a11y_click_events_have_key_events -->
-    <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-    <div class="lightbox-content" onclick={(e) => e.stopPropagation()} role="document">
-      <img src={product.gallery[selectedGalleryIndex].src} alt={product.gallery[selectedGalleryIndex].title} class="lightbox-img" />
-      <div class="lightbox-caption">
-        <h4 class="lightbox-title">{product.gallery[selectedGalleryIndex].title}</h4>
-        <p class="lightbox-sub">{product.gallery[selectedGalleryIndex].sub}</p>
-      </div>
-
-      {#if product.gallery.length > 1}
-        <button class="lightbox-nav prev" onclick={prevGalleryImage} aria-label="Previous image">
-          <iconify-icon icon="fluent:chevron-left-24-regular"></iconify-icon>
-        </button>
-        <button class="lightbox-nav next" onclick={nextGalleryImage} aria-label="Next image">
-          <iconify-icon icon="fluent:chevron-right-24-regular"></iconify-icon>
-        </button>
-      {/if}
     </div>
-  </div>
-{/if}
+  </section>
 
-{/if}
+  <!-- 4. Colour scheme -->
+  <section id="colours" class="pb-section" aria-labelledby="h-colours">
+    <h2 id="h-colours"><span class="pb-num">4</span> Colour scheme and 60:30:10</h2>
+    <div class="pb-ratio-bar" role="img" aria-label="Colour allocation: 60% {roles[0].colors[0].name}, 30% {roles[1].colors[0].name}, 10% {roles[2].colors[0].name}">
+      {#each roles as r}
+        <div style="flex:{r.share}; background:{r.colors[0].hex};">
+          <span class="pb-ratio-label">{r.share}%</span>
+        </div>
+      {/each}
+    </div>
+
+    <div class="pb-roles">
+      {#each roles as r}
+        <div class="pb-card">
+          <h3>{r.share}% {r.label}</h3>
+          <p class="pb-muted">{r.role}</p>
+          <ul class="pb-swatches">
+            {#each r.colors as col}
+              <li>
+                <button type="button" class="pb-swatch" onclick={() => copyHex(col.hex)}>
+                  <span class="pb-swatch-chip" style="background:{col.hex};" aria-hidden="true"></span>
+                  <span class="pb-swatch-text">
+                    <strong>{col.name}</strong>
+                    <code>{col.hex}</code>
+                    <span class="pb-muted">{col.use}</span>
+                  </span>
+                  <span class="pb-swatch-copy">
+                    {#if copied === col.hex}
+                      <iconify-icon icon="fluent:checkmark-16-regular" aria-hidden="true"></iconify-icon> Copied
+                    {:else}
+                      <iconify-icon icon="fluent:copy-16-regular" aria-hidden="true"></iconify-icon> Copy
+                    {/if}
+                  </span>
+                </button>
+              </li>
+            {/each}
+          </ul>
+        </div>
+      {/each}
+    </div>
+
+    <h3>Approved text pairings</h3>
+    <div class="pb-table-wrap">
+      <table class="pb-table">
+        <caption class="visually-hidden">Text and background pairings with WCAG contrast ratio</caption>
+        <thead>
+          <tr><th scope="col">Sample</th><th scope="col">Text / background</th><th scope="col">Contrast</th><th scope="col">Use</th></tr>
+        </thead>
+        <tbody>
+          {#each p.colorScheme.pairings as pair}
+            {@const r = ratioLabel(pair)}
+            <tr>
+              <td><span class="pb-sample" style="color:{pair.text}; background:{pair.background};">Aa</span></td>
+              <td><code>{pair.text}</code> on <code>{pair.background}</code></td>
+              <td><span class="pb-tag">{r.value}:1 {pair.largeTextOnly ? 'AA large text' : r.level}</span></td>
+              <td>{pair.use}</td>
+            </tr>
+          {/each}
+        </tbody>
+      </table>
+    </div>
+    {#if p.colorScheme.note}
+      <p class="pb-note"><iconify-icon icon="fluent:info-16-regular" aria-hidden="true"></iconify-icon> {p.colorScheme.note}</p>
+    {/if}
+  </section>
+
+  <!-- 5. Pattern -->
+  <section id="pattern" class="pb-section" aria-labelledby="h-pattern">
+    <h2 id="h-pattern"><span class="pb-num">5</span> Pattern</h2>
+    <div class="pb-two">
+      <div class="pb-pattern-preview" style="background-image:url('{p.pattern.file}');" role="img" aria-label="{p.pattern.name} pattern preview"></div>
+      <div>
+        <h3>{p.pattern.name}</h3>
+        <p>{p.pattern.description}</p>
+        <ul class="pb-list">
+          {#each p.pattern.usage as u}<li><iconify-icon icon="fluent:checkmark-16-regular" aria-hidden="true"></iconify-icon>{u}</li>{/each}
+        </ul>
+        <a class="ss-btn ss-btn-secondary" href={p.pattern.file} download>
+          <iconify-icon icon="fluent:arrow-download-16-regular" aria-hidden="true"></iconify-icon> Download pattern (SVG)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Guideline -->
+  <section id="guideline" class="pb-section" aria-labelledby="h-guideline">
+    <h2 id="h-guideline"><span class="pb-num">6</span> Brand guideline</h2>
+    <ul class="pb-logos">
+      {#each p.guideline.logos as logo}
+        <li class="pb-card">
+          <div class="pb-logo-tile"><img src={logo.file} alt="{logo.label}" loading="lazy" /></div>
+          <strong>{logo.label}</strong>
+          <span class="pb-muted">{logo.use}</span>
+        </li>
+      {/each}
+    </ul>
+
+    <dl class="pb-facts">
+      <div><dt>Clear space</dt><dd>{p.guideline.clearSpace}</dd></div>
+      <div><dt>Minimum size</dt><dd>{p.guideline.minimumSize}</dd></div>
+      <div><dt>Display type</dt><dd>{p.guideline.typography.display}</dd></div>
+      <div><dt>Body type</dt><dd>{p.guideline.typography.body}</dd></div>
+    </dl>
+
+    <div class="pb-two">
+      <div class="pb-card pb-do">
+        <h3><iconify-icon icon="fluent:checkmark-circle-24-filled" aria-hidden="true"></iconify-icon> Do</h3>
+        <ul class="pb-list">{#each p.guideline.do as d}<li>{d}</li>{/each}</ul>
+      </div>
+      <div class="pb-card pb-dont">
+        <h3><iconify-icon icon="fluent:dismiss-circle-24-filled" aria-hidden="true"></iconify-icon> Don't</h3>
+        <ul class="pb-list">{#each p.guideline.dont as d}<li>{d}</li>{/each}</ul>
+      </div>
+    </div>
+    {#if p.guideline.typography.note}
+      <p class="pb-note"><iconify-icon icon="fluent:text-font-16-regular" aria-hidden="true"></iconify-icon> {p.guideline.typography.note}</p>
+    {/if}
+  </section>
+
+  <!-- 7. Downloads -->
+  <section id="downloads" class="pb-section" aria-labelledby="h-downloads">
+    <h2 id="h-downloads"><span class="pb-num">7</span> Assets to download</h2>
+    <ul class="pb-downloads">
+      {#each p.downloads as f}
+        <li>
+          <a href={f.file} download={fileName(f.file)} class="pb-download">
+            <span class="pb-download-icon" aria-hidden="true">
+              <iconify-icon icon={f.format === 'PDF' ? 'fluent:document-pdf-24-regular' : f.format === 'ZIP' ? 'fluent:folder-zip-24-regular' : 'fluent:image-24-regular'}></iconify-icon>
+            </span>
+            <span class="pb-download-text">
+              <strong>{f.label}</strong>
+              <span class="pb-muted">{fileName(f.file)}</span>
+            </span>
+            <span class="pb-tag">{f.format}</span>
+            <iconify-icon icon="fluent:arrow-download-20-regular" aria-hidden="true"></iconify-icon>
+          </a>
+        </li>
+      {/each}
+    </ul>
+    <p class="pb-note">
+      <iconify-icon icon="fluent:shield-lock-16-regular" aria-hidden="true"></iconify-icon>
+      Brand assets are proprietary to SuamiSihat Holding Sdn. Bhd. See LICENSE-ASSETS before sharing outside the group.
+    </p>
+  </section>
+
+  <p class="pb-back">
+    <a href="/products/" class="ss-btn ss-btn-secondary">
+      <iconify-icon icon="fluent:arrow-left-16-regular" aria-hidden="true"></iconify-icon> All brands
+    </a>
+  </p>
+</main>
+
+<dialog bind:this={dialog} class="pb-lightbox" aria-label="Image viewer">
+  {#if p.images[current]}
+    <figure>
+      <img src={p.images[current].src} alt={p.images[current].alt} />
+      <figcaption>{p.images[current].caption} ({current + 1} of {p.images.length})</figcaption>
+    </figure>
+  {/if}
+  <div class="pb-lightbox-bar">
+    <button type="button" class="ss-btn ss-btn-secondary" onclick={() => step(-1)}>
+      <iconify-icon icon="fluent:chevron-left-16-regular" aria-hidden="true"></iconify-icon> Previous
+    </button>
+    <button type="button" class="ss-btn ss-btn-secondary" onclick={() => step(1)}>
+      Next <iconify-icon icon="fluent:chevron-right-16-regular" aria-hidden="true"></iconify-icon>
+    </button>
+    <button type="button" class="ss-btn ss-btn-primary" onclick={() => dialog?.close()}>
+      <iconify-icon icon="fluent:dismiss-16-regular" aria-hidden="true"></iconify-icon> Close
+    </button>
+  </div>
+</dialog>
 
 <style>
-  /* ── Hero ──────────────────────────────────── */
-  .brand-master-hero {
-    padding: 4.5rem 0 3.5rem;
-    color: #ffffff;
+  /* Hero: brand gradient with a dark scrim behind the text for contrast */
+  .pb-hero {
     position: relative;
     overflow: hidden;
+    color: #FFFFFF;
+    background: linear-gradient(120deg, var(--hero-from) 0%, var(--hero-from) 45%, var(--hero-to) 100%);
   }
-  .brand-master-hero::after {
-    content: '';
+  .pb-hero-pattern {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle at 85% 20%, rgba(255,255,255,0.12) 0%, transparent 60%);
-    pointer-events: none;
+    inset: 0;
+    background-image: var(--pattern);
+    opacity: 0.35;
+    mask-image: linear-gradient(90deg, transparent 30%, #000 85%);
   }
-  .brand-hero-inner {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: 0 clamp(1.5rem, 4vw, 4rem);
-    box-sizing: border-box;
+  .pb-hero-inner {
     position: relative;
-    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
   }
-  .brand-hero-content {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    flex-wrap: wrap;
-  }
-  .brand-hero-logo-wrap {
-    width: 180px; height: 120px;
-    background: #ffffff;
-    border-radius: 16px;
-    display: flex; align-items: center; justify-content: center;
-    padding: 1.5rem;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-    flex-shrink: 0;
-  }
-  .brand-hero-logo { max-height: 72px; max-width: 100%; object-fit: contain; }
-  .brand-hero-type { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; margin-bottom: 6px; }
-  .brand-hero-title { font-size: 3rem; font-weight: 700; margin: 0 0 8px; letter-spacing: -0.02em; }
-  .brand-hero-tagline { font-size: 1.1rem; margin: 0 0 1.5rem; }
-  .brand-hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-  .btn-brand-hero-primary {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: rgba(255,255,255,0.2); color: #fff;
-    border: 1px solid rgba(255,255,255,0.35);
-    backdrop-filter: blur(8px);
-    padding: 8px 18px; border-radius: 8px;
-    font-weight: 600; font-size: 0.875rem;
-    text-decoration: none; transition: background 0.2s;
-  }
-  .btn-brand-hero-primary:hover { background: rgba(255,255,255,0.3); color: #fff; }
-  .btn-brand-hero-outline {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: transparent; color: rgba(255,255,255,0.85);
-    border: 1px solid rgba(255,255,255,0.25);
-    padding: 7px 16px; border-radius: 8px;
-    font-weight: 600; font-size: 0.875rem;
-    text-decoration: none; transition: all 0.2s;
-  }
-  .btn-brand-hero-outline:hover { background: rgba(255,255,255,0.1); color: #fff; }
-
-  /* ── Sticky sub-nav ───────────────────────── */
-  .sub-nav-sticky {
-    position: sticky;
-    top: 60px;
-    z-index: 100;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--color-neutral-stroke-2, rgba(0,0,0,0.08));
-    padding: 0.75rem 0;
-  }
-  :global([data-theme="dark"]) .sub-nav-sticky {
-    background: rgba(7,13,24,0.92);
-    border-bottom-color: rgba(255,255,255,0.08);
-  }
-  .sub-nav-inner { width: 100%; max-width: 100%; margin: 0; padding: 0 clamp(1.5rem, 4vw, 4rem); box-sizing: border-box; }
-  .sub-nav-links { display: flex; gap: 1.5rem; list-style: none; padding: 0; margin: 0; overflow-x: auto; white-space: nowrap; }
-  .sub-nav-links a { font-size: 0.8125rem; font-weight: 600; color: var(--color-neutral-fg-2); text-decoration: none; padding: 4px 0; transition: color 0.15s ease; border-bottom: 2px solid transparent; }
-  .sub-nav-links a:hover, .sub-nav-links a.active { color: var(--color-brand-primary, #043388); border-bottom-color: var(--color-brand-primary, #043388); }
-
-  /* ── Main layout ──────────────────────────── */
-  .brand-hub-main {
-    padding: 2.5rem clamp(1.5rem, 4vw, 4rem);
-    min-width: 0;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-  @media (max-width: 768px) { .brand-hub-main { padding: 1.5rem 1.25rem; } }
-
-  /* ── Sidebar styles ───────────────────────── */
-  .cat-sidebar-section { padding: 0 1rem 1rem; margin-top: 1rem; }
-  .cat-sidebar-heading { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-fg-3); margin-bottom: 6px; padding: 0 4px; }
-  .cat-nav { list-style: none; padding: 0; margin: 0; }
-  .cat-nav li { margin-bottom: 2px; }
-  .cat-nav a { display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 8px; font-size: 0.8375rem; font-weight: 500; color: var(--color-neutral-fg-2); text-decoration: none; transition: all 0.12s ease; }
-  .cat-nav a:hover { background: var(--color-neutral-bg-3, #f1f5f9); color: var(--color-neutral-fg-1); }
-  .cat-nav a.active { background: var(--color-brand-subtle, rgba(4,51,136,0.06)); color: var(--color-brand-primary, #043388); font-weight: 600; }
-  :global([data-theme="dark"]) .cat-nav a { color: #94A3B8; }
-  :global([data-theme="dark"]) .cat-nav a:hover { background: rgba(255,255,255,0.05); color: #F8FAFC; }
-  :global([data-theme="dark"]) .cat-nav a.active { background: rgba(33,161,247,0.1); color: var(--color-text-accent); }
-  .cat-icon { display: flex; align-items: center; font-size: 1rem; flex-shrink: 0; }
-
-  /* ── Sections ─────────────────────────────── */
-  .brand-section { margin-bottom: 2.5rem; }
-  .brand-section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--color-neutral-stroke-1); }
-  .brand-section-icon { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0; }
-  .brand-section-title { font-size: 1.35rem; font-weight: 600; color: var(--color-neutral-fg-1); margin: 0; }
-  .brand-section-desc { font-size: 0.85rem; color: var(--color-neutral-fg-2); margin: 0; }
-  .brand-section-card { background: var(--color-neutral-bg-1, #ffffff); border: 1px solid var(--color-neutral-stroke-2, rgba(0,0,0,0.08)); border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
-  :global([data-theme="dark"]) .brand-section-card { background: var(--color-neutral-bg-2, #0d1527); border-color: rgba(255,255,255,0.08); }
-  .product-spec-article { background: var(--color-neutral-bg-1, #ffffff); border: 1px solid var(--color-neutral-stroke-2, rgba(0,0,0,0.08)); border-radius: 16px; padding: 1.5rem; transition: all 0.3s ease; }
-  :global([data-theme="dark"]) .product-spec-article { background: var(--color-neutral-bg-2, #0d1527); border-color: rgba(255,255,255,0.08); }
-  .product-spec-article:hover { border-color: var(--color-brand-primary, #043388); box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
-  .brand-placeholder { text-align: center; padding: 2.5rem; }
-
-  /* ── Logo preview tiles ───────────────────── */
-  .logo-preview-tile { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; padding: 1.5rem 2rem; border-radius: 12px; min-width: 160px; }
-  .logo-tile-white { background: #FFFFFF; border: 1px solid rgba(0,0,0,0.08); }
-  .logo-tile-dark  { }
-  .logo-tile-label { font-size: 0.72rem; color: var(--color-neutral-fg-3); font-weight: 600; }
-
-  /* ── Color swatch ─────────────────────────── */
-  .token-swatch { border-radius: 12px; padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; }
-
-  /* ── Buttons ──────────────────────────────── */
-  .product-assets-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 600; padding: 6px 14px; border-radius: 8px; background: var(--color-brand-subtle); color: var(--color-brand-primary); text-decoration: none; border: 1px solid var(--color-neutral-stroke-1); transition: all 0.15s ease; }
-  .product-assets-btn:hover { background: var(--color-action-bg); color: var(--color-on-action); border-color: transparent; }
-  .btn-outline-small { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 600; padding: 6px 14px; border-radius: 8px; background: transparent; color: var(--color-neutral-fg-2); text-decoration: none; border: 1px solid var(--color-neutral-stroke-1); transition: all 0.15s ease; }
-  .btn-outline-small:hover { color: var(--color-neutral-fg-1); border-color: var(--color-neutral-stroke-2); }
-
-  /* ── Interactive Gallery ──────────────────── */
-  .ss-gallery-stage {
-    position: relative;
-    width: 100%;
-    height: 380px;
-    background: radial-gradient(circle at center, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.06) 100%);
+  .pb-crumbs { display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; margin-bottom: 2rem; }
+  .pb-crumbs a { color: #FFFFFF; text-decoration: underline; text-underline-offset: 3px; }
+  .pb-crumbs [aria-current] { font-weight: 600; }
+  .pb-hero-body { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+  .pb-hero-logo {
+    background: #FFFFFF;
+    border-radius: var(--f-radius-2xl);
+    padding: 1.5rem 2rem;
+    width: 260px;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    cursor: zoom-in;
-    user-select: none;
+    box-shadow: var(--f-shadow-16);
   }
-  :global([data-theme="dark"]) .ss-gallery-stage {
-    background: radial-gradient(circle at center, #0B1322 0%, #060B14 100%);
-  }
-  .ss-gallery-stage-img {
-    max-height: 85%;
-    max-width: 90%;
-    object-fit: contain;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    filter: drop-shadow(0 12px 24px rgba(0,0,0,0.15));
-  }
-  .ss-gallery-stage:hover .ss-gallery-stage-img {
-    transform: scale(1.03);
-  }
-  .ss-gallery-zoom-badge {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    background: rgba(0,0,0,0.65);
-    backdrop-filter: blur(8px);
-    color: #fff;
-    font-size: 0.72rem;
-    font-weight: 600;
-    padding: 5px 10px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    pointer-events: none;
-    z-index: 2;
-  }
-  .ss-carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.85);
-    border: 1px solid rgba(0,0,0,0.1);
-    color: var(--color-neutral-fg-1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 5;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: all 0.2s ease;
-  }
-  :global([data-theme="dark"]) .ss-carousel-btn {
-    background: rgba(15, 23, 42, 0.85);
-    border-color: rgba(255,255,255,0.1);
-    color: #fff;
-  }
-  .ss-carousel-btn:hover {
-    background: var(--color-action-bg); color: var(--color-on-action);
-    transform: translateY(-50%) scale(1.1);
-  }
-  .ss-carousel-btn.prev { left: 14px; }
-  .ss-carousel-btn.next { right: 14px; }
-
-  .ss-gallery-meta {
+  .pb-hero-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .pb-hero-text {
+    flex: 1;
+    min-width: 260px;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: var(--f-radius-xl);
     padding: 1.25rem 1.5rem;
-    background: var(--color-neutral-bg-1);
-    border-top: 1px solid var(--color-neutral-stroke-1);
-    border-bottom: 1px solid var(--color-neutral-stroke-1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
   }
-  :global([data-theme="dark"]) .ss-gallery-meta {
-    background: var(--color-neutral-bg-2);
-  }
-  .ss-gallery-meta-title {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--color-neutral-fg-1);
-    margin-bottom: 2px;
-  }
-  .ss-gallery-meta-sub {
-    font-size: 0.8rem;
-    color: var(--color-neutral-fg-2);
-    margin: 0;
-  }
+  .pb-hero-text h1 { color: #FFFFFF !important; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin: 0.25rem 0; letter-spacing: -0.02em; }
+  .pb-hero-meta { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; font-size: 0.85rem; margin: 0; color: #FFFFFF !important; }
+  .pb-hero-tagline { font-size: 1.15rem; margin: 0 0 0.75rem; color: #FFFFFF !important; }
+  .pb-hero-entity { display: flex; gap: 0.4rem; align-items: center; font-size: 0.85rem; margin: 0; color: #FFFFFF !important; }
+  .pb-chip { background: #FFFFFF; color: #1C1C1C; border-radius: 999px; padding: 2px 10px; font-weight: 700; font-size: 0.75rem; }
 
-  .ss-gallery-thumbs {
-    display: flex;
-    gap: 0.75rem;
-    padding: 1rem 1.5rem;
-    background: var(--color-neutral-bg-2, #fafafa);
-    overflow-x: auto;
-  }
-  :global([data-theme="dark"]) .ss-gallery-thumbs {
-    background: #080E1A;
-  }
-  .ss-gallery-thumb {
-    width: 72px;
-    height: 72px;
-    border-radius: 10px;
-    border: 2px solid transparent;
-    padding: 4px;
-    background: #fff;
-    cursor: pointer;
-    flex-shrink: 0;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  :global([data-theme="dark"]) .ss-gallery-thumb {
-    background: #111A2E;
-  }
-  .ss-gallery-thumb img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
-  .ss-gallery-thumb:hover {
-    border-color: var(--color-brand-primary);
-    transform: translateY(-2px);
-  }
-  .ss-gallery-thumb.active {
-    border-color: var(--color-brand-primary);
-    box-shadow: 0 0 0 2px var(--color-brand-subtle);
-  }
-
-  /* ── Lightbox Overlay ─────────────────────── */
-  .lightbox-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.88);
+  /* Section nav */
+  .pb-sections {
+    position: sticky;
+    top: 56px;
+    z-index: 20;
+    background: var(--color-layer-acrylic);
     backdrop-filter: blur(16px);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    animation: fadeIn 0.2s ease-out;
+    border-bottom: 1px solid var(--color-neutral-stroke-1);
   }
-  .lightbox-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: #fff;
-    font-size: 1.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    z-index: 10001;
+  .pb-sections ol { list-style: none; margin: 0 auto; padding: 0.5rem 1rem; max-width: 1200px; display: flex; gap: 0.25rem; overflow-x: auto; }
+  .pb-sections a {
+    display: inline-flex; align-items: center; gap: 0.4rem; white-space: nowrap;
+    padding: 0.5rem 0.75rem; min-height: 40px; border-radius: var(--f-radius-md);
+    color: var(--color-neutral-fg-1); text-decoration: none; font-size: 0.85rem; font-weight: 600;
   }
-  .lightbox-close:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.1);
+  .pb-sections a:hover { background: var(--color-brand-subtle); }
+  .pb-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 1.5em; height: 1.5em; border-radius: 50%;
+    background: var(--color-action-bg); color: var(--color-on-action); font-size: 0.75em; font-weight: 700;
   }
-  .lightbox-content {
-    position: relative;
-    max-width: 90vw;
-    max-height: 88vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .lightbox-img {
-    max-width: 85vw;
-    max-height: 72vh;
-    object-fit: contain;
-    border-radius: 12px;
-    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
-    background: rgba(255,255,255,0.03);
-  }
-  .lightbox-caption {
-    margin-top: 1rem;
-    text-align: center;
-    color: #fff;
-  }
-  .lightbox-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin: 0 0 4px;
-  }
-  .lightbox-sub {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0;
-  }
-  .lightbox-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.2);
-    border: 1px solid rgba(255,255,255,0.3);
-    color: #fff;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    z-index: 10000;
-  }
-  .lightbox-nav:hover {
-    background: var(--color-brand-primary);
-    transform: translateY(-50%) scale(1.1);
-  }
-  .lightbox-nav.prev { left: -60px; }
-  .lightbox-nav.next { right: -60px; }
 
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  /* Layout */
+  .pb-main { max-width: 1200px; margin: 0 auto; padding: 1rem 1.5rem 4rem; width: 100%; }
+  .pb-section { padding: 2.5rem 0; border-bottom: 1px solid var(--color-neutral-stroke-1); scroll-margin-top: 120px; }
+  .pb-section h2 { display: flex; align-items: center; gap: 0.6rem; font-size: 1.6rem; font-weight: 800; margin: 0 0 1.25rem; color: var(--text-strong); }
+  .pb-section h3 { font-size: 1.05rem; font-weight: 700; margin: 1.5rem 0 0.75rem; color: var(--color-neutral-fg-1); display: flex; gap: 0.4rem; align-items: center; }
+  .pb-lead { font-size: 1.1rem; line-height: 1.7; max-width: 75ch; color: var(--color-neutral-fg-1); }
+  .pb-muted { color: var(--color-neutral-fg-2); font-size: 0.85rem; }
+  .pb-note { display: flex; gap: 0.5rem; align-items: flex-start; color: var(--color-neutral-fg-2); font-size: 0.9rem; margin-top: 1rem; }
+  .pb-card {
+    background: var(--color-neutral-bg-2);
+    border: 1px solid var(--color-neutral-stroke-1);
+    border-radius: var(--f-radius-xl);
+    padding: 1.25rem;
+    box-shadow: var(--f-shadow-2);
+  }
+  .pb-card p { margin: 0.4rem 0 0; color: var(--color-neutral-fg-2); line-height: 1.6; }
+  .pb-two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin-top: 1.25rem; }
+  .pb-tag {
+    display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.02em;
+    padding: 2px 8px; border-radius: 6px; background: var(--color-brand-subtle); color: var(--color-brand-primary);
+  }
+  .pb-tag-warn { background: var(--color-warning-bg); color: var(--color-warning-fg); margin-left: 0.4rem; }
+
+  /* Definition */
+  .pb-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem; margin: 1.25rem 0 0; }
+  .pb-facts > div { background: var(--color-neutral-bg-2); border: 1px solid var(--color-neutral-stroke-1); border-radius: var(--f-radius-lg); padding: 0.85rem 1rem; }
+  .pb-facts dt { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-neutral-fg-2); }
+  .pb-facts dd { margin: 0.25rem 0 0; color: var(--color-neutral-fg-1); }
+  .pb-range { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+  .pb-range strong { display: block; margin-top: 0.5rem; color: var(--color-neutral-fg-1); }
+  .pb-callout {
+    display: flex; gap: 0.75rem; margin-top: 1.5rem; padding: 1rem 1.25rem;
+    border-radius: var(--f-radius-lg); background: var(--color-warning-bg); color: var(--color-warning-fg);
+    border: 1px solid currentColor;
+  }
+  .pb-callout iconify-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .pb-callout p { margin: 0.25rem 0 0; color: inherit; line-height: 1.6; }
+
+  /* Images */
+  .pb-gallery { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+  .pb-shot {
+    width: 100%; padding: 0; border: 1px solid var(--color-neutral-stroke-1); border-radius: var(--f-radius-xl);
+    overflow: hidden; background: var(--color-neutral-bg-2); cursor: zoom-in; text-align: left; color: inherit;
+  }
+  .pb-shot img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #FFFFFF; }
+  .pb-shot-caption { display: block; padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--color-neutral-fg-1); }
+
+  /* Positioning */
+  .pb-statement {
+    font-size: 1.35rem; line-height: 1.5; font-weight: 600; margin: 0 0 1.5rem; padding: 1.25rem 1.5rem;
+    border-left: 4px solid var(--color-action-bg); background: var(--color-brand-subtle); border-radius: 0 var(--f-radius-lg) var(--f-radius-lg) 0;
+    color: var(--color-neutral-fg-1);
+  }
+  .pb-pillars { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+  .pb-pillar-num { display: block; font-weight: 800; color: var(--color-text-accent); font-size: 0.9rem; }
+  .pb-pillars strong { display: block; font-size: 1.05rem; color: var(--color-neutral-fg-1); margin-top: 0.25rem; }
+  .pb-list { list-style: none; padding: 0; margin: 0.5rem 0 1rem; display: grid; gap: 0.5rem; }
+  .pb-list li { display: flex; gap: 0.5rem; align-items: flex-start; color: var(--color-neutral-fg-1); line-height: 1.5; }
+  .pb-list iconify-icon { margin-top: 0.2rem; flex-shrink: 0; }
+  .pb-list-yes iconify-icon, .pb-do h3 { color: var(--color-success-fg); }
+  .pb-list-no iconify-icon, .pb-dont h3 { color: var(--color-error-fg); }
+  .pb-do { border-top: 4px solid var(--color-success-fg); }
+  .pb-dont { border-top: 4px solid var(--color-error-fg); }
+  .pb-do .pb-list li::before, .pb-dont .pb-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; margin-top: 0.55rem; flex-shrink: 0; }
+
+  /* Colour */
+  .pb-ratio-bar { display: flex; height: 72px; border-radius: var(--f-radius-xl); overflow: hidden; border: 1px solid var(--color-neutral-stroke-2); }
+  .pb-ratio-bar > div { display: flex; align-items: flex-end; padding: 0.5rem; }
+  .pb-ratio-label { background: #FFFFFF; color: #1C1C1C; font-weight: 800; font-size: 0.8rem; padding: 2px 8px; border-radius: 6px; }
+  .pb-roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1.25rem; }
+  .pb-roles h3 { margin-top: 0; }
+  .pb-swatches { list-style: none; padding: 0; margin: 0.75rem 0 0; display: grid; gap: 0.5rem; }
+  .pb-swatch {
+    width: 100%; display: flex; gap: 0.75rem; align-items: center; text-align: left;
+    background: var(--color-neutral-bg-1); border: 1px solid var(--color-neutral-stroke-1); border-radius: var(--f-radius-lg);
+    padding: 0.5rem; cursor: pointer; color: inherit;
+  }
+  .pb-swatch:hover { border-color: var(--color-neutral-stroke-3); }
+  .pb-swatch-chip { width: 48px; height: 48px; border-radius: var(--f-radius-md); border: 1px solid var(--color-neutral-stroke-2); flex-shrink: 0; }
+  .pb-swatch-text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+  .pb-swatch-text strong { color: var(--color-neutral-fg-1); }
+  .pb-swatch-text code { color: var(--color-neutral-fg-1); font-size: 0.8rem; }
+  .pb-swatch-copy { font-size: 0.75rem; color: var(--color-neutral-fg-2); display: inline-flex; gap: 0.25rem; align-items: center; }
+  .pb-table-wrap { overflow-x: auto; }
+  .pb-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .pb-table th, .pb-table td { text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--color-neutral-stroke-1); color: var(--color-neutral-fg-1); }
+  .pb-table th { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-neutral-fg-2); }
+  .pb-table code { color: var(--color-neutral-fg-1); background: var(--color-neutral-bg-3); padding: 1px 5px; border-radius: 4px; }
+  .pb-sample { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 36px; border-radius: 6px; font-weight: 800; font-size: 1.1rem; border: 1px solid var(--color-neutral-stroke-2); }
+
+  /* Pattern */
+  .pb-pattern-preview { min-height: 260px; border-radius: var(--f-radius-xl); border: 1px solid var(--color-neutral-stroke-2); }
+
+  /* Guideline */
+  .pb-logos { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+  .pb-logos li { display: flex; flex-direction: column; gap: 0.35rem; }
+  .pb-logos strong { color: var(--color-neutral-fg-1); }
+  .pb-logo-tile {
+    height: 120px; display: flex; align-items: center; justify-content: center; padding: 1rem;
+    border-radius: var(--f-radius-lg); margin-bottom: 0.5rem;
+    background: repeating-conic-gradient(#EDEDED 0% 25%, #FFFFFF 0% 50%) 50% / 16px 16px;
+  }
+  .pb-logo-tile img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+  /* Downloads */
+  .pb-downloads { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0.75rem; }
+  .pb-download {
+    display: flex; align-items: center; gap: 0.75rem; padding: 0.85rem 1rem; text-decoration: none !important;
+    background: var(--color-neutral-bg-2); border: 1px solid var(--color-neutral-stroke-1); border-radius: var(--f-radius-lg);
+    color: var(--color-neutral-fg-1) !important;
+  }
+  .pb-download:hover { border-color: var(--color-action-bg); }
+  .pb-download-icon { font-size: 1.5rem; color: var(--color-text-accent); display: inline-flex; }
+  .pb-download-text { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+  .pb-download-text .pb-muted { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .pb-back { margin-top: 2rem; }
+
+  /* Lightbox */
+  .pb-lightbox { border: none; border-radius: var(--f-radius-xl); padding: 1rem; max-width: min(92vw, 1100px); background: var(--color-neutral-bg-2); color: var(--color-neutral-fg-1); }
+  .pb-lightbox::backdrop { background: rgba(0, 0, 0, 0.75); }
+  .pb-lightbox figure { margin: 0; }
+  .pb-lightbox img { display: block; max-width: 100%; max-height: 72vh; margin: 0 auto; object-fit: contain; }
+  .pb-lightbox figcaption { margin-top: 0.75rem; text-align: center; font-size: 0.9rem; }
+  .pb-lightbox-bar { display: flex; gap: 0.5rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
+
+  @media (max-width: 640px) {
+    .pb-hero-logo { width: 100%; }
+    .pb-main { padding: 1rem; }
   }
 </style>

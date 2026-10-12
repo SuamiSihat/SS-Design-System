@@ -395,9 +395,9 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
         <a href="#fluent2-guide" class="cl-sidebar-link"><iconify-icon icon="fluent:book-compass-24-regular"></iconify-icon> Fluent 2 Guide</a>
         <a href="#colors" class="cl-sidebar-link"><iconify-icon icon="fluent:color-24-regular"></iconify-icon> Color System</a>
         <a href="#typography" class="cl-sidebar-link"><iconify-icon icon="fluent:text-font-24-regular"></iconify-icon> Typography</a>
-        <a href="#spacing" class="cl-sidebar-link"><iconify-icon icon="fluent:spacing-horizontal-24-regular"></iconify-icon> Spacing</a>
+        <a href="#spacing" class="cl-sidebar-link"><iconify-icon icon="fluent:auto-fit-width-24-regular"></iconify-icon> Spacing</a>
         <a href="#elevation" class="cl-sidebar-link"><iconify-icon icon="fluent:layer-24-regular"></iconify-icon> Elevation</a>
-        <a href="#radius" class="cl-sidebar-link"><iconify-icon icon="fluent:border-radius-24-regular"></iconify-icon> Border Radius</a>
+        <a href="#radius" class="cl-sidebar-link"><iconify-icon icon="fluent:square-24-regular"></iconify-icon> Border Radius</a>
         <a href="#motion" class="cl-sidebar-link"><iconify-icon icon="fluent:play-circle-24-regular"></iconify-icon> Motion</a>
         <a href="#icons" class="cl-sidebar-link"><iconify-icon icon="fluent:icons-24-regular"></iconify-icon> Icons</a>
       </div>
@@ -407,7 +407,7 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
       <div class="cl-sidebar-section" style="padding: 0 0.5rem 0.5rem;">
         <span class="cl-sidebar-label" style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-fg-3, #94A3B8); padding: 0.5rem 0.5rem 0.25rem; display: block;">Components</span>
         <a href="#ss-hero" class="cl-sidebar-link"><iconify-icon icon="fluent:sparkle-24-regular"></iconify-icon> SS Hero Banner</a>
-        <a href="#buttons" class="cl-sidebar-link"><iconify-icon icon="fluent:rectangle-24-regular"></iconify-icon> Buttons</a>
+        <a href="#buttons" class="cl-sidebar-link"><iconify-icon icon="fluent:rectangle-landscape-24-regular"></iconify-icon> Buttons</a>
         <a href="#badges" class="cl-sidebar-link"><iconify-icon icon="fluent:badge-24-regular"></iconify-icon> Badges &amp; Chips</a>
         <a href="#inputs" class="cl-sidebar-link"><iconify-icon icon="fluent:text-field-24-regular"></iconify-icon> Inputs &amp; Forms</a>
         <a href="#cards" class="cl-sidebar-link"><iconify-icon icon="fluent:card-ui-24-regular"></iconify-icon> Cards</a>
@@ -736,7 +736,7 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
               </div>
               <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--color-neutral-fg-3); margin-bottom:0.5rem;">Text Hierarchy</div>
               <!-- Visual hierarchy bar -->
-              <div style="background:#FCFAF6; border-radius:var(--f-radius-lg); padding:1rem; border:1px solid #E2E8F0;">
+              <div class="ss-surface-light" style="background:#FCFAF6; border-radius:var(--f-radius-lg); padding:1rem; border:1px solid #E2E8F0;">
                 <div style="font-size:1.2rem; font-weight:900; color:#000000; margin-bottom:2px; letter-spacing:-0.01em;">Heading in #000000</div>
                 <div style="font-size:0.85rem; color:#19191A; line-height:1.6; margin-bottom:6px;">Body text uses <code>#19191A</code> for comfortable reading. Reduced visual aggression, high contrast ratio.</div>
                 <div style="font-size:0.72rem; color:rgba(25,25,26,0.65); margin-bottom:4px;">Secondary metadata — dates, tags · <code>rgba(25,25,26,0.65)</code></div>
@@ -1309,7 +1309,7 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
             class="ss-btn ss-btn-primary"
             onclick={() => isDemoModalOpen = true}
           >
-            <iconify-icon icon="fluent:window-sparkle-24-regular"></iconify-icon> Open Live Dialog Demo
+            <iconify-icon icon="fluent:window-new-24-regular"></iconify-icon> Open Live Dialog Demo
           </button>
         </div>
 

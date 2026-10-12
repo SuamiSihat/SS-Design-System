@@ -165,14 +165,20 @@ testDom('Products Hub (build/products/index.html)', productsHtml, [
   { desc: 'Contains REJAL product card', pattern: /REJAL/i }
 ]);
 
-// 7. Product Brand Hub Gallery DOM Testing (ANDROLAB & MENSS)
-const androlabHtml = loadHtml('build/products/androlab/index.html');
-testDom('Product Hub: ANDROLAB (build/products/androlab/index.html)', androlabHtml, [
-  { desc: 'Contains Product Renders & Photography section', pattern: /Product Renders &amp; Photography|Product Renders & Photography/i },
-  { desc: 'Contains Interactive Gallery stage', pattern: /ss-gallery-stage/i },
-  { desc: 'Contains click to zoom lightbox badge', pattern: /Click to Zoom/i },
-  { desc: 'Contains high-resolution studio packshot image', pattern: /Render_Mockup_3840/i }
-]);
+// 7. Product brand pages: the 7-section standard on every brand
+const productSlugs = ['androlab', 'menss', 'mensculine', 'drmitring', 'rejal', 'nucaffe', 'pertabi', 'husbandclinic', 'isterisihat'];
+for (const slug of productSlugs) {
+  const html = loadHtml(`build/products/${slug}/index.html`);
+  testDom(`Product page: ${slug}`, html, [
+    { desc: '1. Product definition section', pattern: /id="definition"/ },
+    { desc: '2. Product images section', pattern: /id="images"/ },
+    { desc: '3. Brand positioning section', pattern: /id="positioning"/ },
+    { desc: '4. Colour scheme with 60:30:10 bar', pattern: /id="colours"[\s\S]*pb-ratio-bar/ },
+    { desc: '5. Pattern section', pattern: /id="pattern"/ },
+    { desc: '6. Brand guideline section', pattern: /id="guideline"/ },
+    { desc: '7. Assets to download section', pattern: /id="downloads"/ }
+  ]);
+}
 
 // 8. Email Signature Generator DOM Testing
 const signatureHtml = loadHtml('build/signature/index.html');

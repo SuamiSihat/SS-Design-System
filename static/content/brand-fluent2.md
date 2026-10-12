@@ -172,7 +172,7 @@ The design system enforces four levels of text emphasis across light and dark in
 
 Kinetic motion in SuamiSihat interfaces must embody biological vitality and technical precision:
 
-- **Hero Banner Standard (`ss-hero`)**: Features a 2D interactive canvas wave (`#heroWaveCanvas`) with floating Mars (male sign) symbols, radiant Azure `#21A1F7` & Gold `#F7E143` energy nodes, and gentle cursor parallax.
+- **Hero Banner Standard (`ss-hero`)**: Features a 2D interactive canvas wave (`#heroWaveCanvas`) with floating Mars (male sign) symbols, radiant Azure `#21A1F7` & Gold `#FCE53D` energy nodes, and gentle cursor parallax.
 - **Fluent Motion Timing**:
   - Fast feedback (button press, hover): `150ms cubic-bezier(0.1, 0.9, 0.2, 1.0)`
   - Medium transitions (drawers, modals, dropdowns): `250ms cubic-bezier(0.16, 1, 0.3, 1)`
@@ -188,7 +188,7 @@ When generating new pages, sub-products, or campaigns, include this concise, non
 ```markdown
 ### Design System — Mandatory Source of Truth
 This page must be designed and built using the **SuamiSihat™ Brand & Design System** (`assets.suamisihat.myds.me`):
-- **Visual Identity (SuamiSihat)**: Use established brand colours (`#043388`, `#022057`, `#21A1F7`, `#F7E143`), Outfit/Inter typography, 4-tier text contrast hierarchy (`--text-strong`, `--text-primary`, `--text-secondary`, `--text-disabled`), and brightness-aware SVG logo selection.
+- **Visual Identity (SuamiSihat)**: Use established brand colours (`#043388`, `#022057`, `#21A1F7`, `#FCE53D`), Outfit/Inter typography, 4-tier text contrast hierarchy (`--text-strong`, `--text-primary`, `--text-secondary`, `--text-disabled`), and brightness-aware SVG logo selection.
 - **Interaction Layer (Fluent 2)**: All components, states (`hover`, `pressed`, `focus`), elevation levels, and spatial layouts follow Fluent 2 component specifications and accessibility contracts.
 - **System Precedence**: SuamiSihat Brand DNA > Design Tokens > Fluent 2 Component Anatomy > Page Content.
 ```

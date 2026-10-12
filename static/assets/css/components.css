@@ -60,7 +60,7 @@
         .ss-btn:active{transform:scale(.97)}
         .ss-btn-primary{background:var(--color-action-bg);color:var(--color-on-action)}
         .ss-btn-primary:hover{background:var(--color-brand-dark);box-shadow:var(--f-shadow-brand-sm);color:#fff}
-        .ss-btn-cta{background:var(--ss-banana-yellow,#F7E143);color:#1C1C1C;font-weight:700;border:none;box-shadow:0 2px 8px rgba(247,225,67,.35)}
+        .ss-btn-cta{background:var(--ss-banana-yellow,#FCE53D);color:#1C1C1C;font-weight:700;border:none;box-shadow:0 2px 8px rgba(247,225,67,.35)}
         .ss-btn-cta:hover{background:#FCE53D;color:#1C1C1C;box-shadow:0 4px 14px rgba(247,225,67,.5);transform:translateY(-2px)}
         .ss-btn-secondary{background:var(--color-neutral-bg-3);color:var(--color-neutral-fg-1);border:1px solid var(--color-neutral-stroke-2)}
         .ss-btn-secondary:hover{background:var(--color-neutral-bg-4)}

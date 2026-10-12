@@ -42,3 +42,4 @@ node_modules/
 /build/
 coverage/
 test-results/
+src/lib/icons/fluent-subset.json
