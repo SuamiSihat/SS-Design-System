@@ -1,100 +1,130 @@
-# Contribution Guide
+# Contribution and Governance Guide
 
-The **SuamiSihat™ Design System** is a living ecosystem. It evolves continuously with clinical feedback, UI/UX innovations, and multi-platform app requirements. We welcome contributions from developers, designers, brand custodians, and medical stakeholders.
-
----
-
-## How to Request a Change
-
-Whether you've identified a bug, require a new UI component, or want to enhance copy or clinical guides, here is the standard workflow:
-
-### Option 1 — Open an Issue or Email
-
-For general proposals or questions:
-
-- **Email**: [branding@suamisihat.com](mailto:branding@suamisihat.com)
-- **Details to Include**:
-  - **What**: Exact component, token, or documentation section.
-  - **Why**: Clinical use case, user feedback, or platform requirement.
-  - **Proposed Solution**: Mockup, code snippet, or suggested copy.
-
-### Option 2 — Direct Pull Request
-
-If you have repository access and wish to contribute code or documentation directly:
-
-1. Create a feature branch: `git checkout -b feat/your-feature-name`
-2. Implement your changes following our [Architecture and Coding Standards](#architecture-and-coding-standards).
-3. Verify that the full automated test suite passes: `npm test`
-4. Submit a Pull Request targeting `main`.
+The SuamiSihat Design System is shared by designers, developers, marketers and clinical teams. This guide explains how to propose a change, where each kind of change lives, and the checks every change must pass.
 
 ---
 
-## Architecture and Coding Standards
+## How to propose a change
 
-### 1. The 60:30:10 Visual Allocation Standard
+### Brand review (no repository access needed)
 
-Every screen and component must adhere strictly to the 60:30:10 proportion:
+Email **branding@suamisihat.com** with:
 
-- **60% Clinical Canvas**: Light surfaces (`#F8FAFC`, `#FFFFFF`) or dark void (`#090D16`, `#141414`).
-- **30% Structural Trust**: Prussian Blue (`#022057`) and SS Blue (`#043388`) for headers, container cards, and navbars.
-- **10% Conversion Accent**: Azure Blue (`#21A1F7`) and Banana Yellow (`#F7E143`) strictly for primary conversion CTAs.
+- **Scope:** the page, component, document or brand affected.
+- **Reason:** the business, clinical or user need.
+- **Proposal:** a mock-up, screenshot or suggested wording.
 
-### 2. 4-Tier Text Hierarchy Standards
+The brand team replies within two working days.
 
-Never use arbitrary hex values for text colors. Always use the 4 standard tokens:
+### Pull request (repository access)
 
-- `--text-strong`: `#000000` (Light) / `#FFFFFF` (Dark) — Critical headlines and key figures.
-- `--text-primary`: `#19191A` (Carbon Black) / `#FCFAF6` (Porcelain) — Body text, standard headings, and forms.
-- `--text-secondary`: `rgba(25, 25, 26, 0.65)` / `rgba(252, 250, 246, 0.65)` — Metadata, subtitles, and captions.
-- `--text-disabled`: `rgba(25, 25, 26, 0.35)` / `rgba(252, 250, 246, 0.35)` — Inactive and disabled states.
-
-### 3. SvelteKit and Svelte 5 Conventions
-
-- All living components use **Svelte 5 Runes** (`$state`, `$derived`, `$props`).
-- Styles must prioritize CSS Custom Properties defined in `assets/css/fluent.css` and `assets/tokens/tokens.json`.
-- When designing responsive layouts with sidebars, ensure the container uses CSS Grid with `minmax(0, 1fr)` and conditionally mounts sidebar content to prevent column squishing on collapse.
-
----
-
-## Where to Make Changes
-
-| Contribution Type | Target Directory or File | Process |
-| :--- | :--- | :--- |
-| **Markdown Documentation** | `static/content/*.md` & `static/content/sub-brands/*.md` | Edit markdown directly; rendered dynamically via `/doc/?doc=[id]` |
-| **Product Brand Hubs** | `src/routes/products/[slug]/` & `src/routes/products/[slug]/+page.js` | Update product data map or brand narrative markdown |
-| **Design Tokens** | `assets/tokens/tokens.json` & `assets/css/fluent.css` | Update W3C tokens; requires brand team sign-off |
-| **UI Components** | `src/lib/components/` & `src/routes/components/` | Add Svelte components; include interactive playground swatch |
-| **Global Brand Rules** | `.agents/AGENTS.md` | Single canonical rule file for AI agents and developer workflows |
-
----
-
-## Testing and Validation Requirements
-
-Before submitting any code changes, you **must** run the local test suite:
+1. Create a branch from `main`: `feat/...`, `fix/...` or `docs/...`.
+2. Make the change following the rules below.
+3. Run the checks:
 
 ```bash
-# 1. Build and verify static generation
+npm ci
+npm run lint
 npm run build
-
-# 2. Run automated validation suite (Smoke + DOM Tests)
 npm test
 ```
 
-A Pull Request will only be merged if **all 118 automated test assertions** pass with 100% success:
-
-- **Smoke Tests**: 29/29 assertions (bundle validation, token integrity, SSG file existence).
-- **DOM Tests**: 89/89 assertions (semantic HTML, contrast rules, unique IDs, navigation anchors).
+4. Open a pull request using the template. CI runs the same checks. After merge, `main` deploys to https://assets.suamisihat.myds.me/ automatically.
 
 ---
 
-## Prohibited Practices
+## Who approves what
 
-- **Do not** introduce hardcoded `#hex` colors in component templates; always use design tokens.
-- **Do not** modify or distort official vector SVG brand logos.
-- **Do not** use plain black (`#000000`) for standard body paragraphs in light mode (use `--text-primary` `#19191A`).
-- **Do not** bypass `ThemeManager` with inline theme toggles.
-- **Do not** commit unminified bundle artifacts without running `npm run build`.
+| Change | Review | Approver |
+| --- | --- | --- |
+| Copy and documentation | Pull request review | Editorial team |
+| New UI component | Design review and accessibility test | Lead UI/UX designer |
+| Colour or token change | 60:30:10 check and contrast test | Brand director |
+| Logo or trademark asset | Brand board approval | Brand governance board |
+| Product brand page | Product owner and brand director; claims reviewed by regulatory | Brand director |
 
 ---
 
-*Questions or governance inquiries? Reach out to [branding@suamisihat.com](mailto:branding@suamisihat.com).*
+## Where to make changes
+
+| Change | Location |
+| --- | --- |
+| Documentation | `static/content/*.md`, shown at `/doc/?doc=<name>` |
+| Product brand pages | `static/products/<Brand>/metadata.json` (see [Product Page Standard](/doc/?doc=product-page-standard)) |
+| Design tokens | `static/assets/css/fluent.css` and `static/assets/tokens/*.json` |
+| UI components | `src/lib/components/` and the showcase in `src/routes/components/` |
+| Pages | `src/routes/<page>/+page.svelte` |
+| Agent and contributor rules | `.agents/AGENTS.md` |
+
+All files people can open or download live under `static/`. Do not create copies anywhere else.
+
+---
+
+## Rules every change must follow
+
+### Colour
+
+- Use semantic tokens, not raw hex values, for text, buttons and links: `--text-*`, `--color-action-bg` / `--color-on-action`, `--color-cta-bg` / `--color-on-cta`, `--color-link`, `--color-text-accent`, `--color-text-warm`.
+- Keep the 60:30:10 allocation: one accent action per view.
+- Never put white text on Azure `#21A1F7`, Malibu, Lion or Banana.
+- Do not lower text contrast with `opacity`.
+
+### Text hierarchy
+
+| Token | Light | Dark | Use |
+| --- | --- | --- | --- |
+| `--text-strong` | `#000000` | `#FFFFFF` | Headlines, key figures |
+| `--text-primary` | `#19191A` | `#FCFAF6` | Body text, headings, forms |
+| `--text-secondary` | `rgba(25,25,26,0.65)` | `rgba(252,250,246,0.65)` | Metadata, captions |
+| `--text-disabled` | `rgba(25,25,26,0.35)` | `rgba(252,250,246,0.35)` | Disabled controls only |
+
+### Icons and emoji
+
+- Icons: Fluent System Icons only (`<iconify-icon icon="fluent:...">`), with `aria-hidden="true"` when decorative.
+- Markdown: `{{icon:yes}}`, `{{icon:no}}`, `{{icon:warning}}`, `{{icon:info}}` or `{{icon:<fluent-name>}}`.
+- No emoji, pictographic symbols or emoji HTML entities anywhere.
+
+### Svelte
+
+- Svelte 5 runes (`$state`, `$derived`, `$props`).
+- Theme: use `src/lib/stores/theme.js`; do not toggle classes yourself.
+- Versions shown in the UI come from `src/lib/version.js`.
+- No third-party CDN scripts, styles or fonts.
+
+### Files
+
+- Names: letters, digits, `.`, `_` and `-` only. No spaces, apostrophes, brackets or ellipses.
+- Web images about 1600 px wide; keep print originals in `downloads/`.
+
+### Content
+
+- No health, medical or performance claims on product or brand pages unless approved for that product. Record open questions in the product's `definition.claimsReview`.
+- Never publish regulatory submissions, formulas or other confidential documents in the repository.
+- Demo data and screenshots must not contain real patient information.
+
+---
+
+## Checks
+
+| Command | Checks |
+| --- | --- |
+| `npm run lint` | Emoji, emoji entities, mojibake, non-Fluent icons, unsafe file names, product page schema |
+| `npm run build` | Icon names exist, site builds |
+| `npm run test:smoke` | Build output, tokens, docs present |
+| `npm run test:dom` | Page structure, including the seven product page sections |
+| `npm run test:contrast` | Token pairings in both themes and every product pairing |
+| `npm run test:a11y` | axe-core WCAG 2.2 A/AA on every page, light and dark (needs `npx playwright install chromium`) |
+
+A pull request is merged only when all checks pass.
+
+---
+
+## Not allowed
+
+- Hard-coded hex colours for text or buttons in components.
+- Altered, recoloured or stretched logos.
+- `#000000` for body paragraphs in light mode (use `--text-primary`).
+- Committing `build/`, `node_modules/` or generated files.
+- Force-pushing to `main`.
+
+Questions: branding@suamisihat.com

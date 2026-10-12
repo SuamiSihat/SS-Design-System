@@ -1,4 +1,7 @@
 <script>
+  import { VERSION } from '$lib/version.js';
+  import { renderIconShortcodes } from '$lib/utils/markdown-icons.js';
+  import { marked } from 'marked';
   import { page } from '$app/stores';
   import { onMount, tick } from 'svelte';
 
@@ -33,13 +36,14 @@
         { id: 'brand-fluent2',        title: 'Brand x Fluent 2 Contract', path: '/content/brand-fluent2.md',      icon: 'fluent:puzzle-piece-24-regular' },
         { id: 'color-composition-guide', title: 'Colour Composition Standard (60:30:10)', path: '/content/color-composition-guide.md', icon: 'fluent:color-fill-24-regular' },
         { id: 'text-color-guide',    title: 'Text Color & Hierarchy Guide', path: '/content/text-color-guide.md', icon: 'fluent:text-color-24-regular' },
-        { id: 'ss-hero-guide',       title: 'Hero Banner Standard (ss-hero)', path: '/content/ss-hero-guide.md', icon: 'fluent:sparkle-24-regular' }
+        { id: 'ss-hero-guide',       title: 'Hero Banner Standard (ss-hero)', path: '/content/ss-hero-guide.md', icon: 'fluent:sparkle-24-regular' },
+        { id: 'product-page-standard', title: 'Product Page Standard', path: '/content/product-page-standard.md', icon: 'fluent:box-checkmark-24-regular' }
       ]
     },
     {
       label: 'Governance & Operations',
       items: [
-        { id: 'contribution-guide',  title: 'Contribution Guide',        path: '/content/contribution-guide.md',   icon: 'fluent:heart-hand-24-regular' },
+        { id: 'contribution-guide',  title: 'Contribution Guide',        path: '/content/contribution-guide.md',   icon: 'fluent:person-heart-24-regular' },
         { id: 'changelog',           title: 'System Changelog',          path: '/content/changelog.md',            icon: 'fluent:clock-arrow-download-24-regular' }
       ]
     }
@@ -64,10 +68,12 @@
 
   /** Render mermaid diagrams inside the article */
   async function renderMermaid() {
-    if (typeof window === 'undefined' || !window.mermaid) return;
+    if (typeof window === 'undefined') return;
     await tick();
     const article = document.getElementById('md-article');
-    if (!article) return;
+    if (!article || !article.querySelector('pre code.language-mermaid')) return;
+    // Mermaid is large, so it is only loaded for documents that contain diagrams
+    const mermaid = (await import('mermaid')).default;
     // Find code blocks with language 'mermaid'
     article.querySelectorAll('pre code.language-mermaid').forEach((block) => {
       const container = document.createElement('div');
@@ -77,8 +83,8 @@
     });
     try {
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark' || document.body.classList.contains('dark-mode');
-      window.mermaid.initialize({ startOnLoad: false, theme: isDark ? 'dark' : 'neutral' });
-      await window.mermaid.run({ nodes: article.querySelectorAll('.mermaid') });
+      mermaid.initialize({ startOnLoad: false, theme: isDark ? 'dark' : 'neutral' });
+      await mermaid.run({ nodes: article.querySelectorAll('.mermaid') });
     } catch (e) {
       console.warn('Mermaid render error:', e);
     }
@@ -195,12 +201,8 @@
 
         // Strip YAML frontmatter if present
         raw = raw.replace(/^---[\s\S]*?---\s*/, '');
-        if (typeof window !== 'undefined' && window.marked) {
-          window.marked.setOptions({ gfm: true, breaks: false });
-          content = window.marked.parse(raw);
-        } else {
-          content = raw.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        }
+        marked.setOptions({ gfm: true, breaks: false });
+        content = renderIconShortcodes(marked.parse(raw));
       } else {
         content = `<h1>Error ${res.status}</h1><p>Could not load <code>${docMeta.path}</code>.</p>`;
       }
@@ -355,7 +357,7 @@
                 <span class="meta-dot">•</span>
                 <span>August 2026</span>
                 <span class="meta-dot">•</span>
-                <span>Design System v3.5.1</span>
+                <span>Design System v{VERSION}</span>
               </div>
             </div>
           </div>
@@ -391,7 +393,7 @@
     <aside class="f-toc-right-pane" aria-label="On this page navigation">
       <div class="toc-sticky-box">
         <div class="toc-header">
-          <iconify-icon icon="fluent:list-column-24-regular" style="font-size:0.95rem; color:var(--color-brand-primary);"></iconify-icon>
+          <iconify-icon icon="fluent:text-column-one-24-regular" style="font-size:0.95rem; color:var(--color-brand-primary);"></iconify-icon>
           <span>On This Page</span>
         </div>
         <ul class="toc-list">
@@ -568,7 +570,7 @@
 
   :global([data-theme="dark"]) .medium-share-btn:hover {
     background: rgba(33, 161, 247, 0.15);
-    color: #21A1F7;
+    color: var(--color-text-accent);
     border-color: #21A1F7;
   }
 
@@ -652,16 +654,16 @@
   }
 
   :global([data-theme="dark"]) .toc-item {
-    color: #64748B;
+    color: #A3A3A3;
   }
 
   :global([data-theme="dark"]) .toc-item:hover {
-    color: #21A1F7;
+    color: var(--color-text-accent);
     background: rgba(33, 161, 247, 0.08);
   }
 
   :global([data-theme="dark"]) .toc-item--active {
-    color: #21A1F7 !important;
+    color: var(--color-text-accent) !important;
     border-left-color: #21A1F7 !important;
     background: rgba(33, 161, 247, 0.12) !important;
   }
@@ -719,7 +721,7 @@
   :global([data-theme="dark"]) .doc-nav-btn:hover { background: rgba(255,255,255,0.05); color: #F8FAFC; }
   :global([data-theme="dark"]) .doc-nav-btn--active {
     background: rgba(33,161,247,0.12);
-    color: #21A1F7;
+    color: var(--color-text-accent);
     border-left-color: #21A1F7;
   }
 

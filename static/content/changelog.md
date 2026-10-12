@@ -2,13 +2,68 @@
 
 > **SuamiSihat™ Design System** is the **master project, master documentation, and master guideline** for the entire SS ecosystem — web, Expo/React Native mobile apps, and all internal tools. This changelog is the authoritative record of every change. All platforms derive from this system.
 
-## v3.6.0 — August 2026
+## v3.6.0 — October 2026
+
+### Security, sanitisation, WCAG 2.2 AA in both themes, and the product page standard
+
+A clean-up release. The site is now built from one source folder, deployed as a static build only, passes automated WCAG 2.2 A/AA checks on every page in light and dark theme, and every product brand has a guideline page with the same seven sections.
+
+### Rejal and Dr Mit Ring brand guidelines v1.0 (12 Oct 2026)
+
+- New PDF: `static/brand-guidelines/rejal-drmitring-brand-guidelines-v1.0.pdf` (22 pages): brand, logo, colour with Pantone, typography, packaging, photography, claims and label compliance for both brands.
+- New design tokens: `static/assets/tokens/product-brands.tokens.json` (DTCG). Primitives and light/dark semantic sets for `rejal` and `drmitring`, with Pantone matches and checked contrast.
+- REJAL: palette follows the existing 2026 packaging: Rejal Black #231F20, white, Rejal Blue #4480C2 (PANTONE 660 C). Heritage Gold is a finish only. Vector wordmarks and emblem extracted from the print files; REJAL repeat texture replaces the honeycomb pattern. Labels updated to RBL35, RBL240, RBL1K and Stevia V3; superseded RBL25, RBL250, RBL500 and the old Stevia label removed. AI-generated gallery images removed and replaced with real product photos. Trademark shown as REJAL™ (application under objection).
+- Dr Mit Ring: repositioned as a condom accessory; credit line "Direka oleh SuamiSihat"; all references to Dr. Ismail Tambi removed; erection, ejaculation and medical claims removed; the leaflet PDF and inner-instructions image withdrawn until rewritten; real product photography added.
+- Plans moved into the repo: `docs/plans/`.
+
+### Security and deployment
+
+- Only the built site (`build/`) is deployed. CI lints, builds and tests, then uploads with `rsync` over an SSH deploy key. The NAS no longer runs a git checkout in the web root, so `.git`, QA reports and agent files are no longer served.
+- `static/.htaccess` blocks hidden and source files, sets a strict Content Security Policy and a `noindex` header, and turns on server-side login once the password file exists on the NAS. Brand logos stay public for email signatures.
+- Removed the MENSS Care Cream NPRA formula PDF from the repository and its history.
+- Removed third-party CDNs: Bootstrap CSS, fonts (Fontsource), marked, mermaid and Fluent icons are self-hosted.
+- Retired Dockerfile, docker-compose, `deploy.ps1`, `deploy.sh` and the minify workflow. Deployment guide: `deploy/README.md`.
+- Licensing split: code under MIT, brand assets under `LICENSE-ASSETS`.
+
+### One source of truth
+
+- `static/` is the only home for assets, docs and product files. Drifted copies at the repository root were reconciled and removed, along with committed build output.
+- Removed legacy JavaScript that the SvelteKit app no longer used (`main.js`, `invader.js`, `markdown-loader.js`, `gallery-helpers.js`) and the `dist/` bundles.
+- The UI version comes from `package.json`.
+
+### Sanitisation
+
+- Emoji and pictographs replaced with Fluent System Icons in the UI and `{{icon:...}}` shortcodes in docs. Remaining lucide icons moved to Fluent. Eight icon names that do not exist in Fluent were replaced.
+- New `npm run lint` blocks emoji, emoji HTML entities, mojibake, non-Fluent icon sets and unsafe file names.
+- Renamed misspelt or unsafe asset files (spaces, apostrophes, brackets, ellipses, "penile-pimp", "Silhuatte"); Rejal gallery images given descriptive names; large gallery PNGs given web-sized JPEG versions.
+- Repaired stylesheets that contained pasted HTML, Svelte-only `:global()` selectors and unclosed blocks.
+- Banana Yellow unified to the token value `#FCE53D` (some pages used `#F7E143`).
+
+### Accessibility and contrast
+
+- Root cause fixed: the gatekeeper component redefined `--text-primary` and `--text-secondary` on `:root`, which made most text on the site fail contrast in light mode.
+- New contrast-safe tokens: `--ss-azure-strong` `#0B6BC4`, `--ss-lion-strong` `#8A6538`, `--color-action-bg`, `--color-on-action`, `--color-cta-bg`, `--color-on-cta`, `--color-link`, `--color-text-accent`, `--color-text-warm`. Filled buttons use accessible Azure with white text (5.4:1). Status colours darkened for light theme and given dark variants. The focus ring uses accessible Azure on light backgrounds.
+- Dark mode fixes: white form inputs, white tables and cards, Bootstrap colours, undefined tokens that fell back to white.
+- Label and name mismatches, target sizes, focusable code blocks, reduced motion, working tabs on the signature page.
+- New tests: `scripts/contrast-test.mjs` (token matrix and product pairings) and `scripts/a11y-test.mjs` (axe in Chromium on all pages in both themes). Result: 0 violations.
+
+### Product page standard
+
+- Every brand page has seven sections: product definition, product images, brand positioning, colour scheme with 60:30:10 and checked pairings, pattern, brand guideline, assets to download.
+- Driven by `static/products/<Brand>/metadata.json` (schema 2) and validated by `scripts/product-schema.mjs`.
+- REJAL repositioned as a heritage superfood brand (black, Heritage Gold, Quality Blue, taken from the packaging) with the Tualang Honeycomb pattern and label artwork downloads.
+- Dr Mit Ring positioned as a condom fastener, as stated on its packaging, with packaging artwork as product images and the Ring Ripple pattern.
+- All nine brands migrated. Unverified health claims are flagged for review on each page instead of being published.
+
+---
+
+## v3.5.2 — August 2026
 
 ### Medium.com Editorial Documentation Suite, 3-Column Layout & Outline TOC
 
 Major documentation engine upgrade transforming the documentation viewer into a modern 3-column architecture featuring a Medium.com editorial aesthetic, sticky Right Pane Outline TOC, live scroll position tracking, and full-width center column alignment.
 
-### New Features & Improvements in v3.6.0
+### New Features & Improvements in v3.5.2
 
 - **3-Column Documentation Architecture (`/doc/`)**:
   - Implemented 3-column layout grid (`Left Navigation Sidebar (260px) | Full-Width Center Article (Flex) | Sticky Right Outline TOC Pane (250px)`).
@@ -75,7 +130,7 @@ Major architectural and art direction release migrating the design system to Sve
 
 - **Default Hero Component Standard (`ss-hero`)**:
   - Standardized `.ss-hero` and `<SSHero />` as the official default background and container component for all hero banners, landing headers, and product master headers across SuamiSihat™.
-  - Embedded the interactive 2D kinetic vitality wave canvas (`#heroWaveCanvas` / `.hero-wave-canvas`) featuring floating Mars `♂` symbols, radiant Azure (`#21A1F7`) and Gold (`#F7E143`) energy nodes, and ambient pulsing glow (`.ss-hero-ambient-glow`).
+  - Embedded the interactive 2D kinetic vitality wave canvas (`#heroWaveCanvas` / `.hero-wave-canvas`) featuring floating Mars (male sign) symbols, radiant Azure (`#21A1F7`) and Gold (`#FCE53D`) energy nodes, and ambient pulsing glow (`.ss-hero-ambient-glow`).
   - Added full multi-framework integration guides (SvelteKit, Vanilla HTML/CSS, Expo React Native, Flutter) to the Component Library (`/components/#ss-hero`) and Brand System (`/brand-system/#patterns`).
   - Added Agent Rule 6 (`ss-hero` Hero Standard) enforcing the 60% brand vertical gradient, 30% ambient glow bloom, and 10% kinetic vitality wave canvas.
 

@@ -1,24 +1,90 @@
-name: Auto Deploy to Synology NAS
+name: Build, test and deploy
 
 on:
+  pull_request:
+    branches: [main]
   push:
     branches: [main]
   workflow_dispatch:
 
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  deploy:
-    name: Deploy to Synology Web Station
+  build:
+    name: Build and test
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to Synology NAS via SSH
-        uses: appleboy/ssh-action@v1.0.3
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          host: "suamisihat.myds.me"
-          port: 2222
-          username: "harussani"
-          password: ${{ secrets.NAS_PASSWORD }}
-          script: |
-            cd /volume1/web/ss_assets
-            git fetch origin main
-            git reset --hard origin/main
-            echo "Successfully updated https://assets.suamisihat.myds.me/"
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install
+        run: npm ci
+
+      - name: Lint content (emoji, mojibake, unsafe filenames, product schema)
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+      - name: Install Chromium for accessibility tests
+        run: npx playwright install --with-deps chromium
+
+      - name: Test (smoke, DOM, contrast, accessibility)
+        run: npm test
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: build
+          include-hidden-files: true
+          retention-days: 7
+
+  deploy:
+    name: Deploy to Synology NAS
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://assets.suamisihat.myds.me/
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: build
+
+      - name: Configure SSH
+        env:
+          NAS_SSH_KEY: ${{ secrets.NAS_SSH_KEY }}
+          NAS_KNOWN_HOSTS: ${{ secrets.NAS_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$NAS_SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          printf '%s\n' "$NAS_KNOWN_HOSTS" > ~/.ssh/known_hosts
+
+      - name: Upload build/ to the web root
+        env:
+          NAS_HOST: ${{ vars.NAS_HOST || 'suamisihat.myds.me' }}
+          NAS_PORT: ${{ vars.NAS_PORT || '2222' }}
+          NAS_USER: ${{ secrets.NAS_USER }}
+          NAS_PATH: ${{ vars.NAS_PATH || '/volume1/web/ss_assets' }}
+        run: |
+          rsync -az --delete --checksum \
+            -e "ssh -p $NAS_PORT -i ~/.ssh/id_ed25519" \
+            build/ "$NAS_USER@$NAS_HOST:$NAS_PATH/"
+
+      - name: Verify live site
+        run: |
+          code=$(curl -s -o /dev/null -w '%{http_code}' https://assets.suamisihat.myds.me/)
+          echo "Live site returned HTTP $code"
+          case "$code" in 200|401) ;; *) exit 1 ;; esac
+          git_code=$(curl -s -o /dev/null -w '%{http_code}' https://assets.suamisihat.myds.me/.git/config)
+          echo ".git/config returned HTTP $git_code"
+          [ "$git_code" != "200" ]

@@ -37,7 +37,7 @@
         <li><a href="/products/" class="f2-footer-link">Products</a></li>
         <li><a href="/tools/" class="f2-footer-link">Tools</a></li>
         <li><a href="/signature/" class="f2-footer-link">Signature</a></li>
-        <li><a href="https://suamisihat.myds.me" target="_blank" rel="noopener noreferrer" class="f2-footer-link f2-footer-ext">SSNAS ↗</a></li>
+        <li><a href="https://suamisihat.myds.me" target="_blank" rel="noopener noreferrer" class="f2-footer-link f2-footer-ext">SSNAS <iconify-icon icon="fluent:open-12-regular" aria-hidden="true"></iconify-icon></a></li>
       </ul>
     </section>
 
@@ -67,12 +67,12 @@
       <ul class="f2-external-links">
         <li>
           <button id="feedback-button" type="button" class="f2-feedback-btn" onclick={triggerFeedback}>
-            {feedbackSent ? '✓ Thank you!' : 'Feedback'}
+            {#if feedbackSent}<iconify-icon icon="fluent:checkmark-16-regular" aria-hidden="true"></iconify-icon> Thank you!{:else}Feedback{/if}
           </button>
         </li>
         <li>
           <button type="button" class="f2-feedback-btn" onclick={relockGate} title="Kunci semula akses portal SuamiSihat">
-            🔒 Kunci Portal
+            <iconify-icon icon="fluent:lock-closed-16-regular" aria-hidden="true"></iconify-icon> Kunci Portal
           </button>
         </li>
         <li><a href="mailto:branding@suamisihat.com" class="f2-ext-link">Contact SuamiSihat</a></li>

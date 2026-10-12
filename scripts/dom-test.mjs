@@ -1,5 +1,5 @@
 /**
- * SuamiSihat™ Design System — Comprehensive DOM & Structural Test Suite (v3.5.1)
+ * SuamiSihat Design System — DOM and structure tests
  * Validates DOM hierarchy, critical semantic elements, attributes, anchors, logo rules, and dark mode tokens.
  *
  * Usage: node scripts/dom-test.mjs
@@ -21,10 +21,10 @@ function assert(condition, description) {
   totalTests++;
   if (condition) {
     passedTests++;
-    console.log(`  \x1b[32m✔\x1b[0m [PASS] ${description}`);
+    console.log(`  \x1b[32mPASS\x1b[0m [PASS] ${description}`);
   } else {
     failedTests++;
-    console.error(`  \x1b[31m✖\x1b[0m [FAIL] ${description}`);
+    console.error(`  \x1b[31mFAIL\x1b[0m [FAIL] ${description}`);
   }
 }
 
@@ -38,7 +38,7 @@ function loadHtml(relPath) {
 }
 
 function testDom(pageName, html, rules) {
-  console.log(`\n📄 [DOM Test] Validating: ${pageName}`);
+  console.log(`\n [DOM Test] Validating: ${pageName}`);
   for (const rule of rules) {
     if (typeof rule.test === 'function') {
       const result = rule.test(html);
@@ -52,7 +52,7 @@ function testDom(pageName, html, rules) {
 }
 
 console.log('\n======================================================');
-console.log('  🌐 SuamiSihat™ Design System — DOM Validation Suite');
+console.log('   SuamiSihat™ Design System — DOM Validation Suite');
 console.log('======================================================');
 
 // 1. Root & Layout DOM Testing
@@ -141,7 +141,7 @@ testDom('Tools & SSCAM (build/tools/index.html)', toolsHtml, [
   { desc: 'Contains Brand Asset Library utility card', pattern: /Brand Asset Library/i },
   { desc: 'Contains SSNAS Dashboard utility card', pattern: /SSNAS/i },
   { desc: 'Contains real-time WCAG Color Contrast Ratio Tool', pattern: /Contrast Ratio/i },
-  { desc: 'Contains Icon Search and Copy utility', pattern: /Icon Search|copyIconSnippet|lucide:/i }
+  { desc: 'Contains Icon Search and Copy utility', pattern: /Icon Search|copyIconSnippet|fluent:/i }
 ]);
 
 // 5. Brand Guidelines DOM Testing
@@ -165,14 +165,20 @@ testDom('Products Hub (build/products/index.html)', productsHtml, [
   { desc: 'Contains REJAL product card', pattern: /REJAL/i }
 ]);
 
-// 7. Product Brand Hub Gallery DOM Testing (ANDROLAB & MENSS)
-const androlabHtml = loadHtml('build/products/androlab/index.html');
-testDom('Product Hub: ANDROLAB (build/products/androlab/index.html)', androlabHtml, [
-  { desc: 'Contains Product Renders & Photography section', pattern: /Product Renders &amp; Photography|Product Renders & Photography/i },
-  { desc: 'Contains Interactive Gallery stage', pattern: /ss-gallery-stage/i },
-  { desc: 'Contains click to zoom lightbox badge', pattern: /Click to Zoom/i },
-  { desc: 'Contains high-resolution studio packshot image', pattern: /Render_Mockup_3840/i }
-]);
+// 7. Product brand pages: the 7-section standard on every brand
+const productSlugs = ['androlab', 'menss', 'mensculine', 'drmitring', 'rejal', 'nucaffe', 'pertabi', 'husbandclinic', 'isterisihat'];
+for (const slug of productSlugs) {
+  const html = loadHtml(`build/products/${slug}/index.html`);
+  testDom(`Product page: ${slug}`, html, [
+    { desc: '1. Product definition section', pattern: /id="definition"/ },
+    { desc: '2. Product images section', pattern: /id="images"/ },
+    { desc: '3. Brand positioning section', pattern: /id="positioning"/ },
+    { desc: '4. Colour scheme with 60:30:10 bar', pattern: /id="colours"[\s\S]*pb-ratio-bar/ },
+    { desc: '5. Pattern section', pattern: /id="pattern"/ },
+    { desc: '6. Brand guideline section', pattern: /id="guideline"/ },
+    { desc: '7. Assets to download section', pattern: /id="downloads"/ }
+  ]);
+}
 
 // 8. Email Signature Generator DOM Testing
 const signatureHtml = loadHtml('build/signature/index.html');
@@ -197,12 +203,12 @@ testDom('Components Sandbox Interactivity (build/components/index.html)', compon
 ]);
 
 console.log('\n======================================================');
-console.log(`  📊 DOM Validation Summary: ${passedTests}/${totalTests} Passed (${failedTests} Failed)`);
+console.log(`   DOM Validation Summary: ${passedTests}/${totalTests} Passed (${failedTests} Failed)`);
 console.log('======================================================\n');
 
 if (failedTests > 0) {
   process.exit(1);
 } else {
-  console.log('🎉 All DOM and structural assertions PASSED with 100% success!\n');
+  console.log(' All DOM and structural assertions PASSED with 100% success!\n');
   process.exit(0);
 }

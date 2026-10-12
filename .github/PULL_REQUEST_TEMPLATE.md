@@ -1,21 +1,20 @@
-## Description
+## Summary
 
-Summary of changes, rationale, and target components/tokens.
+What changed and why.
 
-## Related Issues
+## Type of change
 
-Fixes #(issue number)
-
-## Type of Change
-
-- [ ] Bug fix (non-breaking change fixing an issue)
-- [ ] New feature (non-breaking change adding functionality)
-- [ ] Token update / Design Spec modification
-- [ ] Documentation update
+- [ ] Bug fix
+- [ ] New feature or component
+- [ ] Token or colour change
+- [ ] Product brand page (`static/products/<Brand>/metadata.json`)
+- [ ] Documentation
 
 ## Checklist
 
-- [ ] My code follows the design system rules in `AGENTS.md`
-- [ ] Verified across light and dark themes
-- [ ] Passed accessibility and responsive checks
-- [ ] Updated changelog / documentation where appropriate
+- [ ] Follows `.agents/AGENTS.md` (tokens, 60:30:10, Fluent icons, no emoji)
+- [ ] `npm run lint` passes
+- [ ] `npm run build` and `npm test` pass (smoke, DOM, contrast, accessibility)
+- [ ] Checked in light and dark theme
+- [ ] No health or performance claims added without review
+- [ ] Changelog updated for user-facing changes

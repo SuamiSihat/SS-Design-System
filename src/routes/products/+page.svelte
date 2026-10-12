@@ -1,5 +1,6 @@
 <script>
   import { onMount, tick } from 'svelte';
+  import { getProduct } from '$lib/products/index.js';
 
   let searchQuery = $state('');
   let selectedFilter = $state('all');   // 'all' | category slug
@@ -67,33 +68,33 @@
         {
           id: 'drmitring',
           name: 'Dr Mit Ring®',
-          type: 'Medical Device',
+          type: 'Condom Accessory',
           category: ['clinical'],
-          tags: ['Dr. Ismail Tambi', 'Bukan Ubat', 'Mechanical Device'],
-          tagClasses: ['tag-ss', 'tag-clinic', 'tag-wellness'],
-          entity: '05-SSE · 02-SSC',
+          tags: ['Condom Fastener', 'Reusable', 'Direka oleh SuamiSihat'],
+          tagClasses: ['tag-ss', 'tag-ecom', 'tag-wellness'],
+          entity: '05-SSE',
           entityIcon: 'fluent:organization-24-regular',
           logo: '/products/DrMitRing/logos/logo_drmitring.svg',
           href: '/products/drmitring/',
           accent: 'linear-gradient(135deg, #1C1C1C, #6AB845)',
-          desc: 'Patented clinical mechanical erection support device invented and clinically proven by pioneer andrologist <strong>Dr. Ismail Tambi</strong>. 100% drug-free ("Bukan Ubat") lime-green medical silicone with urethral relief curve.',
-          searchData: 'dr mit ring tambi bukan ubat mechanical erection device clinical hardware'
+          desc: 'Reusable soft silicone <strong>condom fastener</strong> (alat penahan kondom) that helps keep a condom in place. Two rings per box. Direka oleh SuamiSihat.',
+          searchData: 'dr mit ring condom fastener alat penahan kondom reusable ring accessory'
         },
         {
           id: 'rejal',
-          name: 'REJAL',
-          type: 'Core SS Brand',
+          name: 'REJAL™',
+          type: 'Heritage Food',
           badgeSuffix: '(Previously Rijal)',
           category: ['superfood'],
-          tags: ['REJAL', 'Stevia', 'Madu Tualang', 'Bawang Lanang'],
-          tagClasses: ['tag-ss', 'tag-wellness', 'tag-ecom', 'tag-clinic'],
-          entity: '05-SSE · Superfood',
+          tags: ['Madu Tualang', 'Bawang Lanang', 'Stevia'],
+          tagClasses: ['tag-ss', 'tag-wellness', 'tag-ecom'],
+          entity: '05-SSE',
           entityIcon: 'fluent:organization-24-regular',
-          logo: '/products/Rejal/logos/logo_rejal.svg',
+          logo: '/products/Rejal/logos/rejal-wordmark-black.svg',
           href: '/products/rejal/',
-          accent: 'linear-gradient(135deg, #1C1C1C, #C8A14A)',
-          desc: 'Heritage functional superfoods and natural metabolic nutrition. Features <strong>REJAL Stevia</strong> (zero-calorie sweetener), <strong>REJAL Madu Tualang Pahang</strong> (500g/1kg raw wild honey), and <strong>REJAL Bawang Lanang + Madu Tualang</strong> (450g fermented black garlic).',
-          searchData: 'rejal rijal stevia madu tualang pahang bawang lanang superfood honey metabolic nutrition'
+          accent: 'linear-gradient(135deg, #231F20, #4480C2)',
+          desc: 'Heritage Malay food: <strong>REJAL Madu Tualang Asli</strong> (500 g / 1 kg wild Tualang honey), <strong>REJAL Bawang Lanang + Madu Tualang</strong> (mini jar, 240 g and 500 ml jar) and <strong>REJAL Stevia</strong> (10 ml). Kesihatan itu satu pelaburan.',
+          searchData: 'rejal rijal madu tualang asli pahang bawang lanang honey stevia heritage food'
         },
         {
           id: 'nucaffe',
@@ -124,13 +125,13 @@
           tagClasses: ['tag-archived', 'tag-ss', 'tag-wellness'],
           entity: '01-SSH · Archived',
           entityIcon: 'fluent:history-24-regular',
-          logo: "/products/logo_Men'sFormulaX.svg",
+          logo: "/products/logo_mensformulax.svg",
           logoStyle: 'filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)); max-height: 55px;',
           logoTileBg: '#0559B5',
           href: null,
           hrefLabel: 'Superseded by ANDROLAB',
           accent: 'linear-gradient(135deg, #475569, #64748B)',
-          cardStyle: 'opacity: 0.9;',
+          cardStyle: '',
           desc: '<em>Legacy registered botanical capsule formulation (MAL23046127T).</em> Formerly SuamiSihat\'s flagship oral nutraceutical containing Physta® Tongkat Ali, Black Ginger, Ginseng, Horny Goat Weed, and Tribulus. Now archived and superseded by the <strong>ANDROLAB Alpha &amp; RX series</strong>.',
           searchData: 'mfx mens formula x tongkat ali supplement deprecated archive'
         },
@@ -151,7 +152,7 @@
           href: '/products/menss/',
           hrefLabel: 'MENSS Hub',
           accent: 'linear-gradient(135deg, #443C91, #64748B)',
-          cardStyle: 'opacity: 0.9;',
+          cardStyle: '',
           desc: '<em>Deprecated legacy vitality formulation.</em> Formerly SuamiSihat\'s peak physical endurance compound. Archived and officially superseded &amp; replaced by <strong>MENSS Care Cream</strong> (50g NPRA cosmetic formula with Physta® Tongkat Ali &amp; L-Arginine).',
           searchData: 'xprimal endurance vitality formulation deprecated archive menss'
         }
@@ -271,6 +272,16 @@
       ]
     }
   ];
+
+  // Brands with a guideline page take their description from static/products/<Brand>/metadata.json,
+  // so the catalogue and the brand page never disagree.
+  for (const s of ssSections) {
+    for (const prod of s.products) {
+      const slug = prod.href?.match(/^\/products\/([a-z0-9-]+)\/$/)?.[1];
+      const meta = slug && getProduct(slug);
+      if (meta && meta.name === prod.name) prod.desc = meta.definition.summary;
+    }
+  }
 
   // Flatten for search
   const allProducts = ssSections.flatMap(s => s.products.map(p => ({ ...p, sectionId: s.id })));
@@ -524,11 +535,11 @@
                     {product.entity}
                   </span>
                   {#if product.logoDownload}
-                    <a href={product.logoDownload} download class="product-assets-btn" aria-label="Download {product.name} logo">
+                    <a href={product.logoDownload} download class="product-assets-btn" aria-label="Vector (.SVG): download {product.name} logo">
                       Vector (.SVG) <iconify-icon icon="fluent:arrow-download-24-regular" class="ms-1" aria-hidden="true"></iconify-icon>
                     </a>
                   {:else if product.href}
-                    <a href={product.href} class="product-assets-btn" aria-label="View {product.name} brand hub">
+                    <a href={product.href} class="product-assets-btn" aria-label="{product.hrefLabel ?? 'More'}: {product.name} brand hub">
                       {product.hrefLabel ?? 'More'} <iconify-icon icon="fluent:chevron-right-24-regular" class="ms-1" aria-hidden="true"></iconify-icon>
                     </a>
                   {:else if product.hrefLabel}
@@ -667,10 +678,10 @@
   .cat-nav-btn.active { background: var(--color-brand-subtle, rgba(4,51,136,0.06)); color: var(--color-brand-primary, #043388); font-weight: 600; }
   :global([data-theme="dark"]) .cat-nav-btn { color: #94A3B8; }
   :global([data-theme="dark"]) .cat-nav-btn:hover { background: rgba(255,255,255,0.05); color: #F8FAFC; }
-  :global([data-theme="dark"]) .cat-nav-btn.active { background: rgba(33,161,247,0.1); color: #21A1F7; }
+  :global([data-theme="dark"]) .cat-nav-btn.active { background: rgba(33,161,247,0.1); color: var(--color-text-accent); }
   :global([data-theme="dark"]) .cat-nav a { color: #94A3B8; }
   :global([data-theme="dark"]) .cat-nav a:hover { background: rgba(255,255,255,0.05); color: #F8FAFC; }
-  :global([data-theme="dark"]) .cat-nav a.active { background: rgba(33,161,247,0.1); color: #21A1F7; }
+  :global([data-theme="dark"]) .cat-nav a.active { background: rgba(33,161,247,0.1); color: var(--color-text-accent); }
   .cat-icon { display: flex; align-items: center; font-size: 1rem; flex-shrink: 0; }
   .cat-count { margin-left: auto; font-size: 0.7rem; background: var(--color-brand-subtle); color: var(--color-brand-primary); padding: 2px 8px; border-radius: 999px; font-weight: 600; }
 
@@ -691,7 +702,7 @@
     font-size: 0.95rem; flex-shrink: 0;
   }
   .ps-icon-ss      { background: var(--color-brand-subtle); color: var(--color-brand-primary); }
-  .ps-icon-partner { background: rgba(189,154,115,0.12); color: #BD9A73; }
+  .ps-icon-partner { background: rgba(189,154,115,0.12); color: var(--color-text-warm); }
   .ps-icon-science { background: rgba(10,137,250,0.12); color: #0A89FA; }
   .product-section-title { font-size: 1.35rem; font-weight: 600; color: var(--color-neutral-fg-1); margin: 0; }
   .product-section-desc  { font-size: 0.85rem; color: var(--color-neutral-fg-2); margin: 0; }
@@ -746,7 +757,7 @@
   /* Archived badge overlay */
   .archived-badge {
     position: absolute; top: 6px; right: 8px;
-    font-size: 0.65rem; background: #dc2626; color: #fff;
+    font-size: 0.65rem; background: #B91C1C; color: #fff;
     padding: 2px 6px; border-radius: 4px; font-weight: 700; text-transform: uppercase;
   }
 
@@ -777,13 +788,13 @@
     border: 1px solid var(--color-neutral-stroke-1);
   }
   .tag-ss       { background: var(--color-brand-subtle); color: var(--color-brand-primary); }
-  .tag-wellness { background: rgba(33,161,247,0.1); color: #21A1F7; }
+  .tag-wellness { background: rgba(33,161,247,0.1); color: var(--color-text-accent); }
   .tag-clinic   { background: var(--color-brand-subtle); color: var(--color-brand-primary); }
-  .tag-ecom     { background: rgba(189,154,115,0.12); color: #BD9A73; }
-  .tag-partner  { background: rgba(189,154,115,0.12); color: #BD9A73; }
-  .tag-women    { background: rgba(220,100,150,0.1); color: #c04f88; }
-  .tag-archived { background: rgba(225,29,72,0.1); color: #e11d48; border-color: rgba(225,29,72,0.3); }
-  :global([data-theme="dark"]) .tag-women { background: rgba(220,100,150,0.15); color: #e895c0; }
+  .tag-ecom     { background: rgba(189,154,115,0.12); color: var(--color-text-warm); }
+  .tag-partner  { background: rgba(189,154,115,0.12); color: var(--color-text-warm); }
+  .tag-women    { background: rgba(220,100,150,0.1); color: #BE185D; }
+  .tag-archived { background: rgba(225,29,72,0.1); color: var(--color-error-fg); border-color: rgba(225,29,72,0.3); }
+  :global([data-theme="dark"]) .tag-women { background: rgba(220,100,150,0.15); color: #F0A5C8; }
 
   /* Footer actions */
   .product-actions {
@@ -801,7 +812,7 @@
     transition: all 0.15s ease;
   }
   .product-assets-btn:hover {
-    background: var(--color-brand-primary); color: #fff; border-color: transparent;
+    background: var(--color-action-bg); color: var(--color-on-action); border-color: transparent;
   }
 
   /* No results */

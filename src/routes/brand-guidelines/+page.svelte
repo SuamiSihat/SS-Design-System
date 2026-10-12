@@ -10,7 +10,7 @@
       key: 'logo',
       title: 'Logo & Concept',
       series: 'SuamiSihat™ Design System',
-      pdf: '/brand-guidelines/Brand Guideline - Logo & Concept.pdf',
+      pdf: '/brand-guidelines/brand-guideline-logo-and-concept.pdf',
       img: '/brand-guidelines/cover-logo-concept.png',
       size: '1.4 MB'
     },
@@ -18,7 +18,7 @@
       key: 'interior',
       title: 'Interior Design',
       series: 'SuamiSihat™ Clinic Standard',
-      pdf: '/brand-guidelines/Brand Guideline - Interior Design.pdf',
+      pdf: '/brand-guidelines/brand-guideline-interior-design.pdf',
       img: '/brand-guidelines/cover-interior-design.png',
       size: '3.2 MB'
     }
@@ -90,7 +90,7 @@
 <div class="guidelines-page" style="min-height: calc(100vh - 60px); background: var(--color-neutral-bg-1, #F8FAFC); padding-bottom: 4rem;">
   <!-- Breadcrumb & Header -->
   <div class="selection-hero w-100 pt-5 text-center" style="width: 100%; max-width: 100%; padding: 0 clamp(1.5rem, 4vw, 4rem); box-sizing: border-box;">
-    <p class="selection-eyebrow" style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #21A1F7; margin-bottom: 0.5rem;">
+    <p class="selection-eyebrow" style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-accent); margin-bottom: 0.5rem;">
       <iconify-icon icon="fluent:book-open-24-regular" style="vertical-align: middle;"></iconify-icon> Official Publications
     </p>
     <h1 class="selection-title" style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; color: var(--color-neutral-fg-1, #022057); margin-bottom: 0.75rem;">
@@ -123,10 +123,10 @@
           Authoritative visual identity standard covering the SuamiSihat™ logomark, 1X exclusion space, typography scales, and multi-platform color hierarchies.
         </p>
         <div class="book-actions">
-          <button class="ss-btn ss-btn-primary ss-btn-sm" onclick={(e) => { e.stopPropagation(); openBook('logo'); }} aria-label="Read Logo & Concept Guideline Online">
+          <button class="ss-btn ss-btn-primary ss-btn-sm" onclick={(e) => { e.stopPropagation(); openBook('logo'); }} aria-label="Read Online: Logo & Concept Guideline">
             <iconify-icon icon="fluent:book-open-24-regular"></iconify-icon> Read Online
           </button>
-          <a href="/brand-guidelines/Brand Guideline - Logo & Concept.pdf" download class="ss-btn ss-btn-secondary ss-btn-sm" onclick={(e) => e.stopPropagation()}>
+          <a href="/brand-guidelines/brand-guideline-logo-and-concept.pdf" download class="ss-btn ss-btn-secondary ss-btn-sm" onclick={(e) => e.stopPropagation()}>
             <iconify-icon icon="fluent:arrow-download-16-regular"></iconify-icon> Download PDF
           </a>
         </div>
@@ -156,7 +156,7 @@
           <button class="ss-btn ss-btn-primary ss-btn-sm" onclick={(e) => { e.stopPropagation(); openBook('interior'); }}>
             <iconify-icon icon="fluent:book-open-24-regular"></iconify-icon> Read Online
           </button>
-          <a href="/brand-guidelines/Brand Guideline - Interior Design.pdf" download class="ss-btn ss-btn-secondary ss-btn-sm" onclick={(e) => e.stopPropagation()}>
+          <a href="/brand-guidelines/brand-guideline-interior-design.pdf" download class="ss-btn ss-btn-secondary ss-btn-sm" onclick={(e) => e.stopPropagation()}>
             <iconify-icon icon="fluent:arrow-download-16-regular"></iconify-icon> Download PDF
           </a>
         </div>
@@ -205,7 +205,7 @@
       <div style="flex: 1; width: 100%; height: calc(100% - 56px); background: #0F172A; position: relative;">
         {#if isPdfLoading}
           <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #0F172A; z-index: 10; color: #FFFFFF;">
-            <iconify-icon icon="fluent:spinner-ios-20-regular" style="font-size: 2.5rem; animation: spin 1s linear infinite; color: #21A1F7;"></iconify-icon>
+            <iconify-icon icon="fluent:spinner-ios-20-regular" style="font-size: 2.5rem; animation: spin 1s linear infinite; color: var(--color-text-accent);"></iconify-icon>
             <p style="font-size: 0.85rem; margin-top: 1rem; color: rgba(255,255,255,0.7);">Loading {books[activeBook].title}...</p>
           </div>
         {/if}
@@ -251,7 +251,7 @@
           <div style="padding: 1.25rem; border: 1px solid var(--color-neutral-stroke-1); border-left: 4px solid #21A1F7; border-radius: var(--f-radius-md); background: var(--color-neutral-bg-1); height: 100%;">
             <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-neutral-fg-1); margin-bottom: 0.5rem;">10% Primary Conversion Accent</h3>
             <p style="font-size: 0.8rem; color: var(--color-neutral-fg-2); line-height: 1.5; margin: 0;">
-              Azure Blue (<code>#21A1F7</code>) &amp; Banana Yellow (<code>#F7E143</code>). Strictly reserved for dominant patient conversion CTAs (e.g. &ldquo;BOOK APPOINTMENT&rdquo;).
+              Azure Blue (<code>#21A1F7</code>) &amp; Banana Yellow (<code>#FCE53D</code>). Strictly reserved for dominant patient conversion CTAs (e.g. &ldquo;BOOK APPOINTMENT&rdquo;).
             </p>
           </div>
         </div>

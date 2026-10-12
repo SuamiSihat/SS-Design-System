@@ -1,19 +1,234 @@
 {
+  "schema": 2,
+  "slug": "menss",
   "name": "MENSS",
-  "tagline": "Modern Masculinity & Lifestyle Platform",
-  "logo": "logo_menss.svg",
-  "banner": "banner.svg",
-  "heroGradient": "linear-gradient(135deg, #030404 0%, #0e92cc 100%)",
-  "colors": {
-    "primary": "#030404",
-    "accent": "#0e92cc",
-    "neutralLight": "#fefefe"
+  "folder": "MENSS",
+  "status": "Active",
+  "tagline": "Modern intimate wellness for men",
+  "entity": "05-SSE · SuamiSihat E-Commerce, with 02-SSC SS Clinic",
+  "category": "Intimate wellness and personal care",
+  "hero": {
+    "from": "#030404",
+    "to": "#01233A",
+    "accent": "#0E92CC"
   },
-  "ownership": {
-    "tags": ["SS Health Owned", "SS Wellness"],
-    "text": "MENSS is an in-house wellness platform operated entirely under the SS Wellness ecosystem."
+  "definition": {
+    "summary": "MENSS is SuamiSihat's modern intimate-wellness range for men, covering personal care such as the FRÉSH intimate wash and wellness devices such as the MENSS vacuum pump and ring series.",
+    "facts": [
+      {
+        "label": "Operating entity",
+        "value": "05-SSE SuamiSihat E-Commerce with 02-SSC SS Clinic"
+      },
+      {
+        "label": "Categories",
+        "value": "Personal care and wellness devices"
+      },
+      {
+        "label": "Audience",
+        "value": "Men who want discreet, well-designed intimate care"
+      },
+      {
+        "label": "Packaging",
+        "value": "Black drawer boxes and cartons with Precision Cyan details"
+      }
+    ],
+    "range": [
+      {
+        "name": "MENSS FRÉSH Wash",
+        "type": "Personal care",
+        "desc": "Daily intimate wash for men."
+      },
+      {
+        "name": "MENSS Penile Pump",
+        "type": "Wellness device",
+        "desc": "Vacuum device supplied in a drawer box."
+      },
+      {
+        "name": "MENSS Ring Series",
+        "type": "Wellness device",
+        "desc": "Silicone rings."
+      },
+      {
+        "name": "MENSS Noctis and Scensual",
+        "type": "In development",
+        "desc": "Folders reserved; no approved assets yet."
+      }
+    ],
+    "claimsReview": "Device descriptions such as 'medical-grade' or 'vascular rehabilitation' need registration evidence before public use."
   },
-  "assets": [
-    "logo_menss.svg"
+  "images": [
+    {
+      "src": "/products/MENSS/sub-products/penile-pump/gallery/Render_Mockup_1920_1080_2025-10-14.jpg",
+      "alt": "MENSS vacuum pump studio render, horizontal",
+      "caption": "Pump studio render"
+    },
+    {
+      "src": "/products/MENSS/sub-products/penile-pump/gallery/menss-penile-pump-packaging-d0062-v1-web.jpg",
+      "alt": "MENSS black drawer box packaging for the vacuum pump",
+      "caption": "Drawer box packaging"
+    },
+    {
+      "src": "/products/MENSS/sub-products/penile-pump/gallery/MENSS-PP-Box-web.jpg",
+      "alt": "MENSS pump retail box, front view",
+      "caption": "Retail box"
+    }
+  ],
+  "positioning": {
+    "statement": "For men who expect intimate care to be as well designed as the rest of their routine, MENSS delivers discreet, modern products with clear instructions.",
+    "pillars": [
+      {
+        "title": "Discreet design",
+        "text": "Black, cyan and clean lines; packaging that looks at home on a bathroom shelf."
+      },
+      {
+        "title": "Clear guidance",
+        "text": "How to use, how to clean, when to see a doctor."
+      },
+      {
+        "title": "Clinic-backed",
+        "text": "Linked to SS Clinic for advice."
+      }
+    ],
+    "voice": [
+      "Modern and direct",
+      "Discreet, never crude",
+      "Helpful and step-by-step"
+    ],
+    "avoid": [
+      "Explicit imagery or innuendo",
+      "Treatment claims for devices",
+      "Size or performance promises"
+    ]
+  },
+  "colorScheme": {
+    "foundation": {
+      "share": 60,
+      "role": "Carbon Obsidian",
+      "colors": [
+        {
+          "name": "Carbon Obsidian",
+          "hex": "#030404",
+          "use": "Packaging and hero backgrounds"
+        },
+        {
+          "name": "Pure White",
+          "hex": "#FEFEFE",
+          "use": "Light canvases"
+        }
+      ]
+    },
+    "structure": {
+      "share": 30,
+      "role": "Precision Cyan",
+      "colors": [
+        {
+          "name": "Precision Cyan",
+          "hex": "#0E92CC",
+          "use": "Lines, icons, headings on black"
+        },
+        {
+          "name": "Cyan Text",
+          "hex": "#0B6F9C",
+          "use": "Cyan text on light"
+        }
+      ]
+    },
+    "accent": {
+      "share": 10,
+      "role": "White highlight",
+      "colors": [
+        {
+          "name": "Pure White",
+          "hex": "#FEFEFE",
+          "use": "Wordmark and one highlight on black"
+        }
+      ]
+    },
+    "pairings": [
+      {
+        "text": "#FEFEFE",
+        "background": "#030404",
+        "use": "Text on Carbon"
+      },
+      {
+        "text": "#0E92CC",
+        "background": "#030404",
+        "use": "Cyan on Carbon"
+      },
+      {
+        "text": "#030404",
+        "background": "#0E92CC",
+        "use": "Black on a cyan button"
+      },
+      {
+        "text": "#0B6F9C",
+        "background": "#FEFEFE",
+        "use": "Cyan text on white"
+      }
+    ],
+    "note": "White text on Precision Cyan is 3.5:1; use black text on cyan buttons."
+  },
+  "pattern": {
+    "name": "Precision Lines",
+    "file": "/products/MENSS/pattern.svg",
+    "description": "Fine diagonal Precision Cyan lines on Carbon Obsidian.",
+    "usage": [
+      "Use on black panels and box interiors",
+      "Keep copy on solid areas",
+      "Do not increase line weight or opacity above 50%"
+    ]
+  },
+  "guideline": {
+    "logos": [
+      {
+        "label": "MENSS wordmark",
+        "file": "/products/MENSS/logos/logo_menss.svg",
+        "use": "Default"
+      },
+      {
+        "label": "MENSS Pump sub-brand",
+        "file": "/products/MENSS/sub-products/penile-pump/logos/logo-menss-penile-pump.svg",
+        "use": "Pump packaging"
+      }
+    ],
+    "clearSpace": "Keep clear space equal to the cap height of the wordmark on every side. Nothing (text, edges, other logos) enters this zone.",
+    "minimumSize": "Digital 90 px wide; print 22 mm wide",
+    "do": [
+      "Use white wordmark on Carbon",
+      "Use cyan for one structural line or icon set",
+      "Keep layouts minimal"
+    ],
+    "dont": [
+      "Do not place the logo on photographs without a solid panel",
+      "Do not use explicit imagery",
+      "Do not use cyan for body text on light backgrounds"
+    ],
+    "typography": {
+      "display": "Poppins SemiBold / Bold for headlines and key numbers; Montserrat for subtitles and labels",
+      "body": "Helvetica Neue for print body copy; Inter on the web; Calibri in Office documents",
+      "note": "Typefaces follow Brand System section 04. Never retype a wordmark; always place the supplied logo file."
+    }
+  },
+  "downloads": [
+    {
+      "label": "MENSS wordmark",
+      "file": "/products/MENSS/logos/logo_menss.svg",
+      "format": "SVG"
+    },
+    {
+      "label": "Brand pattern",
+      "file": "/products/MENSS/pattern.svg",
+      "format": "SVG"
+    },
+    {
+      "label": "Pump retail box artwork",
+      "file": "/products/MENSS/sub-products/penile-pump/downloads/MENSS-PP-Box.pdf",
+      "format": "PDF"
+    },
+    {
+      "label": "Pump silhouette",
+      "file": "/products/MENSS/sub-products/penile-pump/downloads/pump-silhouette.svg",
+      "format": "SVG"
+    }
   ]
 }

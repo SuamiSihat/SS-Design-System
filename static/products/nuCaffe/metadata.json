@@ -1,34 +1,210 @@
 {
+  "schema": 2,
+  "slug": "nucaffe",
   "name": "nuCaffe®",
-  "tagline": "Functional Physta® Tongkat Ali Coffee (While Stocks Last)",
-  "logo": "logo_nuCaffe.svg",
-  "banner": "banner.svg",
-  "heroGradient": "linear-gradient(135deg, #1C1C1C 0%, #3D1C18 50%, #DF2127 100%)",
-  "colors": {
-    "primary": "#1C1C1C",
-    "accent": "#DF2127",
-    "latteCrema": "#C59B6D",
-    "canvas": "#FBFBFB"
+  "folder": "nuCaffe",
+  "status": "While stocks last",
+  "tagline": "Instant coffee with Physta® Tongkat Ali",
+  "entity": "05-SSE · SuamiSihat E-Commerce",
+  "category": "Functional instant coffee (FMCG)",
+  "hero": {
+    "from": "#1C1C1C",
+    "to": "#3D1C18",
+    "accent": "#DF2127"
   },
-  "status": "While Stocks Last",
-  "ownership": {
-    "tags": ["SS Health Owned", "SS Ecom", "FMCG Superfood", "While Stocks Last"],
-    "text": "nuCaffe® is an in-house functional coffee brand operated under SuamiSihat E-Commerce (05-SSE) available while stocks last."
+  "definition": {
+    "summary": "nuCaffe® is SuamiSihat's instant coffee with Physta® Tongkat Ali, offered in Black and Latte variants. The range is sold while stocks last.",
+    "facts": [
+      {
+        "label": "Operating entity",
+        "value": "05-SSE SuamiSihat E-Commerce"
+      },
+      {
+        "label": "Variants",
+        "value": "nuCaffe Black, nuCaffe Latte"
+      },
+      {
+        "label": "Lifecycle",
+        "value": "While stocks last; no new artwork planned"
+      },
+      {
+        "label": "Key ingredient",
+        "value": "Physta® Tongkat Ali (licensed ingredient brand)"
+      }
+    ],
+    "range": [
+      {
+        "name": "nuCaffe Black",
+        "type": "Dark roast",
+        "desc": "Instant black coffee with Physta® Tongkat Ali."
+      },
+      {
+        "name": "nuCaffe Latte",
+        "type": "White coffee",
+        "desc": "Instant latte with Physta® Tongkat Ali."
+      }
+    ],
+    "claimsReview": "Use Physta® benefit wording only as approved by the ingredient licensor."
   },
-  "subProducts": [
+  "images": [
     {
-      "id": "black",
-      "name": "nuCaffe Black",
-      "tagline": "Premium Dark Roast Instant Coffee with Physta® Tongkat Ali (Zero Added Sugar)"
-    },
-    {
-      "id": "latte",
-      "name": "nuCaffe Latte",
-      "tagline": "Smooth Creamy White Roast Coffee with Physta® Tongkat Ali"
+      "src": "/products/nuCaffe/gallery/nucaffe-brand-card.jpg",
+      "alt": "nu-caffe logo on a white card over a pattern of coffee beans",
+      "caption": "Brand card (product photography pending)",
+      "placeholder": true
     }
   ],
-  "assets": [
-    "logo_nuCaffe.svg",
-    "logo_nucaffeWhite.svg"
+  "positioning": {
+    "statement": "For coffee drinkers who want their daily cup to work a little harder, nuCaffe® blends instant coffee with Physta® Tongkat Ali.",
+    "pillars": [
+      {
+        "title": "Everyday ritual",
+        "text": "A normal cup of coffee first."
+      },
+      {
+        "title": "Known ingredient",
+        "text": "Physta® Tongkat Ali, named and credited."
+      },
+      {
+        "title": "Bold and warm",
+        "text": "Roast black, cherry red, latte crema."
+      }
+    ],
+    "voice": [
+      "Friendly and energetic",
+      "Short, punchy lines",
+      "Honest about stock status"
+    ],
+    "avoid": [
+      "Energy or stamina promises",
+      "Implying the range is permanent",
+      "Medical language"
+    ]
+  },
+  "colorScheme": {
+    "foundation": {
+      "share": 60,
+      "role": "Dark Roast Black",
+      "colors": [
+        {
+          "name": "Dark Roast Black",
+          "hex": "#1C1C1C",
+          "use": "Pack and backgrounds"
+        },
+        {
+          "name": "Foam White",
+          "hex": "#FBFBFB",
+          "use": "Light canvases"
+        }
+      ]
+    },
+    "structure": {
+      "share": 30,
+      "role": "Latte Crema",
+      "colors": [
+        {
+          "name": "Latte Crema",
+          "hex": "#C59B6D",
+          "use": "Latte variant, warm structure on black"
+        }
+      ]
+    },
+    "accent": {
+      "share": 10,
+      "role": "Coffee Cherry Red",
+      "colors": [
+        {
+          "name": "Coffee Cherry Red",
+          "hex": "#DF2127",
+          "use": "Hyphen in logo, one highlight"
+        },
+        {
+          "name": "Cherry Red Text",
+          "hex": "#B71C21",
+          "use": "Red text on light"
+        }
+      ]
+    },
+    "pairings": [
+      {
+        "text": "#FBFBFB",
+        "background": "#1C1C1C",
+        "use": "Text on Dark Roast"
+      },
+      {
+        "text": "#C59B6D",
+        "background": "#1C1C1C",
+        "use": "Crema on black"
+      },
+      {
+        "text": "#FFFFFF",
+        "background": "#DF2127",
+        "use": "White on a red badge"
+      },
+      {
+        "text": "#B71C21",
+        "background": "#FBFBFB",
+        "use": "Red text on light"
+      }
+    ],
+    "note": "Coffee Cherry Red on black is 3.6:1; use it for shapes and large display only, never small text on black."
+  },
+  "pattern": {
+    "name": "Bean Scatter",
+    "file": "/products/nuCaffe/pattern.svg",
+    "description": "Crema and cherry-red coffee beans on Dark Roast Black.",
+    "usage": [
+      "Use on dark promotional panels",
+      "Keep text on solid areas",
+      "Do not add new bean colours"
+    ]
+  },
+  "guideline": {
+    "logos": [
+      {
+        "label": "nu-caffe logo",
+        "file": "/products/nuCaffe/logos/logo_nuCaffe.svg",
+        "use": "Light backgrounds"
+      },
+      {
+        "label": "nu-caffe logo (white)",
+        "file": "/products/nuCaffe/logos/logo_nucaffeWhite.svg",
+        "use": "Dark backgrounds"
+      }
+    ],
+    "clearSpace": "Keep clear space equal to the cap height of the wordmark on every side. Nothing (text, edges, other logos) enters this zone.",
+    "minimumSize": "Digital 100 px wide; print 25 mm wide",
+    "do": [
+      "Show the stock status where the product is sold",
+      "Credit Physta® with the registered mark",
+      "Keep the red hyphen red"
+    ],
+    "dont": [
+      "Do not create new campaigns that imply ongoing supply",
+      "Do not recolour the hyphen",
+      "Do not use the logo on mid-tone photos"
+    ],
+    "typography": {
+      "display": "Poppins SemiBold / Bold for headlines and key numbers; Montserrat for subtitles and labels",
+      "body": "Helvetica Neue for print body copy; Inter on the web; Calibri in Office documents",
+      "note": "Typefaces follow Brand System section 04. Never retype a wordmark; always place the supplied logo file."
+    }
+  },
+  "downloads": [
+    {
+      "label": "Logo (light backgrounds)",
+      "file": "/products/nuCaffe/logos/logo_nuCaffe.svg",
+      "format": "SVG"
+    },
+    {
+      "label": "Logo (dark backgrounds)",
+      "file": "/products/nuCaffe/logos/logo_nucaffeWhite.svg",
+      "format": "SVG"
+    },
+    {
+      "label": "Brand pattern",
+      "file": "/products/nuCaffe/pattern.svg",
+      "format": "SVG"
+    }
   ]
 }

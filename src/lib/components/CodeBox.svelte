@@ -23,9 +23,9 @@
       onclick={copyCode}
       style="background: transparent; border: 1px solid rgba(255,255,255,0.15); color: #E2E8F0; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; cursor: pointer; display: flex; align-items: center; gap: 0.3rem;"
     >
-      <iconify-icon icon={copied ? "lucide:check" : "lucide:copy"} width="14"></iconify-icon>
+      <iconify-icon icon={copied ? "fluent:checkmark-16-regular" : "fluent:copy-16-regular"} width="14"></iconify-icon>
       {copied ? 'Copied' : 'Copy'}
     </button>
   </div>
-  <pre style="margin: 0; padding: 1rem; overflow-x: auto; font-family: 'Cascadia Code', 'Fira Code', monospace; font-size: 0.85rem; line-height: 1.5; color: #E2E8F0;"><code>{code}</code></pre>
+  <pre tabindex="0" aria-label="{title || language} code sample" style="margin: 0; padding: 1rem; overflow-x: auto; font-family: 'Cascadia Code', 'Fira Code', monospace; font-size: 0.85rem; line-height: 1.5; color: #E2E8F0;"><code>{code}</code></pre>
 </div>

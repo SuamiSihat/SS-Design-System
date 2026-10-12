@@ -5,6 +5,23 @@
   import GatekeeperPuzzle from '$lib/components/GatekeeperPuzzle.svelte';
   import { initTheme } from '$lib/stores/theme.js';
   import { gateState, initGate } from '$lib/stores/gate.js';
+  import { browser } from '$app/environment';
+  import fluentIcons from '$lib/icons/fluent-subset.json';
+
+  // Self-hosted fonts (no third-party font requests)
+  import '@fontsource/inter/400.css';
+  import '@fontsource/inter/500.css';
+  import '@fontsource/inter/600.css';
+  import '@fontsource/inter/700.css';
+  import '@fontsource/inter/800.css';
+  import '@fontsource/poppins/600.css';
+  import '@fontsource/poppins/700.css';
+
+  // Fluent System Icons are bundled at build time (scripts/build-icons.mjs) and
+  // registered before the <iconify-icon> element is defined, so no icon API calls.
+  if (browser) {
+    import('iconify-icon').then(({ addCollection }) => addCollection(fluentIcons));
+  }
 
   let { children } = $props();
 

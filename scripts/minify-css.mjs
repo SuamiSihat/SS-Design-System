@@ -1,57 +1,43 @@
 /**
- * PERF-01 — CSS Minification Script
- * Uses lightningcss to minify all CSS files in assets/css/
- * Outputs to assets/css/dist/ preserving filenames.
+ * Post-build CSS minification.
+ * Minifies every stylesheet in build/assets/css/ in place with lightningcss.
+ * Source files in static/assets/css/ stay readable; only the deployed copy is minified.
  *
- * Run: node scripts/minify-css.mjs
+ * Run after `vite build`: node scripts/minify-css.mjs
  */
 
-import { readFileSync, writeFileSync, mkdirSync } from 'fs';
+import { readFileSync, writeFileSync, readdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { transform } from 'lightningcss';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = join(__dirname, '..');
+const CSS_DIR = join(__dirname, '..', 'build', 'assets', 'css');
 
-const CSS_FILES = [
-  'assets/css/fluent.css',
-  'assets/css/style.css',
-  'assets/css/ss_theme.css',
-  'assets/css/banner.css',
-  'assets/css/markdown.css',
-  'assets/css/onboarding.css',
-];
+if (!existsSync(CSS_DIR)) {
+  console.error(`[minify-css] ${CSS_DIR} not found. Run vite build first.`);
+  process.exit(1);
+}
 
-const OUT_DIR = join(ROOT, 'assets/css/dist');
-mkdirSync(OUT_DIR, { recursive: true });
+let before = 0;
+let after = 0;
 
-let totalSaved = 0;
-
-for (const relPath of CSS_FILES) {
-  const inPath  = join(ROOT, relPath);
-  const outName = relPath.replace('assets/css/', '');
-  const outPath = join(OUT_DIR, outName);
-
-  const source = readFileSync(inPath);
-  const originalSize = source.length;
-
-  const { code } = transform({
-    filename: inPath,
+for (const name of readdirSync(CSS_DIR).filter((f) => f.endsWith('.css'))) {
+  const path = join(CSS_DIR, name);
+  const source = readFileSync(path);
+  const { code, warnings } = transform({
+    filename: path,
+    errorRecovery: true,
     code: source,
     minify: true,
     sourceMap: false,
-    targets: {
-      chrome: 95,
-      firefox: 95,
-      safari: 15,
-    },
+    targets: { chrome: 95 << 16, firefox: 95 << 16, safari: 15 << 16 }
   });
-
-  writeFileSync(outPath, code);
-  const saved = originalSize - code.length;
-  totalSaved += saved;
-  console.log(`✓ ${relPath}  ${originalSize}B → ${code.length}B  (-${Math.round(saved / originalSize * 100)}%)`);
+  for (const w of warnings) console.warn(`[minify-css] ${name}:${w.loc?.line} ${w.message}`);
+  writeFileSync(path, code);
+  before += source.length;
+  after += code.length;
+  console.log(`[minify-css] ${name}: ${source.length} B -> ${code.length} B`);
 }
 
-console.log(`\n🎉 Total saved: ${(totalSaved / 1024).toFixed(1)} kB`);
+console.log(`[minify-css] total ${(before / 1024).toFixed(1)} kB -> ${(after / 1024).toFixed(1)} kB`);

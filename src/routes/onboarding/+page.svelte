@@ -91,7 +91,7 @@
       <li><a href="#brand" style="color:var(--color-neutral-fg-2);text-decoration:none;display:flex;align-items:center;gap:8px;font-weight:600;"><span style="width:22px;height:22px;border-radius:50%;background:var(--color-brand-subtle);color:var(--color-brand-primary);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;">2</span>Brand &amp; Identity</a></li>
       <li><a href="#ecosystem" style="color:var(--color-neutral-fg-2);text-decoration:none;display:flex;align-items:center;gap:8px;font-weight:600;"><span style="width:22px;height:22px;border-radius:50%;background:var(--color-brand-subtle);color:var(--color-brand-primary);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;">3</span>Our Ecosystem</a></li>
       <li><a href="#tools-sec" style="color:var(--color-neutral-fg-2);text-decoration:none;display:flex;align-items:center;gap:8px;font-weight:600;"><span style="width:22px;height:22px;border-radius:50%;background:var(--color-brand-subtle);color:var(--color-brand-primary);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;">4</span>Tools &amp; Systems</a></li>
-      <li><a href="#checklist" style="color:var(--color-brand-primary);text-decoration:none;display:flex;align-items:center;gap:8px;font-weight:700;"><span style="width:22px;height:22px;border-radius:50%;background:var(--color-brand-primary);color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;">5</span>First Week Checklist</a></li>
+      <li><a href="#checklist" style="color:var(--color-brand-primary);text-decoration:none;display:flex;align-items:center;gap:8px;font-weight:700;"><span style="width:22px;height:22px;border-radius:50%;background: var(--color-action-bg); color: var(--color-on-action);display:inline-flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;">5</span>First Week Checklist</a></li>
     </ul>
   </aside>
 
@@ -133,7 +133,7 @@
         </div>
         <div class="col-md-4">
           <div class="cl-card p-4 h-100" style="background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);">
-            <div style="color:#BD9A73;font-size:1.5rem;margin-bottom:0.5rem;"><iconify-icon icon="fluent:star-24-regular"></iconify-icon></div>
+            <div style="color:var(--color-text-warm);font-size:1.5rem;margin-bottom:0.5rem;"><iconify-icon icon="fluent:star-24-regular"></iconify-icon></div>
             <strong style="color:var(--color-neutral-fg-1);font-size:1rem;display:block;margin-bottom:0.25rem;">Our Values</strong>
             <p style="font-size:0.825rem;color:var(--color-neutral-fg-2);line-height:1.5;margin:0;">Clinical precision, human-first design, and the courage to redefine what healthcare looks like.</p>
           </div>
@@ -181,7 +181,7 @@
 
         <a href="/brand-guidelines/" class="cl-card" style="display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-lg);background:var(--color-neutral-bg-2);text-decoration:none;">
           <div style="display:flex;align-items:center;gap:12px;">
-            <div style="width:36px;height:36px;border-radius:8px;background:rgba(33,161,247,0.1);color:#21A1F7;display:flex;align-items:center;justify-content:center;font-size:1.1rem;"><iconify-icon icon="fluent:book-open-24-regular"></iconify-icon></div>
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(33,161,247,0.1);color:var(--color-text-accent);display:flex;align-items:center;justify-content:center;font-size:1.1rem;"><iconify-icon icon="fluent:book-open-24-regular"></iconify-icon></div>
             <div><strong style="color:var(--color-neutral-fg-1);font-size:0.95rem;display:block;">Brand Guidelines PDF</strong><span style="font-size:0.75rem;color:var(--color-neutral-fg-3);">Interior Design and Logo &amp; Concept booklets</span></div>
           </div>
           <iconify-icon icon="fluent:arrow-right-24-regular" style="color:var(--color-neutral-fg-2);"></iconify-icon>
@@ -189,7 +189,7 @@
 
         <a href="https://suamisihat.com.my/brand-assets/" target="_blank" rel="noopener noreferrer" class="cl-card" style="display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-lg);background:var(--color-neutral-bg-2);text-decoration:none;">
           <div style="display:flex;align-items:center;gap:12px;">
-            <div style="width:36px;height:36px;border-radius:8px;background:rgba(189,154,115,0.1);color:#BD9A73;display:flex;align-items:center;justify-content:center;font-size:1.1rem;"><iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon></div>
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(189,154,115,0.1);color:var(--color-text-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;"><iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon></div>
             <div><strong style="color:var(--color-neutral-fg-1);font-size:0.95rem;display:block;">Official Brand Assets</strong><span style="font-size:0.75rem;color:var(--color-neutral-fg-3);">Download logo files, colour swatches and typography packs</span></div>
           </div>
           <iconify-icon icon="fluent:open-24-regular" style="color:var(--color-neutral-fg-2);"></iconify-icon>
@@ -202,7 +202,7 @@
     <!-- 3. Our Ecosystem -->
     <section id="ecosystem" style="margin-bottom:3.5rem;scroll-margin-top:80px;">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:1rem;">
-        <div style="width:40px;height:40px;border-radius:8px;background:rgba(33,161,247,.08);color:#21A1F7;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">
+        <div style="width:40px;height:40px;border-radius:8px;background:rgba(33,161,247,.08);color:var(--color-text-accent);display:flex;align-items:center;justify-content:center;font-size:1.3rem;">
           <iconify-icon icon="fluent:organization-24-regular"></iconify-icon>
         </div>
         <div>
@@ -264,7 +264,7 @@
     <!-- 4. Tools & Systems -->
     <section id="tools-sec" style="margin-bottom:3.5rem;scroll-margin-top:80px;">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:1rem;">
-        <div style="width:40px;height:40px;border-radius:8px;background:rgba(189,154,115,.12);color:#BD9A73;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">
+        <div style="width:40px;height:40px;border-radius:8px;background:rgba(189,154,115,.12);color:var(--color-text-warm);display:flex;align-items:center;justify-content:center;font-size:1.3rem;">
           <iconify-icon icon="fluent:toolbox-24-regular"></iconify-icon>
         </div>
         <div>
@@ -275,7 +275,7 @@
       <div style="display:flex;flex-direction:column;gap:0.75rem;">
         <a href="https://suamisihat.myds.me" target="_blank" rel="noopener noreferrer" class="cl-card" style="display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-lg);background:var(--color-neutral-bg-2);text-decoration:none;">
           <div style="display:flex;align-items:center;gap:12px;">
-            <div style="width:36px;height:36px;border-radius:8px;background:rgba(33,161,247,0.1);color:#21A1F7;display:flex;align-items:center;justify-content:center;font-size:1.1rem;"><iconify-icon icon="fluent:gauge-24-regular"></iconify-icon></div>
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(33,161,247,0.1);color:var(--color-text-accent);display:flex;align-items:center;justify-content:center;font-size:1.1rem;"><iconify-icon icon="fluent:gauge-24-regular"></iconify-icon></div>
             <div><strong style="color:var(--color-neutral-fg-1);font-size:0.95rem;display:block;">SSNAS Dashboard</strong><span style="font-size:0.75rem;color:var(--color-neutral-fg-3);">Main internal launchpad &mdash; shared drives, apps, and tools</span></div>
           </div>
           <iconify-icon icon="fluent:open-24-regular" style="color:var(--color-neutral-fg-2);"></iconify-icon>
@@ -291,7 +291,7 @@
 
         <a href="/tools/" class="cl-card" style="display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-lg);background:var(--color-neutral-bg-2);text-decoration:none;">
           <div style="display:flex;align-items:center;gap:12px;">
-            <div style="width:36px;height:36px;border-radius:8px;background:rgba(22,163,74,0.1);color:#16A34A;display:flex;align-items:center;justify-content:center;font-size:1.1rem;"><iconify-icon icon="fluent:camera-24-regular"></iconify-icon></div>
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(22,163,74,0.1);color:var(--color-success-fg);display:flex;align-items:center;justify-content:center;font-size:1.1rem;"><iconify-icon icon="fluent:camera-24-regular"></iconify-icon></div>
             <div><strong style="color:var(--color-neutral-fg-1);font-size:0.95rem;display:block;">SS CAM &amp; Creative Tools</strong><span style="font-size:0.75rem;color:var(--color-neutral-fg-3);">Download SS CAM and other approved staff utilities</span></div>
           </div>
           <iconify-icon icon="fluent:arrow-right-24-regular" style="color:var(--color-neutral-fg-2);"></iconify-icon>
@@ -304,7 +304,7 @@
     <!-- 5. First Week Checklist -->
     <section id="checklist" style="margin-bottom:3.5rem;scroll-margin-top:80px;">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:1rem;">
-        <div style="width:40px;height:40px;border-radius:8px;background:rgba(22,163,74,.08);color:#16A34A;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">
+        <div style="width:40px;height:40px;border-radius:8px;background:rgba(22,163,74,.08);color:var(--color-success-fg);display:flex;align-items:center;justify-content:center;font-size:1.3rem;">
           <iconify-icon icon="fluent:task-list-square-ltr-24-regular"></iconify-icon>
         </div>
         <div>

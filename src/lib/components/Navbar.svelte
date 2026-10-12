@@ -1,4 +1,5 @@
 <script>
+  import { VERSION } from '$lib/version.js';
   import { page } from '$app/stores';
   import { onMount } from 'svelte';
   import { theme, initTheme, toggleTheme } from '$lib/stores/theme.js';
@@ -21,10 +22,11 @@
   const docsLinksGroup1 = [
     { label: 'Brand × Fluent 2', href: '/doc/?doc=brand-fluent2', icon: 'fluent:puzzle-piece-24-regular' },
     { label: 'Colour Composition', href: '/doc/?doc=color-composition-guide', icon: 'fluent:color-fill-24-regular' },
+    { label: 'Product Page Standard', href: '/doc/?doc=product-page-standard', icon: 'fluent:box-checkmark-24-regular' },
     { label: 'Onboarding Guide', href: '/onboarding/', icon: 'fluent:person-star-24-regular' },
     { label: "What's New", href: '/doc/?doc=changelog', icon: 'fluent:clock-arrow-download-24-regular' },
     { label: 'Roadmap', href: '/doc/?doc=roadmap', icon: 'fluent:map-drive-24-regular' },
-    { label: 'Contribution Guide', href: '/doc/?doc=contribution-guide', icon: 'fluent:heart-hand-24-regular' }
+    { label: 'Contribution Guide', href: '/doc/?doc=contribution-guide', icon: 'fluent:person-heart-24-regular' }
   ];
 
   const docsLinksGroup2 = [
@@ -182,10 +184,11 @@
 <header id="mainNavbar" class="f-navbar">
   <nav class="f-navbar-inner" aria-label="Global navigation">
     <!-- Brand -->
-    <a class="f-navbar-brand" href="/" aria-label="Home">
+    <a class="f-navbar-brand" href="/">
       <img src={isDarkMode ? "/public/brand/logos/ss-logomark-dark.svg" : "/public/brand/logos/ss-logomark-light.svg"} class="logo" alt="SuamiSihat™ Icon" aria-hidden="true" loading="eager" style="height: 28px;">
       <span class="f-navbar-brand-name">SS Design System</span>
-      <span class="f-navbar-version">v3.5.1</span>
+      <span class="f-navbar-version">v{VERSION}</span>
+      <span class="visually-hidden">home</span>
     </a>
 
     <!-- Nav links (hidden on small screens) -->
@@ -246,11 +249,11 @@
       <button 
         type="button" 
         class="f-nav-search-btn" 
-        onclick={openSearch} 
-        aria-label="Search design system (Ctrl+K)"
+        onclick={openSearch}
       >
-        <iconify-icon icon="fluent:search-20-regular" style="font-size:1.05rem;"></iconify-icon>
-        <span class="d-none d-md-inline" style="font-size:0.8rem; font-weight:500;">Search...</span>
+        <iconify-icon icon="fluent:search-20-regular" style="font-size:1.05rem;" aria-hidden="true"></iconify-icon>
+        <span class="d-md-none visually-hidden">Search</span>
+        <span class="d-none d-md-inline" style="font-size:0.8rem; font-weight:500;">Search</span>
         <kbd class="d-none d-md-inline" style="font-size:0.7rem; padding:2px 6px; border-radius:4px; background:var(--color-neutral-bg-3); border:1px solid var(--color-neutral-stroke-1); color:var(--color-neutral-fg-3);">Ctrl+K</kbd>
       </button>
 
@@ -352,7 +355,7 @@
       <!-- Footer Info -->
       <div class="f-spotlight-footer">
         <div class="d-flex align-items-center gap-3">
-          <span><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+          <span><kbd><iconify-icon icon="fluent:arrow-up-12-regular" aria-hidden="true"></iconify-icon><span class="visually-hidden">Up</span></kbd> <kbd><iconify-icon icon="fluent:arrow-down-12-regular" aria-hidden="true"></iconify-icon><span class="visually-hidden">Down</span></kbd> to navigate</span>
           <span><kbd>Enter</kbd> to select</span>
           <span><kbd>Esc</kbd> to close</span>
         </div>
@@ -414,7 +417,7 @@
         {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
       </button>
     </div>
-    <div class="f-drawer-footer">SuamiSihat™ Design System v3.5.1</div>
+    <div class="f-drawer-footer">SuamiSihat™ Design System v{VERSION}</div>
   </aside>
 {/if}
 
@@ -727,7 +730,7 @@
 
   :global([data-theme="dark"]) .f-docs-dropdown-item:hover {
     background: rgba(33,161,247,0.1);
-    color: #21A1F7;
+    color: var(--color-text-accent);
   }
 </style>
 

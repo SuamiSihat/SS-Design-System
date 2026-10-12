@@ -1,4 +1,5 @@
 <script>
+  import { VERSION } from '$lib/version.js';
   import { onMount } from 'svelte';
 
   /** @type {{ isStandbyMode?: boolean, title?: string, subtitle?: string }} */
@@ -80,8 +81,8 @@
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = p.isGold ? `rgba(247, 225, 67, ${p.alpha})` : `rgba(33, 161, 247, ${p.alpha * 0.8})`;
-        ctx.shadowColor = p.isGold ? '#F7E143' : '#21A1F7';
+        ctx.fillStyle = p.isGold ? `rgba(252, 229, 61, ${p.alpha})` : `rgba(33, 161, 247, ${p.alpha * 0.8})`;
+        ctx.shadowColor = p.isGold ? '#FCE53D' : '#21A1F7';
         ctx.shadowBlur = 10;
         ctx.fill();
       });
@@ -104,7 +105,7 @@
   <div class="f-hero-content" style="position: relative; z-index: 2; max-width: 900px; margin: 0 auto; padding: 2.5rem; background: rgba(9, 13, 22, 0.72); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 1.25rem; backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); box-shadow: 0 20px 45px rgba(0,0,0,0.5);">
     <div style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #21A1F7; background: rgba(33, 161, 247, 0.12); border: 1px solid rgba(33, 161, 247, 0.35); padding: 0.35rem 0.9rem; border-radius: 9999px; margin-bottom: 1.25rem;">
       <span style="width: 8px; height: 8px; border-radius: 50%; background: #21A1F7; display: inline-block;"></span>
-      {isStandbyMode ? 'STANDBY & REPOSITORY READY' : 'OFFICIAL DESIGN SYSTEM v3.5.1 (SVELTEKIT)'}
+      {isStandbyMode ? 'STANDBY & REPOSITORY READY' : 'OFFICIAL DESIGN SYSTEM v' + VERSION + ' (SVELTEKIT)'}
     </div>
 
     <h1 style="font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; color: #FFFFFF; line-height: 1.15; margin-bottom: 1rem; letter-spacing: -0.02em;">
@@ -116,7 +117,7 @@
 
     <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
       <a href="/components/" style="background: #21A1F7; color: #022057; font-weight: 700; padding: 0.85rem 1.75rem; border-radius: 0.5rem; text-decoration: none; box-shadow: 0 4px 14px rgba(33, 161, 247, 0.35); transition: all 0.2s ease;">
-        Explore Components →
+        Explore Components <iconify-icon icon="fluent:arrow-right-16-regular" aria-hidden="true"></iconify-icon>
       </a>
       <a href="/brand-guidelines/" style="background: rgba(255, 255, 255, 0.1); color: #FFFFFF; font-weight: 600; padding: 0.85rem 1.75rem; border-radius: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.2); text-decoration: none; backdrop-filter: blur(8px); transition: all 0.2s ease;">
         Brand Guidelines

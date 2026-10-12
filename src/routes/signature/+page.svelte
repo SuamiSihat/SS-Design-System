@@ -2,6 +2,7 @@
   import SSHero from '$lib/components/SSHero.svelte';
 
   // --- State Variables ---
+  let clientTab = $state('outlook');
   let name = $state('John Doe');
   let title = $state('Senior Operations Manager');
   let department = $state('Corporate Strategy & Digital Infrastructure');
@@ -25,7 +26,7 @@
 
   let previewMode = $state('light'); // 'light' | 'dark'
   let copiedMode = $state(''); // '' | 'rich' | 'raw'
-  let cdnBaseUrl = $state('https://assets.suamisihat.com.my');
+  let cdnBaseUrl = $state('https://assets.suamisihat.myds.me');
 
   // --- Corporate Entities ---
   const entities = {
@@ -196,17 +197,17 @@
     const ctaBannerHtml = includeCtaBanner && ctaText ? `
       <div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid #E2E8F0;">
         <a href="${ctaUrl}" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: ${brandCol}; color: #FFFFFF; font-size: 11px; font-weight: 700; text-decoration: none; padding: 7px 14px; border-radius: 4px; letter-spacing: 0.03em; text-transform: uppercase;">
-          &#9654;&nbsp; ${ctaText}
+          ${ctaText}
         </a>
       </div>` : '';
 
     const socialIconsHtml = includeSocials ? `
-      <div style="margin-top: 6px; font-size: 11px; color: ${previewMode === 'dark' ? '#94A3B8' : '#64748B'};">
+      <div style="margin-top: 6px; font-size: 11px; color: ${previewMode === 'dark' ? '#94A3B8' : '#475569'};">
         <strong style="color: ${previewMode === 'dark' ? '#6DC6EC' : brandCol};">Connect:</strong>
         <a href="${siteUrl}" style="color: ${previewMode === 'dark' ? '#21A1F7' : brandCol}; font-weight: 600; text-decoration: none; margin-right: 8px;">Website</a>
-        ${whatsapp ? `&bull; <a href="https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}" style="color: #16A34A; font-weight: 600; text-decoration: none; margin-left: 4px; margin-right: 8px;">WhatsApp</a>` : ''}
+        ${whatsapp ? `&bull; <a href="https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}" style="color: #15803D; font-weight: 600; text-decoration: none; margin-left: 4px; margin-right: 8px;">WhatsApp</a>` : ''}
         ${linkedin ? `&bull; <a href="${linkedin}" style="color: #0A66C2; font-weight: 600; text-decoration: none; margin-left: 4px; margin-right: 8px;">LinkedIn</a>` : ''}
-        ${instagram ? `&bull; <a href="${instagram}" style="color: #E1306C; font-weight: 600; text-decoration: none; margin-left: 4px;">Instagram</a>` : ''}
+        ${instagram ? `&bull; <a href="${instagram}" style="color: #C2185B; font-weight: 600; text-decoration: none; margin-left: 4px;">Instagram</a>` : ''}
       </div>` : '';
 
     const mmcBadgeHtml = mmcNo ? `<span style="display: inline-block; background: #EBF5FE; color: #043388; font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 3px; margin-left: 6px; border: 1px solid #BFDBFE;">${mmcNo}</span>` : '';
@@ -237,10 +238,10 @@
       <div style="font-size: 11.5px; color: ${previewMode === 'dark' ? '#CBD5E1' : '#475569'}; font-weight: 600; margin-bottom: 6px;">
         ${selectedEntity.name} (${selectedEntity.code})
       </div>
-      <div style="font-size: 12px; color: ${previewMode === 'dark' ? '#94A3B8' : '#64748B'}; margin-bottom: 4px;">
+      <div style="font-size: 12px; color: ${previewMode === 'dark' ? '#94A3B8' : '#475569'}; margin-bottom: 4px;">
         <strong style="color: ${primaryTextColor};">T:</strong> ${phone} &nbsp;|&nbsp; <strong style="color: ${primaryTextColor};">E:</strong> <a href="mailto:${email}" style="color: ${previewMode === 'dark' ? '#21A1F7' : brandCol}; font-weight: 600; text-decoration: none;">${email}</a>
       </div>
-      <div style="font-size: 12px; color: ${previewMode === 'dark' ? '#94A3B8' : '#64748B'};">
+      <div style="font-size: 12px; color: ${previewMode === 'dark' ? '#94A3B8' : '#475569'};">
         <strong style="color: ${primaryTextColor};">W:</strong> <a href="${siteUrl}" style="color: ${previewMode === 'dark' ? '#21A1F7' : brandCol}; font-weight: 600; text-decoration: none;">${website}</a> &nbsp;|&nbsp; ${location}
       </div>
       ${socialIconsHtml}
@@ -333,13 +334,13 @@
   </tr>
   <tr>
     <td style="padding-top: 10px; border-top: 2px solid ${brandCol};">
-      <div style="font-size: 11.5px; color: ${previewMode === 'dark' ? '#94A3B8' : '#64748B'}; margin-bottom: 6px;">
+      <div style="font-size: 11.5px; color: ${previewMode === 'dark' ? '#94A3B8' : '#475569'}; margin-bottom: 6px;">
         <span style="font-weight: 700; color: ${primaryTextColor};">${selectedEntity.shortName}</span> &bull; ${department || 'Corporate Division'} ${mmcNo ? `&bull; ${mmcNo}` : ''}
       </div>
       <div style="font-size: 12px; color: ${previewMode === 'dark' ? '#CBD5E1' : '#334155'}; line-height: 1.6;">
-        <span style="background: ${previewMode === 'dark' ? '#1E293B' : '#F1F5F9'}; padding: 3px 8px; border-radius: 4px; font-weight: 600; display: inline-block; margin-right: 4px; margin-bottom: 4px;">&#9742; ${phone}</span>
-        <span style="background: ${previewMode === 'dark' ? '#1E293B' : '#F1F5F9'}; padding: 3px 8px; border-radius: 4px; font-weight: 600; display: inline-block; margin-right: 4px; margin-bottom: 4px;">&#9993; <a href="mailto:${email}" style="color: ${previewMode === 'dark' ? '#21A1F7' : brandCol}; text-decoration: none;">${email}</a></span>
-        <span style="background: ${previewMode === 'dark' ? '#1E293B' : '#F1F5F9'}; padding: 3px 8px; border-radius: 4px; font-weight: 600; display: inline-block; margin-bottom: 4px;">&#127760; <a href="${siteUrl}" style="color: ${previewMode === 'dark' ? '#21A1F7' : brandCol}; text-decoration: none;">${website}</a></span>
+        <span style="background: ${previewMode === 'dark' ? '#1E293B' : '#F1F5F9'}; padding: 3px 8px; border-radius: 4px; font-weight: 600; display: inline-block; margin-right: 4px; margin-bottom: 4px;">Tel: ${phone}</span>
+        <span style="background: ${previewMode === 'dark' ? '#1E293B' : '#F1F5F9'}; padding: 3px 8px; border-radius: 4px; font-weight: 600; display: inline-block; margin-right: 4px; margin-bottom: 4px;">Email: <a href="mailto:${email}" style="color: ${previewMode === 'dark' ? '#21A1F7' : brandCol}; text-decoration: none;">${email}</a></span>
+        <span style="background: ${previewMode === 'dark' ? '#1E293B' : '#F1F5F9'}; padding: 3px 8px; border-radius: 4px; font-weight: 600; display: inline-block; margin-bottom: 4px;">Web: <a href="${siteUrl}" style="color: ${previewMode === 'dark' ? '#21A1F7' : brandCol}; text-decoration: none;">${website}</a></span>
       </div>
       ${socialIconsHtml}
       ${ctaBannerHtml}
@@ -365,7 +366,7 @@
       <div style="font-size: 13.5px; font-weight: 700; color: ${primaryTextColor};">
         ${name} <span style="font-weight: 500; color: ${previewMode === 'dark' ? '#6DC6EC' : brandCol}; font-size: 12px;">&bull; ${title}</span>
       </div>
-      <div style="font-size: 11px; color: ${previewMode === 'dark' ? '#94A3B8' : '#64748B'};">
+      <div style="font-size: 11px; color: ${previewMode === 'dark' ? '#94A3B8' : '#475569'};">
         <strong style="color: ${primaryTextColor};">${selectedEntity.shortName}</strong> &nbsp;|&nbsp; T: ${phone} &nbsp;|&nbsp; E: <a href="mailto:${email}" style="color: ${previewMode === 'dark' ? '#21A1F7' : brandCol}; text-decoration: none; font-weight: 600;">${email}</a> &nbsp;|&nbsp; <a href="${siteUrl}" style="color: ${previewMode === 'dark' ? '#21A1F7' : brandCol}; text-decoration: none;">${website}</a>
       </div>
     </td>
@@ -687,7 +688,7 @@
           style="transition: background-color 0.2s ease, border-color 0.2s ease;"
         >
           <!-- Email Chrome Bar -->
-          <div style="background: {previewMode === 'dark' ? '#0F172A' : '#F1F5F9'}; padding: 10px 16px; border-bottom: 1px solid {previewMode === 'dark' ? '#334155' : '#E2E8F0'}; font-size: 0.78rem; color: {previewMode === 'dark' ? '#94A3B8' : '#64748B'};">
+          <div style="background: {previewMode === 'dark' ? '#0F172A' : '#F1F5F9'}; padding: 10px 16px; border-bottom: 1px solid {previewMode === 'dark' ? '#334155' : '#E2E8F0'}; font-size: 0.78rem; color: {previewMode === 'dark' ? '#94A3B8' : '#475569'};">
             <div class="d-flex align-items-center justify-content-between mb-1">
               <span><strong>From:</strong> {name} &lt;{email}&gt;</span>
               <span class="badge" style="background: {selectedEntity.color}; color: #FFFFFF;">{selectedEntity.code}</span>
@@ -743,18 +744,18 @@
 
           <ul class="nav nav-tabs border-bottom-0 mb-2" id="clientTabs" role="tablist" style="font-size: 0.78rem;">
             <li class="nav-item" role="presentation">
-              <button class="nav-link active py-1 px-3" id="outlook-tab" data-bs-toggle="tab" data-bs-target="#outlook-pane" type="button" role="tab">Outlook (Desktop/Web)</button>
+              <button class="nav-link py-1 px-3 ss-client-tab" class:active={clientTab === 'outlook'} id="outlook-tab" aria-controls="outlook-pane" aria-selected={clientTab === 'outlook'} onclick={() => (clientTab = 'outlook')} type="button" role="tab">Outlook (Desktop/Web)</button>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link py-1 px-3" id="gmail-tab" data-bs-toggle="tab" data-bs-target="#gmail-pane" type="button" role="tab">Gmail &amp; Workspace</button>
+              <button class="nav-link py-1 px-3 ss-client-tab" class:active={clientTab === 'gmail'} id="gmail-tab" aria-controls="gmail-pane" aria-selected={clientTab === 'gmail'} onclick={() => (clientTab = 'gmail')} type="button" role="tab">Gmail &amp; Workspace</button>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link py-1 px-3" id="apple-tab" data-bs-toggle="tab" data-bs-target="#apple-pane" type="button" role="tab">Apple Mail (macOS)</button>
+              <button class="nav-link py-1 px-3 ss-client-tab" class:active={clientTab === 'apple'} id="apple-tab" aria-controls="apple-pane" aria-selected={clientTab === 'apple'} onclick={() => (clientTab = 'apple')} type="button" role="tab">Apple Mail (macOS)</button>
             </li>
           </ul>
 
           <div class="tab-content" id="clientTabContent" style="color: var(--color-neutral-fg-2); line-height: 1.5; font-size: 0.8rem;">
-            <div class="tab-pane fade show active" id="outlook-pane" role="tabpanel" aria-labelledby="outlook-tab">
+            <div class="tab-pane" class:d-block={clientTab === 'outlook'} hidden={clientTab !== 'outlook'} id="outlook-pane" role="tabpanel" aria-labelledby="outlook-tab">
               <ol class="mb-0 ps-3">
                 <li>Click <strong>"Copy Formatted Signature (Clipboard)"</strong> above.</li>
                 <li>Open Microsoft Outlook &rarr; go to <strong>File &rarr; Options &rarr; Mail &rarr; Signatures...</strong> (or Outlook Settings &rarr; Accounts &rarr; Signatures on Web).</li>
@@ -762,16 +763,16 @@
                 <li>Select your new signature for <em>"New messages"</em> and <em>"Replies/forwards"</em>. Save and close.</li>
               </ol>
             </div>
-            <div class="tab-pane fade" id="gmail-pane" role="tabpanel" aria-labelledby="gmail-tab">
+            <div class="tab-pane" class:d-block={clientTab === 'gmail'} hidden={clientTab !== 'gmail'} id="gmail-pane" role="tabpanel" aria-labelledby="gmail-tab">
               <ol class="mb-0 ps-3">
                 <li>Click <strong>"Copy Formatted Signature (Clipboard)"</strong> above.</li>
-                <li>Open Gmail in your web browser &rarr; click the gear icon &#9881; &rarr; <strong>See all settings</strong>.</li>
+                <li>Open Gmail in your web browser &rarr; click the Settings (gear) icon &rarr; <strong>See all settings</strong>.</li>
                 <li>Scroll down to the <strong>Signature</strong> section &rarr; click <strong>+ Create new</strong>.</li>
                 <li>Paste (<kbd>Ctrl+V</kbd> / <kbd>Cmd+V</kbd>) into the text editor box.</li>
                 <li>Set Signature defaults to your new signature and click <strong>Save Changes</strong> at the bottom of the page.</li>
               </ol>
             </div>
-            <div class="tab-pane fade" id="apple-pane" role="tabpanel" aria-labelledby="apple-tab">
+            <div class="tab-pane" class:d-block={clientTab === 'apple'} hidden={clientTab !== 'apple'} id="apple-pane" role="tabpanel" aria-labelledby="apple-tab">
               <ol class="mb-0 ps-3">
                 <li>Click <strong>"Copy Formatted Signature (Clipboard)"</strong> above.</li>
                 <li>Open Apple Mail on macOS &rarr; <strong>Mail &rarr; Settings (Preferences) &rarr; Signatures</strong>.</li>

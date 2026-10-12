@@ -51,7 +51,7 @@ To prevent Fluent 2 from visually dominating SuamiSihat's distinct clinical-masc
 | **Brand Personality** | **SuamiSihat™** | Confident, clinical, masculine, premium, discreet. |
 | **Logo & Marks** | **SuamiSihat™** | Governed by background brightness rules (HSL L ≥ 50% vs L < 50%). |
 | **Brand Palette & Accents** | **SuamiSihat™** | Prussian Blue (`#022057`), SS Blue (`#043388`), Azure (`#21A1F7`), Banana CTA (`#FCE53D`). |
-| **Typography Stack** | **SuamiSihat™** | Outfit (Headings/Display) + Inter (Body & UI) with 4-Tier text hierarchy. |
+| **Typography Stack** | **SuamiSihat™** | Poppins (display), Montserrat (subtitles), Helvetica Neue in print and Inter on the web (body), per Brand System section 04, with the 4-tier text hierarchy. |
 | **Photography & Art Direction** | **SuamiSihat™** | Studio-lit packaging, dark-mode acrylic stages, high-contrast packshots. |
 | **Voice & Tone** | **SuamiSihat™** | Authoritative medical backing, respectful, solution-oriented, non-stigmatizing. |
 | **Component Anatomy** | **Fluent 2** | Standardized compound slots (icon start/end, content, action, badge). |
@@ -59,7 +59,7 @@ To prevent Fluent 2 from visually dominating SuamiSihat's distinct clinical-masc
 | **Focus Rings & A11y** | **Fluent 2 + WCAG** | High-contrast 2px offset outline (`var(--color-brand-primary)`). WCAG 2.2 AA compliant. |
 | **Motion Principles** | **Fluent 2** | Fluent standard easing curves (`cubic-bezier(0.1, 0.9, 0.2, 1.0)` / fast 150ms–250ms). |
 | **Responsive Grid** | **Fluent 2** | 12-column adaptive layout, 8px base spatial grid (`--f-space-*`). |
-| **Semantic Token Methodology** | **Fluent 2 adapted for SS** | Global Tokens ➔ Semantic Alias Tokens ➔ Component Tokens. |
+| **Semantic Token Methodology** | **Fluent 2 adapted for SS** | Global Tokens → Semantic Alias Tokens → Component Tokens. |
 
 ---
 
@@ -172,7 +172,7 @@ The design system enforces four levels of text emphasis across light and dark in
 
 Kinetic motion in SuamiSihat interfaces must embody biological vitality and technical precision:
 
-- **Hero Banner Standard (`ss-hero`)**: Features a 2D interactive canvas wave (`#heroWaveCanvas`) with floating Mars `♂` symbols, radiant Azure `#21A1F7` & Gold `#F7E143` energy nodes, and gentle cursor parallax.
+- **Hero Banner Standard (`ss-hero`)**: Features a 2D interactive canvas wave (`#heroWaveCanvas`) with floating Mars (male sign) symbols, radiant Azure `#21A1F7` & Gold `#FCE53D` energy nodes, and gentle cursor parallax.
 - **Fluent Motion Timing**:
   - Fast feedback (button press, hover): `150ms cubic-bezier(0.1, 0.9, 0.2, 1.0)`
   - Medium transitions (drawers, modals, dropdowns): `250ms cubic-bezier(0.16, 1, 0.3, 1)`
@@ -188,7 +188,7 @@ When generating new pages, sub-products, or campaigns, include this concise, non
 ```markdown
 ### Design System — Mandatory Source of Truth
 This page must be designed and built using the **SuamiSihat™ Brand & Design System** (`assets.suamisihat.myds.me`):
-- **Visual Identity (SuamiSihat)**: Use established brand colours (`#043388`, `#022057`, `#21A1F7`, `#F7E143`), Outfit/Inter typography, 4-tier text contrast hierarchy (`--text-strong`, `--text-primary`, `--text-secondary`, `--text-disabled`), and brightness-aware SVG logo selection.
+- **Visual Identity (SuamiSihat)**: Use established brand colours (`#043388`, `#022057`, `#21A1F7`, `#FCE53D`) through the contrast-safe tokens, Fluent System Icons (no emoji), Poppins/Inter typography, 4-tier text contrast hierarchy (`--text-strong`, `--text-primary`, `--text-secondary`, `--text-disabled`), and brightness-aware SVG logo selection.
 - **Interaction Layer (Fluent 2)**: All components, states (`hover`, `pressed`, `focus`), elevation levels, and spatial layouts follow Fluent 2 component specifications and accessibility contracts.
 - **System Precedence**: SuamiSihat Brand DNA > Design Tokens > Fluent 2 Component Anatomy > Page Content.
 ```

@@ -450,7 +450,7 @@ class SSColors {
         <li><a href="#subbrand" class="cl-sidebar-link"><iconify-icon icon="fluent:layer-diagonal-24-regular"></iconify-icon> Sub-Brands</a></li>
         <li><a href="#icons" class="cl-sidebar-link"><iconify-icon icon="fluent:shapes-24-regular"></iconify-icon> Icons & Usage</a></li>
         <li><a href="#downloads" class="cl-sidebar-link"><iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon> Download Kits</a></li>
-        <li><a href="#client-representation" class="cl-sidebar-link"><iconify-icon icon="fluent:shield-person-24-regular"></iconify-icon> Client Dignity</a></li>
+        <li><a href="#client-representation" class="cl-sidebar-link"><iconify-icon icon="fluent:person-shield-24-regular"></iconify-icon> Client Dignity</a></li>
         <li><a href="#tokens-export" class="cl-sidebar-link"><iconify-icon icon="fluent:code-24-regular"></iconify-icon> Tokens Export</a></li>
       </ul>
     </aside>
@@ -510,7 +510,7 @@ class SSColors {
           <div style="background: linear-gradient(135deg, rgba(2,32,87,0.06), rgba(4,51,136,0.03)); border: 1px solid rgba(4,51,136,0.18); border-radius: var(--f-radius-xl); padding: 1.5rem; height: 100%; box-shadow: var(--f-shadow-2);">
             <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom: 1rem;">
               <div style="display:flex; align-items:center; gap: 8px;">
-                <span style="width: 28px; height: 28px; border-radius: 6px; background: var(--color-brand-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem;">SS</span>
+                <span style="width: 28px; height: 28px; border-radius: 6px; background: var(--color-action-bg); color: var(--color-on-action); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem;">SS</span>
                 <strong style="color: var(--color-neutral-fg-1); font-size: 1rem;">Layer 1: SuamiSihat&trade;</strong>
               </div>
               <span class="ss-badge ss-badge-brand" style="font-size: 0.7rem;">Brand Identity</span>
@@ -533,7 +533,7 @@ class SSColors {
           <div style="background: linear-gradient(135deg, rgba(33,161,247,0.06), rgba(33,161,247,0.02)); border: 1px solid rgba(33,161,247,0.22); border-radius: var(--f-radius-xl); padding: 1.5rem; height: 100%; box-shadow: var(--f-shadow-2);">
             <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom: 1rem;">
               <div style="display:flex; align-items:center; gap: 8px;">
-                <span style="width: 28px; height: 28px; border-radius: 6px; background: #21A1F7; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem;">F2</span>
+                <span style="width: 28px; height: 28px; border-radius: 6px; background: var(--color-action-bg); color: var(--color-on-action); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem;">F2</span>
                 <strong style="color: var(--color-neutral-fg-1); font-size: 1rem;">Layer 2: Fluent 2</strong>
               </div>
               <span class="ss-badge ss-badge-neutral" style="font-size: 0.7rem;">Interaction Logic</span>
@@ -542,11 +542,11 @@ class SSColors {
               Defines <em>how the interface works, behaves, scales, and responds</em>.
             </p>
             <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; font-size: 0.8rem; color: var(--color-neutral-fg-1);">
-              <li style="display:flex; align-items:center; gap: 8px;"><iconify-icon icon="fluent:checkmark-circle-16-filled" style="color:#21A1F7;"></iconify-icon> Standard component anatomy, slots &amp; compound states</li>
-              <li style="display:flex; align-items:center; gap: 8px;"><iconify-icon icon="fluent:checkmark-circle-16-filled" style="color:#21A1F7;"></iconify-icon> State machine: Rest, Hover, Pressed, Selected, Focused, Disabled</li>
-              <li style="display:flex; align-items:center; gap: 8px;"><iconify-icon icon="fluent:checkmark-circle-16-filled" style="color:#21A1F7;"></iconify-icon> WCAG 2.2 AA accessibility, focus visible rings &amp; keyboard flow</li>
-              <li style="display:flex; align-items:center; gap: 8px;"><iconify-icon icon="fluent:checkmark-circle-16-filled" style="color:#21A1F7;"></iconify-icon> Motion physics, standard cubic-bezier curves (150ms&ndash;250ms)</li>
-              <li style="display:flex; align-items:center; gap: 8px;"><iconify-icon icon="fluent:checkmark-circle-16-filled" style="color:#21A1F7;"></iconify-icon> Semantic design token inheritance &amp; 8px spatial grid</li>
+              <li style="display:flex; align-items:center; gap: 8px;"><iconify-icon icon="fluent:checkmark-circle-16-filled" style="color:var(--color-text-accent);"></iconify-icon> Standard component anatomy, slots &amp; compound states</li>
+              <li style="display:flex; align-items:center; gap: 8px;"><iconify-icon icon="fluent:checkmark-circle-16-filled" style="color:var(--color-text-accent);"></iconify-icon> State machine: Rest, Hover, Pressed, Selected, Focused, Disabled</li>
+              <li style="display:flex; align-items:center; gap: 8px;"><iconify-icon icon="fluent:checkmark-circle-16-filled" style="color:var(--color-text-accent);"></iconify-icon> WCAG 2.2 AA accessibility, focus visible rings &amp; keyboard flow</li>
+              <li style="display:flex; align-items:center; gap: 8px;"><iconify-icon icon="fluent:checkmark-circle-16-filled" style="color:var(--color-text-accent);"></iconify-icon> Motion physics, standard cubic-bezier curves (150ms&ndash;250ms)</li>
+              <li style="display:flex; align-items:center; gap: 8px;"><iconify-icon icon="fluent:checkmark-circle-16-filled" style="color:var(--color-text-accent);"></iconify-icon> Semantic design token inheritance &amp; 8px spatial grid</li>
             </ul>
           </div>
         </div>
@@ -757,7 +757,7 @@ class SSColors {
               >
                 <!-- Color Bar Header -->
                 <div style="background:{color.hex}; height:90px; padding:0.75rem 1rem; display:flex; justify-content:space-between; align-items:flex-start; position:relative;">
-                  <span style="font-size:0.7rem; font-weight:700; color:{color.textColor}; background:rgba(0,0,0,0.25); padding:2px 8px; border-radius:4px; backdrop-filter:blur(4px);">
+                  <span style="font-size:0.7rem; font-weight:700; color:#1C1C1C; background:rgba(255,255,255,0.9); padding:2px 8px; border-radius:4px;">
                     {color.pantone}
                   </span>
                   <button 
@@ -898,31 +898,31 @@ class SSColors {
       <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(110px, 1fr));border-radius:var(--f-radius-lg);overflow:hidden;border:1px solid var(--color-neutral-stroke-1);box-shadow:var(--f-shadow-4);margin-bottom:1rem;">
         <button type="button" onclick={() => copyHex('#000000', 'Full Black (BG only)')} style="background:#000000;color:#FFFFFF;border:none;padding:1rem 0.5rem;text-align:center;cursor:pointer;">
           <div style="font-size:0.72rem;font-weight:700;">Full Black</div>
-          <div style="font-size:0.68rem;opacity:0.8;">#000000 (BG)</div>
+          <div style="font-size:0.68rem;">#000000 (BG)</div>
         </button>
         <button type="button" onclick={() => copyHex('#3C3C3B', 'Grey 90')} style="background:#3C3C3B;color:#FFFFFF;border:none;border-left:1px solid rgba(255,255,255,0.15);padding:1rem 0.5rem;text-align:center;cursor:pointer;">
           <div style="font-size:0.72rem;font-weight:700;">Grey 90</div>
-          <div style="font-size:0.68rem;opacity:0.8;">#3C3C3B</div>
+          <div style="font-size:0.68rem;">#3C3C3B</div>
         </button>
         <button type="button" onclick={() => copyHex('#575756', 'Grey 80')} style="background:#575756;color:#FFFFFF;border:none;padding:1rem 0.5rem;text-align:center;cursor:pointer;">
           <div style="font-size:0.72rem;font-weight:700;">Grey 80</div>
-          <div style="font-size:0.68rem;opacity:0.8;">#575756</div>
+          <div style="font-size:0.68rem;">#575756</div>
         </button>
         <button type="button" onclick={() => copyHex('#666666', 'Grey 60')} style="background:#666666;color:#FFFFFF;border:none;padding:1rem 0.5rem;text-align:center;cursor:pointer;">
           <div style="font-size:0.72rem;font-weight:700;">Grey 60</div>
-          <div style="font-size:0.68rem;opacity:0.8;">#666666</div>
+          <div style="font-size:0.68rem;">#666666</div>
         </button>
-        <button type="button" onclick={() => copyHex('#999999', 'Grey 40')} style="background:#999999;color:#FFFFFF;border:none;padding:1rem 0.5rem;text-align:center;cursor:pointer;">
+        <button type="button" onclick={() => copyHex('#999999', 'Grey 40')} style="background:#999999;color:#1C1C1C;border:none;padding:1rem 0.5rem;text-align:center;cursor:pointer;">
           <div style="font-size:0.72rem;font-weight:700;">Grey 40</div>
-          <div style="font-size:0.68rem;opacity:0.8;">#999999</div>
+          <div style="font-size:0.68rem;">#999999</div>
         </button>
         <button type="button" onclick={() => copyHex('#CCCCCC', 'Grey 20')} style="background:#CCCCCC;color:#1C1C1C;border:none;padding:1rem 0.5rem;text-align:center;cursor:pointer;">
           <div style="font-size:0.72rem;font-weight:700;">Grey 20</div>
-          <div style="font-size:0.68rem;opacity:0.8;">#CCCCCC</div>
+          <div style="font-size:0.68rem;">#CCCCCC</div>
         </button>
         <button type="button" onclick={() => copyHex('#FFFFFF', 'White')} style="background:#FFFFFF;color:#1C1C1C;border:none;border-left:1px solid var(--color-neutral-stroke-1);padding:1rem 0.5rem;text-align:center;cursor:pointer;">
           <div style="font-size:0.72rem;font-weight:700;">White</div>
-          <div style="font-size:0.68rem;opacity:0.8;">#FFFFFF</div>
+          <div style="font-size:0.68rem;">#FFFFFF</div>
         </button>
       </div>
     </section>
@@ -955,12 +955,12 @@ class SSColors {
               </p>
 
               <!-- Mini Live UI Component Preview -->
-              <div style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:var(--f-radius-lg);padding:var(--f-space-4);margin-bottom:var(--f-space-4);margin-top:auto;">
+              <div class="ss-surface-light" style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:var(--f-radius-lg);padding:var(--f-space-4);margin-bottom:var(--f-space-4);margin-top:auto;">
                 <div style="background:#FFFFFF;border:1px solid rgba(4,51,136,0.12);border-radius:var(--f-radius-md);padding:var(--f-space-3);box-shadow:0 2px 8px rgba(0,0,0,0.04);">
                   <div style="font-size:0.72rem;font-weight:700;color:#022057;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:2px;">Consultation</div>
                   <div style="font-size:0.875rem;font-weight:700;color:#1C1C1C;margin-bottom:4px;">Men's Hormone Therapy</div>
                   <div style="font-size:0.75rem;color:#525252;line-height:1.4;margin-bottom:var(--f-space-3);">Doctor-led clinical evaluation with personalized testosterone recovery protocols.</div>
-                  <button type="button" style="background:#21A1F7;color:#FFFFFF;font-weight:700;font-size:0.72rem;padding:6px 14px;border:none;border-radius:var(--f-radius-sm);display:inline-flex;align-items:center;gap:4px;cursor:default;">
+                  <button type="button" style="background:var(--color-action-bg);color:var(--color-on-action);font-weight:700;font-size:0.72rem;padding:6px 14px;border:none;border-radius:var(--f-radius-sm);display:inline-flex;align-items:center;gap:4px;cursor:default;">
                     <iconify-icon icon="fluent:calendar-ltr-24-filled" style="font-size:0.85rem;"></iconify-icon> BOOK APPOINTMENT
                   </button>
                 </div>
@@ -987,7 +987,7 @@ class SSColors {
             </div>
             <div style="padding:var(--f-space-5);flex:1;display:flex;flex-direction:column;">
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--f-space-2);">
-                <span class="ss-badge ss-badge-brand" style="font-size:0.68rem;background:rgba(33,161,247,0.12);color:var(--ss-azure);">Signature Dark</span>
+                <span class="ss-badge ss-badge-brand" style="font-size:0.68rem;background:rgba(33,161,247,0.12);color:var(--color-text-accent);">Signature Dark</span>
                 <span style="font-size:0.72rem;color:var(--color-neutral-fg-3);font-weight:600;">Executive &amp; VIP Portals</span>
               </div>
               <h3 style="font-size:1.05rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:var(--f-space-2);">The Executive Discretion</h3>
@@ -996,12 +996,12 @@ class SSColors {
               </p>
 
               <!-- Mini Live UI Component Preview -->
-              <div style="background:#090D16;border:1px solid rgba(255,255,255,0.1);border-radius:var(--f-radius-lg);padding:var(--f-space-4);margin-bottom:var(--f-space-4);margin-top:auto;">
+              <div class="ss-surface-dark" style="background:#090D16;border:1px solid rgba(255,255,255,0.1);border-radius:var(--f-radius-lg);padding:var(--f-space-4);margin-bottom:var(--f-space-4);margin-top:auto;">
                 <div style="background:#0F172A;border:1px solid rgba(255,255,255,0.12);border-radius:var(--f-radius-md);padding:var(--f-space-3);box-shadow:0 4px 16px rgba(0,0,0,0.4);">
                   <div style="font-size:0.72rem;font-weight:700;color:#6DC6EC;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:2px;">Confidential VIP</div>
                   <div style="font-size:0.875rem;font-weight:700;color:#FFFFFF;margin-bottom:4px;">Executive Wellness Suite</div>
                   <div style="font-size:0.75rem;color:#ABABAB;line-height:1.4;margin-bottom:var(--f-space-3);">Private physician concierge with comprehensive discreet biomarkers.</div>
-                  <button type="button" style="background:#21A1F7;color:#FFFFFF;font-weight:700;font-size:0.72rem;padding:6px 14px;border:none;border-radius:var(--f-radius-sm);display:inline-flex;align-items:center;gap:4px;cursor:default;box-shadow:0 0 12px rgba(33,161,247,0.4);">
+                  <button type="button" style="background:var(--color-action-bg);color:var(--color-on-action);font-weight:700;font-size:0.72rem;padding:6px 14px;border:none;border-radius:var(--f-radius-sm);display:inline-flex;align-items:center;gap:4px;cursor:default;box-shadow:0 0 12px rgba(33,161,247,0.4);">
                     <iconify-icon icon="fluent:shield-checkmark-24-filled" style="font-size:0.85rem;"></iconify-icon> ACCESS PORTAL
                   </button>
                 </div>
@@ -1028,7 +1028,7 @@ class SSColors {
             </div>
             <div style="padding:var(--f-space-5);flex:1;display:flex;flex-direction:column;">
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--f-space-2);">
-                <span class="ss-badge ss-badge-brand" style="font-size:0.68rem;background:rgba(189,154,115,0.15);color:#8A6538;border-color:rgba(189,154,115,0.3);">Trust &amp; Warmth</span>
+                <span class="ss-badge ss-badge-brand" style="font-size:0.68rem;background:rgba(189,154,115,0.15);color:var(--color-text-warm);border-color:rgba(189,154,115,0.3);">Trust &amp; Warmth</span>
                 <span style="font-size:0.72rem;color:var(--color-neutral-fg-3);font-weight:600;">Fertility &amp; Doctor Trust</span>
               </div>
               <h3 style="font-size:1.05rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:var(--f-space-2);">The Clinical Warmth</h3>
@@ -1037,15 +1037,15 @@ class SSColors {
               </p>
 
               <!-- Mini Live UI Component Preview -->
-              <div style="background:#FDFCFB;border:1px solid #EFEAE4;border-radius:var(--f-radius-lg);padding:var(--f-space-4);margin-bottom:var(--f-space-4);margin-top:auto;">
+              <div class="ss-surface-light" style="background:#FDFCFB;border:1px solid #EFEAE4;border-radius:var(--f-radius-lg);padding:var(--f-space-4);margin-bottom:var(--f-space-4);margin-top:auto;">
                 <div style="background:#FFFFFF;border:1px solid rgba(189,154,115,0.25);border-radius:var(--f-radius-md);padding:var(--f-space-3);box-shadow:0 2px 8px rgba(189,154,115,0.06);">
                   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
                     <div style="font-size:0.72rem;font-weight:700;color:#022057;text-transform:uppercase;letter-spacing:0.04em;">Fertility Care</div>
-                    <span style="font-size:0.68rem;font-weight:700;background:rgba(189,154,115,0.15);color:#8A6538;padding:2px 6px;border-radius:4px;">⭐ 4.9 Certified</span>
+                    <span style="font-size:0.68rem;font-weight:700;background:rgba(189,154,115,0.15);color:var(--color-text-warm);padding:2px 6px;border-radius:4px;"><iconify-icon icon="fluent:star-12-filled" aria-hidden="true"></iconify-icon> 4.9 Certified</span>
                   </div>
                   <div style="font-size:0.875rem;font-weight:700;color:#1C1C1C;margin-bottom:4px;">Men's Reproductive Health</div>
                   <div style="font-size:0.75rem;color:#525252;line-height:1.4;margin-bottom:var(--f-space-3);">Compassionate specialist consultations with advanced semen analysis.</div>
-                  <button type="button" style="background:#21A1F7;color:#FFFFFF;font-weight:700;font-size:0.72rem;padding:6px 14px;border:none;border-radius:var(--f-radius-sm);display:inline-flex;align-items:center;gap:4px;cursor:default;">
+                  <button type="button" style="background:var(--color-action-bg);color:var(--color-on-action);font-weight:700;font-size:0.72rem;padding:6px 14px;border:none;border-radius:var(--f-radius-sm);display:inline-flex;align-items:center;gap:4px;cursor:default;">
                     <iconify-icon icon="fluent:calendar-star-24-filled" style="font-size:0.85rem;"></iconify-icon> SCHEDULE CONSULTATION
                   </button>
                 </div>
@@ -1089,8 +1089,8 @@ class SSColors {
                 </div>
                 <div style="background:var(--color-neutral-bg-1); padding:1rem; border-radius:var(--f-radius-lg); border:1px solid var(--color-neutral-stroke-1);">
                   <div style="font-size:0.75rem; font-weight:700; color:var(--color-brand-primary); margin-bottom:4px;">10% Kinetic Vitality</div>
-                  <div style="font-size:0.825rem; color:var(--color-neutral-fg-1); font-weight:600; margin-bottom:4px;">Interactive Mars ♂ Particles</div>
-                  <div style="font-size:0.75rem; color:var(--color-neutral-fg-3);">Interactive canvas wave (<code>.hero-wave-canvas</code>) with radiant Azure (<code>#21A1F7</code>) &amp; Gold (<code>#F7E143</code>) nodes and cursor tracking.</div>
+                  <div style="font-size:0.825rem; color:var(--color-neutral-fg-1); font-weight:600; margin-bottom:4px;">Interactive Mars Particles</div>
+                  <div style="font-size:0.75rem; color:var(--color-neutral-fg-3);">Interactive canvas wave (<code>.hero-wave-canvas</code>) with radiant Azure (<code>#21A1F7</code>) &amp; Gold (<code>#FCE53D</code>) nodes and cursor tracking.</div>
                 </div>
               </div>
               <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; background:var(--color-brand-subtle); padding:0.875rem 1.25rem; border-radius:var(--f-radius-md);">
@@ -1374,6 +1374,7 @@ class SSColors {
         <!-- Stage with Big Logo on Left, Lorem Ipsum on Right -->
         <div
           id="logomarkStage"
+          class={logomarkMode === 'dark' ? 'ss-surface-dark' : 'ss-surface-light'}
           style="background:{logomarkMode === 'dark' ? '#022057' : '#FCFAF6'};padding:3rem 2.5rem;display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:center;transition:background 0.3s ease;min-height:220px;"
         >
           <!-- Left: Big Standalone Logomark Icon -->
@@ -1424,7 +1425,7 @@ class SSColors {
       <div class="row g-4 mb-4">
         <div class="col-md-6">
           <div style="background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-top:3px solid #16A34A;border-radius:var(--f-radius-xl);padding:1.5rem;box-shadow:var(--f-shadow-4);height:100%;">
-            <div style="font-weight:700;color:#16A34A;margin-bottom:0.75rem;display:flex;align-items:center;gap:6px;">
+            <div style="font-weight:700;color:var(--color-success-fg);margin-bottom:0.75rem;display:flex;align-items:center;gap:6px;">
               <iconify-icon icon="fluent:checkmark-circle-24-filled" style="font-size:1.1rem;"></iconify-icon> Please Do
             </div>
             <ul style="margin:0;padding-left:1.25rem;font-size:0.825rem;color:var(--color-neutral-fg-2);line-height:1.7;">
@@ -1438,7 +1439,7 @@ class SSColors {
         </div>
         <div class="col-md-6">
           <div style="background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-top:3px solid #DC2626;border-radius:var(--f-radius-xl);padding:1.5rem;box-shadow:var(--f-shadow-4);height:100%;">
-            <div style="font-weight:700;color:#DC2626;margin-bottom:0.75rem;display:flex;align-items:center;gap:6px;">
+            <div style="font-weight:700;color:var(--color-error-fg);margin-bottom:0.75rem;display:flex;align-items:center;gap:6px;">
               <iconify-icon icon="fluent:dismiss-circle-24-filled" style="font-size:1.1rem;"></iconify-icon> Please Don't
             </div>
             <ul style="margin:0;padding-left:1.25rem;font-size:0.825rem;color:var(--color-neutral-fg-2);line-height:1.7;">
@@ -1496,7 +1497,7 @@ class SSColors {
         <!-- 2. SS App Icon -->
         <a href="/public/brand/downloads/ss-app-icon.zip" download class="cl-card" style="display:flex;align-items:center;justify-content:space-between;padding:0.9rem 1.25rem;border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-lg);background:var(--color-neutral-bg-2);text-decoration:none;transition:transform 0.15s ease, background 0.15s ease;">
           <div style="display:flex;align-items:center;gap:12px;">
-            <div style="width:36px;height:36px;border-radius:8px;background:rgba(33,161,247,0.1);color:#21A1F7;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(33,161,247,0.1);color:var(--color-text-accent);display:flex;align-items:center;justify-content:center;font-size:1.1rem;">
               <iconify-icon icon="fluent:apps-24-regular"></iconify-icon>
             </div>
             <div>
@@ -1513,7 +1514,7 @@ class SSColors {
         <!-- 3. SS Colour Palette -->
         <a href="/public/brand/downloads/ss_colour_theme.zip" download class="cl-card" style="display:flex;align-items:center;justify-content:space-between;padding:0.9rem 1.25rem;border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-lg);background:var(--color-neutral-bg-2);text-decoration:none;transition:transform 0.15s ease, background 0.15s ease;">
           <div style="display:flex;align-items:center;gap:12px;">
-            <div style="width:36px;height:36px;border-radius:8px;background:rgba(33,161,247,0.08);color:#21A1F7;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(33,161,247,0.08);color:var(--color-text-accent);display:flex;align-items:center;justify-content:center;font-size:1.1rem;">
               <iconify-icon icon="fluent:color-24-regular"></iconify-icon>
             </div>
             <div>
@@ -1530,7 +1531,7 @@ class SSColors {
         <!-- 4. SS Typeface Kit -->
         <a href="/public/brand/downloads/ss_typeface_font.zip" download class="cl-card" style="display:flex;align-items:center;justify-content:space-between;padding:0.9rem 1.25rem;border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-lg);background:var(--color-neutral-bg-2);text-decoration:none;transition:transform 0.15s ease, background 0.15s ease;">
           <div style="display:flex;align-items:center;gap:12px;">
-            <div style="width:36px;height:36px;border-radius:8px;background:rgba(189,154,115,0.1);color:#BD9A73;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(189,154,115,0.1);color:var(--color-text-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;">
               <iconify-icon icon="fluent:text-font-24-regular"></iconify-icon>
             </div>
             <div>
@@ -1598,7 +1599,7 @@ class SSColors {
         <!-- 8. SS Wellness Kit -->
         <a href="/public/brand/downloads/03_logo_ssWellness.zip" download class="cl-card" style="display:flex;align-items:center;justify-content:space-between;padding:0.9rem 1.25rem;border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-lg);background:var(--color-neutral-bg-2);text-decoration:none;transition:transform 0.15s ease, background 0.15s ease;">
           <div style="display:flex;align-items:center;gap:12px;">
-            <div style="width:36px;height:36px;border-radius:8px;background:rgba(33,161,247,0.08);color:#21A1F7;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(33,161,247,0.08);color:var(--color-text-accent);display:flex;align-items:center;justify-content:center;font-size:1.1rem;">
               <iconify-icon icon="fluent:sport-24-regular"></iconify-icon>
             </div>
             <div>
@@ -1615,7 +1616,7 @@ class SSColors {
         <!-- 9. SS Ecommerce Kit -->
         <a href="/public/brand/downloads/04_logo_ssEcom.zip" download class="cl-card" style="display:flex;align-items:center;justify-content:space-between;padding:0.9rem 1.25rem;border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-lg);background:var(--color-neutral-bg-2);text-decoration:none;transition:transform 0.15s ease, background 0.15s ease;">
           <div style="display:flex;align-items:center;gap:12px;">
-            <div style="width:36px;height:36px;border-radius:8px;background:rgba(189,154,115,0.1);color:#BD9A73;display:flex;align-items:center;justify-content:center;font-size:1.1rem;">
+            <div style="width:36px;height:36px;border-radius:8px;background:rgba(189,154,115,0.1);color:var(--color-text-warm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;">
               <iconify-icon icon="fluent:shopping-bag-24-regular"></iconify-icon>
             </div>
             <div>
@@ -1679,7 +1680,7 @@ class SSColors {
         <div class="col-md-6">
           <div class="cl-card p-4 h-100" style="background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);box-shadow:var(--f-shadow-4);">
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:1rem;">
-              <div style="width:40px;height:40px;border-radius:var(--f-radius-md);background:rgba(22,163,74,0.10);color:#16a34a;display:flex;align-items:center;justify-content:center;font-size:1.25rem;">
+              <div style="width:40px;height:40px;border-radius:var(--f-radius-md);background:rgba(22,163,74,0.10);color:var(--color-success-fg);display:flex;align-items:center;justify-content:center;font-size:1.25rem;">
                 <iconify-icon icon="fluent:shield-checkmark-24-regular"></iconify-icon>
               </div>
               <h3 style="margin:0;font-size:1.1rem;font-weight:700;color:var(--color-neutral-fg-1);">Dignity &amp; Claims Integrity</h3>

@@ -1,23 +1,254 @@
 {
-  "name": "Androlab",
-  "tagline": "Precision Men's Health Supplements",
-  "logo": "logo_androlab_primary.svg",
-  "banner": "banner.svg",
-  "heroGradient": "linear-gradient(135deg, #101820 0%, #0A89FA 100%)",
-  "colors": {
-    "primary": "#101820",
-    "accent": "#0A89FA",
-    "rxGold": "#FCE53D",
-    "canvas": "#F1F1F1"
+  "schema": 2,
+  "slug": "androlab",
+  "name": "ANDROLAB",
+  "folder": "Androlab",
+  "status": "Active",
+  "tagline": "Men's health science, made clear",
+  "entity": "01-SSH · SS Health, with 02-SSC SS Clinic",
+  "category": "Men's health supplements and clinic programmes",
+  "hero": {
+    "from": "#101820",
+    "to": "#022057",
+    "accent": "#0A89FA"
   },
-  "ownership": {
-    "tags": ["SS Health Owned", "SS Clinic", "SS Wellness"],
-    "text": "Androlab is an in-house brand operated collaboratively under the SS Clinic and SS Wellness ecosystems."
+  "definition": {
+    "summary": "ANDROLAB is SuamiSihat's men's health science brand. ANDROLAB Alpha is a daily sachet supplement; ANDROLAB RX is the label used for doctor-led programmes delivered through SS Clinic.",
+    "facts": [
+      {
+        "label": "Operating entity",
+        "value": "01-SSH SS Health with 02-SSC SS Clinic"
+      },
+      {
+        "label": "Formats",
+        "value": "Single-serve sachets (Alpha); clinic programmes (RX)"
+      },
+      {
+        "label": "Audience",
+        "value": "Men 30+ who want an evidence-led approach to vitality"
+      },
+      {
+        "label": "Pack languages",
+        "value": "Bahasa Melayu and English sachet versions"
+      }
+    ],
+    "range": [
+      {
+        "name": "ANDROLAB Alpha",
+        "type": "Supplement",
+        "desc": "Daily botanical sachet. Prototype artwork P0104 in BM and English."
+      },
+      {
+        "name": "ANDROLAB RX",
+        "type": "Clinic programme",
+        "desc": "Doctor-supervised programme name used inside SS Clinic. Not advertised to the public as a medicine."
+      }
+    ],
+    "claimsReview": "Earlier copy named a prescription medicine (tadalafil) under ANDROLAB RX. Prescription medicines cannot be advertised to the public in Malaysia; keep RX content internal to clinic materials."
   },
-  "assets": [
-    "logo_androlab_primary.svg",
-    "logo_androlab_secondary.svg",
-    "sub-products/androlab-rx/logos/logo_androlab_rx_primary.svg",
-    "sub-products/androlab-alpha/logos/logo_androlab_alpha_primary.svg"
+  "images": [
+    {
+      "src": "/products/Androlab/sub-products/androlab-alpha/gallery/Render_Mockup_3840_1916_2025-11-07-web.jpg",
+      "alt": "ANDROLAB Alpha sachet carton studio render",
+      "caption": "Alpha carton render"
+    },
+    {
+      "src": "/products/Androlab/sub-products/androlab-alpha/gallery/Render_Mockup_3840_1876_2025-11-07-web.jpg",
+      "alt": "ANDROLAB Alpha carton and sachets, angled render",
+      "caption": "Alpha carton, angled"
+    },
+    {
+      "src": "/products/Androlab/sub-products/androlab-alpha/gallery/sachet-p0104-eng.png",
+      "alt": "ANDROLAB Alpha sachet artwork, English version",
+      "caption": "Sachet artwork (English)"
+    },
+    {
+      "src": "/products/Androlab/sub-products/androlab-alpha/gallery/sachet-p0104-bm.png",
+      "alt": "ANDROLAB Alpha sachet artwork, Bahasa Melayu version",
+      "caption": "Sachet artwork (BM)"
+    }
+  ],
+  "positioning": {
+    "statement": "For men who want vitality explained, not hyped, ANDROLAB pairs clinic know-how with clear, well-labelled formulations.",
+    "pillars": [
+      {
+        "title": "Science, explained",
+        "text": "Ingredients and how to take them, in plain words."
+      },
+      {
+        "title": "Clinic-connected",
+        "text": "Backed by SuamiSihat's clinic network for advice and follow-up."
+      },
+      {
+        "title": "Precise design",
+        "text": "Carbon, electric blue and a single gold RX mark: lab-like and calm."
+      }
+    ],
+    "voice": [
+      "Precise and calm",
+      "Evidence-minded; cite approved facts only",
+      "Respectful and private"
+    ],
+    "avoid": [
+      "Naming prescription medicines in public material",
+      "Performance promises or before-and-after language",
+      "Lab-coat stereotypes or explicit imagery"
+    ]
+  },
+  "colorScheme": {
+    "foundation": {
+      "share": 60,
+      "role": "Midnight Carbon backgrounds",
+      "colors": [
+        {
+          "name": "Midnight Carbon",
+          "hex": "#101820",
+          "use": "Pack and hero backgrounds"
+        },
+        {
+          "name": "Clinical Surface",
+          "hex": "#F1F1F1",
+          "use": "Light canvases"
+        }
+      ]
+    },
+    "structure": {
+      "share": 30,
+      "role": "Science Blue structure",
+      "colors": [
+        {
+          "name": "Science Blue",
+          "hex": "#0A89FA",
+          "use": "Rules, icons, large headings on Carbon"
+        },
+        {
+          "name": "Science Blue Text",
+          "hex": "#0A6BC4",
+          "use": "Blue text and buttons on light"
+        }
+      ]
+    },
+    "accent": {
+      "share": 10,
+      "role": "RX Gold for the RX mark and one highlight",
+      "colors": [
+        {
+          "name": "RX Gold",
+          "hex": "#FCE53D",
+          "use": "RX badge and single highlight"
+        }
+      ]
+    },
+    "pairings": [
+      {
+        "text": "#FFFFFF",
+        "background": "#101820",
+        "use": "Text on Midnight Carbon"
+      },
+      {
+        "text": "#0A89FA",
+        "background": "#101820",
+        "use": "Blue headings on Carbon"
+      },
+      {
+        "text": "#101820",
+        "background": "#F1F1F1",
+        "use": "Text on Clinical Surface"
+      },
+      {
+        "text": "#0A6BC4",
+        "background": "#F1F1F1",
+        "use": "Blue text on light"
+      },
+      {
+        "text": "#FFFFFF",
+        "background": "#0A6BC4",
+        "use": "Button text"
+      },
+      {
+        "text": "#1C1C1C",
+        "background": "#FCE53D",
+        "use": "Text on RX Gold"
+      }
+    ],
+    "note": "Science Blue #0A89FA is for Carbon backgrounds; on light surfaces use #0A6BC4."
+  },
+  "pattern": {
+    "name": "Molecular Lattice",
+    "file": "/products/Androlab/pattern.svg",
+    "description": "Linked nodes in Science Blue with a single RX Gold atom on Midnight Carbon.",
+    "usage": [
+      "Use on Carbon backgrounds behind hero areas",
+      "Keep copy on solid panels",
+      "Do not recolour nodes"
+    ]
+  },
+  "guideline": {
+    "logos": [
+      {
+        "label": "ANDROLAB primary",
+        "file": "/products/Androlab/logos/logo_androlab_primary.svg",
+        "use": "Default lockup"
+      },
+      {
+        "label": "ANDROLAB secondary",
+        "file": "/products/Androlab/logos/logo_androlab_secondary.svg",
+        "use": "Compact lockup"
+      },
+      {
+        "label": "ANDROLAB Alpha",
+        "file": "/products/Androlab/sub-products/androlab-alpha/logos/logo_androlab_alpha_primary.svg",
+        "use": "Alpha sub-brand"
+      },
+      {
+        "label": "ANDROLAB RX",
+        "file": "/products/Androlab/sub-products/androlab-rx/logos/logo_androlab_rx_primary.svg",
+        "use": "RX programme (clinic use)"
+      }
+    ],
+    "clearSpace": "Keep clear space equal to the cap height of the wordmark on every side. Nothing (text, edges, other logos) enters this zone.",
+    "minimumSize": "Digital 110 px wide; print 28 mm wide",
+    "do": [
+      "Use the master lockup on Carbon or Clinical Surface",
+      "Show Alpha and RX as sub-brands under ANDROLAB",
+      "Keep RX Gold to the RX mark"
+    ],
+    "dont": [
+      "Do not use RX materials in public advertising",
+      "Do not set the logo in RX Gold",
+      "Do not add effects or outlines"
+    ],
+    "typography": {
+      "display": "Poppins SemiBold / Bold for headlines and key numbers; Montserrat for subtitles and labels",
+      "body": "Helvetica Neue for print body copy; Inter on the web; Calibri in Office documents",
+      "note": "Typefaces follow Brand System section 04. Never retype a wordmark; always place the supplied logo file."
+    }
+  },
+  "downloads": [
+    {
+      "label": "ANDROLAB primary logo",
+      "file": "/products/Androlab/logos/logo_androlab_primary.svg",
+      "format": "SVG"
+    },
+    {
+      "label": "ANDROLAB secondary logo",
+      "file": "/products/Androlab/logos/logo_androlab_secondary.svg",
+      "format": "SVG"
+    },
+    {
+      "label": "Brand pattern",
+      "file": "/products/Androlab/pattern.svg",
+      "format": "SVG"
+    },
+    {
+      "label": "Alpha sachet artwork (BM)",
+      "file": "/products/Androlab/sub-products/androlab-alpha/downloads/Androlab_Alpha_Proto_0104-BKKM.pdf",
+      "format": "PDF"
+    },
+    {
+      "label": "Alpha sachet artwork (English)",
+      "file": "/products/Androlab/sub-products/androlab-alpha/downloads/Androlab_Alpha_Proto_0104-ENG.pdf",
+      "format": "PDF"
+    }
   ]
 }

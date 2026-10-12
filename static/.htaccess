@@ -1,0 +1,99 @@
+# ============================================================================
+# SuamiSihat Design System - Apache configuration (Synology Web Station)
+# Deployed from static/.htaccess into the web root by CI.
+# Site: https://assets.suamisihat.myds.me/
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# Access control
+# ----------------------------------------------------------------------------
+# Server-side login. Enabled automatically once the password file exists on
+# the NAS (create it OUTSIDE the web root):
+#   htpasswd -c /volume1/web/.auth/ss_assets.htpasswd <username>
+<IfFile "/volume1/web/.auth/ss_assets.htpasswd">
+    AuthType Basic
+    AuthName "SuamiSihat Design System (internal)"
+    AuthUserFile "/volume1/web/.auth/ss_assets.htpasswd"
+    Require valid-user
+</IfFile>
+
+# Brand logos stay public so email signatures and partner sites can load them
+<If "%{REQUEST_URI} =~ m#^/public/brand/(logos|favicon|app-icons)/#">
+    Require all granted
+</If>
+
+# Never serve hidden files or folders (.git, .env, .htaccess, .well-known excepted)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule "(^|/)\.(?!well-known/)" - [F,L]
+</IfModule>
+
+# Never serve source, config or log files
+<FilesMatch "\.(mjs|log|env|lock|yml|yaml|ps1|sh|bak|map)$">
+    Require all denied
+</FilesMatch>
+# Markdown under /content/ is served (the /doc/ viewer fetches it) and stays behind the login.
+
+# ----------------------------------------------------------------------------
+# Security headers
+# ----------------------------------------------------------------------------
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options   "nosniff"
+    Header always set X-Frame-Options          "DENY"
+    Header always set Referrer-Policy          "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy       "geolocation=(), microphone=(), camera=()"
+    Header always set X-Robots-Tag             "noindex, nofollow, noarchive"
+    Header always set Content-Security-Policy  "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'"
+
+    <FilesMatch "\.(svg|woff2?)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+
+    # SvelteKit emits content-hashed files under /_app/immutable/
+    <If "%{REQUEST_URI} =~ m#^/_app/immutable/#">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </If>
+    # HTML always revalidates so new deploys show immediately
+    <FilesMatch "\.html$">
+        Header set Cache-Control "no-cache"
+    </FilesMatch>
+</IfModule>
+
+# ----------------------------------------------------------------------------
+# Compression and caching
+# ----------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/markdown
+    AddOutputFilterByType DEFLATE application/javascript application/json image/svg+xml
+</IfModule>
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/markdown
+    AddOutputFilterByType BROTLI_COMPRESS application/javascript application/json image/svg+xml
+</IfModule>
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg      "access plus 1 month"
+    ExpiresByType image/png       "access plus 1 month"
+    ExpiresByType image/webp      "access plus 1 month"
+    ExpiresByType image/svg+xml   "access plus 1 month"
+    ExpiresByType text/css        "access plus 1 week"
+    ExpiresByType font/woff2      "access plus 1 year"
+</IfModule>
+FileETag MTime Size
+
+# ----------------------------------------------------------------------------
+# Routing (SvelteKit static build, trailingSlash = always)
+# ----------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteBase /
+
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^(.+[^/])$ $1/ [R=301,L]
+
+    RewriteRule ^roadmap/?$     doc/?doc=roadmap [R=301,L,QSA]
+    RewriteRule ^changelog/?$   doc/?doc=changelog [R=301,L,QSA]
+    RewriteRule ^brand/?$       brand-system/ [R=301,L]
+    RewriteRule ^guidelines/?$  brand-guidelines/ [R=301,L]
+</IfModule>
+
+ErrorDocument 404 /404.html

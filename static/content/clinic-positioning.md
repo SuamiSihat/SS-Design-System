@@ -49,13 +49,13 @@ flowchart TD
         subgraph TOP_ROW ["Y-AXIS: HIGH AUTHORITY & PREMIUM POSITIONED"]
             direction LR
             TL["<b>PREMIUM + GENERIC</b><br/><i>High-end, but not specialised</i><br/>• Premier / 4Him<br/>• Vivardi Clinic"]
-            TR["⭐ <b>UNCONTESTED WHITE SPACE</b><br/><b>PREMIUM SPECIALIST</b><br/><i>The trusted authority for the serious man</i><br/>• Hisential (English/Corporate)<br/>• Alpha Clinic (Cold Clinical)<br/>----------------------------<br/>🎯 <b>SuamiSihat™ TARGET (84 pts)</b><br/><i>Malay-First • Warm • Systemic • Evidence-Based</i>"]
+            TR["<b>UNCONTESTED WHITE SPACE</b><br/><b>PREMIUM SPECIALIST</b><br/><i>The trusted authority for the serious man</i><br/>• Hisential (English/Corporate)<br/>• Alpha Clinic (Cold Clinical)<br/>----------------------------<br/><b>SuamiSihat™ TARGET (84 pts)</b><br/><i>Malay-First • Warm • Systemic • Evidence-Based</i>"]
         end
 
         subgraph BOTTOM_ROW ["Y-AXIS: MASS MARKET & PRICE-LED"]
             direction LR
             BL["<b>MASS MARKET + GENERIC</b><br/><i>Race to the bottom</i><br/>• Universal Clinic<br/>• MHC Malaysia<br/>• HeMedical (Volume)"]
-            BR["<b>MASS MARKET + SPECIALIST</b><br/><i>Volume specialist, low pricing power</i><br/>• MenCare Clinic<br/>----------------------------<br/>📍 <b>SuamiSihat™ LEGACY BASELINE (58 pts)</b><br/><i>Transition Point</i>"]
+            BR["<b>MASS MARKET + SPECIALIST</b><br/><i>Volume specialist, low pricing power</i><br/>• MenCare Clinic<br/>----------------------------<br/><b>SuamiSihat™ LEGACY BASELINE (58 pts)</b><br/><i>Transition Point</i>"]
         end
     end
 
@@ -155,9 +155,9 @@ The 60:30:10 rule is an **art-direction heuristic for visual mass**. It guarante
 
 > [!WARNING]
 > **Strict Color Blacklist for Designers:**
-> - ❌ **NEVER use Aggressive Alarm Red (`#FF0000` / `#DC2626`)** in ad banners, hero headers, or badges. Red triggers medical dread, shame, and associates our clinic with low-tier commoditised rivals.
-> - ❌ **NEVER use Flash-Sale Hazard Yellow (`#FFFF00`)** or bright fluorescent green for promotional banners.
-> - ❌ **NEVER use Harsh Pitch Black (`#000000`)** as a full flat background. Use Deep Prussian Navy (`#022057`) to preserve warmth and clinical depth.
+> - {{icon:no}} **NEVER use Aggressive Alarm Red (`#FF0000` / `#DC2626`)** in ad banners, hero headers, or badges. Red triggers medical dread, shame, and associates our clinic with low-tier commoditised rivals.
+> - {{icon:no}} **NEVER use Flash-Sale Hazard Yellow (`#FFFF00`)** or bright fluorescent green for promotional banners.
+> - {{icon:no}} **NEVER use Harsh Pitch Black (`#000000`)** as a full flat background. Use Deep Prussian Navy (`#022057`) to preserve warmth and clinical depth.
 
 #### Visual Mass Allocation Across Formats
 
@@ -236,7 +236,7 @@ All visual assets must conform to Microsoft Fluent 2-aligned structural tokens:
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                      PHOTOGRAPHY CASTING & STAGING DOCTRINE                 │
 ├──────────────────────────────────────┬──────────────────────────────────────┤
-│ ✅ APPROVED SUAMISIHAT™ VISUALS      │ ❌ STRICTLY BANNED VISUAL CLICHÉS    │
+│ APPROVED SUAMISIHAT™ VISUALS         │ STRICTLY BANNED VISUAL CLICHÉS       │
 ├──────────────────────────────────────┼──────────────────────────────────────┤
 │ • Dignified Malaysian men (32–55 yo) │ • Distressed men clutching forehead  │
 │ • Natural smiles, upright posture    │ • Dark, depressing, gloomy bedrooms  │
@@ -295,12 +295,12 @@ As a registered clinical healthcare provider in Malaysia, all copy must comply w
 
 | Prohibited Term (Blacklisted) | Violation Category | Approved SuamiSihat™ Replacement |
 | :--- | :--- | :--- |
-| ❌ *"Mati pucuk"* | Taboo shame trigger | ✅ **"Penurunan vitaliti lelaki"** or **"Cabaran ereksi semulajadi"** |
-| ❌ *"Lemah batin"* | Emasculating slang | ✅ **"Kesihatan intim lelaki"** or **"Tahap hormon dan tenaga"** |
-| ❌ *"Pancut awal"* | Vulgar shock trigger | ✅ **"Kawalan stamina dan daya tahan"** |
-| ❌ *"Keras macam besi"* | Macho hyperbole | ✅ **"Fungsi vaskular yang optimum"** |
-| ❌ *"Fitrah"* (in ad copy) | Theological mismatch | ✅ **"Semulajadi"** (e.g., *"Sinyal semulajadi badan"*)|
-| ❌ Em-dash (`—`) | Punctuation violation | ✅ Use colons, commas, or clean line breaks |
+| {{icon:no}} *"Mati pucuk"* | Taboo shame trigger | {{icon:yes}} **"Penurunan vitaliti lelaki"** or **"Cabaran ereksi semulajadi"** |
+| {{icon:no}} *"Lemah batin"* | Emasculating slang | {{icon:yes}} **"Kesihatan intim lelaki"** or **"Tahap hormon dan tenaga"** |
+| {{icon:no}} *"Pancut awal"* | Vulgar shock trigger | {{icon:yes}} **"Kawalan stamina dan daya tahan"** |
+| {{icon:no}} *"Keras macam besi"* | Macho hyperbole | {{icon:yes}} **"Fungsi vaskular yang optimum"** |
+| {{icon:no}} *"Fitrah"* (in ad copy) | Theological mismatch | {{icon:yes}} **"Semulajadi"** (e.g., *"Sinyal semulajadi badan"*)|
+| {{icon:no}} Em-dash (`—`) | Punctuation violation | {{icon:yes}} Use colons, commas, or clean line breaks |
 
 ---
 
@@ -454,7 +454,7 @@ flowchart TD
         
         C5["<b>5. CLINIC CONSULTANTS & WHATSAPP GREETINGS</b><br/><i>'Di sini kami semak profil darah dulu sebelum rawat.'</i><br/>Impact: Lead arrives pre-sold; objection friction drops."] --> C6
         
-        C6["⭐ <b>EXPONENTIAL COMPOUNDING</b><br/>Word-of-mouth activates: <i>'Pergi SuamiSihat™, diorang check dulu.'</i><br/>The phrase becomes legally and culturally unassailable IP."]
+        C6["<b>EXPONENTIAL COMPOUNDING</b><br/>Word-of-mouth activates: <i>'Pergi SuamiSihat™, diorang check dulu.'</i><br/>The phrase becomes legally and culturally unassailable IP."]
     end
 
     style C1 fill:#1b262c,stroke:#e74c3c,stroke-width:1px,color:#ffffff
@@ -524,7 +524,7 @@ When a prospective patient encounters the exact same core truth expressed indepe
 > Secondary: `[ KONSULTASI DOKTOR WHATSAPP ]`  
 >  
 > **Trust Bar:**  
-> *✓ 14,000+ Komuniti Suami • ✓ Pemeriksaan Profil Darah Mendalam • ✓ Tiada Janji Palsu*
+> *14,000+ Komuniti Suami • Pemeriksaan Profil Darah Mendalam • Tiada Janji Palsu*
 
 ---
 
@@ -572,7 +572,7 @@ This section establishes rules for video editors, motion graphic designers, and 
 
 ### 02. Pacing, Audio Beds & Editing Cadence
 - **Documentary Cadence:** Maintain a calm, deliberate, authoritative masterclass tempo (60–70 BPM acoustic/ambient bed).
-- ❌ **Prohibited:** Jittery hyperactive cuts, obnoxious comedy sound effects, meme zooms, or dramatic sound risers.
+- {{icon:no}} **Prohibited:** Jittery hyperactive cuts, obnoxious comedy sound effects, meme zooms, or dramatic sound risers.
 - **B-Roll:** Use cutaways of doctor reviewing digital charts, holding diagnostic probes, or writing clinical notes. Never insert generic shock footage of suffering patients.
 
 ### 03. Subtitles & Lower-Third Specification

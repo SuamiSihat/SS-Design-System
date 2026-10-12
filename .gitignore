@@ -12,7 +12,6 @@ Desktop.ini
 .env
 .env.*
 !.env.example
-deploy.config.ps1
 *.pem
 *.key
 .htpasswd
@@ -39,8 +38,8 @@ yarn-error.log*
 # Node / Build Dependencies
 node_modules/
 .svelte-kit/
-# Top-level dist/ (not used) — but allow CI-committed assets/*/dist/
 /dist/
 /build/
 coverage/
-preview-v3.4/
+test-results/
+src/lib/icons/fluent-subset.json

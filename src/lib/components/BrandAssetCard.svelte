@@ -20,7 +20,7 @@
       title="Toggle light/dark canvas"
       style="position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; padding: 4px 6px; color: #FFFFFF; font-size: 0.7rem; cursor: pointer; display: flex; align-items: center; gap: 4px;"
     >
-      <iconify-icon icon={isDark ? "lucide:sun" : "lucide:moon"} width="13"></iconify-icon>
+      <iconify-icon icon={isDark ? "fluent:weather-sunny-16-regular" : "fluent:weather-moon-16-regular"} width="13"></iconify-icon>
       {isDark ? 'Light' : 'Dark'}
     </button>
   </div>
@@ -41,7 +41,7 @@
         class="btn btn-sm"
         style="flex: 1; min-width: 70px; background: var(--color-brand-subtle, #EBF5FE); color: var(--color-brand-primary, #043388); font-weight: 600; font-size: 0.75rem; border: 1px solid var(--color-brand-stroke, #6DC6EC); border-radius: 6px; text-decoration: none; text-align: center; padding: 0.35rem 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.25rem;"
       >
-        <iconify-icon icon="lucide:download" width="13"></iconify-icon> SVG
+        <iconify-icon icon="fluent:arrow-download-16-regular" width="13"></iconify-icon> SVG
       </a>
       {#if pngPath}
         <a 
@@ -50,7 +50,7 @@
           class="btn btn-sm"
           style="flex: 1; min-width: 70px; background: var(--color-neutral-subtle, #F1F5F9); color: var(--color-neutral-fg-1, #1C1C1C); font-weight: 600; font-size: 0.75rem; border: 1px solid var(--color-neutral-stroke-1, #CBD5E1); border-radius: 6px; text-decoration: none; text-align: center; padding: 0.35rem 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.25rem;"
         >
-          <iconify-icon icon="lucide:image" width="13"></iconify-icon> PNG
+          <iconify-icon icon="fluent:image-16-regular" width="13"></iconify-icon> PNG
         </a>
       {/if}
     </div>

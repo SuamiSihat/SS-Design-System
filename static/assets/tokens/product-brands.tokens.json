@@ -1,0 +1,599 @@
+{
+  "$schema": "https://design-tokens.org/schema.json",
+  "$metadata": {
+    "name": "SuamiSihat Product Brand Tokens — Rejal & Dr Mit Ring",
+    "version": "3.6.0",
+    "lastUpdated": "2026-10-12",
+    "description": "Primitive + semantic colour tokens for SSE product brands. Pantone values are nearest Coated matches (Delta E 2000 vs Pantone sRGB); confirm against a physical Pantone Formula Guide and a printer drawdown before production."
+  },
+  "color": {
+    "product": {
+      "rejal": {
+        "black": {
+          "$value": "#231F20",
+          "$type": "color",
+          "$description": "Rejal Black — print rich black; base of all labels",
+          "$extensions": {
+            "com.suamisihat.print": {
+              "pantone": "PANTONE Neutral Black C",
+              "pantoneSrgb": "#222223",
+              "deltaE2000": 2.8,
+              "cmyk": "Rich black 60/40/40/100 (large solids); K100 for small text"
+            }
+          }
+        },
+        "white": {
+          "$value": "#FFFFFF",
+          "$type": "color",
+          "$description": "Rejal White — type on black"
+        },
+        "blue": {
+          "$value": "#4480C2",
+          "$type": "color",
+          "$description": "Rejal Blue — emblem disc and ribbon; graphics and large text only",
+          "$extensions": {
+            "com.suamisihat.print": {
+              "pantone": "PANTONE 660 C",
+              "pantoneSrgb": "#407EC9",
+              "deltaE2000": 1.1
+            }
+          }
+        },
+        "blue-deep": {
+          "$value": "#2F6DB0",
+          "$type": "color",
+          "$description": "Rejal Blue Deep — accessible blue for small text, links and buttons on light",
+          "$extensions": {
+            "com.suamisihat.print": {
+              "pantone": "PANTONE 7683 C",
+              "pantoneSrgb": "#426DA9",
+              "deltaE2000": 2.5
+            }
+          }
+        },
+        "blue-light": {
+          "$value": "#7FAEE0",
+          "$type": "color",
+          "$description": "Rejal Blue Light — blue text and links on black",
+          "$extensions": {
+            "com.suamisihat.print": {
+              "pantone": "PANTONE 284 C",
+              "pantoneSrgb": "#6CACE4",
+              "deltaE2000": 3.0
+            }
+          }
+        },
+        "gold": {
+          "$value": "#C9A24A",
+          "$type": "color",
+          "$description": "Heritage Gold — FINISH ONLY: foil, cap, seal, decorative rule. Not for body text or UI fills",
+          "$extensions": {
+            "com.suamisihat.print": {
+              "pantone": "PANTONE 7407 C",
+              "pantoneSrgb": "#CBA052",
+              "deltaE2000": 2.4,
+              "foil": "Gold hot-foil, matched to PANTONE 871 C (metallic)",
+              "flatFallback": "PANTONE 7407 C"
+            }
+          }
+        },
+        "gold-deep": {
+          "$value": "#8A6A1F",
+          "$type": "color",
+          "$description": "Heritage Gold Deep — gold text on light backgrounds only"
+        },
+        "black-raised": {
+          "$value": "#2E2A2B",
+          "$type": "color",
+          "$description": "Raised surface on Rejal Black"
+        },
+        "semantic": {
+          "light": {
+            "bg-canvas": {
+              "$value": "#FFFFFF",
+              "$type": "color"
+            },
+            "bg-surface": {
+              "$value": "#FFFFFF",
+              "$type": "color"
+            },
+            "bg-inverse": {
+              "$value": "{color.product.rejal.black}",
+              "$type": "color"
+            },
+            "fg-primary": {
+              "$value": "{color.product.rejal.black}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "bg-canvas",
+                  "ratio": 16.3,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "fg-secondary": {
+              "$value": "rgba(35,31,32,0.70)",
+              "$type": "color"
+            },
+            "fg-inverse": {
+              "$value": "{color.product.rejal.white}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "bg-inverse",
+                  "ratio": 16.3,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "brand-fill": {
+              "$value": "{color.product.rejal.blue-deep}",
+              "$type": "color"
+            },
+            "on-brand": {
+              "$value": "{color.product.rejal.white}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "brand-fill",
+                  "ratio": 5.34,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "link": {
+              "$value": "{color.product.rejal.blue-deep}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "bg-canvas",
+                  "ratio": 5.34,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "accent-graphic": {
+              "$value": "{color.product.rejal.blue}",
+              "$type": "color",
+              "$description": "Emblem, ribbon, rules, icons ≥24px. Not for small text."
+            },
+            "accent-text-gold": {
+              "$value": "{color.product.rejal.gold-deep}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "bg-canvas",
+                  "ratio": 5.05,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "finish-gold": {
+              "$value": "{color.product.rejal.gold}",
+              "$type": "color",
+              "$description": "Print/decoration only. Never text on light (2.4:1)."
+            },
+            "focus-ring": {
+              "$value": "{color.product.rejal.blue-deep}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "bg-canvas",
+                  "ratio": 5.34,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "stroke-1": {
+              "$value": "rgba(35,31,32,0.12)",
+              "$type": "color"
+            }
+          },
+          "dark": {
+            "bg-canvas": {
+              "$value": "{color.product.rejal.black}",
+              "$type": "color"
+            },
+            "bg-surface": {
+              "$value": "{color.product.rejal.black-raised}",
+              "$type": "color"
+            },
+            "bg-inverse": {
+              "$value": "{color.product.rejal.white}",
+              "$type": "color"
+            },
+            "fg-primary": {
+              "$value": "{color.product.rejal.white}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "bg-canvas",
+                  "ratio": 16.3,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "fg-secondary": {
+              "$value": "rgba(255,255,255,0.72)",
+              "$type": "color"
+            },
+            "fg-inverse": {
+              "$value": "{color.product.rejal.black}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "bg-inverse",
+                  "ratio": 16.3,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "brand-fill": {
+              "$value": "{color.product.rejal.blue-deep}",
+              "$type": "color"
+            },
+            "on-brand": {
+              "$value": "{color.product.rejal.white}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "brand-fill",
+                  "ratio": 5.34,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "link": {
+              "$value": "{color.product.rejal.blue-light}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "bg-canvas",
+                  "ratio": 7.01,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "accent-graphic": {
+              "$value": "{color.product.rejal.blue}",
+              "$type": "color"
+            },
+            "accent-text-gold": {
+              "$value": "{color.product.rejal.gold}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "bg-canvas",
+                  "ratio": 6.79,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "finish-gold": {
+              "$value": "{color.product.rejal.gold}",
+              "$type": "color"
+            },
+            "focus-ring": {
+              "$value": "{color.product.rejal.blue-light}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "bg-canvas",
+                  "ratio": 7.01,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "stroke-1": {
+              "$value": "rgba(255,255,255,0.14)",
+              "$type": "color"
+            }
+          }
+        }
+      },
+      "drmitring": {
+        "lime": {
+          "$value": "#6AB845",
+          "$type": "color",
+          "$description": "Dr Mit Ring Lime — signal colour; ring, wordmark outline, accent band",
+          "$extensions": {
+            "com.suamisihat.print": {
+              "pantone": "PANTONE 360 C",
+              "pantoneSrgb": "#6CC24A",
+              "deltaE2000": 2.7
+            }
+          }
+        },
+        "lime-light": {
+          "$value": "#ACCF6A",
+          "$type": "color",
+          "$description": "Light Lime — tints and illustration only",
+          "$extensions": {
+            "com.suamisihat.print": {
+              "pantone": "PANTONE 367 C",
+              "pantoneSrgb": "#A4D65E",
+              "deltaE2000": 3.2
+            }
+          }
+        },
+        "green": {
+          "$value": "#23963B",
+          "$type": "color",
+          "$description": "Deep Green — packaging shapes; large text only with white",
+          "$extensions": {
+            "com.suamisihat.print": {
+              "pantone": "PANTONE 355 C",
+              "pantoneSrgb": "#009A44",
+              "deltaE2000": 2.2
+            }
+          }
+        },
+        "green-aa": {
+          "$value": "#1A7A30",
+          "$type": "color",
+          "$description": "Deep Green AA — white text, buttons, links on light",
+          "$extensions": {
+            "com.suamisihat.print": {
+              "pantone": "PANTONE 356 C",
+              "pantoneSrgb": "#007A33",
+              "deltaE2000": 1.4
+            }
+          }
+        },
+        "black": {
+          "$value": "#1C1C1C",
+          "$type": "color",
+          "$description": "Neutral Black — text and wordmark pill",
+          "$extensions": {
+            "com.suamisihat.print": {
+              "pantone": "PANTONE Neutral Black C",
+              "pantoneSrgb": "#222223",
+              "deltaE2000": 2.1
+            }
+          }
+        },
+        "canvas": {
+          "$value": "#FBFBFB",
+          "$type": "color",
+          "$description": "Off-white canvas"
+        },
+        "yellow": {
+          "$value": "#FFE53B",
+          "$type": "color",
+          "$description": "Count-sticker yellow — on black/dark only, never on lime",
+          "$extensions": {
+            "com.suamisihat.print": {
+              "pantone": "PANTONE 102 C",
+              "pantoneSrgb": "#FCE300",
+              "deltaE2000": 2.1
+            }
+          }
+        },
+        "black-raised": {
+          "$value": "#262626",
+          "$type": "color",
+          "$description": "Raised surface on black"
+        },
+        "semantic": {
+          "light": {
+            "bg-canvas": {
+              "$value": "{color.product.drmitring.canvas}",
+              "$type": "color"
+            },
+            "bg-surface": {
+              "$value": "#FFFFFF",
+              "$type": "color"
+            },
+            "bg-inverse": {
+              "$value": "{color.product.drmitring.black}",
+              "$type": "color"
+            },
+            "fg-primary": {
+              "$value": "{color.product.drmitring.black}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "bg-canvas",
+                  "ratio": 16.47,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "fg-secondary": {
+              "$value": "rgba(28,28,28,0.70)",
+              "$type": "color"
+            },
+            "fg-inverse": {
+              "$value": "{color.product.drmitring.canvas}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "bg-inverse",
+                  "ratio": 16.47,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "brand-fill": {
+              "$value": "{color.product.drmitring.lime}",
+              "$type": "color"
+            },
+            "on-brand": {
+              "$value": "{color.product.drmitring.black}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "brand-fill",
+                  "ratio": 6.94,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "brand-fill-strong": {
+              "$value": "{color.product.drmitring.green-aa}",
+              "$type": "color"
+            },
+            "on-brand-strong": {
+              "$value": "#FFFFFF",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "brand-fill-strong",
+                  "ratio": 5.43,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "link": {
+              "$value": "{color.product.drmitring.green-aa}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "bg-canvas",
+                  "ratio": 5.24,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "accent-graphic": {
+              "$value": "{color.product.drmitring.lime}",
+              "$type": "color"
+            },
+            "highlight": {
+              "$value": "{color.product.drmitring.yellow}",
+              "$type": "color",
+              "$description": "Sticker/highlight on black only. Never on lime (1.93:1)."
+            },
+            "focus-ring": {
+              "$value": "{color.product.drmitring.green-aa}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "bg-canvas",
+                  "ratio": 5.24,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "stroke-1": {
+              "$value": "rgba(28,28,28,0.12)",
+              "$type": "color"
+            }
+          },
+          "dark": {
+            "bg-canvas": {
+              "$value": "{color.product.drmitring.black}",
+              "$type": "color"
+            },
+            "bg-surface": {
+              "$value": "{color.product.drmitring.black-raised}",
+              "$type": "color"
+            },
+            "bg-inverse": {
+              "$value": "{color.product.drmitring.canvas}",
+              "$type": "color"
+            },
+            "fg-primary": {
+              "$value": "{color.product.drmitring.canvas}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "bg-canvas",
+                  "ratio": 16.47,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "fg-secondary": {
+              "$value": "rgba(251,251,251,0.72)",
+              "$type": "color"
+            },
+            "fg-inverse": {
+              "$value": "{color.product.drmitring.black}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "bg-inverse",
+                  "ratio": 16.47,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "brand-fill": {
+              "$value": "{color.product.drmitring.lime}",
+              "$type": "color"
+            },
+            "on-brand": {
+              "$value": "{color.product.drmitring.black}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "brand-fill",
+                  "ratio": 6.94,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "brand-fill-strong": {
+              "$value": "{color.product.drmitring.green-aa}",
+              "$type": "color"
+            },
+            "on-brand-strong": {
+              "$value": "#FFFFFF",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "brand-fill-strong",
+                  "ratio": 5.43,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "link": {
+              "$value": "{color.product.drmitring.lime}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "bg-canvas",
+                  "ratio": 6.94,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "accent-graphic": {
+              "$value": "{color.product.drmitring.lime}",
+              "$type": "color"
+            },
+            "highlight": {
+              "$value": "{color.product.drmitring.yellow}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "bg-canvas",
+                  "ratio": 13.41,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "focus-ring": {
+              "$value": "{color.product.drmitring.lime}",
+              "$type": "color",
+              "$extensions": {
+                "com.suamisihat.contrast": {
+                  "against": "bg-canvas",
+                  "ratio": 6.94,
+                  "wcag": "AA"
+                }
+              }
+            },
+            "stroke-1": {
+              "$value": "rgba(251,251,251,0.14)",
+              "$type": "color"
+            }
+          }
+        }
+      }
+    }
+  }
+}

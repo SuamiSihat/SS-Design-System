@@ -5,18 +5,18 @@
   let copiedIcon = $state('');
 
   const icons = [
-    { id: 'activity', name: 'Activity / Vitality', tags: 'pulse health heart rate vital' },
-    { id: 'shield-check', name: 'Shield Check / Verified', tags: 'security trust moh moh-approved medical' },
-    { id: 'heart-pulse', name: 'Heart Pulse', tags: 'cardio stamina performance wellness' },
-    { id: 'lock', name: 'Lock / Discretion', tags: 'privacy confidential secret encryption' },
-    { id: 'stethoscope', name: 'Stethoscope / Doctor', tags: 'clinic physician consult teleconsult' },
-    { id: 'pill', name: 'Pill / Formulation', tags: 'androlab capsule medication supplement' },
-    { id: 'zap', name: 'Energy / Zap', tags: 'potency vitality fast power' },
-    { id: 'calendar', name: 'Calendar / Booking', tags: 'appointment schedule slot date' },
-    { id: 'phone-call', name: 'Phone Call / Telehealth', tags: 'contact support teleconsult call' },
-    { id: 'user-check', name: 'User Check / Verified Patient', tags: 'patient doctor account register' },
-    { id: 'award', name: 'Award / Standard', tags: 'certified gold standard quality' },
-    { id: 'sparkles', name: 'Sparkles / AI & Modern', tags: 'ss-cam intelligence modern vitality' }
+    { id: 'pulse-24-regular', name: 'Activity / Vitality', tags: 'pulse health heart rate vital' },
+    { id: 'shield-checkmark-24-regular', name: 'Shield Check / Verified', tags: 'security trust moh moh-approved medical' },
+    { id: 'heart-pulse-24-regular', name: 'Heart Pulse', tags: 'cardio stamina performance wellness' },
+    { id: 'lock-closed-24-regular', name: 'Lock / Discretion', tags: 'privacy confidential secret encryption' },
+    { id: 'stethoscope-24-regular', name: 'Stethoscope / Doctor', tags: 'clinic physician consult teleconsult' },
+    { id: 'pill-24-regular', name: 'Pill / Formulation', tags: 'androlab capsule medication supplement' },
+    { id: 'flash-24-regular', name: 'Energy / Zap', tags: 'potency vitality fast power' },
+    { id: 'calendar-ltr-24-regular', name: 'Calendar / Booking', tags: 'appointment schedule slot date' },
+    { id: 'call-24-regular', name: 'Phone Call / Telehealth', tags: 'contact support teleconsult call' },
+    { id: 'person-available-24-regular', name: 'User Check / Verified Patient', tags: 'patient doctor account register' },
+    { id: 'ribbon-star-24-regular', name: 'Award / Standard', tags: 'certified gold standard quality' },
+    { id: 'sparkle-24-regular', name: 'Sparkles / AI & Modern', tags: 'ss-cam intelligence modern vitality' }
   ];
 
   let filteredIcons = $derived(
@@ -26,7 +26,7 @@
   );
 
   async function copyIconSnippet(iconId) {
-    const snippet = `<iconify-icon icon="lucide:${iconId}" width="24" height="24"></iconify-icon>`;
+    const snippet = `<iconify-icon icon="fluent:${iconId}" width="24" height="24"></iconify-icon>`;
     try {
       await navigator.clipboard.writeText(snippet);
       copiedIcon = iconId;
@@ -141,9 +141,9 @@
             <span style="font-weight: 600; color: var(--color-neutral-fg-1);">SSCAM — Creative Assets Management (Desktop Workstation)</span>
           </div>
           <div style="display: flex; gap: 10px; opacity: 0.7;">
-            <span>&#9472;</span>
-            <span>&#9633;</span>
-            <span>&#10005;</span>
+            <iconify-icon icon="fluent:subtract-16-regular" aria-hidden="true"></iconify-icon>
+            <iconify-icon icon="fluent:square-16-regular" aria-hidden="true"></iconify-icon>
+            <iconify-icon icon="fluent:dismiss-16-regular" aria-hidden="true"></iconify-icon>
           </div>
         </div>
 
@@ -170,22 +170,22 @@
       <!-- Feature Checklist -->
       <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.5rem;">
         <li style="font-size: 0.85rem; color: var(--color-neutral-fg-2); display: flex; align-items: center; gap: 8px;">
-          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: #16A34A;"></iconify-icon> Native WPF .NET 8 desktop engine
+          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> Native WPF .NET 8 desktop engine
         </li>
         <li style="font-size: 0.85rem; color: var(--color-neutral-fg-2); display: flex; align-items: center; gap: 8px;">
-          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: #16A34A;"></iconify-icon> On-brand colour grading presets (LUTs)
+          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> On-brand colour grading presets (LUTs)
         </li>
         <li style="font-size: 0.85rem; color: var(--color-neutral-fg-2); display: flex; align-items: center; gap: 8px;">
-          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: #16A34A;"></iconify-icon> Auto-watermark with approved exclusion zones
+          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> Auto-watermark with approved exclusion zones
         </li>
         <li style="font-size: 0.85rem; color: var(--color-neutral-fg-2); display: flex; align-items: center; gap: 8px;">
-          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: #16A34A;"></iconify-icon> WebP, AVIF &amp; MP4 H.265 accelerated export
+          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> WebP, AVIF &amp; MP4 H.265 accelerated export
         </li>
         <li style="font-size: 0.85rem; color: var(--color-neutral-fg-2); display: flex; align-items: center; gap: 8px;">
-          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: #16A34A;"></iconify-icon> Patient privacy face-blurring automation
+          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> Patient privacy face-blurring automation
         </li>
         <li style="font-size: 0.85rem; color: var(--color-neutral-fg-2); display: flex; align-items: center; gap: 8px;">
-          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: #16A34A;"></iconify-icon> One-click sync to SSNAS shared drives
+          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> One-click sync to SSNAS shared drives
         </li>
       </ul>
 
@@ -233,7 +233,7 @@
       <!-- Brand Assets Library -->
       <div class="tool-card" style="background: var(--color-neutral-bg-2); border: 1px solid var(--color-neutral-stroke-1); border-radius: var(--f-radius-xl); padding: 1.5rem; display: flex; flex-direction: column;">
         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-          <div style="width: 48px; height: 48px; border-radius: var(--f-radius-md); background: rgba(33,161,247,.12); color: #21A1F7; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
+          <div style="width: 48px; height: 48px; border-radius: var(--f-radius-md); background: rgba(33,161,247,.12); color: var(--color-text-accent); display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
             <iconify-icon icon="fluent:folder-open-24-regular"></iconify-icon>
           </div>
           <div>
@@ -341,15 +341,15 @@
                 style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:0.75rem 0.5rem;border-radius:var(--f-radius-md);border:1px solid var(--color-neutral-stroke-1);background:var(--color-neutral-bg-1);cursor:pointer;transition:all 0.15s ease;"
                 title="Click to copy icon snippet"
               >
-                <iconify-icon icon="lucide:{icon.id}" style="font-size:1.4rem;color:var(--color-brand-primary);"></iconify-icon>
+                <iconify-icon icon="fluent:{icon.id}" style="font-size:1.4rem;color:var(--color-brand-primary);"></iconify-icon>
                 <span style="font-size:0.6rem;color:var(--color-neutral-fg-3);text-align:center;overflow:hidden;text-overflow:ellipsis;width:100%;">{icon.id}</span>
               </button>
             {/each}
           </div>
 
           {#if copiedIcon}
-            <div style="font-size:0.75rem;color:#16A34A;font-weight:600;margin-top:0.75rem;text-align:center;">
-              Copied &lt;iconify-icon icon="lucide:{copiedIcon}"&gt; snippet to clipboard!
+            <div style="font-size:0.75rem;color:var(--color-success-fg);font-weight:600;margin-top:0.75rem;text-align:center;">
+              Copied &lt;iconify-icon icon="fluent:{copiedIcon}"&gt; snippet to clipboard!
             </div>
           {/if}
         </div>

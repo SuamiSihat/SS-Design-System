@@ -1,11 +1,18 @@
 /**
- * SuamiSihat™ Design System — Remote Production Smoke Test Suite
- * Tests live Synology NAS endpoint: https://assets.suamisihat.myds.me/
+ * SuamiSihat Design System — live site smoke test
+ * Tests https://assets.suamisihat.myds.me/ (override with SS_SITE_URL).
  *
- * Usage: node scripts/remote-smoke-test.mjs
+ * The site is behind HTTP Basic Auth once the NAS password file exists.
+ * Provide credentials with SS_SITE_USER and SS_SITE_PASSWORD.
+ *
+ * Usage: SS_SITE_USER=... SS_SITE_PASSWORD=... node scripts/remote-smoke-test.mjs
  */
 
-const BASE_URL = 'https://assets.suamisihat.myds.me';
+const BASE_URL = (process.env.SS_SITE_URL || 'https://assets.suamisihat.myds.me').replace(/\/$/, '');
+const AUTH = process.env.SS_SITE_USER
+  ? { Authorization: 'Basic ' + Buffer.from(`${process.env.SS_SITE_USER}:${process.env.SS_SITE_PASSWORD ?? ''}`).toString('base64') }
+  : {};
+const HEADERS = { 'User-Agent': 'SuamiSihat-SmokeTest', ...AUTH };
 
 let totalTests = 0;
 let passedTests = 0;
@@ -15,17 +22,17 @@ function assert(condition, description) {
   totalTests++;
   if (condition) {
     passedTests++;
-    console.log(`  \x1b[32m✔\x1b[0m [PASS] ${description}`);
+    console.log(`  \x1b[32mPASS\x1b[0m [PASS] ${description}`);
   } else {
     failedTests++;
-    console.error(`  \x1b[31m✖\x1b[0m [FAIL] ${description}`);
+    console.error(`  \x1b[31mFAIL\x1b[0m [FAIL] ${description}`);
   }
 }
 
 async function checkUrl(path, expectedStatus = 200, minBytes = 100) {
   const url = `${BASE_URL}${path}`;
   try {
-    const res = await fetch(url, { method: 'GET', headers: { 'User-Agent': 'SuamiSihat-SmokeTest/3.5' } });
+    const res = await fetch(url, { method: 'GET', headers: HEADERS });
     const isStatusOk = res.status === expectedStatus;
     const text = await res.text();
     const isSizeOk = text.length >= minBytes;
@@ -41,7 +48,7 @@ async function checkUrl(path, expectedStatus = 200, minBytes = 100) {
 async function checkPageContent(path, searchStrings = []) {
   const url = `${BASE_URL}${path}`;
   try {
-    const res = await fetch(url);
+    const res = await fetch(url, { headers: HEADERS });
     const text = await res.text();
     for (const str of searchStrings) {
       const found = text.includes(str);
@@ -54,23 +61,25 @@ async function checkPageContent(path, searchStrings = []) {
 
 async function run() {
   console.log('\n================================================================');
-  console.log(`  🌐 LIVE PRODUCTION SMOKE TEST: ${BASE_URL}`);
+  console.log(`   LIVE PRODUCTION SMOKE TEST: ${BASE_URL}`);
   console.log('================================================================\n');
 
-  console.log('📄 1. Testing Live Production Routes & SSG HTML Pages:');
+  console.log(' 1. Testing Live Production Routes & SSG HTML Pages:');
   await checkUrl('/', 200, 500);
   await checkUrl('/brand-system/', 200, 500);
   await checkUrl('/brand-guidelines/', 200, 500);
   await checkUrl('/components/', 200, 500);
   await checkUrl('/products/', 200, 500);
-  await checkUrl('/products/Androlab/', 200, 500);
+  for (const slug of ['androlab', 'menss', 'mensculine', 'drmitring', 'rejal', 'nucaffe', 'pertabi', 'husbandclinic', 'isterisihat']) {
+    await checkUrl(`/products/${slug}/`, 200, 500);
+  }
   await checkUrl('/tools/', 200, 500);
   await checkUrl('/signature/', 200, 500);
   await checkUrl('/onboarding/', 200, 500);
   await checkUrl('/doc/', 200, 500);
   await checkUrl('/404.html', 200, 200);
 
-  console.log('\n🌐 2. Testing CDN Static Assets & Multi-Platform Delivery:');
+  console.log('\n 2. Testing CDN Static Assets & Multi-Platform Delivery:');
   await checkUrl('/assets/css/style.css', 200, 5000);
   await checkUrl('/assets/css/fluent.css', 200, 5000);
   await checkUrl('/assets/css/ss_theme.css', 200, 2000);
@@ -80,7 +89,23 @@ async function run() {
   await checkUrl('/public/brand/logos/ss-logomark-light.svg', 200, 100);
   await checkUrl('/public/brand/favicon/favicon.ico', 200, 100);
 
-  console.log('\n🔍 3. Testing Real-time DOM Content & Brand Standards:');
+  console.log('\n 3. Security: source and repository files must not be served');
+  for (const path of ['/.git/config', '/package.json', '/readme.md', '/.agents/AGENTS.md', '/QA/', '/src/app.html']) {
+    try {
+      const res = await fetch(`${BASE_URL}${path}`, { headers: HEADERS, redirect: 'manual' });
+      assert(res.status !== 200, `Not served (HTTP ${res.status}): ${path}`);
+    } catch (err) {
+      assert(true, `Not reachable: ${path}`);
+    }
+  }
+  try {
+    const res = await fetch(`${BASE_URL}/`, { redirect: 'manual' });
+    assert(res.status === 401, `Login required without credentials (HTTP ${res.status})`);
+  } catch (err) {
+    assert(false, `Login check failed: ${err.message}`);
+  }
+
+  console.log('\n 4. Testing Real-time DOM Content & Brand Standards:');
   await checkPageContent('/', [
     'SuamiSihat',
     'fluent2-footer',
@@ -106,13 +131,13 @@ async function run() {
   ]);
 
   console.log('\n================================================================');
-  console.log(`  📊 Remote Smoke Test Results: ${passedTests}/${totalTests} Passed (${failedTests} Failed)`);
+  console.log(`   Remote Smoke Test Results: ${passedTests}/${totalTests} Passed (${failedTests} Failed)`);
   console.log('================================================================\n');
 
   if (failedTests === 0) {
-    console.log('🎉 All live remote smoke tests PASSED on https://assets.suamisihat.myds.me/ !\n');
+    console.log(' All live remote smoke tests PASSED on https://assets.suamisihat.myds.me/ !\n');
   } else {
-    console.error(`⚠️  ${failedTests} tests failed on remote server.\n`);
+    console.error(`  ${failedTests} tests failed on remote server.\n`);
     process.exit(1);
   }
 }

@@ -1,5 +1,5 @@
 /**
- * SuamiSihat™ Design System — Production Smoke Test Suite (v3.5.1)
+ * SuamiSihat Design System — production build smoke test
  * Validates SvelteKit SSG outputs, routing integrity, raw asset CDN delivery, and token exports.
  *
  * Usage: node scripts/smoke-test.mjs
@@ -21,10 +21,10 @@ function assert(condition, description) {
   totalTests++;
   if (condition) {
     passedTests++;
-    console.log(`  \x1b[32m✔\x1b[0m [PASS] ${description}`);
+    console.log(`  \x1b[32mPASS\x1b[0m [PASS] ${description}`);
   } else {
     failedTests++;
-    console.error(`  \x1b[31m✖\x1b[0m [FAIL] ${description}`);
+    console.error(`  \x1b[31mFAIL\x1b[0m [FAIL] ${description}`);
   }
 }
 
@@ -53,13 +53,14 @@ function checkFileContains(relPath, searchStr, desc) {
 }
 
 console.log('\n======================================================');
-console.log('  🧪 SuamiSihat™ Design System — Smoke Test Suite (v3.5.1)');
+const VERSION = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')).version;
+console.log(`   SuamiSihat Design System — Smoke Test Suite (v${VERSION})`);
 console.log('======================================================\n');
 
 // -----------------------------------------------------------------------------
 // Test Group 1: SvelteKit Pre-rendered Static HTML Pages (SSG)
 // -----------------------------------------------------------------------------
-console.log('📄 1. Validating SvelteKit SSG Routes & HTML Pages:');
+console.log(' 1. Validating SvelteKit SSG Routes & HTML Pages:');
 checkFileExists('build/index.html', 500);
 checkFileExists('build/brand-guidelines/index.html', 500);
 checkFileExists('build/brand-system/index.html', 500);
@@ -74,7 +75,7 @@ checkFileExists('build/404.html', 200);
 // -----------------------------------------------------------------------------
 // Test Group 2: SvelteKit Runtime & Hydration Output
 // -----------------------------------------------------------------------------
-console.log('\n⚡ 2. Validating SvelteKit Runtime & Client Bundles:');
+console.log('\n 2. Validating SvelteKit Runtime & Client Bundles:');
 checkFileContains('build/index.html', '_app/immutable/', 'Index contains SvelteKit immutable bundle references');
 checkFileContains('build/index.html', 'SuamiSihat', 'Index contains SuamiSihat brand title in rendered DOM');
 checkFileContains('build/brand-guidelines/index.html', '60:30:10', 'Brand guidelines contains 60:30:10 rule');
@@ -83,7 +84,7 @@ checkFileContains('build/signature/index.html', 'Live Mail Client Preview', 'Sig
 // -----------------------------------------------------------------------------
 // Test Group 3: Raw Static Asset CDN Delivery (Multi-Platform Consumers)
 // -----------------------------------------------------------------------------
-console.log('\n🌐 3. Validating Raw Static Asset CDN & Multi-Platform Delivery:');
+console.log('\n 3. Validating Raw Static Asset CDN & Multi-Platform Delivery:');
 checkFileExists('build/assets/css/fluent.css', 5000);
 checkFileExists('build/assets/css/ss_theme.css', 2000);
 checkFileExists('build/assets/css/style.css', 5000);
@@ -99,11 +100,17 @@ checkFileExists('build/content/text-color-guide.md', 100);
 checkFileExists('build/content/ss-hero-guide.md', 100);
 checkFileExists('build/content/brand-fluent2.md', 100);
 checkFileExists('build/content/color-composition-guide.md', 100);
+checkFileExists('build/content/product-page-standard.md', 100);
+checkFileExists('build/.htaccess', 500);
+checkFileExists('build/robots.txt', 20);
+checkFileContains('build/robots.txt', 'Disallow: /', 'robots.txt blocks indexing');
+checkFileContains('build/.htaccess', 'Content-Security-Policy', '.htaccess sets a Content Security Policy');
+assert(!existsSync(join(ROOT, 'build/mockup-gatekeeper.html')), 'No prototype pages in the build');
 
 // -----------------------------------------------------------------------------
 // Test Group 4: JSON Token Syntax Integrity
 // -----------------------------------------------------------------------------
-console.log('\n📐 4. Validating W3C Token JSON Validity:');
+console.log('\n 4. Validating W3C Token JSON Validity:');
 try {
   const tokenPath = join(ROOT, 'build/assets/tokens/tokens.json');
   if (existsSync(tokenPath)) {
@@ -122,12 +129,12 @@ try {
 // Summary
 // -----------------------------------------------------------------------------
 console.log('\n======================================================');
-console.log(`  📊 Smoke Test Results: ${passedTests}/${totalTests} Passed (${failedTests} Failed)`);
+console.log(`   Smoke Test Results: ${passedTests}/${totalTests} Passed (${failedTests} Failed)`);
 console.log('======================================================\n');
 
 if (failedTests > 0) {
   process.exit(1);
 } else {
-  console.log('\x1b[32m🎉 All smoke test assertions PASSED with 100% success! SvelteKit v3.5.1 is healthy and production-ready.\x1b[0m\n');
+  console.log('\x1b[32m All smoke test assertions passed.\x1b[0m\n');
   process.exit(0);
 }

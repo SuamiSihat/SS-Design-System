@@ -31,10 +31,10 @@ Penubuhan PERTABI digerakkan oleh barisan kepimpinan yang prihatin terhadap isu-
 
 ### Visi & Misi PERTABI
 
-#### 🎯 Visi (Vision)
+#### Visi (Vision)
 > Menjadi platform persatuan lelaki dan bapa terunggul di Malaysia dalam memartabatkan wanita dan isteri melalui pembinaan sahsiah suami yang sihat, berilmu, penyayang, dan berdaya kepimpinan tinggi.
 
-#### 🚀 Misi (Mission)
+#### Misi (Mission)
 1. **Pendidikan & Kesedaran Holistik (Education & Awareness):**  
    Meningkatkan kesedaran serta memberi pendidikan berterusan kepada suami dan bapa di seluruh Malaysia dari aspek kesihatan fizikal & seksual, komunikasi emosi, pengurusan kewangan keluarga, dan kemahiran keibubapaan.
 2. **Platform Penyelidikan & Data Keluarga (Research & Insights):**  
@@ -69,12 +69,12 @@ Sebagai simbol kebanggaan dan komitmen terhadap gaya hidup sihat, PERTABI memper
 
 Menjadi ahli PERTABI bukan sekadar mendaftar nama — ia adalah satu ikrar untuk memimpin keluarga dengan teladan, menjaga kesihatan diri demi insan tersayang, dan berdiri teguh menyokong isteri tercinta.
 
-#### 📋 Siapa Yang Layak Memohon?
+#### Siapa Yang Layak Memohon?
 * Lelaki warganegara Malaysia berumur 18 tahun ke atas.
 * Berstatus bujang (bakal suami) atau telah mendirikan rumah tangga.
 * Berazam membina institusi keluarga yang harmoni, sihat, dan progresif.
 
-#### 🎁 Keistimewaan & Manfaat Ahli:
+#### Keistimewaan & Manfaat Ahli:
 1. **Akses Program & Bengkel Khas:** Bengkel komunikasi perkahwinan, pengurusan stres, dan literasi kewangan rumah tangga.
 2. **Faedah Ekosistem Kesihatan SuamiSihat™:** Diskaun khas untuk saringan kesihatan lelaki, telekonsultasi doktor, dan suplemen terpilih.
 3. **Pakej Barangan Ahli Eksklusif:** Hak istimewa untuk memiliki Jersi Rasmi PERTABI dan kit keahlian.
@@ -82,7 +82,7 @@ Menjadi ahli PERTABI bukan sekadar mendaftar nama — ia adalah satu ikrar untuk
 
 ---
 
-> ### 📢 **JOM MENJADI SUAMI PROGRESIF!**
+> ### **JOM MENJADI SUAMI PROGRESIF!**
 > *"Lelaki hebat bukan yang ditakuti, tetapi suami yang ditaati dan disayangi kerana akhlak serta tanggungjawabnya."*
 > 
 > **[ DAFTAR KEAHLIAN PERTABI SEKARANG ]**  

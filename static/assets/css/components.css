@@ -58,9 +58,9 @@
         .cl-icon-name{font-size:.58rem;color:var(--color-neutral-fg-3);text-align:center;font-family:monospace}
         .ss-btn{display:inline-flex;align-items:center;gap:var(--f-space-2);padding:10px var(--f-space-5);border-radius:var(--f-radius-md);font-size:.875rem;font-weight:600;border:none;cursor:pointer;transition:all var(--f-duration-gentle) var(--f-curve-spring);font-family:inherit;min-height:44px}
         .ss-btn:active{transform:scale(.97)}
-        .ss-btn-primary{background:var(--color-brand-primary);color:#fff}
+        .ss-btn-primary{background:var(--color-action-bg);color:var(--color-on-action)}
         .ss-btn-primary:hover{background:var(--color-brand-dark);box-shadow:var(--f-shadow-brand-sm);color:#fff}
-        .ss-btn-cta{background:var(--ss-banana-yellow,#F7E143);color:#1C1C1C;font-weight:700;border:none;box-shadow:0 2px 8px rgba(247,225,67,.35)}
+        .ss-btn-cta{background:var(--ss-banana-yellow,#FCE53D);color:#1C1C1C;font-weight:700;border:none;box-shadow:0 2px 8px rgba(247,225,67,.35)}
         .ss-btn-cta:hover{background:#FCE53D;color:#1C1C1C;box-shadow:0 4px 14px rgba(247,225,67,.5);transform:translateY(-2px)}
         .ss-btn-secondary{background:var(--color-neutral-bg-3);color:var(--color-neutral-fg-1);border:1px solid var(--color-neutral-stroke-2)}
         .ss-btn-secondary:hover{background:var(--color-neutral-bg-4)}
@@ -160,7 +160,7 @@
         .ss-empty-title{font-size:1.1rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:var(--f-space-2)}
         .ss-empty-desc{font-size:.875rem;color:var(--color-neutral-fg-2);line-height:1.6;max-width:480px;margin-bottom:var(--f-space-5)}
         /* ── List Item ── */
-        .ss-list{border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);overflow:hidden;background:var(--color-neutral-bg-2);width:100%}neutral-stroke-1);border-radius:var(--f-radius-xl);overflow:hidden;background:var(--color-neutral-bg-2);max-width:400px}
+        .ss-list{border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);overflow:hidden;background:var(--color-neutral-bg-2);width:100%}
         .ss-list-item{display:flex;align-items:center;gap:var(--f-space-3);padding:var(--f-space-3) var(--f-space-4);border-bottom:1px solid var(--color-neutral-stroke-1);cursor:pointer;transition:background var(--f-duration-fast)}
         .ss-list-item:last-child{border-bottom:none}
         .ss-list-item:hover{background:var(--color-neutral-bg-4)}
@@ -185,17 +185,3 @@
         .cl-install-title{font-size:.9rem;font-weight:600;color:var(--color-neutral-fg-1);margin-bottom:4px}
         .cl-install-desc{font-size:.78rem;color:var(--color-neutral-fg-2);margin-bottom:var(--f-space-2);line-height:1.5}
 
-    </style>
-</head>
-<body>
-    <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
-
-    <!-- Navbar -->
-    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-custom sticky-top glass-navbar transition-all" role="navigation" aria-label="Main navigation">
-        <div class="container-fluid px-4">
-            <img src="../public/brand/logos/ss-logomark-light.svg" alt="SuamiSihat™ Icon" class="logo me-2 logo-height" loading="eager"/>
-            <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html" aria-label="SuamiSihat™ Design System Home">
-                <span style="font-family:'Poppins',sans-serif;font-weight:600;letter-spacing:-0.02em;">SS Design System</span> <span class="navbar-version-badge">v3.4</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <iconify-icon icon="fluent:navigation-24-regular" style="font-size:1.2rem"></iconify-icon>
