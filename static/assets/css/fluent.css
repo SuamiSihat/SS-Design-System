@@ -364,36 +364,40 @@ body.dark-mode ::selection { background: rgba(33,161,247,0.22); }
 
 .f-page-layout {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 260px minmax(0, 1fr);
   gap: 0;
   min-height: calc(100vh - 65px);
+  width: 100%;
+  position: relative;
   transition: grid-template-columns var(--f-duration-slow) var(--f-curve-decelerate);
 }
 
 .f-page-layout.sidebar-minimized {
-  grid-template-columns: 0px 1fr !important;
+  grid-template-columns: minmax(0, 1fr) !important;
 }
 
 .f-sidebar {
   position: sticky;
-  top: 65px;
-  height: calc(100vh - 65px);
+  top: 60px;
+  height: calc(100vh - 60px);
   overflow-y: auto;
   border-right: 1px solid var(--color-neutral-stroke-1);
   background: var(--color-neutral-bg-2);
   padding: var(--f-space-6) 0;
   flex-shrink: 0;
+  width: 260px;
   transition: all var(--f-duration-slow) var(--f-curve-decelerate);
 }
 
 /* Acrylic effect for products page sidebar override */
 .f-sidebar.acrylic {
   background: var(--color-layer-acrylic);
-  backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
 }
 
 .f-page-layout.sidebar-minimized .f-sidebar {
+  display: none !important;
   opacity: 0 !important;
   pointer-events: none !important;
   overflow: hidden !important;
@@ -407,6 +411,8 @@ body.dark-mode ::selection { background: rgba(33,161,247,0.22); }
 .f-main-content {
   padding: var(--f-space-8) var(--f-space-8) var(--f-space-16);
   min-width: 0; /* Prevent grid blowout */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Sidebar toggle pill */
@@ -459,6 +465,15 @@ body.dark-mode ::selection { background: rgba(33,161,247,0.22); }
 /* ==========================================================================
    Hero Wave & Trademark Vitality Background
    ========================================================================== */
+.ss-hero,
+.f-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--gradient-brand-vertical, linear-gradient(180deg, #022057 0%, #043388 60%, #021A40 100%));
+  text-align: center;
+  box-sizing: border-box;
+}
+
 .hero-wave-canvas {
   position: absolute;
   top: 0;
@@ -469,6 +484,7 @@ body.dark-mode ::selection { background: rgba(33,161,247,0.22); }
   pointer-events: none;
 }
 
+.ss-hero-ambient-glow,
 .f-hero-ambient-glow {
   position: absolute;
   inset: 0;
@@ -477,6 +493,7 @@ body.dark-mode ::selection { background: rgba(33,161,247,0.22); }
   z-index: 1;
 }
 
+.ss-hero-ambient-glow::before,
 .f-hero-ambient-glow::before {
   content: '';
   position: absolute;
@@ -630,8 +647,8 @@ body.dark-mode .ss-gallery-stage {
   top: 14px;
   right: 14px;
   background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   color: var(--color-neutral-fg-1, #1c1c1c);
   font-size: 0.75rem;
   font-weight: 600;
@@ -666,8 +683,8 @@ body.dark-mode .ss-gallery-zoom-badge {
   height: 42px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.6);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   display: flex;
@@ -784,8 +801,8 @@ body.dark-mode .ss-gallery-thumb {
   align-items: center;
   justify-content: center;
   background: rgba(4, 10, 24, 0.9);
-  backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
   opacity: 0;
   transition: opacity 0.25s ease;
 }

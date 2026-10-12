@@ -1,43 +1,32 @@
 {
   "name": "ss-design-system",
-  "version": "3.5.1",
-  "description": "SuamiSihat™ Design System — SvelteKit living component hub & static asset pipeline",
+  "version": "3.6.0",
+  "description": "SuamiSihat Design System - SvelteKit brand and component hub, served at https://assets.suamisihat.myds.me/",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "npm run build:raw && vite build && node scripts/sync-build.mjs",
-    "build:raw": "npm run build:css && npm run build:js",
-    "build:css": "node scripts/minify-css.mjs",
-    "build:js": "node scripts/minify-js.mjs",
-    "test": "node scripts/smoke-test.mjs && node scripts/dom-test.mjs",
+    "build": "vite build && node scripts/minify-css.mjs",
+    "preview": "vite preview",
+    "lint": "node scripts/lint-content.mjs",
+    "test": "node scripts/smoke-test.mjs && node scripts/dom-test.mjs && node scripts/contrast-test.mjs && node scripts/a11y-test.mjs",
     "test:smoke": "node scripts/smoke-test.mjs",
     "test:dom": "node scripts/dom-test.mjs",
-    "test:remote": "node scripts/remote-smoke-test.mjs",
-    "preview": "vite preview",
-    "watch": "node scripts/watch.mjs",
-    "deploy": "powershell -ExecutionPolicy Bypass -File deploy.ps1"
+    "test:contrast": "node scripts/contrast-test.mjs",
+    "test:a11y": "node scripts/a11y-test.mjs",
+    "test:remote": "node scripts/remote-smoke-test.mjs"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.10",
     "@sveltejs/kit": "^2.70.3",
     "@sveltejs/vite-plugin-svelte": "^7.3.0",
     "@tailwindcss/typography": "^0.5.20",
-    "autoprefixer": "^10.5.4",
     "axe-core": "^4.13.0",
-    "chokidar": "^3.6.0",
     "jsdom": "^30.0.1",
     "lightningcss": "^1.28.2",
-    "lucide-svelte": "^1.0.1",
-    "pa11y": "^10.0.0",
-    "postcss": "^8.5.26",
-    "serve": "^14.2.6",
+    "playwright": "^1.64.0",
     "svelte": "^5.56.10",
     "tailwindcss": "^4.3.3",
-    "terser": "^5.36.0",
     "vite": "^8.2.2"
-  },
-  "overrides": {
-    "cookie": "^0.7.2"
   }
 }

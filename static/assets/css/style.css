@@ -131,8 +131,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Glassmorphism Navbar */
 .glass-navbar {
     background-color: rgba(255, 255, 255, 0.85) !important; /* White glass for light mode */
-    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     padding-top: 1.2rem;
     padding-bottom: 1.2rem;
@@ -940,6 +940,7 @@ body.dark-mode .navbar-version-badge {
     background-color: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: #fff;
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     letter-spacing: 0.02em;
 }
@@ -973,6 +974,7 @@ body.dark-mode .navbar-version-badge {
     border-radius: var(--f-radius-md);
     padding: 0.75rem 2rem;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
     background-color: rgba(255, 255, 255, 0.05) !important;
 }
@@ -1527,8 +1529,8 @@ body.dark-mode .footer-logo {
 /* ---- Fluent Glassmorphic Navbar upgrade ---- */
 .glass-navbar {
     background-color: var(--color-layer-acrylic) !important;
-    backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid var(--color-neutral-stroke-1);
     box-shadow: none;
     transition: all var(--f-duration-slow) var(--f-curve-easy-ease);
@@ -1871,18 +1873,7 @@ body {
 }
 .f-skip-link:focus {
   top: 0;
-  outline: 3px solid var(--f-color-accent, #21a1f7);
-  outline-offset: 2px;
-}
 
-/* Global focus-visible ring — WCAG 2.4.11 */
-:focus-visible {
-  outline: 3px solid var(--f-color-accent, #21a1f7);
-  outline-offset: 3px;
-  border-radius: var(--f-radius-sm);
-}
 
-/* Override outline:none in favour of focus-visible only */
-:focus:not(:focus-visible) {
-  outline: none;
-}
+
+
