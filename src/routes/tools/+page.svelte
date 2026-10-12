@@ -5,18 +5,18 @@
   let copiedIcon = $state('');
 
   const icons = [
-    { id: 'activity', name: 'Activity / Vitality', tags: 'pulse health heart rate vital' },
-    { id: 'shield-check', name: 'Shield Check / Verified', tags: 'security trust moh moh-approved medical' },
-    { id: 'heart-pulse', name: 'Heart Pulse', tags: 'cardio stamina performance wellness' },
-    { id: 'lock', name: 'Lock / Discretion', tags: 'privacy confidential secret encryption' },
-    { id: 'stethoscope', name: 'Stethoscope / Doctor', tags: 'clinic physician consult teleconsult' },
-    { id: 'pill', name: 'Pill / Formulation', tags: 'androlab capsule medication supplement' },
-    { id: 'zap', name: 'Energy / Zap', tags: 'potency vitality fast power' },
-    { id: 'calendar', name: 'Calendar / Booking', tags: 'appointment schedule slot date' },
-    { id: 'phone-call', name: 'Phone Call / Telehealth', tags: 'contact support teleconsult call' },
-    { id: 'user-check', name: 'User Check / Verified Patient', tags: 'patient doctor account register' },
-    { id: 'award', name: 'Award / Standard', tags: 'certified gold standard quality' },
-    { id: 'sparkles', name: 'Sparkles / AI & Modern', tags: 'ss-cam intelligence modern vitality' }
+    { id: 'pulse-24-regular', name: 'Activity / Vitality', tags: 'pulse health heart rate vital' },
+    { id: 'shield-checkmark-24-regular', name: 'Shield Check / Verified', tags: 'security trust moh moh-approved medical' },
+    { id: 'heart-pulse-24-regular', name: 'Heart Pulse', tags: 'cardio stamina performance wellness' },
+    { id: 'lock-closed-24-regular', name: 'Lock / Discretion', tags: 'privacy confidential secret encryption' },
+    { id: 'stethoscope-24-regular', name: 'Stethoscope / Doctor', tags: 'clinic physician consult teleconsult' },
+    { id: 'pill-24-regular', name: 'Pill / Formulation', tags: 'androlab capsule medication supplement' },
+    { id: 'flash-24-regular', name: 'Energy / Zap', tags: 'potency vitality fast power' },
+    { id: 'calendar-ltr-24-regular', name: 'Calendar / Booking', tags: 'appointment schedule slot date' },
+    { id: 'call-24-regular', name: 'Phone Call / Telehealth', tags: 'contact support teleconsult call' },
+    { id: 'person-available-24-regular', name: 'User Check / Verified Patient', tags: 'patient doctor account register' },
+    { id: 'ribbon-star-24-regular', name: 'Award / Standard', tags: 'certified gold standard quality' },
+    { id: 'sparkle-24-regular', name: 'Sparkles / AI & Modern', tags: 'ss-cam intelligence modern vitality' }
   ];
 
   let filteredIcons = $derived(
@@ -26,7 +26,7 @@
   );
 
   async function copyIconSnippet(iconId) {
-    const snippet = `<iconify-icon icon="lucide:${iconId}" width="24" height="24"></iconify-icon>`;
+    const snippet = `<iconify-icon icon="fluent:${iconId}" width="24" height="24"></iconify-icon>`;
     try {
       await navigator.clipboard.writeText(snippet);
       copiedIcon = iconId;
@@ -341,7 +341,7 @@
                 style="display:flex;flex-direction:column;align-items:center;gap:6px;padding:0.75rem 0.5rem;border-radius:var(--f-radius-md);border:1px solid var(--color-neutral-stroke-1);background:var(--color-neutral-bg-1);cursor:pointer;transition:all 0.15s ease;"
                 title="Click to copy icon snippet"
               >
-                <iconify-icon icon="lucide:{icon.id}" style="font-size:1.4rem;color:var(--color-brand-primary);"></iconify-icon>
+                <iconify-icon icon="fluent:{icon.id}" style="font-size:1.4rem;color:var(--color-brand-primary);"></iconify-icon>
                 <span style="font-size:0.6rem;color:var(--color-neutral-fg-3);text-align:center;overflow:hidden;text-overflow:ellipsis;width:100%;">{icon.id}</span>
               </button>
             {/each}
@@ -349,7 +349,7 @@
 
           {#if copiedIcon}
             <div style="font-size:0.75rem;color:#16A34A;font-weight:600;margin-top:0.75rem;text-align:center;">
-              Copied &lt;iconify-icon icon="lucide:{copiedIcon}"&gt; snippet to clipboard!
+              Copied &lt;iconify-icon icon="fluent:{copiedIcon}"&gt; snippet to clipboard!
             </div>
           {/if}
         </div>

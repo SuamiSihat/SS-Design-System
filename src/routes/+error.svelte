@@ -17,7 +17,7 @@
     </p>
     <div>
       <a href="/" class="btn btn-primary rounded-pill px-4">
-        ← Back to Design System Hub
+        <iconify-icon icon="fluent:arrow-left-16-regular" aria-hidden="true"></iconify-icon> Back to Design System Hub
       </a>
     </div>
   </div>

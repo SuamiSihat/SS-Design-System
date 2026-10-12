@@ -39,7 +39,7 @@ This is Gap 04 in the SSC-STR-001 Competitor Intelligence — **Diagnostic-First
 
 The quiz onboarding copy must **never** use:
 
-| ❌ Prohibited | Rationale |
+| {{icon:no}} Prohibited | Rationale |
 | :--- | :--- |
 | *"Mati pucuk?"* as an opener | Shame-trigger; violates Brand Voice Standards |
 | *"Daftar sekarang!"* / *"Cepat!"* | Urgency-scarcity manipulation; incompatible with diagnostic-first positioning |

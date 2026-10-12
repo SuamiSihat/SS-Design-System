@@ -4,7 +4,7 @@ Welcome to the **SuamiSihat™ Design System Roadmap**. This document outlines o
 
 ---
 
-## 🧭 Strategic Principles
+## Strategic Principles
 
 1. **Single Source of Truth**: Unified design tokens (`tokens.json`) shared across Web (CSS/JS), Flutter (`ss_tokens.dart`), and Expo / React Native (`ss_tokens.ts`).
 2. **Microsoft Fluent 2 Alignment**: Strict adherence to Fluent 2 guidelines, 60:30:10 visual allocation, and accessible typography.
@@ -13,22 +13,22 @@ Welcome to the **SuamiSihat™ Design System Roadmap**. This document outlines o
 
 ---
 
-## 🎯 Current Status (v3.5.1 — LIVING SYSTEM HUB)
+## Current Status (v3.5.1 — LIVING SYSTEM HUB)
 
 | Metric | Status |
 | :--- | :--- |
 | **Release Version** | `v3.5.1` |
 | **Framework Engine** | SvelteKit 2 + Svelte 5 (Runes `$state`, `$derived`, `$props`) |
-| **Architectural Contract** | 🟢 **Brand × Fluent 2 Integration Contract Enforced** |
+| **Architectural Contract** | **Brand × Fluent 2 Integration Contract Enforced** |
 | **Living Pages** | 100% SvelteKit Ported (Catalogue, Brand System, Docs, Components, Tools, Signature, Guidelines, Onboarding) |
 | **Product Hubs** | 14 Product Portfolio + Dynamic `[slug]` Brand Hubs with Interactive Galleries |
 | **Markdown Engine** | Full GFM (Marked 9.1.6) + Mermaid Diagrams + Dynamic Auto-TOC |
-| **Test Coverage** | 🟢 **122/122 Automated Test Assertions Passing (100%)** |
-| **Audit Status** | 🟢 **PRODUCTION READY** |
+| **Test Coverage** | **122/122 Automated Test Assertions Passing (100%)** |
+| **Audit Status** | **PRODUCTION READY** |
 
 ---
 
-## 🗺️ Release Roadmap & Milestones
+## Release Roadmap & Milestones
 
 ```text
  [v1.0 - v2.1]         [v3.0 - v3.4]            [v3.5.1]               [v3.6 - v4.0]
@@ -43,9 +43,9 @@ Welcome to the **SuamiSihat™ Design System Roadmap**. This document outlines o
 
 ---
 
-## 📋 Milestone Breakdown
+## Milestone Breakdown
 
-### ✅ Completed Milestones (v3.5.1)
+### {{icon:yes}} Completed Milestones (v3.5.1)
 
 | ID | Milestone or Feature | Component | Description | Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -61,7 +61,7 @@ Welcome to the **SuamiSihat™ Design System Roadmap**. This document outlines o
 
 ---
 
-### ⏳ Near-Term Backlog (v3.6 — Target: Q4 2026)
+### Near-Term Backlog (v3.6 — Target: Q4 2026)
 
 | ID | Title | Component | Description | Priority |
 | :--- | :--- | :--- | :--- | :--- |
@@ -72,7 +72,7 @@ Welcome to the **SuamiSihat™ Design System Roadmap**. This document outlines o
 
 ---
 
-### 🚀 Future Enterprise Horizon (v4.0 — Target: 2027)
+### Future Enterprise Horizon (v4.0 — Target: 2027)
 
 | Initiative | Description | Deliverable |
 | :--- | :--- | :--- |
@@ -83,7 +83,7 @@ Welcome to the **SuamiSihat™ Design System Roadmap**. This document outlines o
 
 ---
 
-## 💬 Governance & Feedback
+## Governance & Feedback
 
 Have a proposal or feature request?
 

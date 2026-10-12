@@ -205,7 +205,7 @@
         ctx.lineWidth = 1.2;
 
         const sz = star.size;
-        // Mars symbol ♂
+        // Mars symbol (male sign) drawn as vector strokes
         ctx.beginPath();
         ctx.arc(0, 0, sz * 0.32, 0, Math.PI * 2);
         ctx.stroke();

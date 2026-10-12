@@ -116,7 +116,7 @@
 
     <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
       <a href="/components/" style="background: #21A1F7; color: #022057; font-weight: 700; padding: 0.85rem 1.75rem; border-radius: 0.5rem; text-decoration: none; box-shadow: 0 4px 14px rgba(33, 161, 247, 0.35); transition: all 0.2s ease;">
-        Explore Components →
+        Explore Components <iconify-icon icon="fluent:arrow-right-16-regular" aria-hidden="true"></iconify-icon>
       </a>
       <a href="/brand-guidelines/" style="background: rgba(255, 255, 255, 0.1); color: #FFFFFF; font-weight: 600; padding: 0.85rem 1.75rem; border-radius: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.2); text-decoration: none; backdrop-filter: blur(8px); transition: all 0.2s ease;">
         Brand Guidelines

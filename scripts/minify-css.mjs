@@ -25,13 +25,15 @@ let after = 0;
 for (const name of readdirSync(CSS_DIR).filter((f) => f.endsWith('.css'))) {
   const path = join(CSS_DIR, name);
   const source = readFileSync(path);
-  const { code } = transform({
+  const { code, warnings } = transform({
     filename: path,
+    errorRecovery: true,
     code: source,
     minify: true,
     sourceMap: false,
     targets: { chrome: 95 << 16, firefox: 95 << 16, safari: 15 << 16 }
   });
+  for (const w of warnings) console.warn(`[minify-css] ${name}:${w.loc?.line} ${w.message}`);
   writeFileSync(path, code);
   before += source.length;
   after += code.length;

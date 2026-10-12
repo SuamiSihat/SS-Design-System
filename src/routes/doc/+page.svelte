@@ -1,4 +1,5 @@
 <script>
+  import { renderIconShortcodes } from '$lib/utils/markdown-icons.js';
   import { page } from '$app/stores';
   import { onMount, tick } from 'svelte';
 
@@ -197,7 +198,7 @@
         raw = raw.replace(/^---[\s\S]*?---\s*/, '');
         if (typeof window !== 'undefined' && window.marked) {
           window.marked.setOptions({ gfm: true, breaks: false });
-          content = window.marked.parse(raw);
+          content = renderIconShortcodes(window.marked.parse(raw));
         } else {
           content = raw.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
         }

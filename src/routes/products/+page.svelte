@@ -124,7 +124,7 @@
           tagClasses: ['tag-archived', 'tag-ss', 'tag-wellness'],
           entity: '01-SSH · Archived',
           entityIcon: 'fluent:history-24-regular',
-          logo: "/products/logo_Men'sFormulaX.svg",
+          logo: "/products/logo_mensformulax.svg",
           logoStyle: 'filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)); max-height: 55px;',
           logoTileBg: '#0559B5',
           href: null,

@@ -15,10 +15,10 @@ function assert(condition, description) {
   totalTests++;
   if (condition) {
     passedTests++;
-    console.log(`  \x1b[32m✔\x1b[0m [PASS] ${description}`);
+    console.log(`  \x1b[32mPASS\x1b[0m [PASS] ${description}`);
   } else {
     failedTests++;
-    console.error(`  \x1b[31m✖\x1b[0m [FAIL] ${description}`);
+    console.error(`  \x1b[31mFAIL\x1b[0m [FAIL] ${description}`);
   }
 }
 
@@ -54,10 +54,10 @@ async function checkPageContent(path, searchStrings = []) {
 
 async function run() {
   console.log('\n================================================================');
-  console.log(`  🌐 LIVE PRODUCTION SMOKE TEST: ${BASE_URL}`);
+  console.log(`   LIVE PRODUCTION SMOKE TEST: ${BASE_URL}`);
   console.log('================================================================\n');
 
-  console.log('📄 1. Testing Live Production Routes & SSG HTML Pages:');
+  console.log(' 1. Testing Live Production Routes & SSG HTML Pages:');
   await checkUrl('/', 200, 500);
   await checkUrl('/brand-system/', 200, 500);
   await checkUrl('/brand-guidelines/', 200, 500);
@@ -70,7 +70,7 @@ async function run() {
   await checkUrl('/doc/', 200, 500);
   await checkUrl('/404.html', 200, 200);
 
-  console.log('\n🌐 2. Testing CDN Static Assets & Multi-Platform Delivery:');
+  console.log('\n 2. Testing CDN Static Assets & Multi-Platform Delivery:');
   await checkUrl('/assets/css/style.css', 200, 5000);
   await checkUrl('/assets/css/fluent.css', 200, 5000);
   await checkUrl('/assets/css/ss_theme.css', 200, 2000);
@@ -80,7 +80,7 @@ async function run() {
   await checkUrl('/public/brand/logos/ss-logomark-light.svg', 200, 100);
   await checkUrl('/public/brand/favicon/favicon.ico', 200, 100);
 
-  console.log('\n🔍 3. Testing Real-time DOM Content & Brand Standards:');
+  console.log('\n 3. Testing Real-time DOM Content & Brand Standards:');
   await checkPageContent('/', [
     'SuamiSihat',
     'fluent2-footer',
@@ -106,13 +106,13 @@ async function run() {
   ]);
 
   console.log('\n================================================================');
-  console.log(`  📊 Remote Smoke Test Results: ${passedTests}/${totalTests} Passed (${failedTests} Failed)`);
+  console.log(`   Remote Smoke Test Results: ${passedTests}/${totalTests} Passed (${failedTests} Failed)`);
   console.log('================================================================\n');
 
   if (failedTests === 0) {
-    console.log('🎉 All live remote smoke tests PASSED on https://assets.suamisihat.myds.me/ !\n');
+    console.log(' All live remote smoke tests PASSED on https://assets.suamisihat.myds.me/ !\n');
   } else {
-    console.error(`⚠️  ${failedTests} tests failed on remote server.\n`);
+    console.error(`  ${failedTests} tests failed on remote server.\n`);
     process.exit(1);
   }
 }

@@ -1041,7 +1041,7 @@ class SSColors {
                 <div style="background:#FFFFFF;border:1px solid rgba(189,154,115,0.25);border-radius:var(--f-radius-md);padding:var(--f-space-3);box-shadow:0 2px 8px rgba(189,154,115,0.06);">
                   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
                     <div style="font-size:0.72rem;font-weight:700;color:#022057;text-transform:uppercase;letter-spacing:0.04em;">Fertility Care</div>
-                    <span style="font-size:0.68rem;font-weight:700;background:rgba(189,154,115,0.15);color:#8A6538;padding:2px 6px;border-radius:4px;">⭐ 4.9 Certified</span>
+                    <span style="font-size:0.68rem;font-weight:700;background:rgba(189,154,115,0.15);color:#8A6538;padding:2px 6px;border-radius:4px;"><iconify-icon icon="fluent:star-12-filled" aria-hidden="true"></iconify-icon> 4.9 Certified</span>
                   </div>
                   <div style="font-size:0.875rem;font-weight:700;color:#1C1C1C;margin-bottom:4px;">Men's Reproductive Health</div>
                   <div style="font-size:0.75rem;color:#525252;line-height:1.4;margin-bottom:var(--f-space-3);">Compassionate specialist consultations with advanced semen analysis.</div>
@@ -1089,7 +1089,7 @@ class SSColors {
                 </div>
                 <div style="background:var(--color-neutral-bg-1); padding:1rem; border-radius:var(--f-radius-lg); border:1px solid var(--color-neutral-stroke-1);">
                   <div style="font-size:0.75rem; font-weight:700; color:var(--color-brand-primary); margin-bottom:4px;">10% Kinetic Vitality</div>
-                  <div style="font-size:0.825rem; color:var(--color-neutral-fg-1); font-weight:600; margin-bottom:4px;">Interactive Mars ♂ Particles</div>
+                  <div style="font-size:0.825rem; color:var(--color-neutral-fg-1); font-weight:600; margin-bottom:4px;">Interactive Mars Particles</div>
                   <div style="font-size:0.75rem; color:var(--color-neutral-fg-3);">Interactive canvas wave (<code>.hero-wave-canvas</code>) with radiant Azure (<code>#21A1F7</code>) &amp; Gold (<code>#F7E143</code>) nodes and cursor tracking.</div>
                 </div>
               </div>

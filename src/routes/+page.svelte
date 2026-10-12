@@ -1136,7 +1136,7 @@
         <div class="f-pillar-icon" style="margin: 0 0 1rem; background: rgba(33, 161, 247, 0.12); color: #21A1F7;">
           <iconify-icon icon="fluent:server-24-regular"></iconify-icon>
         </div>
-        <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">SSNAS Dashboard ↗</h3>
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">SSNAS Dashboard <iconify-icon icon="fluent:open-16-regular" aria-hidden="true"></iconify-icon></h3>
         <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
           Central internal file storage, raw asset packages, and Synology portal.
         </p>

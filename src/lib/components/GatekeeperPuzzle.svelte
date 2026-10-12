@@ -48,7 +48,7 @@
       statusError: (n) => `RALAT DIAGNOSIS (${n})`,
       statusWarning: (n) => `AMARAN: ${n}/3 RALAT`,
       statusLockout: (t) => `SISTEM DIGANTUNG (${t})`,
-      statusSuccess: 'PROTOKOL DISAHKAN ✓',
+      statusSuccess: 'PROTOKOL DISAHKAN',
       instruction: 'Susun 6 perkataan prinsip rawatan di bawah mengikut urutan klinikal yang betul (awas perkataan pengeliru):',
       phase1: 'FASA 1: DIAGNOSIS',
       phase2: 'FASA 2: PRESKRIPSI',
@@ -86,7 +86,7 @@
       statusError: (n) => `DIAGNOSTIC ERROR (${n})`,
       statusWarning: (n) => `WARNING: ${n}/3 ERRORS`,
       statusLockout: (t) => `SYSTEM SUSPENDED (${t})`,
-      statusSuccess: 'PROTOCOL VERIFIED ✓',
+      statusSuccess: 'PROTOCOL VERIFIED',
       instruction: 'Assemble the 6 treatment principle words below in correct clinical order (watch out for decoy words):',
       phase1: 'PHASE 1: DIAGNOSIS',
       phase2: 'PHASE 2: PRESCRIPTION',
@@ -592,7 +592,7 @@
     >
       <div class="ss-console-topbar">
         <div class="ss-console-title">
-          <span style="color: var(--color-brand-cyan, #6DC6EC);">✚</span>
+          <span style="color: var(--color-brand-cyan, #6DC6EC);"><iconify-icon icon="fluent:add-16-filled" aria-hidden="true"></iconify-icon></span>
           <span>{t.consoleTitle}</span>
         </div>
         <div class="ss-status-badge">
@@ -615,7 +615,7 @@
             <span class="text-crimson">{t.statusError(failedAttempts)}</span>
           {:else if status === 'success'}
             <span class="ss-status-dot success"></span>
-            <span class="text-emerald">{t.statusSuccess}</span>
+            <span class="text-emerald"><iconify-icon icon="fluent:checkmark-circle-16-filled" aria-hidden="true"></iconify-icon> {t.statusSuccess}</span>
           {/if}
         </div>
       </div>
@@ -677,7 +677,7 @@
               </div>
             </div>
 
-            <div class="ss-phase-arrow" aria-hidden="true">→</div>
+            <div class="ss-phase-arrow" aria-hidden="true"><iconify-icon icon="fluent:arrow-right-16-regular" aria-hidden="true"></iconify-icon></div>
 
             <!-- Phase 2: Prescription -->
             <div class="ss-phase-column">

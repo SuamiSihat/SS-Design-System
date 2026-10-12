@@ -116,9 +116,9 @@ The `ss-hero` component is the **official default background and container stand
 | Attribute | Specification |
 | --------- | ------------- |
 | **Component Name** | `ss-hero` (CSS: `.ss-hero` / `.f-hero`, Svelte: `<SSHero />`) |
-| **60% Base Background** | Vertical / diagonal brand gradient (`--gradient-brand-vertical`: `#022057` ➔ `#043388` in light mode; `#021440` ➔ `#022057` in dark mode) |
+| **60% Base Background** | Vertical / diagonal brand gradient (`--gradient-brand-vertical`: `#022057` → `#043388` in light mode; `#021440` → `#022057` in dark mode) |
 | **30% Structure & Glow** | Ambient radial glow aura (`.f-hero-ambient-glow` with 60px blur, pulsing at 8s intervals) |
-| **10% Kinetic Motion** | 2D interactive canvas wave (`#heroWaveCanvas` / `.hero-wave-canvas`) featuring floating Mars `♂` symbols, radiant Azure `#21A1F7` & Gold `#F7E143` energy nodes, and gentle cursor parallax responsiveness |
+| **10% Kinetic Motion** | 2D interactive canvas wave (`#heroWaveCanvas` / `.hero-wave-canvas`) featuring floating Mars (male sign) symbols, radiant Azure `#21A1F7` & Gold `#F7E143` energy nodes, and gentle cursor parallax responsiveness |
 | **Motion Accessibility** | Respects `prefers-reduced-motion`; renders static glowing gradient if reduced motion is preferred |
 
 ---

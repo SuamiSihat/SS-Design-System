@@ -848,11 +848,11 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
               <div style="display:flex; flex-direction:column; gap:4px; font-size:0.72rem; font-family:monospace;">
                 <div style="display:flex; align-items:center; gap:8px;">
                   <div style="background:#000000; padding:3px 10px; border-radius:4px; color:#FFFFFF;">Button</div>
-                  <span style="color:var(--color-neutral-fg-3);">#000 bg → #FFF text</span>
+                  <span style="color:var(--color-neutral-fg-3);">#000 bg <iconify-icon icon="fluent:arrow-right-12-regular" aria-hidden="true"></iconify-icon> #FFF text</span>
                 </div>
                 <div style="display:flex; align-items:center; gap:8px;">
                   <div style="background:#FFFFFF; padding:3px 10px; border-radius:4px; color:#19191A; border:1px solid #CBD5E1;">Button</div>
-                  <span style="color:var(--color-neutral-fg-3);">#FFF bg → #19191A text</span>
+                  <span style="color:var(--color-neutral-fg-3);">#FFF bg <iconify-icon icon="fluent:arrow-right-12-regular" aria-hidden="true"></iconify-icon> #19191A text</span>
                 </div>
               </div>
             </div>
@@ -966,10 +966,10 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
             <div style="font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; color:#6DC6EC; margin-bottom:4px;">Final Art Direction Rule</div>
             <p style="font-size:0.95rem; color:#FCFAF6; font-style:italic; font-weight:600; margin:0 0 8px; line-height:1.5;">"Black and white create emphasis. Carbon Black and Porcelain create readability."</p>
             <div style="font-size:0.78rem; color:rgba(252,250,246,0.75); line-height:1.7;">
-              <strong style="color:#FCFAF6;">Strong</strong> → <code style="color:#6DC6EC;">#000000 / #FFFFFF</code><br>
-              <strong style="color:#FCFAF6;">Primary</strong> → <code style="color:#6DC6EC;">#19191A / #FCFAF6</code><br>
-              <strong style="color:#FCFAF6;">Secondary</strong> → Derived from Primary at 65% opacity<br>
-              <strong style="color:#FCFAF6;">Disabled</strong> → Derived from Primary at 35% opacity
+              <strong style="color:#FCFAF6;">Strong</strong> <iconify-icon icon="fluent:arrow-right-12-regular" aria-hidden="true"></iconify-icon> <code style="color:#6DC6EC;">#000000 / #FFFFFF</code><br>
+              <strong style="color:#FCFAF6;">Primary</strong> <iconify-icon icon="fluent:arrow-right-12-regular" aria-hidden="true"></iconify-icon> <code style="color:#6DC6EC;">#19191A / #FCFAF6</code><br>
+              <strong style="color:#FCFAF6;">Secondary</strong> <iconify-icon icon="fluent:arrow-right-12-regular" aria-hidden="true"></iconify-icon> Derived from Primary at 65% opacity<br>
+              <strong style="color:#FCFAF6;">Disabled</strong> <iconify-icon icon="fluent:arrow-right-12-regular" aria-hidden="true"></iconify-icon> Derived from Primary at 35% opacity
             </div>
           </div>
           <div style="display:flex; flex-direction:column; gap:6px; font-family:monospace; font-size:0.75rem;">
@@ -1066,7 +1066,7 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
       <div class="cl-section-eyebrow">Standard Container</div>
       <h2 class="cl-section-title">SS Hero Banner (<code>ss-hero</code>)</h2>
       <p class="cl-section-desc">
-        The official default background and container component for all hero-type banners, landing headers, and product master headers across SuamiSihat™. Combines the 60:30 brand base gradient, a 30% ambient glow bloom, and a 10% interactive kinetic particle wave canvas with Mars ♂ energy nodes.
+        The official default background and container component for all hero-type banners, landing headers, and product master headers across SuamiSihat™. Combines the 60:30 brand base gradient, a 30% ambient glow bloom, and a 10% interactive kinetic particle wave canvas with Mars-symbol energy nodes.
       </p>
 
       <!-- Live Interactive Demo of SSHero -->

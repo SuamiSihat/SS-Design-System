@@ -8,7 +8,7 @@ The **`ss-hero`** component (and `<SSHero />` in Svelte) is the **official defau
 ┌─────────────────────────────────────────────────────────────┐
 │ 60% Dominant Base: Brand Vertical Gradient (#022057 → #043388)│
 │ 30% Structural Depth: Radial Ambient Light Bloom (60px Blur) │
-│ 10% Kinetic Motion: Interactive Vitality Wave & ♂ Particles │
+│ 10% Kinetic Motion: Vitality Wave & Mars-symbol particles  │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -20,9 +20,9 @@ The hero banner strictly abides by the **60:30:10 Design System Hierarchy**:
 
 | Layer | Allocation | Specification | Purpose |
 |---|---|---|---|
-| **Dominant Base** | **60%** | `--gradient-brand-vertical`<br>Light: `#022057` ➔ `#043388`<br>Dark: `#021440` ➔ `#022057` | Instills clinical trust, male wellness foundation, and visual authority. |
+| **Dominant Base** | **60%** | `--gradient-brand-vertical`<br>Light: `#022057` → `#043388`<br>Dark: `#021440` → `#022057` | Instills clinical trust, male wellness foundation, and visual authority. |
 | **Structural Depth** | **30%** | `.f-hero-ambient-glow` / `.ss-hero-ambient-glow`<br>Radial gradient bloom (`#21A1F7` at 22% opacity) | Creates atmospheric focal depth without distracting from typography. |
-| **Kinetic Motion** | **10%** | `.hero-wave-canvas` (`#heroWaveCanvas`)<br>Sine vitality waves + Mars `♂` particles + Azure/Gold energy nodes | Represents biological energy, vitality, and interactive dynamism. |
+| **Kinetic Motion** | **10%** | `.hero-wave-canvas` (`#heroWaveCanvas`)<br>Sine vitality waves + Mars-symbol particles + Azure/Gold energy nodes | Represents biological energy, vitality, and interactive dynamism. |
 
 ---
 
@@ -30,7 +30,7 @@ The hero banner strictly abides by the **60:30:10 Design System Hierarchy**:
 
 The kinetic background renders via an HTML5 2D Canvas engine:
 - **Sine Vitality Waveform**: Multi-layered flowing wave oscillating at 60 FPS, with vertical amplitudes adjusting smoothly.
-- **Mars Gender Nodes (`♂`)**: Floating masculine biological glyphs drifting vertically and reacting to cursor displacement.
+- **Mars Gender Nodes (male sign)**: Floating masculine biological glyphs drifting vertically and reacting to cursor displacement.
 - **Energy Spark Nodes**: Azure (`#21A1F7`) and Banana Yellow (`#F7E143`) particles pulsing with soft glow halos.
 - **Cursor Interactive Parallax**: Mouse tracking gently lifts wave crests and attracts nearby particles toward the cursor.
 - **Accessibility Safeguard**: Automatically pauses motion when `prefers-reduced-motion: reduce` is detected.

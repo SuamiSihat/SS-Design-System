@@ -39,8 +39,8 @@ export async function load({ params, fetch }) {
       gallery: [
         { src: '/products/Androlab/sub-products/androlab-alpha/gallery/Render_Mockup_3840_1876_2025-11-07.png', title: 'ANDROLAB Alpha 3D Studio Packshot', sub: 'Photorealistic 4K studio render of sachet carton packaging.' },
         { src: '/products/Androlab/sub-products/androlab-alpha/gallery/Render_Mockup_3840_1916_2025-11-07.png', title: 'ANDROLAB Alpha Perspective View', sub: 'Angled render showcasing matte soft-touch finish and foil seal.' },
-        { src: '/products/Androlab/sub-products/androlab-alpha/gallery/sachet P0104 - ENG.png', title: 'Sachet Artwork (International English)', sub: 'Primary 4-layer aluminum foil sachet packaging design.' },
-        { src: '/products/Androlab/sub-products/androlab-alpha/gallery/sachet P0104.png', title: 'Sachet Artwork (Standard Domestic)', sub: 'NPRA-compliant standard domestic sachet graphic layout.' }
+        { src: '/products/Androlab/sub-products/androlab-alpha/gallery/sachet-p0104-eng.png', title: 'Sachet Artwork (International English)', sub: 'Primary 4-layer aluminum foil sachet packaging design.' },
+        { src: '/products/Androlab/sub-products/androlab-alpha/gallery/sachet-p0104-bm.png', title: 'Sachet Artwork (Standard Domestic)', sub: 'NPRA-compliant standard domestic sachet graphic layout.' }
       ]
     },
     menss: {
@@ -60,11 +60,11 @@ export async function load({ params, fetch }) {
         { name: 'MENSS Ring Series', desc: 'Precision silicone support rings (Core, Duo, Carry) crafted with medical-grade elastomer for intimate performance maintenance.', type: 'Wellness Device' }
       ],
       gallery: [
-        { src: '/products/MENSS/sub-products/penile-pump/gallery/202509_D0062_Menss_Packaging_Penile Pump_v1.png', title: 'MENSS Vacuum Device Luxury Drawer Box', sub: 'High-end drawer unboxing packaging with EVA foam insert.' },
+        { src: '/products/MENSS/sub-products/penile-pump/gallery/menss-penile-pump-packaging-d0062-v1.png', title: 'MENSS Vacuum Device Luxury Drawer Box', sub: 'High-end drawer unboxing packaging with EVA foam insert.' },
         { src: '/products/MENSS/sub-products/penile-pump/gallery/Render_Mockup_1080_1920_2025-10-14.jpg', title: 'MENSS Motorized VED Studio Render (Vertical)', sub: 'Precision medical-grade polycarbonate cylinder with digital pressure sensor.' },
         { src: '/products/MENSS/sub-products/penile-pump/gallery/Render_Mockup_1920_1080_2025-10-14.jpg', title: 'MENSS Clinical Studio Render (Horizontal)', sub: 'Ergonomic handle and clinical pressure gauge overview.' },
         { src: '/products/MENSS/sub-products/penile-pump/gallery/MENSS-PP-Box.png', title: 'MENSS Retail Packaging Storefront View', sub: 'Standard retail box asset for digital storefronts.' },
-        { src: '/products/MENSS/sub-products/penile-pump/gallery/Pump Silhuatte.png', title: 'Hardware Schematic Silhouette', sub: 'Clean engineering silhouette of the ergonomic pump handle.' }
+        { src: '/products/MENSS/sub-products/penile-pump/gallery/pump-silhouette.png', title: 'Hardware Schematic Silhouette', sub: 'Clean engineering silhouette of the ergonomic pump handle.' }
       ]
     },
     mensculine: {

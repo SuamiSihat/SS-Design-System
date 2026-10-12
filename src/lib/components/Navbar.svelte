@@ -352,7 +352,7 @@
       <!-- Footer Info -->
       <div class="f-spotlight-footer">
         <div class="d-flex align-items-center gap-3">
-          <span><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
+          <span><kbd><iconify-icon icon="fluent:arrow-up-12-regular" aria-hidden="true"></iconify-icon><span class="visually-hidden">Up</span></kbd> <kbd><iconify-icon icon="fluent:arrow-down-12-regular" aria-hidden="true"></iconify-icon><span class="visually-hidden">Down</span></kbd> to navigate</span>
           <span><kbd>Enter</kbd> to select</span>
           <span><kbd>Esc</kbd> to close</span>
         </div>

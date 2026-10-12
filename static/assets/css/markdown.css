@@ -496,59 +496,59 @@ body.dark-mode .md-skeleton {
 }
 
 /* ---- Dark mode overrides for markdown-body ---- */
-:global([data-theme="dark"]) .md-content h1, :global([data-theme="dark"]) .markdown-body h1,
-:global([data-theme="dark"]) .md-content h2, :global([data-theme="dark"]) .markdown-body h2,
-:global([data-theme="dark"]) .md-content h3, :global([data-theme="dark"]) .markdown-body h3,
-:global([data-theme="dark"]) .md-content h4, :global([data-theme="dark"]) .markdown-body h4,
-:global([data-theme="dark"]) .md-content strong, :global([data-theme="dark"]) .markdown-body strong {
+[data-theme="dark"] .md-content h1, [data-theme="dark"] .markdown-body h1,
+[data-theme="dark"] .md-content h2, [data-theme="dark"] .markdown-body h2,
+[data-theme="dark"] .md-content h3, [data-theme="dark"] .markdown-body h3,
+[data-theme="dark"] .md-content h4, [data-theme="dark"] .markdown-body h4,
+[data-theme="dark"] .md-content strong, [data-theme="dark"] .markdown-body strong {
     color: #F8FAFC;
 }
 
-:global([data-theme="dark"]) .md-content p, :global([data-theme="dark"]) .markdown-body p,
-:global([data-theme="dark"]) .md-content li, :global([data-theme="dark"]) .markdown-body li,
-:global([data-theme="dark"]) .md-content em, :global([data-theme="dark"]) .markdown-body em {
+[data-theme="dark"] .md-content p, [data-theme="dark"] .markdown-body p,
+[data-theme="dark"] .md-content li, [data-theme="dark"] .markdown-body li,
+[data-theme="dark"] .md-content em, [data-theme="dark"] .markdown-body em {
     color: #CBD5E1;
 }
 
-:global([data-theme="dark"]) .md-content a, :global([data-theme="dark"]) .markdown-body a {
+[data-theme="dark"] .md-content a, [data-theme="dark"] .markdown-body a {
     color: #21A1F7;
 }
 
-:global([data-theme="dark"]) .md-content blockquote, :global([data-theme="dark"]) .markdown-body blockquote {
+[data-theme="dark"] .md-content blockquote, [data-theme="dark"] .markdown-body blockquote {
     background: rgba(33, 161, 247, 0.1);
     border-left-color: #21A1F7;
     color: #E2E8F0;
 }
 
-:global([data-theme="dark"]) .callout-card {
+[data-theme="dark"] .callout-card {
     background: #0F172A;
     border-color: rgba(255, 255, 255, 0.1);
 }
 
-:global([data-theme="dark"]) .callout-card.callout-decision {
+[data-theme="dark"] .callout-card.callout-decision {
     background: rgba(33, 161, 247, 0.1);
     border-left-color: #21A1F7;
 }
-:global([data-theme="dark"]) .callout-card.callout-decision .callout-header { color: #6DC6EC; }
+[data-theme="dark"] .callout-card.callout-decision .callout-header { color: #6DC6EC; }
 
-:global([data-theme="dark"]) .callout-card.callout-note {
+[data-theme="dark"] .callout-card.callout-note {
     background: rgba(33, 161, 247, 0.08);
     border-left-color: #21A1F7;
 }
-:global([data-theme="dark"]) .callout-card.callout-note .callout-header { color: #21A1F7; }
+[data-theme="dark"] .callout-card.callout-note .callout-header { color: #21A1F7; }
 
-:global([data-theme="dark"]) .md-content code, :global([data-theme="dark"]) .markdown-body code {
+[data-theme="dark"] .md-content code, [data-theme="dark"] .markdown-body code {
     background: rgba(33, 161, 247, 0.15);
     color: #6DC6EC;
     border-color: rgba(33, 161, 247, 0.25);
 }
 
-:global([data-theme="dark"]) .md-content td, :global([data-theme="dark"]) .markdown-body td {
+[data-theme="dark"] .md-content td, [data-theme="dark"] .markdown-body td {
     color: #CBD5E1;
     border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 
-:global([data-theme="dark"]) .md-content tr:nth-child(even) td, :global([data-theme="dark"]) .markdown-body tr:nth-child(even) td {
+[data-theme="dark"] .md-content tr:nth-child(even) td, [data-theme="dark"] .markdown-body tr:nth-child(even) td {
     background: rgba(255, 255, 255, 0.03);
 }
 
@@ -578,3 +578,10 @@ body.dark-mode .md-skeleton {
     padding-left: 1rem;
 }
 
+
+/* Fluent icon shortcodes rendered from {{icon:...}} in markdown */
+.ss-md-icon { display: inline-block; vertical-align: -0.15em; font-size: 1.05em; }
+.ss-md-icon--yes { color: var(--ss-md-yes, #0E7A3E); }
+.ss-md-icon--no { color: var(--ss-md-no, #B42318); }
+[data-theme="dark"] .ss-md-icon--yes { --ss-md-yes: #4ADE80; }
+[data-theme="dark"] .ss-md-icon--no { --ss-md-no: #F87171; }

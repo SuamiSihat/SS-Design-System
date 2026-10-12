@@ -10,7 +10,7 @@ This document is the authoritative editorial standard for all SuamiSihat™ enti
 
 ## Core Voice Attributes
 
-| Attribute | Definition | ✅ Preferred Expression | ❌ Prohibited Expression |
+| Attribute | Definition | {{icon:yes}} Preferred Expression | {{icon:no}} Prohibited Expression |
 |---|---|---|---|
 | **Empowering** | Fosters self-efficacy and proactive care rather than fear. | *"Taking charge of your vitality starts with small, daily steps."* | *"If you don't act now, you are failing your family."* |
 | **Empathetic & Warm** | Approachable and respectful without informal slang. | *"Our clinical team is here to guide your wellness journey."* | *"Hey bro, check out this quick fix!"* |
@@ -72,7 +72,7 @@ These rules apply specifically to SS Clinic (SuamiSihat Clinic Sdn. Bhd.) across
 
 The following shame-trigger, taboo-exploitation, and urgency-panic phrases are **permanently blacklisted** across all SS Clinic copy:
 
-| ❌ Prohibited | Category | Compliant Alternative |
+| {{icon:no}} Prohibited | Category | Compliant Alternative |
 |---|---|---|
 | *"Mati pucuk"* | Shame / Taboo Shock | *"Sinyal semulajadi badan..."* or *"Penurunan tenaga lelaki"* |
 | *"Lemah batin"* | Shame / Taboo Shock | *"Kesihatan intim lelaki"* or *"Vitaliti suami"* |

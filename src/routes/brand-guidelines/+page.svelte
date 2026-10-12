@@ -10,7 +10,7 @@
       key: 'logo',
       title: 'Logo & Concept',
       series: 'SuamiSihat™ Design System',
-      pdf: '/brand-guidelines/Brand Guideline - Logo & Concept.pdf',
+      pdf: '/brand-guidelines/brand-guideline-logo-and-concept.pdf',
       img: '/brand-guidelines/cover-logo-concept.png',
       size: '1.4 MB'
     },
@@ -18,7 +18,7 @@
       key: 'interior',
       title: 'Interior Design',
       series: 'SuamiSihat™ Clinic Standard',
-      pdf: '/brand-guidelines/Brand Guideline - Interior Design.pdf',
+      pdf: '/brand-guidelines/brand-guideline-interior-design.pdf',
       img: '/brand-guidelines/cover-interior-design.png',
       size: '3.2 MB'
     }
@@ -126,7 +126,7 @@
           <button class="ss-btn ss-btn-primary ss-btn-sm" onclick={(e) => { e.stopPropagation(); openBook('logo'); }} aria-label="Read Logo & Concept Guideline Online">
             <iconify-icon icon="fluent:book-open-24-regular"></iconify-icon> Read Online
           </button>
-          <a href="/brand-guidelines/Brand Guideline - Logo & Concept.pdf" download class="ss-btn ss-btn-secondary ss-btn-sm" onclick={(e) => e.stopPropagation()}>
+          <a href="/brand-guidelines/brand-guideline-logo-and-concept.pdf" download class="ss-btn ss-btn-secondary ss-btn-sm" onclick={(e) => e.stopPropagation()}>
             <iconify-icon icon="fluent:arrow-download-16-regular"></iconify-icon> Download PDF
           </a>
         </div>
@@ -156,7 +156,7 @@
           <button class="ss-btn ss-btn-primary ss-btn-sm" onclick={(e) => { e.stopPropagation(); openBook('interior'); }}>
             <iconify-icon icon="fluent:book-open-24-regular"></iconify-icon> Read Online
           </button>
-          <a href="/brand-guidelines/Brand Guideline - Interior Design.pdf" download class="ss-btn ss-btn-secondary ss-btn-sm" onclick={(e) => e.stopPropagation()}>
+          <a href="/brand-guidelines/brand-guideline-interior-design.pdf" download class="ss-btn ss-btn-secondary ss-btn-sm" onclick={(e) => e.stopPropagation()}>
             <iconify-icon icon="fluent:arrow-download-16-regular"></iconify-icon> Download PDF
           </a>
         </div>

@@ -21,10 +21,10 @@ function assert(condition, description) {
   totalTests++;
   if (condition) {
     passedTests++;
-    console.log(`  \x1b[32m✔\x1b[0m [PASS] ${description}`);
+    console.log(`  \x1b[32mPASS\x1b[0m [PASS] ${description}`);
   } else {
     failedTests++;
-    console.error(`  \x1b[31m✖\x1b[0m [FAIL] ${description}`);
+    console.error(`  \x1b[31mFAIL\x1b[0m [FAIL] ${description}`);
   }
 }
 
@@ -38,7 +38,7 @@ function loadHtml(relPath) {
 }
 
 function testDom(pageName, html, rules) {
-  console.log(`\n📄 [DOM Test] Validating: ${pageName}`);
+  console.log(`\n [DOM Test] Validating: ${pageName}`);
   for (const rule of rules) {
     if (typeof rule.test === 'function') {
       const result = rule.test(html);
@@ -52,7 +52,7 @@ function testDom(pageName, html, rules) {
 }
 
 console.log('\n======================================================');
-console.log('  🌐 SuamiSihat™ Design System — DOM Validation Suite');
+console.log('   SuamiSihat™ Design System — DOM Validation Suite');
 console.log('======================================================');
 
 // 1. Root & Layout DOM Testing
@@ -141,7 +141,7 @@ testDom('Tools & SSCAM (build/tools/index.html)', toolsHtml, [
   { desc: 'Contains Brand Asset Library utility card', pattern: /Brand Asset Library/i },
   { desc: 'Contains SSNAS Dashboard utility card', pattern: /SSNAS/i },
   { desc: 'Contains real-time WCAG Color Contrast Ratio Tool', pattern: /Contrast Ratio/i },
-  { desc: 'Contains Icon Search and Copy utility', pattern: /Icon Search|copyIconSnippet|lucide:/i }
+  { desc: 'Contains Icon Search and Copy utility', pattern: /Icon Search|copyIconSnippet|fluent:/i }
 ]);
 
 // 5. Brand Guidelines DOM Testing
@@ -197,12 +197,12 @@ testDom('Components Sandbox Interactivity (build/components/index.html)', compon
 ]);
 
 console.log('\n======================================================');
-console.log(`  📊 DOM Validation Summary: ${passedTests}/${totalTests} Passed (${failedTests} Failed)`);
+console.log(`   DOM Validation Summary: ${passedTests}/${totalTests} Passed (${failedTests} Failed)`);
 console.log('======================================================\n');
 
 if (failedTests > 0) {
   process.exit(1);
 } else {
-  console.log('🎉 All DOM and structural assertions PASSED with 100% success!\n');
+  console.log(' All DOM and structural assertions PASSED with 100% success!\n');
   process.exit(0);
 }

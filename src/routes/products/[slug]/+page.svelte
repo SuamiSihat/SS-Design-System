@@ -1,4 +1,5 @@
 <script>
+  import { renderIconShortcodes } from '$lib/utils/markdown-icons.js';
   import { onMount, tick } from 'svelte';
   import { page } from '$app/stores';
 
@@ -59,7 +60,7 @@
     // Render markdown content if present
     if (data.content && typeof window !== 'undefined' && window.marked) {
       window.marked.setOptions({ gfm: true, breaks: false });
-      renderedContent = window.marked.parse(data.content);
+      renderedContent = renderIconShortcodes(window.marked.parse(data.content));
       await tick();
       // Render mermaid if any
       if (window.mermaid) {
@@ -98,7 +99,7 @@
     <iconify-icon icon="fluent:cube-dismiss-24-regular" style="font-size:3rem;color:var(--color-neutral-fg-3);"></iconify-icon>
     <h1 style="font-size:2rem;font-weight:700;color:var(--color-neutral-fg-1);">Brand Not Found</h1>
     <p style="color:var(--color-neutral-fg-2);">The product brand hub "<code>{slug}</code>" does not exist in this Design System.</p>
-    <a href="/products/" class="btn btn-primary">← Back to Product Catalogue</a>
+    <a href="/products/" class="btn btn-primary"><iconify-icon icon="fluent:arrow-left-16-regular" aria-hidden="true"></iconify-icon> Back to Product Catalogue</a>
   </div>
 {:else}
 
@@ -451,7 +452,7 @@
           </a>
           <a href="https://suamisihat.com.my" target="_blank" rel="noopener noreferrer" class="product-assets-btn" style="background: var(--color-brand-primary); color:#fff; border-color: transparent;">
             <iconify-icon icon="fluent:open-24-regular"></iconify-icon>
-            Shop at SuamiSihat.com.my ↗
+            Shop at SuamiSihat.com.my <iconify-icon icon="fluent:open-16-regular" aria-hidden="true"></iconify-icon>
           </a>
         </div>
       </div>
