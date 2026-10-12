@@ -82,8 +82,8 @@ for (const theme of ['light', 'dark']) {
       console.log(`FAIL [${theme}] ${route}`);
       for (const item of v) {
         console.log(`  - ${item.id} (${item.impact}): ${item.nodes.length} node(s)`);
-        for (const n of item.nodes.slice(0, 4)) {
-          console.log(`      ${n.target.join(' ')} :: ${(n.any[0]?.message || n.failureSummary || '').split('\n')[0]}`);
+        for (const n of item.nodes.slice(0, 40)) {
+          console.log(`      ${n.target.join(' ')} :: ${(n.any[0]?.message || n.failureSummary || '').split('\n')[0]}\n        ${n.html.slice(0, 160)}`);
         }
       }
     } else {

@@ -1,4 +1,5 @@
 <script>
+  import { VERSION } from '$lib/version.js';
   import { renderIconShortcodes } from '$lib/utils/markdown-icons.js';
   import { page } from '$app/stores';
   import { onMount, tick } from 'svelte';
@@ -356,7 +357,7 @@
                 <span class="meta-dot">•</span>
                 <span>August 2026</span>
                 <span class="meta-dot">•</span>
-                <span>Design System v3.5.1</span>
+                <span>Design System v{VERSION}</span>
               </div>
             </div>
           </div>
@@ -569,7 +570,7 @@
 
   :global([data-theme="dark"]) .medium-share-btn:hover {
     background: rgba(33, 161, 247, 0.15);
-    color: #21A1F7;
+    color: var(--color-text-accent);
     border-color: #21A1F7;
   }
 
@@ -657,12 +658,12 @@
   }
 
   :global([data-theme="dark"]) .toc-item:hover {
-    color: #21A1F7;
+    color: var(--color-text-accent);
     background: rgba(33, 161, 247, 0.08);
   }
 
   :global([data-theme="dark"]) .toc-item--active {
-    color: #21A1F7 !important;
+    color: var(--color-text-accent) !important;
     border-left-color: #21A1F7 !important;
     background: rgba(33, 161, 247, 0.12) !important;
   }
@@ -720,7 +721,7 @@
   :global([data-theme="dark"]) .doc-nav-btn:hover { background: rgba(255,255,255,0.05); color: #F8FAFC; }
   :global([data-theme="dark"]) .doc-nav-btn--active {
     background: rgba(33,161,247,0.12);
-    color: #21A1F7;
+    color: var(--color-text-accent);
     border-left-color: #21A1F7;
   }
 

@@ -27,5 +27,5 @@
       {copied ? 'Copied' : 'Copy'}
     </button>
   </div>
-  <pre style="margin: 0; padding: 1rem; overflow-x: auto; font-family: 'Cascadia Code', 'Fira Code', monospace; font-size: 0.85rem; line-height: 1.5; color: #E2E8F0;"><code>{code}</code></pre>
+  <pre tabindex="0" aria-label="{title || language} code sample" style="margin: 0; padding: 1rem; overflow-x: auto; font-family: 'Cascadia Code', 'Fira Code', monospace; font-size: 0.85rem; line-height: 1.5; color: #E2E8F0;"><code>{code}</code></pre>
 </div>

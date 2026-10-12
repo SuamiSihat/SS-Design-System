@@ -329,7 +329,7 @@ export function EmptyState({ title, description, actionLabel, onAction }) {
     listWeb: `<div class="ss-list">
   <div class="ss-list-item">
     <div class="ss-list-icon" style="background:rgba(33,161,247,0.1)">
-      <iconify-icon icon="fluent:heart-pulse-24-filled" style="color:#21A1F7;font-size:20px"></iconify-icon>
+      <iconify-icon icon="fluent:heart-pulse-24-filled" style="color:var(--color-text-accent);font-size:20px"></iconify-icon>
     </div>
     <div class="ss-list-body">
       <div class="ss-list-title">Blood Pressure</div>
@@ -740,7 +740,7 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
                 <div style="font-size:1.2rem; font-weight:900; color:#000000; margin-bottom:2px; letter-spacing:-0.01em;">Heading in #000000</div>
                 <div style="font-size:0.85rem; color:#19191A; line-height:1.6; margin-bottom:6px;">Body text uses <code>#19191A</code> for comfortable reading. Reduced visual aggression, high contrast ratio.</div>
                 <div style="font-size:0.72rem; color:rgba(25,25,26,0.65); margin-bottom:4px;">Secondary metadata — dates, tags · <code>rgba(25,25,26,0.65)</code></div>
-                <div style="font-size:0.72rem; color:rgba(25,25,26,0.35);">Disabled label · <code>rgba(25,25,26,0.35)</code></div>
+                <button type="button" disabled class="ss-disabled-sample" style="font-size:0.72rem; color:rgba(25,25,26,0.35);">Disabled label · <code style="color:inherit;">rgba(25,25,26,0.35)</code></button>
               </div>
               <div style="margin-top:0.875rem; border:1px solid var(--color-neutral-stroke-1); border-radius:8px; overflow:hidden; font-family:monospace; font-size:0.75rem;">
                 <div style="background:var(--color-neutral-bg-3); padding:6px 12px; border-bottom:1px solid var(--color-neutral-stroke-1); font-weight:700; color:var(--color-neutral-fg-3);">Hierarchy</div>
@@ -779,7 +779,7 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
                 <div style="font-size:1.2rem; font-weight:900; color:#FFFFFF; margin-bottom:2px; letter-spacing:-0.01em;">Heading in #FFFFFF</div>
                 <div style="font-size:0.85rem; color:#FCFAF6; line-height:1.6; margin-bottom:6px;">Body text uses <code style="color:#6DC6EC;">#FCFAF6</code> — Porcelain White for comfortable dark-mode reading.</div>
                 <div style="font-size:0.72rem; color:rgba(252,250,246,0.65); margin-bottom:4px;">Secondary metadata · <code style="color:rgba(109,198,236,0.8);">rgba(252,250,246,0.65)</code></div>
-                <div style="font-size:0.72rem; color:rgba(252,250,246,0.35);">Disabled label · <code style="color:rgba(109,198,236,0.6);">rgba(252,250,246,0.35)</code></div>
+                <button type="button" disabled class="ss-disabled-sample" style="font-size:0.72rem; color:rgba(252,250,246,0.35);">Disabled label · <code style="color:inherit;">rgba(252,250,246,0.35)</code></button>
               </div>
               <div style="margin-top:0.875rem; border:1px solid var(--color-neutral-stroke-1); border-radius:8px; overflow:hidden; font-family:monospace; font-size:0.75rem;">
                 <div style="background:var(--color-neutral-bg-3); padding:6px 12px; border-bottom:1px solid var(--color-neutral-stroke-1); font-weight:700; color:var(--color-neutral-fg-3);">Hierarchy</div>
@@ -917,18 +917,18 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
             <div style="padding:1rem 1.25rem;">
               <pre style="font-size:0.75rem; line-height:1.7; color:var(--color-neutral-fg-2); margin:0; font-family:'Cascadia Code', 'JetBrains Mono', 'Fira Code', monospace; white-space:pre-wrap; overflow-x:auto;"><span style="color:var(--color-neutral-fg-3);">/* LIGHT MODE */</span>
 :root &#123;
-  <span style="color:var(--color-brand-primary);">--text-strong</span>:    <span style="color:#107C10;">#000000</span>;
-  <span style="color:var(--color-brand-primary);">--text-primary</span>:   <span style="color:#107C10;">#19191a</span>;
-  <span style="color:var(--color-brand-primary);">--surface-canvas</span>: <span style="color:#107C10;">#fcfaf6</span>;
-  <span style="color:var(--color-brand-primary);">--surface-elev</span>:   <span style="color:#107C10;">#ffffff</span>;
+  <span style="color:var(--color-brand-primary);">--text-strong</span>:    <span style="color:var(--color-success-fg);">#000000</span>;
+  <span style="color:var(--color-brand-primary);">--text-primary</span>:   <span style="color:var(--color-success-fg);">#19191a</span>;
+  <span style="color:var(--color-brand-primary);">--surface-canvas</span>: <span style="color:var(--color-success-fg);">#fcfaf6</span>;
+  <span style="color:var(--color-brand-primary);">--surface-elev</span>:   <span style="color:var(--color-success-fg);">#ffffff</span>;
 &#125;
 
 <span style="color:var(--color-neutral-fg-3);">/* DARK MODE */</span>
 [data-theme="dark"] &#123;
-  <span style="color:var(--color-brand-primary);">--text-strong</span>:    <span style="color:#6DC6EC;">#ffffff</span>;
-  <span style="color:var(--color-brand-primary);">--text-primary</span>:   <span style="color:#6DC6EC;">#fcfaf6</span>;
-  <span style="color:var(--color-brand-primary);">--surface-canvas</span>: <span style="color:#6DC6EC;">#1c1c1c</span>;
-  <span style="color:var(--color-brand-primary);">--surface-elev</span>:   <span style="color:#6DC6EC;">#000000</span>;
+  <span style="color:var(--color-brand-primary);">--text-strong</span>:    <span style="color:var(--color-text-accent);">#ffffff</span>;
+  <span style="color:var(--color-brand-primary);">--text-primary</span>:   <span style="color:var(--color-text-accent);">#fcfaf6</span>;
+  <span style="color:var(--color-brand-primary);">--surface-canvas</span>: <span style="color:var(--color-text-accent);">#1c1c1c</span>;
+  <span style="color:var(--color-brand-primary);">--surface-elev</span>:   <span style="color:var(--color-text-accent);">#000000</span>;
 &#125;</pre>
             </div>
           </div>
@@ -943,15 +943,15 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
               <p style="font-size:0.8rem; color:var(--color-neutral-fg-2); line-height:1.5; margin-bottom:0.875rem;">The base palette does <strong>not</strong> provide a secondary text colour. Solve with <strong>opacity-derived semantic tokens</strong> — never pick an arbitrary grey.</p>
               <pre style="font-size:0.75rem; line-height:1.7; color:var(--color-neutral-fg-2); margin:0 0 0.875rem; font-family:'Cascadia Code', 'JetBrains Mono', 'Fira Code', monospace; white-space:pre-wrap;"><span style="color:var(--color-neutral-fg-3);">/* Light */</span>
 <span style="color:var(--color-brand-primary);">--text-secondary</span>:
-  <span style="color:#107C10;">rgba(25, 25, 26, 0.65)</span>;
+  <span style="color:var(--color-success-fg);">rgba(25, 25, 26, 0.65)</span>;
 <span style="color:var(--color-brand-primary);">--text-disabled</span>:
-  <span style="color:#107C10;">rgba(25, 25, 26, 0.35)</span>;
+  <span style="color:var(--color-success-fg);">rgba(25, 25, 26, 0.35)</span>;
 
 <span style="color:var(--color-neutral-fg-3);">/* Dark */</span>
 <span style="color:var(--color-brand-primary);">--text-secondary</span>:
-  <span style="color:#6DC6EC;">rgba(252, 250, 246, 0.65)</span>;
+  <span style="color:var(--color-text-accent);">rgba(252, 250, 246, 0.65)</span>;
 <span style="color:var(--color-brand-primary);">--text-disabled</span>:
-  <span style="color:#6DC6EC;">rgba(252, 250, 246, 0.35)</span>;</pre>
+  <span style="color:var(--color-text-accent);">rgba(252, 250, 246, 0.35)</span>;</pre>
               <div style="font-size:0.75rem; color:var(--color-neutral-fg-3);">
                 Secondary: Metadata · Dates · Helper text · Labels<br>
                 Disabled: Unavailable actions · Inactive fields
@@ -976,7 +976,7 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
             <div style="background:rgba(255,255,255,0.08); padding:4px 12px; border-radius:6px; color:#FFFFFF; font-weight:800; letter-spacing:0.02em;">████ STRONG</div>
             <div style="background:rgba(255,255,255,0.05); padding:4px 12px; border-radius:6px; color:#FCFAF6;">████ Primary</div>
             <div style="background:rgba(255,255,255,0.03); padding:4px 12px; border-radius:6px; color:rgba(252,250,246,0.65);">████ Secondary</div>
-            <div style="background:rgba(255,255,255,0.02); padding:4px 12px; border-radius:6px; color:rgba(252,250,246,0.35);">████ Disabled</div>
+            <button type="button" disabled class="ss-disabled-sample" style="background:rgba(255,255,255,0.02); padding:4px 12px; border-radius:6px; color:rgba(252,250,246,0.35);">████ Disabled</button>
           </div>
         </div>
       </div>
@@ -1056,7 +1056,7 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
           {/each}
         </div>
         {#if copiedIcon}
-          <div style="font-size:0.75rem; color:#16A34A; font-weight:600; margin-top:8px; text-align:center;">Copied icon snippet &lt;iconify-icon icon="fluent:{copiedIcon}"&gt;</div>
+          <div style="font-size:0.75rem; color:var(--color-success-fg); font-weight:600; margin-top:8px; text-align:center;">Copied icon snippet &lt;iconify-icon icon="fluent:{copiedIcon}"&gt;</div>
         {/if}
       </div>
     </section>
@@ -1192,7 +1192,7 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
         </div>
         <div class="col-md-4">
           <div class="ss-card" style="height:100%;">
-            <div class="ss-card-icon" style="background:rgba(33,161,247,0.1); color:#21A1F7;"><iconify-icon icon="fluent:store-microsoft-24-regular" style="font-size:22px"></iconify-icon></div>
+            <div class="ss-card-icon" style="background:rgba(33,161,247,0.1); color:var(--color-text-accent);"><iconify-icon icon="fluent:store-microsoft-24-regular" style="font-size:22px"></iconify-icon></div>
             <div class="ss-card-title">SS Ecommerce</div>
             <div class="ss-card-desc">Direct-to-consumer discretion, discrete packaging, and verified logistics.</div>
           </div>
@@ -1212,10 +1212,10 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
       <div class="cl-section-eyebrow">Feedback &amp; Status</div>
       <h2 class="cl-section-title">Alerts &amp; Notice Banners</h2>
       <div style="display:flex; flex-direction:column; gap:10px;">
-        <div class="ss-alert ss-alert-info"><iconify-icon icon="fluent:info-24-regular" style="color:#21A1F7; font-size:18px;"></iconify-icon><div><strong>Clinical Info:</strong> Blood biomarker testing requires minimum 8-hour fasting.</div></div>
-        <div class="ss-alert ss-alert-success"><iconify-icon icon="fluent:checkmark-circle-24-regular" style="color:#16A34A; font-size:18px;"></iconify-icon><div><strong>Success:</strong> Consultation session booked with Dr. Ismail Tambi.</div></div>
+        <div class="ss-alert ss-alert-info"><iconify-icon icon="fluent:info-24-regular" style="color:var(--color-text-accent); font-size:18px;"></iconify-icon><div><strong>Clinical Info:</strong> Blood biomarker testing requires minimum 8-hour fasting.</div></div>
+        <div class="ss-alert ss-alert-success"><iconify-icon icon="fluent:checkmark-circle-24-regular" style="color:var(--color-success-fg); font-size:18px;"></iconify-icon><div><strong>Success:</strong> Consultation session booked with Dr. Ismail Tambi.</div></div>
         <div class="ss-alert ss-alert-warning"><iconify-icon icon="fluent:warning-24-regular" style="color:#CA8A04; font-size:18px;"></iconify-icon><div><strong>Warning:</strong> TRT prescriptions require recurring 90-day haematology screening.</div></div>
-        <div class="ss-alert ss-alert-danger"><iconify-icon icon="fluent:error-circle-24-regular" style="color:#DC2626; font-size:18px;"></iconify-icon><div><strong>Error:</strong> Medical device order validation failed. Invalid staff ID.</div></div>
+        <div class="ss-alert ss-alert-danger"><iconify-icon icon="fluent:error-circle-24-regular" style="color:var(--color-error-fg); font-size:18px;"></iconify-icon><div><strong>Error:</strong> Medical device order validation failed. Invalid staff ID.</div></div>
       </div>
     </section>
 
@@ -1233,7 +1233,7 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
               <div class="ss-avatar ss-avatar-lg">SS</div>
               <div class="ss-avatar-group">
                 <div class="ss-avatar" style="background:#043388; color:#fff;">DR</div>
-                <div class="ss-avatar" style="background:#21A1F7; color:#fff;">RN</div>
+                <div class="ss-avatar" style="background:var(--color-action-bg); color:var(--color-on-action);">RN</div>
                 <div class="ss-avatar" style="background:#E2E8F0; color:#1C1C1C;">+4</div>
               </div>
             </div>
@@ -1389,7 +1389,7 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
           <div class="ss-list" style="display:flex; flex-direction:column; gap:8px;">
             <div class="ss-list-item" style="display:flex; align-items:center; justify-content:space-between; padding:0.75rem 1rem; border:1px solid var(--color-neutral-stroke-1); border-radius:var(--f-radius-lg); background:var(--color-neutral-bg-1);">
               <div style="display:flex; align-items:center; gap:12px;">
-                <div style="width:36px; height:36px; border-radius:8px; background:rgba(33,161,247,0.1); color:#21A1F7; display:flex; align-items:center; justify-content:center; font-size:1.1rem;">
+                <div style="width:36px; height:36px; border-radius:8px; background:rgba(33,161,247,0.1); color:var(--color-text-accent); display:flex; align-items:center; justify-content:center; font-size:1.1rem;">
                   <iconify-icon icon="fluent:heart-pulse-24-filled"></iconify-icon>
                 </div>
                 <div>
@@ -1418,14 +1418,14 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
       <h2 class="cl-section-title">Stats Metric Cards</h2>
       <div class="ss-stats-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-bottom:1.5rem;">
         <div class="ss-stat-card" style="background:var(--color-neutral-bg-2); border:1px solid var(--color-neutral-stroke-1); border-radius:var(--f-radius-xl); padding:1.25rem;">
-          <div style="width:36px; height:36px; border-radius:8px; background:rgba(33,161,247,0.1); color:#21A1F7; display:flex; align-items:center; justify-content:center; margin-bottom:0.75rem;">
+          <div style="width:36px; height:36px; border-radius:8px; background:rgba(33,161,247,0.1); color:var(--color-text-accent); display:flex; align-items:center; justify-content:center; margin-bottom:0.75rem;">
             <iconify-icon icon="fluent:heart-pulse-24-filled"></iconify-icon>
           </div>
           <div style="font-size:1.5rem; font-weight:800; color:var(--color-neutral-fg-1);">118/76</div>
           <div style="font-size:0.78rem; color:var(--color-neutral-fg-3);">Blood Pressure (mmHg)</div>
         </div>
         <div class="ss-stat-card" style="background:var(--color-neutral-bg-2); border:1px solid var(--color-neutral-stroke-1); border-radius:var(--f-radius-xl); padding:1.25rem;">
-          <div style="width:36px; height:36px; border-radius:8px; background:rgba(22,163,74,0.1); color:#16A34A; display:flex; align-items:center; justify-content:center; margin-bottom:0.75rem;">
+          <div style="width:36px; height:36px; border-radius:8px; background:rgba(22,163,74,0.1); color:var(--color-success-fg); display:flex; align-items:center; justify-content:center; margin-bottom:0.75rem;">
             <iconify-icon icon="fluent:steps-24-filled"></iconify-icon>
           </div>
           <div style="font-size:1.5rem; font-weight:800; color:var(--color-neutral-fg-1);">7,842</div>
@@ -1565,7 +1565,7 @@ abstract class SSColors {
     >
       <div style="width:40px; height:4px; border-radius:2px; background:var(--color-neutral-stroke-2); margin:0 auto 1.25rem;"></div>
       <div class="d-flex align-items-center gap-2 mb-2">
-        <div style="width:36px; height:36px; border-radius:8px; background:rgba(33,161,247,0.12); color:#21A1F7; display:flex; align-items:center; justify-content:center; font-size:1.2rem;">
+        <div style="width:36px; height:36px; border-radius:8px; background:rgba(33,161,247,0.12); color:var(--color-text-accent); display:flex; align-items:center; justify-content:center; font-size:1.2rem;">
           <iconify-icon icon="fluent:calendar-checkmark-24-regular"></iconify-icon>
         </div>
         <h3 id="modalDemoTitle" style="font-size:1.2rem; font-weight:800; color:var(--color-neutral-fg-1); margin:0;">Book Clinical Consultation</h3>

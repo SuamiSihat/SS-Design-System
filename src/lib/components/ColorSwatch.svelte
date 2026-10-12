@@ -34,7 +34,7 @@
 
     <div style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%;">
       <span style="font-family: monospace; font-size: 0.85rem; font-weight: 700;">{hex}</span>
-      <span style="font-size: 0.75rem; opacity: 0.9;">
+      <span style="font-size: 0.75rem; ">
         {#if copied}<iconify-icon icon="fluent:checkmark-12-regular" aria-hidden="true"></iconify-icon> Copied{:else}Click to copy{/if}
       </span>
     </div>

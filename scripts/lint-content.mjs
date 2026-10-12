@@ -55,6 +55,13 @@ for (const file of files) {
     const at = `${file}:${i + 1}`;
     const e = line.match(EMOJI);
     if (e) problems.push(`${at}: emoji/pictograph "${e[0]}" (U+${e[0].codePointAt(0).toString(16).toUpperCase()}); use a Fluent icon`);
+    const ent = line.match(/&#(x[0-9a-f]+|\d+);/i);
+    if (ent) {
+      const cpv = ent[1][0].toLowerCase() === 'x' ? parseInt(ent[1].slice(1), 16) : parseInt(ent[1], 10);
+      if ((cpv >= 0x1f000 && cpv <= 0x1faff) || (cpv >= 0x2600 && cpv <= 0x27bf) || cpv === 0x2b50) {
+        problems.push(`${at}: emoji HTML entity "${ent[0]}"; use a Fluent icon or plain text`);
+      }
+    }
     const m = line.match(MOJIBAKE);
     if (m) problems.push(`${at}: mojibake "${m[0]}"`);
     if (FOREIGN_ICON.test(line)) problems.push(`${at}: non-Fluent icon set; use fluent:*`);

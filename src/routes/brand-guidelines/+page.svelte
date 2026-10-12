@@ -90,7 +90,7 @@
 <div class="guidelines-page" style="min-height: calc(100vh - 60px); background: var(--color-neutral-bg-1, #F8FAFC); padding-bottom: 4rem;">
   <!-- Breadcrumb & Header -->
   <div class="selection-hero w-100 pt-5 text-center" style="width: 100%; max-width: 100%; padding: 0 clamp(1.5rem, 4vw, 4rem); box-sizing: border-box;">
-    <p class="selection-eyebrow" style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #21A1F7; margin-bottom: 0.5rem;">
+    <p class="selection-eyebrow" style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-accent); margin-bottom: 0.5rem;">
       <iconify-icon icon="fluent:book-open-24-regular" style="vertical-align: middle;"></iconify-icon> Official Publications
     </p>
     <h1 class="selection-title" style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; color: var(--color-neutral-fg-1, #022057); margin-bottom: 0.75rem;">
@@ -123,7 +123,7 @@
           Authoritative visual identity standard covering the SuamiSihat™ logomark, 1X exclusion space, typography scales, and multi-platform color hierarchies.
         </p>
         <div class="book-actions">
-          <button class="ss-btn ss-btn-primary ss-btn-sm" onclick={(e) => { e.stopPropagation(); openBook('logo'); }} aria-label="Read Logo & Concept Guideline Online">
+          <button class="ss-btn ss-btn-primary ss-btn-sm" onclick={(e) => { e.stopPropagation(); openBook('logo'); }} aria-label="Read Online: Logo & Concept Guideline">
             <iconify-icon icon="fluent:book-open-24-regular"></iconify-icon> Read Online
           </button>
           <a href="/brand-guidelines/brand-guideline-logo-and-concept.pdf" download class="ss-btn ss-btn-secondary ss-btn-sm" onclick={(e) => e.stopPropagation()}>
@@ -205,7 +205,7 @@
       <div style="flex: 1; width: 100%; height: calc(100% - 56px); background: #0F172A; position: relative;">
         {#if isPdfLoading}
           <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #0F172A; z-index: 10; color: #FFFFFF;">
-            <iconify-icon icon="fluent:spinner-ios-20-regular" style="font-size: 2.5rem; animation: spin 1s linear infinite; color: #21A1F7;"></iconify-icon>
+            <iconify-icon icon="fluent:spinner-ios-20-regular" style="font-size: 2.5rem; animation: spin 1s linear infinite; color: var(--color-text-accent);"></iconify-icon>
             <p style="font-size: 0.85rem; margin-top: 1rem; color: rgba(255,255,255,0.7);">Loading {books[activeBook].title}...</p>
           </div>
         {/if}

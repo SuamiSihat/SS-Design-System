@@ -1,5 +1,6 @@
 <script>
   import { renderIconShortcodes } from '$lib/utils/markdown-icons.js';
+  import { readableTextOn } from '$lib/utils/contrast.js';
   import { onMount, tick } from 'svelte';
   import { page } from '$app/stores';
 
@@ -283,9 +284,9 @@
         <!-- Color accent swatch -->
         <div style="margin-bottom:1rem;">
           <p style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--color-neutral-fg-3);margin-bottom:0.5rem;">Brand Accent</p>
-          <div class="token-swatch" style="background: {product.accent}; max-width: 280px;">
+          <div class="token-swatch" style="background: {product.accent}; color: {readableTextOn(product.accent)}; max-width: 280px;">
             <span style="font-size:0.85rem;font-weight:600;">{product.name} Accent</span>
-            <code style="font-size:0.75rem;opacity:0.85;">{product.accent}</code>
+            <code style="font-size:0.75rem;color:inherit;">{product.accent}</code>
           </div>
         </div>
 
@@ -450,7 +451,7 @@
             <iconify-icon icon="fluent:arrow-download-16-regular"></iconify-icon>
             Logo SVG (Dark)
           </a>
-          <a href="https://suamisihat.com.my" target="_blank" rel="noopener noreferrer" class="product-assets-btn" style="background: var(--color-brand-primary); color:#fff; border-color: transparent;">
+          <a href="https://suamisihat.com.my" target="_blank" rel="noopener noreferrer" class="product-assets-btn" style="background: var(--color-action-bg); color: var(--color-on-action); border-color: transparent;">
             <iconify-icon icon="fluent:open-24-regular"></iconify-icon>
             Shop at SuamiSihat.com.my <iconify-icon icon="fluent:open-16-regular" aria-hidden="true"></iconify-icon>
           </a>
@@ -533,7 +534,7 @@
   .brand-hero-logo { max-height: 72px; max-width: 100%; object-fit: contain; }
   .brand-hero-type { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; margin-bottom: 6px; }
   .brand-hero-title { font-size: 3rem; font-weight: 700; margin: 0 0 8px; letter-spacing: -0.02em; }
-  .brand-hero-tagline { font-size: 1.1rem; opacity: 0.85; margin: 0 0 1.5rem; }
+  .brand-hero-tagline { font-size: 1.1rem; margin: 0 0 1.5rem; }
   .brand-hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
   .btn-brand-hero-primary {
     display: inline-flex; align-items: center; gap: 6px;
@@ -594,7 +595,7 @@
   .cat-nav a.active { background: var(--color-brand-subtle, rgba(4,51,136,0.06)); color: var(--color-brand-primary, #043388); font-weight: 600; }
   :global([data-theme="dark"]) .cat-nav a { color: #94A3B8; }
   :global([data-theme="dark"]) .cat-nav a:hover { background: rgba(255,255,255,0.05); color: #F8FAFC; }
-  :global([data-theme="dark"]) .cat-nav a.active { background: rgba(33,161,247,0.1); color: #21A1F7; }
+  :global([data-theme="dark"]) .cat-nav a.active { background: rgba(33,161,247,0.1); color: var(--color-text-accent); }
   .cat-icon { display: flex; align-items: center; font-size: 1rem; flex-shrink: 0; }
 
   /* ── Sections ─────────────────────────────── */
@@ -617,11 +618,11 @@
   .logo-tile-label { font-size: 0.72rem; color: var(--color-neutral-fg-3); font-weight: 600; }
 
   /* ── Color swatch ─────────────────────────── */
-  .token-swatch { border-radius: 12px; padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; color: #ffffff; }
+  .token-swatch { border-radius: 12px; padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; }
 
   /* ── Buttons ──────────────────────────────── */
   .product-assets-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 600; padding: 6px 14px; border-radius: 8px; background: var(--color-brand-subtle); color: var(--color-brand-primary); text-decoration: none; border: 1px solid var(--color-neutral-stroke-1); transition: all 0.15s ease; }
-  .product-assets-btn:hover { background: var(--color-brand-primary); color: #fff; border-color: transparent; }
+  .product-assets-btn:hover { background: var(--color-action-bg); color: var(--color-on-action); border-color: transparent; }
   .btn-outline-small { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 600; padding: 6px 14px; border-radius: 8px; background: transparent; color: var(--color-neutral-fg-2); text-decoration: none; border: 1px solid var(--color-neutral-stroke-1); transition: all 0.15s ease; }
   .btn-outline-small:hover { color: var(--color-neutral-fg-1); border-color: var(--color-neutral-stroke-2); }
 
@@ -692,8 +693,7 @@
     color: #fff;
   }
   .ss-carousel-btn:hover {
-    background: var(--color-brand-primary);
-    color: #fff;
+    background: var(--color-action-bg); color: var(--color-on-action);
     transform: translateY(-50%) scale(1.1);
   }
   .ss-carousel-btn.prev { left: 14px; }

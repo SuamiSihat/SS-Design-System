@@ -130,7 +130,7 @@
           href: null,
           hrefLabel: 'Superseded by ANDROLAB',
           accent: 'linear-gradient(135deg, #475569, #64748B)',
-          cardStyle: 'opacity: 0.9;',
+          cardStyle: '',
           desc: '<em>Legacy registered botanical capsule formulation (MAL23046127T).</em> Formerly SuamiSihat\'s flagship oral nutraceutical containing Physta® Tongkat Ali, Black Ginger, Ginseng, Horny Goat Weed, and Tribulus. Now archived and superseded by the <strong>ANDROLAB Alpha &amp; RX series</strong>.',
           searchData: 'mfx mens formula x tongkat ali supplement deprecated archive'
         },
@@ -151,7 +151,7 @@
           href: '/products/menss/',
           hrefLabel: 'MENSS Hub',
           accent: 'linear-gradient(135deg, #443C91, #64748B)',
-          cardStyle: 'opacity: 0.9;',
+          cardStyle: '',
           desc: '<em>Deprecated legacy vitality formulation.</em> Formerly SuamiSihat\'s peak physical endurance compound. Archived and officially superseded &amp; replaced by <strong>MENSS Care Cream</strong> (50g NPRA cosmetic formula with Physta® Tongkat Ali &amp; L-Arginine).',
           searchData: 'xprimal endurance vitality formulation deprecated archive menss'
         }
@@ -524,11 +524,11 @@
                     {product.entity}
                   </span>
                   {#if product.logoDownload}
-                    <a href={product.logoDownload} download class="product-assets-btn" aria-label="Download {product.name} logo">
+                    <a href={product.logoDownload} download class="product-assets-btn" aria-label="Vector (.SVG): download {product.name} logo">
                       Vector (.SVG) <iconify-icon icon="fluent:arrow-download-24-regular" class="ms-1" aria-hidden="true"></iconify-icon>
                     </a>
                   {:else if product.href}
-                    <a href={product.href} class="product-assets-btn" aria-label="View {product.name} brand hub">
+                    <a href={product.href} class="product-assets-btn" aria-label="{product.hrefLabel ?? 'More'}: {product.name} brand hub">
                       {product.hrefLabel ?? 'More'} <iconify-icon icon="fluent:chevron-right-24-regular" class="ms-1" aria-hidden="true"></iconify-icon>
                     </a>
                   {:else if product.hrefLabel}
@@ -667,10 +667,10 @@
   .cat-nav-btn.active { background: var(--color-brand-subtle, rgba(4,51,136,0.06)); color: var(--color-brand-primary, #043388); font-weight: 600; }
   :global([data-theme="dark"]) .cat-nav-btn { color: #94A3B8; }
   :global([data-theme="dark"]) .cat-nav-btn:hover { background: rgba(255,255,255,0.05); color: #F8FAFC; }
-  :global([data-theme="dark"]) .cat-nav-btn.active { background: rgba(33,161,247,0.1); color: #21A1F7; }
+  :global([data-theme="dark"]) .cat-nav-btn.active { background: rgba(33,161,247,0.1); color: var(--color-text-accent); }
   :global([data-theme="dark"]) .cat-nav a { color: #94A3B8; }
   :global([data-theme="dark"]) .cat-nav a:hover { background: rgba(255,255,255,0.05); color: #F8FAFC; }
-  :global([data-theme="dark"]) .cat-nav a.active { background: rgba(33,161,247,0.1); color: #21A1F7; }
+  :global([data-theme="dark"]) .cat-nav a.active { background: rgba(33,161,247,0.1); color: var(--color-text-accent); }
   .cat-icon { display: flex; align-items: center; font-size: 1rem; flex-shrink: 0; }
   .cat-count { margin-left: auto; font-size: 0.7rem; background: var(--color-brand-subtle); color: var(--color-brand-primary); padding: 2px 8px; border-radius: 999px; font-weight: 600; }
 
@@ -691,7 +691,7 @@
     font-size: 0.95rem; flex-shrink: 0;
   }
   .ps-icon-ss      { background: var(--color-brand-subtle); color: var(--color-brand-primary); }
-  .ps-icon-partner { background: rgba(189,154,115,0.12); color: #BD9A73; }
+  .ps-icon-partner { background: rgba(189,154,115,0.12); color: var(--color-text-warm); }
   .ps-icon-science { background: rgba(10,137,250,0.12); color: #0A89FA; }
   .product-section-title { font-size: 1.35rem; font-weight: 600; color: var(--color-neutral-fg-1); margin: 0; }
   .product-section-desc  { font-size: 0.85rem; color: var(--color-neutral-fg-2); margin: 0; }
@@ -746,7 +746,7 @@
   /* Archived badge overlay */
   .archived-badge {
     position: absolute; top: 6px; right: 8px;
-    font-size: 0.65rem; background: #dc2626; color: #fff;
+    font-size: 0.65rem; background: #B91C1C; color: #fff;
     padding: 2px 6px; border-radius: 4px; font-weight: 700; text-transform: uppercase;
   }
 
@@ -777,13 +777,13 @@
     border: 1px solid var(--color-neutral-stroke-1);
   }
   .tag-ss       { background: var(--color-brand-subtle); color: var(--color-brand-primary); }
-  .tag-wellness { background: rgba(33,161,247,0.1); color: #21A1F7; }
+  .tag-wellness { background: rgba(33,161,247,0.1); color: var(--color-text-accent); }
   .tag-clinic   { background: var(--color-brand-subtle); color: var(--color-brand-primary); }
-  .tag-ecom     { background: rgba(189,154,115,0.12); color: #BD9A73; }
-  .tag-partner  { background: rgba(189,154,115,0.12); color: #BD9A73; }
-  .tag-women    { background: rgba(220,100,150,0.1); color: #c04f88; }
-  .tag-archived { background: rgba(225,29,72,0.1); color: #e11d48; border-color: rgba(225,29,72,0.3); }
-  :global([data-theme="dark"]) .tag-women { background: rgba(220,100,150,0.15); color: #e895c0; }
+  .tag-ecom     { background: rgba(189,154,115,0.12); color: var(--color-text-warm); }
+  .tag-partner  { background: rgba(189,154,115,0.12); color: var(--color-text-warm); }
+  .tag-women    { background: rgba(220,100,150,0.1); color: #BE185D; }
+  .tag-archived { background: rgba(225,29,72,0.1); color: var(--color-error-fg); border-color: rgba(225,29,72,0.3); }
+  :global([data-theme="dark"]) .tag-women { background: rgba(220,100,150,0.15); color: #F0A5C8; }
 
   /* Footer actions */
   .product-actions {
@@ -801,7 +801,7 @@
     transition: all 0.15s ease;
   }
   .product-assets-btn:hover {
-    background: var(--color-brand-primary); color: #fff; border-color: transparent;
+    background: var(--color-action-bg); color: var(--color-on-action); border-color: transparent;
   }
 
   /* No results */

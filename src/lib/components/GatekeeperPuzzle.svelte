@@ -785,7 +785,8 @@
 </div>
 
 <style>
-  :root {
+  /* Gate palette is scoped to the overlay so it never leaks into the site tokens. */
+  .ss-gate-overlay {
     --bg-base: #040813;
     --surface-card: rgba(8, 17, 34, 0.88);
     --surface-card-border: rgba(109, 198, 236, 0.22);

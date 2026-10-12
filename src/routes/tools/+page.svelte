@@ -141,9 +141,9 @@
             <span style="font-weight: 600; color: var(--color-neutral-fg-1);">SSCAM — Creative Assets Management (Desktop Workstation)</span>
           </div>
           <div style="display: flex; gap: 10px; opacity: 0.7;">
-            <span>&#9472;</span>
-            <span>&#9633;</span>
-            <span>&#10005;</span>
+            <iconify-icon icon="fluent:subtract-16-regular" aria-hidden="true"></iconify-icon>
+            <iconify-icon icon="fluent:square-16-regular" aria-hidden="true"></iconify-icon>
+            <iconify-icon icon="fluent:dismiss-16-regular" aria-hidden="true"></iconify-icon>
           </div>
         </div>
 
@@ -170,22 +170,22 @@
       <!-- Feature Checklist -->
       <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.5rem;">
         <li style="font-size: 0.85rem; color: var(--color-neutral-fg-2); display: flex; align-items: center; gap: 8px;">
-          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: #16A34A;"></iconify-icon> Native WPF .NET 8 desktop engine
+          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> Native WPF .NET 8 desktop engine
         </li>
         <li style="font-size: 0.85rem; color: var(--color-neutral-fg-2); display: flex; align-items: center; gap: 8px;">
-          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: #16A34A;"></iconify-icon> On-brand colour grading presets (LUTs)
+          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> On-brand colour grading presets (LUTs)
         </li>
         <li style="font-size: 0.85rem; color: var(--color-neutral-fg-2); display: flex; align-items: center; gap: 8px;">
-          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: #16A34A;"></iconify-icon> Auto-watermark with approved exclusion zones
+          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> Auto-watermark with approved exclusion zones
         </li>
         <li style="font-size: 0.85rem; color: var(--color-neutral-fg-2); display: flex; align-items: center; gap: 8px;">
-          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: #16A34A;"></iconify-icon> WebP, AVIF &amp; MP4 H.265 accelerated export
+          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> WebP, AVIF &amp; MP4 H.265 accelerated export
         </li>
         <li style="font-size: 0.85rem; color: var(--color-neutral-fg-2); display: flex; align-items: center; gap: 8px;">
-          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: #16A34A;"></iconify-icon> Patient privacy face-blurring automation
+          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> Patient privacy face-blurring automation
         </li>
         <li style="font-size: 0.85rem; color: var(--color-neutral-fg-2); display: flex; align-items: center; gap: 8px;">
-          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: #16A34A;"></iconify-icon> One-click sync to SSNAS shared drives
+          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> One-click sync to SSNAS shared drives
         </li>
       </ul>
 
@@ -233,7 +233,7 @@
       <!-- Brand Assets Library -->
       <div class="tool-card" style="background: var(--color-neutral-bg-2); border: 1px solid var(--color-neutral-stroke-1); border-radius: var(--f-radius-xl); padding: 1.5rem; display: flex; flex-direction: column;">
         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-          <div style="width: 48px; height: 48px; border-radius: var(--f-radius-md); background: rgba(33,161,247,.12); color: #21A1F7; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
+          <div style="width: 48px; height: 48px; border-radius: var(--f-radius-md); background: rgba(33,161,247,.12); color: var(--color-text-accent); display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
             <iconify-icon icon="fluent:folder-open-24-regular"></iconify-icon>
           </div>
           <div>
@@ -348,7 +348,7 @@
           </div>
 
           {#if copiedIcon}
-            <div style="font-size:0.75rem;color:#16A34A;font-weight:600;margin-top:0.75rem;text-align:center;">
+            <div style="font-size:0.75rem;color:var(--color-success-fg);font-weight:600;margin-top:0.75rem;text-align:center;">
               Copied &lt;iconify-icon icon="fluent:{copiedIcon}"&gt; snippet to clipboard!
             </div>
           {/if}
