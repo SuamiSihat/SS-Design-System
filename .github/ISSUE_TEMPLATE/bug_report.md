@@ -25,4 +25,5 @@ If applicable, add screenshots to help explain your problem.
 **Environment (please complete the following information):**
  - OS: [e.g. iOS, Windows, macOS]
  - Browser: [e.g. Chrome, Safari, Firefox]
- - Version: [e.g. v3.3]
+ - Design system version (footer or navbar): [e.g. v3.6.0]
+ - Theme: [light or dark]

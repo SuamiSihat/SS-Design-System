@@ -17,6 +17,11 @@
     Require valid-user
 </IfFile>
 
+# Brand logos stay public so email signatures and partner sites can load them
+<If "%{REQUEST_URI} =~ m#^/public/brand/(logos|favicon|app-icons)/#">
+    Require all granted
+</If>
+
 # Never serve hidden files or folders (.git, .env, .htaccess, .well-known excepted)
 <IfModule mod_rewrite.c>
     RewriteEngine On
@@ -24,13 +29,10 @@
 </IfModule>
 
 # Never serve source, config or log files
-<FilesMatch "\.(md|mjs|log|env|lock|yml|yaml|ps1|sh|bak|map)$">
+<FilesMatch "\.(mjs|log|env|lock|yml|yaml|ps1|sh|bak|map)$">
     Require all denied
 </FilesMatch>
-# Markdown docs are fetched by the /doc/ viewer, so allow content/*.md only
-<If "%{REQUEST_URI} =~ m#^/content/[A-Za-z0-9/_-]+\.md$#">
-    Require all granted
-</If>
+# Markdown under /content/ is served (the /doc/ viewer fetches it) and stays behind the login.
 
 # ----------------------------------------------------------------------------
 # Security headers

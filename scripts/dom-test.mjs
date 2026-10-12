@@ -1,5 +1,5 @@
 /**
- * SuamiSihat™ Design System — Comprehensive DOM & Structural Test Suite (v3.5.1)
+ * SuamiSihat Design System — DOM and structure tests
  * Validates DOM hierarchy, critical semantic elements, attributes, anchors, logo rules, and dark mode tokens.
  *
  * Usage: node scripts/dom-test.mjs

@@ -22,6 +22,7 @@
   const docsLinksGroup1 = [
     { label: 'Brand × Fluent 2', href: '/doc/?doc=brand-fluent2', icon: 'fluent:puzzle-piece-24-regular' },
     { label: 'Colour Composition', href: '/doc/?doc=color-composition-guide', icon: 'fluent:color-fill-24-regular' },
+    { label: 'Product Page Standard', href: '/doc/?doc=product-page-standard', icon: 'fluent:box-checkmark-24-regular' },
     { label: 'Onboarding Guide', href: '/onboarding/', icon: 'fluent:person-star-24-regular' },
     { label: "What's New", href: '/doc/?doc=changelog', icon: 'fluent:clock-arrow-download-24-regular' },
     { label: 'Roadmap', href: '/doc/?doc=roadmap', icon: 'fluent:map-drive-24-regular' },

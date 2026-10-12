@@ -133,13 +133,13 @@ Our vision and mission directly govern our **Fluent 2 Design Token Architecture*
 
 | Design Token | Hex Code | Strategic Intent | Application Rule |
 |---|---|---|---|
-| `--color-brand-prussian` | `#022057` | Executive Governance & Gravitas | Top navigation, dark surfaces, authoritative headers. |
-| `--color-brand-blue` | `#043388` | Signature Brand Recognition | Brand badges, secondary buttons, section dividers. |
-| `--color-brand-azure` | `#21A1F7` | Action Spark & Forward Momentum | **Strict 10% rule**: Primary CTAs, active tab bars, focus states. Never used for body text on white. |
-| `--color-surface-bg` | `#F8FAFC` | Sanitary & Modern Clinical Space | Page background, cards, reading canvases. |
-| `--color-text-primary` | `#0F172A` | AAA Reading Contrast (13:1) | Primary headings, body copy, clinical tables. |
-| `--color-text-brand` | `#043388` | High-Contrast Brand Emphasis | Project IDs, uppercase eyebrow tags, technical labels. |
-
+| `--ss-prussian-blue` | `#022057` | Executive governance and gravitas | Top navigation, dark surfaces, authoritative headers. |
+| `--ss-blue` | `#043388` | Signature brand recognition | Brand badges, structure, section dividers. |
+| `--ss-azure` | `#21A1F7` | Action spark and forward momentum | 10% accent: icons, highlights, focus on dark. Never white text on Azure; never body text on white. |
+| `--color-action-bg` | `#0B6BC4` | Accessible action | Filled primary buttons with white text (5.4:1). |
+| `--surface-canvas` | `#FCFAF6` | Calm clinical space | Page background and reading canvases (light theme). |
+| `--text-primary` | `#19191A` | Readable authority (16.9:1 on Porcelain) | Body copy, headings, clinical tables. |
+| `--color-text-accent` | `#0B6BC4` | Brand emphasis in text | Eyebrow tags, technical labels on light surfaces. |
 ---
 
 ## 6. Living Ecosystem Touchpoint Alignment

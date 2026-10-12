@@ -26,7 +26,7 @@
 
   let previewMode = $state('light'); // 'light' | 'dark'
   let copiedMode = $state(''); // '' | 'rich' | 'raw'
-  let cdnBaseUrl = $state('https://assets.suamisihat.com.my');
+  let cdnBaseUrl = $state('https://assets.suamisihat.myds.me');
 
   // --- Corporate Entities ---
   const entities = {

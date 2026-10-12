@@ -16,8 +16,7 @@ The full paths (relative to workspace root):
 - Light: `public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_light.svg`
 - Dark: `public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg`
 
-The JavaScript `ThemeManager` in `assets/js/main.js` automatically switches footer logos
-when the user toggles theme. Do NOT hard-code a single logo path for any themed element.
+The Navbar and Footer components switch logo variants when the theme changes. Do NOT hard-code a single logo path for any themed element.
 
 ---
 
@@ -36,7 +35,7 @@ perceived brightness of the background colour:
 
 - **CSS custom properties**: if the surface uses `var(--color-neutral-bg-1)` or similar light-mode tokens -> use `_light.svg`. If it uses `var(--color-brand-primary)`, `var(--color-neutral-bg-dark)`, or similar dark tokens -> use `_dark.svg`.
 - **Hex colour**: convert to HSL. If `L < 50` -> dark background -> use `_dark.svg`.
-- **Utility function** (available in `main.js`): call `LogoSelector.forBackground('#hexColour')` which returns the correct logo path string.
+- **Utility**: `readableTextOn(hex)` in `src/lib/utils/contrast.js` tells you whether a background needs light or dark content; use the matching logo variant.
 
 ---
 
@@ -53,11 +52,16 @@ The standalone S-shaped icon also follows brightness conventions:
 
 ## Path Conventions
 
-| Page depth | Relative prefix to `public/` |
-| ---------- | ----------------------------- |
-| Root `index.html` | `public/brand/logos/...` |
-| `pages/*.html` | `../public/brand/logos/...` |
-| `products/*/*.html` | `../../public/brand/logos/...` |
+The site is a SvelteKit static build. Everything in `static/` is served from the site root, so always use root-absolute paths:
+
+| Asset | Path in code | File in the repo |
+| ----- | ------------ | ---------------- |
+| Master logos | `/public/brand/logos/...` | `static/public/brand/logos/...` |
+| Product brand files | `/products/<Brand>/...` | `static/products/<Brand>/...` |
+| Stylesheets | `/assets/css/...` | `static/assets/css/...` |
+| Markdown docs | `/content/<name>.md` | `static/content/<name>.md` |
+
+Never add a second copy of an asset outside `static/`.
 
 ---
 
@@ -98,12 +102,54 @@ Always adhere strictly to the approved surface and text pairings:
 
 ## General Design System Rules
 
-- All pages must use `assets/css/style.css` for global tokens and layout.
-- All pages must include `assets/js/main.js` **exactly once** — never twice.
-- The global site footer always uses the **full wordmark** (`logo_suamisihat_primary_*.svg`), not the logomark icon.
-- The navbar/header uses the **logomark icon** (`ss-logomark-*.svg`).
-- Theme switching is handled globally by `ThemeManager` in `main.js` — do not re-implement it inline.
-- All typography must follow the 4-tier text token hierarchy (`--text-strong`, `--text-primary`, `--text-secondary`, `--text-disabled`).
+- Global styles and tokens live in `static/assets/css/` and load from `src/app.html`. `fluent.css` is the token source; Tier 5 at its end holds the contrast-safety rules.
+- Components live in `src/lib/components/`; pages in `src/routes/`. There is no legacy `main.js`.
+- Theme switching is handled by `src/lib/stores/theme.js` (`applyTheme`, `toggleTheme`). Do not re-implement it.
+- The global footer uses the full wordmark (`logo_suamisihat_primary_*.svg`); the navbar uses the logomark (`ss-logomark-*.svg`).
+- All typography follows the 4-tier text tokens (`--text-strong`, `--text-primary`, `--text-secondary`, `--text-disabled`). Never reduce text contrast with `opacity`.
+- The version shown in the UI comes from `package.json` via `src/lib/version.js`. Never hard-code a version string.
+- Do not add third-party CDNs. Fonts, Bootstrap CSS, marked, mermaid and icons are self-hosted; the Content Security Policy blocks other hosts.
+
+---
+
+## Icons and Emoji
+
+### Rule 9: Fluent System Icons only, never emoji
+
+- UI icons: `<iconify-icon icon="fluent:<name>-<size>-<regular|filled>" aria-hidden="true">`. Check the name exists in `@iconify-json/fluent`; `npm run build` fails on unknown names.
+- Decorative icons get `aria-hidden="true"`. Icon-only buttons need a visible label or a `visually-hidden` text label.
+- Markdown docs: use shortcodes such as `{{icon:yes}}`, `{{icon:no}}`, `{{icon:warning}}`, `{{icon:info}}` or `{{icon:<fluent-name>}}`.
+- Emoji, pictographs, dingbats such as check marks and crosses, and emoji HTML entities are not allowed anywhere. `npm run lint` fails on them.
+- Email signature HTML cannot load icons: use plain text labels (Tel, Email, Web).
+
+---
+
+## Contrast and Accessibility
+
+### Rule 10: Use contrast-safe tokens for text on colour
+
+| Need | Token |
+| ---- | ----- |
+| Filled primary button | `--color-action-bg` with `--color-on-action` |
+| Banana conversion CTA | `--color-cta-bg` with `--color-on-cta` |
+| Link | `--color-link` |
+| Azure-coloured text | `--color-text-accent` |
+| Lion-coloured text | `--color-text-warm` |
+| Status text and backgrounds | `--color-success-*`, `--color-warning-*`, `--color-error-*`, `--color-info-*` |
+
+- Never put white text on Azure `#21A1F7` (2.8:1), Malibu `#6DC6EC`, Lion `#BD9A73` or Banana `#FCE53D`.
+- A preview that keeps a fixed light or dark background in both themes gets `class="ss-surface-light"` or `class="ss-surface-dark"`, which resets the text tokens inside it.
+- Every page must pass `npm run test:a11y` (axe, WCAG 2.2 A/AA, light and dark) and `npm run test:contrast`.
+
+---
+
+## Product Brand Pages
+
+### Rule 11: Seven-section product page standard
+
+Each brand page at `/products/<slug>/` is generated from `static/products/<Brand>/metadata.json` (schema 2) and must contain: product definition, product images, brand positioning, colour scheme (60:30:10 with checked pairings), pattern, brand guideline, assets to download. See `static/content/product-page-standard.md`. Do not hard-code brand content in Svelte files.
+
+Health, medical and performance claims are not published on product pages. Record anything that needs regulatory review in `definition.claimsReview`.
 
 ---
 
@@ -118,7 +164,7 @@ The `ss-hero` component is the **official default background and container stand
 | **Component Name** | `ss-hero` (CSS: `.ss-hero` / `.f-hero`, Svelte: `<SSHero />`) |
 | **60% Base Background** | Vertical / diagonal brand gradient (`--gradient-brand-vertical`: `#022057` → `#043388` in light mode; `#021440` → `#022057` in dark mode) |
 | **30% Structure & Glow** | Ambient radial glow aura (`.f-hero-ambient-glow` with 60px blur, pulsing at 8s intervals) |
-| **10% Kinetic Motion** | 2D interactive canvas wave (`#heroWaveCanvas` / `.hero-wave-canvas`) featuring floating Mars (male sign) symbols, radiant Azure `#21A1F7` & Gold `#F7E143` energy nodes, and gentle cursor parallax responsiveness |
+| **10% Kinetic Motion** | 2D interactive canvas wave (`#heroWaveCanvas` / `.hero-wave-canvas`) featuring floating Mars (male sign) symbols, radiant Azure `#21A1F7` & Gold `#FCE53D` energy nodes, and gentle cursor parallax responsiveness |
 | **Motion Accessibility** | Respects `prefers-reduced-motion`; renders static glowing gradient if reduced motion is preferred |
 
 ---
@@ -138,7 +184,7 @@ The SuamiSihat™ Design System follows a strict two-layer architectural hierarc
 | **Brand Personality** | SuamiSihat™ | Confident, clinical, masculine, premium, discreet. |
 | **Logo & Brand Marks** | SuamiSihat™ | Brightness-aware selection (`_light.svg` on HSL L ≥ 50%, `_dark.svg` on HSL L < 50%). |
 | **Colour Palette** | SuamiSihat™ | Prussian Blue `#022057`, SS Blue `#043388`, Azure `#21A1F7`, Banana Yellow `#FCE53D`. |
-| **Typography** | SuamiSihat™ | Outfit (Headings) + Inter (Body/UI) with 4-tier text tokens. |
+| **Typography** | SuamiSihat™ | Poppins (display), Montserrat (subtitles), Helvetica Neue / Inter on web (body), per Brand System section 04, with 4-tier text tokens. |
 | **Component Anatomy** | Fluent 2 | Standard compound slots (icon start/end, content, action, badge). |
 | **Interaction States** | Fluent 2 | Rest, Hover, Pressed, Selected, Focused, Disabled state machines. |
 | **Accessibility (a11y)** | Fluent 2 + WCAG | WCAG 2.2 AA compliant, 2px high-contrast offset focus rings. |
@@ -161,7 +207,7 @@ When prompting or implementing any new landing page, campaign funnel, product hu
 ```markdown
 ### Design System — Mandatory Source of Truth
 This page must be designed and built using the **SuamiSihat™ Brand & Design System** (`assets.suamisihat.myds.me`):
-- **Visual Identity (SuamiSihat)**: Use established brand colours (`#043388`, `#022057`, `#21A1F7`, `#F7E143`), Outfit/Inter typography, 4-tier text contrast hierarchy (`--text-strong`, `--text-primary`, `--text-secondary`, `--text-disabled`), and brightness-aware SVG logo selection.
+- **Visual Identity (SuamiSihat)**: Use established brand colours (`#043388`, `#022057`, `#21A1F7`, `#FCE53D`) through the contrast-safe tokens, Fluent System Icons (no emoji), Poppins/Inter typography, 4-tier text contrast hierarchy (`--text-strong`, `--text-primary`, `--text-secondary`, `--text-disabled`), and brightness-aware SVG logo selection.
 - **Interaction Layer (Fluent 2)**: All components, states (`hover`, `pressed`, `focus`), elevation levels, and spatial layouts follow Fluent 2 component specifications and accessibility contracts.
 - **System Precedence**: SuamiSihat Brand DNA > Design Tokens > Fluent 2 Component Anatomy > Page Content.
 ```

@@ -1,5 +1,5 @@
 /**
- * SuamiSihat™ Design System — Production Smoke Test Suite (v3.5.1)
+ * SuamiSihat Design System — production build smoke test
  * Validates SvelteKit SSG outputs, routing integrity, raw asset CDN delivery, and token exports.
  *
  * Usage: node scripts/smoke-test.mjs
@@ -53,7 +53,8 @@ function checkFileContains(relPath, searchStr, desc) {
 }
 
 console.log('\n======================================================');
-console.log('   SuamiSihat™ Design System — Smoke Test Suite (v3.5.1)');
+const VERSION = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')).version;
+console.log(`   SuamiSihat Design System — Smoke Test Suite (v${VERSION})`);
 console.log('======================================================\n');
 
 // -----------------------------------------------------------------------------
@@ -99,6 +100,12 @@ checkFileExists('build/content/text-color-guide.md', 100);
 checkFileExists('build/content/ss-hero-guide.md', 100);
 checkFileExists('build/content/brand-fluent2.md', 100);
 checkFileExists('build/content/color-composition-guide.md', 100);
+checkFileExists('build/content/product-page-standard.md', 100);
+checkFileExists('build/.htaccess', 500);
+checkFileExists('build/robots.txt', 20);
+checkFileContains('build/robots.txt', 'Disallow: /', 'robots.txt blocks indexing');
+checkFileContains('build/.htaccess', 'Content-Security-Policy', '.htaccess sets a Content Security Policy');
+assert(!existsSync(join(ROOT, 'build/mockup-gatekeeper.html')), 'No prototype pages in the build');
 
 // -----------------------------------------------------------------------------
 // Test Group 4: JSON Token Syntax Integrity
@@ -128,6 +135,6 @@ console.log('======================================================\n');
 if (failedTests > 0) {
   process.exit(1);
 } else {
-  console.log('\x1b[32m All smoke test assertions PASSED with 100% success! SvelteKit v3.5.1 is healthy and production-ready.\x1b[0m\n');
+  console.log('\x1b[32m All smoke test assertions passed.\x1b[0m\n');
   process.exit(0);
 }

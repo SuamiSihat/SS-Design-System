@@ -61,8 +61,8 @@ The kinetic background renders via an HTML5 2D Canvas engine:
   </div>
 </section>
 
-<!-- Assets script initializes canvas wave animation -->
-<script src="assets/js/main.js" defer></script>
+<!-- Static HTML: the canvas wave is decorative and optional.
+     In SvelteKit use <SSHero /> (section 4), which runs the animation. -->
 ```
 
 ---

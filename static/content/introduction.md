@@ -9,7 +9,7 @@ The **SuamiSihat™ Design System** is our authoritative creative and architectu
 The system establishes the foundational standards for the entire SuamiSihat™ ecosystem:
 
 - **Logo Governance** — Master brand, parent holding, and subsidiary marks with strict clear-space and contrast rules.
-- **Color Architecture** — 60:30:10 visual color allocation, semantic tokens, and WCAG AA/AAA certified palettes.
+- **Color Architecture** — 60:30:10 visual colour allocation and semantic tokens tested to WCAG 2.2 AA in light and dark theme.
 - **Typography Standards** — Primary typefaces, hierarchy scales, and the mandatory Neutral Black (`#1C1C1C`) readability standard.
 - **Corporate Architecture** — Master Brand (`SuamiSihat™`), Parent Entity (`SuamiSihat Holding Sdn. Bhd.`), and Operating Subsidiaries (Healthcare, Group, Technology, and Ecommerce).
 - **Component Primitives** — Microsoft Fluent 2-aligned interface elements, states, and accessibility tokens.

@@ -1,92 +1,76 @@
-# SuamiSihat™ Design System — Project Roadmap
+# SuamiSihat Design System Roadmap
 
-Welcome to the **SuamiSihat™ Design System Roadmap**. This document outlines our strategic vision, completed milestones, near-term enhancements, and future enterprise goals across Web, Flutter, and Expo mobile platforms.
-
----
-
-## Strategic Principles
-
-1. **Single Source of Truth**: Unified design tokens (`tokens.json`) shared across Web (CSS/JS), Flutter (`ss_tokens.dart`), and Expo / React Native (`ss_tokens.ts`).
-2. **Microsoft Fluent 2 Alignment**: Strict adherence to Fluent 2 guidelines, 60:30:10 visual allocation, and accessible typography.
-3. **Multi-Platform Brand Governance**: Automated logo selection, contrast verification, and zero hardcoded brand hex values.
-4. **Internal Tool Integration**: Seamless pairing with **SSCAM** (SuamiSihat™ Creative Assets Management) desktop suite.
+What has shipped, what is next, and what still needs a decision.
 
 ---
 
-## Current Status (v3.5.1 — LIVING SYSTEM HUB)
+## Principles
 
-| Metric | Status |
-| :--- | :--- |
-| **Release Version** | `v3.5.1` |
-| **Framework Engine** | SvelteKit 2 + Svelte 5 (Runes `$state`, `$derived`, `$props`) |
-| **Architectural Contract** | **Brand × Fluent 2 Integration Contract Enforced** |
-| **Living Pages** | 100% SvelteKit Ported (Catalogue, Brand System, Docs, Components, Tools, Signature, Guidelines, Onboarding) |
-| **Product Hubs** | 14 Product Portfolio + Dynamic `[slug]` Brand Hubs with Interactive Galleries |
-| **Markdown Engine** | Full GFM (Marked 9.1.6) + Mermaid Diagrams + Dynamic Auto-TOC |
-| **Test Coverage** | **122/122 Automated Test Assertions Passing (100%)** |
-| **Audit Status** | **PRODUCTION READY** |
+1. **One source of truth.** Tokens, assets and docs live once, in `static/`, and everything else reads from them.
+2. **Brand first, Fluent 2 for interaction.** SuamiSihat owns colour, type, marks and voice; Fluent 2 owns component anatomy, states and accessibility.
+3. **Accessible by default.** WCAG 2.2 AA in light and dark theme, checked on every build.
+4. **No hype.** Brand pages describe products; they do not make health claims.
 
 ---
 
-## Release Roadmap & Milestones
+## Current status (v3.6.0, October 2026)
 
-```text
- [v1.0 - v2.1]         [v3.0 - v3.4]            [v3.5.1]               [v3.6 - v4.0]
- Baseline Web        Fluent 2 Overhaul     Living SvelteKit Hub     Multi-Platform SDKs
- ───────┬───────     ──────────┬────────   ──────────┬─────────     ──────────┬───────────
-        │                      │                     │                        │
-  Static Baseline       Multi-Platform       Brand × Fluent 2         NPM / Pub Packages
-  Dark Mode Prototype   AI Agent Skills      Svelte 5 Runes           Tailwind v4 Plugin
-  Wordmark Assets       QA Audit Suite       Dynamic Brand Hubs       i18n (BM / EN)
-                        14 Audit Reports     Prompt Hardening Rules   APCA Contrast Tools
-```
-
----
-
-## Milestone Breakdown
-
-### {{icon:yes}} Completed Milestones (v3.5.1)
-
-| ID | Milestone or Feature | Component | Description | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| `BRAND-FLUENT2` | Brand × Fluent 2 Architectural Contract | Architecture / Core | Codified boundary matrix, 3-tier IA (`01. Foundation`, `02. Brand`, `03. Design System`), and prompt hardening rules in `.agents/AGENTS.md` and `/doc/?doc=brand-fluent2`. | **Completed** |
-| `SVELTEKIT-MIGRATION` | SvelteKit 2 + Svelte 5 Living Hub | Core Engine | Migrated all static HTML pages into modular SvelteKit components with client-side routing, Runes reactivity, and static adapter (SSG). | **Completed** |
-| `PROD-CATALOGUE` | 14-Product Portfolio & Brand Hubs | Products | Restored 14 product brands across 3 sections with dynamic `[slug]` brand hubs, SKU cards, and interactive photo lightboxes. | **Completed** |
-| `TEXT-HIERARCHY` | 4-Tier Text Hierarchy Standards | Tokens / CSS | Codified `--text-strong`, `--text-primary`, `--text-secondary`, `--text-disabled` across light/dark surfaces with comprehensive documentation. | **Completed** |
-| `COLOR-SPEC` | Multi-Format Color Space Spec | Brand System | Certified mathematical conversion values for all 15 tokens across HEX, RGB, CMYK, CIE-Lab, RAL, and Pantone (PMS). | **Completed** |
-| `MARK-CONTRAST` | Standalone Logomark Hardening | Brand Assets | Standardized high-contrast mark selection (`ss-logomark-dark.svg` on dark `#022057` and `ss-logomark-light.svg` on light `#FCFAF6`). | **Completed** |
-| `SIDEBAR-GRID` | Resilient Sidebar Collapse Architecture | Layout / CSS | Updated `.f-page-layout` CSS Grid with `minmax(0, 1fr)` and Svelte conditional mounting to prevent column squishing on collapse. | **Completed** |
-| `CLEANUP-PIPELINE` | Deprecation & Zero-Orphan Pipeline | Build Scripts | Removed legacy `pages/` directory, deprecated product HTMLs, and modernized `_app/` build sync script. | **Completed** |
-| `TEST-AUTOMATION` | 118-Point Automated QA Test Suite | Testing | Implemented automated Smoke Test Suite (29 points) and DOM Validation Suite (89 points). | **Completed** |
+| Area | Status |
+| --- | --- |
+| Release | v3.6.0 |
+| Framework | SvelteKit 2, Svelte 5, static build |
+| Hosting | Synology NAS, https://assets.suamisihat.myds.me/, built site only |
+| Accessibility | axe WCAG 2.2 A/AA: 0 violations on all pages, light and dark |
+| Colour contrast | Token matrix and all product pairings pass |
+| Product pages | 9 brands on the seven-section standard |
+| Third-party CDNs | None |
 
 ---
 
-### Near-Term Backlog (v3.6 — Target: Q4 2026)
+## Shipped in v3.6.0
 
-| ID | Title | Component | Description | Priority |
-| :--- | :--- | :--- | :--- | :--- |
-| `I18N-LOCALIZATION` | Bilingual Support (BM / EN) | Core / Docs | Multi-language switcher for clinical documentation, brand voice guidelines, and patient onboarding terms. | High |
-| `APCA-CONTRAST` | WCAG 3.0 APCA Contrast Calculator | Tools | Advanced Accessible Perceptual Contrast Algorithm (APCA) calculator widget in `/tools/`. | Medium |
-| `TAILWIND-V4` | Tailwind CSS v4 Theme Plugin | Tokens / Export | Standalone `@suamisihat/tailwind-plugin` package exporting design tokens as Tailwind v4 `@theme` directives. | Medium |
-| `OFFLINE-SEARCH` | Client-Side Fuzzy Search (FlexSearch) | Navigation | Offline-first full-text search indexing documentation articles, tokens, and product SKUs in the ⌘K spotlight modal. | Medium |
-
----
-
-### Future Enterprise Horizon (v4.0 — Target: 2027)
-
-| Initiative | Description | Deliverable |
-| :--- | :--- | :--- |
-| **NPM Svelte Package** | Publishable `@suamisihat/ui-svelte` component library for internal clinical portals. | NPM Registry |
-| **Flutter Package** | Official `suamisihat_ui` Dart package for iOS and Android doctor/patient companion apps. | Pub.dev |
-| **Expo / React Native Suite** | Native component primitives matching Fluent 2 mobile design tokens. | GitHub Packages |
-| **Enterprise Token API** | Edge-hosted JSON token endpoint for continuous CI/CD synchronization across all micro-frontends. | Cloudflare / NAS API |
+| ID | Item | Notes |
+| --- | --- | --- |
+| `SEC-DEPLOY` | Deploy the built site only, over an SSH key | Replaces `git reset --hard` in the web root |
+| `SEC-ACCESS` | Server-side login and file blocking in `.htaccess` | Login switches on when the password file exists |
+| `SEC-NPRA` | NPRA formula PDF removed from the repository and history | |
+| `ONE-SOURCE` | `static/` is the only asset source | Root duplicates and build output removed |
+| `SANITISE` | Emoji replaced by Fluent icons; lint guard | Includes emoji entities and mojibake |
+| `A11Y-AA` | WCAG 2.2 AA in both themes | New contrast-safe tokens |
+| `PRODUCT-STD` | Seven-section product page standard | REJAL and Dr Mit Ring first, then all brands |
+| `SELF-HOST` | Fonts, icons, Bootstrap, marked and mermaid self-hosted | Strict CSP |
 
 ---
 
-## Governance & Feedback
+## Next (v3.7, target Q1 2027)
 
-Have a proposal or feature request?
+| ID | Item | Priority |
+| --- | --- | --- |
+| `CLAIMS-REVIEW` | Regulatory review of the claims flagged on each product page (REJAL, Dr Mit Ring, ANDROLAB RX, MENSS devices, catalogue entries such as Physta) | High |
+| `PHOTO` | Product photography for Mensculine, nuCaffe, Husband Clinic and Isteri Sihat (brand cards today) | High |
+| `TYPE-DECISION` | Decide the display typeface: Brand System section 04 lists Poppins; older docs and the email signature use Outfit | High |
+| `DMR-PHOTO` | Dr Mit Ring product photography (packaging artwork only today) | Medium |
+| `SPLIT-PAGES` | Split the 120 to 135 KB page files (home, brand system, components) into components | Medium |
+| `INLINE-STYLES` | Move inline styles to classes and tokens so contrast fixes live in one place | Medium |
+| `FOLDER-CASE` | Rename `static/products/<Brand>` folders to lower-case slugs | Low |
+| `I18N` | Bahasa Melayu and English switch for docs and product pages | Medium |
+| `APCA` | APCA contrast calculator in Tools | Low |
 
-- **Email**: [branding@suamisihat.com](mailto:branding@suamisihat.com)
-- **Repository**: [SuamiSihat/SS-Design-System](https://github.com/SuamiSihat/SS-Design-System)
-- **Contribution Guide**: [Read the Contribution Guide](/doc/?doc=contribution-guide)
+---
+
+## Later (v4.0, 2027)
+
+| Initiative | Deliverable |
+| --- | --- |
+| Svelte component package | `@suamisihat/ui-svelte` for internal portals |
+| Token packages | npm and Dart packages generated from `tokens.json` |
+| Tailwind v4 theme | `@theme` export of the tokens |
+| Token API | Versioned JSON endpoint for other apps |
+
+---
+
+## Feedback
+
+- Email: branding@suamisihat.com
+- Repository: https://github.com/SuamiSihat/SS-Design-System
+- Contribution guide: [Contribution Guide](/doc/?doc=contribution-guide)

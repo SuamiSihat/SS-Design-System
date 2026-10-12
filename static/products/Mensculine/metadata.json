@@ -36,7 +36,7 @@
       {
         "name": "Mensculine Care Cream",
         "type": "Topical care",
-        "desc": "Topical care cream; successor formulation to the archived Xprimal line."
+        "desc": "Topical care cream for export markets."
       }
     ],
     "claimsReview": "Ingredient and effect statements must follow each export market's cosmetic rules."
@@ -190,9 +190,9 @@
       "Do not use the archived Xprimal identity"
     ],
     "typography": {
-      "display": "Poppins SemiBold / Bold (SuamiSihat master display face)",
-      "body": "Inter Regular / Medium for UI and long copy",
-      "note": "Never retype a wordmark; always place the supplied logo file."
+      "display": "Poppins SemiBold / Bold for headlines and key numbers; Montserrat for subtitles and labels",
+      "body": "Helvetica Neue for print body copy; Inter on the web; Calibri in Office documents",
+      "note": "Typefaces follow Brand System section 04. Never retype a wordmark; always place the supplied logo file."
     }
   },
   "downloads": [

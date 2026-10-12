@@ -113,8 +113,8 @@
   </div>
 </section>
 
-<!-- Assets script initializes canvas wave animation -->
-<` + `script src="assets/js/main.js" defer><` + `/script>`,
+<!-- Static HTML: the canvas wave is decorative and optional.
+     In SvelteKit use <SSHero />, which runs the animation. -->`,
     heroExpo: `// Expo React Native (TSX)
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';

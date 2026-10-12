@@ -229,9 +229,9 @@
       "Do not place claims such as 'ubat' next to the logo"
     ],
     "typography": {
-      "display": "Poppins SemiBold / Bold (SuamiSihat master display face)",
-      "body": "Inter Regular / Medium for UI and long copy",
-      "note": "Never retype a wordmark; always place the supplied logo file."
+      "display": "Poppins SemiBold / Bold for headlines and key numbers; Montserrat for subtitles and labels",
+      "body": "Helvetica Neue for print body copy; Inter on the web; Calibri in Office documents",
+      "note": "Typefaces follow Brand System section 04. Never retype a wordmark; always place the supplied logo file."
     },
     "photography": "Warm light, real ingredients, honey in motion. Backdrops: Rejal Black, warm cream, sage green or natural wood."
   },
