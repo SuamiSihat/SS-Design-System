@@ -7,8 +7,17 @@
 # ----------------------------------------------------------------------------
 # Access control
 # ----------------------------------------------------------------------------
-# The site is public: pages load without a login. Search engines are asked not
-# to index it (X-Robots-Tag below), and only the built site is ever deployed.
+# Staff-only site. Visitors must sign in (HTTP Basic Auth) once the password
+# file below exists on the NAS; see deploy/README.md for how to create it.
+# Until the file exists the site stays open, so a deploy can never lock everyone
+# out or return a server error. Search engines are also told not to index it
+# (X-Robots-Tag below), and only the built site is ever deployed.
+<IfFile "/volume1/web/ss_assets_auth/.htpasswd">
+    AuthType Basic
+    AuthName "SuamiSihat staff only"
+    AuthUserFile "/volume1/web/ss_assets_auth/.htpasswd"
+    Require valid-user
+</IfFile>
 
 # Never serve hidden files or folders (.git, .env, .htaccess, .well-known excepted)
 <IfModule mod_rewrite.c>
@@ -30,7 +39,7 @@
     Header always set X-Frame-Options          "DENY"
     Header always set Referrer-Policy          "strict-origin-when-cross-origin"
     Header always set Permissions-Policy       "geolocation=(), microphone=(), camera=()"
-    Header always set X-Robots-Tag             "noindex, nofollow, noarchive"
+    Header always set X-Robots-Tag             "noindex, nofollow, noarchive, nosnippet"
     Header always set Content-Security-Policy  "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'"
 
     <FilesMatch "\.(svg|woff2?)$">
