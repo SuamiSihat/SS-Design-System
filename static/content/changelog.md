@@ -1,6 +1,15 @@
 # Changelog
 
-> **SuamiSihat™ Design System** is the **master project, master documentation, and master guideline** for the entire SS ecosystem — web, Expo/React Native mobile apps, and all internal tools. This changelog is the authoritative record of every change. All platforms derive from this system.
+> **SuamiSihat® Design System** is the **master project, master documentation, and master guideline** for the entire SS ecosystem — web, Expo/React Native mobile apps, and all internal tools. This changelog is the authoritative record of every change. All platforms derive from this system.
+
+## Unreleased
+
+### Brand decisions (13 Oct 2026)
+
+- The master brand is written **SuamiSihat®** (registered), replacing SuamiSihat™ across the site, docs and agent rules. Legal company names such as SuamiSihat Holding Sdn. Bhd. carry no symbol. Earlier changelog entries keep the wording they had at the time.
+- SuamiSihat® colour rule: the **light background is the 60%**, Prussian Blue and SS Blue the 30%, Azure and Banana Yellow the 10%. The home page colour picker and the Vision & Mission diagram had SS Blue or Prussian Blue as the 60%.
+- SS Clinic: Clinical Navy is part of the 30% structure, as settled in decision 8 (the positioning table and the diagnostic quiz tokens still had it at 60%).
+- SuamiSihat Holding Sdn. Bhd. is the parent company and uses the SS Health logo; "SS Health" is no longer used as the master brand name on the catalogue.
 
 ## v3.6.2 — October 2026
 

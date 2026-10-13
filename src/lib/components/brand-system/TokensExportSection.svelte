@@ -4,7 +4,7 @@
   let exportPlatform = $state('tailwind');
 
   const tokenExports = {
-    tailwind: `// tailwind.config.js - SuamiSihat™ Fluent 2 Design Tokens
+    tailwind: `// tailwind.config.js - SuamiSihat® Fluent 2 Design Tokens
 module.exports = {
   theme: {
     extend: {
@@ -21,7 +21,7 @@ module.exports = {
     }
   }
 };`,
-    flutter: `// ss_colors.dart - SuamiSihat™ Flutter Design Tokens
+    flutter: `// ss_colors.dart - SuamiSihat® Flutter Design Tokens
 import 'package:flutter/material.dart';
 
 class SSColors {
@@ -34,7 +34,7 @@ class SSColors {
   static const Color canvasLight = Color(0xFFF8FAFC);
   static const Color voidDark = Color(0xFF090D16);
 }`,
-    wpf: `<!-- SSColors.xaml - SuamiSihat™ WPF XAML Tokens -->
+    wpf: `<!-- SSColors.xaml - SuamiSihat® WPF XAML Tokens -->
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <SolidColorBrush x:Key="SS.PrussianBlue" Color="#022057"/>
@@ -46,7 +46,7 @@ class SSColors {
     <SolidColorBrush x:Key="SS.CanvasLight" Color="#F8FAFC"/>
     <SolidColorBrush x:Key="SS.VoidDark" Color="#090D16"/>
 </ResourceDictionary>`,
-    css: `/* ss_tokens.css - SuamiSihat™ W3C CSS Variables */
+    css: `/* ss_tokens.css - SuamiSihat® W3C CSS Variables */
 :root {
   --ss-prussian-blue: #022057;
   --ss-blue: #043388;

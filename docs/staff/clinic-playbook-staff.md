@@ -12,7 +12,7 @@ Contains competitor names, ad volumes, tracking IDs, doctor names, regulatory gu
 The Malaysian Men's Health clinic sector is trapped in destructive commoditisation. Competing clinics offer virtually identical clinical procedures (Erectile Dysfunction / ED, Premature Ejaculation / PE, ESWT Shockwave Therapy, and P-Shot / Penile Fillers), bid on identical search keywords, and deploy aggressive, symptom-shaming ad copy targeting the exact same male demographic.
 
 ```text
-       COMMODITISED RED OCEAN                           SUAMISIHAT™ STRATEGIC LEAP
+       COMMODITISED RED OCEAN                           SUAMISIHAT® STRATEGIC LEAP
  [ Race to the bottom: Price wars ]          [ Premium Specialist: Uncontested territory ]
  [ Aggressive red & black shame ads ] =====> [ Deep navy & warm gold clinical dignity   ]
  [ "Mati pucuk" fear-mongering hooks ]       [ "Jaga Enjin. Jaga Keluarga."             ]
@@ -31,10 +31,10 @@ The Malaysian Men's Health clinic sector is trapped in destructive commoditisati
 | **Premier Clinic (4Him)** | Heavy Aesthetic | `GTM-TS2623T` | ZSR Sunat, aesthetic-first | **Medium** (Aesthetic Crossover) | Diluted men's health focus; viewed primarily as a cosmetic clinic. |
 | **Vivardi Clinic** | Active | `GTM-MQ394QFG` | Penile fillers + aesthetics | **Medium** (Niche Procedure) | Hyper-focused on cosmetic enhancement; misses systemic wellness. |
 | **Hisential Clinic** | 4 Evergreen | `GTM-N4XRD98` | *"Executive Wellness"*, concierge | **High** (Premium Tier) | English-only; Westernized niche; entirely excludes mainstream Malay men. |
-| **SuamiSihat™ Clinic** | **70 ads (SJ + KB)** | `AW-10963518860` | *"Engine Overhaul"*, Diagnostic Quiz | **High** (**Market Leader Target**) | **Moat:** Proprietary diagnostic quiz, dual regional identity, brotherly medical authority. |
+| **SuamiSihat® Clinic** | **70 ads (SJ + KB)** | `AW-10963518860` | *"Engine Overhaul"*, Diagnostic Quiz | **High** (**Market Leader Target**) | **Moat:** Proprietary diagnostic quiz, dual regional identity, brotherly medical authority. |
 
 > [!IMPORTANT]
-> **The Critical Market Insight:** 6 out of 8 competitors rely on identical keywords (*"mati pucuk"*, *"pancut awal"*, *"lemah batin"*) and race to the bottom on price. SuamiSihat™ cannot win by shouting louder in the same mud. Our defensible moat is owning an **emotional, identity-first, and diagnostic-led territory**.
+> **The Critical Market Insight:** 6 out of 8 competitors rely on identical keywords (*"mati pucuk"*, *"pancut awal"*, *"lemah batin"*) and race to the bottom on price. SuamiSihat® cannot win by shouting louder in the same mud. Our defensible moat is owning an **emotional, identity-first, and diagnostic-led territory**.
 
 ---
 
@@ -48,13 +48,13 @@ flowchart TD
         subgraph TOP_ROW ["Y-AXIS: HIGH AUTHORITY & PREMIUM POSITIONED"]
             direction LR
             TL["<b>PREMIUM + GENERIC</b><br/><i>High-end, but not specialised</i><br/>• Premier / 4Him<br/>• Vivardi Clinic"]
-            TR["<b>UNCONTESTED WHITE SPACE</b><br/><b>PREMIUM SPECIALIST</b><br/><i>The trusted authority for the serious man</i><br/>• Hisential (English/Corporate)<br/>• Alpha Clinic (Cold Clinical)<br/>----------------------------<br/><b>SuamiSihat™ TARGET (84 pts)</b><br/><i>Malay-First • Warm • Systemic • Evidence-Based</i>"]
+            TR["<b>UNCONTESTED WHITE SPACE</b><br/><b>PREMIUM SPECIALIST</b><br/><i>The trusted authority for the serious man</i><br/>• Hisential (English/Corporate)<br/>• Alpha Clinic (Cold Clinical)<br/>----------------------------<br/><b>SuamiSihat® TARGET (84 pts)</b><br/><i>Malay-First • Warm • Systemic • Evidence-Based</i>"]
         end
 
         subgraph BOTTOM_ROW ["Y-AXIS: MASS MARKET & PRICE-LED"]
             direction LR
             BL["<b>MASS MARKET + GENERIC</b><br/><i>Race to the bottom</i><br/>• Universal Clinic<br/>• MHC Malaysia<br/>• HeMedical (Volume)"]
-            BR["<b>MASS MARKET + SPECIALIST</b><br/><i>Volume specialist, low pricing power</i><br/>• MenCare Clinic<br/>----------------------------<br/><b>SuamiSihat™ LEGACY BASELINE (58 pts)</b><br/><i>Transition Point</i>"]
+            BR["<b>MASS MARKET + SPECIALIST</b><br/><i>Volume specialist, low pricing power</i><br/>• MenCare Clinic<br/>----------------------------<br/><b>SuamiSihat® LEGACY BASELINE (58 pts)</b><br/><i>Transition Point</i>"]
         end
     end
 
@@ -68,12 +68,12 @@ flowchart TD
 
 ### The 6 Critical Unoccupied Brand Moats
 
-1. **Gap 01: Whole-System Identity Shift.** Competitors sell single-procedure fixes (shockwave, injections). Nobody addresses whole-body male vitality. SuamiSihat™ owns the *"Engine Overhaul"* systemic approach connecting vascular, hormonal, metabolic, and psychological health.
+1. **Gap 01: Whole-System Identity Shift.** Competitors sell single-procedure fixes (shockwave, injections). Nobody addresses whole-body male vitality. SuamiSihat® owns the *"Engine Overhaul"* systemic approach connecting vascular, hormonal, metabolic, and psychological health.
 2. **Gap 02: Malay Premium Authority.** Hisential serves urban English-speaking executives; Alpha is clinically sterile. Nobody owns premium, dignified, educated men's health for Malay men. SuamiSihat's dual presence (**Subang Jaya + Kota Bharu**) anchors a unique national Malay footprint.
-3. **Gap 03: Husband & Family Framing.** Competitors treat patients as isolated men with embarrassing dysfunctions. SuamiSihat™ anchors the journey around his role as a **husband, father, and provider** (*"Untuk isteri, keluarga, dan maruah suami"*).
-4. **Gap 04: Diagnostic-First Brand Infrastructure.** Competitors push patients immediately to high-pressure WhatsApp sales chats. SuamiSihat™ guides leads through a clinical diagnostic assessment (**Ujian Skor Kesihatan Suami**) before recommending any treatment.
-5. **Gap 05: Long-Term Health Lifecycle Partner.** Other clinics transact single appointments. SuamiSihat™ leverages its **14,000+ subscriber health newsletter**, ongoing diagnostic check-ins, and multi-stage care to accompany men from their late 30s through their 50s and beyond.
-6. **Gap 06: Destigmatisation Without Trivialisation.** Competitors alternate between vulgar red shock ads (*"Mati Pucuk!"*) and cold medical jargon. SuamiSihat™ adopts a dignified, empathetic, brotherly tone: authoritative yet deeply human.
+3. **Gap 03: Husband & Family Framing.** Competitors treat patients as isolated men with embarrassing dysfunctions. SuamiSihat® anchors the journey around his role as a **husband, father, and provider** (*"Untuk isteri, keluarga, dan maruah suami"*).
+4. **Gap 04: Diagnostic-First Brand Infrastructure.** Competitors push patients immediately to high-pressure WhatsApp sales chats. SuamiSihat® guides leads through a clinical diagnostic assessment (**Ujian Skor Kesihatan Suami**) before recommending any treatment.
+5. **Gap 05: Long-Term Health Lifecycle Partner.** Other clinics transact single appointments. SuamiSihat® leverages its **14,000+ subscriber health newsletter**, ongoing diagnostic check-ins, and multi-stage care to accompany men from their late 30s through their 50s and beyond.
+6. **Gap 06: Destigmatisation Without Trivialisation.** Competitors alternate between vulgar red shock ads (*"Mati Pucuk!"*) and cold medical jargon. SuamiSihat® adopts a dignified, empathetic, brotherly tone: authoritative yet deeply human.
 
 ---
 
@@ -114,7 +114,7 @@ graph TD
 
 * **Empathy Ad Opener:**
   > **"Dah habis ribuan dekat klinik lain, tapi masih tak jadi?"**  
-  > *(Validates patient frustration without shame; positions SuamiSihat™ as the honest medical antidote)*
+  > *(Validates patient frustration without shame; positions SuamiSihat® as the honest medical antidote)*
 
 ---
 
@@ -130,7 +130,7 @@ As a registered clinical healthcare provider in Malaysia, all copy must comply w
 
 #### Prohibited Terms vs. Approved Clinical Terminology
 
-| Prohibited Term (Blacklisted) | Violation Category | Approved SuamiSihat™ Replacement |
+| Prohibited Term (Blacklisted) | Violation Category | Approved SuamiSihat® Replacement |
 | :--- | :--- | :--- |
 | {{icon:no}} *"Mati pucuk"* | Taboo shame trigger | {{icon:yes}} **"Penurunan vitaliti lelaki"** or **"Cabaran ereksi semulajadi"** |
 | {{icon:no}} *"Lemah batin"* | Emasculating slang | {{icon:yes}} **"Kesihatan intim lelaki"** or **"Tahap hormon dan tenaga"** |
@@ -143,11 +143,11 @@ As a registered clinical healthcare provider in Malaysia, all copy must comply w
 
 ### 03. The Two Regional Playbooks: Subang Jaya vs. Kota Bharu
 
-SuamiSihat™ operates two distinct flagship clinics. The brand spine is identical, but the audience psychology and vernacular dial are precisely calibrated.
+SuamiSihat® operates two distinct flagship clinics. The brand spine is identical, but the audience psychology and vernacular dial are precisely calibrated.
 
 ```mermaid
 flowchart LR
-    subgraph DUAL_PLAYBOOK ["SUAMISIHAT™ DUAL REGIONAL STRATEGY"]
+    subgraph DUAL_PLAYBOOK ["SUAMISIHAT® DUAL REGIONAL STRATEGY"]
         direction TB
 
         subgraph SJ_TRACK ["SUBANG JAYA (KL / SELANGOR): RED OCEAN"]
@@ -180,7 +180,7 @@ flowchart LR
 | Operational Dimension | Subang Jaya Clinic (Dr Rak & Dr Amir) | Kota Bharu Clinic (Dr Zakwan & Hafizzul) |
 | :--- | :--- | :--- |
 | **Market Category** | **Red Ocean:** Saturated with 8 competitors in Klang Valley. | **Blue Ocean:** Modern men's health clinic category is brand new. |
-| **Primary Objective** | Contrast SuamiSihat™ against bad competitor experiences. | Create the category; establish first-mover medical trust. |
+| **Primary Objective** | Contrast SuamiSihat® against bad competitor experiences. | Create the category; establish first-mover medical trust. |
 | **Emotional Trigger** | Relief from clinical failure, wasted money, and overselling. | Local pride, safe alternative to Golok black market, proximity. |
 | **Language Register** | Educated, conversational urban Malay with natural English terms. | **Authentic Kelantanese dialect** (*Kecek Kelate*). |
 | **Opening Hook** | *"Dah habis ribuan dekat klinik lain, tapi masih tak jadi?"* | *"Tok payoh gi KL doh. Tok payoh gi Golok."* |
@@ -194,7 +194,7 @@ flowchart LR
 #### The 5-Step Story Narrative Formula
 1. **The Empathetic Hook (0-5s):** Validate previous clinical frustration without judgment.
 2. **The Industry Diagnosis (5-15s):** Expose why previous treatments failed: other clinics rushed to sell procedures to meet sales commissions.
-3. **The SuamiSihat™ Distinction (15-30s):** Highlight comprehensive diagnostic profiling (vascular flow, hormonal balance, lipid profile).
+3. **The SuamiSihat® Distinction (15-30s):** Highlight comprehensive diagnostic profiling (vascular flow, hormonal balance, lipid profile).
 4. **The Customized Match (30-45s):** Explain that treatments are matched to his biology, goals (*kehendak*), and budget.
 5. **The Brand Chorus Close (45-60s):** Mandatory closing tagline: *"Kita check dulu. Baru kita rawat."*
 
@@ -210,7 +210,7 @@ Tahu kenapa?
 Sebab kebanyakan klinik di luar sana, mereka jual rawatan dulu.
 Mereka belum sempat semak darah dan hormon anda, mereka dah cadangkan pakej rawatan beribu ringgit.
 
-Di SuamiSihat™, cara kami berbeza.
+Di SuamiSihat®, cara kami berbeza.
 Kami tak jual rawatan. Kami cari punca.
 
 Sebelum kita bincang sebarang prosedur, kita semak dulu profil kesihatan anda secara mendalam:
@@ -221,7 +221,7 @@ Tak ada janji palsu. Tak ada rawatan yang tak perlu.
 
 Ingat: Kita check dulu. Baru kita rawat."
 
-[OUTRO CARD: SuamiSihat™ Clinic Subang Jaya | 'Kita check dulu. Baru kita rawat.']
+[OUTRO CARD: SuamiSihat® Clinic Subang Jaya | 'Kita check dulu. Baru kita rawat.']
 ```
 
 ---
@@ -259,7 +259,7 @@ Kesan mungkin ado sekejap, lepas tu rosak badan.
 Loni, tok payoh doh.
 Tok payoh gi KL. Tok payoh gi Golok doh.
 
-Di SuamiSihat™ Kota Bharu, kito sediakan rawatan bertauliah, selamat, dan berpatutan betul-betul untuk sek kito.
+Di SuamiSihat® Kota Bharu, kito sediakan rawatan bertauliah, selamat, dan berpatutan betul-betul untuk sek kito.
 Kito semak profil darah dan hormon dulu.
 Kito tengok punca gapo hok sangkut.
 Lepas tu baru kito cadang rawatan hok betul-betul padan dengan badan dan bajet demo.
@@ -269,7 +269,7 @@ Selamat. Rahsia terjamin. Bertauliah.
 Kito check dulu. Baru kito rawat.
 Dari kito, untuk kito."
 
-[OUTRO CARD: SuamiSihat™ Clinic Kota Bharu | 'Kito check dulu. Baru kito rawat. Dari kito, untuk kito.']
+[OUTRO CARD: SuamiSihat® Clinic Kota Bharu | 'Kito check dulu. Baru kito rawat. Dari kito, untuk kito.']
 ```
 
 ---
@@ -291,7 +291,7 @@ flowchart TD
         
         C5["<b>5. CLINIC CONSULTANTS & WHATSAPP GREETINGS</b><br/><i>'Di sini kami semak profil darah dulu sebelum rawat.'</i><br/>Impact: Lead arrives pre-sold; objection friction drops."] --> C6
         
-        C6["<b>EXPONENTIAL COMPOUNDING</b><br/>Word-of-mouth activates: <i>'Pergi SuamiSihat™, diorang check dulu.'</i><br/>The phrase becomes legally and culturally unassailable IP."]
+        C6["<b>EXPONENTIAL COMPOUNDING</b><br/>Word-of-mouth activates: <i>'Pergi SuamiSihat®, diorang check dulu.'</i><br/>The phrase becomes legally and culturally unassailable IP."]
     end
 
     style C1 fill:#1b262c,stroke:#e74c3c,stroke-width:1px,color:#ffffff
@@ -313,7 +313,7 @@ When a prospective patient encounters the exact same core truth expressed indepe
 | **3rd Exposure** | Website Hero Banner | *"It's their official headline. This is their standard clinical operating procedure."* | Credibility |
 | **4th Exposure** | WhatsApp First Reply | *"Even their clinic coordinators say it. They are not pushing quick packages."* | Reassurance |
 | **5th Exposure** | Dr Zakwan's Kelantan Video | *"Their doctor in the East Coast operates on the exact same principles."* | National Authority |
-| **6th+ Exposure** | Peer Recommendation | *"Pergi SuamiSihat™, doktor dia check dulu baru rawat."* | **Absolute Conviction** |
+| **6th+ Exposure** | Peer Recommendation | *"Pergi SuamiSihat®, doktor dia check dulu baru rawat."* | **Absolute Conviction** |
 
 ---
 
@@ -332,7 +332,7 @@ When a prospective patient encounters the exact same core truth expressed indepe
 >  
 > Kenapa? Sebab mereka terus jual rawatan sebelum tahu apa yang sebenarnya berlaku dalam badan anda.  
 >  
-> Di SuamiSihat™ Clinic, kami semak profil hormon, aliran darah, dan kesihatan metabolik anda terlebih dahulu. Bila dah tahu punca sebenar, baru doktor bertauliah kami cadangkan pelan rawatan yang padan dengan badan dan bajet anda.  
+> Di SuamiSihat® Clinic, kami semak profil hormon, aliran darah, dan kesihatan metabolik anda terlebih dahulu. Bila dah tahu punca sebenar, baru doktor bertauliah kami cadangkan pelan rawatan yang padan dengan badan dan bajet anda.  
 >  
 > **Primary CTA Button:**  
 > `[ MULAKAN PEMERIKSAAN AWAL ]`  
@@ -367,11 +367,11 @@ When a prospective patient encounters the exact same core truth expressed indepe
 
 #### Template C: Automated WhatsApp Welcome Message
 
-> Salam sejahtera Tuan. Terima kasih kerana menghubungi **SuamiSihat™ Clinic**.  
+> Salam sejahtera Tuan. Terima kasih kerana menghubungi **SuamiSihat® Clinic**.  
 >  
 > Saya [Nama Staff], penyelaras klinikal anda hari ini.  
 >  
-> Di SuamiSihat™, prinsip kami mudah: **Kami tak jual rawatan. Kami cari punca.**  
+> Di SuamiSihat®, prinsip kami mudah: **Kami tak jual rawatan. Kami cari punca.**  
 > Sebelum doktor kami cadangkan sebarang pelan rawatan, kami akan semak dahulu tahap kesihatan dan keperluan sebenar badan Tuan.  
 >  
 > Untuk membantu kami memberikan khidmat terbaik, boleh saya tahu:  
@@ -421,7 +421,7 @@ This section establishes rules for video editors, motion graphic designers, and 
 ### 04. Mandatory 3-Second Closing Outro Animation
 Every video produced must conclude with the standardized 3-second closing sting:
 1. Doctor verbally delivers the closing hook: *"Kita check dulu. Baru kita rawat."*
-2. Animated SuamiSihat™ Clinic logo lockup appears with the 3-Point Brand Promise Stamp.
+2. Animated SuamiSihat® Clinic logo lockup appears with the 3-Point Brand Promise Stamp.
 3. Audio signature: Soft, warm acoustic chime with clear voiceover.
 
 ---
@@ -432,7 +432,7 @@ Before any creative ad, video, landing page, or print collateral is published, i
 
 | Category | Points | Core Verification Criteria |
 | :--- | :---: | :--- |
-| **1. Master Brand Governance** | 15 pts | Master brand rendered strictly as **`SuamiSihat™`**; entity stated as SuamiSihat Clinic Sdn. Bhd.; zero forbidden casings. |
+| **1. Master Brand Governance** | 15 pts | Master brand rendered strictly as **`SuamiSihat®`**; entity stated as SuamiSihat Clinic Sdn. Bhd.; zero forbidden casings. |
 | **2. 60:30:10 Color Balance** | 15 pts | 60% Navy foundation, 30% white/neutral structure, 10% warm gold/azure accent. Zero prohibited alarm red banners. |
 | **3. Typography & Hierarchy** | 15 pts | Poppins/Inter pairing; proper type scale; high-contrast Neutral Black (`#1C1C1C`) text on light cards. |
 | **4. Voice & Emotional Dignity** | 15 pts | Empowering modern masculinity (`MASCULINE ≠ MACHO`); family and husband framing; zero emasculating shame hooks. |
@@ -445,7 +445,7 @@ Before any creative ad, video, landing page, or print collateral is published, i
 ### Pre-Flight Checklist for Designers & Editors
 
 ```markdown
-- [ ] **1. Brand Casing:** Is every mention written as `SuamiSihat™` with trademark symbol?
+- [ ] **1. Brand Casing:** Is every mention written as `SuamiSihat®` with trademark symbol?
 - [ ] **2. Color Audit:** Is the design free of alarm red banners (`#FF0000`) and cheap yellow stickers?
 - [ ] **3. Punctuation Audit:** Have all prohibited em-dashes (`—`) been eliminated from the copy?
 - [ ] **4. Terminology Audit:** Are taboo terms (*"mati pucuk"*, *"lemah batin"*, *"pancut awal"*) replaced with clinical alternatives?

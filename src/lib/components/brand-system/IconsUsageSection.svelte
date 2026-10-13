@@ -88,7 +88,7 @@
           </span>
         </div>
         <h3 style="font-size:1.45rem;font-weight:800;margin:0;color:{logomarkMode === 'dark' ? '#FFFFFF' : '#000000'};font-family:'Poppins',sans-serif;letter-spacing:-0.02em;">
-          SuamiSihat™ Standalone Logomark
+          SuamiSihat® Standalone Logomark
         </h3>
         <p style="font-size:0.925rem;line-height:1.7;margin:0;color:{logomarkMode === 'dark' ? '#FCFAF6' : '#19191A'};">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -119,7 +119,7 @@
           <iconify-icon icon="fluent:checkmark-circle-24-filled" style="font-size:1.1rem;"></iconify-icon> Please Do
         </div>
         <ul style="margin:0;padding-left:1.25rem;font-size:0.825rem;color:var(--color-neutral-fg-2);line-height:1.7;">
-          <li>Use official artwork supplied by SuamiSihat™ without modification.</li>
+          <li>Use official artwork supplied by SuamiSihat® without modification.</li>
           <li>Select the correct light, dark or monochrome logo version for background contrast.</li>
           <li>Maintain the illustrated <code>x</code>-based clear space around all sides.</li>
           <li>Scale logos proportionally &mdash; preserve symbol and wordmark proportions.</li>
@@ -153,7 +153,7 @@
       <img src="/assets/images/dont.png" alt="SuamiSihat Prohibited Logo Misuse Visual Board" style="width:100%;height:auto;display:block;border-radius:var(--f-radius-md);box-shadow:0 1px 3px rgba(0,0,0,0.06);" loading="lazy" />
     </div>
     <div style="padding:1rem 1.5rem;font-size:0.8rem;color:var(--color-neutral-fg-2);line-height:1.5;">
-      Under no circumstances should the SuamiSihat™ master logomark or wordmark be altered, rotated, recolored, given unapproved drop shadows, stretched, or placed over unapproved colored patterns.
+      Under no circumstances should the SuamiSihat® master logomark or wordmark be altered, rotated, recolored, given unapproved drop shadows, stretched, or placed over unapproved colored patterns.
     </div>
   </div>
 </section>

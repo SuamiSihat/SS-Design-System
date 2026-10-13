@@ -5,7 +5,7 @@
   /** @type {{ isStandbyMode?: boolean, title?: string, subtitle?: string }} */
   let {
     isStandbyMode = false,
-    title = "SuamiSihat™ Brand Assets & Design System",
+    title = "SuamiSihat® Brand Assets & Design System",
     subtitle = "The authoritative single source of truth for brand guidelines, vector marks, W3C design tokens, and multi-platform digital health collateral."
   } = $props();
 

@@ -21,7 +21,7 @@ PERTABI diasaskan secara rasmi dan didaftarkan pada **15 Disember 2021** di bawa
 > **Status:** Pertubuhan Peringkat Kebangsaan (*National Society*)  
 > **Ibu Pejabat Berdaftar:** No 213, Tingkat 1, Teluk Bunut, Jalan Delima, 42700 Banting, Selangor  
 
-Penubuhan PERTABI digerakkan oleh barisan kepimpinan yang prihatin terhadap isu-isu kesejahteraan lelaki dan keharmonian rumah tangga, dengan kerjasama rapat bersama ekosistem kesihatan lelaki **SuamiSihat™**. Barisan kepimpinan awal merangkumi:
+Penubuhan PERTABI digerakkan oleh barisan kepimpinan yang prihatin terhadap isu-isu kesejahteraan lelaki dan keharmonian rumah tangga, dengan kerjasama rapat bersama ekosistem kesihatan lelaki **SuamiSihat®**. Barisan kepimpinan awal merangkumi:
 * **Pengerusi:** Idham FitriAdi bin Erwandy
 * **Setiausaha:** Amrulhasan bin Mohmad Hamdani
 * **Bendahari:** Muhammad Faris bin Awang Long
@@ -76,7 +76,7 @@ Menjadi ahli PERTABI bukan sekadar mendaftar nama — ia adalah satu ikrar untuk
 
 #### Keistimewaan & Manfaat Ahli:
 1. **Akses Program & Bengkel Khas:** Bengkel komunikasi perkahwinan, pengurusan stres, dan literasi kewangan rumah tangga.
-2. **Faedah Ekosistem Kesihatan SuamiSihat™:** Diskaun khas untuk saringan kesihatan lelaki, telekonsultasi doktor, dan suplemen terpilih.
+2. **Faedah Ekosistem Kesihatan SuamiSihat®:** Diskaun khas untuk saringan kesihatan lelaki, telekonsultasi doktor, dan suplemen terpilih.
 3. **Pakej Barangan Ahli Eksklusif:** Hak istimewa untuk memiliki Jersi Rasmi PERTABI dan kit keahlian.
 4. **Hak Mengundi & Bersuara:** Menyertai Mesyuarat Agung Dwi-Tahunan (AGM) dan mengundi barisan kepimpinan.
 

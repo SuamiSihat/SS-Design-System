@@ -20,7 +20,7 @@
 </script>
 
 <svelte:head>
-  <title>SuamiSihat™ Design System — Single Source of Truth</title>
+  <title>SuamiSihat® Design System — Single Source of Truth</title>
 </svelte:head>
 
 <!-- Global Toast Notification for One-Click Copied Actions -->

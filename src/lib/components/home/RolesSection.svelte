@@ -12,7 +12,7 @@
   </div>
 
   <div class="f-section-head">
-    <h2 class="f-section-title">Who Should Use the SuamiSihat™ System?</h2>
+    <h2 class="f-section-title">Who Should Use the SuamiSihat® System?</h2>
     <p class="f-section-subtitle">
       Explore tailor-made workflows, tools, and direct actions designed for every member of the SuamiSihat ecosystem.
     </p>

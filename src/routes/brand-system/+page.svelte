@@ -51,7 +51,7 @@
 </script>
 
 <svelte:head>
-  <title>Brand System — SuamiSihat™ Design System</title>
+  <title>Brand System — SuamiSihat® Design System</title>
 </svelte:head>
 
 <div
@@ -103,14 +103,14 @@
     <div style="margin-bottom: 2rem;">
       <div class="bs-section-eyebrow" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">Design Language Standard</div>
       <h1 class="bs-section-title" style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.75rem; color: var(--color-neutral-fg-1);">Brand System &amp; Visual Identity</h1>
-      <p class="bs-section-desc" style="font-size: 1.05rem; color: var(--color-neutral-fg-2); line-height: 1.7; max-width: 720px;">The authoritative single source of truth for SuamiSihat™ vector marks, typography scales, Fluent 2 design tokens, and multi-platform color hierarchies.</p>
+      <p class="bs-section-desc" style="font-size: 1.05rem; color: var(--color-neutral-fg-2); line-height: 1.7; max-width: 720px;">The authoritative single source of truth for SuamiSihat® vector marks, typography scales, Fluent 2 design tokens, and multi-platform color hierarchies.</p>
     </div>
 
     <!-- Corporate Entity Facts Deck -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; margin-bottom: 3.5rem;">
       <div style="background: var(--color-neutral-bg-2); border: 1px solid var(--color-neutral-stroke-1); border-radius: var(--f-radius-xl); padding: 1.1rem 1.25rem; box-shadow: var(--f-shadow-2);">
         <span style="font-size: 0.7rem; color: var(--color-neutral-fg-3); text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em; display: block; margin-bottom: 4px;">Official Brand</span>
-        <strong style="color: var(--color-neutral-fg-1); font-size: 1.05rem;">SuamiSihat™</strong>
+        <strong style="color: var(--color-neutral-fg-1); font-size: 1.05rem;">SuamiSihat®</strong>
       </div>
       <div style="background: var(--color-neutral-bg-2); border: 1px solid var(--color-neutral-stroke-1); border-radius: var(--f-radius-xl); padding: 1.1rem 1.25rem; box-shadow: var(--f-shadow-2);">
         <span style="font-size: 0.7rem; color: var(--color-neutral-fg-3); text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em; display: block; margin-bottom: 4px;">Registered Entity</span>

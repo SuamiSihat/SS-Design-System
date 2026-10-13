@@ -2,9 +2,9 @@
 
 ## Strategic Overview
 
-SuamiSihat™ communicates with **clarity, empathy, and clinical authority**. Our verbal identity supports our core mission: empowering men across Southeast Asia to take proactive ownership of their health with confidence, scientific understanding, and dignity.
+SuamiSihat® communicates with **clarity, empathy, and clinical authority**. Our verbal identity supports our core mission: empowering men across Southeast Asia to take proactive ownership of their health with confidence, scientific understanding, and dignity.
 
-This document is the authoritative editorial standard for all SuamiSihat™ entities. For SS Clinic-specific copy strategy and the Brand Chorus doctrine, refer to: [SS Clinic Brand Positioning (SSC-STR-001)](https://assets.suamisihat.myds.me/doc/?doc=clinic-positioning)
+This document is the authoritative editorial standard for all SuamiSihat® entities. For SS Clinic-specific copy strategy and the Brand Chorus doctrine, refer to: [SS Clinic Brand Positioning (SSC-STR-001)](https://assets.suamisihat.myds.me/doc/?doc=clinic-positioning)
 
 ---
 
@@ -47,7 +47,7 @@ This document is the authoritative editorial standard for all SuamiSihat™ enti
 ## Language & Terminology Standards
 
 ### Bilingual Code-Switching (Bahasa Malaysia & English)
-SuamiSihat™ serves a multilingual Malaysian demographic. Natural code-switching should feel seamless:
+SuamiSihat® serves a multilingual Malaysian demographic. Natural code-switching should feel seamless:
 - Use Bahasa Malaysia for cultural resonance and emotional connection: *"Kesihatan anda adalah tiang kekuatan keluarga."*
 - Use English for technical, pharmaceutical, or diagnostic terminology: *"Lipid profile, HbA1c, Doctor Consultation"*.
 
@@ -55,7 +55,7 @@ SuamiSihat™ serves a multilingual Malaysian demographic. Natural code-switchin
 
 | Approved Term | Avoid | Rationale |
 |---|---|---|
-| `SuamiSihat™` | `Suamisihat`, `SS` (in public copy) | Preserves official trademark equity and capitalization. |
+| `SuamiSihat®` | `Suamisihat`, `SS` (in public copy) | Preserves official trademark equity and capitalization. |
 | **Health journey / Vitality protocol** | Medical compliance / Regiment | Encourages partnership rather than passive submission. |
 | **Wellness check-in** | Patient data submission | Humanizes digital tracking. |
 | **Discreet consultation** | Secret treatment | Conveys dignity and privacy without illicit connotations. |
@@ -119,5 +119,5 @@ The Brand Chorus is SuamiSihat's most powerful compounding brand asset. It requi
 
 ---
 
-*SuamiSihat™ Brand Governance & Editorial Standards · Updated September 2026*
+*SuamiSihat® Brand Governance & Editorial Standards · Updated September 2026*
 *Governing strategy: [SSC-STR-001 — SS Clinic Brand Positioning & Branding Strategy](https://assets.suamisihat.myds.me/doc/?doc=clinic-positioning)*

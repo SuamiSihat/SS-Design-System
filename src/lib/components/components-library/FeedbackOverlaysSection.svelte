@@ -114,7 +114,7 @@ Toast.show({
     emptyWeb: `<div class="ss-empty">
   <div class="ss-empty-icon"><iconify-icon icon="fluent:calendar-empty-24-regular"></iconify-icon></div>
   <div class="ss-empty-title">No appointments yet</div>
-  <div class="ss-empty-desc">Book your first appointment with a SuamiSihat™ clinic.</div>
+  <div class="ss-empty-desc">Book your first appointment with a SuamiSihat® clinic.</div>
   <button class="ss-btn ss-btn-primary"><iconify-icon icon="fluent:add-circle-24-regular"></iconify-icon> Book Appointment</button>
 </div>`,
     emptyExpo: `import { View, Text, Pressable } from 'react-native';
@@ -335,7 +335,7 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
           <iconify-icon icon="fluent:calendar-empty-24-regular"></iconify-icon>
         </div>
         <h4 style="font-size:1.15rem; font-weight:700; color:var(--color-neutral-fg-1); margin-bottom:0.5rem;">No appointments yet</h4>
-        <p style="font-size:0.85rem; color:var(--color-neutral-fg-2); line-height:1.5; margin-bottom:1.25rem;">Book your first appointment with a SuamiSihat™ clinic. We'll send a reminder 24 hours before.</p>
+        <p style="font-size:0.85rem; color:var(--color-neutral-fg-2); line-height:1.5; margin-bottom:1.25rem;">Book your first appointment with a SuamiSihat® clinic. We'll send a reminder 24 hours before.</p>
         <button class="ss-btn ss-btn-primary"><iconify-icon icon="fluent:add-circle-24-regular"></iconify-icon> Book Appointment</button>
       </div>
     </div>

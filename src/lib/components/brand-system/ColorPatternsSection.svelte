@@ -142,7 +142,7 @@
         </div>
         <div style="padding:1.5rem 1.75rem;">
           <p style="font-size:0.9rem; color:var(--color-neutral-fg-2); line-height:1.6; margin-bottom:1.25rem;">
-            The <code>ss-hero</code> component is the <strong>official default background for all hero-type banners</strong> across SuamiSihat™ portals, landing pages, and product master headers.
+            The <code>ss-hero</code> component is the <strong>official default background for all hero-type banners</strong> across SuamiSihat® portals, landing pages, and product master headers.
           </p>
           <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1rem; margin-bottom:1.25rem;">
             <div style="background:var(--color-neutral-bg-1); padding:1rem; border-radius:var(--f-radius-lg); border:1px solid var(--color-neutral-stroke-1);">

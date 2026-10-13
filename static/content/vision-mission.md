@@ -40,7 +40,7 @@ graph LR
 
 ## 2. Core Ecosystem Mission
 
-> **"To empower every touchpoint of the SuamiSihat™ ecosystem with clinical excellence, empathetic dignity, and a rigorous, human-centered design language — ensuring every patient feels respected, understood, and medically secure from first anonymous screening to lifelong vitality."**
+> **"To empower every touchpoint of the SuamiSihat® ecosystem with clinical excellence, empathetic dignity, and a rigorous, human-centered design language — ensuring every patient feels respected, understood, and medically secure from first anonymous screening to lifelong vitality."**
 
 ### 2.1 Our Living Covenant with Every Patient
 When a husband, father, or young professional interacts with SuamiSihat:
@@ -59,7 +59,7 @@ Our positioning as *"The Husband's Health Authority"* is anchored upon three non
 
 ```mermaid
 graph TD
-    Authority["The Husband's Health Authority<br/>(SuamiSihat™ Ecosystem)"]
+    Authority["The Husband's Health Authority<br/>(SuamiSihat® Ecosystem)"]
     Authority --> P1["1. DIGNIFIED<br/>(Bermaruah & Terhormat)"]
     Authority --> P2["2. EXPERT<br/>(Kepakaran Klinikal & Berautoriti)"]
     Authority --> P3["3. BROTHERLY<br/>(Kemesraan & Keakraban Sehala)"]
@@ -119,13 +119,13 @@ Our vision and mission directly govern our **Fluent 2 Design Token Architecture*
 
 ```
  ┌──────────────────────────────────────────────────────────────────┐
- │ 60% DOMINANT — Prussian Blue (#022057) & Deep Clean Slate       │
- │ Evokes medical authority, institutional stability, and privacy.  │
+ │ 60% DOMINANT — Light background: Porcelain (#FCFAF6) & White    │
+ │ Clean clinical breathing room and typographic legibility.        │
  ├────────────────────────────────┬─────────────────────────────────┤
- │ 30% SECONDARY — Pure White &  │ 10% FOCAL ACCENT — SS Azure     │
- │ Warm Neutral Surface (#F8FAFC) │ (#21A1F7) & Golden Status       │
- │ Clean clinical breathing room  │ Reserved for primary CTAs,      │
- │ and typographic legibility.    │ active states, & focus rings.   │
+ │ 30% SECONDARY — Prussian Blue │ 10% FOCAL ACCENT — SS Azure     │
+ │ (#022057) & SS Blue (#043388)  │ (#21A1F7) & Banana Yellow       │
+ │ Medical authority, stability   │ Reserved for primary CTAs,      │
+ │ and privacy.                   │ active states, & focus rings.   │
  └────────────────────────────────┴─────────────────────────────────┘
 ```
 

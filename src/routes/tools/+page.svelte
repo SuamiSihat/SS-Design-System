@@ -79,7 +79,7 @@
 </script>
 
 <svelte:head>
-  <title>SS CAM &amp; Tools — SuamiSihat™ Design System</title>
+  <title>SS CAM &amp; Tools — SuamiSihat® Design System</title>
 </svelte:head>
 
 <!-- Hero Section -->
@@ -89,7 +89,7 @@
     <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin: 0 0 0.5rem;">Staff Tools &amp; Software Hub</p>
     <h1 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: #FFFFFF; letter-spacing: -0.02em; margin: 0 0 0.75rem;">SS CAM &amp; Creative Tools</h1>
     <p style="font-size: 1.05rem; color: rgba(255,255,255,0.85); max-width: 560px; margin: 0 auto; line-height: 1.6;">
-      Official download hub for SuamiSihat™ creative utilities, desktop software, design checkers, and daily workflow accelerators.
+      Official download hub for SuamiSihat® creative utilities, desktop software, design checkers, and daily workflow accelerators.
     </p>
   </div>
 </div>
@@ -106,7 +106,7 @@
   <div class="info-banner" style="display:flex; align-items:flex-start; gap:var(--f-space-4); padding:var(--f-space-4) var(--f-space-5); background:var(--color-info-bg,#EBF5FE); border:1px solid rgba(33,161,247,.18); border-radius:var(--f-radius-lg); margin-bottom:var(--f-space-8);">
     <span class="info-banner-icon" style="font-size:1.25rem; color:var(--color-brand-primary); margin-top: 2px;"><iconify-icon icon="fluent:info-24-regular"></iconify-icon></span>
     <p style="margin:0; font-size:0.875rem; color:var(--color-neutral-fg-2); line-height:1.6;">
-      All tools listed here are approved for internal SuamiSihat™ staff use. For support, contact <a href="mailto:tech@suamisihat.com" style="color:var(--color-brand-primary); font-weight:600;">tech@suamisihat.com</a> or raise an issue on the SSNAS Dashboard.
+      All tools listed here are approved for internal SuamiSihat® staff use. For support, contact <a href="mailto:tech@suamisihat.com" style="color:var(--color-brand-primary); font-weight:600;">tech@suamisihat.com</a> or raise an issue on the SSNAS Dashboard.
     </p>
   </div>
 
@@ -114,7 +114,7 @@
   <div style="margin-bottom: 4rem;">
     <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">Featured Desktop Software</div>
     <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--color-neutral-fg-1); margin-bottom: 6px;">SSCAM Windows Application</h2>
-    <p style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">SuamiSihat™ Creative Assets Management — purpose-built Windows desktop workstation.</p>
+    <p style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">SuamiSihat® Creative Assets Management — purpose-built Windows desktop workstation.</p>
 
     <!-- Card -->
     <div class="tool-card" style="background: var(--color-neutral-bg-2, #FFFFFF); border: 1px solid var(--color-neutral-stroke-1, rgba(0,0,0,0.08)); border-radius: var(--f-radius-xl, 16px); padding: 2rem; box-shadow: var(--f-shadow-4, 0 4px 16px rgba(0,0,0,0.06));">
@@ -134,7 +134,7 @@
       </div>
 
       <p style="font-size: 0.925rem; line-height: 1.7; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">
-        <strong>SSCAM (SuamiSihat™ Creative Assets Management)</strong> is the official desktop workstation for media designers, content creators, and clinic staff. It streamlines brand watermarking, photo/video capture grading, color preset pipelines, and one-click cloud/SSNAS synchronization.
+        <strong>SSCAM (SuamiSihat® Creative Assets Management)</strong> is the official desktop workstation for media designers, content creators, and clinic staff. It streamlines brand watermarking, photo/video capture grading, color preset pipelines, and one-click cloud/SSNAS synchronization.
       </p>
 
       <!-- Mockup & Screenshots Grid -->
@@ -227,7 +227,7 @@
           </div>
         </div>
         <p style="font-size: 0.85rem; color: var(--color-neutral-fg-2); line-height: 1.6; flex: 1; margin-bottom: 1.25rem;">
-          Generate your verified, on-brand SuamiSihat™ email signature with HTML clipboard copy.
+          Generate your verified, on-brand SuamiSihat® email signature with HTML clipboard copy.
         </p>
         <a href="/signature/" class="ss-btn ss-btn-secondary" style="text-decoration: none; justify-content: center; display: inline-flex; align-items: center; gap: 6px;">
           Open Generator <iconify-icon icon="fluent:arrow-right-16-regular"></iconify-icon>

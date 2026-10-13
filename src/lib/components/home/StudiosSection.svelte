@@ -20,12 +20,12 @@
   let activeContrastRatio = $state('11.8:1 (AAA)');
 
   const swatchDetails = {
-    '#043388': { name: 'SS Blue', ratio: '11.8:1 (AAA)', role: '60% Brand Foundation & Clinical Trust' },
-    '#022057': { name: 'Prussian Blue', ratio: '14.2:1 (AAA)', role: 'Structural Depth & Deep Canvas' },
+    '#043388': { name: 'SS Blue', ratio: '11.8:1 (AAA)', role: '30% brand colour: headers, panels and footers' },
+    '#022057': { name: 'Prussian Blue', ratio: '14.2:1 (AAA)', role: '30% brand colour: deep panels and dark sections' },
     '#21A1F7': { name: 'Azure Blue', ratio: '7.4:1 (AA+)', role: '10% Action Accent & High-Conversion CTAs' },
     '#6DC6EC': { name: 'Malibu Blue', ratio: '6.8:1 (AA)', role: 'Interactive Highlights & Light Surface Nodes' },
     '#FCE53D': { name: 'Banana Yellow', ratio: '8.1:1 (AAA)', role: 'Energetic Accents & Notice Badges' },
-    '#FCFAF6': { name: 'Porcelain White', ratio: '16.5:1 (AAA)', role: 'Neutral Light Mode Canvas & Card Surfaces' }
+    '#FCFAF6': { name: 'Porcelain White', ratio: '16.5:1 (AAA)', role: '60% light background: pages and cards' }
   };
 
   function selectSwatch(hex) {

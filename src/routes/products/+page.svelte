@@ -16,7 +16,7 @@
     {
       id: 'section-ss',
       title: 'SS Products & Global Lines',
-      desc: 'Authoritative brand portfolio owned and operated under the SuamiSihat™ ecosystem',
+      desc: 'Authoritative brand portfolio owned and operated under the SuamiSihat® ecosystem',
       icon: 'fluent:star-24-regular',
       iconClass: 'ps-icon-ss',
       products: [
@@ -25,7 +25,7 @@
           name: 'ANDROLAB',
           type: 'Core SS Brand',
           category: ['supplements', 'clinical'],
-          tags: ['SS Health', 'Clinic programme', 'Alpha Sachet'],
+          tags: ['SuamiSihat®', 'Clinic programme', 'Alpha Sachet'],
           tagClasses: ['tag-ss', 'tag-clinic', 'tag-wellness'],
           entity: '01-SSH · 02-SSC',
           entityIcon: 'fluent:organization-24-regular',
@@ -40,7 +40,7 @@
           name: 'MENSS',
           type: 'Core SS Brand',
           category: ['lifestyle', 'clinical'],
-          tags: ['SS Health', 'FRÉSH Wash', 'Penile Pump (VED)', 'Ring Series'],
+          tags: ['SuamiSihat®', 'FRÉSH Wash', 'Penile Pump (VED)', 'Ring Series'],
           tagClasses: ['tag-ss', 'tag-wellness', 'tag-clinic', 'tag-ecom'],
           entity: '05-SSE · 02-SSC',
           entityIcon: 'fluent:organization-24-regular',
@@ -55,7 +55,7 @@
           name: 'SS Clinic',
           type: 'Core Clinical Brand',
           category: ['clinical', 'programme'],
-          tags: ['SS Health', '02-SSC', 'Direct Patient Care', 'Telehealth'],
+          tags: ['SuamiSihat®', '02-SSC', 'Direct Patient Care', 'Telehealth'],
           tagClasses: ['tag-ss', 'tag-clinic', 'tag-wellness'],
           entity: '02-SSC · SS Clinic',
           entityIcon: 'fluent:stethoscope-24-regular',
@@ -78,7 +78,7 @@
           logo: '/products/Mensculine/logos/logo_mensculine_primary.svg',
           href: '/products/mensculine/',
           accent: 'linear-gradient(135deg, #1C1C1C, #038AFA)',
-          desc: '<strong>International branding of SuamiSihat™</strong> for global cross-border markets. Features <strong>Mensculine Care Cream</strong> (50g aluminum tube with Physta® &amp; L-Arginine) — the whitelabel counterpart of MENSS : FRÉSH Wash.',
+          desc: '<strong>International branding of SuamiSihat®</strong> for global cross-border markets. Features <strong>Mensculine Care Cream</strong> (50g aluminum tube with Physta® &amp; L-Arginine) — the whitelabel counterpart of MENSS : FRÉSH Wash.',
           searchData: 'mensculine international branding care cream fresh wash whitelabel lifestyle skincare'
         },
         {
@@ -209,7 +209,7 @@
           logo: '/products/Partner-Brands/logos/logo_isterisihat.svg',
           href: '/products/isterisihat/',
           accent: 'linear-gradient(135deg, #c04f88, #e895c0)',
-          desc: "Women's health platform complementing the SS Health ecosystem. Isteri Sihat provides holistic healthcare resources and community support for women — completing the family health picture.",
+          desc: "Women's health platform complementing the SuamiSihat® ecosystem. Isteri Sihat provides holistic healthcare resources and community support for women — completing the family health picture.",
           searchData: 'isteri sihat women health partner lifestyle wellness community family'
         },
         {
@@ -331,7 +331,7 @@
 </script>
 
 <svelte:head>
-  <title>Product Catalogue — SuamiSihat™ Design System</title>
+  <title>Product Catalogue — SuamiSihat® Design System</title>
 </svelte:head>
 
 <div
@@ -436,7 +436,7 @@
       <div class="cat-page-header">
         <div>
           <h1 class="cat-page-title">Product Catalogue</h1>
-          <p class="cat-page-subtitle">All SS Health brands, medical devices, superfoods and partner lines — in one place.</p>
+          <p class="cat-page-subtitle">All SuamiSihat® brands, medical devices, superfoods and partner lines in one place.</p>
         </div>
         <div class="cat-search-wrap">
           <iconify-icon icon="fluent:search-24-regular" class="cat-search-icon" aria-hidden="true"></iconify-icon>

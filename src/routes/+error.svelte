@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>Page Not Found — SuamiSihat™ Design System</title>
+  <title>Page Not Found — SuamiSihat® Design System</title>
 </svelte:head>
 
 <div class="container-xl py-5 text-center d-flex flex-column align-items-center justify-content-center" style="min-height: 60vh;">

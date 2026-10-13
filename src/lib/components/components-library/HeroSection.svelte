@@ -11,8 +11,8 @@
 <` + `/script>
 
 <SSHero
-  eyebrow="Design System — SuamiSihat™"
-  title="Ship the SuamiSihat™ brand faster and better."
+  eyebrow="Design System — SuamiSihat®"
+  title="Ship the SuamiSihat® brand faster and better."
   subtitle="The single source of truth for brand standards, design tokens, and components."
   showBadges={true}
   minHeight="480px"
@@ -33,9 +33,9 @@
   <div class="f-hero-inner">
     <div class="f-hero-eyebrow">
       <iconify-icon icon="fluent:record-16-regular"></iconify-icon>
-      Design System &mdash; SuamiSihat™
+      Design System &mdash; SuamiSihat®
     </div>
-    <h1 class="f-hero-title">Ship the SuamiSihat™ brand faster and better.</h1>
+    <h1 class="f-hero-title">Ship the SuamiSihat® brand faster and better.</h1>
     <p class="f-hero-subtitle">The standard background banner component for all hero headers.</p>
     <div class="f-hero-ctas">
       <a href="#explore" class="ss-btn ss-btn-primary">Explore Brand System</a>
@@ -59,7 +59,7 @@ export function SSHeroBanner({ title, subtitle }) {
         style={StyleSheet.absoluteFillObject}
       />
       <View style={styles.content}>
-        <Text style={styles.eyebrow}>DESIGN SYSTEM — SUAMISIHAT™</Text>
+        <Text style={styles.eyebrow}>DESIGN SYSTEM — SUAMISIHAT®</Text>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.subtitle}>{subtitle}</Text>
       </View>
@@ -124,7 +124,7 @@ class SSHeroBanner extends StatelessWidget {
   <div class="cl-section-eyebrow">Standard Container</div>
   <h2 class="cl-section-title">SS Hero Banner (<code>ss-hero</code>)</h2>
   <p class="cl-section-desc">
-    The official default background and container component for all hero-type banners, landing headers, and product master headers across SuamiSihat™. Combines the 60:30 brand base gradient, a 30% ambient glow bloom, and a 10% interactive kinetic particle wave canvas with Mars-symbol energy nodes.
+    The official default background and container component for all hero-type banners, landing headers, and product master headers across SuamiSihat®. Combines the 60:30 brand base gradient, a 30% ambient glow bloom, and a 10% interactive kinetic particle wave canvas with Mars-symbol energy nodes.
   </p>
 
   <!-- Live Interactive Demo of SSHero -->
@@ -134,7 +134,7 @@ class SSHeroBanner extends StatelessWidget {
         eyebrow="OFFICIAL HERO STANDARD"
         titleTag="h2"
         title="Interactive Vitality Wave &amp; Energy Particles"
-        subtitle="Default background for all SuamiSihat™ hero banners with mouse-reactive kinetic waves and ambient glow."
+        subtitle="Default background for all SuamiSihat® hero banners with mouse-reactive kinetic waves and ambient glow."
         minHeight="360px"
         showBadges={true}
       />

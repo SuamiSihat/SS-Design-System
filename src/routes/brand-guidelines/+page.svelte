@@ -9,7 +9,7 @@
     logo: {
       key: 'logo',
       title: 'Logo & Concept',
-      series: 'SuamiSihat™ Design System',
+      series: 'SuamiSihat® Design System',
       pdf: '/brand-guidelines/brand-guideline-logo-and-concept.pdf',
       img: '/brand-guidelines/cover-logo-concept.png',
       size: '1.4 MB'
@@ -17,7 +17,7 @@
     interior: {
       key: 'interior',
       title: 'Interior Design',
-      series: 'SuamiSihat™ Clinic Standard',
+      series: 'SuamiSihat® Clinic Standard',
       pdf: '/brand-guidelines/brand-guideline-interior-design.pdf',
       img: '/brand-guidelines/cover-interior-design.png',
       size: '3.2 MB'
@@ -84,7 +84,7 @@
 </script>
 
 <svelte:head>
-  <title>Brand Guidelines &amp; PDFs — SuamiSihat™ Design System</title>
+  <title>Brand Guidelines &amp; PDFs — SuamiSihat® Design System</title>
 </svelte:head>
 
 <div class="guidelines-page" style="min-height: calc(100vh - 60px); background: var(--color-neutral-bg-1, #F8FAFC); padding-bottom: 4rem;">
@@ -97,7 +97,7 @@
       Brand Guideline Booklets
     </h1>
     <p class="selection-subtitle" style="font-size: 1rem; color: var(--color-neutral-fg-2, #64748B); max-width: 680px; margin: 0 auto 2.5rem; line-height: 1.6;">
-      Authoritative brand and spatial design standards for SuamiSihat™. Select a booklet below to read online or download the official PDF publication.
+      Authoritative brand and spatial design standards for SuamiSihat®. Select a booklet below to read online or download the official PDF publication.
     </p>
   </div>
 
@@ -120,7 +120,7 @@
         </div>
         <h2 class="book-title">Logo &amp; Concept</h2>
         <p class="book-desc">
-          Authoritative visual identity standard covering the SuamiSihat™ logomark, 1X exclusion space, typography scales, and multi-platform color hierarchies.
+          Authoritative visual identity standard covering the SuamiSihat® logomark, 1X exclusion space, typography scales, and multi-platform color hierarchies.
         </p>
         <div class="book-actions">
           <button class="ss-btn ss-btn-primary ss-btn-sm" onclick={(e) => { e.stopPropagation(); openBook('logo'); }} aria-label="Read Online: Logo & Concept Guideline">

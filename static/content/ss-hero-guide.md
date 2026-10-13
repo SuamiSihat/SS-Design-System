@@ -1,8 +1,8 @@
-# SuamiSihat™ Hero Banner Standard (`ss-hero`)
+# SuamiSihat® Hero Banner Standard (`ss-hero`)
 
 ## Overview
 
-The **`ss-hero`** component (and `<SSHero />` in Svelte) is the **official default background and container component for all hero-type banners**, master headers, landing page entrypoints, and product headers across the entire SuamiSihat™ digital ecosystem.
+The **`ss-hero`** component (and `<SSHero />` in Svelte) is the **official default background and container component for all hero-type banners**, master headers, landing page entrypoints, and product headers across the entire SuamiSihat® digital ecosystem.
 
 ```text
 ┌─────────────────────────────────────────────────────────────┐
@@ -51,9 +51,9 @@ The kinetic background renders via an HTML5 2D Canvas engine:
   <div class="f-hero-inner">
     <div class="f-hero-eyebrow">
       <iconify-icon icon="fluent:record-16-regular"></iconify-icon>
-      Design System &mdash; SuamiSihat™
+      Design System &mdash; SuamiSihat®
     </div>
-    <h1 class="f-hero-title">Ship the SuamiSihat™ brand faster and better.</h1>
+    <h1 class="f-hero-title">Ship the SuamiSihat® brand faster and better.</h1>
     <p class="f-hero-subtitle">The standard background banner component for all hero headers.</p>
     <div class="f-hero-ctas">
       <a href="/brand-system/" class="ss-btn ss-btn-primary">Explore Brand System</a>
@@ -77,8 +77,8 @@ The design system provides the canonical `<SSHero />` component at `$lib/compone
 </script>
 
 <SSHero
-  eyebrow="Design System — SuamiSihat™"
-  title="Ship the SuamiSihat™ brand faster and better."
+  eyebrow="Design System — SuamiSihat®"
+  title="Ship the SuamiSihat® brand faster and better."
   subtitle="The single source of truth for brand standards, design tokens, and components."
   showBadges={true}
   minHeight="520px"
@@ -121,7 +121,7 @@ export function SSHeroBanner({ title, subtitle }: { title: string; subtitle: str
         style={StyleSheet.absoluteFillObject}
       />
       <View style={styles.content}>
-        <Text style={styles.eyebrow}>SUAMISIHAT™ HERO STANDARD</Text>
+        <Text style={styles.eyebrow}>SUAMISIHAT® HERO STANDARD</Text>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.subtitle}>{subtitle}</Text>
       </View>

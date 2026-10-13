@@ -137,11 +137,12 @@ flowchart TD
 
 ## Color & Design Token Standards for Quiz UI
 
-The Formaloo quiz should use approved SuamiSihat™ design tokens:
+The Formaloo quiz should use approved SuamiSihat® design tokens:
 
 | Token | Hex | Usage |
 | :--- | :--- | :--- |
-| `--ss-navy` | `#0F4C75` | Primary background (60%) |
+| `--ss-deep` | `#022057` | Primary background (60%) |
+| `--ss-navy` | `#0F4C75` | Panels and section bands (30%) |
 | `--ss-gold` | `#F4A261` | CTA buttons, progress bar accent (10%) |
 | `--ss-white` | `#FFFFFF` | Card surfaces, question containers (30%) |
 | `--ss-sky-100` | `#E8F3FC` | Input field backgrounds, soft section dividers |
@@ -171,4 +172,4 @@ The Formaloo quiz should use approved SuamiSihat™ design tokens:
 
 ---
 
-*SuamiSihat™ Internal Design System · Document SSC-FNL-001 · Updated September 2026*
+*SuamiSihat® Internal Design System · Document SSC-FNL-001 · Updated September 2026*

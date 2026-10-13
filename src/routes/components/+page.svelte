@@ -56,7 +56,7 @@
 </script>
 
 <svelte:head>
-  <title>Component Library — SuamiSihat™ Design System</title>
+  <title>Component Library — SuamiSihat® Design System</title>
 </svelte:head>
 
 <div
@@ -132,9 +132,9 @@
         <iconify-icon icon="fluent:chevron-right-12-regular" style="color: var(--color-neutral-fg-3);"></iconify-icon>
         <span style="color:var(--color-neutral-fg-1); font-weight:600;">Component Library</span>
       </nav>
-      <div class="cl-section-eyebrow" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">SuamiSihat™ Design System</div>
+      <div class="cl-section-eyebrow" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">SuamiSihat® Design System</div>
       <h1 style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.75rem; color: var(--color-neutral-fg-1);">Component Library</h1>
-      <p style="font-size: 1.05rem; color: var(--color-neutral-fg-2); line-height: 1.7; max-width: 680px;">The complete visual language of SuamiSihat™. Fluent 2 architecture. One system for web, mobile apps, and internal tools.</p>
+      <p style="font-size: 1.05rem; color: var(--color-neutral-fg-2); line-height: 1.7; max-width: 680px;">The complete visual language of SuamiSihat®. Fluent 2 architecture. One system for web, mobile apps, and internal tools.</p>
       
       <!-- Feature Badges -->
       <div style="display:flex; gap: 8px; flex-wrap: wrap; margin-top: 1rem;">
