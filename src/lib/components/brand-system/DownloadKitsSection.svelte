@@ -1,7 +1,7 @@
 <section id="downloads" class="bs-section" style="margin-bottom: 4rem; scroll-margin-top: 80px;">
-  <div class="bs-section-eyebrow" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">07 &middot; Production Assets</div>
-  <h2 class="bs-section-title" style="font-size: 1.75rem; font-weight: 800; color: var(--color-neutral-fg-1); margin-bottom: 6px;">Direct Asset Download Kits (10 Packages)</h2>
-  <p class="bs-section-desc" style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">Download raw vector SVG marks, high-resolution ZIP asset kits, font packages, and subsidiary brand kits.</p>
+  <div class="bs-section-eyebrow" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">Downloads</div>
+  <h2 class="bs-section-title" style="font-size: 1.75rem; font-weight: 800; color: var(--color-neutral-fg-1); margin-bottom: 6px;">Download logos, fonts and colours</h2>
+  <p class="bs-section-desc" style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">Start with the Master Brand Kit. It has everything most people need. The other kits are for specific companies or uses.</p>
 
   <div style="display:flex;flex-direction:column;gap:0.75rem;margin-bottom:2rem;">
     <!-- 1. Master Brand Kit -->
@@ -12,7 +12,7 @@
         </div>
         <div>
           <strong style="color:var(--color-brand-primary);font-size:0.92rem;">SuamiSihat® Master Brand Kit</strong>
-          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">Master vector logos (Light, Dark, Mono)</div>
+          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">Main logos in light, dark and one-colour versions</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:8px;">
@@ -29,7 +29,7 @@
         </div>
         <div>
           <strong style="color:var(--color-neutral-fg-1);font-size:0.92rem;">SS App Icon Package</strong>
-          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">iOS &amp; Android app icons with rounded squircle vectors</div>
+          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">App icons for iPhone and Android</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:8px;">
@@ -46,7 +46,7 @@
         </div>
         <div>
           <strong style="color:var(--color-neutral-fg-1);font-size:0.92rem;">SS Colour Palette Kit</strong>
-          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">ASE Adobe Swatch Exchange &amp; digital palettes</div>
+          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">Colour palettes for Adobe and other design tools</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:8px;">
@@ -63,7 +63,7 @@
         </div>
         <div>
           <strong style="color:var(--color-neutral-fg-1);font-size:0.92rem;">SS Typeface &amp; Font Kit</strong>
-          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">Poppins, Montserrat, Helvetica, Calibri (TTF/OTF/WOFF2)</div>
+          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">Poppins, Montserrat, Helvetica and Calibri</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:8px;">
@@ -80,7 +80,7 @@
         </div>
         <div>
           <strong style="color:var(--color-neutral-fg-1);font-size:0.92rem;">SS Icon Logomark Kit</strong>
-          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">Standalone S-symbol marks (Dark, Light, Monochrome vectors)</div>
+          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">The S symbol alone, in dark, light and one-colour versions</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:8px;">
@@ -97,7 +97,7 @@
         </div>
         <div>
           <strong style="color:var(--color-neutral-fg-1);font-size:0.92rem;">SS Health Corporate Kit</strong>
-          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">Holding company corporate logos and governance assets</div>
+          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">Logos for the parent company (SS Health)</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:8px;">
@@ -114,7 +114,7 @@
         </div>
         <div>
           <strong style="color:var(--color-neutral-fg-1);font-size:0.92rem;">SS Clinic Kit</strong>
-          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">Clinical marks and medical consultation graphics</div>
+          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">Logos and graphics for the clinic</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:8px;">
@@ -131,7 +131,7 @@
         </div>
         <div>
           <strong style="color:var(--color-neutral-fg-1);font-size:0.92rem;">SS Wellness Kit</strong>
-          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">Preventative health, physiotherapy, and wellness assets</div>
+          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">Logos and graphics for wellness and physiotherapy</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:8px;">
@@ -148,7 +148,7 @@
         </div>
         <div>
           <strong style="color:var(--color-neutral-fg-1);font-size:0.92rem;">SS Ecommerce Kit</strong>
-          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">Official store vectors, packaging, and digital retail kits</div>
+          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">Logos, packaging and online store graphics</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:8px;">
@@ -165,7 +165,7 @@
         </div>
         <div>
           <strong style="color:var(--color-neutral-fg-1);font-size:0.92rem;">SS Technology Kit</strong>
-          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">Digital health app icons, SDK marks, and developer graphics</div>
+          <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">App icons and graphics for technology products</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:8px;">

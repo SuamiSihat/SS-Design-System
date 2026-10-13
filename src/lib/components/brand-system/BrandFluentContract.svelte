@@ -15,7 +15,7 @@
         <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom: 1rem;">
           <div style="display:flex; align-items:center; gap: 8px;">
             <span style="width: 28px; height: 28px; border-radius: 6px; background: var(--color-action-bg); color: var(--color-on-action); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem;">SS</span>
-            <strong style="color: var(--color-neutral-fg-1); font-size: 1rem;">Layer 1: SuamiSihat&trade;</strong>
+            <strong style="color: var(--color-neutral-fg-1); font-size: 1rem;">Layer 1: SuamiSihat®</strong>
           </div>
           <span class="ss-badge ss-badge-brand" style="font-size: 0.7rem;">Brand Identity</span>
         </div>
@@ -61,7 +61,7 @@
     <div style="padding:1rem 1.5rem;border-bottom:1px solid var(--color-neutral-stroke-1);background:var(--color-neutral-bg-3);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">
       <div>
         <strong style="font-size:0.9rem;color:var(--color-neutral-fg-1);">Source of Truth &amp; Boundary Matrix</strong>
-        <p style="font-size:0.75rem;color:var(--color-neutral-fg-3);margin:0;">Explicit boundary ownership between SuamiSihat&trade; and Fluent 2</p>
+        <p style="font-size:0.75rem;color:var(--color-neutral-fg-3);margin:0;">Explicit boundary ownership between SuamiSihat® and Fluent 2</p>
       </div>
       <a href="/doc/?doc=brand-fluent2" class="ss-btn ss-btn-sm ss-btn-primary" style="font-size:0.75rem;padding:4px 12px;text-decoration:none;">
         Full Contract Doc <iconify-icon icon="fluent:arrow-right-16-regular" style="vertical-align:middle;margin-left:2px;"></iconify-icon>
@@ -79,22 +79,22 @@
         <tbody>
           <tr style="border-bottom:1px solid var(--color-neutral-stroke-1);">
             <td style="padding:0.75rem 1.25rem;font-weight:600;">Brand Personality &amp; Voice</td>
-            <td style="padding:0.75rem 1.25rem;"><span class="ss-badge ss-badge-brand" style="font-size:0.7rem;">SuamiSihat&trade;</span></td>
+            <td style="padding:0.75rem 1.25rem;"><span class="ss-badge ss-badge-brand" style="font-size:0.7rem;">SuamiSihat®</span></td>
             <td style="padding:0.75rem 1.25rem;color:var(--color-neutral-fg-2);">Confident, clinical, masculine, premium, discreet, empathetic</td>
           </tr>
           <tr style="border-bottom:1px solid var(--color-neutral-stroke-1);">
             <td style="padding:0.75rem 1.25rem;font-weight:600;">Logo &amp; Brand Marks</td>
-            <td style="padding:0.75rem 1.25rem;"><span class="ss-badge ss-badge-brand" style="font-size:0.7rem;">SuamiSihat&trade;</span></td>
+            <td style="padding:0.75rem 1.25rem;"><span class="ss-badge ss-badge-brand" style="font-size:0.7rem;">SuamiSihat®</span></td>
             <td style="padding:0.75rem 1.25rem;color:var(--color-neutral-fg-2);">Strict background-brightness selection (HSL L &ge; 50% vs L &lt; 50%)</td>
           </tr>
           <tr style="border-bottom:1px solid var(--color-neutral-stroke-1);">
             <td style="padding:0.75rem 1.25rem;font-weight:600;">Colour Palette &amp; Accents</td>
-            <td style="padding:0.75rem 1.25rem;"><span class="ss-badge ss-badge-brand" style="font-size:0.7rem;">SuamiSihat&trade;</span></td>
+            <td style="padding:0.75rem 1.25rem;"><span class="ss-badge ss-badge-brand" style="font-size:0.7rem;">SuamiSihat®</span></td>
             <td style="padding:0.75rem 1.25rem;color:var(--color-neutral-fg-2);">Prussian Blue (<code>#022057</code>), SS Blue (<code>#043388</code>), Azure (<code>#21A1F7</code>), Banana (<code>#FCE53D</code>)</td>
           </tr>
           <tr style="border-bottom:1px solid var(--color-neutral-stroke-1);">
             <td style="padding:0.75rem 1.25rem;font-weight:600;">Typography &amp; Contrast Hierarchy</td>
-            <td style="padding:0.75rem 1.25rem;"><span class="ss-badge ss-badge-brand" style="font-size:0.7rem;">SuamiSihat&trade;</span></td>
+            <td style="padding:0.75rem 1.25rem;"><span class="ss-badge ss-badge-brand" style="font-size:0.7rem;">SuamiSihat®</span></td>
             <td style="padding:0.75rem 1.25rem;color:var(--color-neutral-fg-2);">Poppins (Display) + Inter (Body) with 4-tier text tokens</td>
           </tr>
           <tr style="border-bottom:1px solid var(--color-neutral-stroke-1);">

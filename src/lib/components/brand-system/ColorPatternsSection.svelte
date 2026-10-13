@@ -1,7 +1,7 @@
 <section id="patterns" class="bs-section" style="margin-bottom: 4rem; scroll-margin-top: 80px;">
-  <div class="bs-section-eyebrow" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">03 &middot; Applied Visual Harmony</div>
-  <h2 class="bs-section-title" style="font-size: 1.75rem; font-weight: 800; color: var(--color-neutral-fg-1); margin-bottom: 6px;">Curated Color Patterns (60:30:10 Schemes)</h2>
-  <p class="bs-section-desc" style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">Production-ready surface combinations engineered for clinical trust, digital conversion, and accessibility compliance. Each pattern strictly enforces the <b>60:30:10 hierarchy</b> with <b>Neutral Black (<code>#1C1C1C</code>)</b> typography.</p>
+  <div class="bs-section-eyebrow" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">For designers</div>
+  <h2 class="bs-section-title" style="font-size: 1.75rem; font-weight: 800; color: var(--color-neutral-fg-1); margin-bottom: 6px;">Ready-made colour combinations</h2>
+  <p class="bs-section-desc" style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">Three tested page looks that follow the 60:30:10 balance. Pick one instead of inventing your own. Text is always Carbon Black <code>#1C1C1C</code> on light backgrounds.</p>
 
   <div class="row g-4 mb-4">
     <!-- Pattern 1: Clinical Conversion (Flagship Light) -->

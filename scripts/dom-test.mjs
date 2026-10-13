@@ -111,7 +111,7 @@ const brandSystemHtml = loadHtml('build/brand-system/index.html');
 testDom('Brand System (build/brand-system/index.html)', brandSystemHtml, [
   { desc: 'Contains Brand × Fluent 2 Architectural Contract section', pattern: /brand-fluent2|Fluent 2 provides the interaction system/i },
   { desc: 'Contains Source of Truth & Boundary Matrix', pattern: /Boundary Matrix|Authoritative Source/i },
-  { desc: 'Contains interactive logo variant selector', pattern: /Logo Contrast Tester|Primary Logo|Secondary Logo/i },
+  { desc: 'Contains interactive logo variant selector', pattern: /Try the logo on different backgrounds|Main logo|Light logo/i },
   { desc: 'Contains Logo Clear Space and 1X exclusion rule or guidelines', pattern: /Clear Space|clear space|safe_zone\.svg/i },
   { desc: 'Contains safe_zone.svg and ss_logo_proportions.svg diagrams', pattern: /safe_zone\.svg.*ss_logo_proportions\.svg/s },
   { desc: 'Contains Brand Architecture Model pyramid diagram', pattern: /brand_architecture_model\.svg/i },
@@ -124,8 +124,8 @@ testDom('Brand System (build/brand-system/index.html)', brandSystemHtml, [
   { desc: 'Contains 5 Sub-Brands (SSH, SSC, SSW, SSE, SST)', pattern: /SSH.*SSC.*SSW.*SSE.*SST|SS Health.*SS Clinic.*SS Wellness/s },
   { desc: 'Contains Corporate Entity Facts overview bar', pattern: /SUAMISIHAT HOLDING SDN\. BHD\.|Registered Entity/i },
   { desc: 'Contains Direct Asset Download Kits (10 Packages)', pattern: /Direct Asset Download Kits|Master Brand Kit/i },
-  { desc: 'Contains Neutral White (#FCFAF6) and Neutral Black in Primary Color specification', pattern: /Neutral White.*#FCFAF6|#FCFAF6.*Neutral White/s },
-  { desc: 'Contains Standalone Logomark Surface Contrast Tester', pattern: /Standalone Logomark Surface Contrast Tester/i },
+  { desc: 'Contains Porcelain White (#FCFAF6) and Carbon Black in Primary Color specification', pattern: /Porcelain White.*#FCFAF6|#FCFAF6.*Porcelain White/s },
+  { desc: 'Contains S symbol light and dark tester', pattern: /Try the S symbol on light and dark/i },
   { desc: 'Contains Logomark Light & Dark toggle buttons', pattern: /Light Surface.*Dark Surface/s },
   { desc: 'Contains multi-platform token export options (Tailwind, Flutter, WPF, CSS, JSON)', pattern: /Tailwind|Flutter|WPF|JSON/i },
   { desc: 'Contains vector master SVG download links', pattern: /\.svg/i }

@@ -51,7 +51,7 @@
 </script>
 
 <svelte:head>
-  <title>Brand System — SuamiSihat® Design System</title>
+  <title>Our brand — SuamiSihat® Design System</title>
 </svelte:head>
 
 <div
@@ -73,19 +73,22 @@
 
   <!-- Sidebar Navigation -->
   {#if !isSidebarMinimized}
-    <aside class="f-sidebar" id="pageSidebar" aria-label="Brand system navigation" style="background: var(--color-neutral-bg-2); border-right: 1px solid var(--color-neutral-stroke-1); padding: 1.5rem 0.75rem; position: sticky; top: 60px; height: calc(100vh - 60px); overflow-y: auto;">
-      <p class="brand-sidebar-title" style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-fg-3); padding: 0.5rem; margin: 0;">Brand System</p>
+    <aside class="f-sidebar" id="pageSidebar" aria-label="Brand page navigation" style="background: var(--color-neutral-bg-2); border-right: 1px solid var(--color-neutral-stroke-1); padding: 1.5rem 0.75rem; position: sticky; top: 60px; height: calc(100vh - 60px); overflow-y: auto;">
+      <p class="brand-sidebar-title" style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-fg-3); padding: 0.5rem; margin: 0;">On this page</p>
       <ul class="brand-sidebar-nav" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-        <li><a href="#logomark" class="cl-sidebar-link"><iconify-icon icon="fluent:trophy-24-regular"></iconify-icon> Logomark</a></li>
-        <li><a href="#colour" class="cl-sidebar-link"><iconify-icon icon="fluent:color-24-regular"></iconify-icon> Colour System</a></li>
-        <li><a href="#patterns" class="cl-sidebar-link"><iconify-icon icon="fluent:color-background-24-regular"></iconify-icon> Color Patterns</a></li>
-        <li><a href="#typography" class="cl-sidebar-link"><iconify-icon icon="fluent:text-field-24-regular"></iconify-icon> Typography</a></li>
-        <li><a href="#subbrand" class="cl-sidebar-link"><iconify-icon icon="fluent:layer-diagonal-24-regular"></iconify-icon> Sub-Brands</a></li>
-        <li><a href="#icons" class="cl-sidebar-link"><iconify-icon icon="fluent:shapes-24-regular"></iconify-icon> Icons & Usage</a></li>
-        <li><a href="#downloads" class="cl-sidebar-link"><iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon> Download Kits</a></li>
-        <li><a href="#client-representation" class="cl-sidebar-link"><iconify-icon icon="fluent:person-shield-24-regular"></iconify-icon> Client Dignity</a></li>
-        <li><a href="#brand-fluent2" class="cl-sidebar-link"><iconify-icon icon="fluent:puzzle-piece-24-regular"></iconify-icon> Brand × Fluent 2 (designers)</a></li>
-        <li><a href="#tokens-export" class="cl-sidebar-link"><iconify-icon icon="fluent:code-24-regular"></iconify-icon> Colour codes (developers)</a></li>
+        <li><a href="#logomark" class="cl-sidebar-link"><iconify-icon icon="fluent:trophy-24-regular"></iconify-icon> Our logo</a></li>
+        <li><a href="#colour" class="cl-sidebar-link"><iconify-icon icon="fluent:color-24-regular"></iconify-icon> Our colours</a></li>
+        <li><a href="#typography" class="cl-sidebar-link"><iconify-icon icon="fluent:text-field-24-regular"></iconify-icon> Our fonts</a></li>
+        <li><a href="#icons" class="cl-sidebar-link"><iconify-icon icon="fluent:shapes-24-regular"></iconify-icon> Using the logo correctly</a></li>
+        <li><a href="#downloads" class="cl-sidebar-link"><iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon> Downloads</a></li>
+        <li><a href="#client-representation" class="cl-sidebar-link"><iconify-icon icon="fluent:person-shield-24-regular"></iconify-icon> Our promise</a></li>
+        <li><a href="#subbrand" class="cl-sidebar-link"><iconify-icon icon="fluent:layer-diagonal-24-regular"></iconify-icon> Our companies</a></li>
+      </ul>
+      <p class="brand-sidebar-title" style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-fg-3); padding: 1rem 0.5rem 0.5rem; margin: 0;">For designers and developers</p>
+      <ul class="brand-sidebar-nav" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
+        <li><a href="#patterns" class="cl-sidebar-link"><iconify-icon icon="fluent:color-background-24-regular"></iconify-icon> Colour combinations</a></li>
+        <li><a href="#brand-fluent2" class="cl-sidebar-link"><iconify-icon icon="fluent:puzzle-piece-24-regular"></iconify-icon> Brand × Fluent 2</a></li>
+        <li><a href="#tokens-export" class="cl-sidebar-link"><iconify-icon icon="fluent:code-24-regular"></iconify-icon> Colour codes for developers</a></li>
       </ul>
     </aside>
   {/if}
@@ -96,64 +99,53 @@
     <nav class="brand-breadcrumb" aria-label="Breadcrumb" style="font-size: 0.8rem; display: flex; align-items: center; gap: 8px; margin-bottom: 1rem;">
       <a href="/" style="color: var(--color-neutral-fg-3); text-decoration: none;">Home</a>
       <iconify-icon icon="fluent:chevron-right-12-regular" style="color: var(--color-neutral-fg-3);"></iconify-icon>
-      <span style="color:var(--color-neutral-fg-1);font-weight:600;">Brand System</span>
+      <span style="color:var(--color-neutral-fg-1);font-weight:600;">Our brand</span>
     </nav>
 
     <!-- Page Header -->
     <div style="margin-bottom: 2rem;">
-      <div class="bs-section-eyebrow" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">SuamiSihat® brand</div>
+      <div class="bs-section-eyebrow" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">SuamiSihat®</div>
       <h1 class="bs-section-title" style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.75rem; color: var(--color-neutral-fg-1);">The SuamiSihat® brand</h1>
-      <p class="bs-section-desc" style="font-size: 1.05rem; color: var(--color-neutral-fg-2); line-height: 1.7; max-width: 720px;">How the SuamiSihat® brand looks: the logo, colours, fonts, and the rules for using them.</p>
+      <p class="bs-section-desc" style="font-size: 1.05rem; color: var(--color-neutral-fg-2); line-height: 1.7; max-width: 720px;">Our logo, colours and fonts, how to use them, and where to download them. Designers and developers will find technical details at the bottom of the page.</p>
     </div>
 
     <!-- Corporate Entity Facts Deck -->
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; margin-bottom: 3.5rem;">
       <div style="background: var(--color-neutral-bg-2); border: 1px solid var(--color-neutral-stroke-1); border-radius: var(--f-radius-xl); padding: 1.1rem 1.25rem; box-shadow: var(--f-shadow-2);">
-        <span style="font-size: 0.7rem; color: var(--color-neutral-fg-3); text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em; display: block; margin-bottom: 4px;">Official Brand</span>
+        <span style="font-size: 0.7rem; color: var(--color-neutral-fg-3); text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em; display: block; margin-bottom: 4px;">Brand name</span>
         <strong style="color: var(--color-neutral-fg-1); font-size: 1.05rem;">SuamiSihat®</strong>
       </div>
       <div style="background: var(--color-neutral-bg-2); border: 1px solid var(--color-neutral-stroke-1); border-radius: var(--f-radius-xl); padding: 1.1rem 1.25rem; box-shadow: var(--f-shadow-2);">
-        <span style="font-size: 0.7rem; color: var(--color-neutral-fg-3); text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em; display: block; margin-bottom: 4px;">Registered Entity</span>
+        <span style="font-size: 0.7rem; color: var(--color-neutral-fg-3); text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em; display: block; margin-bottom: 4px;">Parent company</span>
         <strong style="color: var(--color-neutral-fg-1); font-size: 0.92rem; display: block; line-height: 1.3;">SUAMISIHAT HOLDING SDN. BHD.</strong>
       </div>
       <div style="background: var(--color-neutral-bg-2); border: 1px solid var(--color-neutral-stroke-1); border-radius: var(--f-radius-xl); padding: 1.1rem 1.25rem; box-shadow: var(--f-shadow-2);">
-        <span style="font-size: 0.7rem; color: var(--color-neutral-fg-3); text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em; display: block; margin-bottom: 4px;">Primary Market</span>
+        <span style="font-size: 0.7rem; color: var(--color-neutral-fg-3); text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em; display: block; margin-bottom: 4px;">Main market</span>
         <strong style="color: var(--color-neutral-fg-1); font-size: 1.05rem;">Malaysia</strong>
       </div>
       <div style="background: var(--color-neutral-bg-2); border: 1px solid var(--color-neutral-stroke-1); border-radius: var(--f-radius-xl); padding: 1.1rem 1.25rem; box-shadow: var(--f-shadow-2);">
-        <span style="font-size: 0.7rem; color: var(--color-neutral-fg-3); text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em; display: block; margin-bottom: 4px;">Core Focus</span>
-        <strong style="color: var(--color-neutral-fg-1); font-size: 0.95rem;">Men's Health, Wellness &amp; Tech</strong>
+        <span style="font-size: 0.7rem; color: var(--color-neutral-fg-3); text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em; display: block; margin-bottom: 4px;">What we do</span>
+        <strong style="color: var(--color-neutral-fg-1); font-size: 0.95rem;">Men’s health, wellness and technology</strong>
       </div>
     </div>
 
 
-    <!-- 01. Logomark & Master Identity -->
     <LogomarkSection />
-
-    <!-- 02. Color Palette & Master Standards -->
     <ColourSystemSection {copyHex} />
-
-    <!-- 03. Curated Color Patterns (60:30:10 Schemes) -->
-    <ColorPatternsSection />
-
-    <!-- 04. Typography System -->
     <TypographySection />
-
-    <!-- 05. Brand Architecture & Operating Model -->
+    <IconsUsageSection />
+    <DownloadKitsSection />
+    <ClientDignitySection />
     <SubbrandsSection />
 
-    <!-- 06. Icons & Logomark Usage -->
-    <IconsUsageSection />
+    <!-- Technical area -->
+    <div id="for-designers" style="border-top: 2px solid var(--color-neutral-stroke-1); padding-top: 2rem; margin: 1rem 0 2.5rem;">
+      <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--color-neutral-fg-1); margin: 0 0 6px;">For designers and developers</h2>
+      <p style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin: 0; max-width: 720px;">The sections below are technical. Staff who are not designing or building anything can stop here.</p>
+    </div>
 
-    <!-- 07. Direct Asset Download Kits -->
-    <DownloadKitsSection />
-
-    <!-- 08. Client Representation & Dignity Standards -->
-    <ClientDignitySection />
-
-    <!-- 00. Brand × Fluent 2 Architectural Contract -->
+    <ColorPatternsSection />
     <BrandFluentContract />
-    <!-- 09. Multi-Platform Token Exporters -->
     <TokensExportSection />
   </main>
 </div>

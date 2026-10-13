@@ -1,35 +1,35 @@
 <section id="subbrand" class="bs-section" style="margin-bottom: 4rem; scroll-margin-top: 80px;">
-  <div class="bs-section-eyebrow" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">05 &middot; Brand Architecture</div>
-  <h2 class="bs-section-title" style="font-size: 1.75rem; font-weight: 800; color: var(--color-neutral-fg-1); margin-bottom: 6px;">Brand Architecture &amp; Operating Model</h2>
-  <p class="bs-section-desc" style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">One master holding company, four specialized operating subsidiaries, and clinical/lifestyle product brands.</p>
+  <div class="bs-section-eyebrow" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">Our companies</div>
+  <h2 class="bs-section-title" style="font-size: 1.75rem; font-weight: 800; color: var(--color-neutral-fg-1); margin-bottom: 6px;">How our companies fit together</h2>
+  <p class="bs-section-desc" style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">One parent company, four companies that serve patients and customers, and the product brands.</p>
 
   <!-- Brand Architecture Pyramid & Sub-Brands Diagrams -->
   <div class="row g-4 mb-4">
     <div class="col-lg-6">
       <div style="background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);overflow:hidden;box-shadow:var(--f-shadow-4);height:100%;">
         <div style="padding:1rem 1.5rem;border-bottom:1px solid var(--color-neutral-stroke-1);background:var(--color-neutral-bg-3);display:flex;justify-content:space-between;align-items:center;">
-          <strong style="font-size:0.875rem;color:var(--color-neutral-fg-1);">Brand Architecture Model</strong>
-          <span class="ss-badge ss-badge-brand" style="font-size:0.7rem;">Group Governance</span>
+          <strong style="font-size:0.875rem;color:var(--color-neutral-fg-1);">Company structure</strong>
+          <span class="ss-badge ss-badge-brand" style="font-size:0.7rem;">Overview</span>
         </div>
         <div style="padding:1.5rem;background:#FFFFFF;display:flex;align-items:center;justify-content:center;min-height:220px;">
-          <img src="/assets/images/brand_architecture_model.svg" alt="SuamiSihat Brand Architecture Model Pyramid" style="max-height:200px;max-width:100%;object-fit:contain;" loading="lazy" />
+          <img src="/assets/images/brand_architecture_model.svg" alt="SuamiSihat Company structure Pyramid" style="max-height:200px;max-width:100%;object-fit:contain;" loading="lazy" />
         </div>
         <div style="padding:1rem 1.5rem;font-size:0.8rem;color:var(--color-neutral-fg-2);line-height:1.5;">
-          Defines the structural relationship between SuamiSihat Holding (parent), operating divisions (Clinic, Wellness, Ecom, Tech), and commercial product lines.
+          Shows how the parent company, the four companies (Clinic, Wellness, Ecommerce, Technology) and the product brands relate.
         </div>
       </div>
     </div>
     <div class="col-lg-6">
       <div style="background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);overflow:hidden;box-shadow:var(--f-shadow-4);height:100%;">
         <div style="padding:1rem 1.5rem;border-bottom:1px solid var(--color-neutral-stroke-1);background:var(--color-neutral-bg-3);display:flex;justify-content:space-between;align-items:center;">
-          <strong style="font-size:0.875rem;color:var(--color-neutral-fg-1);">Operating Subsidiaries Hierarchy</strong>
-          <span class="ss-badge ss-badge-neutral" style="font-size:0.7rem;">5 Operating Entities</span>
+          <strong style="font-size:0.875rem;color:var(--color-neutral-fg-1);">The four companies</strong>
+          <span class="ss-badge ss-badge-neutral" style="font-size:0.7rem;">5 companies</span>
         </div>
         <div style="padding:1.5rem;background:#FFFFFF;display:flex;align-items:center;justify-content:center;min-height:220px;">
           <img src="/assets/images/sub-brands.svg" alt="SuamiSihat Operating Sub-Brands Hierarchy Chart" style="max-height:200px;max-width:100%;object-fit:contain;" loading="lazy" />
         </div>
         <div style="padding:1rem 1.5rem;font-size:0.8rem;color:var(--color-neutral-fg-2);line-height:1.5;">
-          Each subsidiary maintains a standardized color-coded identity bar and dedicated service purview while sharing the core master logomark.
+          Each company has its own colour bar and area of work, and all share the SuamiSihat® logo.
         </div>
       </div>
     </div>
@@ -49,7 +49,7 @@
         <div class="f-subbrand-card-body">
           <div style="font-weight:800; color:var(--color-neutral-fg-1); font-size:1.1rem; margin-bottom:2px;">SS Health</div>
           <div style="font-size:0.75rem; font-weight:600; color:var(--color-brand-primary); margin-bottom:6px;">SuamiSihat Holding Sdn. Bhd.</div>
-          <div class="f-subbrand-desc" style="font-size:0.8rem; color:var(--color-neutral-fg-3); line-height:1.5; margin-bottom:1rem;">The corporate parent responsible for group strategy, governance, legal, and investor relations.</div>
+          <div class="f-subbrand-desc" style="font-size:0.8rem; color:var(--color-neutral-fg-3); line-height:1.5; margin-bottom:1rem;">The parent company. Looks after strategy, legal matters and investors.</div>
         </div>
       </div>
       <div style="display:flex; gap:0.5rem; border-top:1px solid var(--color-neutral-stroke-1); padding-top:1rem; margin-top:auto;">
@@ -72,7 +72,7 @@
         <div class="f-subbrand-card-body">
           <div style="font-weight:800; color:var(--color-neutral-fg-1); font-size:1.1rem; margin-bottom:2px;">SS Clinic</div>
           <div style="font-size:0.75rem; font-weight:600; color:var(--color-brand-primary); margin-bottom:6px;">SuamiSihat Clinic Sdn. Bhd.</div>
-          <div class="f-subbrand-desc" style="font-size:0.8rem; color:var(--color-neutral-fg-3); line-height:1.5; margin-bottom:1rem;">Clinical men's health services, medical consultations, and evidence-informed patient care.</div>
+          <div class="f-subbrand-desc" style="font-size:0.8rem; color:var(--color-neutral-fg-3); line-height:1.5; margin-bottom:1rem;">Men’s health clinic: consultations and patient care.</div>
         </div>
       </div>
       <div style="display:flex; gap:0.5rem; border-top:1px solid var(--color-neutral-stroke-1); padding-top:1rem; margin-top:auto;">
@@ -98,7 +98,7 @@
         <div class="f-subbrand-card-body">
           <div style="font-weight:800; color:var(--color-neutral-fg-1); font-size:1.1rem; margin-bottom:2px;">SS Wellness</div>
           <div style="font-size:0.75rem; font-weight:600; color:var(--color-brand-primary); margin-bottom:6px;">SuamiSihat Wellness Sdn. Bhd.</div>
-          <div class="f-subbrand-desc" style="font-size:0.8rem; color:var(--color-neutral-fg-3); line-height:1.5; margin-bottom:1rem;">Physiotherapy, rehabilitation, holistic vitality recovery, and daily performance care.</div>
+          <div class="f-subbrand-desc" style="font-size:0.8rem; color:var(--color-neutral-fg-3); line-height:1.5; margin-bottom:1rem;">Physiotherapy, recovery and everyday wellness care.</div>
         </div>
       </div>
       <div style="display:flex; gap:0.5rem; border-top:1px solid var(--color-neutral-stroke-1); padding-top:1rem; margin-top:auto;">
@@ -124,7 +124,7 @@
         <div class="f-subbrand-card-body">
           <div style="font-weight:800; color:var(--color-neutral-fg-1); font-size:1.1rem; margin-bottom:2px;">SS Ecommerce</div>
           <div style="font-size:0.75rem; font-weight:600; color:var(--color-brand-primary); margin-bottom:6px;">SuamiSihat Ecommerce Sdn. Bhd.</div>
-          <div class="f-subbrand-desc" style="font-size:0.8rem; color:var(--color-neutral-fg-3); line-height:1.5; margin-bottom:1rem;">The official commerce platform for approved SuamiSihat® products, discretion, and delivery.</div>
+          <div class="f-subbrand-desc" style="font-size:0.8rem; color:var(--color-neutral-fg-3); line-height:1.5; margin-bottom:1rem;">The online shop for approved SuamiSihat® products, with discreet delivery.</div>
         </div>
       </div>
       <div style="display:flex; gap:0.5rem; border-top:1px solid var(--color-neutral-stroke-1); padding-top:1rem; margin-top:auto;">
@@ -150,7 +150,7 @@
         <div class="f-subbrand-card-body">
           <div style="font-weight:800; color:var(--color-neutral-fg-1); font-size:1.1rem; margin-bottom:2px;">SS Technology</div>
           <div style="font-size:0.75rem; font-weight:600; color:var(--color-brand-primary); margin-bottom:6px;">SuamiSihat Technology Sdn. Bhd.</div>
-          <div class="f-subbrand-desc" style="font-size:0.8rem; color:var(--color-neutral-fg-3); line-height:1.5; margin-bottom:1rem;">Digital health products, patient portals, EHR integrations, and technology infrastructure.</div>
+          <div class="f-subbrand-desc" style="font-size:0.8rem; color:var(--color-neutral-fg-3); line-height:1.5; margin-bottom:1rem;">Apps, patient portals and the technology behind them.</div>
         </div>
       </div>
       <div style="display:flex; gap:0.5rem; border-top:1px solid var(--color-neutral-stroke-1); padding-top:1rem; margin-top:auto;">
