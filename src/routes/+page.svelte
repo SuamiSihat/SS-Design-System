@@ -336,16 +336,16 @@
         </p>
       </div>
 
-      <!-- Bento Item 4: 4-Col 10x Velocity Metric Card -->
+      <!-- Bento Item 4: 4-Col contrast card -->
       <div class="f-bento-card f-bento-span-4 f-bento-stat-card">
         <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
-        <div class="f-bento-stat-val">10&times;</div>
-        <div class="f-bento-stat-label">Shipping Velocity</div>
+        <div class="f-bento-stat-val">AA</div>
+        <div class="f-bento-stat-label">WCAG 2.2 Contrast</div>
         <div class="f-velocity-meter" aria-hidden="true">
           <div class="f-velocity-bar"></div>
         </div>
         <p style="font-size: 0.825rem; color: var(--text-secondary); margin: 0.75rem 0 0; line-height: 1.5;">
-          Pre-built Fluent 2 components cut new page creation from 4-week briefs to 72-hour deploys.
+          Colour pairs are checked against WCAG 2.2 AA in light and dark themes on every build.
         </p>
       </div>
 
@@ -541,9 +541,8 @@
               </div>
               <ul class="f-case-points-list">
                 <li>&bull; <strong>Unified Token Architecture:</strong> Centralized design tokens synchronizing Web, Mobile (Flutter/Expo), and Desktop (WPF).</li>
-                <li>&bull; <strong>Rapid Deployment:</strong> Standardized Fluent 2 components accelerating production cycles from weeks to days.</li>
                 <li>&bull; <strong>Ecosystem Integrity:</strong> ANDROLAB, MENSS, Mensculine, and REJAL brand assets aligned with zero dilution.</li>
-                <li>&bull; <strong>WCAG 2.1 AA Certified:</strong> Strict 4-tier contrast pairing audited across all light and dark interfaces.</li>
+                <li>&bull; <strong>WCAG 2.2 AA tested:</strong> Contrast pairs are checked by an automated test across light and dark interfaces.</li>
               </ul>
             </div>
           {/if}
@@ -552,20 +551,12 @@
         <!-- Live Impact Metrics with Micro-Glow -->
         <div class="f-case-metrics-grid">
           <div class="f-metric-card">
-            <div class="f-metric-val">+300%</div>
-            <div class="f-metric-label">Release Velocity</div>
+            <div class="f-metric-val">AA</div>
+            <div class="f-metric-label">WCAG 2.2 contrast, tested</div>
           </div>
           <div class="f-metric-card">
-            <div class="f-metric-val">100%</div>
-            <div class="f-metric-label">Token Parity</div>
-          </div>
-          <div class="f-metric-card">
-            <div class="f-metric-val">0</div>
-            <div class="f-metric-label">Brand Drift Incidents</div>
-          </div>
-          <div class="f-metric-card">
-            <div class="f-metric-val">12k+</div>
-            <div class="f-metric-label">Standardized Patients</div>
+            <div class="f-metric-val">5</div>
+            <div class="f-metric-label">Operating entities documented</div>
           </div>
         </div>
       </div>
@@ -725,7 +716,7 @@
             <ul class="f-role-features-list">
               <li class="f-role-feature-item">
                 <iconify-icon icon="fluent:checkmark-circle-24-filled" class="f-role-feature-icon"></iconify-icon>
-                <span><strong>Corporate Architecture:</strong> Certified organizational group hierarchy (SSH, SSC, SSW, SSE, SST).</span>
+                <span><strong>Corporate Architecture:</strong> Documented organisational group hierarchy (SSH, SSC, SSW, SSE, SST).</span>
               </li>
               <li class="f-role-feature-item">
                 <iconify-icon icon="fluent:checkmark-circle-24-filled" class="f-role-feature-icon"></iconify-icon>

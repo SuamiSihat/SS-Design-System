@@ -22,5 +22,5 @@ Use **SS Health / SuamiSihat™ Holding Sdn. Bhd.** for:
 
 ## Download
 
-[SS Health Corporate Logo Kit](../downloads/01_logo_ssHealth.zip)
+[SS Health Corporate Logo Kit](/public/brand/downloads/01_logo_ssHealth.zip)
 

@@ -622,9 +622,9 @@ Before any creative ad, video, landing page, or print collateral is published, i
 
 ## Related Documentation & Design System Cross-References
 
-- **Brand Voice & Editorial Standards:** [Brand Voice Guide](doc.html?doc=brand-voice)
-- **Colour Composition Standard (60:30:10):** [Colour Composition Guide](doc.html?doc=color-composition-guide)
-- **Hero Banner Standard (`ss-hero`):** [Hero Banner Guide](doc.html?doc=ss-hero-guide)
-- **Diagnostic Funnel Standard:** [Diagnostic Funnel Standard](doc.html?doc=diagnostic-funnel)
-- **Vision & Mission:** [Vision & Mission](doc.html?doc=vision-mission)
+- **Brand Voice & Editorial Standards:** [Brand Voice Guide](/doc/?doc=brand-voice)
+- **Colour Composition Standard (60:30:10):** [Colour Composition Guide](/doc/?doc=color-composition-guide)
+- **Hero Banner Standard (`ss-hero`):** [Hero Banner Guide](/doc/?doc=ss-hero-guide)
+- **Diagnostic Funnel Standard:** [Diagnostic Funnel Standard](/doc/?doc=diagnostic-funnel)
+- **Vision & Mission:** [Vision & Mission](/doc/?doc=vision-mission)
 - **Living Web Reference:** `https://assets.suamisihat.myds.me/doc/?doc=clinic-positioning`

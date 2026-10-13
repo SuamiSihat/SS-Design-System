@@ -16,5 +16,5 @@ Precise, innovative, reliable, and technical. Reflects engineering excellence, c
 
 ## Download
 
-[SS Technology Logo Kit](../downloads/05_logo_ssTech.zip)
+[SS Technology Logo Kit](/public/brand/downloads/05_logo_ssTech.zip)
 

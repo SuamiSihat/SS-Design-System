@@ -2,6 +2,19 @@
 
 > **SuamiSihat™ Design System** is the **master project, master documentation, and master guideline** for the entire SS ecosystem — web, Expo/React Native mobile apps, and all internal tools. This changelog is the authoritative record of every change. All platforms derive from this system.
 
+## v3.6.1 — October 2026
+
+### Phase 1 clean-up (13 Oct 2026)
+
+- Fixed 8 legacy document links (`doc.html?doc=` and relative `../doc/`, `../downloads/` paths).
+- Claims-review notes removed from public pages and metadata; they now live in `docs/claims-review/README.md` (staff only).
+- Prescription drug names removed from the ANDROLAB catalogue card; RX is described as a clinic programme only.
+- Home page: removed unsourced figures (+300%, 12k+, 10x, "Certified", 0 drift incidents); replaced with tested facts.
+- Phone header no longer overflows at 390 px; added a skip-to-content link.
+- Name and credit sweep: "Dr. MIT Ring®" and "Designed by SuamiSihat".
+- Word-puzzle gate removed (access stays behind the server login).
+- Catalogue count reads "entries" because it includes archived and partner items.
+
 ## v3.6.0 — October 2026
 
 ### Security, sanitisation, WCAG 2.2 AA in both themes, and the product page standard

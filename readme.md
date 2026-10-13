@@ -98,7 +98,7 @@ The page is generated from `static/products/<Brand>/metadata.json` (schema 2). T
 | ANDROLAB | `androlab` | Active |
 | MENSS | `menss` | Active |
 | Mensculine | `mensculine` | Active (photography pending) |
-| Dr Mit Ring | `drmitring` | Active |
+| Dr. MIT Ring | `drmitring` | Active |
 | REJAL | `rejal` | Active |
 | nuCaffe | `nucaffe` | While stocks last (photography pending) |
 | PERTABI | `pertabi` | Partner |

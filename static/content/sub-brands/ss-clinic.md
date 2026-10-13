@@ -49,7 +49,7 @@ SuamiSihat Clinic is the only men's health platform in Malaysia built entirely a
 
 ## Full Positioning Documentation
 
-See the [SS Clinic Brand Positioning](../doc/?doc=clinic-positioning) page for the complete brand strategy reference including:
+See the [SS Clinic Brand Positioning](/doc/?doc=clinic-positioning) page for the complete brand strategy reference including:
 
 - Competitive analysis (9 brands x 10 dimensions scoring matrix)
 - The 4-level tagline architecture
@@ -63,4 +63,4 @@ See the [SS Clinic Brand Positioning](../doc/?doc=clinic-positioning) page for t
 
 ## Download
 
-[SS Clinic Logo Kit](../downloads/02_logo_ssClinic.zip)
+[SS Clinic Logo Kit](/public/brand/downloads/02_logo_ssClinic.zip)
