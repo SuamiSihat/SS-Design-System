@@ -9,14 +9,14 @@
      ================================================================ -->
 <section id="tools-section" class="f-section-block" aria-label="Tools and Subsidiary Ecosystem">
   <div class="f-section-overline">
-    <span class="f-overline-label">Ecosystem &amp; Operational Launchpad</span>
+    <span class="f-overline-label">Tools</span>
     <span class="f-overline-rule" aria-hidden="true"></span>
   </div>
 
   <div class="f-section-head">
-    <h2 class="f-section-title">Tools &amp; Operational Resources</h2>
+    <h2 class="f-section-title">Tools for everyday work</h2>
     <p class="f-section-subtitle">
-      Practical creative utilities curated for daily marketing, clinical, and staff operations.
+      Apps and pages that save you time.
     </p>
   </div>
 
@@ -29,14 +29,14 @@
         <div class="f-pillar-icon" style="margin: 0; background: rgba(4, 51, 136, 0.12); color: var(--color-brand-primary);">
           <iconify-icon icon="fluent:camera-24-regular"></iconify-icon>
         </div>
-        <span class="f-badge-shimmer">Windows Native App</span>
+        <span class="f-badge-shimmer">Windows app</span>
       </div>
-      <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">SS CAM (Desktop Workstation)</h3>
+      <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">SS CAM</h3>
       <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
-        Native desktop utility for batch watermarking, LUT color grading, and clinical asset management.
+        Adds our watermark and colour style to photos and videos, many at once.
       </p>
       <div style="margin-top: 1.25rem; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 0.85rem; color: var(--color-brand-primary);">
-        <span>Launch Tool Workstation</span> &rarr;
+        <span>Get SS CAM</span> &rarr;
       </div>
     </a>
 
@@ -47,14 +47,14 @@
         <div class="f-pillar-icon" style="margin: 0; background: rgba(33, 161, 247, 0.15); color: var(--color-text-accent);">
           <iconify-icon icon="fluent:mail-template-24-regular"></iconify-icon>
         </div>
-        <span class="f-badge-shimmer" style="color: var(--color-text-accent); border-color: rgba(33,161,247,0.3);">Daily Utility</span>
+        <span class="f-badge-shimmer" style="color: var(--color-text-accent); border-color: rgba(33,161,247,0.3);">Takes a minute</span>
       </div>
-      <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">Mail Signature Generator</h3>
+      <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">Email signature</h3>
       <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
-        Generate standardized, on-brand HTML email signatures for your operating subsidiary in seconds.
+        Make your official email signature for Outlook, Gmail or Apple Mail.
       </p>
       <div style="margin-top: 1.25rem; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 0.85rem; color: var(--color-brand-primary);">
-        <span>Generate Group Signature</span> &rarr;
+        <span>Make my signature</span> &rarr;
       </div>
     </a>
 
@@ -66,7 +66,7 @@
       </div>
       <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">Staff Onboarding</h3>
       <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
-        First-week checklist, tool installations, and brand culture orientation.
+        Your first-week checklist, the tools to install, and how we work.
       </p>
     </a>
 
@@ -76,9 +76,9 @@
       <div class="f-pillar-icon" style="margin: 0 0 1rem;">
         <iconify-icon icon="fluent:document-bullet-list-24-regular"></iconify-icon>
       </div>
-      <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">System Docs &amp; Log</h3>
+      <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">What's new</h3>
       <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
-        v{VERSION} release notes, architecture roadmap, and brand voice standards.
+        Recent changes to the brand and this site.
       </p>
     </a>
 
@@ -90,7 +90,7 @@
       </div>
       <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">SSNAS Dashboard <iconify-icon icon="fluent:open-16-regular" aria-hidden="true"></iconify-icon></h3>
       <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
-        Central internal file storage, raw asset packages, and Synology portal.
+        Shared company drive for raw photos, videos and files.
       </p>
     </a>
 
@@ -100,9 +100,9 @@
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem;">
         <div>
           <div style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">
-            Multi-Platform Token Export Engine
+            For designers and developers
           </div>
-          <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-strong); margin: 0;">Instant Token Bundles for Production Teams</h3>
+          <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-strong); margin: 0;">Brand colours as code, ready to paste</h3>
         </div>
         <span class="f-badge-shimmer" style="color: var(--color-success-fg); border-color: rgba(34,197,94,0.3);">
           <iconify-icon icon="fluent:checkmark-circle-16-filled"></iconify-icon> W3C Spec v{VERSION} Compliant

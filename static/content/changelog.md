@@ -17,6 +17,16 @@
 - Items not yet approved are shown as "to be confirmed": pattern, clear space, minimum size, mark status and clinic photography.
 - Product page standard: a brand may mark its pattern as pending until one is approved; brand pages can show a brand promise and tagline ladder.
 - The catalogue card, the products sidebar, the Docs menu and search now open the guideline page.
+
+### Plain language for staff
+
+- Main menu: Brand, Guides, Products, Tools, For designers.
+- Home: new hero ("Our brand, all in one place.") with "Get the logo", "Open the brand guides" and quick links to the SS Clinic guide, brand colours, email signature and product brands. The hand-typed release, test, sub-brand and platform counts are gone. Every section heading and description is rewritten in everyday words; the audience tabs start with "I'm making a poster or post" and the clinic tab points to the SS Clinic guide.
+- Guides: a new "Guides for each brand" list (SS Clinic first) with each brand's page and PDF; the colour balance block is written for non-designers.
+- Product pages: sections are Overview, Images, Positioning, Colours, Pattern, Logo and rules, Downloads, so the section bar no longer cuts off. Colour roles read "main", "supporting" and "accent"; the text-pair table says whether a pair is easy to read.
+- Catalogue cards say "Open brand page". Archived products and the Sifu Sex card no longer carry health or "trusted" claims.
+- Tools, Brand page intro and Onboarding rewritten in plain words. Onboarding no longer calls SuamiSihat® "Southeast Asia's fastest-growing" brand and uses the company mission. The Brand × Fluent 2 section moved to the end of the Brand page, marked for designers.
+- Technical terms (home page) dropped from 17 to about 4.5 per 100 words; what remains is in the "For designers and developers" band.
 - All brand pages: logos made for dark backgrounds are shown on the brand's dark colour in the guideline section. White logos for Mensculine, nuCaffe, PERTABI, REJAL and SS Clinic were invisible on the light tiles.
 
 ## v3.6.2 — October 2026

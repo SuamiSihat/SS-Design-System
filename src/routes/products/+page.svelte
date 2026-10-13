@@ -147,7 +147,7 @@
           hrefLabel: 'Superseded by ANDROLAB',
           accent: 'linear-gradient(135deg, #475569, #64748B)',
           cardStyle: '',
-          desc: '<em>Legacy registered botanical capsule formulation (MAL23046127T).</em> Formerly SuamiSihat\'s flagship oral nutraceutical containing Physta® Tongkat Ali, Black Ginger, Ginseng, Horny Goat Weed, and Tribulus. Now archived and superseded by the <strong>ANDROLAB Alpha &amp; RX series</strong>.',
+          desc: '<em>Archived.</em> An earlier SuamiSihat® capsule product, no longer sold. Replaced by the <strong>ANDROLAB</strong> range. Shown here for reference only.',
           searchData: 'mfx mens formula x tongkat ali supplement deprecated archive'
         },
         {
@@ -168,7 +168,7 @@
           hrefLabel: 'MENSS Hub',
           accent: 'linear-gradient(135deg, #443C91, #64748B)',
           cardStyle: '',
-          desc: '<em>Deprecated legacy vitality formulation.</em> Formerly SuamiSihat\'s peak physical endurance compound. Archived and officially superseded &amp; replaced by <strong>MENSS Care Cream</strong> (50g NPRA cosmetic formula with Physta® Tongkat Ali &amp; L-Arginine).',
+          desc: '<em>Archived.</em> An earlier SuamiSihat® product, no longer sold. Replaced by <strong>MENSS Care Cream</strong>. Shown here for reference only.',
           searchData: 'xprimal endurance vitality formulation deprecated archive menss'
         }
       ]
@@ -238,7 +238,7 @@
           logo: '/products/Partner-Brands/logos/logo_sifusex.svg',
           href: null,
           accent: 'linear-gradient(135deg, #BD9A73, #CCAC8D)',
-          desc: "Malaysia's trusted resource for men's sexual health education, treatment guidance, and clinical referrals. Sifu Sex breaks the stigma around sexual wellness with evidence-based information and professional support.",
+          desc: "Partner brand for men's sexual health education and clinical referrals, helping men talk about sexual health without shame.",
           searchData: 'sifu sex sexual health clinical lifestyle partner programme education'
         }
       ]
@@ -555,8 +555,8 @@
                       Vector (.SVG) <iconify-icon icon="fluent:arrow-download-24-regular" class="ms-1" aria-hidden="true"></iconify-icon>
                     </a>
                   {:else if product.href}
-                    <a href={product.href} class="product-assets-btn" aria-label="{product.hrefLabel ?? 'More'}: {product.name} brand hub">
-                      {product.hrefLabel ?? 'More'} <iconify-icon icon="fluent:chevron-right-24-regular" class="ms-1" aria-hidden="true"></iconify-icon>
+                    <a href={product.href} class="product-assets-btn" aria-label="{product.hrefLabel ?? 'Open brand page'}: {product.name}">
+                      {product.hrefLabel ?? 'Open brand page'} <iconify-icon icon="fluent:chevron-right-24-regular" class="ms-1" aria-hidden="true"></iconify-icon>
                     </a>
                   {:else if product.hrefLabel}
                     <span style="font-size:0.75rem;font-weight:500;color:var(--color-neutral-fg-3);">{product.hrefLabel}</span>

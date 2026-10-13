@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { products } from '$lib/products/index.js';
 
   let activeBook = $state(null); // 'logo' | 'interior' | null
   let isFullscreen = $state(false);
@@ -91,13 +92,13 @@
   <!-- Breadcrumb & Header -->
   <div class="selection-hero w-100 pt-5 text-center" style="width: 100%; max-width: 100%; padding: 0 clamp(1.5rem, 4vw, 4rem); box-sizing: border-box;">
     <p class="selection-eyebrow" style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-accent); margin-bottom: 0.5rem;">
-      <iconify-icon icon="fluent:book-open-24-regular" style="vertical-align: middle;"></iconify-icon> Official Publications
+      <iconify-icon icon="fluent:book-open-24-regular" style="vertical-align: middle;"></iconify-icon> Official guides
     </p>
     <h1 class="selection-title" style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; color: var(--color-neutral-fg-1, #022057); margin-bottom: 0.75rem;">
-      Brand Guideline Booklets
+      Brand guides
     </h1>
     <p class="selection-subtitle" style="font-size: 1rem; color: var(--color-neutral-fg-2, #64748B); max-width: 680px; margin: 0 auto 2.5rem; line-height: 1.6;">
-      Authoritative brand and spatial design standards for SuamiSihat®. Select a booklet below to read online or download the official PDF publication.
+      Official brand guides to read online or download. Start with SuamiSihat® and SS Clinic, then find your product brand below.
     </p>
   </div>
 
@@ -120,7 +121,7 @@
         </div>
         <h2 class="book-title">Logo &amp; Concept</h2>
         <p class="book-desc">
-          Authoritative visual identity standard covering the SuamiSihat® logomark, 1X exclusion space, typography scales, and multi-platform color hierarchies.
+          The SuamiSihat® logo and how to use it: the space around it, fonts and colours. Published by SuamiSihat Holding (SS Health logo).
         </p>
         <div class="book-actions">
           <button class="ss-btn ss-btn-primary ss-btn-sm" onclick={(e) => { e.stopPropagation(); openBook('logo'); }} aria-label="Read Online: Logo & Concept Guideline">
@@ -150,7 +151,7 @@
         </div>
         <h2 class="book-title">Interior Design</h2>
         <p class="book-desc">
-          Official architectural and clinic interior guidelines detailing physical clinic environments, consultation suites, privacy partitions, and ambient lighting.
+          How our clinics should look inside: rooms, consultation suites, privacy screens and lighting.
         </p>
         <div class="book-actions">
           <button class="ss-btn ss-btn-primary ss-btn-sm" onclick={(e) => { e.stopPropagation(); openBook('interior'); }}>
@@ -219,39 +220,62 @@
     </div>
   {/if}
 
+  <!-- Every brand's own guide: main brand SS Clinic first, then product and partner brands -->
+  <section class="brand-guides" aria-labelledby="brand-guides-title">
+    <h2 id="brand-guides-title">Guides for each brand</h2>
+    <p class="brand-guides-lede">Each brand has its own page with logos, colours, rules and downloads, plus a PDF of the same guide.</p>
+    <ul class="brand-guides-grid">
+      {#each products as b}
+        <li class="brand-guide-card" class:main-brand={b.slug === 'ssclinic'}>
+          <div class="brand-guide-logo"><img src={b.guideline.logos[0].file} alt="" loading="lazy" /></div>
+          <div class="brand-guide-text">
+            <strong>{b.name}</strong>
+            <span>{b.slug === 'ssclinic' ? 'Main brand: clinics' : b.category}</span>
+          </div>
+          <div class="brand-guide-actions">
+            <a href="/products/{b.slug}/" class="ss-btn ss-btn-primary ss-btn-sm">Open guide<span class="visually-hidden">: {b.name}</span></a>
+            <a href="/brand-guidelines/pdf/{b.slug}-brand-guideline-v1.0.pdf" class="ss-btn ss-btn-secondary ss-btn-sm" download>
+              <iconify-icon icon="fluent:arrow-download-16-regular" aria-hidden="true"></iconify-icon> PDF<span class="visually-hidden">: {b.name} brand guide</span>
+            </a>
+          </div>
+        </li>
+      {/each}
+    </ul>
+  </section>
+
   <!-- Core Allocation Standard Container -->
   <div class="w-100" style="width: 100%; max-width: 100%; padding: 0 clamp(1.5rem, 4vw, 4rem); box-sizing: border-box; margin-top: 2rem;">
     <div style="background: var(--color-neutral-bg-2, #FFFFFF); border: 1px solid var(--color-neutral-stroke-1, rgba(0,0,0,0.08)); border-radius: var(--f-radius-xl); padding: 2.5rem; box-shadow: var(--f-shadow-4);">
       <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
         <span class="ss-badge ss-badge-brand" style="font-size: 0.75rem;">CORE STANDARD</span>
-        <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--color-neutral-fg-1); margin: 0;">The 60:30:10 Visual Allocation Standard</h2>
+        <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--color-neutral-fg-1); margin: 0;">How much of each colour to use (60:30:10)</h2>
       </div>
       <p style="font-size: 0.9rem; color: var(--color-neutral-fg-2); line-height: 1.65; margin-bottom: 1.5rem;">
-        Every digital and physical interface must strictly enforce the 60:30:10 color ratio to maintain clinical cleanliness and eliminate patient visual fatigue.
+        Use the SuamiSihat® colours in this balance on every screen, print and sign: mostly light background, some blue, a little accent.
       </p>
 
       <div class="row g-3">
         <div class="col-md-4">
           <div style="padding: 1.25rem; border: 1px solid var(--color-neutral-stroke-1); border-left: 4px solid #CBD5E1; border-radius: var(--f-radius-md); background: var(--color-neutral-bg-1); height: 100%;">
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-neutral-fg-1); margin-bottom: 0.5rem;">60% Foundation Canvas</h3>
+            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-neutral-fg-1); margin-bottom: 0.5rem;">60% light background</h3>
             <p style="font-size: 0.8rem; color: var(--color-neutral-fg-2); line-height: 1.5; margin: 0;">
-              Canvas Light (<code>#F8FAFC</code>) and Surface White (<code>#FFFFFF</code>). Creates open breathing room, clinical hygiene, and calm readability.
+              Canvas Light (<code>#F8FAFC</code>) and Surface White (<code>#FFFFFF</code>). Keeps pages clean, calm and easy to read.
             </p>
           </div>
         </div>
         <div class="col-md-4">
           <div style="padding: 1.25rem; border: 1px solid var(--color-neutral-stroke-1); border-left: 4px solid #043388; border-radius: var(--f-radius-md); background: var(--color-neutral-bg-1); height: 100%;">
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-neutral-fg-1); margin-bottom: 0.5rem;">30% Structural Trust</h3>
+            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-neutral-fg-1); margin-bottom: 0.5rem;">30% brand blues</h3>
             <p style="font-size: 0.8rem; color: var(--color-neutral-fg-2); line-height: 1.5; margin: 0;">
-              Prussian Blue (<code>#022057</code>) and SS Blue (<code>#043388</code>). Organizes layout headers, navigation bars, cards, and corporate footer anchors.
+              Prussian Blue (<code>#022057</code>) and SS Blue (<code>#043388</code>). For headers, menus, cards and footers.
             </p>
           </div>
         </div>
         <div class="col-md-4">
           <div style="padding: 1.25rem; border: 1px solid var(--color-neutral-stroke-1); border-left: 4px solid #21A1F7; border-radius: var(--f-radius-md); background: var(--color-neutral-bg-1); height: 100%;">
-            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-neutral-fg-1); margin-bottom: 0.5rem;">10% Primary Conversion Accent</h3>
+            <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--color-neutral-fg-1); margin-bottom: 0.5rem;">10% accent colours</h3>
             <p style="font-size: 0.8rem; color: var(--color-neutral-fg-2); line-height: 1.5; margin: 0;">
-              Azure Blue (<code>#21A1F7</code>) &amp; Banana Yellow (<code>#FCE53D</code>). Strictly reserved for dominant patient conversion CTAs (e.g. &ldquo;BOOK APPOINTMENT&rdquo;).
+              Azure Blue (<code>#21A1F7</code>) &amp; Banana Yellow (<code>#FCE53D</code>). Only for the main button on a page, such as &ldquo;BOOK APPOINTMENT&rdquo;.
             </p>
           </div>
         </div>
@@ -261,20 +285,20 @@
       <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--color-neutral-stroke-1);">
         <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
           <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <span class="ss-badge ss-badge-brand" style="font-size: 0.75rem;">MOTION STANDARD</span>
-            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-neutral-fg-1); margin: 0;">Default Hero Component (<code>ss-hero</code>)</h3>
+            <span class="ss-badge ss-badge-brand" style="font-size: 0.75rem;">FOR DESIGNERS</span>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-neutral-fg-1); margin: 0;">Page banner (<code>ss-hero</code>)</h3>
           </div>
-          <span style="font-size: 0.75rem; color: var(--color-brand-primary); font-weight: 700;">Rule 6 Mandate</span>
+          <span style="font-size: 0.75rem; color: var(--color-brand-primary); font-weight: 700;">Required</span>
         </div>
         <p style="font-size: 0.875rem; color: var(--color-neutral-fg-2); line-height: 1.6; margin-bottom: 1rem;">
-          All digital touchpoints, web portals, landing pages, and application headers must utilize the <strong><code>ss-hero</code></strong> animated particle wave and ambient glow backdrop as their standard hero container.
+          Web pages, landing pages and app headers use the standard animated blue banner (<strong><code>ss-hero</code></strong>) at the top.
         </p>
         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
           <a href="/components/#ss-hero" class="ss-btn ss-btn-primary ss-btn-sm" style="display: inline-flex; align-items: center; gap: 6px;">
-            <iconify-icon icon="fluent:sparkle-24-regular"></iconify-icon> Component Library: ss-hero
+            <iconify-icon icon="fluent:sparkle-24-regular"></iconify-icon> See the banner
           </a>
           <a href="/brand-system/#patterns" class="ss-btn ss-btn-secondary ss-btn-sm" style="display: inline-flex; align-items: center; gap: 6px;">
-            <iconify-icon icon="fluent:color-background-24-regular"></iconify-icon> Brand System Allocation
+            <iconify-icon icon="fluent:color-background-24-regular"></iconify-icon> Colour balance
           </a>
         </div>
       </div>
@@ -283,6 +307,22 @@
 </div>
 
 <style>
+  .brand-guides { padding: 0 clamp(1.5rem, 4vw, 4rem); margin-top: 1rem; }
+  .brand-guides h2 { font-size: 1.5rem; font-weight: 800; color: var(--color-neutral-fg-1); margin: 0 0 0.35rem; }
+  .brand-guides-lede { color: var(--color-neutral-fg-2); margin: 0 0 1.25rem; }
+  .brand-guides-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 1rem; }
+  .brand-guide-card {
+    display: grid; grid-template-columns: 72px minmax(0, 1fr); grid-template-areas: 'logo text' 'actions actions'; gap: 0.75rem 1rem; align-items: center;
+    background: var(--color-neutral-bg-2); border: 1px solid var(--color-neutral-stroke-1); border-radius: var(--f-radius-xl); padding: 1rem 1.1rem;
+  }
+  .brand-guide-card.main-brand { border-color: var(--color-brand-primary); box-shadow: 0 0 0 1px var(--color-brand-primary) inset; }
+  .brand-guide-logo { grid-area: logo; height: 56px; display: flex; align-items: center; justify-content: center; background: #FFFFFF; border: 1px solid var(--color-neutral-stroke-1); border-radius: var(--f-radius-md); padding: 6px; }
+  .brand-guide-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .brand-guide-text { grid-area: text; display: grid; gap: 2px; min-width: 0; }
+  .brand-guide-text strong { color: var(--color-neutral-fg-1); }
+  .brand-guide-text span { font-size: 0.82rem; color: var(--color-neutral-fg-2); }
+  .brand-guide-actions { grid-area: actions; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .brand-guide-actions .ss-btn { display: inline-flex; align-items: center; gap: 4px; text-decoration: none; }
   .book-horizontal-card {
     background: var(--color-neutral-bg-2, #FFFFFF);
     border: 1px solid var(--color-neutral-stroke-1, rgba(0,0,0,0.08));

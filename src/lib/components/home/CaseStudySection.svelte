@@ -7,14 +7,14 @@
      ================================================================ -->
 <section id="case-study" class="f-section-block" aria-label="Interactive Case Study">
   <div class="f-section-overline">
-    <span class="f-overline-label">Interactive Case Study</span>
+    <span class="f-overline-label">Before and after</span>
     <span class="f-overline-rule" aria-hidden="true"></span>
   </div>
 
   <div class="f-section-head">
-    <h2 class="f-section-title">Case Study: From 5 Silos to 1 Clinical Ecosystem</h2>
+    <h2 class="f-section-title">What changed when we set one standard</h2>
     <p class="f-section-subtitle">
-      How standardizing on the SuamiSihat® Design System transformed digital clinic workflows and physical packaging across the group.
+      Before, each team made its own colours and files. Now everyone works from the same hub.
     </p>
   </div>
 
@@ -43,25 +43,25 @@
           <div class="f-case-state-box">
             <div style="display: flex; align-items: center; gap: 8px; color: var(--color-error-fg); font-weight: 700; font-size: 0.9rem; margin-bottom: 0.75rem;">
               <iconify-icon icon="fluent:warning-24-filled"></iconify-icon>
-              <span>Fragmented Silos &amp; Inconsistent Patient Touchpoints</span>
+              <span>Each team did its own thing</span>
             </div>
             <ul class="f-case-points-list">
-              <li>&bull; <strong>Brand Inconsistency:</strong> Unstandardized color palettes across physical clinics, product packaging, and digital channels.</li>
-              <li>&bull; <strong>Development Overhead:</strong> Extended implementation timelines due to lack of unified component libraries.</li>
-              <li>&bull; <strong>Code Redundancy:</strong> Separate styling implementations duplicated across web and native mobile codebases.</li>
-              <li>&bull; <strong>Accessibility Variations:</strong> Inconsistent contrast ratios on digital screens prior to tokenized standards.</li>
+              <li>&bull; <strong>Colours didn't match:</strong> clinics, packs and social posts used different blues and yellows.</li>
+              <li>&bull; <strong>Slow to build:</strong> every new page or app started from scratch.</li>
+              <li>&bull; <strong>Work done twice:</strong> the website and the mobile app were styled separately.</li>
+              <li>&bull; <strong>Hard to read:</strong> some text colours were too faint on screens.</li>
             </ul>
           </div>
         {:else}
           <div class="f-case-state-box">
             <div style="display: flex; align-items: center; gap: 8px; color: var(--color-success-fg); font-weight: 700; font-size: 0.9rem; margin-bottom: 0.75rem;">
               <iconify-icon icon="fluent:checkmark-circle-24-filled"></iconify-icon>
-              <span>Single Source of Truth &amp; Automated Multi-Platform Sync</span>
+              <span>One hub everyone uses</span>
             </div>
             <ul class="f-case-points-list">
-              <li>&bull; <strong>Unified Token Architecture:</strong> Centralized design tokens synchronizing Web, Mobile (Flutter/Expo), and Desktop (WPF).</li>
-              <li>&bull; <strong>Ecosystem Integrity:</strong> ANDROLAB, MENSS, Mensculine, and REJAL brand assets aligned with zero dilution.</li>
-              <li>&bull; <strong>WCAG 2.2 AA tested:</strong> Contrast pairs are checked by an automated test across light and dark interfaces.</li>
+              <li>&bull; <strong>One set of colours:</strong> the same colour codes on the website, the apps and the Windows tools.</li>
+              <li>&bull; <strong>Every brand in one place:</strong> ANDROLAB, MENSS, Mensculine, REJAL and the rest each have a full brand page.</li>
+              <li>&bull; <strong>Checked for readability:</strong> text colours are tested automatically in light and dark mode.</li>
             </ul>
           </div>
         {/if}
@@ -71,11 +71,11 @@
       <div class="f-case-metrics-grid">
         <div class="f-metric-card">
           <div class="f-metric-val">AA</div>
-          <div class="f-metric-label">WCAG 2.2 contrast, tested</div>
+          <div class="f-metric-label">Readability standard met</div>
         </div>
         <div class="f-metric-card">
           <div class="f-metric-val">5</div>
-          <div class="f-metric-label">Operating entities documented</div>
+          <div class="f-metric-label">Companies covered</div>
         </div>
       </div>
     </div>

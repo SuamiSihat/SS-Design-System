@@ -1,11 +1,11 @@
 <script>
   let selectedEntity = $state('SSH'); // 'SSH' | 'SSC' | 'SSW' | 'SSE' | 'SST'
   const entityData = {
-    SSH: { name: 'SuamiSihat Holding Sdn Bhd (SS Health)', role: 'Corporate Governance & IP Ownership', color: '#043388', accent: '#21A1F7', status: 'Primary Authority', tag: '01-SSH' },
-    SSC: { name: 'SuamiSihat Clinic', role: 'Physical Clinical Operations & Telemedicine', color: '#022057', accent: '#6DC6EC', status: 'Clinical Practice', tag: '02-SSC' },
-    SSW: { name: 'SuamiSihat Wellness', role: 'Preventative Care & Lifestyle Supplements', color: '#043388', accent: '#FCE53D', status: 'Consumer Care', tag: '03-SSW' },
-    SSE: { name: 'SuamiSihat Ecommerce', role: 'Direct-to-Patient Fulfillment & Logistics', color: '#022057', accent: '#22C55E', status: 'Digital Retail', tag: '04-SSE' },
-    SST: { name: 'SuamiSihat Technology', role: 'Software Platforms, EMR & Design Systems', color: '#043388', accent: '#A855F7', status: 'Engineering Hub', tag: '05-SST' }
+    SSH: { name: 'SuamiSihat Holding Sdn Bhd (SS Health)', role: 'Owns the SuamiSihat® brand and its trademarks', color: '#043388', accent: '#21A1F7', status: 'Parent company', tag: '01-SSH' },
+    SSC: { name: 'SuamiSihat Clinic', role: 'Runs the clinics and telehealth', color: '#022057', accent: '#6DC6EC', status: 'Clinical Practice', tag: '02-SSC' },
+    SSW: { name: 'SuamiSihat Wellness', role: 'Supplements and everyday health products', color: '#043388', accent: '#FCE53D', status: 'Consumer Care', tag: '03-SSW' },
+    SSE: { name: 'SuamiSihat Ecommerce', role: 'Online sales and delivery', color: '#022057', accent: '#22C55E', status: 'Digital Retail', tag: '04-SSE' },
+    SST: { name: 'SuamiSihat Technology', role: 'Apps, websites and internal systems', color: '#043388', accent: '#A855F7', status: 'Technology', tag: '05-SST' }
   };
 </script>
 
@@ -14,14 +14,14 @@
      ================================================================ -->
 <section id="architecture" class="f-section-block" aria-label="Group Architecture Flow">
   <div class="f-section-overline">
-    <span class="f-overline-label">Group Architecture &amp; Token Pipeline</span>
+    <span class="f-overline-label">Our companies</span>
     <span class="f-overline-rule" aria-hidden="true"></span>
   </div>
 
   <div class="f-section-head">
-    <h2 class="f-section-title">One Source of Truth: Group Architecture Flow</h2>
+    <h2 class="f-section-title">One brand, five companies</h2>
     <p class="f-section-subtitle">
-      How the SuamiSihat Holding token engine synchronizes visual governance across the 4 operating companies.
+      SuamiSihat Holding Sdn. Bhd. owns the SuamiSihat® brand and uses the SS Health logo. Four companies use the brand: SS Clinic, SS Wellness, SS Ecommerce and SS Technology.
     </p>
   </div>
 
@@ -37,12 +37,12 @@
           class="f-arch-node-btn root {selectedEntity === 'SSH' ? 'active' : ''}" 
           onclick={() => { selectedEntity = 'SSH'; }}
         >
-          <div class="f-node-tag">Group Holding</div>
+          <div class="f-node-tag">Parent company</div>
           <div class="f-node-title">
             <iconify-icon icon="fluent:building-bank-24-filled" style="color:var(--color-text-accent);"></iconify-icon>
             <span>SuamiSihat Holding Sdn Bhd (SS Health)</span>
           </div>
-          <div class="f-node-sub">Single Source of Truth Token Pipeline</div>
+          <div class="f-node-sub">Owns the brand · SS Health logo</div>
         </button>
       </div>
 
@@ -67,7 +67,7 @@
         >
           <div class="f-leaf-badge" style="--leaf: #6DC6EC;">02-SSC</div>
           <div class="f-leaf-name">SS Clinic</div>
-          <div class="f-leaf-desc">Practice &amp; Telehealth</div>
+          <div class="f-leaf-desc">Clinics and telehealth</div>
         </button>
 
         <button 
@@ -77,7 +77,7 @@
         >
           <div class="f-leaf-badge" style="--leaf: #FCE53D;">03-SSW</div>
           <div class="f-leaf-name">SS Wellness</div>
-          <div class="f-leaf-desc">Supplements &amp; Care</div>
+          <div class="f-leaf-desc">Supplements and daily care</div>
         </button>
 
         <button 
@@ -87,7 +87,7 @@
         >
           <div class="f-leaf-badge" style="--leaf: #22C55E;">04-SSE</div>
           <div class="f-leaf-name">SS Ecommerce</div>
-          <div class="f-leaf-desc">D2C Fulfillment</div>
+          <div class="f-leaf-desc">Online shop and delivery</div>
         </button>
 
         <button 
@@ -97,7 +97,7 @@
         >
           <div class="f-leaf-badge" style="--leaf: #A855F7;">05-SST</div>
           <div class="f-leaf-name">SS Technology</div>
-          <div class="f-leaf-desc">EMR &amp; Software Hub</div>
+          <div class="f-leaf-desc">Apps, websites and systems</div>
         </button>
       </div>
     </div>
@@ -117,7 +117,7 @@
           <span class="f-pulse-dot-green"></span> {entityData[selectedEntity].status}
         </span>
         <a href="/brand-system/#subbrand" class="f-inspector-link-btn">
-          Inspect Subsidiary Tokens &rarr;
+          See the company brands &rarr;
         </a>
       </div>
     </div>

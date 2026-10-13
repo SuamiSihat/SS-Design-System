@@ -76,7 +76,6 @@
     <aside class="f-sidebar" id="pageSidebar" aria-label="Brand system navigation" style="background: var(--color-neutral-bg-2); border-right: 1px solid var(--color-neutral-stroke-1); padding: 1.5rem 0.75rem; position: sticky; top: 60px; height: calc(100vh - 60px); overflow-y: auto;">
       <p class="brand-sidebar-title" style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-fg-3); padding: 0.5rem; margin: 0;">Brand System</p>
       <ul class="brand-sidebar-nav" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 4px;">
-        <li><a href="#brand-fluent2" class="cl-sidebar-link"><iconify-icon icon="fluent:puzzle-piece-24-regular"></iconify-icon> Brand × Fluent 2</a></li>
         <li><a href="#logomark" class="cl-sidebar-link"><iconify-icon icon="fluent:trophy-24-regular"></iconify-icon> Logomark</a></li>
         <li><a href="#colour" class="cl-sidebar-link"><iconify-icon icon="fluent:color-24-regular"></iconify-icon> Colour System</a></li>
         <li><a href="#patterns" class="cl-sidebar-link"><iconify-icon icon="fluent:color-background-24-regular"></iconify-icon> Color Patterns</a></li>
@@ -85,7 +84,8 @@
         <li><a href="#icons" class="cl-sidebar-link"><iconify-icon icon="fluent:shapes-24-regular"></iconify-icon> Icons & Usage</a></li>
         <li><a href="#downloads" class="cl-sidebar-link"><iconify-icon icon="fluent:arrow-download-24-regular"></iconify-icon> Download Kits</a></li>
         <li><a href="#client-representation" class="cl-sidebar-link"><iconify-icon icon="fluent:person-shield-24-regular"></iconify-icon> Client Dignity</a></li>
-        <li><a href="#tokens-export" class="cl-sidebar-link"><iconify-icon icon="fluent:code-24-regular"></iconify-icon> Tokens Export</a></li>
+        <li><a href="#brand-fluent2" class="cl-sidebar-link"><iconify-icon icon="fluent:puzzle-piece-24-regular"></iconify-icon> Brand × Fluent 2 (designers)</a></li>
+        <li><a href="#tokens-export" class="cl-sidebar-link"><iconify-icon icon="fluent:code-24-regular"></iconify-icon> Colour codes (developers)</a></li>
       </ul>
     </aside>
   {/if}
@@ -101,9 +101,9 @@
 
     <!-- Page Header -->
     <div style="margin-bottom: 2rem;">
-      <div class="bs-section-eyebrow" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">Design Language Standard</div>
-      <h1 class="bs-section-title" style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.75rem; color: var(--color-neutral-fg-1);">Brand System &amp; Visual Identity</h1>
-      <p class="bs-section-desc" style="font-size: 1.05rem; color: var(--color-neutral-fg-2); line-height: 1.7; max-width: 720px;">The authoritative single source of truth for SuamiSihat® vector marks, typography scales, Fluent 2 design tokens, and multi-platform color hierarchies.</p>
+      <div class="bs-section-eyebrow" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">SuamiSihat® brand</div>
+      <h1 class="bs-section-title" style="font-size: 2.25rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.75rem; color: var(--color-neutral-fg-1);">The SuamiSihat® brand</h1>
+      <p class="bs-section-desc" style="font-size: 1.05rem; color: var(--color-neutral-fg-2); line-height: 1.7; max-width: 720px;">How the SuamiSihat® brand looks: the logo, colours, fonts, and the rules for using them.</p>
     </div>
 
     <!-- Corporate Entity Facts Deck -->
@@ -126,8 +126,6 @@
       </div>
     </div>
 
-    <!-- 00. Brand × Fluent 2 Architectural Contract -->
-    <BrandFluentContract />
 
     <!-- 01. Logomark & Master Identity -->
     <LogomarkSection />
@@ -153,6 +151,8 @@
     <!-- 08. Client Representation & Dignity Standards -->
     <ClientDignitySection />
 
+    <!-- 00. Brand × Fluent 2 Architectural Contract -->
+    <BrandFluentContract />
     <!-- 09. Multi-Platform Token Exporters -->
     <TokensExportSection />
   </main>

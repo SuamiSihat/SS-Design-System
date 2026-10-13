@@ -109,7 +109,7 @@
         </div>
       </div>
       <p style="font-size:0.95rem;color:var(--color-neutral-fg-2);line-height:1.7;margin-bottom:1rem;">
-        We are Southeast Asia's fastest-growing men's health brand, built on the belief that every man deserves clear, dignified, and accessible healthcare. You're now part of that mission. This guide covers your brand orientation, daily tools, and a first-week checklist.
+        SuamiSihat® is a Malaysian men's health brand, built on the belief that every man deserves clear, dignified, and accessible healthcare. You're now part of that mission. This guide covers your brand orientation, daily tools, and a first-week checklist.
       </p>
       <p style="font-size:0.95rem;color:var(--color-neutral-fg-2);line-height:1.7;margin-bottom:1.5rem;">
         If you have questions not answered here, your line manager or <a href="mailto:hr@suamisihat.com" style="color:var(--color-brand-primary);font-weight:600;">hr@suamisihat.com</a> is your first stop.
@@ -128,7 +128,7 @@
           <div class="cl-card p-4 h-100" style="background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);">
             <div style="color:#043388;font-size:1.5rem;margin-bottom:0.5rem;"><iconify-icon icon="fluent:target-arrow-24-regular"></iconify-icon></div>
             <strong style="color:var(--color-neutral-fg-1);font-size:1rem;display:block;margin-bottom:0.25rem;">Our Mission</strong>
-            <p style="font-size:0.825rem;color:var(--color-neutral-fg-2);line-height:1.5;margin:0;">Empower every touchpoint with a design language that is consistent, accessible, and purposefully built.</p>
+            <p style="font-size:0.825rem;color:var(--color-neutral-fg-2);line-height:1.5;margin:0;">Help every man feel respected, understood and medically safe, from his first private check to lifelong health.</p>
           </div>
         </div>
         <div class="col-md-4">
@@ -174,7 +174,7 @@
         <a href="/brand-system/" class="cl-card" style="display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem;border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-lg);background:var(--color-neutral-bg-2);text-decoration:none;">
           <div style="display:flex;align-items:center;gap:12px;">
             <div style="width:36px;height:36px;border-radius:8px;background:var(--color-brand-subtle);color:var(--color-brand-primary);display:flex;align-items:center;justify-content:center;font-size:1.1rem;"><iconify-icon icon="fluent:color-24-regular"></iconify-icon></div>
-            <div><strong style="color:var(--color-neutral-fg-1);font-size:0.95rem;display:block;">Brand System</strong><span style="font-size:0.75rem;color:var(--color-neutral-fg-3);">Full interactive reference &mdash; logo rules, tokens, sub-brands, download kits</span></div>
+            <div><strong style="color:var(--color-neutral-fg-1);font-size:0.95rem;display:block;">Brand System</strong><span style="font-size:0.75rem;color:var(--color-neutral-fg-3);">Logo rules, colours, fonts, group brands and downloads</span></div>
           </div>
           <iconify-icon icon="fluent:arrow-right-24-regular" style="color:var(--color-neutral-fg-2);"></iconify-icon>
         </a>
@@ -207,11 +207,11 @@
         </div>
         <div>
           <h2 style="font-size:1.6rem;font-weight:800;color:var(--color-neutral-fg-1);margin:0;">Our Ecosystem</h2>
-          <p style="font-size:0.85rem;color:var(--color-neutral-fg-3);margin:0;">One master brand, one parent company and four operating subsidiaries</p>
+          <p style="font-size:0.85rem;color:var(--color-neutral-fg-3);margin:0;">One brand, one parent company, four companies</p>
         </div>
       </div>
       <p style="font-size:0.95rem;color:var(--color-neutral-fg-2);line-height:1.7;margin-bottom:1.5rem;">
-        SuamiSihat® is the public-facing master brand. Operations are governed by the parent company (SuamiSihat Holding Sdn. Bhd. / SS Health) and executed across four operating subsidiaries.
+        SuamiSihat® is the brand the public sees. The parent company, SuamiSihat Holding Sdn. Bhd., owns the brand and uses the SS Health logo. Four companies run the day-to-day work.
       </p>
 
       <div class="cl-card p-4 mb-4" style="background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);text-align:center;">
@@ -254,7 +254,7 @@
           <img src="/assets/images/sshealth-org.svg" alt="SuamiSihat Holding Corporate Organization Hierarchy Chart" style="max-height:280px;max-width:100%;object-fit:contain;" loading="lazy" />
         </div>
         <div style="padding:1rem 1.5rem;font-size:0.8rem;color:var(--color-neutral-fg-2);line-height:1.5;">
-          The holding corporate structure centralizes executive oversight, clinical review boards, creative design systems, and software engineering for all operating entities.
+          The parent company looks after leadership, clinical review, design and technology for all the companies.
         </div>
       </div>
     </section>

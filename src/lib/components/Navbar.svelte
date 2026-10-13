@@ -13,10 +13,11 @@
   let isDarkMode = $derived($theme === 'dark');
 
   const navLinks = [
-    { label: 'Brand System', href: '/brand-system/' },
-    { label: 'Guidelines', href: '/brand-guidelines/' },
-    { label: 'Components', href: '/components/' },
-    { label: 'Products', href: '/products/' }
+    { label: 'Brand', href: '/brand-system/' },
+    { label: 'Guides', href: '/brand-guidelines/' },
+    { label: 'Products', href: '/products/' },
+    { label: 'Tools', href: '/tools/' },
+    { label: 'For designers', href: '/components/' }
   ];
 
   const docsLinksGroup1 = [

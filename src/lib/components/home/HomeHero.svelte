@@ -1,5 +1,4 @@
 <script>
-  import { VERSION } from '$lib/version.js';
   import SSHero from '$lib/components/SSHero.svelte';
 </script>
 
@@ -14,57 +13,37 @@
      CHAPTER 1: THE MASTER HERO & BRAND MANIFESTO
      ================================================================ -->
 <SSHero
-  eyebrow={`<iconify-icon icon='fluent:design-ideas-24-regular' style='font-size: 1.15rem; color: #6DC6EC; vertical-align: middle;' aria-hidden='true'></iconify-icon> <span>SuamiSihat® Design System &bull; v${VERSION}</span>`}
-  title="The Single Source of Truth<br>for Design at SuamiSihat®."
-  subtitle="Design tokens, Fluent 2 components, brand guidelines, and multi-platform export tools — everything your team needs to build consistent, on-brand products faster."
-  minHeight="560px"
+  eyebrow={`<iconify-icon icon='fluent:design-ideas-24-regular' style='font-size: 1.15rem; color: #6DC6EC; vertical-align: middle;' aria-hidden='true'></iconify-icon> <span>SuamiSihat® Brand Hub</span>`}
+  title="Our brand,<br>all in one place."
+  subtitle="Logos, colours, brand guides and templates for SuamiSihat®, SS Clinic and every product brand. Find it, download it, get back to work."
+  minHeight="520px"
 >
   <div class="f-hero-ctas">
-    <a href="/brand-system/" class="f-btn-hero-primary" id="hero-cta-brand">
-      <iconify-icon icon="fluent:color-24-regular" aria-hidden="true"></iconify-icon>
-      Explore Brand System
+    <a href="/brand-system/#downloads" class="f-btn-hero-primary" id="hero-cta-brand">
+      <iconify-icon icon="fluent:arrow-download-24-regular" aria-hidden="true"></iconify-icon>
+      Get the logo
     </a>
-    <a href="/components/" class="f-btn-hero-secondary" id="hero-cta-components">
-      <iconify-icon icon="fluent:puzzle-piece-24-regular" aria-hidden="true"></iconify-icon>
-      UI Components
+    <a href="/brand-guidelines/" class="f-btn-hero-secondary" id="hero-cta-components">
+      <iconify-icon icon="fluent:book-open-24-regular" aria-hidden="true"></iconify-icon>
+      Open the brand guides
     </a>
   </div>
 
-  <!-- Minimal Glass Trust Badges -->
-  <div class="f-hero-badges">
-    <span class="f-hero-badge-item">
-      <iconify-icon icon="fluent:color-24-regular" aria-hidden="true"></iconify-icon> Design Tokens
-    </span>
-    <span class="f-hero-badge-item">
-      <iconify-icon icon="fluent:puzzle-piece-24-regular" aria-hidden="true"></iconify-icon> 24+ Components
-    </span>
-    <span class="f-hero-badge-item">
-      <iconify-icon icon="fluent:accessibility-24-regular" aria-hidden="true"></iconify-icon> WCAG AA
-    </span>
-    <span class="f-hero-badge-item">
-      <iconify-icon icon="fluent:phone-laptop-24-regular" aria-hidden="true"></iconify-icon> 4 Platforms
-    </span>
-  </div>
-
-  <!-- Stat Rail -->
-  <div class="f-hero-stat-rail">
-    <div class="f-hero-stat-item">
-      <span class="f-hero-stat-val">v{VERSION}</span>
-      <span class="f-hero-stat-label">Current Release</span>
-    </div>
-    <div class="f-hero-stat-item">
-      <span class="f-hero-stat-val">124</span>
-      <span class="f-hero-stat-label">Tests Passing</span>
-    </div>
-    <div class="f-hero-stat-item">
-      <span class="f-hero-stat-val">5</span>
-      <span class="f-hero-stat-label">Sub-brands</span>
-    </div>
-    <div class="f-hero-stat-item">
-      <span class="f-hero-stat-val">4</span>
-      <span class="f-hero-stat-label">Platforms</span>
-    </div>
-  </div>
+  <!-- Quick links to what staff ask for most -->
+  <nav class="f-hero-badges" aria-label="Quick links">
+    <a class="f-hero-badge-item" href="/products/ssclinic/">
+      <iconify-icon icon="fluent:stethoscope-24-regular" aria-hidden="true"></iconify-icon> SS Clinic guide
+    </a>
+    <a class="f-hero-badge-item" href="/brand-system/#colour">
+      <iconify-icon icon="fluent:color-24-regular" aria-hidden="true"></iconify-icon> Brand colours
+    </a>
+    <a class="f-hero-badge-item" href="/signature/">
+      <iconify-icon icon="fluent:mail-template-24-regular" aria-hidden="true"></iconify-icon> Email signature
+    </a>
+    <a class="f-hero-badge-item" href="/products/">
+      <iconify-icon icon="fluent:box-24-regular" aria-hidden="true"></iconify-icon> Product brands
+    </a>
+  </nav>
 </SSHero>
 
 <style>
@@ -197,46 +176,20 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
-    background: rgba(255, 255, 255, 0.07);
-    padding: 5px 13px;
-    border-radius: 9999px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  /* Hero Stat Rail */
-  .f-hero-stat-rail {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin: 2rem 0 0;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .f-hero-stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-  }
-
-  .f-hero-stat-val {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #FFFFFF;
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-
-  .f-hero-stat-label {
-    font-size: 0.68rem;
+    min-height: 36px;
+    font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: #FFFFFF;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 6px 14px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .f-hero-badge-item:hover {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: rgba(109, 198, 236, 0.6);
   }
 </style>
