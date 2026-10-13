@@ -30,11 +30,11 @@ SuamiSihat Clinic is the only men's health platform in Malaysia built entirely a
 
 ## Primary Brand Colours
 
-| Role | Colour | Value |
-| :--- | :--- | :--- |
-| **60% - Dominant** | Deep Navy | `#0F4C75` |
-| **30% - Canvas** | Clean White | `#FFFFFF` |
-| **10% - Accent** | Warm Gold | `#F4A261` |
+| Role | Colour | Value | Usage |
+| :--- | :--- | :--- | :--- |
+| **60% - Foundation** | Deep Prussian Navy | `#022057` | Master background, solid canvas, headers |
+| **30% - Structure** | Clinical White / Clinical Navy | `#FFFFFF` / `#0F4C75` | Cards, content containers, structural panels |
+| **10% - Accent** | Warm Clinic Gold | `#F4A261` | Primary action CTAs, diagnostic badges, ratings |
 
 ---
 

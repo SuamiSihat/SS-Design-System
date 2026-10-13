@@ -32,8 +32,8 @@
           logo: '/products/Androlab/logos/logo_androlab_primary.svg',
           href: '/products/androlab/',
           accent: 'linear-gradient(135deg, #101820, #0A89FA)',
-          desc: 'Vitality science and clinical performance. Features <strong>ANDROLAB Alpha</strong> (daily botanical sachet drinks with L-Citrulline, Ashwagandha &amp; Saffron) and <strong>ANDROLAB RX</strong> (doctor-led programmes delivered inside SS Clinic).',
-          searchData: 'androlab alpha rx sachet drinks prescription supplements clinical'
+          desc: 'Vitality science and clinical performance. Features <strong>ANDROLAB Alpha</strong> (daily botanical sachet drinks with L-Citrulline, Ashwagandha &amp; Saffron) and <a href="/doc/?doc=clinic-positioning" class="text-decoration-underline" style="color:inherit;"><strong>ANDROLAB RX</strong></a> (doctor-led programmes delivered inside <a href="/doc/?doc=clinic-positioning" class="text-decoration-underline" style="color:inherit;">SS Clinic</a>).',
+          searchData: 'androlab alpha rx sachet drinks prescription supplements clinical clinic'
         },
         {
           id: 'menss',
@@ -47,8 +47,24 @@
           logo: '/products/MENSS/logos/logo_menss.svg',
           href: '/products/menss/',
           accent: 'linear-gradient(135deg, #030404, #0E92CC)',
-          desc: 'Modern intimate lifestyle, hygiene, and hardware. Features <strong>MENSS : FRÉSH Wash</strong> (intimate dermatological wash), the motorized <strong>MENSS Penile Pump (VED)</strong> with luxury drawer unboxing, and the <strong>MENSS Ring Series</strong> (Core, Duo, Carry).',
-          searchData: 'menss fresh wash penile pump ring intimate lifestyle clinical hardware'
+          desc: 'Modern intimate lifestyle, hygiene, and hardware. Features <strong>MENSS : FRÉSH Wash</strong> (intimate dermatological wash), the motorized <strong>MENSS Penile Pump (VED)</strong> with luxury drawer unboxing, and the <strong>MENSS Ring Series</strong> (Core, Duo, Carry) — integrated with <a href="/doc/?doc=clinic-positioning" class="text-decoration-underline" style="color:inherit;">SS Clinic</a> clinical protocols.',
+          searchData: 'menss fresh wash penile pump ring intimate lifestyle clinical hardware clinic'
+        },
+        {
+          id: 'ssclinic',
+          name: 'SS Clinic',
+          type: 'Core Clinical Brand',
+          category: ['clinical', 'programme'],
+          tags: ['SS Health', '02-SSC', 'Direct Patient Care', 'Telehealth'],
+          tagClasses: ['tag-ss', 'tag-clinic', 'tag-wellness'],
+          entity: '02-SSC · SS Clinic',
+          entityIcon: 'fluent:stethoscope-24-regular',
+          logo: '/public/brand/logos/02_logo_ssClinic/logo_ssc_primary_light.svg',
+          href: '/doc/?doc=clinic-positioning',
+          hrefLabel: 'Clinic Playbook',
+          accent: 'linear-gradient(135deg, #022057, #0F4C75)',
+          desc: 'Direct patient care, medical diagnostics, telehealth, and personalised treatment plans for Malaysian husbands. Governed by the core directive <em>"Kami Tak Jual Rawatan. Kami Cari Punca."</em> with centres in Subang Jaya and Kota Bharu.',
+          searchData: 'ss clinic suamisihat clinic ssc doctor consultation diagnostics telehealth subang kota bharu'
         },
         {
           id: 'mensculine',
@@ -361,6 +377,7 @@
         <ul class="cat-nav">
           <li><a href="/products/androlab/"><span class="cat-icon"><iconify-icon icon="fluent:pill-24-regular"></iconify-icon></span>ANDROLAB</a></li>
           <li><a href="/products/menss/"><span class="cat-icon"><iconify-icon icon="fluent:heart-pulse-24-regular"></iconify-icon></span>MENSS</a></li>
+          <li><a href="/doc/?doc=clinic-positioning"><span class="cat-icon"><iconify-icon icon="fluent:stethoscope-24-regular"></iconify-icon></span>SS Clinic</a></li>
           <li><a href="/products/mensculine/"><span class="cat-icon"><iconify-icon icon="fluent:globe-24-regular"></iconify-icon></span>Mensculine</a></li>
           <li><a href="/products/drmitring/"><span class="cat-icon"><iconify-icon icon="fluent:stethoscope-24-regular"></iconify-icon></span>Dr. MIT Ring®</a></li>
           <li><a href="/products/rejal/"><span class="cat-icon"><iconify-icon icon="fluent:leaf-three-24-regular"></iconify-icon></span>REJAL</a></li>

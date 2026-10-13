@@ -21,7 +21,7 @@ Validator result on the draft (`validateProduct`): fails only on the pattern (no
 
 ## Findings that need a decision
 
-1. **Colour sources disagree.** The clinic file says Deep Navy `#0F4C75`. The playbook says Prussian `#022057` as the 60% base, with `#0F4C75` as an alternate. Warm Gold `#F4A261` on `#0F4C75` is 4.41:1, which fails AA for body text (fine for large text and shapes). On `#022057` it is 7.56:1. Decision 8 should settle one set.
+1. **Colour sources: SETTLED (decision 8, 13 Oct 2026).** Foundation 60% Prussian Navy `#022057`; Structure 30% Pure White `#FFFFFF` and Clinical Navy `#0F4C75`; Accent 10% Warm Clinic Gold `#F4A261` (7.56:1 AAA on Prussian Navy) and Azure Energy `#21A1F7`. Both `static/content/clinic-positioning.md` and `docs/drafts/ss-clinic/metadata.draft.json` are synchronized to this palette.
 2. **Typeface: resolved.** Decision 1 is Poppins (13 Oct 2026). The playbook, brand-system page, signatures and markdown CSS now say Poppins.
 3. **Tagline level 3** (treatment-specific lines) reads as performance claims. Hold for regulatory.
 
@@ -33,11 +33,11 @@ Everything else moved to `docs/staff/clinic-playbook-staff.md`, which is outside
 
 Open: how staff reach the staff-only file (repo access only today). A gated route or separate share is a follow-up.
 
-The colour hex values in the public field guide (`#022057`, `#0F4C75`, `#F4A261`) still await decision 8.
+The colour hex values in the public field guide (`#022057`, `#0F4C75`, `#F4A261`) are now locked per decision 8.
 
-## Not drafted, and why
+## Current status
 
-- Per-brand PDF generator: the plan says it was delivered in the audit session, but it is not in this repo. Needs to be added from that session.
+- Per-brand PDF generator: delivered via `scripts/make_brand_pdfs.py` (`npm run generate:pdfs`).
 - SS Clinic PDF: after regulatory review.
 - Marks sweep: blocked on decision 3.
-- Catalogue card and ANDROLAB RX and MENSS links: blocked on decision 11.
+- Catalogue card and ANDROLAB RX and MENSS links: implemented per decision 11.

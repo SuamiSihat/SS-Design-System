@@ -78,32 +78,37 @@
     ]
   },
   "colorScheme": {
-    "_decision8": "OPEN. Option A (clinic file, content/sub-brands/ss-clinic.md): Deep Navy #0F4C75 / White / Warm Gold #F4A261. Option B (master palette): Prussian / SS Blue / Azure / Banana. Recommendation: whichever is on clinic signage and print today; if neither, master palette. Values below are Option A as a placeholder only. Note the playbook also lists Prussian #022057 as the 60% base, so the clinic file and playbook disagree with each other too.",
+    "_decision8": "SETTLED (13 Oct 2026). Foundation 60% Prussian Navy #022057; Structure 30% Pure White #FFFFFF and Clinical Navy #0F4C75; Accent 10% Warm Clinic Gold #F4A261 with Azure Energy #21A1F7.",
     "foundation": {
       "share": 60,
-      "role": "Deep Navy",
+      "role": "Deep Prussian Navy base canvas",
       "colors": [
-        { "name": "Deep Navy", "hex": "#0F4C75", "use": "Backgrounds, panels" }
+        { "name": "Deep Prussian Navy", "hex": "#022057", "use": "Master hero background, solid canvas, header panels" }
       ]
     },
     "structure": {
       "share": 30,
-      "role": "White",
+      "role": "Pure White and Clinical Navy secondary structure",
       "colors": [
-        { "name": "White", "hex": "#FFFFFF", "use": "Canvases, text on navy" }
+        { "name": "Pure White", "hex": "#FFFFFF", "use": "Content cards, containers, text on navy" },
+        { "name": "Clinical Navy", "hex": "#0F4C75", "use": "In-clinic acrylic panels, video backdrops, subtle cards" }
       ]
     },
     "accent": {
       "share": 10,
-      "role": "Warm Gold",
+      "role": "Warm Clinic Gold for primary CTAs and badges",
       "colors": [
-        { "name": "Warm Gold", "hex": "#F4A261", "use": "One highlight; text on navy" }
+        { "name": "Warm Clinic Gold", "hex": "#F4A261", "use": "Primary action CTAs, highlight badges, star ratings" },
+        { "name": "Azure Energy", "hex": "#21A1F7", "use": "Digital active states, diagnostic wave pulses, verified badges" }
       ]
     },
     "pairings": [
-      { "text": "#FFFFFF", "background": "#0F4C75", "use": "Text on navy" },
-      { "text": "#0F4C75", "background": "#FFFFFF", "use": "Navy text on white" },
-      { "text": "#F4A261", "background": "#0F4C75", "use": "Gold on navy, large text and shapes only (4.41:1 fails AA for body text)", "largeTextOnly": true }
+      { "text": "#FFFFFF", "background": "#022057", "use": "Text on Prussian Navy (15.59:1, AAA)" },
+      { "text": "#022057", "background": "#FFFFFF", "use": "Prussian Navy text on white (15.59:1, AAA)" },
+      { "text": "#F4A261", "background": "#022057", "use": "Warm Gold text on Prussian Navy (7.56:1, AAA)" },
+      { "text": "#FFFFFF", "background": "#0F4C75", "use": "White text on Clinical Navy (8.84:1, AAA)" },
+      { "text": "#0F4C75", "background": "#FFFFFF", "use": "Clinical Navy text on white (8.84:1, AAA)" },
+      { "text": "#F4A261", "background": "#0F4C75", "use": "Warm Gold on Clinical Navy, large text and shapes only (4.41:1)", "largeTextOnly": true }
     ]
   },
   "pattern": {
