@@ -40,6 +40,13 @@
   };
 
   const fileName = (f) => f.split('/').pop();
+
+  /** Quick kit: the files and colours people ask for most, one click away */
+  const kitLogo = $derived(p.guideline.logos[0]);
+  const kitZip = $derived(p.downloads.find((d) => d.format === 'ZIP'));
+  const kitColours = $derived(
+    [...p.colorScheme.foundation.colors, ...p.colorScheme.structure.colors, ...p.colorScheme.accent.colors].slice(0, 4)
+  );
 </script>
 
 <svelte:head>
@@ -92,6 +99,42 @@
     {/each}
   </ol>
 </nav>
+
+<!-- Quick kit -->
+<section class="pb-kit" aria-labelledby="h-kit">
+  <div class="pb-kit-inner">
+    <h2 id="h-kit">Quick kit for {p.name}</h2>
+    <div class="pb-kit-actions">
+      <a class="ss-btn ss-btn-primary ss-btn-sm" href={kitLogo.file} download={fileName(kitLogo.file)}>
+        <iconify-icon icon="fluent:image-24-regular" aria-hidden="true"></iconify-icon> Logo ({kitLogo.label})
+      </a>
+      {#if kitZip}
+        <a class="ss-btn ss-btn-secondary ss-btn-sm" href={kitZip.file} download={fileName(kitZip.file)}>
+          <iconify-icon icon="fluent:folder-zip-24-regular" aria-hidden="true"></iconify-icon> All logos (ZIP)
+        </a>
+      {/if}
+      <a class="ss-btn ss-btn-secondary ss-btn-sm" href="/brand-guidelines/pdf/{p.slug}-brand-guideline-v1.0.pdf" download>
+        <iconify-icon icon="fluent:document-pdf-24-regular" aria-hidden="true"></iconify-icon> Guideline (PDF)
+      </a>
+      {#if p.pattern.file}
+        <a class="ss-btn ss-btn-secondary ss-btn-sm" href={p.pattern.file} download>
+          <iconify-icon icon="fluent:grid-dots-24-regular" aria-hidden="true"></iconify-icon> Pattern (SVG)
+        </a>
+      {/if}
+    </div>
+    <ul class="pb-kit-colours" aria-label="Main colours. Click to copy the code.">
+      {#each kitColours as col}
+        <li>
+          <button type="button" onclick={() => copyHex(col.hex)} aria-label="Copy {col.name} {col.hex}">
+            <span class="pb-kit-chip" style="background:{col.hex};" aria-hidden="true"></span>
+            <span>{col.name}</span>
+            <code>{copied === col.hex ? 'Copied' : col.hex}</code>
+          </button>
+        </li>
+      {/each}
+    </ul>
+  </div>
+</section>
 
 <main class="pb-main" id="main-content">
   <!-- 1. Definition -->
@@ -371,6 +414,19 @@
 </dialog>
 
 <style>
+  /* Quick kit */
+  .pb-kit { background: var(--color-neutral-bg-2); border-bottom: 1px solid var(--color-neutral-stroke-1); }
+  .pb-kit-inner { max-width: 1200px; margin: 0 auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .pb-kit h2 { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-neutral-fg-3); margin: 0; }
+  .pb-kit-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .pb-kit-colours { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .pb-kit-colours button {
+    display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.7rem; font-size: 0.8rem; cursor: pointer;
+    background: var(--color-neutral-bg-1); border: 1px solid var(--color-neutral-stroke-1); border-radius: 999px; color: var(--color-neutral-fg-1);
+  }
+  .pb-kit-colours button:hover { border-color: var(--color-action-bg); }
+  .pb-kit-chip { width: 1rem; height: 1rem; border-radius: 50%; border: 1px solid var(--color-neutral-stroke-2); }
+
   /* Hero: brand gradient with a dark scrim behind the text for contrast */
   .pb-hero {
     position: relative;

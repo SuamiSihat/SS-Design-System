@@ -4,6 +4,11 @@
 
   let searchQuery = $state('');
   let selectedFilter = $state('all');   // 'all' | category slug
+  let showArchived = $state(false);
+
+  /** Internal company codes shown as plain names */
+  const COMPANY_NAMES = { '01-SSH': 'SS Health', '02-SSC': 'SS Clinic', '03-SSW': 'SS Wellness', '05-SSE': 'SS Ecommerce' };
+  const plainEntity = (e) => e.replace(/0[0-9]-SS[A-Z]/g, (c) => COMPANY_NAMES[c] ?? c);
   let isSidebarMinimized = $state(false);
   let activeSection = $state('section-ss');
 
@@ -309,7 +314,8 @@
       result[s.id] = s.products.filter(p => {
         const categoryMatch = selectedFilter === 'all' || p.category.includes(selectedFilter);
         const searchMatch = !q || (p.searchData + ' ' + p.name + ' ' + p.desc).toLowerCase().includes(q);
-        return categoryMatch && searchMatch;
+        const statusMatch = showArchived || !p.isArchived;
+        return categoryMatch && searchMatch && statusMatch;
       });
     });
     return result;
@@ -416,8 +422,8 @@
         <p class="cat-sidebar-heading">Navigate</p>
         <ul class="cat-nav">
           <li><a href="/"><span class="cat-icon"><iconify-icon icon="fluent:home-24-regular"></iconify-icon></span>Home</a></li>
-          <li><a href="/brand-system/"><span class="cat-icon"><iconify-icon icon="fluent:color-24-regular"></iconify-icon></span>Brand System</a></li>
-          <li><a href="/brand-guidelines/"><span class="cat-icon"><iconify-icon icon="fluent:book-open-24-regular"></iconify-icon></span>Guidelines PDF</a></li>
+          <li><a href="/brand-system/"><span class="cat-icon"><iconify-icon icon="fluent:color-24-regular"></iconify-icon></span>Brand</a></li>
+          <li><a href="/brand-guidelines/"><span class="cat-icon"><iconify-icon icon="fluent:book-open-24-regular"></iconify-icon></span>Guides</a></li>
         </ul>
       </div>
     </aside>
@@ -442,7 +448,7 @@
           <input
             type="search"
             class="cat-search"
-            placeholder="Search products, ingredients, or brand codes…"
+            placeholder="Search products or ingredients…"
             aria-label="Search products"
             bind:value={searchQuery}
           />
@@ -473,6 +479,10 @@
             </button>
           {/each}
         </div>
+        <label class="d-inline-flex align-items-center gap-2" style="font-size:0.8rem; font-weight:600; cursor:pointer;">
+          <input type="checkbox" bind:checked={showArchived} />
+          Show archived products
+        </label>
         <span class="ss-badge ss-badge-neutral" style="font-size:0.75rem; font-weight:600;">
           Showing {totalVisible()} {totalVisible() === 1 ? 'entry' : 'entries'}
         </span>
@@ -500,7 +510,7 @@
               <h2 class="product-section-title">{section.title}</h2>
               <p class="product-section-desc">{section.desc}</p>
             </div>
-            <span class="product-section-count">{section.products.length} {section.id === 'section-bioactives' ? 'assets' : section.id === 'section-partners' ? 'brands' : 'brand lines'}</span>
+            <span class="product-section-count">{(filteredMap()[section.id] ?? []).length} {section.id === 'section-bioactives' ? 'assets' : section.id === 'section-partners' ? 'brands' : 'brand lines'}</span>
           </div>
 
           <!-- Product Grid -->
@@ -548,7 +558,7 @@
                 <div class="product-actions">
                   <span class="product-subbrand">
                     <iconify-icon icon={product.entityIcon} class="me-1"></iconify-icon>
-                    {product.entity}
+                    {plainEntity(product.entity)}
                   </span>
                   {#if product.logoDownload}
                     <a href={product.logoDownload} download class="product-assets-btn" aria-label="Vector (.SVG): download {product.name} logo">
