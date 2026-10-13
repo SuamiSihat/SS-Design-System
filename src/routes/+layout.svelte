@@ -2,9 +2,7 @@
   import { onMount } from 'svelte';
   import Navbar from '$lib/components/Navbar.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  import GatekeeperPuzzle from '$lib/components/GatekeeperPuzzle.svelte';
   import { initTheme } from '$lib/stores/theme.js';
-  import { gateState, initGate } from '$lib/stores/gate.js';
   import { browser } from '$app/environment';
   import fluentIcons from '$lib/icons/fluent-subset.json';
 
@@ -27,7 +25,6 @@
 
   onMount(() => {
     initTheme();
-    initGate();
   });
 </script>
 
@@ -35,11 +32,7 @@
   <title>SuamiSihat™ Design System</title>
 </svelte:head>
 
-{#if $gateState.isReady && !$gateState.isUnlocked}
-  <GatekeeperPuzzle />
-{/if}
-
-<div class="f-app-shell" class:f-locked={!$gateState.isUnlocked}>
+<div class="f-app-shell">
   <Navbar />
   <div class="f-content-wrapper">
     {@render children?.()}
@@ -55,14 +48,6 @@
     background-color: var(--color-neutral-bg-1, #F8FAFC);
     color: var(--color-neutral-fg-1, #1C1C1C);
     transition: opacity 0.3s ease;
-  }
-
-  .f-app-shell.f-locked {
-    visibility: hidden;
-    height: 0;
-    max-height: 0;
-    overflow: hidden;
-    pointer-events: none;
   }
 
   .f-content-wrapper {

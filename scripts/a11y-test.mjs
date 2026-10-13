@@ -62,7 +62,6 @@ for (const theme of ['light', 'dark']) {
   const context = await browser.newContext({ viewport: { width: 1366, height: 900 }, reducedMotion: 'reduce' });
   await context.addInitScript((t) => {
     localStorage.setItem('ss-theme', t);
-    localStorage.setItem('ss_gate_unlocked', JSON.stringify({ verified: true, timestamp: Date.now() }));
   }, theme);
   const page = await context.newPage();
   for (const route of routes) {
