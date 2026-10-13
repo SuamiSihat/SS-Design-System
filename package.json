@@ -1,6 +1,6 @@
 {
   "name": "ss-design-system",
-  "version": "3.6.1",
+  "version": "3.6.2",
   "description": "SuamiSihat Design System - SvelteKit brand and component hub, served at https://assets.suamisihat.myds.me/",
   "private": true,
   "type": "module",
