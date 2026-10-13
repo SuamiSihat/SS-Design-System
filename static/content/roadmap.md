@@ -48,7 +48,7 @@ What has shipped, what is next, and what still needs a decision.
 | --- | --- | --- |
 | `CLAIMS-REVIEW` | Regulatory review of the claims flagged on each product page (REJAL, Dr. MIT Ring, ANDROLAB RX, MENSS devices, catalogue entries such as Physta) | High |
 | `PHOTO` | Product photography for Mensculine, nuCaffe, Husband Clinic and Isteri Sihat (brand cards today) | High |
-| `TYPE-DECISION` | Decide the display typeface: Brand System section 04 lists Poppins; older docs and the email signature use Outfit | High |
+| `TYPE-DECISION` | Display typeface decided: Poppins (13 Oct 2026). Sweep older docs and the email signature for remaining Outfit references | Done |
 | `DMR-PHOTO` | Dr. MIT Ring product photography (packaging artwork only today) | Medium |
 | `SPLIT-PAGES` | Split the 120 to 135 KB page files (home, brand system, components) into components | Medium |
 | `INLINE-STYLES` | Move inline styles to classes and tokens so contrast fixes live in one place | Medium |

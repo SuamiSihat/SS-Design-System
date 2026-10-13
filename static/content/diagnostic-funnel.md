@@ -15,7 +15,7 @@ The Formaloo diagnostic quiz is not a lead generation form — it is SuamiSihat'
 > **"Kami Tak Jual Rawatan. Kami Cari Punca."**
 > *(We don't sell treatments. We find the root cause.)*
 
-Every competing clinic (HeMedical, Universal, MHC Malaysia) pushes patients directly to WhatsApp or a booking form. SuamiSihat is the **only Malaysian men's health clinic** that gates treatment with a clinical diagnostic assessment before recommending any plan.
+Competing clinics typically push patients directly to WhatsApp or a booking form. SuamiSihat is the **only Malaysian men's health clinic** that gates treatment with a clinical diagnostic assessment before recommending any plan.
 
 This is Gap 04 in the SSC-STR-001 Competitor Intelligence — **Diagnostic-First Brand Infrastructure** — and it must be protected, strengthened, and consistently positioned across all touchpoints.
 
@@ -146,7 +146,7 @@ The Formaloo quiz should use approved SuamiSihat™ design tokens:
 | `--ss-white` | `#FFFFFF` | Card surfaces, question containers (30%) |
 | `--ss-sky-100` | `#E8F3FC` | Input field backgrounds, soft section dividers |
 
-**Typography:** Use `Inter` or `Outfit` (aligned with Design System tokens). Avoid condensed sans-serif fonts.
+**Typography:** Use `Inter` or `Poppins` (aligned with Design System tokens). Avoid condensed sans-serif fonts.
 
 ---
 

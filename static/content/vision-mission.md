@@ -76,7 +76,7 @@ graph TD
 
 ### Pillar 2: Expert (Kepakaran Klinikal & Berautoriti)
 - **Clinical Reality:** We are registered medical practitioners governed by the Malaysian Medical Council (MMC) and MOH standards. Every diagnosis is backed by validated blood panels (testosterone, HbA1c, lipid profiles, renal function) and clinical scoring tools (IIEF-5).
-- **Design Translation:** Clean, data-driven typography (Outfit & Plus Jakarta Sans), structured comparison tables, crisp visual diagrams, and prominent medical accreditation credentials.
+- **Design Translation:** Clean, data-driven typography (Poppins & Inter), structured comparison tables, crisp visual diagrams, and prominent medical accreditation credentials.
 - **Tone Translation:** Decisive, evidence-based, transparent about expected timeframes and realistic physiological outcomes.
 
 ### Pillar 3: Brotherly (Kemesraan & Keakraban Sehala)

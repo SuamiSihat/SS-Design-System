@@ -223,7 +223,7 @@
       const logoUrl = isForExport ? `${cdnBaseUrl.replace(/\/$/, '')}${path}` : path;
 
       return `
-<table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Outfit', 'Inter', 'Segoe UI', Arial, sans-serif; font-size: 13px; color: ${bodyTextColor}; line-height: 1.45; max-width: 580px;">
+<table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Poppins', 'Inter', 'Segoe UI', Arial, sans-serif; font-size: 13px; color: ${bodyTextColor}; line-height: 1.45; max-width: 580px;">
   <tr>
     <td style="padding-right: 16px; border-right: 3.5px solid ${brandCol}; vertical-align: top; text-align: center;">
       <img src="${logoUrl}" alt="${selectedEntity.shortName}" width="72" style="display: block; border: 0; max-width: 90px; height: auto; margin: 0 auto;" />
@@ -260,7 +260,7 @@
       const logoUrl = isForExport ? `${cdnBaseUrl.replace(/\/$/, '')}${path}` : path;
 
       return `
-<table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Outfit', 'Inter', 'Segoe UI', Arial, sans-serif; font-size: 13px; color: ${bodyTextColor}; line-height: 1.45; max-width: 580px; border: 1px solid ${previewMode === 'dark' ? '#334155' : '#E2E8F0'}; border-radius: 8px; background-color: ${previewMode === 'dark' ? '#0F172A' : '#FFFFFF'};">
+<table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Poppins', 'Inter', 'Segoe UI', Arial, sans-serif; font-size: 13px; color: ${bodyTextColor}; line-height: 1.45; max-width: 580px; border: 1px solid ${previewMode === 'dark' ? '#334155' : '#E2E8F0'}; border-radius: 8px; background-color: ${previewMode === 'dark' ? '#0F172A' : '#FFFFFF'};">
   <tr>
     <td style="background-color: ${brandCol}; padding: 10px 16px; border-top-left-radius: 7px; border-top-right-radius: 7px;">
       <table cellpadding="0" cellspacing="0" border="0" width="100%">
@@ -316,7 +316,7 @@
       const logoUrl = isForExport ? `${cdnBaseUrl.replace(/\/$/, '')}${path}` : path;
 
       return `
-<table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Outfit', 'Inter', 'Segoe UI', Arial, sans-serif; font-size: 13px; color: ${bodyTextColor}; line-height: 1.45; max-width: 540px;">
+<table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Poppins', 'Inter', 'Segoe UI', Arial, sans-serif; font-size: 13px; color: ${bodyTextColor}; line-height: 1.45; max-width: 540px;">
   <tr>
     <td style="padding-bottom: 12px;">
       <table cellpadding="0" cellspacing="0" border="0">
@@ -357,7 +357,7 @@
     const logoUrl = isForExport ? `${cdnBaseUrl.replace(/\/$/, '')}${path}` : path;
 
     return `
-<table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Outfit', 'Inter', 'Segoe UI', Arial, sans-serif; font-size: 12px; color: ${bodyTextColor}; line-height: 1.4; max-width: 580px;">
+<table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Poppins', 'Inter', 'Segoe UI', Arial, sans-serif; font-size: 12px; color: ${bodyTextColor}; line-height: 1.4; max-width: 580px;">
   <tr>
     <td style="vertical-align: middle; padding-right: 10px;">
       <img src="${logoUrl}" alt="${selectedEntity.shortName}" width="28" height="28" style="display: block; border: 0; border-radius: 4px;" />

@@ -21,10 +21,10 @@ SuamiSihat Clinic is the only men's health platform in Malaysia built entirely a
 
 ## Clinic Footprint
 
-| Clinic | Market Type | Doctor Leads |
-| :--- | :--- | :--- |
-| **Subang Jaya** | Red Ocean — Competitive differentiation | Dr Amir & Dr Rak |
-| **Kota Bharu** | Blue Ocean — Category creation | Dr Zakwan & Hafizzul |
+| Clinic | Market Type |
+| :--- | :--- |
+| **Subang Jaya** | Red Ocean — Competitive differentiation |
+| **Kota Bharu** | Blue Ocean — Category creation |
 
 ---
 
@@ -49,15 +49,13 @@ SuamiSihat Clinic is the only men's health platform in Malaysia built entirely a
 
 ## Full Positioning Documentation
 
-See the [SS Clinic Brand Positioning](/doc/?doc=clinic-positioning) page for the complete brand strategy reference including:
+See the [SS Clinic Brand Positioning](/doc/?doc=clinic-positioning) page for the brand-level reference:
 
-- Competitive analysis (9 brands x 10 dimensions scoring matrix)
-- The 4-level tagline architecture
-- Dual-market doctor playbooks (Subang Jaya & Kota Bharu)
-- The Brand Chorus system
-- 18-month brand evolution roadmap
-- First 90 days execution checklist
-- Strictly forbidden guidelines
+- The tagline architecture and core verbal assets
+- Colour, typography, layout and photography standards
+- The brand voice matrix
+
+Competitor analysis, regional playbooks, swipe files, the video playbook and the production review gate are staff-only.
 
 ---
 
