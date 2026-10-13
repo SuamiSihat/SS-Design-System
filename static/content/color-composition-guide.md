@@ -306,13 +306,13 @@ This matters because SuamiSihat's component architecture explicitly uses a seman
 
 ```mermaid
 quadrantChart
-    title Choosing Between 60:30:10 and 80:20
+    title Choosing between 60-30-10 and 80-20
     x-axis Low Brand Expression --> High Brand Expression
     y-axis High Information Density --> Low Information Density
-    quadrant-1 60:30:10 Territory
-    quadrant-2 Hybrid Territory
-    quadrant-3 80:20 Territory
-    quadrant-4 Campaign Territory
+    quadrant-1 60-30-10 territory
+    quadrant-2 Mixed territory
+    quadrant-3 80-20 territory
+    quadrant-4 Campaign territory
     Dashboard: [0.25, 0.20]
     Clinical System: [0.20, 0.15]
     Settings Page: [0.20, 0.30]
