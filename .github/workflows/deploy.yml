@@ -84,7 +84,7 @@ jobs:
         run: |
           code=$(curl -s -o /dev/null -w '%{http_code}' https://assets.suamisihat.myds.me/)
           echo "Live site returned HTTP $code"
-          case "$code" in 200|401) ;; *) exit 1 ;; esac
+          [ "$code" = "200" ]
           git_code=$(curl -s -o /dev/null -w '%{http_code}' https://assets.suamisihat.myds.me/.git/config)
           echo ".git/config returned HTTP $git_code"
           [ "$git_code" != "200" ]

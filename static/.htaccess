@@ -7,20 +7,8 @@
 # ----------------------------------------------------------------------------
 # Access control
 # ----------------------------------------------------------------------------
-# Server-side login. Enabled automatically once the password file exists on
-# the NAS (create it OUTSIDE the web root):
-#   htpasswd -c /volume1/web/.auth/ss_assets.htpasswd <username>
-<IfFile "/volume1/web/.auth/ss_assets.htpasswd">
-    AuthType Basic
-    AuthName "SuamiSihat Design System (internal)"
-    AuthUserFile "/volume1/web/.auth/ss_assets.htpasswd"
-    Require valid-user
-</IfFile>
-
-# Brand logos stay public so email signatures and partner sites can load them
-<If "%{REQUEST_URI} =~ m#^/public/brand/(logos|favicon|app-icons)/#">
-    Require all granted
-</If>
+# The site is public: pages load without a login. Search engines are asked not
+# to index it (X-Robots-Tag below), and only the built site is ever deployed.
 
 # Never serve hidden files or folders (.git, .env, .htaccess, .well-known excepted)
 <IfModule mod_rewrite.c>
@@ -32,7 +20,7 @@
 <FilesMatch "\.(mjs|log|env|lock|yml|yaml|ps1|sh|bak|map)$">
     Require all denied
 </FilesMatch>
-# Markdown under /content/ is served (the /doc/ viewer fetches it) and stays behind the login.
+# Markdown under /content/ is served (the /doc/ viewer fetches it).
 
 # ----------------------------------------------------------------------------
 # Security headers
