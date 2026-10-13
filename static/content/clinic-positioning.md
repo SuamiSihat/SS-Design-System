@@ -1,4 +1,4 @@
-# SS Clinic Brand Positioning: Designer & Editor Playbook
+# SS Clinic positioning
 
 > **Looking for the logo, colours or rules?** Start with the [SS Clinic guideline page](/products/ssclinic/). This document is the full positioning: taglines, tone of voice and the designer's field guide.
 

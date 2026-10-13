@@ -1,8 +1,15 @@
-# Brand × Fluent 2 — Architectural Integration Contract
+# Brand and Fluent 2
 
-## Executive Overview
+*For designers and developers.*
 
-The SuamiSihat® Design System operates on a strict **two-layer design architecture**:
+## In plain words
+
+Two things decide how a SuamiSihat® page looks and behaves:
+
+- **SuamiSihat® decides how it looks and sounds:** the logo, colours, fonts, photos and tone of voice.
+- **Fluent 2 (Microsoft's design system) decides how it works:** how buttons, forms and menus behave, how focus is shown, how things move, and how pages stay accessible.
+
+Keeping the two jobs apart means every new page, whether a landing page, a product page or a clinic portal, looks and feels like SuamiSihat® and works in the way people expect.
 
 ```mermaid
 flowchart TD
@@ -31,22 +38,20 @@ flowchart TD
     System --> Apps["Web Applications & Dashboards"]
 ```
 
-### Core Axiom
+> **The simple version:** Fluent 2 provides the way things work. SuamiSihat® provides the look, the personality and the clinical authority.
 
-> **"Fluent 2 provides the interaction system and structural logic. SuamiSihat provides the soul, visual identity, and clinical authority."**
+Keeping the jobs apart avoids two common problems:
 
-This architectural separation completely resolves the two primary failure modes in multi-page and AI-assisted development:
-
-1. **Prompt Dilution** — Developers and AI agents no longer spend prompt budget reproducing 3,000 words of design guidelines.
-2. **Brand Drift** — Ensures future pages (landing pages, product hubs, clinical portals, checkout flows) never diverge in look, feel, or interactive behavior.
+1. **Long instructions every time.** Developers and AI assistants no longer need 3,000 words of design rules in each request. They follow this page.
+2. **Brand drift.** New pages never slowly wander away from the SuamiSihat® look, feel and behaviour.
 
 ---
 
-## 1. Source of Truth & Boundary Matrix
+## 1. Who decides what
 
-To prevent Fluent 2 from visually dominating SuamiSihat's distinct clinical-masculine character, every design decision is assigned to an authoritative source:
+So that Fluent 2 never overrides the SuamiSihat® character, every design decision has one owner:
 
-| Design Decision | Authoritative Source | Implementation Rule |
+| Decision | Who decides | The rule |
 | --------------- | -------------------- | ------------------- |
 | **Brand Personality** | **SuamiSihat®** | Confident, clinical, masculine, premium, discreet. |
 | **Logo & Marks** | **SuamiSihat®** | Governed by background brightness rules (HSL L ≥ 50% vs L < 50%). |
@@ -63,9 +68,9 @@ To prevent Fluent 2 from visually dominating SuamiSihat's distinct clinical-masc
 
 ---
 
-## 2. System Hierarchy & Precedence
+## 2. Which rule wins
 
-When building components or full page templates, adhere to this strict hierarchy:
+When two rules disagree, the one higher in this list wins:
 
 ```text
                     SUAMISIHAT®
@@ -94,9 +99,9 @@ When building components or full page templates, adhere to this strict hierarchy
 
 ---
 
-## 3. Information Architecture (`assets.suamisihat.myds.me`)
+## 3. How this site is organised
 
-The SuamiSihat® design system is structured into three clear tiers:
+The hub has three parts:
 
 ### 01. Foundation
 
@@ -137,9 +142,9 @@ The SuamiSihat® design system is structured into three clear tiers:
 
 ---
 
-## 4. Semantic Token Pipeline
+## 4. How colour names are built
 
-SuamiSihat uses Fluent 2's semantic token architecture adapted with SuamiSihat brand values:
+Colours are named in three steps, borrowed from Fluent 2 and filled with SuamiSihat® values: a basic colour, then a job name (such as "main brand colour"), then a name for one part (such as "hero background"):
 
 ```text
 [Global Tokens]                   [Semantic Alias Tokens]            [Component Tokens]
@@ -152,9 +157,9 @@ SuamiSihat uses Fluent 2's semantic token architecture adapted with SuamiSihat b
 
 ---
 
-## 5. 4-Tier Text Hierarchy & Surface Matrix
+## 5. Four levels of text
 
-The design system enforces four levels of text emphasis across light and dark interfaces:
+Text has four levels of emphasis, in both light and dark mode. See [Text colours](/doc/?doc=text-color-guide) for the plain version:
 
 | Level | Token | Light Mode | Dark Mode | Role |
 | ----- | ----- | ---------- | --------- | ---- |
@@ -168,9 +173,9 @@ The design system enforces four levels of text emphasis across light and dark in
 
 ---
 
-## 6. Motion & Kinetic Energy Rules
+## 6. Movement
 
-Kinetic motion in SuamiSihat interfaces must embody biological vitality and technical precision:
+Movement on SuamiSihat® screens should feel alive but controlled:
 
 - **Hero Banner Standard (`ss-hero`)**: Features a 2D interactive canvas wave (`#heroWaveCanvas`) with floating Mars (male sign) symbols, radiant Azure `#21A1F7` & Gold `#FCE53D` energy nodes, and gentle cursor parallax.
 - **Fluent Motion Timing**:
@@ -181,9 +186,9 @@ Kinetic motion in SuamiSihat interfaces must embody biological vitality and tech
 
 ---
 
-## 7. Mandatory Source of Truth Block for AI & Page Prompts
+## 7. A block to paste into AI and page requests
 
-When generating new pages, sub-products, or campaigns, include this concise, non-negotiable prompt block:
+When you ask a person or an AI assistant to build a new page, product or campaign, include this block:
 
 ```markdown
 ### Design System — Mandatory Source of Truth

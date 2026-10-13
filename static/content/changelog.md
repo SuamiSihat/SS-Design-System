@@ -10,6 +10,8 @@
 - The docs have a landing page with four groups: Brand and strategy, Guides for staff, For designers and developers, About this site. The sidebar uses the same groups with short titles and collapses on phones.
 - The five company pages are now one page, **Our companies**. Old links still work.
 - Each document ends with Previous and Next links. The "On this page" list shows main headings only, and the document ID block is folded into "Document details".
+- Plain-language rewrite of the documents: About this hub, Suggesting a change (technical steps moved to the end), Roadmap, Text colours and Our companies. Brand and Fluent 2, Hero banner and Product brand pages now open with a plain explanation. The colour guide starts with a one-screen short version, and the full reference follows.
+- Document titles are plainer (for example "SS Clinic positioning", "How we write", "Health score quiz"), and the site search uses the same names.
 
 ### Home page (13 Oct 2026)
 

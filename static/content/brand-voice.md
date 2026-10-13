@@ -1,4 +1,4 @@
-# Brand Voice & Editorial Standards
+# How we write
 
 ## Strategic Overview
 
