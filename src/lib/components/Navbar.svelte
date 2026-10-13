@@ -41,14 +41,14 @@
     // Architecture & Contract
     { title: 'Brand and Fluent 2', cat: 'Docs', href: '/doc/?doc=brand-fluent2', desc: 'Which rules come from SuamiSihat® and which from Fluent 2' },
     { title: 'How much of each colour (60:30:10)', cat: 'Docs', href: '/doc/?doc=color-composition-guide', desc: '60:30:10 primary brand composition rule, 80:20 UI model, decision framework, and accent roles' },
-    { title: 'Brand × Fluent 2 (Brand System Section)', cat: 'Tokens', href: '/brand-system/#brand-fluent2', desc: 'Interactive boundary matrix and two-layer system hierarchy' },
+    { title: 'Brand × Fluent 2 (for designers)', cat: 'Tokens', href: '/brand-system/#brand-fluent2', desc: 'Interactive boundary matrix and two-layer system hierarchy' },
 
     // Brand Tokens
-    { title: 'Brand Colors & 60:30:10 Rule', cat: 'Tokens', href: '/brand-system/#colors', desc: 'Prussian Blue (#022057), SS Blue (#043388), Azure (#21A1F7), Banana Yellow (#FCE53D)' },
-    { title: 'Logo System & Proportions', cat: 'Tokens', href: '/brand-system/#logos', desc: 'Safe exclusion zone (1X), math proportions, and please do / don\'t rules' },
+    { title: 'Brand Colors & 60:30:10 Rule', cat: 'Tokens', href: '/brand-system/#colour', desc: 'Prussian Blue (#022057), SS Blue (#043388), Azure (#21A1F7), Banana Yellow (#FCE53D)' },
+    { title: 'Logo System & Proportions', cat: 'Tokens', href: '/brand-system/#logomark', desc: 'Safe exclusion zone (1X), math proportions, and please do / don\'t rules' },
     { title: 'Typography Scale', cat: 'Tokens', href: '/brand-system/#typography', desc: 'Display, Title, Subtitle, Body, and Caption tokens' },
-    { title: 'Spacing & Radii Scale', cat: 'Tokens', href: '/brand-system/#spacing', desc: '4px grid (--f-space-*) and corner radius (--f-radius-*) tokens' },
-    { title: 'Multi-Platform Token Exports', cat: 'Tokens', href: '/brand-system/#tokens', desc: 'Export W3C JSON tokens to Tailwind, Flutter, and WPF' },
+    { title: 'Spacing & Radii Scale', cat: 'Tokens', href: '/components/#spacing', desc: '4px grid (--f-space-*) and corner radius (--f-radius-*) tokens' },
+    { title: 'Multi-Platform Token Exports', cat: 'Tokens', href: '/brand-system/#tokens-export', desc: 'Export W3C JSON tokens to Tailwind, Flutter, and WPF' },
 
     // Components
     { title: 'SS Hero Banner Standard (ss-hero)', cat: 'Components', href: '/components/#ss-hero', desc: 'Default animated vitality wave & particle canvas background for all hero banners' },
@@ -186,7 +186,7 @@
     <!-- Brand -->
     <a class="f-navbar-brand" href="/">
       <img src={isDarkMode ? "/public/brand/logos/ss-logomark-dark.svg" : "/public/brand/logos/ss-logomark-light.svg"} class="logo" alt="SuamiSihat® Icon" aria-hidden="true" loading="eager" style="height: 28px;">
-      <span class="f-navbar-brand-name">SS Design System</span>
+      <span class="f-navbar-brand-name">SuamiSihat® Brand Hub</span>
       <span class="f-navbar-version">v{VERSION}</span>
       <span class="visually-hidden">home</span>
     </a>
@@ -292,7 +292,7 @@
       onkeydown={handleSearchKeydown}
       role="dialog" 
       aria-modal="true" 
-      aria-label="Search Design System"
+      aria-label="Search the brand hub"
       tabindex="-1"
     >
       <!-- Search Input Header -->
@@ -377,23 +377,23 @@
   
   <aside class="f-drawer open" id="mobileDrawer" aria-label="Mobile Navigation">
     <div class="f-drawer-header">
-      <span class="f-drawer-brand">SuamiSihat® Design System</span>
+      <span class="f-drawer-brand">SuamiSihat® Brand Hub</span>
       <button id="drawerClose" class="f-drawer-close" onclick={closeDrawer} aria-label="Close menu">
         <iconify-icon icon="fluent:dismiss-24-regular" aria-hidden="true"></iconify-icon>
       </button>
     </div>
     <div class="f-drawer-nav">
       <button class="f-drawer-link" style="background:none; border:none; width:100%; text-align:left; cursor:pointer;" onclick={() => { closeDrawer(); openSearch(); }}>
-        <iconify-icon icon="fluent:search-24-regular" aria-hidden="true"></iconify-icon>Search Knowledge Base...
+        <iconify-icon icon="fluent:search-24-regular" aria-hidden="true"></iconify-icon>Search
       </button>
       <a class="f-drawer-link" href="/brand-system/" onclick={closeDrawer}>
-        <iconify-icon icon="fluent:color-24-regular" aria-hidden="true"></iconify-icon>Brand System
+        <iconify-icon icon="fluent:color-24-regular" aria-hidden="true"></iconify-icon>Brand
       </a>
       <a class="f-drawer-link" href="/brand-guidelines/" onclick={closeDrawer}>
-        <iconify-icon icon="fluent:book-open-24-regular" aria-hidden="true"></iconify-icon>Brand Guidelines
+        <iconify-icon icon="fluent:book-open-24-regular" aria-hidden="true"></iconify-icon>Guides
       </a>
       <a class="f-drawer-link" href="/components/" onclick={closeDrawer}>
-        <iconify-icon icon="fluent:puzzle-piece-24-regular" aria-hidden="true"></iconify-icon>Components
+        <iconify-icon icon="fluent:puzzle-piece-24-regular" aria-hidden="true"></iconify-icon>For designers
       </a>
       <a class="f-drawer-link" href="/products/" onclick={closeDrawer}>
         <iconify-icon icon="fluent:cube-multiple-24-regular" aria-hidden="true"></iconify-icon>Products
@@ -409,7 +409,7 @@
         <iconify-icon icon="fluent:mail-template-24-regular" aria-hidden="true"></iconify-icon>Mail Signature
       </a>
       <a class="f-drawer-link" href="/tools/" onclick={closeDrawer}>
-        <iconify-icon icon="fluent:camera-24-regular" aria-hidden="true"></iconify-icon>SS CAM Tools
+        <iconify-icon icon="fluent:camera-24-regular" aria-hidden="true"></iconify-icon>Tools
       </a>
       <div class="f-drawer-divider"></div>
       <button class="f-drawer-link" style="background:none; border:none; width:100%; text-align:left; cursor:pointer;" onclick={() => { toggleTheme(); }}>
@@ -417,7 +417,7 @@
         {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
       </button>
     </div>
-    <div class="f-drawer-footer">SuamiSihat® Design System v{VERSION}</div>
+    <div class="f-drawer-footer">SuamiSihat® Brand Hub v{VERSION}</div>
   </aside>
 {/if}
 
