@@ -3,14 +3,14 @@
      ================================================================ -->
 <section id="story" class="f-section-block" aria-label="Design System Principles and Core Pillars">
   <div class="f-section-overline">
-    <span class="f-overline-label">Design Principles &amp; Core Pillars</span>
+    <span class="f-overline-label">What the brand stands for</span>
     <span class="f-overline-rule" aria-hidden="true"></span>
   </div>
 
   <div class="f-section-head">
-    <h2 class="f-section-title">Built to Ship Faster. Designed to Stay Consistent.</h2>
+    <h2 class="f-section-title">One brand, used the same way everywhere.</h2>
     <p class="f-section-subtitle">
-      Three foundational pillars govern every decision in the SuamiSihat® Design System — from a single token to a full product page.
+      Every poster, pack, page and clinic sign should look and sound like SuamiSihat®. These are the ideas behind the rules.
     </p>
   </div>
 
@@ -23,14 +23,14 @@
         <div>
           <div class="f-manifesto-badge-pill">
             <span class="f-pulse-dot"></span>
-            <span>System Purpose &amp; Governance</span>
+            <span>Why this hub exists</span>
           </div>
           <p class="f-manifesto-quote">
-            &ldquo;A unified design system engineered to establish clinical authority, protect brand equity, and ensure seamless patient experiences across all digital and physical environments.&rdquo;
+            &ldquo;So every patient and customer meets the same trusted SuamiSihat®: online, on the shelf and in the clinic.&rdquo;
           </p>
           <p class="f-manifesto-lead">
-            The SuamiSihat® Design System serves as the authoritative single source of truth across all operating subsidiaries &mdash; synchronizing design tokens, component architecture, and accessibility standards across Web, Mobile, and Desktop platforms.
-          </p>
+            This hub keeps the logos, colours, fonts and rules for every SuamiSihat® company and product in one place, so nobody has to guess or redraw them.
+        </p>
         </div>
 
         <!-- Pure Self-Contained Kinetic Vitality Monitor -->
@@ -51,8 +51,8 @@
             </div>
           </div>
           <div class="f-lottie-caption-wrap">
-            <span class="f-lottie-caption">Clinical Vitality Monitor &bull; 60:30:10</span>
-            <span class="f-live-sync-chip"><span class="f-pulse-dot-green"></span> Active Token Sync</span>
+            <span class="f-lottie-caption">Our colour balance · 60:30:10</span>
+            <span class="f-live-sync-chip"><span class="f-pulse-dot-green"></span> Updated with every release</span>
           </div>
         </div>
       </div>
@@ -170,9 +170,9 @@
           <iconify-icon icon="fluent:shield-checkmark-24-regular"></iconify-icon>
         </div>
       </div>
-      <h3 class="f-pillar-title">Clinical Authority</h3>
+      <h3 class="f-pillar-title">Looks trustworthy</h3>
       <p class="f-pillar-desc">
-        Strict colour pairings and 1X clearspace rules that signal medical expertise — across clinic signage, product packaging, and digital touchpoints.
+        Clear colours and space around the logo make us look professional, on clinic signs, packs and screens.
       </p>
     </div>
 
@@ -180,12 +180,12 @@
     <div class="f-bento-card f-bento-span-4 f-bento-stat-card">
       <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
       <div class="f-bento-stat-val">AA</div>
-      <div class="f-bento-stat-label">WCAG 2.2 Contrast</div>
+      <div class="f-bento-stat-label">Easy to read</div>
       <div class="f-velocity-meter" aria-hidden="true">
         <div class="f-velocity-bar"></div>
       </div>
       <p style="font-size: 0.825rem; color: var(--text-secondary); margin: 0.75rem 0 0; line-height: 1.5;">
-        Colour pairs are checked against WCAG 2.2 AA in light and dark themes on every build.
+        Every text and background colour pair is checked for readability, in light and dark mode, each time the site is updated.
       </p>
     </div>
 
@@ -198,11 +198,11 @@
         </div>
       </div>
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-        <h3 class="f-pillar-title" style="margin:0;">WCAG 2.1 AA</h3>
-        <span class="f-score-badge">100% Pass</span>
+        <h3 class="f-pillar-title" style="margin:0;">Readable for everyone</h3>
+        <span class="f-score-badge">Checked</span>
       </div>
       <p class="f-pillar-desc">
-        4-tier text contrast matrix strictly audited across canvas, elevated cards, and inverted buttons.
+        Four text shades, from headlines to small print, each tested on every background we use.
       </p>
     </div>
   </div>

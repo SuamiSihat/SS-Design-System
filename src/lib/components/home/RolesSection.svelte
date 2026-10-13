@@ -1,5 +1,5 @@
 <script>
-  let activeRole = $state('engineer'); // 'engineer' | 'designer' | 'marketer' | 'clinical'
+  let activeRole = $state('marketer'); // 'engineer' | 'designer' | 'marketer' | 'clinical'
 </script>
 
 <!-- ================================================================
@@ -7,41 +7,19 @@
      ================================================================ -->
 <section id="roles" class="f-section-block" aria-label="Audience Hub">
   <div class="f-section-overline">
-    <span class="f-overline-label">Audience Persona Hub</span>
+    <span class="f-overline-label">Start here</span>
     <span class="f-overline-rule" aria-hidden="true"></span>
   </div>
 
   <div class="f-section-head">
-    <h2 class="f-section-title">Who Should Use the SuamiSihat® System?</h2>
+    <h2 class="f-section-title">What are you working on?</h2>
     <p class="f-section-subtitle">
-      Explore tailor-made workflows, tools, and direct actions designed for every member of the SuamiSihat ecosystem.
+      Pick what fits and we'll point you to the right place.
     </p>
   </div>
 
   <!-- Role Switcher Tabs -->
   <div class="f-roles-nav" role="tablist">
-    <button 
-      type="button" 
-      class="f-role-tab-btn {activeRole === 'engineer' ? 'active' : ''}" 
-      onclick={() => { activeRole = 'engineer'; }}
-      role="tab"
-      aria-selected={activeRole === 'engineer'}
-    >
-      <iconify-icon icon="fluent:code-24-regular"></iconify-icon>
-      <span>Engineers &amp; Developers</span>
-    </button>
-
-    <button 
-      type="button" 
-      class="f-role-tab-btn {activeRole === 'designer' ? 'active' : ''}" 
-      onclick={() => { activeRole = 'designer'; }}
-      role="tab"
-      aria-selected={activeRole === 'designer'}
-    >
-      <iconify-icon icon="fluent:color-24-regular"></iconify-icon>
-      <span>Brand &amp; Visual Designers</span>
-    </button>
-
     <button 
       type="button" 
       class="f-role-tab-btn {activeRole === 'marketer' ? 'active' : ''}" 
@@ -50,9 +28,8 @@
       aria-selected={activeRole === 'marketer'}
     >
       <iconify-icon icon="fluent:megaphone-24-regular"></iconify-icon>
-      <span>Marketing &amp; Content Creators</span>
+      <span>I'm making a poster or post</span>
     </button>
-
     <button 
       type="button" 
       class="f-role-tab-btn {activeRole === 'clinical' ? 'active' : ''}" 
@@ -61,7 +38,27 @@
       aria-selected={activeRole === 'clinical'}
     >
       <iconify-icon icon="fluent:doctor-24-regular"></iconify-icon>
-      <span>Clinical &amp; Executive Operations</span>
+      <span>I work in the clinic</span>
+    </button>
+    <button 
+      type="button" 
+      class="f-role-tab-btn {activeRole === 'designer' ? 'active' : ''}" 
+      onclick={() => { activeRole = 'designer'; }}
+      role="tab"
+      aria-selected={activeRole === 'designer'}
+    >
+      <iconify-icon icon="fluent:color-24-regular"></iconify-icon>
+      <span>I'm a designer</span>
+    </button>
+    <button 
+      type="button" 
+      class="f-role-tab-btn {activeRole === 'engineer' ? 'active' : ''}" 
+      onclick={() => { activeRole = 'engineer'; }}
+      role="tab"
+      aria-selected={activeRole === 'engineer'}
+    >
+      <iconify-icon icon="fluent:code-24-regular"></iconify-icon>
+      <span>I'm building an app or website</span>
     </button>
   </div>
 
@@ -72,120 +69,120 @@
       <div>
         {#if activeRole === 'engineer'}
           <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">
-            Engineered for Svelte 5, Flutter, Tailwind, &amp; W3C Tokens
+            Colours, fonts and buttons in code
           </h3>
           <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
-            Zero runtime bloat, pre-configured CSS tokens, and instant code generation across platforms.
+            Ready-made colour codes and buttons for websites and apps, so you don't have to guess.
           </p>
           <ul class="f-role-features-list">
             <li class="f-role-feature-item">
               <iconify-icon icon="fluent:checkmark-circle-24-filled" class="f-role-feature-icon"></iconify-icon>
-              <span><strong>Multi-Platform Tokens:</strong> W3C tokens compiled to CSS, SCSS, Tailwind, and Flutter Dart.</span>
+              <span><strong>Colour codes:</strong> ready for CSS, Tailwind and Flutter.</span>
             </li>
             <li class="f-role-feature-item">
               <iconify-icon icon="fluent:checkmark-circle-24-filled" class="f-role-feature-icon"></iconify-icon>
-              <span><strong>Living Workbench:</strong> Interactive button variant testing and live code generation.</span>
+              <span><strong>Try-out area:</strong> change a button and copy its code.</span>
             </li>
             <li class="f-role-feature-item">
               <iconify-icon icon="fluent:checkmark-circle-24-filled" class="f-role-feature-icon"></iconify-icon>
-              <span><strong>Production Build Verified:</strong> Full static generation support with Synology Web Station sync.</span>
+              <span><strong>Tested:</strong> every change is checked before it goes live.</span>
             </li>
           </ul>
           <a href="/components/" class="f-btn-hero-primary" style="display: inline-flex;">
-            <iconify-icon icon="fluent:puzzle-piece-24-regular"></iconify-icon> Open Component Library
+            <iconify-icon icon="fluent:puzzle-piece-24-regular"></iconify-icon> Open the components
           </a>
 
         {:else if activeRole === 'designer'}
           <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">
-            Figma Tokens, Master Vectors, &amp; 1X Exclusion Standards
+            Logos, colours and layout rules
           </h3>
           <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
-            Authoritative vector marks, clear space calculations, and 60:30:10 visual proportion rules.
+            The original logo files, how much space to leave around them, and how much of each colour to use.
           </p>
           <ul class="f-role-features-list">
             <li class="f-role-feature-item">
               <iconify-icon icon="fluent:checkmark-circle-24-filled" class="f-role-feature-icon"></iconify-icon>
-              <span><strong>Vector Master Kits:</strong> Complete SVG logo packages with dark/light background variants.</span>
+              <span><strong>Logo files:</strong> every logo, for light and dark backgrounds.</span>
             </li>
             <li class="f-role-feature-item">
               <iconify-icon icon="fluent:checkmark-circle-24-filled" class="f-role-feature-icon"></iconify-icon>
-              <span><strong>Clear Space Rules:</strong> Visualized 1X exclusion boundaries to preserve brand sanctity.</span>
+              <span><strong>Clear space:</strong> how much empty space to keep around the logo.</span>
             </li>
             <li class="f-role-feature-item">
               <iconify-icon icon="fluent:checkmark-circle-24-filled" class="f-role-feature-icon"></iconify-icon>
-              <span><strong>PDF Guidelines:</strong> Downloadable booklets for Logo &amp; Concept and Interior Architecture.</span>
+              <span><strong>Brand guide PDFs:</strong> booklets to download, including logo and interior design.</span>
             </li>
           </ul>
           <a href="/brand-system/" class="f-btn-hero-primary" style="display: inline-flex;">
-            <iconify-icon icon="fluent:color-24-regular"></iconify-icon> Explore Brand System
+            <iconify-icon icon="fluent:color-24-regular"></iconify-icon> Open the brand page
           </a>
 
         {:else if activeRole === 'marketer'}
           <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">
-            Tone of Voice, SS CAM Desktop, &amp; Email Signatures
+            Posts, posters, videos and email
           </h3>
           <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
-            Keep every communication on-brand, clinically sound, and visually polished across all campaigns.
+            Everything you need to make content that looks and sounds like us.
           </p>
           <ul class="f-role-features-list">
             <li class="f-role-feature-item">
               <iconify-icon icon="fluent:checkmark-circle-24-filled" class="f-role-feature-icon"></iconify-icon>
-              <span><strong>SS CAM Workstation:</strong> Native Windows app for automated watermarking and color grading.</span>
+              <span><strong>SS CAM:</strong> Windows app that adds our watermark and colour style to photos and videos.</span>
             </li>
             <li class="f-role-feature-item">
               <iconify-icon icon="fluent:checkmark-circle-24-filled" class="f-role-feature-icon"></iconify-icon>
-              <span><strong>Mail Signature Generator:</strong> 1-click on-brand email signatures for your subsidiary.</span>
+              <span><strong>Email signature:</strong> make your official signature in a minute.</span>
             </li>
             <li class="f-role-feature-item">
               <iconify-icon icon="fluent:checkmark-circle-24-filled" class="f-role-feature-icon"></iconify-icon>
-              <span><strong>Brand Voice Guide:</strong> Empathetic, scientifically accurate copywriting principles.</span>
+              <span><strong>How we speak:</strong> respectful, accurate, never shaming.</span>
             </li>
           </ul>
           <a href="/tools/" class="f-btn-hero-primary" style="display: inline-flex;">
-            <iconify-icon icon="fluent:toolbox-24-regular"></iconify-icon> Access Staff Utilities
+            <iconify-icon icon="fluent:toolbox-24-regular"></iconify-icon> Open the tools
           </a>
 
         {:else}
           <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">
-            Subsidiary Hierarchy, Governance, &amp; Staff Onboarding
+            Clinic materials and your first week
           </h3>
           <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin: 0;">
-            Clear structural governance uniting SuamiSihat Holding and the 4 operating subsidiaries.
+            The SS Clinic guide, how our companies fit together, and a checklist for new staff.
           </p>
           <ul class="f-role-features-list">
             <li class="f-role-feature-item">
               <iconify-icon icon="fluent:checkmark-circle-24-filled" class="f-role-feature-icon"></iconify-icon>
-              <span><strong>Corporate Architecture:</strong> Documented organisational group hierarchy (SSH, SSC, SSW, SSE, SST).</span>
+              <span><strong>Our companies:</strong> who does what across the group.</span>
             </li>
             <li class="f-role-feature-item">
               <iconify-icon icon="fluent:checkmark-circle-24-filled" class="f-role-feature-icon"></iconify-icon>
-              <span><strong>First-Week Onboarding:</strong> Interactive checklist and brand orientation for new team members.</span>
+              <span><strong>First week:</strong> a checklist to get you started.</span>
             </li>
             <li class="f-role-feature-item">
               <iconify-icon icon="fluent:checkmark-circle-24-filled" class="f-role-feature-icon"></iconify-icon>
-              <span><strong>Patient Confidentiality:</strong> Interface standards that prioritize patient privacy and medical dignity.</span>
+              <span><strong>Patient privacy:</strong> rules that protect patients' privacy and dignity.</span>
             </li>
           </ul>
           <a href="/onboarding/" class="f-btn-hero-primary" style="display: inline-flex;">
-            <iconify-icon icon="fluent:handshake-24-regular"></iconify-icon> View Onboarding Guide
+            <iconify-icon icon="fluent:handshake-24-regular"></iconify-icon> Open the onboarding guide
           </a>
         {/if}
       </div>
 
       <div class="f-persona-shortcut-card">
-        <div style="font-size: 0.75rem; font-weight: 700; color: var(--color-brand-primary); text-transform: uppercase; margin-bottom: 0.5rem;">Quick Launch Shortcut</div>
+        <div style="font-size: 0.75rem; font-weight: 700; color: var(--color-brand-primary); text-transform: uppercase; margin-bottom: 0.5rem;">Quickest way in</div>
         <div style="font-size: 1.1rem; font-weight: 700; color: var(--text-strong); margin-bottom: 0.5rem;">
-          {activeRole === 'engineer' ? 'Component Sandbox' : activeRole === 'designer' ? 'Brand System Kit' : activeRole === 'marketer' ? 'SS CAM Desktop' : 'Staff Onboarding'}
+          {activeRole === 'engineer' ? 'Try a button' : activeRole === 'designer' ? 'Logo and colour kit' : activeRole === 'marketer' ? 'Email signature' : 'SS Clinic guide'}
         </div>
         <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; margin: 0 0 1rem;">
-          {activeRole === 'engineer' ? 'Interactive playground with code snippets for web, Flutter, and Tailwind.' : activeRole === 'designer' ? 'Master SVGs, color specifications, and typography hierarchy.' : activeRole === 'marketer' ? 'Download the official Windows workstation for creative assets.' : 'Interactive day-by-day checklist to get up to speed in your first week.'}
+          {activeRole === 'engineer' ? 'Change a button and copy its code.' : activeRole === 'designer' ? 'Logo files, colours and fonts.' : activeRole === 'marketer' ? 'Make your official email signature in a minute.' : 'Logos, colours, the brand promise and rules for SS Clinic.'}
         </p>
         <a 
-          href={activeRole === 'engineer' ? '/components/' : activeRole === 'designer' ? '/brand-system/' : activeRole === 'marketer' ? '/tools/' : '/onboarding/'}
+          href={activeRole === 'engineer' ? '/components/' : activeRole === 'designer' ? '/brand-system/' : activeRole === 'marketer' ? '/signature/' : '/products/ssclinic/'}
           class="f-btn-hero-primary" 
           style="width: 100%; justify-content: center; text-decoration: none;"
         >
-          Launch Now &rarr;
+          Open &rarr;
         </a>
       </div>
     </div>

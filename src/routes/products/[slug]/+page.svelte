@@ -7,9 +7,9 @@
 
   /** 60:30:10 roles in display order */
   const roles = $derived([
-    { key: 'foundation', label: 'Foundation', ...p.colorScheme.foundation },
-    { key: 'structure', label: 'Structure', ...p.colorScheme.structure },
-    { key: 'accent', label: 'Accent', ...p.colorScheme.accent }
+    { key: 'foundation', label: 'main colour', ...p.colorScheme.foundation },
+    { key: 'structure', label: 'supporting colours', ...p.colorScheme.structure },
+    { key: 'accent', label: 'accent colours', ...p.colorScheme.accent }
   ]);
 
   let copied = $state('');
@@ -96,7 +96,7 @@
 <main class="pb-main" id="main-content">
   <!-- 1. Definition -->
   <section id="definition" class="pb-section" aria-labelledby="h-definition">
-    <h2 id="h-definition"><span class="pb-num">1</span> Product definition</h2>
+    <h2 id="h-definition"><span class="pb-num">1</span> Overview</h2>
     <p class="pb-lead">{p.definition.summary}</p>
 
     <dl class="pb-facts">
@@ -125,7 +125,7 @@
 
   <!-- 2. Images -->
   <section id="images" class="pb-section" aria-labelledby="h-images">
-    <h2 id="h-images"><span class="pb-num">2</span> Product images</h2>
+    <h2 id="h-images"><span class="pb-num">2</span> Images</h2>
     <ul class="pb-gallery">
       {#each p.images as img, i}
         <li>
@@ -193,7 +193,7 @@
 
   <!-- 4. Colour scheme -->
   <section id="colours" class="pb-section" aria-labelledby="h-colours">
-    <h2 id="h-colours"><span class="pb-num">4</span> Colour scheme and 60:30:10</h2>
+    <h2 id="h-colours"><span class="pb-num">4</span> Brand colours, and how much of each to use</h2>
     <div class="pb-ratio-bar" role="img" aria-label="Colour allocation: 60% {roles[0].colors[0].name}, 30% {roles[1].colors[0].name}, 10% {roles[2].colors[0].name}">
       {#each roles as r}
         <div style="flex:{r.share}; background:{r.colors[0].hex};">
@@ -232,12 +232,12 @@
       {/each}
     </div>
 
-    <h3>Approved text pairings</h3>
+    <h3>Text colours that are easy to read</h3>
     <div class="pb-table-wrap">
       <table class="pb-table">
         <caption class="visually-hidden">Text and background pairings with WCAG contrast ratio</caption>
         <thead>
-          <tr><th scope="col">Sample</th><th scope="col">Text / background</th><th scope="col">Contrast</th><th scope="col">Use</th></tr>
+          <tr><th scope="col">Sample</th><th scope="col">Text / background</th><th scope="col">Easy to read?</th><th scope="col">Use</th></tr>
         </thead>
         <tbody>
           {#each p.colorScheme.pairings as pair}
@@ -245,7 +245,7 @@
             <tr>
               <td><span class="pb-sample" style="color:{pair.text}; background:{pair.background};">Aa</span></td>
               <td><code>{pair.text}</code> on <code>{pair.background}</code></td>
-              <td><span class="pb-tag">{r.value}:1 {pair.largeTextOnly ? 'AA large text' : r.level}</span></td>
+              <td><span class="pb-tag">{pair.largeTextOnly ? 'Large text only' : 'Yes'} · {r.value}:1</span></td>
               <td>{pair.use}</td>
             </tr>
           {/each}
@@ -284,7 +284,7 @@
 
   <!-- 6. Guideline -->
   <section id="guideline" class="pb-section" aria-labelledby="h-guideline">
-    <h2 id="h-guideline"><span class="pb-num">6</span> Brand guideline</h2>
+    <h2 id="h-guideline"><span class="pb-num">6</span> Logo and design rules</h2>
     <ul class="pb-logos">
       {#each p.guideline.logos as logo}
         <li class="pb-card">
@@ -319,7 +319,7 @@
 
   <!-- 7. Downloads -->
   <section id="downloads" class="pb-section" aria-labelledby="h-downloads">
-    <h2 id="h-downloads"><span class="pb-num">7</span> Assets to download</h2>
+    <h2 id="h-downloads"><span class="pb-num">7</span> Downloads</h2>
     <ul class="pb-downloads">
       {#each [{ label: `${p.name} brand guideline (all seven sections)`, file: `/brand-guidelines/pdf/${p.slug}-brand-guideline-v1.0.pdf`, format: 'PDF' }, ...p.downloads] as f}
         <li>

@@ -86,10 +86,10 @@
 <div class="tools-hero" style="background:var(--gradient-brand-diagonal, linear-gradient(135deg, #022057 0%, #043388 100%)); padding: 4rem 1.5rem 3.5rem; text-align: center; position: relative; overflow: hidden;">
   <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 50% 60% at 80% 30%, rgba(109,198,236,0.2) 0%, transparent 70%); pointer-events: none;"></div>
   <div style="position: relative; z-index: 2; max-width: 680px; margin: 0 auto;">
-    <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin: 0 0 0.5rem;">Staff Tools &amp; Software Hub</p>
-    <h1 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: #FFFFFF; letter-spacing: -0.02em; margin: 0 0 0.75rem;">SS CAM &amp; Creative Tools</h1>
+    <p style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin: 0 0 0.5rem;">Tools</p>
+    <h1 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: #FFFFFF; letter-spacing: -0.02em; margin: 0 0 0.75rem;">Tools for everyday work</h1>
     <p style="font-size: 1.05rem; color: rgba(255,255,255,0.85); max-width: 560px; margin: 0 auto; line-height: 1.6;">
-      Official download hub for SuamiSihat® creative utilities, desktop software, design checkers, and daily workflow accelerators.
+      Apps and pages that save you time: SS CAM for photos and videos, your email signature, and colour and icon checkers.
     </p>
   </div>
 </div>
@@ -112,9 +112,9 @@
 
   <!-- SECTION 1: Featured SS CAM Desktop App -->
   <div style="margin-bottom: 4rem;">
-    <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">Featured Desktop Software</div>
-    <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--color-neutral-fg-1); margin-bottom: 6px;">SSCAM Windows Application</h2>
-    <p style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">SuamiSihat® Creative Assets Management — purpose-built Windows desktop workstation.</p>
+    <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">Windows app</div>
+    <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--color-neutral-fg-1); margin-bottom: 6px;">SSCAM for Windows</h2>
+    <p style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">Adds our watermark and colour style to photos and videos, many at once.</p>
 
     <!-- Card -->
     <div class="tool-card" style="background: var(--color-neutral-bg-2, #FFFFFF); border: 1px solid var(--color-neutral-stroke-1, rgba(0,0,0,0.08)); border-radius: var(--f-radius-xl, 16px); padding: 2rem; box-shadow: var(--f-shadow-4, 0 4px 16px rgba(0,0,0,0.06));">
@@ -134,7 +134,7 @@
       </div>
 
       <p style="font-size: 0.925rem; line-height: 1.7; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">
-        <strong>SSCAM (SuamiSihat® Creative Assets Management)</strong> is the official desktop workstation for media designers, content creators, and clinic staff. It streamlines brand watermarking, photo/video capture grading, color preset pipelines, and one-click cloud/SSNAS synchronization.
+        <strong>SSCAM (SuamiSihat® Creative Assets Management)</strong> is our Windows app for anyone who edits photos or videos. It adds the right watermark, applies our colour style, blurs patients' faces for privacy and saves straight to the shared drive.
       </p>
 
       <!-- Mockup & Screenshots Grid -->
@@ -174,22 +174,22 @@
       <!-- Feature Checklist -->
       <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.5rem;">
         <li style="font-size: 0.85rem; color: var(--color-neutral-fg-2); display: flex; align-items: center; gap: 8px;">
-          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> Native WPF .NET 8 desktop engine
+          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> Runs on Windows
         </li>
         <li style="font-size: 0.85rem; color: var(--color-neutral-fg-2); display: flex; align-items: center; gap: 8px;">
-          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> On-brand colour grading presets (LUTs)
+          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> Our colour style in one click
         </li>
         <li style="font-size: 0.85rem; color: var(--color-neutral-fg-2); display: flex; align-items: center; gap: 8px;">
-          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> Auto-watermark with approved exclusion zones
+          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> Adds the watermark in the right place
         </li>
         <li style="font-size: 0.85rem; color: var(--color-neutral-fg-2); display: flex; align-items: center; gap: 8px;">
-          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> WebP, AVIF &amp; MP4 H.265 accelerated export
+          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> Saves small files for web and social
         </li>
         <li style="font-size: 0.85rem; color: var(--color-neutral-fg-2); display: flex; align-items: center; gap: 8px;">
-          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> Patient privacy face-blurring automation
+          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> Blurs faces to protect patients' privacy
         </li>
         <li style="font-size: 0.85rem; color: var(--color-neutral-fg-2); display: flex; align-items: center; gap: 8px;">
-          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> One-click sync to SSNAS shared drives
+          <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color: var(--color-success-fg);"></iconify-icon> Saves to the shared drive in one click
         </li>
       </ul>
 
@@ -210,9 +210,9 @@
 
   <!-- SECTION 2: Other Staff Utilities Grid -->
   <div style="margin-bottom: 4rem;">
-    <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">Staff Ecosystem</div>
-    <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--color-neutral-fg-1); margin-bottom: 6px;">Other Staff Utilities</h2>
-    <p style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">Curated web applications and shared services for daily operations.</p>
+    <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">More tools</div>
+    <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--color-neutral-fg-1); margin-bottom: 6px;">Other tools</h2>
+    <p style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">Web pages and shared services you'll use often.</p>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
       <!-- Mail Signature -->
@@ -223,11 +223,11 @@
           </div>
           <div>
             <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--color-neutral-fg-1); margin: 0;">Mail Signature Generator</h4>
-            <span style="font-size: 0.75rem; color: var(--color-neutral-fg-3);">Web &bull; Client-side</span>
+            <span style="font-size: 0.75rem; color: var(--color-neutral-fg-3);">Works in your browser</span>
           </div>
         </div>
         <p style="font-size: 0.85rem; color: var(--color-neutral-fg-2); line-height: 1.6; flex: 1; margin-bottom: 1.25rem;">
-          Generate your verified, on-brand SuamiSihat® email signature with HTML clipboard copy.
+          Make your official email signature and paste it into Outlook, Gmail or Apple Mail.
         </p>
         <a href="/signature/" class="ss-btn ss-btn-secondary" style="text-decoration: none; justify-content: center; display: inline-flex; align-items: center; gap: 6px;">
           Open Generator <iconify-icon icon="fluent:arrow-right-16-regular"></iconify-icon>
@@ -242,11 +242,11 @@
           </div>
           <div>
             <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--color-neutral-fg-1); margin: 0;">Brand Asset Library</h4>
-            <span style="font-size: 0.75rem; color: var(--color-neutral-fg-3);">Official Cloud Repository</span>
+            <span style="font-size: 0.75rem; color: var(--color-neutral-fg-3);">Company website</span>
           </div>
         </div>
         <p style="font-size: 0.85rem; color: var(--color-neutral-fg-2); line-height: 1.6; flex: 1; margin-bottom: 1.25rem;">
-          Official master vector files, PNG transparency packages, and font installers.
+          Original logo files, transparent PNGs and font files.
         </p>
         <a href="https://suamisihat.com.my/brand-assets/" target="_blank" rel="noopener noreferrer" class="ss-btn ss-btn-secondary" style="text-decoration: none; justify-content: center; display: inline-flex; align-items: center; gap: 6px;">
           Visit Assets <iconify-icon icon="fluent:open-16-regular"></iconify-icon>
@@ -261,11 +261,11 @@
           </div>
           <div>
             <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--color-neutral-fg-1); margin: 0;">SSNAS Dashboard</h4>
-            <span style="font-size: 0.75rem; color: var(--color-neutral-fg-3);">Internal NAS Storage</span>
+            <span style="font-size: 0.75rem; color: var(--color-neutral-fg-3);">Shared company drive</span>
           </div>
         </div>
         <p style="font-size: 0.85rem; color: var(--color-neutral-fg-2); line-height: 1.6; flex: 1; margin-bottom: 1.25rem;">
-          Access internal network drives, clinical databases, media raw files, and server tools.
+          Raw photos and videos, shared folders and server tools.
         </p>
         <a href="https://suamisihat.myds.me" target="_blank" rel="noopener noreferrer" class="ss-btn ss-btn-secondary" style="text-decoration: none; justify-content: center; display: inline-flex; align-items: center; gap: 6px;">
           Launch SSNAS <iconify-icon icon="fluent:open-16-regular"></iconify-icon>
@@ -276,27 +276,27 @@
 
   <!-- SECTION 3: Design Utilities & Accessibility Checkers -->
   <div>
-    <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">Developer &amp; Designer Utilities</div>
-    <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--color-neutral-fg-1); margin-bottom: 6px;">Interactive Brand Checkers</h2>
-    <p style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">Real-time WCAG 2.2 and APCA contrast checks, and the Fluent icon library.</p>
+    <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">For designers</div>
+    <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--color-neutral-fg-1); margin-bottom: 6px;">Colour and icon checkers</h2>
+    <p style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">Check that text is easy to read on a colour, and find the right icon.</p>
 
     <!-- Contrast Calculator -->
     <div class="row g-4 mb-4">
       <div class="col-lg-6">
         <div class="cl-card p-4" style="background:var(--color-neutral-bg-2); border: 1px solid var(--color-neutral-stroke-1); border-radius: var(--f-radius-xl); height: 100%;">
-          <div style="font-size:0.75rem;font-weight:700;color:var(--color-brand-primary);text-transform:uppercase;margin-bottom:4px;">Accessibility Audit</div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--color-brand-primary);text-transform:uppercase;margin-bottom:4px;">Readability check</div>
           <h3 style="font-size:1.15rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:1rem;">Color Contrast Ratio Tool</h3>
           
           <div class="row g-3 mb-3">
             <div class="col-6">
-              <label for="fg-hex" style="font-size:0.75rem;font-weight:600;color:var(--color-neutral-fg-2);display:block;margin-bottom:4px;">Foreground Color</label>
+              <label for="fg-hex" style="font-size:0.75rem;font-weight:600;color:var(--color-neutral-fg-2);display:block;margin-bottom:4px;">Text colour</label>
               <div style="display:flex;gap:6px;align-items:center;">
                 <input type="color" aria-label="Choose foreground color" bind:value={hexInput} style="width:36px;height:36px;padding:0;border:none;border-radius:6px;cursor:pointer;" />
                 <input id="fg-hex" type="text" bind:value={hexInput} class="ss-input" style="font-family:monospace;font-size:0.85rem;" />
               </div>
             </div>
             <div class="col-6">
-              <label for="bg-hex" style="font-size:0.75rem;font-weight:600;color:var(--color-neutral-fg-2);display:block;margin-bottom:4px;">Background Color</label>
+              <label for="bg-hex" style="font-size:0.75rem;font-weight:600;color:var(--color-neutral-fg-2);display:block;margin-bottom:4px;">Background colour</label>
               <div style="display:flex;gap:6px;align-items:center;">
                 <input type="color" aria-label="Choose background color" bind:value={bgHex} style="width:36px;height:36px;padding:0;border:none;border-radius:6px;cursor:pointer;" />
                 <input id="bg-hex" type="text" bind:value={bgHex} class="ss-input" style="font-family:monospace;font-size:0.85rem;" />
@@ -342,7 +342,7 @@
       <!-- Icon Browser -->
       <div class="col-lg-6">
         <div class="cl-card p-4" style="background:var(--color-neutral-bg-2); border: 1px solid var(--color-neutral-stroke-1); border-radius: var(--f-radius-xl); height: 100%;">
-          <div style="font-size:0.75rem;font-weight:700;color:var(--color-brand-primary);text-transform:uppercase;margin-bottom:4px;">Iconography Library</div>
+          <div style="font-size:0.75rem;font-weight:700;color:var(--color-brand-primary);text-transform:uppercase;margin-bottom:4px;">Icons</div>
           <h3 style="font-size:1.15rem;font-weight:700;color:var(--color-neutral-fg-1);margin-bottom:1rem;">Icon Search &amp; Copy</h3>
 
           <div style="margin-bottom:1rem;">

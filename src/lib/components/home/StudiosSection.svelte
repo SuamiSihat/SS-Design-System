@@ -56,14 +56,14 @@
      ================================================================ -->
 <section id="studios" class="f-section-block" aria-label="Interactive Living Studios">
   <div class="f-section-overline">
-    <span class="f-overline-label">Living Studios &amp; Dynamic Tools</span>
+    <span class="f-overline-label">Brand colours and fonts</span>
     <span class="f-overline-rule" aria-hidden="true"></span>
   </div>
 
   <div class="f-section-head">
-    <h2 class="f-section-title">Visual Identity &amp; Living Studios</h2>
+    <h2 class="f-section-title">Our colours and fonts</h2>
     <p class="f-section-subtitle">
-      Explore real-time color morphing palettes, living UI components, and the 4-tier typography scale.
+      Click a colour to copy its code. Try a button. Type your own words to see our fonts.
     </p>
   </div>
 
@@ -74,12 +74,12 @@
       <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1.25rem; gap: 0.5rem;">
         <div>
-          <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 4px;">Dynamic Real-Time Color Morphing Studio</h3>
-          <span style="font-size: 0.8rem; color: var(--text-secondary);">Click any swatch to morph the ambient canvas atmosphere and calculate live contrast.</span>
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 4px;">Brand colours</h3>
+          <span style="font-size: 0.8rem; color: var(--text-secondary);">Click a colour to copy its code.</span>
         </div>
         <span class="f-live-contrast-tag">
           <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color:var(--color-success-fg);"></iconify-icon>
-          <span>WCAG Contrast: <strong>{activeContrastRatio}</strong></span>
+          <span>Readability: <strong>{activeContrastRatio}</strong></span>
         </span>
       </div>
 
@@ -90,7 +90,7 @@
             class="f-palette-btn {activeSwatchHex === '#043388' ? 'selected' : ''}" 
             style="--swatch-bg: #043388;" 
             onclick={() => selectSwatch('#043388')} 
-            title="Click to morph to SS Blue (#043388)"
+            title="Copy SS Blue (#043388)"
           >
             <span class="f-swatch-label">SS Blue</span>
             <span class="f-swatch-code">#043388</span>
@@ -101,7 +101,7 @@
             class="f-palette-btn {activeSwatchHex === '#022057' ? 'selected' : ''}" 
             style="--swatch-bg: #022057;" 
             onclick={() => selectSwatch('#022057')} 
-            title="Click to morph to Prussian Blue (#022057)"
+            title="Copy Prussian Blue (#022057)"
           >
             <span class="f-swatch-label">Prussian</span>
             <span class="f-swatch-code">#022057</span>
@@ -112,7 +112,7 @@
             class="f-palette-btn {activeSwatchHex === '#21A1F7' ? 'selected' : ''}" 
             style="--swatch-bg: #21A1F7; color: #022057;" 
             onclick={() => selectSwatch('#21A1F7')} 
-            title="Click to morph to Azure (#21A1F7)"
+            title="Copy Azure (#21A1F7)"
           >
             <span class="f-swatch-label">Azure</span>
             <span class="f-swatch-code">#21A1F7</span>
@@ -123,7 +123,7 @@
             class="f-palette-btn {activeSwatchHex === '#6DC6EC' ? 'selected' : ''}" 
             style="--swatch-bg: #6DC6EC; color: #19191A;" 
             onclick={() => selectSwatch('#6DC6EC')} 
-            title="Click to morph to Malibu (#6DC6EC)"
+            title="Copy Malibu (#6DC6EC)"
           >
             <span class="f-swatch-label" style="color:#19191A;">Malibu</span>
             <span class="f-swatch-code" style="color:#3A3A39;">#6DC6EC</span>
@@ -134,7 +134,7 @@
             class="f-palette-btn {activeSwatchHex === '#FCE53D' ? 'selected' : ''}" 
             style="--swatch-bg: #FCE53D; color: #19191A;" 
             onclick={() => selectSwatch('#FCE53D')} 
-            title="Click to morph to Banana Yellow (#FCE53D)"
+            title="Copy Banana Yellow (#FCE53D)"
           >
             <span class="f-swatch-label" style="color:#19191A;">Banana</span>
             <span class="f-swatch-code" style="color:#3A3A39;">#FCE53D</span>
@@ -145,7 +145,7 @@
             class="f-palette-btn {activeSwatchHex === '#FCFAF6' ? 'selected' : ''}" 
             style="--swatch-bg: #FCFAF6; color: #19191A; border: 1px solid rgba(0,0,0,0.12);" 
             onclick={() => selectSwatch('#FCFAF6')} 
-            title="Click to morph to Porcelain (#FCFAF6)"
+            title="Copy Porcelain (#FCFAF6)"
           >
             <span class="f-swatch-label" style="color:#19191A;">Porcelain</span>
             <span class="f-swatch-code" style="color:#3A3A39;">#FCFAF6</span>
@@ -167,7 +167,7 @@
     <!-- Bento Item 2: 8-Col Living Component Workbench -->
     <div class="f-bento-card f-bento-span-8">
       <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
-      <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 1rem;">Living Component Workbench</h3>
+      <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 1rem;">Try a button (for designers)</h3>
       
       <div class="f-stage-controls" style="margin-bottom: 1.25rem;">
         <div class="f-control-group">
@@ -241,26 +241,26 @@
     <div class="f-bento-card f-bento-span-4" style="justify-content: space-between;">
       <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
       <div>
-        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">Core Documentation</h3>
+        <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 0.5rem;">Brand guides</h3>
         <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin: 0 0 1.25rem;">
-          Direct links to authoritative guidelines, PDF manuals, and product registries.
+          Where to find the official rules and files.
         </p>
         <div style="display: flex; flex-direction: column; gap: 0.75rem;">
           <a href="/brand-system/" class="f-quick-link-item">
             <div style="display: flex; align-items: center; justify-content: space-between;">
-              <span style="font-weight: 700; font-size: 0.9rem; color: var(--text-strong);">Brand System &amp; Tokens</span>
+              <span style="font-weight: 700; font-size: 0.9rem; color: var(--text-strong);">SuamiSihat® brand page</span>
               <iconify-icon icon="fluent:arrow-right-16-regular"></iconify-icon>
             </div>
           </a>
           <a href="/brand-guidelines/" class="f-quick-link-item">
             <div style="display: flex; align-items: center; justify-content: space-between;">
-              <span style="font-weight: 700; font-size: 0.9rem; color: var(--text-strong);">Brand PDF Manuals</span>
+              <span style="font-weight: 700; font-size: 0.9rem; color: var(--text-strong);">Brand guide PDFs</span>
               <iconify-icon icon="fluent:arrow-right-16-regular"></iconify-icon>
             </div>
           </a>
           <a href="/products/" class="f-quick-link-item">
             <div style="display: flex; align-items: center; justify-content: space-between;">
-              <span style="font-weight: 700; font-size: 0.9rem; color: var(--text-strong);">Product Catalogue</span>
+              <span style="font-weight: 700; font-size: 0.9rem; color: var(--text-strong);">Product brands</span>
               <iconify-icon icon="fluent:arrow-right-16-regular"></iconify-icon>
             </div>
           </a>
@@ -268,7 +268,7 @@
       </div>
       <div style="margin-top: 1.5rem;">
         <a href="/components/" class="f-btn-hero-primary" id="card-components" style="width: 100%; justify-content: center;">
-          <iconify-icon icon="fluent:puzzle-piece-24-regular"></iconify-icon> All 24+ Components
+          <iconify-icon icon="fluent:puzzle-piece-24-regular"></iconify-icon> All components (for designers)
         </a>
       </div>
     </div>
@@ -278,8 +278,8 @@
       <div class="f-card-shimmer-highlight" aria-hidden="true"></div>
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 1.25rem; gap: 1rem;">
         <div>
-          <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 4px;">4-Tier Typography Hierarchy Lab</h3>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">Type a test phrase to evaluate tracking, contrast, and font weights.</p>
+          <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-strong); margin: 0 0 4px;">Try our fonts</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;">Type your own words to see them in our four text sizes.</p>
         </div>
         <div class="f-type-input-bar">
           <input id="customTypeInput" type="text" bind:value={customTypePhrase} class="f-type-input" placeholder="Type a custom phrase..." />
