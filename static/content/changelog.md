@@ -2,6 +2,12 @@
 
 > **SuamiSihat™ Design System** is the **master project, master documentation, and master guideline** for the entire SS ecosystem — web, Expo/React Native mobile apps, and all internal tools. This changelog is the authoritative record of every change. All platforms derive from this system.
 
+## Unreleased (Phase 2 in progress)
+
+- Display typeface decided: Poppins. Replaced Outfit in the brand-system page, email signatures, markdown CSS and docs.
+- SS Clinic playbook split: `clinic-positioning.md` is brand-level only; competitor names, ad volumes, tracking IDs, doctor names, regional playbooks, swipe files, video playbook and the review gate moved to the staff-only `docs/staff/clinic-playbook-staff.md`.
+- SS Clinic brand guideline draft in `docs/drafts/ss-clinic/`.
+
 ## v3.6.1 — October 2026
 
 ### Phase 1 clean-up (13 Oct 2026)

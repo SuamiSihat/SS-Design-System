@@ -522,7 +522,7 @@ class SSColors {
               <li style="display:flex; align-items:center; gap: 8px;"><iconify-icon icon="fluent:checkmark-circle-16-filled" style="color:var(--color-brand-primary);"></iconify-icon> Brand personality &amp; masculine clinical dignity</li>
               <li style="display:flex; align-items:center; gap: 8px;"><iconify-icon icon="fluent:checkmark-circle-16-filled" style="color:var(--color-brand-primary);"></iconify-icon> Official logo assets &amp; brightness-aware rules</li>
               <li style="display:flex; align-items:center; gap: 8px;"><iconify-icon icon="fluent:checkmark-circle-16-filled" style="color:var(--color-brand-primary);"></iconify-icon> Core palette (Prussian Blue, SS Blue, Azure, Banana CTA)</li>
-              <li style="display:flex; align-items:center; gap: 8px;"><iconify-icon icon="fluent:checkmark-circle-16-filled" style="color:var(--color-brand-primary);"></iconify-icon> Outfit &amp; Inter typography with 4-tier contrast hierarchy</li>
+              <li style="display:flex; align-items:center; gap: 8px;"><iconify-icon icon="fluent:checkmark-circle-16-filled" style="color:var(--color-brand-primary);"></iconify-icon> Poppins &amp; Inter typography with 4-tier contrast hierarchy</li>
               <li style="display:flex; align-items:center; gap: 8px;"><iconify-icon icon="fluent:checkmark-circle-16-filled" style="color:var(--color-brand-primary);"></iconify-icon> High-contrast studio packaging &amp; dark acrylic packshots</li>
             </ul>
           </div>
@@ -591,7 +591,7 @@ class SSColors {
               <tr style="border-bottom:1px solid var(--color-neutral-stroke-1);">
                 <td style="padding:0.75rem 1.25rem;font-weight:600;">Typography &amp; Contrast Hierarchy</td>
                 <td style="padding:0.75rem 1.25rem;"><span class="ss-badge ss-badge-brand" style="font-size:0.7rem;">SuamiSihat&trade;</span></td>
-                <td style="padding:0.75rem 1.25rem;color:var(--color-neutral-fg-2);">Outfit (Display) + Inter (Body) with 4-tier text tokens</td>
+                <td style="padding:0.75rem 1.25rem;color:var(--color-neutral-fg-2);">Poppins (Display) + Inter (Body) with 4-tier text tokens</td>
               </tr>
               <tr style="border-bottom:1px solid var(--color-neutral-stroke-1);">
                 <td style="padding:0.75rem 1.25rem;font-weight:600;">Component Anatomy &amp; Slots</td>

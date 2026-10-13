@@ -14,7 +14,7 @@ Status: draft, 13 Oct 2026. Nothing here is served or built. Files:
 | 3 Positioning | Core directive, promise, tagline ladder levels 1, 2 and 4. Level 3 held back: several lines imply performance outcomes. Whole section waits on regulatory review (decision 10). |
 | 4 Colour | Placeholder using the clinic file palette. Blocked on decision 8. |
 | 5 Pattern | TBC. No approved pattern. |
-| 6 Guideline | Do/don't, grid, photography drafted. Typeface TBC (decision 1). Clear space and minimum size TBC. |
+| 6 Guideline | Do/don't, grid, photography drafted. Typeface set to Poppins. Clear space and minimum size TBC. |
 | 7 Downloads | Logo ZIP exists. Guideline PDF TBC. |
 
 Validator result on the draft (`validateProduct`): fails only on the pattern (no file, no usage rules) and the not-yet-existing PDF. So publishing needs either an approved pattern or a schema change that allows a TBC pattern.
@@ -22,28 +22,18 @@ Validator result on the draft (`validateProduct`): fails only on the pattern (no
 ## Findings that need a decision
 
 1. **Colour sources disagree.** The clinic file says Deep Navy `#0F4C75`. The playbook says Prussian `#022057` as the 60% base, with `#0F4C75` as an alternate. Warm Gold `#F4A261` on `#0F4C75` is 4.41:1, which fails AA for body text (fine for large text and shapes). On `#022057` it is 7.56:1. Decision 8 should settle one set.
-2. **Typeface conflict.** The playbook names Outfit as display font; decision 1 recommends Poppins, which is what the site already loads.
+2. **Typeface: resolved.** Decision 1 is Poppins (13 Oct 2026). The playbook, brand-system page, signatures and markdown CSS now say Poppins.
 3. **Tagline level 3** (treatment-specific lines) reads as performance claims. Hold for regulatory.
 
-## Exposure audit: `static/content/clinic-positioning.md` is public
+## Playbook split: applied (decision 9, 13 Oct 2026)
 
-The Docs reader serves this whole file at `/doc/?doc=clinic-positioning` and it is listed in the doc index and search. Content that decision 9 says must be staff-only is currently visible:
+`static/content/clinic-positioning.md` is now brand-level only: brand summary, tagline table (levels 1, 2 and 4), core verbal assets, the designer's field guide (colour, type, grid, photography, with doctor names removed) and the voice matrix.
 
-| What | Where (line) |
-| --- | --- |
-| Competitor table: 8 named competitors, ad volumes, GTM and Google Ads tracking IDs, including SS Clinic's own ID | 23 to 40 |
-| Positioning map naming competitors | 44 to 66 |
-| Doctor names (Dr Amir, Dr Rak, Dr Zakwan, Hafizzul) in photography, regional playbooks, scripts and Brand Chorus | 253, 311 to 355, 367, 413, 440 to 480 |
-| Regional playbooks, swipe files, video playbook, 100-point review gate | 307 to 548, 548 to 622 |
+Everything else moved to `docs/staff/clinic-playbook-staff.md`, which is outside `static/`, so it is not built, served, indexed or put in a PDF: competitor table with ad volumes and tracking IDs, positioning map, market moats, tagline level 3 and the empathy and outro hooks, regulatory guardrails, regional playbooks, swipe files, brand chorus, video playbook and the 100-point review gate.
 
-This is already live in v3.6.0 (and v3.6.1). The site sits behind the server login, so exposure is to staff and partners with that login, not the open web. Still, the plan's rule is that none of this reaches an open page or PDF.
+Open: how staff reach the staff-only file (repo access only today). A gated route or separate share is a follow-up.
 
-Proposed split, to apply once decision 9 is confirmed:
-
-- Public `clinic-positioning.md`: executive summary without the table, tagline ladder (after review), designer's field guide with doctor names removed.
-- Staff-only `clinic-playbook-staff.md`, kept outside `static/` (for example under `docs/staff/`) and not in the doc index or search index: competitor table, positioning map, regional playbooks, swipe files, video playbook, review gate.
-
-I have not moved anything yet because decision 9 is open.
+The colour hex values in the public field guide (`#022057`, `#0F4C75`, `#F4A261`) still await decision 8.
 
 ## Not drafted, and why
 
