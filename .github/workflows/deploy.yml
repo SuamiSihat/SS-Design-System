@@ -83,8 +83,8 @@ jobs:
       - name: Verify live site
         run: |
           code=$(curl -s -o /dev/null -w '%{http_code}' https://assets.suamisihat.myds.me/)
-          echo "Live site returned HTTP $code"
-          [ "$code" = "200" ]
+          echo "Live site returned HTTP $code (401 means the staff login is on)"
+          [ "$code" = "200" ] || [ "$code" = "401" ]
           git_code=$(curl -s -o /dev/null -w '%{http_code}' https://assets.suamisihat.myds.me/.git/config)
           echo ".git/config returned HTTP $git_code"
           [ "$git_code" != "200" ]

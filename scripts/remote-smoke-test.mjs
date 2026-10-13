@@ -2,7 +2,7 @@
  * SuamiSihat Design System — live site smoke test
  * Tests https://assets.suamisihat.myds.me/ (override with SS_SITE_URL).
  *
- * The site is behind HTTP Basic Auth once the NAS password file exists.
+ * The site asks for a staff login (HTTP Basic Auth) once the NAS password file exists.
  * Provide credentials with SS_SITE_USER and SS_SITE_PASSWORD.
  *
  * Usage: SS_SITE_USER=... SS_SITE_PASSWORD=... node scripts/remote-smoke-test.mjs
@@ -100,7 +100,7 @@ async function run() {
   }
   try {
     const res = await fetch(`${BASE_URL}/`, { redirect: 'manual' });
-    assert(res.status === 200, `Home page loads without a login (HTTP ${res.status})`);
+    assert(res.status === 200 || res.status === 401, `Home page answers (HTTP ${res.status}; 401 means the staff login is on)`);
     // These come from static/.htaccess; missing means the server is not reading it (e.g. nginx back-end).
     assert((res.headers.get('content-security-policy') || '').includes("frame-ancestors 'none'"), 'Content-Security-Policy header sent');
     assert(res.headers.get('x-frame-options') === 'DENY', 'X-Frame-Options: DENY header sent');

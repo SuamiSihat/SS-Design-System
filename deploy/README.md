@@ -46,9 +46,35 @@ The first run of the new workflow removes the old git checkout from the web root
 
 ## Web server configuration
 
-- Apache: `static/.htaccess` is deployed with the site. It sets security headers, the Content Security Policy, blocks hidden and source files, and handles routing and caching. The site is public; there is no login.
+- Apache: `static/.htaccess` is deployed with the site. It sets security headers (including `X-Robots-Tag: noindex, nofollow, noarchive, nosnippet`, so search engines are told to ignore every file), the Content Security Policy, blocks hidden and source files, and handles routing and caching. It also turns on the staff login once the password file exists (see below).
 - In Web Station the `ss_assets` web service must use **Apache HTTP Server 2.4** as its HTTP back-end. With nginx, `.htaccess` is ignored: no security headers, redirects or cache rules, and `/.htaccess` itself is downloadable. The back-end cannot be changed on an existing web service; create a new one on the same document root and point the `assets.suamisihat.myds.me` portal at it. `npm run test:remote` fails if the headers are missing.
 - nginx: use `deploy/nginx.conf` as the server block reference.
+
+## Staff login
+
+The site asks for a user name and password (HTTP Basic Auth) as soon as the file `/volume1/web/ss_assets_auth/.htpasswd` exists on the NAS. Until then the site stays open. The file lives outside the web root, so deploys never touch it.
+
+This login is checked by Apache against its own password file. It is **not** the same as DSM accounts: Apache in Web Station cannot read DSM users. Staff get their own site logins, which you manage with the steps below. If you need real DSM accounts, check whether your DSM version offers HTTP authentication for the web portal (Web Station > Web Portal > edit > security) and use that instead of this file. Do not enable both.
+
+### Create the file and the first login
+
+Over SSH on the NAS:
+
+```bash
+sudo mkdir -p /volume1/web/ss_assets_auth
+printf 'staffname:%s\n' "$(openssl passwd -apr1)" | sudo tee /volume1/web/ss_assets_auth/.htpasswd
+sudo chmod 640 /volume1/web/ss_assets_auth/.htpasswd
+sudo chown root:http /volume1/web/ss_assets_auth/.htpasswd
+```
+
+`openssl` asks for the password twice. Use `sudo tee -a` instead of `sudo tee` to add more people to the same file. To remove someone, delete their line. Changes apply immediately, with no redeploy.
+
+### Check it
+
+- Open the site in a private window: it should ask for a login.
+- `curl -I https://assets.suamisihat.myds.me/` should return `401`, and the `X-Robots-Tag` header should still be there.
+- The deploy workflow accepts 200 (login not set up yet) or 401 (login on). `npm run test:remote` needs `SS_SITE_USER` and `SS_SITE_PASSWORD` to read the pages behind the login.
+- The login works only over HTTPS, because Basic Auth sends the password in a way that is readable on plain HTTP. Keep "Redirect HTTP to HTTPS" on in Web Station.
 
 ## Manual deployment
 
