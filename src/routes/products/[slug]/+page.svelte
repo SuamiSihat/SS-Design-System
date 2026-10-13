@@ -296,7 +296,7 @@
   <section id="downloads" class="pb-section" aria-labelledby="h-downloads">
     <h2 id="h-downloads"><span class="pb-num">7</span> Assets to download</h2>
     <ul class="pb-downloads">
-      {#each p.downloads as f}
+      {#each [{ label: `${p.name} brand guideline (all seven sections)`, file: `/brand-guidelines/pdf/${p.slug}-brand-guideline-v1.0.pdf`, format: 'PDF' }, ...p.downloads] as f}
         <li>
           <a href={f.file} download={fileName(f.file)} class="pb-download">
             <span class="pb-download-icon" aria-hidden="true">

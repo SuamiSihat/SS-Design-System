@@ -30,6 +30,16 @@
       ]
     },
     {
+      label: 'Group Brands',
+      items: [
+        { id: 'ss-clinic',           title: 'SS Clinic',                 path: '/content/sub-brands/ss-clinic.md',   icon: 'fluent:stethoscope-24-regular' },
+        { id: 'ss-health',           title: 'SS Health (parent company)', path: '/content/sub-brands/ss-health.md', icon: 'fluent:building-24-regular' },
+        { id: 'ss-wellness',         title: 'SS Wellness',               path: '/content/sub-brands/ss-wellness.md', icon: 'fluent:heart-pulse-24-regular' },
+        { id: 'ss-ecom',             title: 'SS Ecommerce',              path: '/content/sub-brands/ss-ecom.md',     icon: 'fluent:cart-24-regular' },
+        { id: 'ss-tech',             title: 'SS Technology',             path: '/content/sub-brands/ss-tech.md',     icon: 'fluent:code-24-regular' }
+      ]
+    },
+    {
       label: 'Design & Visual System',
       items: [
         { id: 'introduction',        title: 'Introduction & Standards', path: '/content/introduction.md',       icon: 'fluent:home-24-regular' },

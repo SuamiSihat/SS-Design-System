@@ -102,7 +102,7 @@
   </div>
 
   <!-- Horizontal Booklet Cards Grid -->
-  <div class="covers-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr)); gap: 2rem; padding: 1rem clamp(1.5rem, 4vw, 4rem) 3.5rem;">
+  <div class="covers-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(460px, 100%), 1fr)); gap: 2rem; padding: 1rem clamp(1.5rem, 4vw, 4rem) 3.5rem;">
     <!-- Book 1: Logo & Concept -->
     <div class="book-horizontal-card" 
          onclick={() => openBook('logo')} 

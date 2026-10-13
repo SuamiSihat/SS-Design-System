@@ -10,6 +10,7 @@
    * @property {string} [minHeight] - Minimum hero container height (e.g. '500px', '100vh')
    * @property {boolean} [showBadges] - Whether to render default trust badges
    * @property {string} [align] - Content alignment ('center' | 'left')
+   * @property {string} [titleTag] - Heading element for the title; use 'h2' when the hero is not the page heading
    * @property {import('svelte').Snippet} [children] - Optional custom hero content
    */
 
@@ -21,6 +22,7 @@
     minHeight = '520px',
     showBadges = false,
     align = 'center',
+    titleTag = 'h1',
     children
   } = $props();
 
@@ -292,9 +294,9 @@
     {/if}
 
     {#if title}
-      <h1 class="f-hero-title" style="font-size: clamp(2.2rem, 5vw, 3.75rem); font-weight: 800; line-height: 1.15; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 1.25rem;">
+      <svelte:element this={titleTag} class="f-hero-title" style="font-size: clamp(2.2rem, 5vw, 3.75rem); font-weight: 800; line-height: 1.15; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 1.25rem;">
         {@html title}
-      </h1>
+      </svelte:element>
     {/if}
 
     {#if subtitle}
