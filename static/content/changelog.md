@@ -2,11 +2,35 @@
 
 > **SuamiSihat™ Design System** is the **master project, master documentation, and master guideline** for the entire SS ecosystem — web, Expo/React Native mobile apps, and all internal tools. This changelog is the authoritative record of every change. All platforms derive from this system.
 
-## Unreleased (Phase 2 in progress)
+## v3.6.2 — October 2026
+
+### Brand decisions and SS Clinic
 
 - Display typeface decided: Poppins. Replaced Outfit in the brand-system page, email signatures, markdown CSS and docs.
 - SS Clinic playbook split: `clinic-positioning.md` is brand-level only; competitor names, ad volumes, tracking IDs, doctor names, regional playbooks, swipe files, video playbook and the review gate moved to the staff-only `docs/staff/clinic-playbook-staff.md`.
-- SS Clinic brand guideline draft in `docs/drafts/ss-clinic/`.
+- SS Clinic brand guideline draft in `docs/drafts/ss-clinic/`, with the palette and metadata draft settled (decisions 8 and 9).
+- SS Clinic catalogue card, linked from ANDROLAB RX and the MENSS Penile Pump.
+
+### Brand guideline PDFs
+
+- One seven-section guideline PDF per catalogue brand in `static/brand-guidelines/pdf/`, rendered from `metadata.json` by `npm run generate:pdfs`.
+- `npm run lint` now fails when a brand's `metadata.json` changes without its PDF being regenerated (hashes recorded in `static/brand-guidelines/pdf/manifest.json`).
+- ANDROLAB and MENSS PDFs regenerated with the SS Clinic wording.
+
+### Page architecture (`SPLIT-PAGES`)
+
+- Brand System, Components and Home pages split into section components under `src/lib/components/brand-system/`, `components-library/` and `home/`.
+- Home page: 3,372 lines down to 84. Each section keeps only the CSS it uses; the computed styles of every element are unchanged in both themes at desktop and phone widths.
+
+### Tools (`APCA`)
+
+- The contrast checker on `/tools/` shows APCA lightness contrast (Lc, APCA-W3 0.0.98G-4g) and its use level next to the WCAG ratio. `apcaContrast()` lives in `src/lib/utils/contrast.js` and is checked against the APCA reference values by `npm run test:contrast`.
+
+### Claims review
+
+- Catalogue: removed "patented", "clinical grade" and the testosterone claim from the Physta® card, and the health claims from the Biotropics card and the Bioactives section. Physta® wording now waits on the licensor.
+- Brand System: the clinic card example no longer advertises hormone therapy.
+- Audit notes for staff in `docs/claims-review/audit-2026-10-13.md`.
 
 ## v3.6.1 — October 2026
 

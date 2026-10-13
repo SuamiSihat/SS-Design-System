@@ -1,4 +1,6 @@
 <script>
+  import { apcaContrast, APCA_LEVELS } from '$lib/utils/contrast.js';
+
   let hexInput = $state('#043388');
   let bgHex = $state('#FFFFFF');
   let iconSearch = $state('');
@@ -72,6 +74,8 @@
   }
 
   let contrastRatio = $derived(calculateContrast(hexInput, bgHex));
+  let apcaLc = $derived(apcaContrast(hexInput, bgHex));
+  let apcaLevel = $derived(apcaLc === null ? null : APCA_LEVELS.find((l) => Math.abs(apcaLc) >= l.min));
 </script>
 
 <svelte:head>
@@ -274,7 +278,7 @@
   <div>
     <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">Developer &amp; Designer Utilities</div>
     <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--color-neutral-fg-1); margin-bottom: 6px;">Interactive Brand Checkers</h2>
-    <p style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">Real-time WCAG 2.1 contrast compliance evaluation and Fluent/Lucide icon repository.</p>
+    <p style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">Real-time WCAG 2.2 and APCA contrast checks, and the Fluent icon library.</p>
 
     <!-- Contrast Calculator -->
     <div class="row g-4 mb-4">
@@ -320,6 +324,18 @@
               {/if}
             </div>
           </div>
+
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:0.75rem;flex-wrap:wrap;padding:0.75rem 1rem;margin-top:0.5rem;background:var(--color-neutral-bg-1);border-radius:var(--f-radius-md);border:1px solid var(--color-neutral-stroke-1);">
+            <span style="font-size:0.85rem;color:var(--color-neutral-fg-2);font-weight:600;">APCA: <strong style="color:var(--color-neutral-fg-1);font-size:1.1rem;">{apcaLc === null ? '—' : `Lc ${apcaLc.toFixed(1)}`}</strong></span>
+            {#if apcaLevel}
+              <span class="ss-badge {Math.abs(apcaLc) >= 60 ? 'ss-badge-success' : Math.abs(apcaLc) >= 30 ? 'ss-badge-warning' : 'ss-badge-danger'}" style="font-size:0.75rem;">{apcaLevel.label}</span>
+            {:else}
+              <span class="ss-badge ss-badge-neutral" style="font-size:0.75rem;">Enter two valid hex colours</span>
+            {/if}
+          </div>
+          <p style="font-size:0.75rem;color:var(--color-neutral-fg-3);line-height:1.5;margin:0.5rem 0 0;">
+            APCA (APCA-W3 0.0.98G-4g) depends on which colour is the text; swapping the colours changes Lc. WCAG 2.2 AA stays the release standard; use APCA as a second opinion, especially in dark theme.
+          </p>
         </div>
       </div>
 

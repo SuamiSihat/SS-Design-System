@@ -13,17 +13,30 @@ What has shipped, what is next, and what still needs a decision.
 
 ---
 
-## Current status (v3.6.0, October 2026)
+## Current status (v3.6.2, October 2026)
 
 | Area | Status |
 | --- | --- |
-| Release | v3.6.0 |
+| Release | v3.6.2 |
 | Framework | SvelteKit 2, Svelte 5, static build |
 | Hosting | Synology NAS, https://assets.suamisihat.myds.me/, built site only |
 | Accessibility | axe WCAG 2.2 A/AA: 0 violations on all pages, light and dark |
 | Colour contrast | Token matrix and all product pairings pass |
 | Product pages | 9 brands on the seven-section standard |
 | Third-party CDNs | None |
+| Brand guideline PDFs | One per brand, checked against `metadata.json` by lint |
+
+---
+
+## Shipped in v3.6.2
+
+| ID | Item | Notes |
+| --- | --- | --- |
+| `TYPE-DECISION` | Display typeface: Poppins | Outfit references swept |
+| `SPLIT-PAGES` | Home, Brand System and Components pages split into section components | Home page styles verified unchanged |
+| `APCA` | APCA contrast readout in Tools | Tested against the APCA reference values |
+| `BRAND-PDF` | Per-brand guideline PDFs with a staleness check | `npm run generate:pdfs` |
+| `CLAIMS-REVIEW` (catalogue) | Health and "patented" claims removed from partner and bioactive cards | Licensor wording for Physta® still pending |
 
 ---
 
@@ -46,15 +59,12 @@ What has shipped, what is next, and what still needs a decision.
 
 | ID | Item | Priority |
 | --- | --- | --- |
-| `CLAIMS-REVIEW` | Regulatory review of the claims flagged on each product page (REJAL, Dr. MIT Ring, ANDROLAB RX, MENSS devices, catalogue entries such as Physta) | High |
+| `CLAIMS-REVIEW` | Regulatory review of the claims flagged on each product page (REJAL, Dr. MIT Ring, ANDROLAB RX, MENSS devices) and licensor-approved Physta® wording. Catalogue pass done in v3.6.2; see `docs/claims-review/audit-2026-10-13.md` | High |
 | `PHOTO` | Product photography for Mensculine, nuCaffe, Husband Clinic and Isteri Sihat (brand cards today) | High |
-| `TYPE-DECISION` | Display typeface decided: Poppins (13 Oct 2026). Sweep older docs and the email signature for remaining Outfit references | Done |
 | `DMR-PHOTO` | Dr. MIT Ring product photography (packaging artwork only today) | Medium |
-| `SPLIT-PAGES` | Split the 120 to 135 KB page files (home, brand system, components) into components | Medium |
 | `INLINE-STYLES` | Move inline styles to classes and tokens so contrast fixes live in one place | Medium |
 | `FOLDER-CASE` | Rename `static/products/<Brand>` folders to lower-case slugs | Low |
 | `I18N` | Bahasa Melayu and English switch for docs and product pages | Medium |
-| `APCA` | APCA contrast calculator in Tools | Low |
 
 ---
 

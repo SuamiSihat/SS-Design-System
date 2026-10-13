@@ -126,7 +126,7 @@
           logo: '/products/logo_nuCaffe.svg',
           href: '/products/nucaffe/',
           accent: 'linear-gradient(135deg, #1C1C1C, #DF2127)',
-          desc: 'Functional premium Arabica &amp; Robusta coffee infused with patented standardized <strong>Physta® Tongkat Ali</strong> bioactives. Available while stocks last: <strong>nuCaffe Black</strong> (Dark Roast Zero Sugar) and <strong>nuCaffe Latte</strong> (Smooth Creamy Roast).',
+          desc: 'Functional premium Arabica &amp; Robusta coffee with <strong>Physta®</strong> Tongkat Ali extract. Available while stocks last: <strong>nuCaffe Black</strong> (Dark Roast Zero Sugar) and <strong>nuCaffe Latte</strong> (Smooth Creamy Roast).',
           searchData: 'nucaffe coffee physta tongkat ali black latte fmcg superfood'
         },
         {
@@ -247,7 +247,7 @@
     {
       id: 'section-bioactives',
       title: 'Bioactives, Ingredients & Science Partners',
-      desc: 'Patented bioactive compounds, clinical research partners, and functional formulation marks',
+      desc: 'Ingredient suppliers and research partners whose marks appear on SuamiSihat products',
       icon: 'fluent:beaker-24-regular',
       iconClass: 'ps-icon-science',
       count: '2 assets',
@@ -265,16 +265,16 @@
           logoDownload: '/products/logo_biotropics.svg',
           href: null,
           accent: 'linear-gradient(135deg, #B86900, #04A54A)',
-          desc: 'Khazanah-backed biotechnology and natural herbal research company specializing in clinically standardized botanical extracts for evidence-based male vitality and wellness.',
+          desc: 'Malaysian biotechnology company that produces standardised botanical extracts, including Physta®.',
           searchData: 'biotropics malaysia science botanical partner clinical biotechnology khazanah'
         },
         {
           id: 'physta',
           name: 'Physta®',
           type: 'Bioactive Science',
-          badgeSuffix: '(Patented Tongkat Ali)',
+          badgeSuffix: '(Tongkat Ali extract)',
           category: ['supplements'],
-          tags: ['Patented Extract', 'Clinical Grade'],
+          tags: ['Ingredient', 'Licensed mark'],
           tagClasses: ['tag-wellness', 'tag-clinic'],
           entity: 'Active Compound',
           entityIcon: 'fluent:beaker-24-regular',
@@ -282,8 +282,8 @@
           logoDownload: '/products/logo_Physta.svg',
           href: null,
           accent: 'linear-gradient(135deg, #ED1C24, #231F20)',
-          desc: 'Premium patented water-soluble freeze-dried <em>Eurycoma longifolia</em> extract, standardized for Eurycomanone, protein, and glycosaponin bioactives to enhance natural testosterone synthesis.',
-          searchData: 'physta tongkat ali standardized extract bioactive patented clinical grade'
+          desc: 'Water-soluble <em>Eurycoma longifolia</em> (Tongkat Ali) extract from Biotropics Malaysia, used in nuCaffe®.',
+          searchData: 'physta tongkat ali eurycoma longifolia extract ingredient biotropics nucaffe'
         }
       ]
     }

@@ -8,7 +8,7 @@
  */
 
 import { readFileSync } from 'fs';
-import { contrastRatio } from '../src/lib/utils/contrast.js';
+import { contrastRatio, apcaContrast } from '../src/lib/utils/contrast.js';
 import { loadProducts } from './product-schema.mjs';
 
 const css = readFileSync(new URL('../static/assets/css/fluent.css', import.meta.url), 'utf8')
@@ -126,6 +126,24 @@ for (const p of loadProducts()) {
     if (!ok) failed++;
     console.log(`${ok ? 'PASS' : 'FAIL'} [${p.slug}] ${pair.text} on ${pair.background}: ${ratio.toFixed(2)} (min ${min}) ${pair.use ?? ''}`);
   }
+}
+
+// APCA implementation against the APCA-W3 0.0.98G-4g reference values
+for (const [text, bg, expected] of [
+  ['#000000', '#FFFFFF', 106.04],
+  ['#FFFFFF', '#000000', -107.88],
+  ['#888888', '#FFFFFF', 63.06],
+  ['#FFFFFF', '#888888', -68.54],
+  ['#000000', '#AAAAAA', 58.15],
+  ['#AAAAAA', '#000000', -56.24],
+  ['#112233', '#DDEEFF', 91.67],
+  ['#DDEEFF', '#112233', -93.07]
+]) {
+  total++;
+  const lc = apcaContrast(text, bg);
+  const ok = Math.abs(lc - expected) < 0.01;
+  if (!ok) failed++;
+  console.log(`${ok ? 'PASS' : 'FAIL'} [apca] ${text} on ${bg}: Lc ${lc.toFixed(2)} (expected ${expected})`);
 }
 
 console.log(`\n[contrast] ${total - failed}/${total} pairings pass.`);

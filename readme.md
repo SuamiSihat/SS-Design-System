@@ -6,7 +6,7 @@ The single source of truth for the SuamiSihat brand: logos, colour and type toke
 | --- | --- |
 | Live site | https://assets.suamisihat.myds.me/ (internal, login required) |
 | Repository | https://github.com/SuamiSihat/SS-Design-System |
-| Version | 3.6.0 (October 2026) |
+| Version | 3.6.2 (October 2026) |
 | Stack | SvelteKit 2, Svelte 5, static adapter |
 | Accessibility | WCAG 2.2 AA in light and dark theme, checked on every build |
 | Licence | Code: MIT ([LICENSE](LICENSE)). Brand assets: proprietary ([LICENSE-ASSETS](LICENSE-ASSETS)) |
@@ -23,7 +23,7 @@ The single source of truth for the SuamiSihat brand: logos, colour and type toke
 | Components | `/components/` | Live Fluent 2 component library (buttons, cards, alerts, tokens) |
 | Products | `/products/` | Product catalogue and one guideline page per brand |
 | Docs | `/doc/?doc=<name>` | Markdown documentation (voice, colour composition, positioning, changelog, roadmap) |
-| Tools, Signature, Onboarding | `/tools/`, `/signature/`, `/onboarding/` | Icon explorer, email signature generator, staff onboarding |
+| Tools, Signature, Onboarding | `/tools/`, `/signature/`, `/onboarding/` | WCAG and APCA contrast checker, icon explorer, email signature generator, staff onboarding |
 
 ---
 
@@ -93,6 +93,8 @@ Every product brand has a guideline page at `/products/<slug>/` with the same se
 
 The page is generated from `static/products/<Brand>/metadata.json` (schema 2). The build fails if a section is missing, a colour role is not 60/30/10, a declared text pairing is below WCAG AA, or a referenced file does not exist. See [Product page standard](static/content/product-page-standard.md).
 
+Each brand also has a guideline PDF in `static/brand-guidelines/pdf/`, rendered from the same `metadata.json` by `npm run generate:pdfs` (Python with `playwright`, `pypdf` and `reportlab`; set `CHROME_PATH` to use an installed Chrome). `manifest.json` records which metadata each PDF was built from, and `npm run lint` fails when a brand's metadata changes without its PDF being regenerated: run `npm run generate:pdfs -- --brand <slug>` and commit the PDF with the metadata change.
+
 | Brand | Slug | Status |
 | --- | --- | --- |
 | ANDROLAB | `androlab` | Active |
@@ -115,8 +117,9 @@ SS-Design-System/
     app.html                    HTML shell (self-hosted CSS only, no CDNs)
     lib/
       components/               Navbar, Footer, SSHero, CodeBox, ColorSwatch ...
+        home/, brand-system/, components-library/   Section components for the three large pages
       products/index.js         Loads product metadata for the catalogue and brand pages
-      utils/                    contrast.js (WCAG maths), markdown-icons.js ({{icon:}} shortcodes)
+      utils/                    contrast.js (WCAG and APCA maths), markdown-icons.js ({{icon:}} shortcodes)
       stores/                   theme store (light/dark mode)
       version.js                Version shown in the UI (read from package.json)
     routes/                     One folder per page; products/[slug] is the brand page template
@@ -130,9 +133,10 @@ SS-Design-System/
     .htaccess                   Apache config: security headers, CSP, access control, routing
   scripts/
     build-icons.mjs             Bundles the Fluent icons the site uses
-    lint-content.mjs            Emoji, mojibake, icon set, file names, product schema
+    lint-content.mjs            Emoji, mojibake, icon set, file names, product schema, stale brand PDFs
     product-schema.mjs          Product page standard (schema 2) validator
-    contrast-test.mjs           Token and product colour pairing matrix
+    make_brand_pdfs.py          Renders the per-brand guideline PDFs from metadata.json
+    contrast-test.mjs           Token and product colour pairing matrix, APCA reference values
     a11y-test.mjs               axe-core in Chromium on every page, light and dark
     smoke-test.mjs, dom-test.mjs Build output and page structure checks
     minify-css.mjs              Post-build CSS minification
@@ -158,8 +162,9 @@ npm run dev          # http://localhost:5173
 | Command | What it does |
 | --- | --- |
 | `npm run dev` | Bundles icons and starts the dev server |
-| `npm run lint` | Emoji, mojibake, icon set, file names, product schema |
+| `npm run lint` | Emoji, mojibake, icon set, file names, product schema, stale brand PDFs |
 | `npm run build` | Bundles icons, builds the static site into `build/`, minifies CSS |
+| `npm run generate:pdfs -- --brand rejal` | Regenerates one brand guideline PDF (omit `--brand` for all) |
 | `npm test` | Smoke, DOM, contrast matrix and accessibility tests (needs a build) |
 | `npm run test:a11y -- --route /products/rejal/` | Accessibility test for one page |
 | `npm run test:remote` | Checks the live site |
