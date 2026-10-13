@@ -14,7 +14,8 @@
     "test:dom": "node scripts/dom-test.mjs",
     "test:contrast": "node scripts/contrast-test.mjs",
     "test:a11y": "node scripts/a11y-test.mjs",
-    "test:remote": "node scripts/remote-smoke-test.mjs"
+    "test:remote": "node scripts/remote-smoke-test.mjs",
+    "generate:pdfs": "python scripts/make_brand_pdfs.py"
   },
   "devDependencies": {
     "@fontsource/inter": "^5.3.0",

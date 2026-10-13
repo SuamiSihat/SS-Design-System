@@ -43,3 +43,7 @@ node_modules/
 coverage/
 test-results/
 src/lib/icons/fluent-subset.json
+
+# Local Backups
+_backup-*/
+*.bundle
