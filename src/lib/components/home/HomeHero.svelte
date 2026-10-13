@@ -28,22 +28,6 @@
       Open the brand guides
     </a>
   </div>
-
-  <!-- Quick links to what staff ask for most -->
-  <nav class="f-hero-badges" aria-label="Quick links">
-    <a class="f-hero-badge-item" href="/products/ssclinic/">
-      <iconify-icon icon="fluent:stethoscope-24-regular" aria-hidden="true"></iconify-icon> SS Clinic guide
-    </a>
-    <a class="f-hero-badge-item" href="/brand-system/#colour">
-      <iconify-icon icon="fluent:color-24-regular" aria-hidden="true"></iconify-icon> Brand colours
-    </a>
-    <a class="f-hero-badge-item" href="/signature/">
-      <iconify-icon icon="fluent:mail-template-24-regular" aria-hidden="true"></iconify-icon> Email signature
-    </a>
-    <a class="f-hero-badge-item" href="/products/">
-      <iconify-icon icon="fluent:box-24-regular" aria-hidden="true"></iconify-icon> Product brands
-    </a>
-  </nav>
 </SSHero>
 
 <style>
@@ -161,35 +145,5 @@
     border-color: rgba(33, 161, 247, 0.7);
     color: var(--color-text-accent);
     transform: translateY(-2px);
-  }
-
-  .f-hero-badges {
-    display: flex;
-    gap: 0.75rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-top: 2rem;
-  }
-
-  .f-hero-badge-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    min-height: 36px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #FFFFFF;
-    text-decoration: none;
-    background: rgba(255, 255, 255, 0.08);
-    padding: 6px 14px;
-    border-radius: 9999px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    transition: background 0.2s ease, border-color 0.2s ease;
-  }
-
-  .f-hero-badge-item:hover {
-    background: rgba(255, 255, 255, 0.16);
-    border-color: rgba(109, 198, 236, 0.6);
   }
 </style>
