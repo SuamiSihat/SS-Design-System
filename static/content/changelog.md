@@ -11,6 +11,14 @@
 - SS Clinic: Clinical Navy is part of the 30% structure, as settled in decision 8 (the positioning table and the diagnostic quiz tokens still had it at 60%).
 - SuamiSihat Holding Sdn. Bhd. is the parent company and uses the SS Health logo; "SS Health" is no longer used as the master brand name on the catalogue.
 
+### SS Clinic guideline page
+
+- New page `/products/ssclinic/`: SS Clinic's logos, colours (Prussian Navy 60%, white and Clinical Navy 30%, Warm Clinic Gold and Azure 10%), brand promise, tagline ladder, tone of voice, rules and downloads, combined with a link to the full brand positioning. Brand guideline PDF included.
+- Items not yet approved are shown as "to be confirmed": pattern, clear space, minimum size, mark status and clinic photography.
+- Product page standard: a brand may mark its pattern as pending until one is approved; brand pages can show a brand promise and tagline ladder.
+- The catalogue card, the products sidebar, the Docs menu and search now open the guideline page.
+- All brand pages: logos made for dark backgrounds are shown on the brand's dark colour in the guideline section. White logos for Mensculine, nuCaffe, PERTABI, REJAL and SS Clinic were invisible on the light tiles.
+
 ## v3.6.2 — October 2026
 
 ### Brand decisions and SS Clinic

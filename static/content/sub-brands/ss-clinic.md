@@ -2,6 +2,8 @@
 
 **SuamiSihat Clinic Sdn. Bhd.**
 
+> The full SS Clinic guideline (logos, colours, brand promise, rules and downloads) is on the [SS Clinic guideline page](/products/ssclinic/).
+
 SuamiSihat Clinic Sdn. Bhd. delivers direct patient care, medical diagnostics, telehealth, and personalised treatment plans.
 
 ---
