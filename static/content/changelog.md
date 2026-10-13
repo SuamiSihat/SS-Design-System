@@ -4,6 +4,13 @@
 
 ## Unreleased
 
+### Docs (13 Oct 2026)
+
+- Diagrams in the documents showed empty boxes. Fixed, and the colour guide chart now draws.
+- The docs have a landing page with four groups: Brand and strategy, Guides for staff, For designers and developers, About this site. The sidebar uses the same groups with short titles and collapses on phones.
+- The five company pages are now one page, **Our companies**. Old links still work.
+- Each document ends with Previous and Next links. The "On this page" list shows main headings only, and the document ID block is folded into "Document details".
+
 ### Home page (13 Oct 2026)
 
 - The home page is now a front desk: eight task tiles (logo, colours, signature, SS CAM, guides, SS Clinic, products, first week), the two main brands (SuamiSihat® and SS Clinic) with the parent company note, five short rules, the product brands, and one band for designers and developers.

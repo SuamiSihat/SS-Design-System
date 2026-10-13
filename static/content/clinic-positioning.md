@@ -2,11 +2,15 @@
 
 > **Looking for the logo, colours or rules?** Start with the [SS Clinic guideline page](/products/ssclinic/). This document is the full positioning: taglines, tone of voice and the designer's field guide.
 
+<details class="doc-details">
+<summary>Document details</summary>
+
 **Document ID:** `SSC-STR-001`  
 **Entity:** SuamiSihat Clinic Sdn. Bhd. (SSC)  
 **Target Audience:** Creative Directors, UI/UX Designers, Motion Editors, Healthcare Copywriters  
 **Classification:** Brand-level standard. Competitor analysis, regional playbooks, swipe files and the review gate are staff-only.  
-**Living Web Reference:** `https://assets.suamisihat.myds.me/doc/?doc=clinic-positioning`  
+
+</details>
 
 ---
 

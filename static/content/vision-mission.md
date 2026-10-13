@@ -1,10 +1,14 @@
 ﻿# Vision & Mission — The Husband's Health Authority
 
+<details class="doc-details">
+<summary>Document details</summary>
+
 **Document ID:** `SS-DS-VM-001`  
 **Parent Strategy:** `SSC-STR-001` (SuamiSihat Clinic Master Strategy)  
-**Living Web Reference:** [https://assets.suamisihat.myds.me/doc/?doc=vision-mission](https://assets.suamisihat.myds.me/doc/?doc=vision-mission)  
 **Governing Standard:** SuamiSihat Design System & Brand Governance  
 **Strategic Baseline:** September 2026  
+
+</details>
 
 ---
 

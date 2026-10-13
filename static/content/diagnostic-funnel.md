@@ -1,10 +1,14 @@
 # Diagnostic Funnel — "Ujian Skor Kesihatan Suami"
 
-**Document ID:** `SSC-FNL-001`
-**Entity:** SuamiSihat Clinic Sdn. Bhd.
-**Confidentiality:** Internal Design System Reference
-**Governing Strategy:** [SSC-STR-001 — Clinic Brand Positioning](https://assets.suamisihat.myds.me/doc/?doc=clinic-positioning)
-**Living Web Reference:** `https://assets.suamisihat.myds.me/doc/?doc=diagnostic-funnel`
+<details class="doc-details">
+<summary>Document details</summary>
+
+**Document ID:** `SSC-FNL-001`  
+**Entity:** SuamiSihat Clinic Sdn. Bhd.  
+**Confidentiality:** Internal Design System Reference  
+**Governing Strategy:** [SSC-STR-001 — Clinic Brand Positioning](https://assets.suamisihat.myds.me/doc/?doc=clinic-positioning)  
+
+</details>
 
 ---
 
