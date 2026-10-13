@@ -1,25 +1,41 @@
-# Contribution and Governance Guide
+# Suggesting a change
 
-The SuamiSihat Design System is shared by designers, developers, marketers and clinical teams. This guide explains how to propose a change, where each kind of change lives, and the checks every change must pass.
+Designers, developers, marketers and clinical teams all share this hub. This page explains how to ask for a change, who approves it, and the rules every change must follow.
+
+The first two parts are for everyone. The rest, from "For people who edit the site", is for the people who change the files.
 
 ---
 
-## How to propose a change
+## How to ask for a change
 
-### Brand review (no repository access needed)
+You do not need any technical access. Email **branding@suamisihat.com** and tell us:
 
-Email **branding@suamisihat.com** with:
-
-- **Scope:** the page, component, document or brand affected.
-- **Reason:** the business, clinical or user need.
-- **Proposal:** a mock-up, screenshot or suggested wording.
+- **What:** the page, document, logo or brand you want changed.
+- **Why:** the business, clinical or customer need.
+- **Your idea:** a sketch, screenshot or suggested wording helps.
 
 The brand team replies within two working days.
 
-### Pull request (repository access)
+---
 
-1. Create a branch from `main`: `feat/...`, `fix/...` or `docs/...`.
-2. Make the change following the rules below.
+## Who approves what
+
+| What you want to change | How it is checked | Who approves |
+| --- | --- | --- |
+| Wording and documents | Read through | Editorial team |
+| A new button, card or other screen part | Design review and an accessibility check | Lead UI/UX designer |
+| A colour or text style | Colour balance and readability check | Brand director |
+| A logo or trademark file | Brand board approval | Brand governance board |
+| A product brand page | Product owner and brand director. The regulatory team checks any claims | Brand director |
+
+---
+
+## For people who edit the site
+
+### Making the change
+
+1. Create a branch from `main`, named `feat/...`, `fix/...` or `docs/...`.
+2. Make your change, following the rules below.
 3. Run the checks:
 
 ```bash
@@ -29,34 +45,20 @@ npm run build
 npm test
 ```
 
-4. Open a pull request using the template. CI runs the same checks. After merge, `main` deploys to https://assets.suamisihat.myds.me/ automatically.
+4. Open a pull request using the template. The same checks run automatically. After it is merged, the site updates at https://assets.suamisihat.myds.me/ by itself.
 
----
+### Where each kind of change lives
 
-## Who approves what
-
-| Change | Review | Approver |
-| --- | --- | --- |
-| Copy and documentation | Pull request review | Editorial team |
-| New UI component | Design review and accessibility test | Lead UI/UX designer |
-| Colour or token change | 60:30:10 check and contrast test | Brand director |
-| Logo or trademark asset | Brand board approval | Brand governance board |
-| Product brand page | Product owner and brand director; claims reviewed by regulatory | Brand director |
-
----
-
-## Where to make changes
-
-| Change | Location |
+| Change | Where |
 | --- | --- |
-| Documentation | `static/content/*.md`, shown at `/doc/?doc=<name>` |
-| Product brand pages | `static/products/<Brand>/metadata.json` (see [Product Page Standard](/doc/?doc=product-page-standard)) |
-| Design tokens | `static/assets/css/fluent.css` and `static/assets/tokens/*.json` |
-| UI components | `src/lib/components/` and the showcase in `src/routes/components/` |
+| Documents | `static/content/*.md`, shown at `/doc/?doc=<name>` |
+| Product brand pages | `static/products/<Brand>/metadata.json` (see [Product brand pages](/doc/?doc=product-page-standard)) |
+| Colours and fonts as code | `static/assets/css/fluent.css` and `static/assets/tokens/*.json` |
+| Buttons, cards and other parts | `src/lib/components/`, shown in `src/routes/components/` |
 | Pages | `src/routes/<page>/+page.svelte` |
-| Agent and contributor rules | `.agents/AGENTS.md` |
+| Rules for contributors and AI agents | `.agents/AGENTS.md` |
 
-All files people can open or download live under `static/`. Do not create copies anywhere else.
+Every file people can open or download lives under `static/`. Please do not keep copies anywhere else.
 
 ---
 
@@ -64,66 +66,66 @@ All files people can open or download live under `static/`. Do not create copies
 
 ### Colour
 
-- Use semantic tokens, not raw hex values, for text, buttons and links: `--text-*`, `--color-action-bg` / `--color-on-action`, `--color-cta-bg` / `--color-on-cta`, `--color-link`, `--color-text-accent`, `--color-text-warm`.
-- Keep the 60:30:10 allocation: one accent action per view.
-- Never put white text on Azure `#21A1F7`, Malibu, Lion or Banana.
-- Do not lower text contrast with `opacity`.
+- Use the named colour tokens, not raw hex codes, for text, buttons and links: `--text-*`, `--color-action-bg` / `--color-on-action`, `--color-cta-bg` / `--color-on-cta`, `--color-link`, `--color-text-accent`, `--color-text-warm`.
+- Keep the 60:30:10 balance: one main action per screen.
+- Never put white text on Azure `#21A1F7`, Malibu, Lion or Banana. It is hard to read.
+- Do not lighten text with `opacity`.
 
-### Text hierarchy
+### Text colours
 
-| Token | Light | Dark | Use |
+| Token | Light | Dark | Use for |
 | --- | --- | --- | --- |
-| `--text-strong` | `#000000` | `#FFFFFF` | Headlines, key figures |
+| `--text-strong` | `#000000` | `#FFFFFF` | Headlines and key figures |
 | `--text-primary` | `#19191A` | `#FCFAF6` | Body text, headings, forms |
-| `--text-secondary` | `rgba(25,25,26,0.65)` | `rgba(252,250,246,0.65)` | Metadata, captions |
-| `--text-disabled` | `rgba(25,25,26,0.35)` | `rgba(252,250,246,0.35)` | Disabled controls only |
+| `--text-secondary` | `rgba(25,25,26,0.65)` | `rgba(252,250,246,0.65)` | Captions and small notes |
+| `--text-disabled` | `rgba(25,25,26,0.35)` | `rgba(252,250,246,0.35)` | Switched-off controls only |
 
 ### Icons and emoji
 
-- Icons: Fluent System Icons only (`<iconify-icon icon="fluent:...">`), with `aria-hidden="true"` when decorative.
-- Markdown: `{{icon:yes}}`, `{{icon:no}}`, `{{icon:warning}}`, `{{icon:info}}` or `{{icon:<fluent-name>}}`.
-- No emoji, pictographic symbols or emoji HTML entities anywhere.
+- Use Fluent System Icons only (`<iconify-icon icon="fluent:...">`). Add `aria-hidden="true"` when an icon is only decoration.
+- In documents, write `{{icon:yes}}`, `{{icon:no}}`, `{{icon:warning}}`, `{{icon:info}}` or `{{icon:<fluent-name>}}`.
+- No emoji or picture symbols anywhere.
 
-### Svelte
+### Code style
 
-- Svelte 5 runes (`$state`, `$derived`, `$props`).
-- Theme: use `src/lib/stores/theme.js`; do not toggle classes yourself.
-- Versions shown in the UI come from `src/lib/version.js`.
-- No third-party CDN scripts, styles or fonts.
+- Svelte 5 style (`$state`, `$derived`, `$props`).
+- Switch themes with `src/lib/stores/theme.js`. Do not change classes by hand.
+- Version numbers shown on screen come from `src/lib/version.js`.
+- No scripts, styles or fonts loaded from other websites.
 
 ### Files
 
-- Names: letters, digits, `.`, `_` and `-` only. No spaces, apostrophes, brackets or ellipses.
-- Web images about 1600 px wide; keep print originals in `downloads/`.
+- File names use letters, digits, `.`, `_` and `-` only. No spaces, apostrophes, brackets or ellipses.
+- Web images should be about 1600 px wide. Keep print originals in `downloads/`.
 
 ### Content
 
 - No health, medical or performance claims on product or brand pages unless approved for that product. Record open questions in the product's `definition.claimsReview`.
-- Never publish regulatory submissions, formulas or other confidential documents in the repository.
-- Demo data and screenshots must not contain real patient information.
+- Never publish regulatory submissions, formulas or other confidential papers in the repository.
+- Sample data and screenshots must never contain real patient information.
 
 ---
 
-## Checks
+## The automatic checks
 
-| Command | Checks |
+| Command | What it checks |
 | --- | --- |
-| `npm run lint` | Emoji, emoji entities, mojibake, non-Fluent icons, unsafe file names, product page schema |
-| `npm run build` | Icon names exist, site builds |
-| `npm run test:smoke` | Build output, tokens, docs present |
-| `npm run test:dom` | Page structure, including the seven product page sections |
-| `npm run test:contrast` | Token pairings in both themes and every product pairing |
-| `npm run test:a11y` | axe-core WCAG 2.2 A/AA on every page, light and dark (needs `npx playwright install chromium`) |
+| `npm run lint` | Emoji, garbled text, non-Fluent icons, unsafe file names, product page structure |
+| `npm run build` | The site builds and every icon name exists |
+| `npm run test:smoke` | Build output, colour tokens and documents are present |
+| `npm run test:dom` | Page structure, including the seven sections on each product page |
+| `npm run test:contrast` | Every text and background pair is easy to read, in both themes |
+| `npm run test:a11y` | Accessibility check (WCAG 2.2 AA) on every page, light and dark. Needs `npx playwright install chromium` |
 
-A pull request is merged only when all checks pass.
+A change is merged only when every check passes.
 
 ---
 
 ## Not allowed
 
 - Hard-coded hex colours for text or buttons in components.
-- Altered, recoloured or stretched logos.
-- `#000000` for body paragraphs in light mode (use `--text-primary`).
+- Changed, recoloured or stretched logos.
+- `#000000` for body text in light mode. Use `--text-primary`.
 - Committing `build/`, `node_modules/` or generated files.
 - Force-pushing to `main`.
 

@@ -1,48 +1,42 @@
-# About the SuamiSihat® Design System
+# About this hub
 
-The **SuamiSihat® Design System** is our authoritative creative and architectural language. It ensures that every designer, software engineer, medical writer, and marketing specialist builds from a single, unified foundation across all clinical and digital touchpoints.
+This is the home of the SuamiSihat® brand. It keeps our logos, colours, fonts, brand guides and templates in one place, so everyone uses the same ones: staff, designers, developers, writers and partners.
 
----
-
-## System Contents
-
-The system establishes the foundational standards for the entire SuamiSihat® ecosystem:
-
-- **Logo Governance** — Master brand, parent holding, and subsidiary marks with strict clear-space and contrast rules.
-- **Color Architecture** — 60:30:10 visual colour allocation and semantic tokens tested to WCAG 2.2 AA in light and dark theme.
-- **Typography Standards** — Primary typefaces, hierarchy scales, and the mandatory Neutral Black (`#1C1C1C`) readability standard.
-- **Corporate Architecture** — Master Brand (`SuamiSihat®`), Parent Entity (`SuamiSihat Holding Sdn. Bhd.`), and Operating Subsidiaries (Healthcare, Group, Technology, and Ecommerce).
-- **Component Primitives** — Microsoft Fluent 2-aligned interface elements, states, and accessibility tokens.
-- **Brand Kits & Downloads** — Official vector logos, stationery templates, and design assets packaged for production.
+Whatever you are making, a poster, a post, a product pack, a clinic sign or a screen, it should look and sound like SuamiSihat®.
 
 ---
 
-## Stakeholder Guide
+## What you will find here
 
-| Role | Primary System Focus |
+- **Logos:** the SuamiSihat® logo, the SS Health logo for the parent company, and a logo for each company, with the space to leave around them.
+- **Colours:** our colour palette, and how much of each to use. All text and background pairs are checked so they are easy to read, in light and dark mode.
+- **Fonts:** which fonts to use and how big headings and body text should be.
+- **Our companies:** how SuamiSihat®, SS Clinic and the other companies fit together.
+- **Components:** ready-made buttons, cards and forms for people who build websites and apps.
+- **Downloads:** logo files, templates and brand guides, ready to use.
+
+---
+
+## Where should I start?
+
+| If you are... | Start with |
 |---|---|
-| **Designers & Creatives** | Maintain visual balance, 60:30:10 allocation, and asset fidelity across all collateral. |
-| **Software Engineers** | Consume standardized W3C design tokens and Fluent 2 component patterns across Web, Mobile, and Desktop. |
-| **Marketing & Growth** | Apply approved brand voice, medical disclaimer standards, and trademark rules in campaign assets. |
-| **Partners & Affiliates** | Understand brand standards and usage boundaries prior to integration or collateral publication. |
+| **Making a poster, post or video** | [Brand page](/brand-system/): get the logo and colours. Then [How we write](/doc/?doc=brand-voice) |
+| **Working in a clinic** | [SS Clinic guide](/products/ssclinic/) and the [Onboarding guide](/onboarding/) |
+| **Working on a product** | [Product brands](/products/): one page for each product |
+| **Building a website or app** | [Components](/components/) and [Brand and Fluent 2](/doc/?doc=brand-fluent2) |
+| **A partner or agency** | [Brand guides](/brand-guidelines/) before you publish anything |
 
 ---
 
-## Operating Principles
+## The one idea to remember
 
-Start with the domain relevant to your workflow:
-- **Digital Applications:** Consult the Color Palette, Typography Tokens, and Component Library.
-- **Print & Physical Spaces:** Refer to Logo Governance, Clear Space Specifications, and Interior Guidelines.
-
-> **Guiding Principle:** Restraint is the hallmark of modern healthcare. Stick to the certified primary palette, typography hierarchy, and approved logo variants to ensure every touchpoint conveys clinical trust and dignity.
+> **Keep it simple.** In healthcare, restraint builds trust. Use our approved colours, fonts and logos, and every piece will feel calm, professional and respectful.
 
 ---
 
-## Brand Governance & Support
-
-For asset requests, brand reviews, or system inquiries:
+## Need help?
 
 - **Email:** [branding@suamisihat.com](mailto:branding@suamisihat.com)
-- **Response Commitment:** Within 24–48 business hours
-- **Reference:** [Contribution Guide](/doc/?doc=contribution-guide)
-
+- **Reply time:** within two working days
+- **Want to suggest a change?** See [Suggesting a change](/doc/?doc=contribution-guide)
