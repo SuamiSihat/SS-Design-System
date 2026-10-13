@@ -88,12 +88,13 @@
     article.querySelectorAll('pre code.language-mermaid').forEach((block) => {
       const container = document.createElement('div');
       container.className = 'mermaid';
-      container.textContent = block.textContent;
+      // Labels are drawn as plain text, so drop bold tags and use "and" for ampersands
+      container.textContent = block.textContent.replace(/<\/?b>/g, '').replace(/\s&\s/g, ' and ');
       block.closest('pre').replaceWith(container);
     });
     try {
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark' || document.body.classList.contains('dark-mode');
-      mermaid.initialize({ startOnLoad: false, theme: isDark ? 'dark' : 'neutral' });
+      mermaid.initialize({ startOnLoad: false, theme: isDark ? 'dark' : 'neutral', flowchart: { htmlLabels: false } });
       await mermaid.run({ nodes: article.querySelectorAll('.mermaid') });
     } catch (e) {
       console.warn('Mermaid render error:', e);
