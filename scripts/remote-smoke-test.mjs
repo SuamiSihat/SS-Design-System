@@ -100,9 +100,9 @@ async function run() {
   }
   try {
     const res = await fetch(`${BASE_URL}/`, { redirect: 'manual' });
-    assert(res.status === 401, `Login required without credentials (HTTP ${res.status})`);
+    assert(res.status === 200, `Home page loads without a login (HTTP ${res.status})`);
   } catch (err) {
-    assert(false, `Login check failed: ${err.message}`);
+    assert(false, `Home page check failed: ${err.message}`);
   }
 
   console.log('\n 4. Testing Real-time DOM Content & Brand Standards:');

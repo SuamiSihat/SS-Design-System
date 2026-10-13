@@ -4,7 +4,7 @@ The single source of truth for the SuamiSihat brand: logos, colour and type toke
 
 | | |
 | --- | --- |
-| Live site | https://assets.suamisihat.myds.me/ (internal, login required) |
+| Live site | https://assets.suamisihat.myds.me/ (public, not indexed by search engines) |
 | Repository | https://github.com/SuamiSihat/SS-Design-System |
 | Version | 3.6.2 (October 2026) |
 | Stack | SvelteKit 2, Svelte 5, static adapter |
@@ -188,7 +188,7 @@ The accessibility test needs Chromium: run `npx playwright install chromium` onc
 2. Upload `build/` to the Synology NAS web root (`/volume1/web/ss_assets`) with `rsync` over SSH, using a deploy key.
 3. Check that the live site responds and that `/.git/config` is not served.
 
-Only the built site is published. Source files, `.git`, QA reports and agent files never reach the web server. Access is protected by a server-side login (HTTP Basic Auth in `.htaccess`, enabled when the password file exists on the NAS) in front of the in-page welcome puzzle. Setup steps: [deploy/README.md](deploy/README.md).
+Only the built site is published. Source files, `.git`, QA reports and agent files never reach the web server. The site is public with no login, so keep confidential material in `docs/`, which is never deployed. Setup steps: [deploy/README.md](deploy/README.md).
 
 ---
 

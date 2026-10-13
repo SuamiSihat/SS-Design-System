@@ -40,24 +40,13 @@ Then delete the old `NAS_PASSWORD` secret and change that account's password, be
 
 Create a `production` environment (Settings > Environments) if you want deployments to need approval.
 
-### 3. Turn on the server-side login
-
-`static/.htaccess` enables HTTP Basic Auth as soon as this password file exists. Create it outside the web root:
-
-```bash
-sudo mkdir -p /volume1/web/.auth
-sudo htpasswd -c /volume1/web/.auth/ss_assets.htpasswd <username>
-```
-
-Add more users with `htpasswd` without `-c`. Every page and file is public without this step.
-
-### 4. First deployment
+### 3. First deployment
 
 The first run of the new workflow removes the old git checkout from the web root (including `.git`), because `rsync --delete` mirrors `build/` exactly. The workflow's last step fails if `/.git/config` is still reachable.
 
 ## Web server configuration
 
-- Apache (Web Station default): `static/.htaccess` is deployed with the site. It sets security headers, the Content Security Policy, blocks hidden and source files, enables login, and handles routing and caching.
+- Apache (Web Station default): `static/.htaccess` is deployed with the site. It sets security headers, the Content Security Policy, blocks hidden and source files, and handles routing and caching. The site is public; there is no login.
 - nginx: use `deploy/nginx.conf` as the server block reference.
 
 ## Manual deployment

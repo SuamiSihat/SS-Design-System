@@ -21,7 +21,7 @@ We reply within two working days.
 
 - Only the built site (`build/`) is deployed. Source code, `.git`, QA reports and agent files are never on the web server.
 - Apache (`static/.htaccess`) blocks hidden and source files, sends a strict Content Security Policy, `X-Frame-Options: DENY` and `X-Robots-Tag: noindex`.
-- Server-side login (HTTP Basic Auth) protects the site once the password file exists on the NAS. The in-page welcome puzzle is a convenience, not access control. Brand logos under `/public/brand/` stay public for email signatures.
+- The site is public with no login, so nothing confidential belongs in `static/` or `src/`. Staff-only material lives in `docs/`, which is never deployed.
 - No third-party scripts, styles or fonts are loaded.
 - Deployment uses an SSH deploy key stored as a GitHub secret.
 
