@@ -18,15 +18,15 @@
 </script>
 
 <section id="icons" class="bs-section" style="margin-bottom: 4rem; scroll-margin-top: 80px;">
-  <div class="bs-section-eyebrow" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">06 &middot; Usage &amp; Rules</div>
-  <h2 class="bs-section-title" style="font-size: 1.75rem; font-weight: 800; color: var(--color-neutral-fg-1); margin-bottom: 6px;">Icons &amp; Logomark Usage</h2>
-  <p class="bs-section-desc" style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">Clear signals, every time. Our standalone S-shaped logomark follows strict background brightness conventions.</p>
+  <div class="bs-section-eyebrow" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">Logo rules</div>
+  <h2 class="bs-section-title" style="font-size: 1.75rem; font-weight: 800; color: var(--color-neutral-fg-1); margin-bottom: 6px;">Using the logo correctly</h2>
+  <p class="bs-section-desc" style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">The S symbol on its own follows the same rules: light version on dark backgrounds, dark version on light backgrounds.</p>
 
   <!-- Interactive Logomark Surface Tester -->
   <div style="background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);overflow:hidden;box-shadow:var(--f-shadow-4);margin-bottom:2rem;">
     <div style="padding:0.85rem 1.5rem;border-bottom:1px solid var(--color-neutral-stroke-1);background:var(--color-neutral-bg-3);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;">
       <div style="display:flex;align-items:center;gap:10px;">
-        <strong style="font-size:0.925rem;color:var(--color-neutral-fg-1);">Standalone Logomark Surface Contrast Tester</strong>
+        <strong style="font-size:0.925rem;color:var(--color-neutral-fg-1);">Try the S symbol on light and dark</strong>
         <span class="ss-badge {logomarkMode === 'dark' ? 'ss-badge-brand' : 'ss-badge-neutral'}" style="font-size:0.7rem;font-weight:700;">
           {logomarkMode === 'dark' ? 'Prussian Dark Surface (#022057)' : 'Porcelain Light Canvas (#FCFAF6)'}
         </span>
@@ -146,7 +146,7 @@
   <!-- Visual Prohibited Logo Misuse Board -->
   <div style="background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);overflow:hidden;box-shadow:var(--f-shadow-4);margin-bottom:2rem;">
     <div style="padding:1rem 1.5rem;border-bottom:1px solid var(--color-neutral-stroke-1);background:var(--color-neutral-bg-3);display:flex;justify-content:space-between;align-items:center;">
-      <strong style="font-size:0.875rem;color:var(--color-neutral-fg-1);">Prohibited Logo Treatments Visual Reference</strong>
+      <strong style="font-size:0.875rem;color:var(--color-neutral-fg-1);">What not to do to the logo</strong>
       <span class="ss-badge ss-badge-danger" style="font-size:0.7rem;">Brand Violations</span>
     </div>
     <div style="padding:1.5rem;background:#FFFFFF;display:flex;align-items:center;justify-content:center;width:100%;box-sizing:border-box;">
