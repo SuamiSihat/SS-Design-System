@@ -1,6 +1,6 @@
 # Text Color Usage Guide
 
-## Purpose
+### Purpose
 
 This palette uses **four levels of text emphasis** across light and dark interfaces.
 
@@ -8,7 +8,7 @@ This palette uses **four levels of text emphasis** across light and dark interfa
 
 ---
 
-# 1. Text Color Tokens
+## 1. Text Color Tokens
 
 | Token | Hex (Light / Dark) | Primary Role |
 |---|---|---|
@@ -19,9 +19,9 @@ This palette uses **four levels of text emphasis** across light and dark interfa
 
 ---
 
-# 2. Light Mode
+## 2. Light Mode
 
-### Base Surfaces
+#### Base Surfaces
 
 - **Background (Canvas):** `#FCFAF6`  
 - **Elevated Surface:** `#FFFFFF`
@@ -33,7 +33,7 @@ This palette uses **four levels of text emphasis** across light and dark interfa
 | **Inverse** | `#FFFFFF` | Text on black buttons or dark surfaces |
 | **Avoid** | `#FCFAF6` | Normal text on light backgrounds |
 
-### Recommended hierarchy
+#### Recommended hierarchy
 
 ```text
 #000000  TEXT STRONG
@@ -43,17 +43,17 @@ This palette uses **four levels of text emphasis** across light and dark interfa
 #FFFFFF  Elevated Surface
 ```
 
-### Example
+#### Example
 
-# Heading in `#000000`
+## Heading in `#000000`
 
 Body text uses `#19191A` for comfortable reading and reduced visual aggression.
 
 ---
 
-# 3. Dark Mode
+## 3. Dark Mode
 
-### Base Surfaces
+#### Base Surfaces
 
 - **Background (Canvas):** `#1C1C1C`  
 - **Deep Surface:** `#000000`
@@ -65,7 +65,7 @@ Body text uses `#19191A` for comfortable reading and reduced visual aggression.
 | **Inverse** | `#000000` | Text on light buttons or surfaces |
 | **Avoid** | `#1C1C1C` | Normal text on dark backgrounds |
 
-### Recommended hierarchy
+#### Recommended hierarchy
 
 ```text
 #FFFFFF  TEXT STRONG
@@ -77,16 +77,16 @@ Body text uses `#19191A` for comfortable reading and reduced visual aggression.
 
 ---
 
-# 4. Hierarchy Rules
+## 4. Hierarchy Rules
 
-## Level 1 — Strong
+### Level 1 — Strong
 
 Use only when the content needs immediate attention.
 
 - **Light:** `#000000`  
 - **Dark:** `#FFFFFF`
 
-### Use for:
+#### Use for:
 - H1 and major headings
 - Key statistics
 - Prices
@@ -98,14 +98,14 @@ Use only when the content needs immediate attention.
 
 ---
 
-## Level 2 — Primary
+### Level 2 — Primary
 
 This is the default reading colour.
 
 - **Light:** `#19191A`  
 - **Dark:** `#FCFAF6`
 
-### Use for:
+#### Use for:
 - Body text
 - H2–H6
 - Navigation
@@ -119,7 +119,7 @@ This is the default reading colour.
 
 ---
 
-## Level 3 — Inverse
+### Level 3 — Inverse
 
 Used when text sits on the opposite tonal environment.
 
@@ -130,7 +130,7 @@ Used when text sits on the opposite tonal environment.
 | `#1C1C1C` | `#FCFAF6` |
 | `#FCFAF6` | `#19191A` |
 
-### Example
+#### Example
 
 ```text
 BLACK BUTTON
@@ -143,7 +143,7 @@ Continue
 
 ---
 
-# 5. Text Pairing Matrix
+## 5. Text Pairing Matrix
 
 | Background | Strong Text | Primary Text |
 |---|---|---|
@@ -156,7 +156,7 @@ This should be treated as the **approved pairing matrix**.
 
 ---
 
-# 6. Recommended Design Tokens
+## 6. Recommended Design Tokens
 
 ```css
 :root {
@@ -178,9 +178,9 @@ This should be treated as the **approved pairing matrix**.
 
 ---
 
-# 7. Missing Layer: Secondary Text
+## 7. Missing Layer: Secondary Text
 
-## Failure mode
+### Failure mode
 
 Your current palette does **not** provide a proper secondary text colour.
 
@@ -188,7 +188,7 @@ Do **not** solve this by randomly selecting another grey.
 
 Use opacity or derived semantic tokens.
 
-### Recommended starting point
+#### Recommended starting point
 
 ```css
 /* Light */
@@ -198,14 +198,14 @@ Use opacity or derived semantic tokens.
 --text-secondary: rgba(252, 250, 246, 0.65);
 ```
 
-### Use for:
+#### Use for:
 - Metadata
 - Dates
 - Helper text
 - Secondary labels
 - Supporting descriptions
 
-### Disabled
+#### Disabled
 
 ```css
 /* Light */
@@ -217,7 +217,7 @@ Use opacity or derived semantic tokens.
 
 ---
 
-# 8. The System in One Diagram
+## 8. The System in One Diagram
 
 ```text
 LIGHT MODE
@@ -240,7 +240,7 @@ DARK MODE
 #000000        Deep Surface
 ```
 
-## Final Art Direction Rule
+### Final Art Direction Rule
 
 > **Black and white create emphasis. Carbon Black and Porcelain create readability.**
 

@@ -132,6 +132,7 @@ class SSHeroBanner extends StatelessWidget {
     <div style="border-radius:var(--f-radius-xl); overflow:hidden;">
       <SSHero
         eyebrow="OFFICIAL HERO STANDARD"
+        titleTag="h2"
         title="Interactive Vitality Wave &amp; Energy Particles"
         subtitle="Default background for all SuamiSihat™ hero banners with mouse-reactive kinetic waves and ambient glow."
         minHeight="360px"

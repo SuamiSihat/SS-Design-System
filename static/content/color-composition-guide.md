@@ -14,7 +14,7 @@
 
 ---
 
-## 1. The Problem Colour Rules Actually Solve
+### 1. The Problem Colour Rules Actually Solve
 
 A colour palette answers:
 
@@ -36,7 +36,7 @@ A palette without a composition rule creates predictable failure modes:
 - different designers interpret the palette differently
 - premium colours become decoration instead of hierarchy
 
-### The governing principle
+#### The governing principle
 
 Colour is not only decoration.
 
@@ -60,7 +60,7 @@ flowchart LR
 
 ---
 
-# 2. What Is the 60:30:10 Colour Rule?
+## 2. What Is the 60:30:10 Colour Rule?
 
 The **60:30:10 rule** divides a composition into three levels of colour dominance:
 
@@ -76,7 +76,7 @@ A design does not fail because one colour occupies 61%.
 
 The rule exists to preserve **visual hierarchy**.
 
-## Basic model
+### Basic model
 
 ```text
 ┌─────────────────────────────────────────────┐
@@ -107,7 +107,7 @@ FOCAL ACTION
 
 ---
 
-# 3. The SuamiSihat Translation
+## 3. The SuamiSihat Translation
 
 SuamiSihat's current design system already contains a remarkably direct implementation of this logic.
 
@@ -122,7 +122,7 @@ That means the recommended rule is not an arbitrary imported design theory.
 
 It is already embedded in the brand's colour semantics.
 
-## Recommended hierarchy
+### Recommended hierarchy
 
 | Distribution | SuamiSihat role | Primary candidates | Typical use |
 |---|---|---|---|
@@ -130,7 +130,7 @@ It is already embedded in the brand's colour semantics.
 | **30%** | Brand structure | SS Prussian Blue `#022057`, SS Blue `#043388` | Sections, major blocks, identity fields |
 | **10%** | Accent | Azure `#21A1F7`, Banana `#FCE53D` | CTA, conversion, highlights, focal moments |
 
-### Important distinction
+#### Important distinction
 
 **The ratio applies to roles, not necessarily one literal HEX value.**
 
@@ -156,7 +156,7 @@ This allows the system to remain flexible without losing hierarchy.
 
 ---
 
-# 4. SuamiSihat 60:30:10 Architecture
+## 4. SuamiSihat 60:30:10 Architecture
 
 ```mermaid
 flowchart TB
@@ -184,7 +184,7 @@ This aligns with the current brand positioning of **clinical precision, masculin
 
 ---
 
-# 5. What Is the 80:20 Colour Rule?
+## 5. What Is the 80:20 Colour Rule?
 
 The **80:20 rule** is a simplified two-level composition model.
 
@@ -201,7 +201,7 @@ BACKGROUND / STRUCTURE
 BRAND SIGNAL
 ```
 
-## Basic model
+### Basic model
 
 ```text
 ┌──────────────────────────────────────────────┐
@@ -227,7 +227,7 @@ Its weakness is that it provides **less hierarchy inside the coloured portion**.
 
 ---
 
-# 6. How 80:20 Works for SuamiSihat
+## 6. How 80:20 Works for SuamiSihat
 
 A SuamiSihat implementation could be:
 
@@ -261,9 +261,9 @@ This matters because SuamiSihat's component architecture explicitly uses a seman
 
 ---
 
-# 7. 60:30:10 vs 80:20
+## 7. 60:30:10 vs 80:20
 
-## Strategic comparison
+### Strategic comparison
 
 | Dimension | 60:30:10 | 80:20 |
 |---|---|---|
@@ -282,7 +282,7 @@ This matters because SuamiSihat's component architecture explicitly uses a seman
 
 ---
 
-## Decision chart
+### Decision chart
 
 | Context | Recommended rule |
 |---|---|
@@ -302,7 +302,7 @@ This matters because SuamiSihat's component architecture explicitly uses a seman
 
 ---
 
-# 8. Comparison Diagram
+## 8. Comparison Diagram
 
 ```mermaid
 quadrantChart
@@ -324,11 +324,11 @@ quadrantChart
 
 ---
 
-# 9. The Critical Difference: Hierarchy vs Simplicity
+## 9. The Critical Difference: Hierarchy vs Simplicity
 
 The two systems solve different design problems.
 
-## 60:30:10
+### 60:30:10
 
 The question is:
 
@@ -342,7 +342,7 @@ The answer is:
 10% = What should I notice or do?
 ```
 
-## 80:20
+### 80:20
 
 The question is:
 
@@ -370,9 +370,9 @@ It does not need colour to do all the work.
 
 ---
 
-# 10. Recommended SuamiSihat Model
+## 10. Recommended SuamiSihat Model
 
-## Primary Rule: 60:30:10
+### Primary Rule: 60:30:10
 
 Use for **brand-facing and expressive communication**.
 
@@ -395,7 +395,7 @@ Use for **brand-facing and expressive communication**.
 └───────────────────────────────┴───────────┘
 ```
 
-### Recommended use
+#### Recommended use
 
 - campaigns
 - advertisements
@@ -410,7 +410,7 @@ Use for **brand-facing and expressive communication**.
 
 ---
 
-## Secondary Rule: 80:20
+### Secondary Rule: 80:20
 
 Use for **functional and information-heavy experiences**.
 
@@ -432,7 +432,7 @@ Use for **functional and information-heavy experiences**.
 └───────────────────────────────────────────┘
 ```
 
-### Recommended use
+#### Recommended use
 
 - dashboards
 - patient systems
@@ -446,7 +446,7 @@ Use for **functional and information-heavy experiences**.
 
 ---
 
-# 11. Recommended Colour Roles
+## 11. Recommended Colour Roles
 
 The current palette should not be treated as eight colours with equal rights.
 
@@ -472,7 +472,7 @@ These roles are consistent with the current system definitions, which distinguis
 
 ---
 
-# 12. Do Not Treat Accent Colours as Equal
+## 12. Do Not Treat Accent Colours as Equal
 
 This is the most important implementation rule.
 
@@ -480,7 +480,7 @@ SuamiSihat has multiple accent colours.
 
 That does **not** mean all accents should appear simultaneously.
 
-## Incorrect
+### Incorrect
 
 ```text
 Azure + Banana + Arylide + Lion + Fawn
@@ -490,7 +490,7 @@ Every colour asks for attention
 Nothing is important
 ```
 
-## Correct
+### Correct
 
 ```text
 Primary Accent
@@ -502,13 +502,13 @@ Primary Accent
      └── Lion → premium / institutional emphasis
 ```
 
-### Rule
+#### Rule
 
 > **One composition should normally have one dominant accent language.**
 
 For example:
 
-### Digital conversion page
+#### Digital conversion page
 
 ```text
 60% Neutral
@@ -516,7 +516,7 @@ For example:
 10% Azure
 ```
 
-### Promotional campaign
+#### Promotional campaign
 
 ```text
 60% Dark / Light foundation
@@ -524,7 +524,7 @@ For example:
 10% Banana conversion
 ```
 
-### Premium institutional material
+#### Premium institutional material
 
 ```text
 60% Porcelain / Dark foundation
@@ -534,7 +534,7 @@ For example:
 
 ---
 
-# 13. A Better Way to Interpret the Percentages
+## 13. A Better Way to Interpret the Percentages
 
 The percentages should be interpreted at the **composition level**, not component level.
 
@@ -570,9 +570,9 @@ The rule measures **visual colour dominance**, not merely rectangular area.
 
 ---
 
-# 14. Light Mode Example
+## 14. Light Mode Example
 
-## Recommended composition
+### Recommended composition
 
 ```text
 ┌─────────────────────────────────────────────┐
@@ -605,7 +605,7 @@ For campaign urgency:
 
 ---
 
-# 15. Dark Mode Example
+## 15. Dark Mode Example
 
 ```text
 ┌─────────────────────────────────────────────┐
@@ -635,13 +635,13 @@ The current system also defines light and dark foundations explicitly, reinforci
 
 ---
 
-# 16. Where the Warm Palette Fits
+## 16. Where the Warm Palette Fits
 
 The warm palette should **not compete with the blue system for structural dominance**.
 
 Its strongest role is controlled differentiation.
 
-## Recommended logic
+### Recommended logic
 
 ```mermaid
 flowchart LR
@@ -656,7 +656,7 @@ flowchart LR
     D --> D3[Vitality]
 ```
 
-### Recommended interpretation
+#### Recommended interpretation
 
 | Colour family | Strategic meaning | Composition role |
 |---|---|---|
@@ -674,9 +674,9 @@ The blue system remains the architectural backbone.
 
 ---
 
-# 17. Failure Modes
+## 17. Failure Modes
 
-## Failure Mode 1 — The Rainbow Problem
+### Failure Mode 1 — The Rainbow Problem
 
 **Cause:** Using every approved brand colour in one layout.
 
@@ -686,7 +686,7 @@ The blue system remains the architectural backbone.
 
 ---
 
-## Failure Mode 2 — Accent Inflation
+### Failure Mode 2 — Accent Inflation
 
 **Cause:** Azure or Banana appears everywhere.
 
@@ -696,7 +696,7 @@ The blue system remains the architectural backbone.
 
 ---
 
-## Failure Mode 3 — Blue-on-Blue Monotony
+### Failure Mode 3 — Blue-on-Blue Monotony
 
 **Cause:** Prussian Blue, SS Blue, Azure and Malibu are all used at equal intensity.
 
@@ -713,7 +713,7 @@ Light blue = atmosphere
 
 ---
 
-## Failure Mode 4 — Treating 60:30:10 as Arithmetic
+### Failure Mode 4 — Treating 60:30:10 as Arithmetic
 
 **Cause:** Designers literally measure rectangles.
 
@@ -723,7 +723,7 @@ Light blue = atmosphere
 
 ---
 
-## Failure Mode 5 — Using 80:20 for Everything
+### Failure Mode 5 — Using 80:20 for Everything
 
 **Cause:** Minimalism becomes the default aesthetic.
 
@@ -733,13 +733,13 @@ Light blue = atmosphere
 
 ---
 
-# 18. The Hybrid Model
+## 18. The Hybrid Model
 
 There will be cases where neither rule should be followed literally.
 
 A sophisticated SuamiSihat system can use:
 
-## Macro: 80:20
+### Macro: 80:20
 
 At the page level:
 
@@ -748,7 +748,7 @@ At the page level:
 20% branded expression
 ```
 
-## Micro: 60:30:10
+### Micro: 60:30:10
 
 Inside a campaign module or hero:
 
@@ -777,7 +777,7 @@ The **brand remains expressive when needed**.
 
 ---
 
-# 19. Art Direction Decision Framework
+## 19. Art Direction Decision Framework
 
 Use this before choosing a colour rule.
 
@@ -798,11 +798,11 @@ flowchart TD
 
 ---
 
-# 20. Recommended Standard for the Brand Guideline
+## 20. Recommended Standard for the Brand Guideline
 
-## Colour Composition Policy
+### Colour Composition Policy
 
-### Primary composition model — 60:30:10
+#### Primary composition model — 60:30:10
 
 Use when the communication requires:
 
@@ -813,7 +813,7 @@ Use when the communication requires:
 - conversion hierarchy
 - emotional or premium expression
 
-### Secondary composition model — 80:20
+#### Secondary composition model — 80:20
 
 Use when the experience requires:
 
@@ -826,9 +826,9 @@ Use when the experience requires:
 
 ---
 
-# 21. The Proposed SuamiSihat Rule Set
+## 21. The Proposed SuamiSihat Rule Set
 
-## Rule 01 — Start with the foundation
+### Rule 01 — Start with the foundation
 
 Every composition begins with a dominant neutral or atmospheric surface.
 
@@ -838,7 +838,7 @@ Default target: 60%
 
 ---
 
-## Rule 02 — Blue owns structural identity
+### Rule 02 — Blue owns structural identity
 
 Prussian Blue and SS Blue should carry the primary visual weight after the foundation.
 
@@ -848,7 +848,7 @@ Default target: 30%
 
 ---
 
-## Rule 03 — Accent colours must earn attention
+### Rule 03 — Accent colours must earn attention
 
 Azure, Banana, Lion and other accents should appear because they communicate priority.
 
@@ -860,7 +860,7 @@ Default target: 10%
 
 ---
 
-## Rule 04 — One accent language per composition
+### Rule 04 — One accent language per composition
 
 Prefer:
 
@@ -890,7 +890,7 @@ unless the design specifically requires a multi-colour data visualisation or sys
 
 ---
 
-## Rule 05 — Semantic states override decorative ratios
+### Rule 05 — Semantic states override decorative ratios
 
 Success, warning, error and information colours are functional.
 
@@ -900,7 +900,7 @@ This is especially important for the Fluent 2-based component system, where sema
 
 ---
 
-## Rule 06 — Accessibility overrides aesthetics
+### Rule 06 — Accessibility overrides aesthetics
 
 The ratio is never an excuse for poor contrast.
 
@@ -908,9 +908,9 @@ Text, controls and interactive states must preserve the design system's accessib
 
 ---
 
-# 22. Final Recommendation
+## 22. Final Recommendation
 
-## SuamiSihat should standardise on 60:30:10.
+### SuamiSihat should standardise on 60:30:10.
 
 Not because 60:30:10 is universally superior.
 
@@ -936,7 +936,7 @@ Azure / Banana / controlled contextual accent
 
 The current brand system already assigns explicit roles that closely follow this hierarchy, including 60% canvas surfaces, Prussian Blue as structural colour and Azure as a 10% accent, while retaining Banana as a high-visibility conversion colour. 
 
-## Recommended hierarchy
+### Recommended hierarchy
 
 | Level | Standard |
 |---|---|
@@ -947,7 +947,7 @@ The current brand system already assigns explicit roles that closely follow this
 | **Best system model** | **80:20 macro + 60:30:10 micro** |
 | **Core principle** | Foundation → Brand Structure → Attention |
 
-### The final design principle
+#### The final design principle
 
 > **SuamiSihat should not use more colour to look more branded. It should use colour hierarchy to make the brand more recognisable.**
 
