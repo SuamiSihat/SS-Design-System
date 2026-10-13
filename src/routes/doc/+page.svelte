@@ -4,8 +4,10 @@
   import { marked } from 'marked';
   import { page } from '$app/stores';
   import { onMount, tick } from 'svelte';
+  import { DOC_GROUPS, ALL_DOCS, findDoc } from '$lib/docs/index.js';
 
-  let currentDoc = $state('introduction');
+  // An empty id means the docs landing page
+  let currentDoc = $state('');
   let content = $state('');
   let isLoading = $state(true);
   let isSidebarMinimized = $state(false);
@@ -18,56 +20,25 @@
     isSidebarMinimized = !isSidebarMinimized;
   }
 
-  const docCategories = [
-    {
-      label: 'Brand Strategy & Vision',
-      items: [
-        { id: 'vision-mission',      title: 'Vision & Mission',          path: '/content/vision-mission.md',       icon: 'fluent:eye-24-regular' },
-        { id: 'clinic-positioning',  title: 'Clinic Brand Positioning',  path: '/content/clinic-positioning.md',   icon: 'fluent:shield-checkmark-24-regular' },
-        { id: 'brand-voice',         title: 'Brand Voice & Tone',       path: '/content/brand-voice.md',          icon: 'fluent:megaphone-24-regular' },
-        { id: 'diagnostic-funnel',   title: 'Diagnostic Funnel Standard', path: '/content/diagnostic-funnel.md', icon: 'fluent:filter-24-regular' },
-        { id: 'roadmap',             title: 'Strategic Roadmap 2026',  path: '/content/roadmap.md',             icon: 'fluent:map-drive-24-regular' }
-      ]
-    },
-    {
-      label: 'Group Brands',
-      items: [
-        { id: 'ss-clinic',           title: 'SS Clinic',                 path: '/content/sub-brands/ss-clinic.md',   icon: 'fluent:stethoscope-24-regular' },
-        { id: 'ss-health',           title: 'SS Health (parent company)', path: '/content/sub-brands/ss-health.md', icon: 'fluent:building-24-regular' },
-        { id: 'ss-wellness',         title: 'SS Wellness',               path: '/content/sub-brands/ss-wellness.md', icon: 'fluent:heart-pulse-24-regular' },
-        { id: 'ss-ecom',             title: 'SS Ecommerce',              path: '/content/sub-brands/ss-ecom.md',     icon: 'fluent:cart-24-regular' },
-        { id: 'ss-tech',             title: 'SS Technology',             path: '/content/sub-brands/ss-tech.md',     icon: 'fluent:code-24-regular' }
-      ]
-    },
-    {
-      label: 'Design & Visual System',
-      items: [
-        { id: 'introduction',        title: 'Introduction & Standards', path: '/content/introduction.md',       icon: 'fluent:home-24-regular' },
-        { id: 'brand-fluent2',        title: 'Brand x Fluent 2 Contract', path: '/content/brand-fluent2.md',      icon: 'fluent:puzzle-piece-24-regular' },
-        { id: 'color-composition-guide', title: 'Colour Composition Standard (60:30:10)', path: '/content/color-composition-guide.md', icon: 'fluent:color-fill-24-regular' },
-        { id: 'text-color-guide',    title: 'Text Color & Hierarchy Guide', path: '/content/text-color-guide.md', icon: 'fluent:text-color-24-regular' },
-        { id: 'ss-hero-guide',       title: 'Hero Banner Standard (ss-hero)', path: '/content/ss-hero-guide.md', icon: 'fluent:sparkle-24-regular' },
-        { id: 'product-page-standard', title: 'Product Page Standard', path: '/content/product-page-standard.md', icon: 'fluent:box-checkmark-24-regular' }
-      ]
-    },
-    {
-      label: 'Governance & Operations',
-      items: [
-        { id: 'contribution-guide',  title: 'Contribution Guide',        path: '/content/contribution-guide.md',   icon: 'fluent:person-heart-24-regular' },
-        { id: 'changelog',           title: 'System Changelog',          path: '/content/changelog.md',            icon: 'fluent:clock-arrow-download-24-regular' }
-      ]
-    }
-  ];
+  const current = $derived(findDoc(currentDoc));
+  const currentIndex = $derived(ALL_DOCS.findIndex((d) => d.id === currentDoc));
+  const prevDoc = $derived(currentIndex > 0 ? ALL_DOCS[currentIndex - 1] : null);
+  const nextDoc = $derived(currentIndex >= 0 && currentIndex < ALL_DOCS.length - 1 ? ALL_DOCS[currentIndex + 1] : null);
 
-  // Flattened array for quick lookup
-  const allDocs = docCategories.flatMap(c => c.items);
+  function goHome() {
+    currentDoc = '';
+    content = '';
+    tocItems = [];
+    isLoading = false;
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0 });
+  }
 
   /** Build dynamic TOC from rendered heading elements */
   async function buildTOC() {
     await tick();
     const article = document.getElementById('md-article');
     if (!article) return;
-    const headings = article.querySelectorAll('h2, h3');
+    const headings = article.querySelectorAll('h2');
     tocItems = Array.from(headings).map((h, i) => {
       const id = `doc-heading-${i}`;
       h.id = id;
@@ -190,17 +161,13 @@
   }
 
   async function loadDoc(id) {
-    currentDoc = id;
+    const docMeta = findDoc(id);
+    if (!docMeta) return goHome();
+    currentDoc = docMeta.id;
     isLoading = true;
     tocItems = [];
     content = '';
-
-    const docMeta = allDocs.find(d => d.id === id);
-    if (!docMeta) {
-      content = '<h1>Document Not Found</h1><p>The requested document does not exist.</p>';
-      isLoading = false;
-      return;
-    }
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0 });
 
     try {
       const res = await fetch(docMeta.path);
@@ -230,12 +197,14 @@
   onMount(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const requested = urlParams.get('doc');
-    const id = (requested && allDocs.some(d => d.id === requested)) ? requested : 'introduction';
-    loadDoc(id);
+    // On phones the sidebar would fill the screen, and the landing page already lists every document
+    if (window.innerWidth < 768) isSidebarMinimized = true;
+    if (requested && findDoc(requested)) loadDoc(requested);
+    else isLoading = false;
 
     // Scroll listener to track active heading for right pane TOC
     const handleScroll = () => {
-      const headings = document.querySelectorAll('#md-article h2, #md-article h3');
+      const headings = document.querySelectorAll('#md-article h2');
       let currentId = '';
       for (const h of headings) {
         const rect = h.getBoundingClientRect();
@@ -269,14 +238,15 @@
     // Sync URL param when doc changes (client-side navigation)
     if (typeof window !== 'undefined') {
       const url = new URL(window.location.href);
-      url.searchParams.set('doc', currentDoc);
+      if (currentDoc) url.searchParams.set('doc', currentDoc);
+      else url.searchParams.delete('doc');
       window.history.replaceState({}, '', url.toString());
     }
   });
 </script>
 
 <svelte:head>
-  <title>{allDocs.find(d => d.id === currentDoc)?.title ?? 'Documentation'} — SuamiSihat® Design System</title>
+  <title>{current?.title ?? 'Documentation'} — SuamiSihat® Brand Hub</title>
 </svelte:head>
 
 <div
@@ -302,17 +272,22 @@
       aria-label="Documentation navigation"
       style="display: flex; flex-direction: column; gap: 1rem; padding: 1.5rem 0; overflow-y: auto;"
     >
-      <!-- Categorized Doc Library -->
-      {#each docCategories as category}
-        <div style="padding: 0 1rem;">
-          <div style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-neutral-fg-3); margin-bottom: 0.5rem; padding-left: 4px;">{category.label}</div>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 2px;">
-            {#each category.items as doc}
+      <button type="button" class="doc-nav-home" class:doc-nav-btn--active={!currentDoc} onclick={goHome}>
+        <iconify-icon icon="fluent:library-24-regular" style="font-size: 1rem; flex-shrink: 0;"></iconify-icon>
+        <span>All documents</span>
+      </button>
+
+      {#each DOC_GROUPS as group}
+        <details class="doc-nav-group" open={!currentDoc || current?.group === group.id}>
+          <summary>{group.label}</summary>
+          <ul class="doc-nav-list">
+            {#each group.docs as doc}
               <li>
                 <button
                   type="button"
                   class="doc-nav-btn"
                   class:doc-nav-btn--active={currentDoc === doc.id}
+                  aria-current={currentDoc === doc.id ? 'page' : undefined}
                   onclick={() => loadDoc(doc.id)}
                 >
                   <iconify-icon icon={doc.icon} style="font-size: 1rem; flex-shrink: 0;"></iconify-icon>
@@ -321,7 +296,7 @@
               </li>
             {/each}
           </ul>
-        </div>
+        </details>
       {/each}
     </aside>
   {/if}
@@ -333,10 +308,14 @@
       <nav class="brand-breadcrumb" aria-label="Breadcrumb" style="margin-bottom: 1.5rem;">
         <a href="/">Home</a>
         <iconify-icon icon="fluent:chevron-right-12-regular"></iconify-icon>
-        <a href="/doc/?doc=introduction">Documentation</a>
-        {#if allDocs.find(d => d.id === currentDoc)}
+        {#if current}
+          <a href="/doc/" onclick={(e) => { e.preventDefault(); goHome(); }}>Docs</a>
           <iconify-icon icon="fluent:chevron-right-12-regular"></iconify-icon>
-          <span style="color:var(--color-neutral-fg-1);font-weight:600;">{allDocs.find(d => d.id === currentDoc)?.title}</span>
+          <span>{current.groupLabel}</span>
+          <iconify-icon icon="fluent:chevron-right-12-regular"></iconify-icon>
+          <span style="color:var(--color-neutral-fg-1);font-weight:600;">{current.title}</span>
+        {:else}
+          <span style="color:var(--color-neutral-fg-1);font-weight:600;">Docs</span>
         {/if}
       </nav>
 
@@ -351,61 +330,85 @@
           <div class="skeleton-line skeleton-p" style="width: 90%;"></div>
           <div class="skeleton-line skeleton-p" style="width: 70%;"></div>
         </div>
+      {:else if !current}
+        <header class="docs-home-head">
+          <h1>Brand documents</h1>
+          <p>Everything written down about our brand, in four groups. New here? Start with <button type="button" class="docs-link-btn" onclick={() => loadDoc('introduction')}>About this hub</button>.</p>
+        </header>
+
+        <div class="docs-home-grid">
+          {#each DOC_GROUPS as group}
+            <section class="docs-home-group" aria-labelledby={`dg-${group.id}`}>
+              <h2 id={`dg-${group.id}`}>
+                <iconify-icon icon={group.icon} aria-hidden="true"></iconify-icon>
+                {group.label}
+              </h2>
+              <p class="docs-home-blurb">{group.blurb}</p>
+              <ul>
+                {#each group.docs as doc}
+                  <li>
+                    <button type="button" class="docs-home-card" onclick={() => loadDoc(doc.id)}>
+                      <span class="docs-home-card-title">{doc.title}</span>
+                      <span class="docs-home-card-text">{doc.summary}</span>
+                    </button>
+                  </li>
+                {/each}
+              </ul>
+            </section>
+          {/each}
+        </div>
       {:else}
-        <!-- Medium-Style Article Header Meta Bar -->
-        <div class="medium-article-meta">
-          <div class="medium-author-row">
-            <div class="medium-avatar">
-              <iconify-icon icon="fluent:shield-task-24-regular" style="font-size: 1.35rem; color: var(--color-brand-primary);"></iconify-icon>
-            </div>
-            <div class="medium-author-details">
-              <div class="medium-author-title">
-                <span class="medium-author-name">SuamiSihat® Art Direction</span>
-                <span class="medium-pub-badge">Official Standard</span>
-              </div>
-              <div class="medium-meta-subtext">
-                <span>{readTime} min read</span>
-                <span class="meta-dot">•</span>
-                <span>August 2026</span>
-                <span class="meta-dot">•</span>
-                <span>Design System v{VERSION}</span>
-              </div>
-            </div>
-          </div>
-          <div class="medium-meta-actions">
-            <button
-              type="button"
-              class="medium-share-btn"
-              onclick={() => {
-                if (typeof navigator !== 'undefined') {
-                  navigator.clipboard.writeText(window.location.href);
-                  copiedLinkToast = true;
-                  setTimeout(() => copiedLinkToast = false, 2000);
-                }
-              }}
-              title="Copy link to article"
-            >
-              <iconify-icon icon={copiedLinkToast ? "fluent:checkmark-20-regular" : "fluent:share-20-regular"} style="font-size:1.1rem;"></iconify-icon>
-              <span>{copiedLinkToast ? "Copied Link!" : "Share"}</span>
-            </button>
-          </div>
+        <div class="doc-meta-bar">
+          <span>{readTime} min read</span>
+          <span class="meta-dot" aria-hidden="true">•</span>
+          <span>Version {VERSION}</span>
+          <button
+            type="button"
+            class="medium-share-btn"
+            onclick={() => {
+              if (typeof navigator !== 'undefined') {
+                navigator.clipboard.writeText(window.location.href);
+                copiedLinkToast = true;
+                setTimeout(() => copiedLinkToast = false, 2000);
+              }
+            }}
+            title="Copy link to this page"
+          >
+            <iconify-icon icon={copiedLinkToast ? "fluent:checkmark-20-regular" : "fluent:share-20-regular"} style="font-size:1.1rem;"></iconify-icon>
+            <span>{copiedLinkToast ? "Link copied" : "Share"}</span>
+          </button>
         </div>
 
         <!-- Rendered markdown article -->
         <article id="md-article" class="markdown-body md-content" aria-live="polite">
           {@html content}
         </article>
+
+        <nav class="doc-pager" aria-label="More documents">
+          {#if prevDoc}
+            <button type="button" class="doc-pager-btn" onclick={() => loadDoc(prevDoc.id)}>
+              <span class="doc-pager-label">&larr; Previous</span>
+              <span class="doc-pager-title">{prevDoc.title}</span>
+            </button>
+          {:else}<span></span>{/if}
+          {#if nextDoc}
+            <button type="button" class="doc-pager-btn doc-pager-next" onclick={() => loadDoc(nextDoc.id)}>
+              <span class="doc-pager-label">Next &rarr;</span>
+              <span class="doc-pager-title">{nextDoc.title}</span>
+            </button>
+          {/if}
+        </nav>
       {/if}
     </div>
   </main>
 
   <!-- Right Pane Sticky Outline TOC -->
-  {#if tocItems.length > 0}
+  {#if tocItems.length > 0 && current}
     <aside class="f-toc-right-pane" aria-label="On this page navigation">
       <div class="toc-sticky-box">
         <div class="toc-header">
           <iconify-icon icon="fluent:text-column-one-24-regular" style="font-size:0.95rem; color:var(--color-brand-primary);"></iconify-icon>
-          <span>On This Page</span>
+          <span>On this page</span>
         </div>
         <ul class="toc-list">
           {#each tocItems as item}
@@ -413,7 +416,6 @@
               <button
                 type="button"
                 class="toc-item"
-                class:toc-item--h3={item.level === 3}
                 class:toc-item--active={activeHeadingId === item.id}
                 onclick={() => scrollToHeading(item.id)}
               >
@@ -459,74 +461,25 @@
   }
 
   .doc-article-container {
-    max-width: 100%;
+    max-width: 52rem;
     width: 100%;
+    margin: 0 auto;
   }
 
-  /* Medium-Style Article Header Meta Bar */
-  .medium-article-meta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 1.25rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid var(--color-neutral-stroke-1, rgba(0,0,0,0.08));
-    width: 100%;
-  }
-
-  .medium-author-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .medium-avatar {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: var(--color-brand-subtle, rgba(4,51,136,0.06));
-    border: 1px solid var(--color-neutral-stroke-1, rgba(0,0,0,0.1));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .medium-author-details {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .medium-author-title {
+  /* Slim line above the article */
+  .doc-meta-bar {
     display: flex;
     align-items: center;
     gap: 8px;
-  }
-
-  .medium-author-name {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--color-neutral-fg-1, #022057);
-  }
-
-  .medium-pub-badge {
-    font-size: 0.625rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 2px 8px;
-    border-radius: 9999px;
-    background: rgba(33, 161, 247, 0.12);
-    color: var(--color-brand-primary, #043388);
-  }
-
-  .medium-meta-subtext {
-    font-size: 0.775rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1.75rem;
+    border-bottom: 1px solid var(--color-neutral-stroke-1, rgba(0,0,0,0.08));
+    font-size: 0.8rem;
     color: var(--color-neutral-fg-3, #64748B);
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  }
+
+  :global([data-theme="dark"]) .doc-meta-bar {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
   }
 
   .meta-dot {
@@ -535,6 +488,7 @@
   }
 
   .medium-share-btn {
+    margin-left: auto;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -553,24 +507,6 @@
     background: var(--color-brand-subtle, rgba(4,51,136,0.06));
     border-color: var(--color-brand-primary, #043388);
     color: var(--color-brand-primary, #043388);
-  }
-
-  :global([data-theme="dark"]) .medium-article-meta {
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-  }
-
-  :global([data-theme="dark"]) .medium-avatar {
-    background: rgba(33, 161, 247, 0.12);
-    border-color: rgba(255, 255, 255, 0.12);
-  }
-
-  :global([data-theme="dark"]) .medium-author-name {
-    color: #F8FAFC;
-  }
-
-  :global([data-theme="dark"]) .medium-pub-badge {
-    background: rgba(33, 161, 247, 0.2);
-    color: #6DC6EC;
   }
 
   :global([data-theme="dark"]) .medium-share-btn {
@@ -642,9 +578,6 @@
     text-align: left;
     line-height: 1.4;
     transition: all 0.15s ease;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .toc-item:hover {
@@ -657,11 +590,6 @@
     border-left-color: var(--color-brand-primary, #043388) !important;
     background: var(--color-brand-subtle, rgba(4,51,136,0.06)) !important;
     font-weight: 600;
-  }
-
-  .toc-item--h3 {
-    padding-left: 20px;
-    font-size: 0.735rem;
   }
 
   :global([data-theme="dark"]) .toc-item {
@@ -735,6 +663,143 @@
     color: var(--color-text-accent);
     border-left-color: #21A1F7;
   }
+
+  /* Collapsed document ID block inside articles */
+  :global(.doc-details) {
+    margin: 0 0 1.5rem;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--color-neutral-stroke-1, rgba(0,0,0,0.1));
+    border-radius: 10px;
+    font-size: 0.85rem;
+    color: var(--color-neutral-fg-2);
+  }
+  :global(.doc-details > summary) { cursor: pointer; font-weight: 600; }
+
+  /* Sidebar groups */
+  .doc-nav-home {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 1rem;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    background: none;
+    cursor: pointer;
+    font-size: 0.8375rem;
+    font-weight: 600;
+    color: var(--color-neutral-fg-1);
+    text-align: left;
+  }
+  .doc-nav-home:hover { background: var(--color-neutral-bg-3, #f1f5f9); }
+  .doc-nav-home.doc-nav-btn--active {
+    background: var(--color-brand-subtle, rgba(4,51,136,0.06));
+    color: var(--color-brand-primary, #043388);
+  }
+  :global([data-theme="dark"]) .doc-nav-home { color: #F8FAFC; }
+  :global([data-theme="dark"]) .doc-nav-home:hover { background: rgba(255,255,255,0.05); }
+  :global([data-theme="dark"]) .doc-nav-home.doc-nav-btn--active { background: rgba(33,161,247,0.12); color: var(--color-text-accent); }
+
+  .doc-nav-group { padding: 0 1rem; }
+  .doc-nav-group > summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 6px 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-neutral-fg-3);
+  }
+  .doc-nav-group > summary::-webkit-details-marker { display: none; }
+  .doc-nav-group > summary::after { content: '+'; float: right; font-weight: 400; }
+  .doc-nav-group[open] > summary::after { content: '–'; }
+  .doc-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  /* Docs landing page */
+  .docs-home-head h1 { margin: 0 0 0.5rem; font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; letter-spacing: -0.02em; }
+  .docs-home-head p { margin: 0 0 2rem; font-size: 1.05rem; color: var(--color-neutral-fg-2); line-height: 1.6; }
+  .docs-link-btn {
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    color: var(--color-brand-primary, #043388);
+    text-decoration: underline;
+  }
+  :global([data-theme="dark"]) .docs-link-btn { color: var(--color-text-accent); }
+  .docs-home-grid { display: flex; flex-direction: column; gap: 2.25rem; }
+  .docs-home-group h2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 0.25rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  .docs-home-blurb { margin: 0 0 0.9rem; font-size: 0.9rem; color: var(--color-neutral-fg-3); }
+  .docs-home-group ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+  @media (max-width: 600px) { .docs-home-group ul { grid-template-columns: 1fr; } }
+  .docs-home-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 1rem 1.15rem;
+    text-align: left;
+    cursor: pointer;
+    border: 1px solid var(--color-neutral-stroke-1, rgba(0,0,0,0.1));
+    border-radius: 12px;
+    background: var(--color-neutral-bg-1, #FCFAF6);
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  .docs-home-card:hover { transform: translateY(-2px); border-color: var(--color-brand-primary, #043388); }
+  .docs-home-card-title { font-size: 0.975rem; font-weight: 700; color: var(--color-neutral-fg-1); }
+  .docs-home-card-text { font-size: 0.85rem; line-height: 1.45; color: var(--color-neutral-fg-2); }
+
+  /* Previous and next */
+  .doc-pager {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-neutral-stroke-1, rgba(0,0,0,0.08));
+  }
+  .doc-pager-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-width: 48%;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    cursor: pointer;
+    border: 1px solid var(--color-neutral-stroke-1, rgba(0,0,0,0.1));
+    border-radius: 12px;
+    background: var(--color-neutral-bg-1, #FCFAF6);
+  }
+  .doc-pager-btn:hover { border-color: var(--color-brand-primary, #043388); }
+  .doc-pager-next { margin-left: auto; text-align: right; }
+  .doc-pager-label { font-size: 0.75rem; color: var(--color-neutral-fg-3); }
+  .doc-pager-title { font-size: 0.95rem; font-weight: 700; color: var(--color-neutral-fg-1); }
 
   /* Skeleton loading animation */
   .doc-skeleton { animation: pulse 1.5s ease-in-out infinite; }

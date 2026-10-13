@@ -21,23 +21,20 @@
   ];
 
   const docsLinksGroup1 = [
-    { label: 'Brand × Fluent 2', href: '/doc/?doc=brand-fluent2', icon: 'fluent:puzzle-piece-24-regular' },
-    { label: 'Colour Composition', href: '/doc/?doc=color-composition-guide', icon: 'fluent:color-fill-24-regular' },
-    { label: 'Product Page Standard', href: '/doc/?doc=product-page-standard', icon: 'fluent:box-checkmark-24-regular' },
-    { label: 'Onboarding Guide', href: '/onboarding/', icon: 'fluent:person-star-24-regular' },
-    { label: "What's New", href: '/doc/?doc=changelog', icon: 'fluent:clock-arrow-download-24-regular' },
-    { label: 'Roadmap', href: '/doc/?doc=roadmap', icon: 'fluent:map-drive-24-regular' },
-    { label: 'Contribution Guide', href: '/doc/?doc=contribution-guide', icon: 'fluent:person-heart-24-regular' }
+    { label: 'All documents', href: '/doc/', icon: 'fluent:library-24-regular' },
+    { label: 'Vision and mission', href: '/doc/?doc=vision-mission', icon: 'fluent:eye-24-regular' },
+    { label: 'Our companies', href: '/doc/?doc=our-companies', icon: 'fluent:building-24-regular' },
+    { label: 'How we write', href: '/doc/?doc=brand-voice', icon: 'fluent:megaphone-24-regular' },
+    { label: 'SS Clinic guide', href: '/products/ssclinic/', icon: 'fluent:stethoscope-24-regular' },
+    { label: 'SS Clinic positioning', href: '/doc/?doc=clinic-positioning', icon: 'fluent:target-arrow-24-regular' }
   ];
 
   const docsLinksGroup2 = [
-    { label: 'Vision & Mission', href: '/doc/?doc=vision-mission', icon: 'fluent:eye-24-regular' },
-    { label: 'Brand Voice', href: '/doc/?doc=brand-voice', icon: 'fluent:megaphone-24-regular' },
-    { label: 'SS Clinic Guideline', href: '/products/ssclinic/', icon: 'fluent:stethoscope-24-regular' },
-    { label: 'Clinic Positioning', href: '/doc/?doc=clinic-positioning', icon: 'fluent:building-24-regular' },
-    { label: 'Diagnostic Funnel', href: '/doc/?doc=diagnostic-funnel', icon: 'fluent:clipboard-pulse-24-regular' },
-    { label: 'Mail Signature', href: '/signature/', icon: 'fluent:mail-template-24-regular' },
-    { label: 'SS CAM & Tools', href: '/tools/', icon: 'fluent:camera-24-regular' }
+    { label: 'How much of each colour', href: '/doc/?doc=color-composition-guide', icon: 'fluent:color-fill-24-regular' },
+    { label: 'Product brand pages', href: '/doc/?doc=product-page-standard', icon: 'fluent:box-checkmark-24-regular' },
+    { label: 'Onboarding guide', href: '/onboarding/', icon: 'fluent:person-star-24-regular' },
+    { label: 'What is new', href: '/doc/?doc=changelog', icon: 'fluent:clock-arrow-download-24-regular' },
+    { label: 'Roadmap', href: '/doc/?doc=roadmap', icon: 'fluent:map-drive-24-regular' }
   ];
 
   const searchIndex = [
