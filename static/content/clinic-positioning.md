@@ -1,5 +1,7 @@
 # SS Clinic Brand Positioning: Designer & Editor Playbook
 
+> **Looking for the logo, colours or rules?** Start with the [SS Clinic guideline page](/products/ssclinic/). This document is the full positioning: taglines, tone of voice and the designer's field guide.
+
 **Document ID:** `SSC-STR-001`  
 **Entity:** SuamiSihat Clinic Sdn. Bhd. (SSC)  
 **Target Audience:** Creative Directors, UI/UX Designers, Motion Editors, Healthcare Copywriters  

@@ -106,6 +106,7 @@ BRANDS = [
     ('nuCaffe', 'nucaffe'),
     ('Pertabi', 'pertabi'),
     ('Rejal', 'rejal'),
+    ('SsClinic', 'ssclinic'),
 ]
 
 

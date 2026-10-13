@@ -95,9 +95,13 @@ export function validateProduct({ folder, data }) {
     }
   }
 
-  // 5. Pattern
-  need(data.pattern.file && fileExists(data.pattern.file), `pattern file not found: ${data.pattern.file}`);
-  need(Array.isArray(data.pattern.usage) && data.pattern.usage.length >= 2, 'pattern.usage needs at least 2 rules');
+  // 5. Pattern (a brand with no approved pattern yet may mark it "pending" and say what to use instead)
+  if (data.pattern.status === 'pending') {
+    need(data.pattern.description?.length > 30, 'a pending pattern needs a description of what to use until one is approved');
+  } else {
+    need(data.pattern.file && fileExists(data.pattern.file), `pattern file not found: ${data.pattern.file}`);
+    need(Array.isArray(data.pattern.usage) && data.pattern.usage.length >= 2, 'pattern.usage needs at least 2 rules');
+  }
 
   // 6. Guideline
   const g = data.guideline;

@@ -60,8 +60,7 @@
           entity: '02-SSC · SS Clinic',
           entityIcon: 'fluent:stethoscope-24-regular',
           logo: '/public/brand/logos/02_logo_ssClinic/logo_ssc_primary_light.svg',
-          href: '/doc/?doc=clinic-positioning',
-          hrefLabel: 'Clinic Playbook',
+          href: '/products/ssclinic/',
           accent: 'linear-gradient(135deg, #022057, #0F4C75)',
           desc: 'Direct patient care, medical diagnostics, telehealth, and personalised treatment plans for Malaysian husbands. Governed by the core directive <em>"Kami Tak Jual Rawatan. Kami Cari Punca."</em> with centres in Subang Jaya and Kota Bharu.',
           searchData: 'ss clinic suamisihat clinic ssc doctor consultation diagnostics telehealth subang kota bharu'
@@ -377,7 +376,7 @@
         <ul class="cat-nav">
           <li><a href="/products/androlab/"><span class="cat-icon"><iconify-icon icon="fluent:pill-24-regular"></iconify-icon></span>ANDROLAB</a></li>
           <li><a href="/products/menss/"><span class="cat-icon"><iconify-icon icon="fluent:heart-pulse-24-regular"></iconify-icon></span>MENSS</a></li>
-          <li><a href="/doc/?doc=clinic-positioning"><span class="cat-icon"><iconify-icon icon="fluent:stethoscope-24-regular"></iconify-icon></span>SS Clinic</a></li>
+          <li><a href="/products/ssclinic/"><span class="cat-icon"><iconify-icon icon="fluent:stethoscope-24-regular"></iconify-icon></span>SS Clinic</a></li>
           <li><a href="/products/mensculine/"><span class="cat-icon"><iconify-icon icon="fluent:globe-24-regular"></iconify-icon></span>Mensculine</a></li>
           <li><a href="/products/drmitring/"><span class="cat-icon"><iconify-icon icon="fluent:stethoscope-24-regular"></iconify-icon></span>Dr. MIT Ring®</a></li>
           <li><a href="/products/rejal/"><span class="cat-icon"><iconify-icon icon="fluent:leaf-three-24-regular"></iconify-icon></span>REJAL</a></li>

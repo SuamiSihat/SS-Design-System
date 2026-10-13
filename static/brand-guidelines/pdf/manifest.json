@@ -34,5 +34,9 @@
   "rejal": {
     "source": "static/products/Rejal/metadata.json",
     "sha256": "a7aa0dd28f4fd9f773596a04d3e3cbcac86f94514061823752ac2e687ccfa25a"
+  },
+  "ssclinic": {
+    "source": "static/products/SsClinic/metadata.json",
+    "sha256": "4bd5ddb87512fed6221b56fb236b1640e9cbcebde12848c7b7db9858dedca53e"
   }
 }

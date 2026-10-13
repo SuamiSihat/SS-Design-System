@@ -1,0 +1,260 @@
+{
+  "schema": 2,
+  "slug": "ssclinic",
+  "name": "SS Clinic",
+  "status": "Active",
+  "tagline": "The Husband's Health Authority",
+  "entity": "SuamiSihat Clinic Sdn. Bhd.",
+  "category": "Main brand: clinics",
+  "hero": {
+    "from": "#022057",
+    "to": "#0F4C75",
+    "accent": "#F4A261"
+  },
+  "definition": {
+    "summary": "SS Clinic is the clinic brand of SuamiSihat®, run by SuamiSihat Clinic Sdn. Bhd. It offers consultations, health checks, telehealth and personal care plans for Malaysian husbands, always starting with a proper check before any treatment.",
+    "facts": [
+      {
+        "label": "Company",
+        "value": "SuamiSihat Clinic Sdn. Bhd."
+      },
+      {
+        "label": "Clinics",
+        "value": "Subang Jaya and Kota Bharu"
+      },
+      {
+        "label": "Brand character",
+        "value": "Dignified, expert, brotherly"
+      },
+      {
+        "label": "Approach",
+        "value": "Check first: an assessment always comes before any treatment plan"
+      },
+      {
+        "label": "Mark status",
+        "value": "To be confirmed by the brand owner"
+      }
+    ],
+    "range": [
+      {
+        "name": "Clinic care",
+        "type": "Service",
+        "desc": "Consultations, health checks and personal care plans in the clinics and by telehealth."
+      },
+      {
+        "name": "ANDROLAB RX",
+        "type": "Clinic programme",
+        "desc": "Doctor-led programmes delivered inside SS Clinic. See the ANDROLAB brand page."
+      },
+      {
+        "name": "MENSS devices",
+        "type": "Devices",
+        "desc": "Devices used within SS Clinic care plans. See the MENSS brand page."
+      }
+    ]
+  },
+  "images": [
+    {
+      "src": "/public/brand/logos/02_logo_ssClinic/logo_ssc_primary_light.svg",
+      "alt": "SS Clinic primary logo for light backgrounds",
+      "caption": "Primary logo, light backgrounds",
+      "fit": "contain",
+      "background": "#FFFFFF"
+    },
+    {
+      "src": "/public/brand/logos/02_logo_ssClinic/logo_ssc_primary_dark.svg",
+      "alt": "SS Clinic primary logo for dark backgrounds",
+      "caption": "Primary logo, dark backgrounds",
+      "fit": "contain",
+      "background": "#022057"
+    },
+    {
+      "src": "/public/brand/logos/02_logo_ssClinic/logo_ssc_secondary_light.svg",
+      "alt": "SS Clinic secondary logo for light backgrounds",
+      "caption": "Secondary logo, light backgrounds (clinic photography to come)",
+      "placeholder": true,
+      "fit": "contain",
+      "background": "#FFFFFF"
+    }
+  ],
+  "positioning": {
+    "statement": "Kami Tak Jual Rawatan. Kami Cari Punca. SS Clinic checks first, treats with precision, and makes no false promises.",
+    "promise": "Check Dulu. Rawat Dengan Tepat. Tiada Janji Palsu.",
+    "taglineLadder": [
+      {
+        "level": "Brand mantra (inside the company)",
+        "line": "Sihat Dari Dalam. Kuat Untuk Semua."
+      },
+      {
+        "level": "Campaign tagline (all public channels)",
+        "line": "Jaga Enjin. Jaga Keluarga."
+      },
+      {
+        "level": "Closing line",
+        "line": "Suami Sihat, Keluarga Bahagia."
+      }
+    ],
+    "pillars": [
+      {
+        "title": "Check first",
+        "text": "Every assessment comes before any treatment recommendation."
+      },
+      {
+        "title": "Dignity",
+        "text": "No shame. Brotherly and respectful of the husband and his family."
+      },
+      {
+        "title": "Honesty",
+        "text": "No guarantees, no countdowns, no miracle claims."
+      }
+    ],
+    "voice": [
+      "Warm and brotherly",
+      "Expert and calm",
+      "Educated, conversational Malay"
+    ],
+    "avoid": [
+      "Promises to cure, or to work by a certain time",
+      "False urgency such as countdowns or 'last slots'",
+      "Crude slang or shock headlines",
+      "Comparisons with named clinics",
+      "Treatment-specific taglines until regulatory review"
+    ],
+    "fullPositioning": "/doc/?doc=clinic-positioning"
+  },
+  "colorScheme": {
+    "foundation": {
+      "share": 60,
+      "role": "Deep Prussian Navy: the main background",
+      "colors": [
+        {
+          "name": "Deep Prussian Navy",
+          "hex": "#022057",
+          "use": "Hero backgrounds, posters, header panels"
+        }
+      ]
+    },
+    "structure": {
+      "share": 30,
+      "role": "White and Clinical Navy: cards and panels",
+      "colors": [
+        {
+          "name": "Pure White",
+          "hex": "#FFFFFF",
+          "use": "Cards, content boxes, text on navy"
+        },
+        {
+          "name": "Clinical Navy",
+          "hex": "#0F4C75",
+          "use": "Clinic wall panels, video backdrops, quieter cards"
+        }
+      ]
+    },
+    "accent": {
+      "share": 10,
+      "role": "Warm Clinic Gold: buttons and highlights",
+      "colors": [
+        {
+          "name": "Warm Clinic Gold",
+          "hex": "#F4A261",
+          "use": "Main buttons, highlight badges, star ratings"
+        },
+        {
+          "name": "Azure Energy",
+          "hex": "#21A1F7",
+          "use": "Online active states and verified badges"
+        }
+      ]
+    },
+    "pairings": [
+      {
+        "text": "#FFFFFF",
+        "background": "#022057",
+        "use": "White text on Prussian Navy"
+      },
+      {
+        "text": "#022057",
+        "background": "#FFFFFF",
+        "use": "Prussian Navy text on white"
+      },
+      {
+        "text": "#F4A261",
+        "background": "#022057",
+        "use": "Gold text on Prussian Navy"
+      },
+      {
+        "text": "#FFFFFF",
+        "background": "#0F4C75",
+        "use": "White text on Clinical Navy"
+      },
+      {
+        "text": "#0F4C75",
+        "background": "#FFFFFF",
+        "use": "Clinical Navy text on white"
+      },
+      {
+        "text": "#F4A261",
+        "background": "#0F4C75",
+        "use": "Gold on Clinical Navy: large text and shapes only",
+        "largeTextOnly": true
+      }
+    ]
+  },
+  "pattern": {
+    "status": "pending",
+    "name": "To be confirmed",
+    "file": null,
+    "description": "SS Clinic has no approved pattern yet. Until one is approved, use solid Prussian Navy or Clinical Navy backgrounds and real clinic photography.",
+    "usage": []
+  },
+  "guideline": {
+    "logos": [
+      {
+        "label": "Primary, light",
+        "file": "/public/brand/logos/02_logo_ssClinic/logo_ssc_primary_light.svg",
+        "use": "Light backgrounds"
+      },
+      {
+        "label": "Primary, dark",
+        "file": "/public/brand/logos/02_logo_ssClinic/logo_ssc_primary_dark.svg",
+        "use": "Dark backgrounds"
+      },
+      {
+        "label": "Secondary, light",
+        "file": "/public/brand/logos/02_logo_ssClinic/logo_ssc_secondary_light.svg",
+        "use": "Small spaces, light backgrounds"
+      },
+      {
+        "label": "Secondary, dark",
+        "file": "/public/brand/logos/02_logo_ssClinic/logo_ssc_secondary_dark.svg",
+        "use": "Small spaces, dark backgrounds"
+      }
+    ],
+    "clearSpace": "To be confirmed. Until then, keep a gap at least the height of the capital letters in the wordmark on every side.",
+    "minimumSize": "To be confirmed with the logo kit owner.",
+    "do": [
+      "Use the supplied logo files; never retype the wordmark",
+      "Photograph real clinic staff and patients, with written consent",
+      "Put text on solid panels, not on busy photos"
+    ],
+    "dont": [
+      "Do not use images of distressed men or pill bottles",
+      "Do not show or name individual doctors in brand material",
+      "Do not make cure, speed or comparison claims"
+    ],
+    "typography": {
+      "display": "Poppins SemiBold / Bold",
+      "body": "Inter on the web; 15 px body text, 1.7 line height",
+      "note": "Same typefaces as SuamiSihat®."
+    },
+    "grid": "Cards 12 px corner radius; buttons 8 px or fully rounded; 64 px safe margin on square ads; keep reel text inside the 1080 x 1350 px safe area.",
+    "photography": "Dignified Malaysian men aged 32 to 55, warm clinic lighting, natural eye contact, health-check equipment in use. Real clinic photography with written consent only; the photo library is to be confirmed."
+  },
+  "downloads": [
+    {
+      "label": "SS Clinic logo kit",
+      "file": "/public/brand/downloads/02_logo_ssClinic.zip",
+      "format": "ZIP"
+    }
+  ]
+}

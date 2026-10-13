@@ -48,7 +48,7 @@
 </svelte:head>
 
 <!-- Hero -->
-<header class="pb-hero" style="--hero-from:{p.hero.from}; --hero-to:{p.hero.to}; --pattern:url('{p.pattern.file}');">
+<header class="pb-hero" style="--hero-from:{p.hero.from}; --hero-to:{p.hero.to}; --pattern:{p.pattern.file ? `url('${p.pattern.file}')` : 'none'};">
   <div class="pb-hero-pattern" aria-hidden="true"></div>
   <div class="pb-hero-inner">
     <nav class="pb-crumbs" aria-label="Breadcrumb">
@@ -130,7 +130,7 @@
       {#each p.images as img, i}
         <li>
           <button type="button" class="pb-shot" onclick={() => openImage(i)}>
-            <img src={img.src} alt={img.alt} loading="lazy" />
+            <img src={img.src} alt={img.alt} loading="lazy" class:pb-contain={img.fit === 'contain'} style={img.background ? `background:${img.background}` : undefined} />
             <span class="pb-shot-caption">
               {img.caption}
               {#if img.placeholder}<span class="pb-tag pb-tag-warn">Photography pending</span>{/if}
@@ -148,6 +148,21 @@
   <section id="positioning" class="pb-section" aria-labelledby="h-positioning">
     <h2 id="h-positioning"><span class="pb-num">3</span> Brand positioning</h2>
     <blockquote class="pb-statement">{p.positioning.statement}</blockquote>
+    {#if p.positioning.promise}
+      <p class="pb-promise"><span>Brand promise</span> {p.positioning.promise}</p>
+    {/if}
+    {#if p.positioning.taglineLadder?.length}
+      <div class="pb-table-wrap pb-ladder">
+        <table class="pb-table">
+          <thead><tr><th scope="col">Where it is used</th><th scope="col">Line</th></tr></thead>
+          <tbody>
+            {#each p.positioning.taglineLadder as t}
+              <tr><td>{t.level}</td><td><strong>{t.line}</strong></td></tr>
+            {/each}
+          </tbody>
+        </table>
+      </div>
+    {/if}
     <ul class="pb-pillars">
       {#each p.positioning.pillars as pillar, i}
         <li class="pb-card">
@@ -171,6 +186,9 @@
         </ul>
       </div>
     </div>
+    {#if p.positioning.fullPositioning}
+      <p class="pb-note"><iconify-icon icon="fluent:document-text-16-regular" aria-hidden="true"></iconify-icon> <span>Tone of voice examples, the tagline guide and the designer's field guide: <a href={p.positioning.fullPositioning}>read the full {p.name} positioning</a>.</span></p>
+    {/if}
   </section>
 
   <!-- 4. Colour scheme -->
@@ -242,6 +260,12 @@
   <!-- 5. Pattern -->
   <section id="pattern" class="pb-section" aria-labelledby="h-pattern">
     <h2 id="h-pattern"><span class="pb-num">5</span> Pattern</h2>
+    {#if p.pattern.status === 'pending'}
+    <div class="pb-card pb-pending">
+      <h3><iconify-icon icon="fluent:clock-24-regular" aria-hidden="true"></iconify-icon> Pattern to be confirmed</h3>
+      <p>{p.pattern.description}</p>
+    </div>
+    {:else}
     <div class="pb-two">
       <div class="pb-pattern-preview" style="background-image:url('{p.pattern.file}');" role="img" aria-label="{p.pattern.name} pattern preview"></div>
       <div>
@@ -255,6 +279,7 @@
         </a>
       </div>
     </div>
+    {/if}
   </section>
 
   <!-- 6. Guideline -->
@@ -263,7 +288,7 @@
     <ul class="pb-logos">
       {#each p.guideline.logos as logo}
         <li class="pb-card">
-          <div class="pb-logo-tile"><img src={logo.file} alt="{logo.label}" loading="lazy" /></div>
+          <div class="pb-logo-tile" class:pb-logo-dark={/dark/i.test(logo.use ?? '')} style={/dark/i.test(logo.use ?? '') ? `background:${p.hero.from}` : undefined}><img src={logo.file} alt="{logo.label}" loading="lazy" /></div>
           <strong>{logo.label}</strong>
           <span class="pb-muted">{logo.use}</span>
         </li>
@@ -438,6 +463,11 @@
     display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.02em;
     padding: 2px 8px; border-radius: 6px; background: var(--color-brand-subtle); color: var(--color-brand-primary);
   }
+  .pb-promise { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.75rem; margin: 1rem 0; font-size: 1.15rem; font-weight: 700; color: var(--color-neutral-fg-1); }
+  .pb-promise span { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-text-accent); }
+  .pb-pending { border-left: 4px solid var(--color-warning-fg); }
+  .pb-pending h3 { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.5rem; }
+  .pb-pending p { margin: 0; color: var(--color-neutral-fg-2); }
   .pb-tag-warn { background: var(--color-warning-bg); color: var(--color-warning-fg); margin-left: 0.4rem; }
 
   /* Definition */
@@ -455,6 +485,8 @@
     overflow: hidden; background: var(--color-neutral-bg-2); cursor: zoom-in; text-align: left; color: inherit;
   }
   .pb-shot img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #FFFFFF; }
+  .pb-shot img.pb-contain { object-fit: contain; padding: 12%; box-sizing: border-box; }
+  .pb-ladder { margin-bottom: 1.25rem; }
   .pb-shot-caption { display: block; padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--color-neutral-fg-1); }
 
   /* Positioning */
@@ -513,6 +545,8 @@
     background: repeating-conic-gradient(#EDEDED 0% 25%, #FFFFFF 0% 50%) 50% / 16px 16px;
   }
   .pb-logo-tile img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  /* Logos made for dark backgrounds are shown on the brand's own dark colour (set inline) */
+  .pb-logo-tile.pb-logo-dark { border: 1px solid var(--color-neutral-stroke-2); }
 
   /* Downloads */
   .pb-downloads { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0.75rem; }

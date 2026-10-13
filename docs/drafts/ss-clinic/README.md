@@ -1,6 +1,6 @@
 # SS Clinic drafts (Phase 2, workstream G)
 
-Status: draft, 13 Oct 2026. Nothing here is served or built. Files:
+Status: **published 13 Oct 2026** as `static/products/SsClinic/metadata.json` (page `/products/ssclinic/`), combined with the brand positioning (promise, tagline ladder, link to the full positioning). This folder is kept for the decision record. Files:
 
 - `metadata.draft.json`: schema 2 draft for `static/products/SsClinic/metadata.json`.
 - This README: exposure audit, what is blocked and why.
