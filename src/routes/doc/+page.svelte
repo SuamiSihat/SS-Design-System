@@ -275,7 +275,7 @@
 </script>
 
 <svelte:head>
-  <title>{allDocs.find(d => d.id === currentDoc)?.title ?? 'Documentation'} — SuamiSihat™ Design System</title>
+  <title>{allDocs.find(d => d.id === currentDoc)?.title ?? 'Documentation'} — SuamiSihat® Design System</title>
 </svelte:head>
 
 <div
@@ -359,7 +359,7 @@
             </div>
             <div class="medium-author-details">
               <div class="medium-author-title">
-                <span class="medium-author-name">SuamiSihat™ Art Direction</span>
+                <span class="medium-author-name">SuamiSihat® Art Direction</span>
                 <span class="medium-pub-badge">Official Standard</span>
               </div>
               <div class="medium-meta-subtext">

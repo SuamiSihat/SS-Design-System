@@ -22,7 +22,7 @@
       <div class="f2-footer-logo-wrap">
         <a href="/" aria-label="SuamiSihat Homepage">
           <img src={logoSrc} 
-               alt="SuamiSihat™ Design System" 
+               alt="SuamiSihat® Design System" 
                class="f2-footer-logo" 
                loading="lazy">
         </a>

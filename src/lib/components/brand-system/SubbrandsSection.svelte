@@ -124,7 +124,7 @@
         <div class="f-subbrand-card-body">
           <div style="font-weight:800; color:var(--color-neutral-fg-1); font-size:1.1rem; margin-bottom:2px;">SS Ecommerce</div>
           <div style="font-size:0.75rem; font-weight:600; color:var(--color-brand-primary); margin-bottom:6px;">SuamiSihat Ecommerce Sdn. Bhd.</div>
-          <div class="f-subbrand-desc" style="font-size:0.8rem; color:var(--color-neutral-fg-3); line-height:1.5; margin-bottom:1rem;">The official commerce platform for approved SuamiSihat™ products, discretion, and delivery.</div>
+          <div class="f-subbrand-desc" style="font-size:0.8rem; color:var(--color-neutral-fg-3); line-height:1.5; margin-bottom:1rem;">The official commerce platform for approved SuamiSihat® products, discretion, and delivery.</div>
         </div>
       </div>
       <div style="display:flex; gap:0.5rem; border-top:1px solid var(--color-neutral-stroke-1); padding-top:1rem; margin-top:auto;">

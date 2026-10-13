@@ -1,17 +1,17 @@
-# About the SuamiSihat™ Design System
+# About the SuamiSihat® Design System
 
-The **SuamiSihat™ Design System** is our authoritative creative and architectural language. It ensures that every designer, software engineer, medical writer, and marketing specialist builds from a single, unified foundation across all clinical and digital touchpoints.
+The **SuamiSihat® Design System** is our authoritative creative and architectural language. It ensures that every designer, software engineer, medical writer, and marketing specialist builds from a single, unified foundation across all clinical and digital touchpoints.
 
 ---
 
 ## System Contents
 
-The system establishes the foundational standards for the entire SuamiSihat™ ecosystem:
+The system establishes the foundational standards for the entire SuamiSihat® ecosystem:
 
 - **Logo Governance** — Master brand, parent holding, and subsidiary marks with strict clear-space and contrast rules.
 - **Color Architecture** — 60:30:10 visual colour allocation and semantic tokens tested to WCAG 2.2 AA in light and dark theme.
 - **Typography Standards** — Primary typefaces, hierarchy scales, and the mandatory Neutral Black (`#1C1C1C`) readability standard.
-- **Corporate Architecture** — Master Brand (`SuamiSihat™`), Parent Entity (`SuamiSihat Holding Sdn. Bhd.`), and Operating Subsidiaries (Healthcare, Group, Technology, and Ecommerce).
+- **Corporate Architecture** — Master Brand (`SuamiSihat®`), Parent Entity (`SuamiSihat Holding Sdn. Bhd.`), and Operating Subsidiaries (Healthcare, Group, Technology, and Ecommerce).
 - **Component Primitives** — Microsoft Fluent 2-aligned interface elements, states, and accessibility tokens.
 - **Brand Kits & Downloads** — Official vector logos, stationery templates, and design assets packaged for production.
 

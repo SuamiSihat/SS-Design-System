@@ -11,7 +11,7 @@
           <iconify-icon icon="fluent:star-24-filled"></iconify-icon>
         </div>
         <div>
-          <strong style="color:var(--color-brand-primary);font-size:0.92rem;">SuamiSihat™ Master Brand Kit</strong>
+          <strong style="color:var(--color-brand-primary);font-size:0.92rem;">SuamiSihat® Master Brand Kit</strong>
           <div style="font-size:0.72rem;color:var(--color-neutral-fg-3);">Master vector logos (Light, Dark, Mono)</div>
         </div>
       </div>

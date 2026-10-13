@@ -10,7 +10,7 @@
 
 ## Brand Summary
 
-SuamiSihat™ Clinic Sdn. Bhd. (02-SSC) is a men's health clinic brand built around the Malaysian husband: dignified, expert and brotherly. Its core directive is **"Kami Tak Jual Rawatan. Kami Cari Punca."** The clinic checks first, treats with precision and makes no false promises.
+SuamiSihat Clinic Sdn. Bhd. (02-SSC) is a men's health clinic brand built around the Malaysian husband: dignified, expert and brotherly. Its core directive is **"Kami Tak Jual Rawatan. Kami Cari Punca."** The clinic checks first, treats with precision and makes no false promises.
 
 Visually that means deep navy and white with a restrained warm accent, calm clinical photography and plain, respectful Malay. It never uses shame, fear or false urgency.
 
@@ -40,7 +40,7 @@ Treatment-specific lines (level 3) are held in the staff-only playbook until reg
 
 ## Part 1: Designer's Field Guide (Visual Art Direction & UI/UX Standards)
 
-This section provides strict, non-negotiable art-direction specifications for graphic designers, digital art directors, and UI/UX engineers building assets for SuamiSihat™ Clinic.
+This section provides strict, non-negotiable art-direction specifications for graphic designers, digital art directors, and UI/UX engineers building assets for SuamiSihat® Clinic.
 
 ### 01. The 60:30:10 Color Hierarchy & Token Specification
 
@@ -64,7 +64,7 @@ The 60:30:10 rule is an **art-direction heuristic for visual mass**. It guarante
 | Role | Color Name | Hex Code | Semantic Design Token | Usage Scope |
 | :--- | :--- | :--- | :--- | :--- |
 | **60% Foundation** | Deep Prussian Navy | `#022057` | `--color-brand-deep` | Master hero background, solid poster canvas, header panels. |
-| **60% Foundation (Alt)** | Clinical Navy | `#0F4C75` | `--color-brand-primary` | In-clinic acrylic walls, video backdrops, gradient overlays. |
+| **30% Structure** | Clinical Navy | `#0F4C75` | `--color-brand-primary` | In-clinic acrylic walls, video backdrops, gradient overlays. |
 | **30% Structure** | Pure Clinical White | `#FFFFFF` | `--color-neutral-bg-1` | Content cards, data containers, main text on dark surfaces. |
 | **30% Structure** | Sterile Off-White | `#F8FAFC` | `--color-neutral-bg-2` | Light web canvas, alternating table rows, card borders. |
 | **30% Structure** | Slate Border | `#E2E8F0` | `--color-neutral-stroke-1` | Card dividers, subtle outline strokes, input field borders. |
@@ -111,7 +111,7 @@ flowchart LR
 
 ### 02. Typography System & Type Scale
 
-SuamiSihat™ typography pairs **editorial masculinity with digital precision**.
+SuamiSihat® typography pairs **editorial masculinity with digital precision**.
 
 #### Font Pairings
 
@@ -155,7 +155,7 @@ All visual assets must conform to Microsoft Fluent 2-aligned structural tokens:
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                      PHOTOGRAPHY CASTING & STAGING DOCTRINE                 │
 ├──────────────────────────────────────┬──────────────────────────────────────┤
-│ APPROVED SUAMISIHAT™ VISUALS         │ STRICTLY BANNED VISUAL CLICHÉS       │
+│ APPROVED SUAMISIHAT® VISUALS         │ STRICTLY BANNED VISUAL CLICHÉS       │
 ├──────────────────────────────────────┼──────────────────────────────────────┤
 │ • Dignified Malaysian men (32–55 yo) │ • Distressed men clutching forehead  │
 │ • Natural smiles, upright posture    │ • Dark, depressing, gloomy bedrooms  │
@@ -169,7 +169,7 @@ All visual assets must conform to Microsoft Fluent 2-aligned structural tokens:
 
 #### Approved Photography Styles
 1. **The Modern Husband Portrait:** Authentic Malaysian men (Malay, Chinese, Indian) engaged in real-life moments: enjoying breakfast with family, driving, working at an executive desk, or sharing coffee. He is confident, respected, and proactive about his health.
-2. **The Attentive Physician Portrait:** Clinic doctors photographed in warm, modern clinic consultation suites. Posture is open, listening, and empathetic. Attire: Tailored navy clinical scrubs or crisp modern white consultation coats with embroidered SuamiSihat™ insignia.
+2. **The Attentive Physician Portrait:** Clinic doctors photographed in warm, modern clinic consultation suites. Posture is open, listening, and empathetic. Attire: Tailored navy clinical scrubs or crisp modern white consultation coats with embroidered SuamiSihat® insignia.
 3. **The Diagnostic Ritual:** Macro photography of high-precision diagnostic tools: digital blood pressure monitors, centrifugal lab tubes, ESWT acoustic handpieces held with professional precision. Focus on the **scientific credibility of diagnosis**.
 
 ---
@@ -182,13 +182,13 @@ Voice rules for copywriters. Regulatory guardrails, regional playbooks, swipe fi
 
 ### 01. The Brand Voice Matrix: Modern Masculine Healthcare
 
-SuamiSihat™ operates under one foundational standard: **MASCULINE ≠ MACHO**.
+SuamiSihat® operates under one foundational standard: **MASCULINE ≠ MACHO**.
 
 ```text
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                        BRAND VOICE BOUNDARY MATRIX                          │
 ├──────────────────────────────────────┬──────────────────────────────────────┤
-│ WHAT SUAMISIHAT™ IS                  │ WHAT SUAMISIHAT™ IS NOT              │
+│ WHAT SUAMISIHAT® IS                  │ WHAT SUAMISIHAT® IS NOT              │
 ├──────────────────────────────────────┼──────────────────────────────────────┤
 │ [ Warm, brotherly, respected peer  ] │ [ Cold, clinical, preaching doctor ] │
 │ [ Educated, conversational Malay   ] │ [ Rigid archaic BM or crude slang  ] │

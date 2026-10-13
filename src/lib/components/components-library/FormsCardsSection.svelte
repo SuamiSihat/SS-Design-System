@@ -48,7 +48,7 @@
     <div class="col-md-4">
       <div class="ss-card" style="height:100%;">
         <div class="ss-card-icon" style="background:var(--color-brand-subtle); color:var(--color-brand-primary);"><iconify-icon icon="fluent:heart-pulse-24-regular" style="font-size:22px"></iconify-icon></div>
-        <div class="ss-card-title">SS Health Clinic</div>
+        <div class="ss-card-title">SS Clinic</div>
         <div class="ss-card-desc">Doctor-led private evaluation of biomarkers and personalized male recovery protocols.</div>
       </div>
     </div>

@@ -16,8 +16,8 @@
 
   /** @type {Props} */
   let {
-    eyebrow = 'Design System — SuamiSihat™',
-    title = 'Ship the SuamiSihat™ brand faster and better.',
+    eyebrow = 'Design System — SuamiSihat®',
+    title = 'Ship the SuamiSihat® brand faster and better.',
     subtitle = 'The single source of truth for how we look, feel, and sound. Standardized Fluent 2 design tokens, UI components, and brand collateral.',
     minHeight = '520px',
     showBadges = false,

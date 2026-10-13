@@ -38,7 +38,7 @@
 <section id="logomark" class="bs-section" style="margin-bottom: 4rem; scroll-margin-top: 80px;">
   <div class="bs-section-eyebrow" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">01 &middot; Visual Marks</div>
   <h2 class="bs-section-title" style="font-size: 1.75rem; font-weight: 800; color: var(--color-neutral-fg-1); margin-bottom: 6px;">Logomark &amp; Master Identity</h2>
-  <p class="bs-section-desc" style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">The official SuamiSihat™ mark represents medical precision, vitality, and masculine dignity.</p>
+  <p class="bs-section-desc" style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">The official SuamiSihat® mark represents medical precision, vitality, and masculine dignity.</p>
 
   <!-- Three Logo Variants Cards -->
   <div class="row g-4 mb-4">

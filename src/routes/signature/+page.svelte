@@ -21,7 +21,7 @@
   let instagram = $state('https://instagram.com/suamisihat.official');
 
   let includeCtaBanner = $state(true);
-  let ctaText = $state('Explore SuamiSihat™ Corporate');
+  let ctaText = $state('Explore SuamiSihat® Corporate');
   let ctaUrl = $state('https://suamisihat.com.my');
 
   let previewMode = $state('light'); // 'light' | 'dark'
@@ -31,8 +31,8 @@
   // --- Corporate Entities ---
   const entities = {
     master: {
-      name: 'SuamiSihat™ Group Headquarters',
-      shortName: 'SuamiSihat™',
+      name: 'SuamiSihat® Group Headquarters',
+      shortName: 'SuamiSihat®',
       code: 'HQ-MASTER',
       color: '#043388',
       accentColor: '#21A1F7',
@@ -138,7 +138,7 @@
       whatsapp = '+60123456789';
       templateId = 'classic';
       includeCtaBanner = true;
-      ctaText = 'Explore SuamiSihat™ Corporate';
+      ctaText = 'Explore SuamiSihat® Corporate';
       ctaUrl = 'https://suamisihat.com.my';
     } else if (profileKey === 'doctor') {
       name = 'Dr. Amirul Hakim';
@@ -420,12 +420,12 @@
 </script>
 
 <svelte:head>
-  <title>Signature Studio — SuamiSihat™ Design System</title>
+  <title>Signature Studio — SuamiSihat® Design System</title>
 </svelte:head>
 
 <!-- Art Director Hero Banner -->
 <SSHero
-  eyebrow="Staff Communications &bull; SuamiSihat™ Corporate"
+  eyebrow="Staff Communications &bull; SuamiSihat® Corporate"
   title="Signature Studio &amp; Mail Identity"
   subtitle="Art-directed email signature generator powering unified, clinical-grade corporate signatures across Outlook, Gmail, Apple Mail, and Exchange enterprise environments."
   showBadges={false}
@@ -693,7 +693,7 @@
               <span><strong>From:</strong> {name} &lt;{email}&gt;</span>
               <span class="badge" style="background: {selectedEntity.color}; color: #FFFFFF;">{selectedEntity.code}</span>
             </div>
-            <div><strong>Subject:</strong> SuamiSihat™ Q3 Operations &amp; Clinical Direction</div>
+            <div><strong>Subject:</strong> SuamiSihat® Q3 Operations &amp; Clinical Direction</div>
           </div>
 
           <!-- Canvas Render Pane -->

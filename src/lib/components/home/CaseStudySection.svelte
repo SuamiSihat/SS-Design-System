@@ -14,7 +14,7 @@
   <div class="f-section-head">
     <h2 class="f-section-title">Case Study: From 5 Silos to 1 Clinical Ecosystem</h2>
     <p class="f-section-subtitle">
-      How standardizing on the SuamiSihat™ Design System transformed digital clinic workflows and physical packaging across the group.
+      How standardizing on the SuamiSihat® Design System transformed digital clinic workflows and physical packaging across the group.
     </p>
   </div>
 

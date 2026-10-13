@@ -26,7 +26,7 @@
 <section class="cl-section" id="fluent2-guide" style="margin-bottom: 4rem; scroll-margin-top: 80px;">
   <div class="cl-section-eyebrow">Official Standard</div>
   <h2 class="cl-section-title">Microsoft Fluent 2 Guidelines &amp; UX Framework</h2>
-  <p class="cl-section-desc">SuamiSihat™'s design system strictly adopts Microsoft's Fluent 2 design language adapted to our brand palette. Grounded in 4 core principles, 8 design dimensions, and a unified UX state framework.</p>
+  <p class="cl-section-desc">SuamiSihat®'s design system strictly adopts Microsoft's Fluent 2 design language adapted to our brand palette. Grounded in 4 core principles, 8 design dimensions, and a unified UX state framework.</p>
 
   <div class="row g-4 mb-4">
     <div class="col-md-6 col-lg-3">
@@ -545,7 +545,7 @@
   <h2 class="cl-section-title">Typography</h2>
   <p class="cl-section-desc">Inter &bull; Fluent 2-compatible typeface scale from Display to Label. Identical token naming across web, Flutter, and Expo.</p>
   <div class="cl-card" style="background: var(--color-neutral-bg-2); border: 1px solid var(--color-neutral-stroke-1); border-radius: var(--f-radius-xl); padding: 1.5rem;">
-    <div class="cl-type-row" style="display:flex; align-items:baseline; gap:1.5rem; padding:0.75rem 0; border-bottom:1px solid var(--color-neutral-stroke-1);"><div style="width:120px; font-size:0.7rem; font-weight:700; color:var(--color-neutral-fg-3); text-transform:uppercase;">Display</div><div style="font-size:2.5rem; font-weight:800; letter-spacing:-0.03em; color:var(--color-neutral-fg-1);">SuamiSihat™</div></div>
+    <div class="cl-type-row" style="display:flex; align-items:baseline; gap:1.5rem; padding:0.75rem 0; border-bottom:1px solid var(--color-neutral-stroke-1);"><div style="width:120px; font-size:0.7rem; font-weight:700; color:var(--color-neutral-fg-3); text-transform:uppercase;">Display</div><div style="font-size:2.5rem; font-weight:800; letter-spacing:-0.03em; color:var(--color-neutral-fg-1);">SuamiSihat®</div></div>
     <div class="cl-type-row" style="display:flex; align-items:baseline; gap:1.5rem; padding:0.75rem 0; border-bottom:1px solid var(--color-neutral-stroke-1);"><div style="width:120px; font-size:0.7rem; font-weight:700; color:var(--color-neutral-fg-3); text-transform:uppercase;">Title Large</div><div style="font-size:1.75rem; font-weight:700; color:var(--color-neutral-fg-1);">Brand System</div></div>
     <div class="cl-type-row" style="display:flex; align-items:baseline; gap:1.5rem; padding:0.75rem 0; border-bottom:1px solid var(--color-neutral-stroke-1);"><div style="width:120px; font-size:0.7rem; font-weight:700; color:var(--color-neutral-fg-3); text-transform:uppercase;">Subtitle</div><div style="font-size:1.15rem; font-weight:600; color:var(--color-neutral-fg-1);">Fluent 2 Design Tokens</div></div>
     <div class="cl-type-row" style="display:flex; align-items:baseline; gap:1.5rem; padding:0.75rem 0; border-bottom:1px solid var(--color-neutral-stroke-1);"><div style="width:120px; font-size:0.7rem; font-weight:700; color:var(--color-neutral-fg-3); text-transform:uppercase;">Body</div><div style="font-size:0.95rem; line-height:1.6; color:var(--color-neutral-fg-2);">The quick brown fox jumps over the lazy dog. Standard clinical readability.</div></div>

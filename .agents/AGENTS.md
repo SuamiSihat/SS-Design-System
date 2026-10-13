@@ -1,4 +1,4 @@
-# SuamiSihat™ Design System — Agent Rules
+# SuamiSihat® Design System — Agent Rules
 
 ## Logo Selection Rules
 
@@ -157,7 +157,7 @@ Health, medical and performance claims are not published on product pages. Recor
 
 ### Rule 6 — Default Hero Component Standard (`ss-hero`)
 
-The `ss-hero` component is the **official default background and container standard** for all hero-type banners, landing headers, and product master headers across SuamiSihat™:
+The `ss-hero` component is the **official default background and container standard** for all hero-type banners, landing headers, and product master headers across SuamiSihat®:
 
 | Attribute | Specification |
 | --------- | ------------- |
@@ -173,7 +173,7 @@ The `ss-hero` component is the **official default background and container stand
 
 ### Rule 7 — Brand × Fluent 2 Integration Contract
 
-The SuamiSihat™ Design System follows a strict two-layer architectural hierarchy:
+The SuamiSihat® Design System follows a strict two-layer architectural hierarchy:
 
 > *"Fluent 2 provides the interaction system and structural logic. SuamiSihat provides the soul, visual identity, and clinical authority."*
 
@@ -181,10 +181,10 @@ The SuamiSihat™ Design System follows a strict two-layer architectural hierarc
 
 | Design Decision | Source of Truth | Implementation Rule |
 | --------------- | --------------- | ------------------- |
-| **Brand Personality** | SuamiSihat™ | Confident, clinical, masculine, premium, discreet. |
-| **Logo & Brand Marks** | SuamiSihat™ | Brightness-aware selection (`_light.svg` on HSL L ≥ 50%, `_dark.svg` on HSL L < 50%). |
-| **Colour Palette** | SuamiSihat™ | Prussian Blue `#022057`, SS Blue `#043388`, Azure `#21A1F7`, Banana Yellow `#FCE53D`. |
-| **Typography** | SuamiSihat™ | Poppins (display), Montserrat (subtitles), Helvetica Neue / Inter on web (body), per Brand System section 04, with 4-tier text tokens. |
+| **Brand Personality** | SuamiSihat® | Confident, clinical, masculine, premium, discreet. |
+| **Logo & Brand Marks** | SuamiSihat® | Brightness-aware selection (`_light.svg` on HSL L ≥ 50%, `_dark.svg` on HSL L < 50%). |
+| **Colour Palette** | SuamiSihat® | Prussian Blue `#022057`, SS Blue `#043388`, Azure `#21A1F7`, Banana Yellow `#FCE53D`. |
+| **Typography** | SuamiSihat® | Poppins (display), Montserrat (subtitles), Helvetica Neue / Inter on web (body), per Brand System section 04, with 4-tier text tokens. |
 | **Component Anatomy** | Fluent 2 | Standard compound slots (icon start/end, content, action, badge). |
 | **Interaction States** | Fluent 2 | Rest, Hover, Pressed, Selected, Focused, Disabled state machines. |
 | **Accessibility (a11y)** | Fluent 2 + WCAG | WCAG 2.2 AA compliant, 2px high-contrast offset focus rings. |
@@ -206,7 +206,7 @@ When prompting or implementing any new landing page, campaign funnel, product hu
 
 ```markdown
 ### Design System — Mandatory Source of Truth
-This page must be designed and built using the **SuamiSihat™ Brand & Design System** (`assets.suamisihat.myds.me`):
+This page must be designed and built using the **SuamiSihat® Brand & Design System** (`assets.suamisihat.myds.me`):
 - **Visual Identity (SuamiSihat)**: Use established brand colours (`#043388`, `#022057`, `#21A1F7`, `#FCE53D`) through the contrast-safe tokens, Fluent System Icons (no emoji), Poppins/Inter typography, 4-tier text contrast hierarchy (`--text-strong`, `--text-primary`, `--text-secondary`, `--text-disabled`), and brightness-aware SVG logo selection.
 - **Interaction Layer (Fluent 2)**: All components, states (`hover`, `pressed`, `focus`), elevation levels, and spatial layouts follow Fluent 2 component specifications and accessibility contracts.
 - **System Precedence**: SuamiSihat Brand DNA > Design Tokens > Fluent 2 Component Anatomy > Page Content.

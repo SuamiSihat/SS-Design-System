@@ -10,7 +10,7 @@
   <div class="f-section-head">
     <h2 class="f-section-title">Built to Ship Faster. Designed to Stay Consistent.</h2>
     <p class="f-section-subtitle">
-      Three foundational pillars govern every decision in the SuamiSihat™ Design System — from a single token to a full product page.
+      Three foundational pillars govern every decision in the SuamiSihat® Design System — from a single token to a full product page.
     </p>
   </div>
 
@@ -29,7 +29,7 @@
             &ldquo;A unified design system engineered to establish clinical authority, protect brand equity, and ensure seamless patient experiences across all digital and physical environments.&rdquo;
           </p>
           <p class="f-manifesto-lead">
-            The SuamiSihat™ Design System serves as the authoritative single source of truth across all operating subsidiaries &mdash; synchronizing design tokens, component architecture, and accessibility standards across Web, Mobile, and Desktop platforms.
+            The SuamiSihat® Design System serves as the authoritative single source of truth across all operating subsidiaries &mdash; synchronizing design tokens, component architecture, and accessibility standards across Web, Mobile, and Desktop platforms.
           </p>
         </div>
 

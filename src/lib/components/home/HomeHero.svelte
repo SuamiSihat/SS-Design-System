@@ -14,8 +14,8 @@
      CHAPTER 1: THE MASTER HERO & BRAND MANIFESTO
      ================================================================ -->
 <SSHero
-  eyebrow={`<iconify-icon icon='fluent:design-ideas-24-regular' style='font-size: 1.15rem; color: #6DC6EC; vertical-align: middle;' aria-hidden='true'></iconify-icon> <span>SuamiSihat™ Design System &bull; v${VERSION}</span>`}
-  title="The Single Source of Truth<br>for Design at SuamiSihat™."
+  eyebrow={`<iconify-icon icon='fluent:design-ideas-24-regular' style='font-size: 1.15rem; color: #6DC6EC; vertical-align: middle;' aria-hidden='true'></iconify-icon> <span>SuamiSihat® Design System &bull; v${VERSION}</span>`}
+  title="The Single Source of Truth<br>for Design at SuamiSihat®."
   subtitle="Design tokens, Fluent 2 components, brand guidelines, and multi-platform export tools — everything your team needs to build consistent, on-brand products faster."
   minHeight="560px"
 >

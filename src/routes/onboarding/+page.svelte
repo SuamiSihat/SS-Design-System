@@ -44,7 +44,7 @@
 </script>
 
 <svelte:head>
-  <title>Staff Onboarding — SuamiSihat™ Design System</title>
+  <title>Staff Onboarding — SuamiSihat® Design System</title>
 </svelte:head>
 
 <!-- Hero Banner -->
@@ -55,7 +55,7 @@
       <iconify-icon icon="fluent:hand-wave-24-regular"></iconify-icon> Welcome to the team
     </div>
     <h1 style="font-size:clamp(2rem,4vw,3.25rem);font-weight:800;color:#FFFFFF;margin-bottom:1rem;line-height:1.2;">
-      Your First Stop at SuamiSihat™
+      Your First Stop at SuamiSihat®
     </h1>
     <p style="font-size:1.05rem;color:rgba(255,255,255,0.85);line-height:1.7;margin-bottom:2rem;">
       Everything you need to get up to speed. Brand orientation, tools, team structure, and a first-week checklist all in one place.
@@ -104,7 +104,7 @@
           <iconify-icon icon="fluent:handshake-24-regular"></iconify-icon>
         </div>
         <div>
-          <h2 style="font-size:1.6rem;font-weight:800;color:var(--color-neutral-fg-1);margin:0;">Welcome to SuamiSihat™</h2>
+          <h2 style="font-size:1.6rem;font-weight:800;color:var(--color-neutral-fg-1);margin:0;">Welcome to SuamiSihat®</h2>
           <p style="font-size:0.85rem;color:var(--color-neutral-fg-3);margin:0;">A note to get you started</p>
         </div>
       </div>
@@ -211,12 +211,12 @@
         </div>
       </div>
       <p style="font-size:0.95rem;color:var(--color-neutral-fg-2);line-height:1.7;margin-bottom:1.5rem;">
-        SuamiSihat™ is the public-facing master brand. Operations are governed by the parent company (SuamiSihat™ Holding Sdn. Bhd. / SS Health) and executed across four operating subsidiaries.
+        SuamiSihat® is the public-facing master brand. Operations are governed by the parent company (SuamiSihat Holding Sdn. Bhd. / SS Health) and executed across four operating subsidiaries.
       </p>
 
       <div class="cl-card p-4 mb-4" style="background:var(--color-neutral-bg-2);border:1px solid var(--color-neutral-stroke-1);border-radius:var(--f-radius-xl);text-align:center;">
         <div style="padding:1rem;background:var(--color-neutral-bg-1);border-radius:var(--f-radius-lg);border:1px solid var(--color-neutral-stroke-1);display:inline-block;max-width:320px;width:100%;margin-bottom:1rem;">
-          <strong style="color:var(--color-brand-primary);font-size:1.05rem;display:block;">SuamiSihat™ (Master Brand)</strong>
+          <strong style="color:var(--color-brand-primary);font-size:1.05rem;display:block;">SuamiSihat® (Master Brand)</strong>
           <span style="font-size:0.75rem;color:var(--color-neutral-fg-3);">Public-facing master brand &amp; ecosystem</span>
         </div>
         <div style="width:2px;height:24px;background:var(--color-neutral-stroke-2);margin:0 auto 1rem;"></div>

@@ -52,7 +52,7 @@ function testDom(pageName, html, rules) {
 }
 
 console.log('\n======================================================');
-console.log('   SuamiSihat™ Design System — DOM Validation Suite');
+console.log('   SuamiSihat® Design System — DOM Validation Suite');
 console.log('======================================================');
 
 // 1. Root & Layout DOM Testing

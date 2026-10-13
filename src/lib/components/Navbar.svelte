@@ -185,7 +185,7 @@
   <nav class="f-navbar-inner" aria-label="Global navigation">
     <!-- Brand -->
     <a class="f-navbar-brand" href="/">
-      <img src={isDarkMode ? "/public/brand/logos/ss-logomark-dark.svg" : "/public/brand/logos/ss-logomark-light.svg"} class="logo" alt="SuamiSihat™ Icon" aria-hidden="true" loading="eager" style="height: 28px;">
+      <img src={isDarkMode ? "/public/brand/logos/ss-logomark-dark.svg" : "/public/brand/logos/ss-logomark-light.svg"} class="logo" alt="SuamiSihat® Icon" aria-hidden="true" loading="eager" style="height: 28px;">
       <span class="f-navbar-brand-name">SS Design System</span>
       <span class="f-navbar-version">v{VERSION}</span>
       <span class="visually-hidden">home</span>
@@ -377,7 +377,7 @@
   
   <aside class="f-drawer open" id="mobileDrawer" aria-label="Mobile Navigation">
     <div class="f-drawer-header">
-      <span class="f-drawer-brand">SuamiSihat™ Design System</span>
+      <span class="f-drawer-brand">SuamiSihat® Design System</span>
       <button id="drawerClose" class="f-drawer-close" onclick={closeDrawer} aria-label="Close menu">
         <iconify-icon icon="fluent:dismiss-24-regular" aria-hidden="true"></iconify-icon>
       </button>
@@ -417,7 +417,7 @@
         {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
       </button>
     </div>
-    <div class="f-drawer-footer">SuamiSihat™ Design System v{VERSION}</div>
+    <div class="f-drawer-footer">SuamiSihat® Design System v{VERSION}</div>
   </aside>
 {/if}
 

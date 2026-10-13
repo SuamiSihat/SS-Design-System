@@ -1,7 +1,7 @@
 <section id="client-representation" class="bs-section" style="margin-bottom: 4rem; scroll-margin-top: 80px;">
   <div class="bs-section-eyebrow" style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-brand-primary); margin-bottom: 4px;">08 &middot; Governance &amp; Ecosystem Delivery</div>
   <h2 class="bs-section-title" style="font-size: 1.75rem; font-weight: 800; color: var(--color-neutral-fg-1); margin-bottom: 6px;">Client Representation &amp; Dignity Standards</h2>
-  <p class="bs-section-desc" style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">How internal staff, developers, and designers must represent the SuamiSihat™ brand across patient-facing portals, teleconsultation interfaces, clinics, and packaging.</p>
+  <p class="bs-section-desc" style="font-size: 0.95rem; color: var(--color-neutral-fg-2); margin-bottom: 1.5rem;">How internal staff, developers, and designers must represent the SuamiSihat® brand across patient-facing portals, teleconsultation interfaces, clinics, and packaging.</p>
 
   <div class="row g-4 mb-4">
     <div class="col-md-6">
