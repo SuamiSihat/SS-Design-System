@@ -1,4 +1,4 @@
-﻿# Vision & Mission — The Husband's Health Authority
+﻿# Vision and mission: The Husband's Health Authority
 
 <details class="doc-details">
 <summary>Document details</summary>

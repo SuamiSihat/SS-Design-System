@@ -1,9 +1,13 @@
-# Product Page Standard
+# Product brand pages
 
-Every SuamiSihat product brand has one guideline page at `/products/<slug>/`. All pages follow the same seven sections so that designers, marketers and agencies find the same information in the same place for every brand.
+*For product owners, designers and developers.*
+
+Every SuamiSihat® product brand has one guide page at `/products/<name>/`. All pages follow the same seven sections, so designers, marketers and agencies find the same thing in the same place for every brand.
+
+The seven sections are: what the product is, pictures, how the brand is positioned, colours, pattern, logo rules, and downloads. The table below says what each one must contain.
 
 > [!IMPORTANT]
-> The standard is enforced. `npm run lint` fails if a brand is missing a section, its colour scheme is not 60:30:10, a text pairing is below WCAG 2.2 AA, or a referenced file does not exist.
+> This standard is enforced automatically. The check fails if a brand is missing a section, its colours are not split 60:30:10, a text and background pair is hard to read (below WCAG 2.2 AA), or a file it points to does not exist.
 
 ---
 

@@ -1,6 +1,11 @@
-# SuamiSihat® Hero Banner Standard (`ss-hero`)
+# Hero banner
+
+*For designers and developers.*
 
 ## Overview
+
+The hero banner is the large panel at the top of a page, with the headline and main buttons. Every SuamiSihat® hero uses the same component, called **`ss-hero`** (`<SSHero />` in Svelte), so the home page, section pages and product pages all start the same way: a deep blue background, a soft glow, and gentle moving particles.
+
 
 The **`ss-hero`** component (and `<SSHero />` in Svelte) is the **official default background and container component for all hero-type banners**, master headers, landing page entrypoints, and product headers across the entire SuamiSihat® digital ecosystem.
 

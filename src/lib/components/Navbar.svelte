@@ -39,8 +39,8 @@
 
   const searchIndex = [
     // Architecture & Contract
-    { title: 'Brand × Fluent 2 Architectural Contract', cat: 'Docs', href: '/doc/?doc=brand-fluent2', desc: 'Boundary matrix, source-of-truth rules, component anatomy, and state machine standard' },
-    { title: 'Colour Composition Standard (60:30:10 vs 80:20)', cat: 'Docs', href: '/doc/?doc=color-composition-guide', desc: '60:30:10 primary brand composition rule, 80:20 UI model, decision framework, and accent roles' },
+    { title: 'Brand and Fluent 2', cat: 'Docs', href: '/doc/?doc=brand-fluent2', desc: 'Which rules come from SuamiSihat® and which from Fluent 2' },
+    { title: 'How much of each colour (60:30:10)', cat: 'Docs', href: '/doc/?doc=color-composition-guide', desc: '60:30:10 primary brand composition rule, 80:20 UI model, decision framework, and accent roles' },
     { title: 'Brand × Fluent 2 (Brand System Section)', cat: 'Tokens', href: '/brand-system/#brand-fluent2', desc: 'Interactive boundary matrix and two-layer system hierarchy' },
 
     // Brand Tokens
@@ -75,12 +75,12 @@
     { title: 'WCAG Color Contrast Ratio Tool', cat: 'Tools', href: '/tools/#contrast-tool', desc: 'Real-time foreground & background accessibility contrast tester' },
     { title: 'Brand Guidelines Booklets', cat: 'Guides', href: '/brand-guidelines/', desc: 'Logo & Concept and Interior Design official booklets' },
     { title: 'What\'s New (Changelog)', cat: 'Docs', href: '/doc/?doc=changelog', desc: 'Version history, release notes, and latest updates' },
-    { title: 'Vision & Mission Statement', cat: 'Docs', href: '/doc/?doc=vision-mission', desc: 'Canonical corporate purpose, vision, and core values' },
+    { title: 'Vision and mission', cat: 'Docs', href: '/doc/?doc=vision-mission', desc: 'Canonical corporate purpose, vision, and core values' },
     { title: 'SS Clinic Guideline', cat: 'Guides', href: '/products/ssclinic/', desc: 'SS Clinic logos, colours, brand promise, tone of voice, rules and downloads' },
-    { title: 'SS Clinic Brand Positioning', cat: 'Docs', href: '/doc/?doc=clinic-positioning', desc: "The Husband's Health Authority - competitive analysis, tagline architecture, Brand Chorus, dual-market playbooks and 18-month roadmap" },
+    { title: 'SS Clinic positioning', cat: 'Docs', href: '/doc/?doc=clinic-positioning', desc: "The Husband's Health Authority - competitive analysis, tagline architecture, Brand Chorus, dual-market playbooks and 18-month roadmap" },
     { title: "Clinic Brand Promise Stamp", cat: 'Docs', href: '/products/ssclinic/#positioning', desc: "Check Dulu. Rawat Dengan Tepat. Tiada Janji Palsu. No-BS positioning, honest broker stance, forbidden copy guidelines" },
-    { title: 'Diagnostic Funnel (Ujian Skor Kesihatan Suami)', cat: 'Docs', href: '/doc/?doc=diagnostic-funnel', desc: '7-step diagnostic-first patient journey, Formaloo quiz positioning, prohibited copy, approved entry copy suite and funnel benchmarks' },
-    { title: 'SS Clinic Copy Standards & Prohibited Keywords', cat: 'Docs', href: '/doc/?doc=brand-voice', desc: 'Permanently blacklisted shame-trigger phrases, Brand Chorus doctrine, regional voice variants (SJ vs KB), em-dash and all-caps prohibition' }
+    { title: 'Health score quiz (Ujian Skor Kesihatan Suami)', cat: 'Docs', href: '/doc/?doc=diagnostic-funnel', desc: '7-step diagnostic-first patient journey, Formaloo quiz positioning, prohibited copy, approved entry copy suite and funnel benchmarks' },
+    { title: 'How we write: phrases we never use', cat: 'Docs', href: '/doc/?doc=brand-voice', desc: 'Permanently blacklisted shame-trigger phrases, Brand Chorus doctrine, regional voice variants (SJ vs KB), em-dash and all-caps prohibition' }
   ];
 
   let filteredResults = $derived(

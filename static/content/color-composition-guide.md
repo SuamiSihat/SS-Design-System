@@ -1,4 +1,28 @@
-# Colour Distribution in the SuamiSihat Brand System
+# How much of each colour (60:30:10)
+
+## The short version
+
+When you design anything for SuamiSihat®, split the colour like this:
+
+| Share | Job | Colours | In practice |
+|---|---|---|---|
+| **60%** | The background | Light, soft colours: Canvas Light `#F8FAFC`, Porcelain `#FCFAF6` (dark mode: Void Dark `#090D16`) | The page, the poster background, the large empty areas |
+| **30%** | The brand | SS Prussian Blue `#022057` and SS Blue `#043388` | Headers, large blocks, the logo area |
+| **10%** | The spark | Azure `#21A1F7` and Banana Yellow `#FCE53D` | Buttons, links, one thing you want people to notice |
+
+**Three habits that keep it right:**
+1. **Light and calm first.** Most of the design is the background colour. Do not fill the page with blue.
+2. **One spark per screen or poster.** One bright button or highlight is stronger than five.
+3. **Not equal.** The accent colours are not a rainbow to share out evenly. Pick one and use it sparingly.
+
+**Which rule when?** Use 60:30:10 for campaigns, posters, packaging, social posts, presentations and landing pages. For busy screens such as dashboards and settings pages, the calmer 80:20 version (80% calm surface, 20% brand colour) is fine.
+
+The rest of this page is the full reference for designers: why we chose this rule, the 80:20 comparison, light and dark examples, and common mistakes.
+
+---
+
+## Full reference
+
 
 > **Conclusion:** For SuamiSihat, the **60:30:10 rule should be the primary colour-composition framework**. The 80:20 model is useful as a secondary simplification for UI-heavy or minimal executions, but 60:30:10 provides better hierarchy for a brand that needs to balance authority, readability, warmth, and campaign emphasis.
 

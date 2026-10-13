@@ -1,4 +1,4 @@
-# Diagnostic Funnel — "Ujian Skor Kesihatan Suami"
+# Health score quiz: "Ujian Skor Kesihatan Suami"
 
 <details class="doc-details">
 <summary>Document details</summary>
