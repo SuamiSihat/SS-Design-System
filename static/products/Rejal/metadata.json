@@ -70,8 +70,7 @@
         "type": "Sweetener",
         "desc": "Pemanis Stevia Original: stevia and monk fruit extract. Box 43 × 43 × 83 mm, bottle label 73 × 27 mm."
       }
-    ],
-    "claimsReview": "Never publish: 'melancarkan darah', 'tenaga batin', immunity, cardiovascular, digestive or nitric-oxide benefits, 'organic', lab values (TPC, diastase, SAC %). Describe ingredients, origin and use only. Every label needs kcal/kJ nutrition, a real serving size, net weight, the infant warning on honey, and Halal/MeSTI only from that manufacturer's own valid certificate."
+    ]
   },
   "images": [
     {
@@ -215,7 +214,7 @@
         "use": "Heritage Gold Deep text on white"
       }
     ],
-    "note": "Heritage Gold (#C9A24A, foil ≈ PANTONE 871 C) is a finish only: gold caps, the QUALITY SEAL band and optional foil on premium runs. Never flat yellow, never a UI fill. No green (implies 'organic'; green belongs to Dr Mit Ring). Tokens: static/assets/tokens/product-brands.tokens.json."
+    "note": "Heritage Gold (#C9A24A, foil ≈ PANTONE 871 C) is a finish only: gold caps, the QUALITY SEAL band and optional foil on premium runs. Never flat yellow, never a UI fill. No green (implies 'organic'; green belongs to Dr. MIT Ring). Tokens: static/assets/tokens/product-brands.tokens.json."
   },
   "pattern": {
     "name": "REJAL repeat texture",
@@ -268,7 +267,7 @@
   },
   "downloads": [
     {
-      "label": "Brand guidelines: Rejal and Dr Mit Ring v1.0",
+      "label": "Brand guidelines: Rejal and Dr. MIT Ring v1.0",
       "file": "/brand-guidelines/rejal-drmitring-brand-guidelines-v1.0.pdf",
       "format": "PDF"
     },
@@ -318,7 +317,7 @@
       "format": "PDF"
     },
     {
-      "label": "Design tokens (Rejal and Dr Mit Ring)",
+      "label": "Design tokens (Rejal and Dr. MIT Ring)",
       "file": "/assets/tokens/product-brands.tokens.json",
       "format": "JSON"
     }

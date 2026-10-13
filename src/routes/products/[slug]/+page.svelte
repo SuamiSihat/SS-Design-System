@@ -121,15 +121,6 @@
       </ul>
     {/if}
 
-    {#if p.definition.claimsReview}
-      <aside class="pb-callout" aria-label="Claims review">
-        <iconify-icon icon="fluent:warning-24-filled" aria-hidden="true"></iconify-icon>
-        <div>
-          <strong>Claims review required</strong>
-          <p>{p.definition.claimsReview}</p>
-        </div>
-      </aside>
-    {/if}
   </section>
 
   <!-- 2. Images -->
@@ -456,13 +447,6 @@
   .pb-facts dd { margin: 0.25rem 0 0; color: var(--color-neutral-fg-1); }
   .pb-range { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
   .pb-range strong { display: block; margin-top: 0.5rem; color: var(--color-neutral-fg-1); }
-  .pb-callout {
-    display: flex; gap: 0.75rem; margin-top: 1.5rem; padding: 1rem 1.25rem;
-    border-radius: var(--f-radius-lg); background: var(--color-warning-bg); color: var(--color-warning-fg);
-    border: 1px solid currentColor;
-  }
-  .pb-callout iconify-icon { font-size: 1.4rem; flex-shrink: 0; }
-  .pb-callout p { margin: 0.25rem 0 0; color: inherit; line-height: 1.6; }
 
   /* Images */
   .pb-gallery { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }

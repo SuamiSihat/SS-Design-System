@@ -1,10 +1,10 @@
 {
   "schema": 2,
   "slug": "drmitring",
-  "name": "Dr Mit Ring®",
+  "name": "Dr. MIT Ring®",
   "folder": "DrMitRing",
   "status": "Active",
-  "tagline": "Condom fastener · Direka oleh SuamiSihat",
+  "tagline": "Condom fastener · Designed by SuamiSihat",
   "entity": "05-SSE · SuamiSihat Ecommerce Sdn Bhd",
   "category": "Condom accessory (condom fastener)",
   "hero": {
@@ -13,7 +13,7 @@
     "accent": "#6AB845"
   },
   "definition": {
-    "summary": "Dr Mit Ring® is a reusable soft silicone condom fastener (alat penahan kondom). It is slipped on after a condom is in place and helps keep the condom from slipping. Designed by SuamiSihat and sold through SuamiSihat channels.",
+    "summary": "Dr. MIT Ring® is a reusable soft silicone condom fastener (alat penahan kondom). It is slipped on after a condom is in place and helps keep the condom from slipping. Designed by SuamiSihat and sold through SuamiSihat channels.",
     "facts": [
       {
         "label": "What it is",
@@ -37,7 +37,7 @@
       },
       {
         "label": "Credit line",
-        "value": "Direka oleh SuamiSihat"
+        "value": "Designed by SuamiSihat"
       },
       {
         "label": "Trademark",
@@ -46,12 +46,11 @@
     ],
     "range": [
       {
-        "name": "Dr Mit Ring® (2 rings)",
+        "name": "Dr. MIT Ring® (2 rings)",
         "type": "Condom fastener",
         "desc": "Retail box with two reusable rings in foil sachets and bilingual instructions."
       }
-    ],
-    "claimsReview": "Path A: the product stays a condom accessory. Never publish erection, hardness, stamina, ejaculation timing, venous leakage or 'no side effects' claims, 'Andrologically tested', 'patented' or 'clinically proven', or any doctor's name or photo. The current box badges and leaflet benefits are being removed in the next print run."
+    ]
   },
   "images": [
     {
@@ -71,7 +70,7 @@
     }
   ],
   "positioning": {
-    "statement": "Aksesori kondom yang discreet, boleh guna semula, direka di Malaysia. For couples who want protection that stays in place, Dr Mit Ring® is a simple, reusable condom fastener, presented with discretion.",
+    "statement": "Aksesori kondom yang discreet, boleh guna semula, direka di Malaysia. For couples who want protection that stays in place, Dr. MIT Ring® is a simple, reusable condom fastener, presented with discretion.",
     "pillars": [
       {
         "title": "Discreet",
@@ -83,7 +82,7 @@
       },
       {
         "title": "Designed by SuamiSihat",
-        "text": "Sign off with 'Direka oleh SuamiSihat'. No individual doctor endorsement."
+        "text": "Sign off with 'Designed by SuamiSihat'. No individual doctor endorsement."
       }
     ],
     "voice": [
@@ -206,7 +205,7 @@
   "guideline": {
     "logos": [
       {
-        "label": "Dr Mit Ring wordmark pill",
+        "label": "Dr. MIT Ring wordmark pill",
         "file": "/products/DrMitRing/logos/logo_drmitring.svg",
         "use": "White outline pill and letters on black; on lime, always on a filled black pill"
       }
@@ -216,7 +215,7 @@
     "do": [
       "Place the pill on black, or as a filled black pill on lime",
       "Set 'CONDOM FASTENER' above the pill on packs and listings",
-      "Sign off 'Dr Mit Ring® · Direka oleh SuamiSihat'"
+      "Sign off 'Dr. MIT Ring® · Designed by SuamiSihat'"
     ],
     "dont": [
       "Do not place the transparent pill directly on lime or white",
@@ -233,12 +232,12 @@
   },
   "downloads": [
     {
-      "label": "Brand guidelines: Rejal and Dr Mit Ring v1.0",
+      "label": "Brand guidelines: Rejal and Dr. MIT Ring v1.0",
       "file": "/brand-guidelines/rejal-drmitring-brand-guidelines-v1.0.pdf",
       "format": "PDF"
     },
     {
-      "label": "Dr Mit Ring wordmark",
+      "label": "Dr. MIT Ring wordmark",
       "file": "/products/DrMitRing/logos/logo_drmitring.svg",
       "format": "SVG"
     },
@@ -248,7 +247,7 @@
       "format": "SVG"
     },
     {
-      "label": "Design tokens (Rejal and Dr Mit Ring)",
+      "label": "Design tokens (Rejal and Dr. MIT Ring)",
       "file": "/assets/tokens/product-brands.tokens.json",
       "format": "JSON"
     }
