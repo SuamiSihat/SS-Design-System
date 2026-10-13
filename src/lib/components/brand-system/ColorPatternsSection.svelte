@@ -26,8 +26,8 @@
           <div class="ss-surface-light" style="background:#F8FAFC;border:1px solid #E2E8F0;border-radius:var(--f-radius-lg);padding:var(--f-space-4);margin-bottom:var(--f-space-4);margin-top:auto;">
             <div style="background:#FFFFFF;border:1px solid rgba(4,51,136,0.12);border-radius:var(--f-radius-md);padding:var(--f-space-3);box-shadow:0 2px 8px rgba(0,0,0,0.04);">
               <div style="font-size:0.72rem;font-weight:700;color:#022057;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:2px;">Consultation</div>
-              <div style="font-size:0.875rem;font-weight:700;color:#1C1C1C;margin-bottom:4px;">Men's Hormone Therapy</div>
-              <div style="font-size:0.75rem;color:#525252;line-height:1.4;margin-bottom:var(--f-space-3);">Doctor-led clinical evaluation with personalized testosterone recovery protocols.</div>
+              <div style="font-size:0.875rem;font-weight:700;color:#1C1C1C;margin-bottom:4px;">Men's Health Consultation</div>
+              <div style="font-size:0.75rem;color:#525252;line-height:1.4;margin-bottom:var(--f-space-3);">Private, doctor-led assessment with a care plan explained in plain language.</div>
               <button type="button" style="background:var(--color-action-bg);color:var(--color-on-action);font-weight:700;font-size:0.72rem;padding:6px 14px;border:none;border-radius:var(--f-radius-sm);display:inline-flex;align-items:center;gap:4px;cursor:default;">
                 <iconify-icon icon="fluent:calendar-ltr-24-filled" style="font-size:0.85rem;"></iconify-icon> BOOK APPOINTMENT
               </button>

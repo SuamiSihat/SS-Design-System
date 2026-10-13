@@ -2,6 +2,8 @@
 
 Moved out of `static/products/*/metadata.json` so they are not served to the public site. Regulatory reviews these before any brand PDF ships.
 
+Latest audit of the public site: [audit-2026-10-13.md](audit-2026-10-13.md).
+
 ## ANDROLAB
 
 Earlier copy named a prescription medicine (tadalafil) under ANDROLAB RX. Prescription medicines cannot be advertised to the public in Malaysia; keep RX content internal to clinic materials.
