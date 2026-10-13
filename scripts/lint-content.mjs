@@ -8,11 +8,14 @@
  *  3. Only the Fluent icon set (no lucide:, mdi:, ph: ...).
  *  4. Web-safe file names under static/ (letters, digits, . _ - only).
  *  5. Every product brand passes the 7-section product page standard (scripts/product-schema.mjs).
+ *  6. Brand guideline PDFs are not stale: each static/products/<Brand>/metadata.json must match
+ *     the hash recorded in static/brand-guidelines/pdf/manifest.json by scripts/make_brand_pdfs.py.
  *
  * Usage: node scripts/lint-content.mjs
  */
 
 import { execSync } from 'child_process';
+import { createHash } from 'crypto';
 import { readFileSync } from 'fs';
 import { validateAllProducts } from './product-schema.mjs';
 
@@ -70,9 +73,25 @@ for (const file of files) {
 
 problems.push(...validateAllProducts());
 
+// Hash with LF line endings so Windows (autocrlf) and CI checkouts agree; matches make_brand_pdfs.py.
+const PDF_MANIFEST = 'static/brand-guidelines/pdf/manifest.json';
+const sha256 = (file) => createHash('sha256').update(readFileSync(file, 'utf8').replace(/\r\n/g, '\n')).digest('hex');
+const pdfManifest = JSON.parse(readFileSync(PDF_MANIFEST, 'utf8'));
+const recorded = new Set(Object.values(pdfManifest).map((e) => e.source));
+for (const [slug, { source, sha256: hash }] of Object.entries(pdfManifest)) {
+  if (sha256(source) !== hash) {
+    problems.push(`${source}: changed since the ${slug} brand guideline PDF was generated; run npm run generate:pdfs -- --brand ${slug}`);
+  }
+}
+for (const file of files) {
+  if (/^static\/products\/[^/]+\/metadata\.json$/.test(file) && !recorded.has(file)) {
+    problems.push(`${file}: no brand guideline PDF recorded in ${PDF_MANIFEST}; add the brand to BRANDS in scripts/make_brand_pdfs.py`);
+  }
+}
+
 if (problems.length) {
   console.error(problems.join('\n'));
   console.error(`\n[lint] ${problems.length} problem(s).`);
   process.exit(1);
 }
-console.log('[lint] No emoji, mojibake, foreign icon sets or unsafe file names. Product schema OK.');
+console.log('[lint] No emoji, mojibake, foreign icon sets or unsafe file names. Product schema OK. Brand PDFs up to date.');

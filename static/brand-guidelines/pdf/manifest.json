@@ -1,0 +1,38 @@
+{
+  "androlab": {
+    "source": "static/products/Androlab/metadata.json",
+    "sha256": "7d914dd35ec76dc58e4b4585167070e11a0391fa3912c0822208e6db1e37119e"
+  },
+  "drmitring": {
+    "source": "static/products/DrMitRing/metadata.json",
+    "sha256": "c63ede25c3f4da92a75c6d16204f0ff3646d54f5f47d93bd2d1dfcb9f11a73bc"
+  },
+  "husbandclinic": {
+    "source": "static/products/HusbandClinic/metadata.json",
+    "sha256": "d06782bfe2cca6c9f144ecb9c13b9772cf5bd25d00fd6d86f8c6770dc6c869cf"
+  },
+  "isterisihat": {
+    "source": "static/products/IsteriSihat/metadata.json",
+    "sha256": "b27ee9150967b110973173ec651a97cc137e8d859b2d37531ff213fface525b4"
+  },
+  "mensculine": {
+    "source": "static/products/Mensculine/metadata.json",
+    "sha256": "c2f1933f6d910fe2f3dff9a1f8443d706660e770db9b0b9898bc30483f538904"
+  },
+  "menss": {
+    "source": "static/products/MENSS/metadata.json",
+    "sha256": "05568ff8003b7c4c59c46e8f2ce1e1f411cfca0ea26504be4ed4c36b26fc18d3"
+  },
+  "nucaffe": {
+    "source": "static/products/nuCaffe/metadata.json",
+    "sha256": "fd174925f5286921cd627f04c562b19e58b7ea4891611321368e4e82e0324dc6"
+  },
+  "pertabi": {
+    "source": "static/products/Pertabi/metadata.json",
+    "sha256": "09091ef193b440d7d1cf189ed43415ab74646f79896a8148aad1c1c443eea168"
+  },
+  "rejal": {
+    "source": "static/products/Rejal/metadata.json",
+    "sha256": "a7aa0dd28f4fd9f773596a04d3e3cbcac86f94514061823752ac2e687ccfa25a"
+  }
+}

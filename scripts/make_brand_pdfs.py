@@ -5,6 +5,7 @@ Missing data is printed as 'TBC'.
 """
 import argparse
 import datetime
+import hashlib
 import html
 import json
 import os
@@ -111,6 +112,25 @@ BRANDS = [
 def load(root_path, folder):
     meta_path = os.path.join(root_path, 'products', folder, 'metadata.json')
     return json.load(open(meta_path, encoding='utf-8'))
+
+
+def source_hash(root_path, folder):
+    """SHA-256 of metadata.json with LF line endings (matches scripts/lint-content.mjs)."""
+    with open(os.path.join(root_path, 'products', folder, 'metadata.json'), 'rb') as f:
+        return hashlib.sha256(f.read().replace(b'\r\n', b'\n')).hexdigest()
+
+
+def update_manifest(out_path, entries):
+    """Record which metadata.json each PDF was rendered from, so lint can flag stale PDFs."""
+    path = os.path.join(out_path, 'manifest.json')
+    try:
+        manifest = json.load(open(path, encoding='utf-8'))
+    except (OSError, ValueError):
+        manifest = {}
+    manifest.update(entries)
+    with open(path, 'w', encoding='utf-8', newline='\n') as f:
+        json.dump(dict(sorted(manifest.items())), f, indent=2)
+        f.write('\n')
 
 
 def sifusex():
@@ -410,12 +430,17 @@ def main():
     os.makedirs(out_path, exist_ok=True)
 
     todo = []
+    sources = {}
     for folder, slug in BRANDS:
         if args.brand and args.brand.lower() != slug.lower():
             continue
         m = load(root_path, folder)
         m['slug'] = slug
         todo.append(m)
+        sources[slug] = {
+            'source': f'static/products/{folder}/metadata.json',
+            'sha256': source_hash(root_path, folder),
+        }
 
     if not args.brand or args.brand.lower() == 'sifusex':
         todo.append(sifusex())
@@ -475,6 +500,8 @@ def main():
             print(f"Generated: {pdf_out} ({size_kb} KB)")
 
         browser.close()
+
+    update_manifest(out_path, sources)
 
 
 if __name__ == '__main__':
