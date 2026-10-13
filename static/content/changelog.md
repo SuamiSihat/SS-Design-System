@@ -4,6 +4,11 @@
 
 ## Unreleased
 
+### Home page (13 Oct 2026)
+
+- The home page is now a front desk: eight task tiles (logo, colours, signature, SS CAM, guides, SS Clinic, products, first week), the two main brands (SuamiSihat® and SS Clinic) with the parent company note, five short rules, the product brands, and one band for designers and developers.
+- Removed from the home page: the animated story cards, the company diagram, the case study, the role tabs, the studio colour picker and the code-copy tools. Company structure stays on the Brand page; code tokens stay on the Brand and Components pages.
+
 ### Brand decisions (13 Oct 2026)
 
 - The master brand is written **SuamiSihat®** (registered), replacing SuamiSihat™ across the site, docs and agent rules. Legal company names such as SuamiSihat Holding Sdn. Bhd. carry no symbol. Earlier changelog entries keep the wording they had at the time.
