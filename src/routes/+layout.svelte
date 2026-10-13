@@ -32,7 +32,6 @@
   <title>SuamiSihat™ Design System</title>
 </svelte:head>
 
-
 <a class="f-skip-link" href="#page-content">Skip to main content</a>
 <div class="f-app-shell">
   <Navbar />
@@ -72,7 +71,6 @@
   }
 
   .f-content-wrapper:focus { outline: none; }
-
   .f-content-wrapper {
     flex: 1;
     display: flex;

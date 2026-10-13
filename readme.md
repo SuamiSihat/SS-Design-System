@@ -114,10 +114,10 @@ SS-Design-System/
   src/
     app.html                    HTML shell (self-hosted CSS only, no CDNs)
     lib/
-      components/               Navbar, Footer, SSHero, CodeBox, ColorSwatch, GatekeeperPuzzle ...
+      components/               Navbar, Footer, SSHero, CodeBox, ColorSwatch ...
       products/index.js         Loads product metadata for the catalogue and brand pages
       utils/                    contrast.js (WCAG maths), markdown-icons.js ({{icon:}} shortcodes)
-      stores/                   theme and gate stores
+      stores/                   theme store (light/dark mode)
       version.js                Version shown in the UI (read from package.json)
     routes/                     One folder per page; products/[slug] is the brand page template
   static/                       Everything here is copied to the site root

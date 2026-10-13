@@ -49,7 +49,7 @@ sudo mkdir -p /volume1/web/.auth
 sudo htpasswd -c /volume1/web/.auth/ss_assets.htpasswd <username>
 ```
 
-Add more users with `htpasswd` without `-c`. The in-page welcome puzzle remains, but it is not access control on its own: every page and file is public without this step.
+Add more users with `htpasswd` without `-c`. Every page and file is public without this step.
 
 ### 4. First deployment
 
