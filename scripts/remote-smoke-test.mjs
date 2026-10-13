@@ -90,7 +90,7 @@ async function run() {
   await checkUrl('/public/brand/favicon/favicon.ico', 200, 100);
 
   console.log('\n 3. Security: source and repository files must not be served');
-  for (const path of ['/.git/config', '/package.json', '/readme.md', '/.agents/AGENTS.md', '/QA/', '/src/app.html']) {
+  for (const path of ['/.git/config', '/.htaccess', '/package.json', '/readme.md', '/.agents/AGENTS.md', '/QA/', '/src/app.html']) {
     try {
       const res = await fetch(`${BASE_URL}${path}`, { headers: HEADERS, redirect: 'manual' });
       assert(res.status !== 200, `Not served (HTTP ${res.status}): ${path}`);
@@ -101,6 +101,10 @@ async function run() {
   try {
     const res = await fetch(`${BASE_URL}/`, { redirect: 'manual' });
     assert(res.status === 200, `Home page loads without a login (HTTP ${res.status})`);
+    // These come from static/.htaccess; missing means the server is not reading it (e.g. nginx back-end).
+    assert((res.headers.get('content-security-policy') || '').includes("frame-ancestors 'none'"), 'Content-Security-Policy header sent');
+    assert(res.headers.get('x-frame-options') === 'DENY', 'X-Frame-Options: DENY header sent');
+    assert((res.headers.get('x-robots-tag') || '').includes('noindex'), 'X-Robots-Tag: noindex header sent');
   } catch (err) {
     assert(false, `Home page check failed: ${err.message}`);
   }

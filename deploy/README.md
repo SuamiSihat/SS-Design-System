@@ -46,7 +46,8 @@ The first run of the new workflow removes the old git checkout from the web root
 
 ## Web server configuration
 
-- Apache (Web Station default): `static/.htaccess` is deployed with the site. It sets security headers, the Content Security Policy, blocks hidden and source files, and handles routing and caching. The site is public; there is no login.
+- Apache: `static/.htaccess` is deployed with the site. It sets security headers, the Content Security Policy, blocks hidden and source files, and handles routing and caching. The site is public; there is no login.
+- In Web Station the `ss_assets` web service must use **Apache HTTP Server 2.4** as its HTTP back-end. With nginx, `.htaccess` is ignored: no security headers, redirects or cache rules, and `/.htaccess` itself is downloadable. The back-end cannot be changed on an existing web service; create a new one on the same document root and point the `assets.suamisihat.myds.me` portal at it. `npm run test:remote` fails if the headers are missing.
 - nginx: use `deploy/nginx.conf` as the server block reference.
 
 ## Manual deployment
