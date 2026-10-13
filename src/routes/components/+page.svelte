@@ -1338,7 +1338,7 @@ export function SSListItem({ title, subtitle, trailing, onPress }) {
             <button type="button" class="ss-btn ss-btn-sm ss-btn-secondary" onclick={() => spawnToast('success', 'Sync Successful', 'All offline clinic records are synchronized.')}>
               <iconify-icon icon="fluent:checkmark-circle-24-filled" style="color:var(--color-brand-success, #107C10);"></iconify-icon> Success Toast
             </button>
-            <button type="button" class="ss-btn ss-btn-sm ss-btn-secondary" onclick={() => spawnToast('warning', 'Low Inventory', 'Dr Mit Ring Size 3 is running low in stock.')}>
+            <button type="button" class="ss-btn ss-btn-sm ss-btn-secondary" onclick={() => spawnToast('warning', 'Low Inventory', 'Dr. MIT Ring Size 3 is running low in stock.')}>
               <iconify-icon icon="fluent:warning-24-filled" style="color:var(--color-brand-warning, #D83B01);"></iconify-icon> Warning Toast
             </button>
             <button type="button" class="ss-btn ss-btn-sm ss-btn-secondary" onclick={() => spawnToast('error', 'API Timeout', 'Could not establish connection to NAS auth server.')}>

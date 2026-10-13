@@ -66,7 +66,7 @@
     { title: 'MENSS — Modern Intimate Lifestyle & Hardware', cat: 'Products', href: '/products/menss/', desc: 'MENSS FRÉSH Wash, Motorized Penile Pump (VED), and Silicone Rings' },
     { title: 'REJAL — Heritage Functional Superfoods', cat: 'Products', href: '/products/rejal/', desc: 'REJAL Bawang Lanang + Madu Tualang & Stevia Leaf Extract' },
     { title: 'Mensculine — International Brand Care', cat: 'Products', href: '/products/mensculine/', desc: '50g Aluminum tube topical care cream' },
-    { title: 'Dr Mit Ring® — Patented Clinical Mechanical Device', cat: 'Products', href: '/products/drmitring/', desc: 'Doctor-patented lime-green medical silicone ring' },
+    { title: 'Dr. MIT Ring® — Condom Fastener', cat: 'Products', href: '/products/drmitring/', desc: 'Reusable soft silicone condom fastener, designed by SuamiSihat' },
     { title: 'PERTABI — Official Performance Jersey', cat: 'Products', href: '/products/pertabi/', desc: 'Sublimated high-wicking athletic matchday kit' },
 
     // Tools & Guides

@@ -161,7 +161,7 @@ testDom('Products Hub (build/products/index.html)', productsHtml, [
   { desc: 'Contains ANDROLAB product card', pattern: /ANDROLAB/i },
   { desc: 'Contains MENSS product card', pattern: /MENSS/i },
   { desc: 'Contains Mensculine product card', pattern: /Mensculine/i },
-  { desc: 'Contains Dr Mit Ring product card', pattern: /Dr Mit Ring/i },
+  { desc: 'Contains Dr Mit Ring product card', pattern: /Dr.? MIT Ring/i },
   { desc: 'Contains REJAL product card', pattern: /REJAL/i }
 ]);
 

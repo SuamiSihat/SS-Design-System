@@ -538,3 +538,11 @@
         @media (max-width: 1023px) {
             .f-mobile-menu-btn { display: flex; }
 }
+
+        /* Phone header: keep brand, search, theme and menu buttons inside 390 px */
+        @media (max-width: 480px) {
+            .f-navbar-inner { padding: 0 var(--f-space-3); gap: var(--f-space-2); }
+            .f-navbar-brand { gap: var(--f-space-2); min-width: 0; flex-shrink: 1; }
+            .f-navbar-version { display: none; }
+            .f-navbar-brand-name { font-size: 0.875rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        }

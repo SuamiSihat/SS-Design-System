@@ -44,5 +44,5 @@ For asset requests, brand reviews, or system inquiries:
 
 - **Email:** [branding@suamisihat.com](mailto:branding@suamisihat.com)
 - **Response Commitment:** Within 24–48 business hours
-- **Reference:** [Contribution Guide](doc.html?doc=contribution-guide)
+- **Reference:** [Contribution Guide](/doc/?doc=contribution-guide)
 

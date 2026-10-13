@@ -1,6 +1,5 @@
 <script>
   import { theme } from '$lib/stores/theme.js';
-  import { relockGate } from '$lib/stores/gate.js';
 
   let logoSrc = $derived(
     $theme === 'dark'
@@ -68,11 +67,6 @@
         <li>
           <button id="feedback-button" type="button" class="f2-feedback-btn" onclick={triggerFeedback}>
             {#if feedbackSent}<iconify-icon icon="fluent:checkmark-16-regular" aria-hidden="true"></iconify-icon> Thank you!{:else}Feedback{/if}
-          </button>
-        </li>
-        <li>
-          <button type="button" class="f2-feedback-btn" onclick={relockGate} title="Kunci semula akses portal SuamiSihat">
-            <iconify-icon icon="fluent:lock-closed-16-regular" aria-hidden="true"></iconify-icon> Kunci Portal
           </button>
         </li>
         <li><a href="mailto:branding@suamisihat.com" class="f2-ext-link">Contact SuamiSihat</a></li>

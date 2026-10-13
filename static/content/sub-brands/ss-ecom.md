@@ -16,5 +16,5 @@ Practical, trustworthy, transparent, and efficient. SS Ecommerce makes it easy f
 
 ## Download
 
-[SS Ecommerce Logo Kit](../downloads/04_logo_ssEcom.zip)
+[SS Ecommerce Logo Kit](/public/brand/downloads/04_logo_ssEcom.zip)
 

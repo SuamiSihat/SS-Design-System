@@ -16,5 +16,5 @@ Accessible, energising, optimistic, and lifestyle-focused. SS Wellness speaks to
 
 ## Download
 
-[SS Wellness Logo Kit](../downloads/03_logo_ssWellness.zip)
+[SS Wellness Logo Kit](/public/brand/downloads/03_logo_ssWellness.zip)
 

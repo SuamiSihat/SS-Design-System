@@ -25,14 +25,14 @@
           name: 'ANDROLAB',
           type: 'Core SS Brand',
           category: ['supplements', 'clinical'],
-          tags: ['SS Health', 'Clinical RX', 'Alpha Sachet'],
+          tags: ['SS Health', 'Clinic programme', 'Alpha Sachet'],
           tagClasses: ['tag-ss', 'tag-clinic', 'tag-wellness'],
           entity: '01-SSH · 02-SSC',
           entityIcon: 'fluent:organization-24-regular',
           logo: '/products/Androlab/logos/logo_androlab_primary.svg',
           href: '/products/androlab/',
           accent: 'linear-gradient(135deg, #101820, #0A89FA)',
-          desc: 'Vitality science and clinical performance. Features <strong>ANDROLAB Alpha</strong> (daily botanical sachet drinks with L-Citrulline, Ashwagandha &amp; Saffron) and <strong>Androlab RX</strong> (doctor-prescribed Tadalafil, Lidocaine spray, Testosterone cream &amp; NeuroCalm).',
+          desc: 'Vitality science and clinical performance. Features <strong>ANDROLAB Alpha</strong> (daily botanical sachet drinks with L-Citrulline, Ashwagandha &amp; Saffron) and <strong>ANDROLAB RX</strong> (doctor-led programmes delivered inside SS Clinic).',
           searchData: 'androlab alpha rx sachet drinks prescription supplements clinical'
         },
         {
@@ -67,17 +67,17 @@
         },
         {
           id: 'drmitring',
-          name: 'Dr Mit Ring®',
+          name: 'Dr. MIT Ring®',
           type: 'Condom Accessory',
           category: ['clinical'],
-          tags: ['Condom Fastener', 'Reusable', 'Direka oleh SuamiSihat'],
+          tags: ['Condom Fastener', 'Reusable', 'Designed by SuamiSihat'],
           tagClasses: ['tag-ss', 'tag-ecom', 'tag-wellness'],
           entity: '05-SSE',
           entityIcon: 'fluent:organization-24-regular',
           logo: '/products/DrMitRing/logos/logo_drmitring.svg',
           href: '/products/drmitring/',
           accent: 'linear-gradient(135deg, #1C1C1C, #6AB845)',
-          desc: 'Reusable soft silicone <strong>condom fastener</strong> (alat penahan kondom) that helps keep a condom in place. Two rings per box. Direka oleh SuamiSihat.',
+          desc: 'Reusable soft silicone <strong>condom fastener</strong> (alat penahan kondom) that helps keep a condom in place. Two rings per box. Designed by SuamiSihat.',
           searchData: 'dr mit ring condom fastener alat penahan kondom reusable ring accessory'
         },
         {
@@ -362,7 +362,7 @@
           <li><a href="/products/androlab/"><span class="cat-icon"><iconify-icon icon="fluent:pill-24-regular"></iconify-icon></span>ANDROLAB</a></li>
           <li><a href="/products/menss/"><span class="cat-icon"><iconify-icon icon="fluent:heart-pulse-24-regular"></iconify-icon></span>MENSS</a></li>
           <li><a href="/products/mensculine/"><span class="cat-icon"><iconify-icon icon="fluent:globe-24-regular"></iconify-icon></span>Mensculine</a></li>
-          <li><a href="/products/drmitring/"><span class="cat-icon"><iconify-icon icon="fluent:stethoscope-24-regular"></iconify-icon></span>Dr Mit Ring®</a></li>
+          <li><a href="/products/drmitring/"><span class="cat-icon"><iconify-icon icon="fluent:stethoscope-24-regular"></iconify-icon></span>Dr. MIT Ring®</a></li>
           <li><a href="/products/rejal/"><span class="cat-icon"><iconify-icon icon="fluent:leaf-three-24-regular"></iconify-icon></span>REJAL</a></li>
           <li><a href="/products/pertabi/"><span class="cat-icon"><iconify-icon icon="fluent:people-community-24-regular"></iconify-icon></span>PERTABI</a></li>
         </ul>
@@ -458,7 +458,7 @@
           {/each}
         </div>
         <span class="ss-badge ss-badge-neutral" style="font-size:0.75rem; font-weight:600;">
-          Showing {totalVisible()} active {totalVisible() === 1 ? 'brand' : 'brands'}
+          Showing {totalVisible()} {totalVisible() === 1 ? 'entry' : 'entries'}
         </span>
       </div>
     </div>

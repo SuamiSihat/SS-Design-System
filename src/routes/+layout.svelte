@@ -2,9 +2,7 @@
   import { onMount } from 'svelte';
   import Navbar from '$lib/components/Navbar.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  import GatekeeperPuzzle from '$lib/components/GatekeeperPuzzle.svelte';
   import { initTheme } from '$lib/stores/theme.js';
-  import { gateState, initGate } from '$lib/stores/gate.js';
   import { browser } from '$app/environment';
   import fluentIcons from '$lib/icons/fluent-subset.json';
 
@@ -27,7 +25,6 @@
 
   onMount(() => {
     initTheme();
-    initGate();
   });
 </script>
 
@@ -35,13 +32,11 @@
   <title>SuamiSihat™ Design System</title>
 </svelte:head>
 
-{#if $gateState.isReady && !$gateState.isUnlocked}
-  <GatekeeperPuzzle />
-{/if}
 
-<div class="f-app-shell" class:f-locked={!$gateState.isUnlocked}>
+<a class="f-skip-link" href="#page-content">Skip to main content</a>
+<div class="f-app-shell">
   <Navbar />
-  <div class="f-content-wrapper">
+  <div class="f-content-wrapper" id="page-content" tabindex="-1">
     {@render children?.()}
   </div>
   <Footer />
@@ -57,13 +52,26 @@
     transition: opacity 0.3s ease;
   }
 
-  .f-app-shell.f-locked {
-    visibility: hidden;
-    height: 0;
-    max-height: 0;
-    overflow: hidden;
-    pointer-events: none;
+  .f-skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -4rem;
+    z-index: 10000;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    background: #043388;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
   }
+
+  .f-skip-link:focus {
+    top: 0.75rem;
+    outline: 3px solid #21A1F7;
+    outline-offset: 2px;
+  }
+
+  .f-content-wrapper:focus { outline: none; }
 
   .f-content-wrapper {
     flex: 1;
