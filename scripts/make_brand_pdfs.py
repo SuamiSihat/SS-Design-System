@@ -97,16 +97,16 @@ def url(p):
 
 # ---------------------------------------------------------------- data
 BRANDS = [
-    ('Androlab', 'androlab'),
-    ('DrMitRing', 'drmitring'),
-    ('HusbandClinic', 'husbandclinic'),
-    ('IsteriSihat', 'isterisihat'),
-    ('MENSS', 'menss'),
-    ('Mensculine', 'mensculine'),
-    ('nuCaffe', 'nucaffe'),
-    ('Pertabi', 'pertabi'),
-    ('Rejal', 'rejal'),
-    ('SsClinic', 'ssclinic'),
+    ('androlab', 'androlab'),
+    ('drmitring', 'drmitring'),
+    ('husbandclinic', 'husbandclinic'),
+    ('isterisihat', 'isterisihat'),
+    ('menss', 'menss'),
+    ('mensculine', 'mensculine'),
+    ('nucaffe', 'nucaffe'),
+    ('pertabi', 'pertabi'),
+    ('rejal', 'rejal'),
+    ('ssclinic', 'ssclinic'),
 ]
 
 
@@ -154,10 +154,10 @@ def sifusex():
         'colorScheme': {},
         'pattern': {},
         'guideline': {
-            'logos': [{'label': 'Sifu Sex logo', 'file': '/products/Partner-Brands/logos/logo_sifusex.svg', 'use': 'As supplied; usage rules TBC'}]
+            'logos': [{'label': 'Sifu Sex logo', 'file': '/products/partner-brands/logos/logo_sifusex.svg', 'use': 'As supplied; usage rules TBC'}]
         },
         'downloads': [
-            {'label': 'Sifu Sex logo', 'file': '/products/Partner-Brands/logos/logo_sifusex.svg', 'format': 'SVG'}
+            {'label': 'Sifu Sex logo', 'file': '/products/partner-brands/logos/logo_sifusex.svg', 'format': 'SVG'}
         ],
         '_shell': True,
     }

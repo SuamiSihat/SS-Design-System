@@ -2,7 +2,7 @@
   "schema": 2,
   "slug": "husbandclinic",
   "name": "Husband Clinic",
-  "folder": "HusbandClinic",
+  "folder": "husbandclinic",
   "status": "Partner",
   "tagline": "Men's health clinic partner network",
   "entity": "Partner network",
@@ -32,7 +32,7 @@
   },
   "images": [
     {
-      "src": "/products/HusbandClinic/gallery/husbandclinic-brand-card.jpg",
+      "src": "/products/husbandclinic/gallery/husbandclinic-brand-card.jpg",
       "alt": "Husband Clinic logo on a white card over a navy cross-grid pattern",
       "caption": "Brand card (clinic photography pending)",
       "placeholder": true
@@ -135,7 +135,7 @@
   },
   "pattern": {
     "name": "Clinic Cross Grid",
-    "file": "/products/HusbandClinic/pattern.svg",
+    "file": "/products/husbandclinic/pattern.svg",
     "description": "Small plus marks in Malibu on Prussian Navy.",
     "usage": [
       "Use on navy backgrounds only",
@@ -147,7 +147,7 @@
     "logos": [
       {
         "label": "Husband Clinic logo",
-        "file": "/products/Partner-Brands/logos/logo_husbandclinic.svg",
+        "file": "/products/partner-brands/logos/logo_husbandclinic.svg",
         "use": "Light backgrounds"
       }
     ],
@@ -172,12 +172,12 @@
   "downloads": [
     {
       "label": "Husband Clinic logo",
-      "file": "/products/Partner-Brands/logos/logo_husbandclinic.svg",
+      "file": "/products/partner-brands/logos/logo_husbandclinic.svg",
       "format": "SVG"
     },
     {
       "label": "Brand pattern",
-      "file": "/products/HusbandClinic/pattern.svg",
+      "file": "/products/husbandclinic/pattern.svg",
       "format": "SVG"
     }
   ]

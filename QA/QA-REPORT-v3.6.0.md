@@ -54,7 +54,7 @@ Baseline before this release (same axe test on v3.5.1): every page failed in bot
 | OPEN-04 | Brand | Xprimal is described as replaced by "MENSS Care Cream" in the catalogue, while the Mensculine page lists Mensculine Care Cream; confirm the product name |
 | OPEN-05 | IT | Create the NAS password file and deploy key, rotate the old NAS password (see `deploy/README.md`) |
 | OPEN-06 | Dev | Split the largest page files and move inline styles to classes (roadmap v3.7) |
-| OPEN-07 | Dev | Product folders use mixed case (`static/products/Rejal`) next to lower-case page routes (`/products/rejal/`); works, but rename to slugs in a later release |
+| OPEN-07 | Dev | **RESOLVED**: Product folders renamed to lowercase slugs (`static/products/<slug>/`) to eliminate duplicate casing on Linux/NAS filesystems |
 
 ## Archive
 

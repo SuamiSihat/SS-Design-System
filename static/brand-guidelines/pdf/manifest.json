@@ -1,42 +1,42 @@
 {
   "androlab": {
-    "source": "static/products/Androlab/metadata.json",
-    "sha256": "7d914dd35ec76dc58e4b4585167070e11a0391fa3912c0822208e6db1e37119e"
+    "source": "static/products/androlab/metadata.json",
+    "sha256": "d3b3891a652a3c115375790d88480cc26c0f3c3f72e7ec47b6106660194d7264"
   },
   "drmitring": {
-    "source": "static/products/DrMitRing/metadata.json",
-    "sha256": "c63ede25c3f4da92a75c6d16204f0ff3646d54f5f47d93bd2d1dfcb9f11a73bc"
+    "source": "static/products/drmitring/metadata.json",
+    "sha256": "0715375519fd6d020f59302de104415b122fe9c45c5ef7873f433f300e4a69a2"
   },
   "husbandclinic": {
-    "source": "static/products/HusbandClinic/metadata.json",
-    "sha256": "d06782bfe2cca6c9f144ecb9c13b9772cf5bd25d00fd6d86f8c6770dc6c869cf"
+    "source": "static/products/husbandclinic/metadata.json",
+    "sha256": "5b7d5c0603dc7650da5e25f909bfd99e9a03eb46f51f849b7d9fe2c1ee192cc7"
   },
   "isterisihat": {
-    "source": "static/products/IsteriSihat/metadata.json",
-    "sha256": "b27ee9150967b110973173ec651a97cc137e8d859b2d37531ff213fface525b4"
+    "source": "static/products/isterisihat/metadata.json",
+    "sha256": "9e6f4ac9ba16ea2fd76f1ea609ab4f9fd7a9699fab1882eb6eb08bfbc8bfa714"
   },
   "mensculine": {
-    "source": "static/products/Mensculine/metadata.json",
-    "sha256": "c2f1933f6d910fe2f3dff9a1f8443d706660e770db9b0b9898bc30483f538904"
+    "source": "static/products/mensculine/metadata.json",
+    "sha256": "08b829e27c747f026d644551aa3d81f6abc5e4ed6580d93a61ea5cb02c3c3c70"
   },
   "menss": {
-    "source": "static/products/MENSS/metadata.json",
-    "sha256": "05568ff8003b7c4c59c46e8f2ce1e1f411cfca0ea26504be4ed4c36b26fc18d3"
+    "source": "static/products/menss/metadata.json",
+    "sha256": "d6e040c1b5c0beccd542124aaabb5ab40fdc78be4501d55368121294d5a16ebf"
   },
   "nucaffe": {
-    "source": "static/products/nuCaffe/metadata.json",
-    "sha256": "fd174925f5286921cd627f04c562b19e58b7ea4891611321368e4e82e0324dc6"
+    "source": "static/products/nucaffe/metadata.json",
+    "sha256": "94abfd3bf386a46ae60a3005f9c6e1c8a0e295c0a517a60eeca7578ae17f6d95"
   },
   "pertabi": {
-    "source": "static/products/Pertabi/metadata.json",
-    "sha256": "09091ef193b440d7d1cf189ed43415ab74646f79896a8148aad1c1c443eea168"
+    "source": "static/products/pertabi/metadata.json",
+    "sha256": "0c07f637e78d9a6d0ad8e25a95f4cdd3362ee7d2d72db87b4b3ce485bf9a162c"
   },
   "rejal": {
-    "source": "static/products/Rejal/metadata.json",
-    "sha256": "a7aa0dd28f4fd9f773596a04d3e3cbcac86f94514061823752ac2e687ccfa25a"
+    "source": "static/products/rejal/metadata.json",
+    "sha256": "4c8f9507d92972408172cb8d9d6b6960151e1cc6caf02a061be2c931a6151206"
   },
   "ssclinic": {
-    "source": "static/products/SsClinic/metadata.json",
+    "source": "static/products/ssclinic/metadata.json",
     "sha256": "4bd5ddb87512fed6221b56fb236b1640e9cbcebde12848c7b7db9858dedca53e"
   }
 }

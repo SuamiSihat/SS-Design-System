@@ -2,7 +2,7 @@
   "schema": 2,
   "slug": "rejal",
   "name": "REJAL",
-  "folder": "Rejal",
+  "folder": "rejal",
   "status": "Active",
   "tagline": "Heritage superfoods · Kesihatan itu satu pelaburan",
   "entity": "05-SSE · SuamiSihat Ecommerce Sdn Bhd",
@@ -74,17 +74,17 @@
   },
   "images": [
     {
-      "src": "/products/Rejal/gallery/rejal-madu-tualang-1kg-500g.jpg",
+      "src": "/products/rejal/gallery/rejal-madu-tualang-1kg-500g.jpg",
       "alt": "Two REJAL Madu Tualang Asli bottles, 1 kg and 500 g, with black labels, blue tengkolok emblem and copper caps on white",
       "caption": "Madu Tualang Asli 1 kg and 500 g"
     },
     {
-      "src": "/products/Rejal/gallery/rejal-bawang-lanang-jar.jpg",
+      "src": "/products/rejal/gallery/rejal-bawang-lanang-jar.jpg",
       "alt": "REJAL Bawang Lanang + Madu jar with black label, QUALITY NATURAL ribbon and gold QUALITY SEAL band on white",
       "caption": "Bawang Lanang + Madu jar"
     },
     {
-      "src": "/products/Rejal/gallery/rejal-bawang-lanang-mini-jar.jpg",
+      "src": "/products/rejal/gallery/rejal-bawang-lanang-mini-jar.jpg",
       "alt": "REJAL Bawang Lanang + Madu mini jar with black label, Jawi tagline and gold-and-black QUALITY SEAL cap on white",
       "caption": "Bawang Lanang + Madu mini jar"
     }
@@ -218,7 +218,7 @@
   },
   "pattern": {
     "name": "REJAL repeat texture",
-    "file": "/products/Rejal/pattern.svg",
+    "file": "/products/rejal/pattern.svg",
     "description": "Staggered rows of the condensed REJAL wordmark in dark grey (#3A3536) on Rejal Black, as used on the Stevia box flaps and back panels.",
     "usage": [
       "Use on Rejal Black only: box flaps, back panels, web section backgrounds",
@@ -231,17 +231,17 @@
     "logos": [
       {
         "label": "REJAL wordmark (black)",
-        "file": "/products/Rejal/logos/rejal-wordmark-black.svg",
+        "file": "/products/rejal/logos/rejal-wordmark-black.svg",
         "use": "On white and light surfaces"
       },
       {
         "label": "REJAL wordmark (white)",
-        "file": "/products/Rejal/logos/rejal-wordmark-white.svg",
+        "file": "/products/rejal/logos/rejal-wordmark-white.svg",
         "use": "Primary: on Rejal Black and dark photography"
       },
       {
         "label": "Emblem: tengkolok, Jawi arc and QUALITY | ORIGINAL ribbon",
-        "file": "/products/Rejal/logos/rejal-emblem-quality-original-on-dark.svg",
+        "file": "/products/rejal/logos/rejal-emblem-quality-original-on-dark.svg",
         "use": "Dark backgrounds only (the ring gap is transparent)"
       }
     ],
@@ -273,47 +273,47 @@
     },
     {
       "label": "REJAL wordmark (white)",
-      "file": "/products/Rejal/logos/rejal-wordmark-white.svg",
+      "file": "/products/rejal/logos/rejal-wordmark-white.svg",
       "format": "SVG"
     },
     {
       "label": "REJAL wordmark (black)",
-      "file": "/products/Rejal/logos/rejal-wordmark-black.svg",
+      "file": "/products/rejal/logos/rejal-wordmark-black.svg",
       "format": "SVG"
     },
     {
       "label": "REJAL emblem, Quality | Original (dark backgrounds)",
-      "file": "/products/Rejal/logos/rejal-emblem-quality-original-on-dark.svg",
+      "file": "/products/rejal/logos/rejal-emblem-quality-original-on-dark.svg",
       "format": "SVG"
     },
     {
       "label": "Tengkolok (raster, 227 × 154 px)",
-      "file": "/products/Rejal/logos/rejal-emblem-tengkolok.png",
+      "file": "/products/rejal/logos/rejal-emblem-tengkolok.png",
       "format": "PNG"
     },
     {
       "label": "Brand pattern",
-      "file": "/products/Rejal/pattern.svg",
+      "file": "/products/rejal/pattern.svg",
       "format": "SVG"
     },
     {
       "label": "Label RBL35, Bawang Lanang mini jar (80 × 26 mm)",
-      "file": "/products/Rejal/sub-products/bawang-lanang/downloads/RBL35-80x26mm.pdf",
+      "file": "/products/rejal/sub-products/bawang-lanang/downloads/RBL35-80x26mm.pdf",
       "format": "PDF"
     },
     {
       "label": "Label RBL240, Bawang Lanang 240 g (200 × 60 mm)",
-      "file": "/products/Rejal/sub-products/bawang-lanang/downloads/RBL240-200x60mm.pdf",
+      "file": "/products/rejal/sub-products/bawang-lanang/downloads/RBL240-200x60mm.pdf",
       "format": "PDF"
     },
     {
       "label": "Label RBL1K, Madu Tualang 1 kg (200 × 150 mm)",
-      "file": "/products/Rejal/sub-products/madu-tualang/downloads/RBL1K-200x150mm.pdf",
+      "file": "/products/rejal/sub-products/madu-tualang/downloads/RBL1K-200x150mm.pdf",
       "format": "PDF"
     },
     {
       "label": "Stevia box and bottle label V3",
-      "file": "/products/Rejal/sub-products/stevia/downloads/rejal-stevia-box-label-v3.pdf",
+      "file": "/products/rejal/sub-products/stevia/downloads/rejal-stevia-box-label-v3.pdf",
       "format": "PDF"
     },
     {

@@ -2,7 +2,7 @@
   "schema": 2,
   "slug": "pertabi",
   "name": "PERTABI",
-  "folder": "Pertabi",
+  "folder": "pertabi",
   "status": "Partner",
   "tagline": "Persatuan Taat Bersama Isteri Malaysia",
   "entity": "Partner network (registered society)",
@@ -42,17 +42,17 @@
   },
   "images": [
     {
-      "src": "/products/Pertabi/sub-products/jersey/gallery/pertabi-jersey-1-web.jpg",
+      "src": "/products/pertabi/sub-products/jersey/gallery/pertabi-jersey-1-web.jpg",
       "alt": "PERTABI official jersey, front view",
       "caption": "Jersey front"
     },
     {
-      "src": "/products/Pertabi/sub-products/jersey/gallery/pertabi-jersey-2-web.jpg",
+      "src": "/products/pertabi/sub-products/jersey/gallery/pertabi-jersey-2-web.jpg",
       "alt": "PERTABI official jersey, back view",
       "caption": "Jersey back"
     },
     {
-      "src": "/products/Pertabi/sub-products/jersey/gallery/pertabi-jersey-3-web.jpg",
+      "src": "/products/pertabi/sub-products/jersey/gallery/pertabi-jersey-3-web.jpg",
       "alt": "Close-up of the PERTABI crest and collar",
       "caption": "Crest detail"
     }
@@ -149,7 +149,7 @@
   },
   "pattern": {
     "name": "Togetherness Rings",
-    "file": "/products/Pertabi/pattern.svg",
+    "file": "/products/pertabi/pattern.svg",
     "description": "Pairs of interlocking Sky Blue rings on PERTABI Navy.",
     "usage": [
       "Use on event banners and jersey trims",
@@ -161,17 +161,17 @@
     "logos": [
       {
         "label": "Horizontal (light backgrounds)",
-        "file": "/products/Pertabi/logos/logo_pertabi_horizontal-light.svg",
+        "file": "/products/pertabi/logos/logo_pertabi_horizontal-light.svg",
         "use": "Light"
       },
       {
         "label": "Horizontal (dark backgrounds)",
-        "file": "/products/Pertabi/logos/logo_pertabi_horizontal-dark.svg",
+        "file": "/products/pertabi/logos/logo_pertabi_horizontal-dark.svg",
         "use": "Dark"
       },
       {
         "label": "Vertical",
-        "file": "/products/Pertabi/logos/logo_pertabi_vertical.svg",
+        "file": "/products/pertabi/logos/logo_pertabi_vertical.svg",
         "use": "Stacked"
       }
     ],
@@ -196,22 +196,22 @@
   "downloads": [
     {
       "label": "Horizontal logo (light)",
-      "file": "/products/Pertabi/logos/logo_pertabi_horizontal-light.svg",
+      "file": "/products/pertabi/logos/logo_pertabi_horizontal-light.svg",
       "format": "SVG"
     },
     {
       "label": "Horizontal logo (dark)",
-      "file": "/products/Pertabi/logos/logo_pertabi_horizontal-dark.svg",
+      "file": "/products/pertabi/logos/logo_pertabi_horizontal-dark.svg",
       "format": "SVG"
     },
     {
       "label": "Vertical logo",
-      "file": "/products/Pertabi/logos/logo_pertabi_vertical.svg",
+      "file": "/products/pertabi/logos/logo_pertabi_vertical.svg",
       "format": "SVG"
     },
     {
       "label": "Brand pattern",
-      "file": "/products/Pertabi/pattern.svg",
+      "file": "/products/pertabi/pattern.svg",
       "format": "SVG"
     }
   ]

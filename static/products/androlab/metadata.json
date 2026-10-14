@@ -2,7 +2,7 @@
   "schema": 2,
   "slug": "androlab",
   "name": "ANDROLAB",
-  "folder": "Androlab",
+  "folder": "androlab",
   "status": "Active",
   "tagline": "Men's health science, made clear",
   "entity": "01-SSH · SS Health, with 02-SSC SS Clinic",
@@ -47,22 +47,22 @@
   },
   "images": [
     {
-      "src": "/products/Androlab/sub-products/androlab-alpha/gallery/Render_Mockup_3840_1916_2025-11-07-web.jpg",
+      "src": "/products/androlab/sub-products/androlab-alpha/gallery/Render_Mockup_3840_1916_2025-11-07-web.jpg",
       "alt": "ANDROLAB Alpha sachet carton studio render",
       "caption": "Alpha carton render"
     },
     {
-      "src": "/products/Androlab/sub-products/androlab-alpha/gallery/Render_Mockup_3840_1876_2025-11-07-web.jpg",
+      "src": "/products/androlab/sub-products/androlab-alpha/gallery/Render_Mockup_3840_1876_2025-11-07-web.jpg",
       "alt": "ANDROLAB Alpha carton and sachets, angled render",
       "caption": "Alpha carton, angled"
     },
     {
-      "src": "/products/Androlab/sub-products/androlab-alpha/gallery/sachet-p0104-eng.png",
+      "src": "/products/androlab/sub-products/androlab-alpha/gallery/sachet-p0104-eng.png",
       "alt": "ANDROLAB Alpha sachet artwork, English version",
       "caption": "Sachet artwork (English)"
     },
     {
-      "src": "/products/Androlab/sub-products/androlab-alpha/gallery/sachet-p0104-bm.png",
+      "src": "/products/androlab/sub-products/androlab-alpha/gallery/sachet-p0104-bm.png",
       "alt": "ANDROLAB Alpha sachet artwork, Bahasa Melayu version",
       "caption": "Sachet artwork (BM)"
     }
@@ -174,7 +174,7 @@
   },
   "pattern": {
     "name": "Molecular Lattice",
-    "file": "/products/Androlab/pattern.svg",
+    "file": "/products/androlab/pattern.svg",
     "description": "Linked nodes in Science Blue with a single RX Gold atom on Midnight Carbon.",
     "usage": [
       "Use on Carbon backgrounds behind hero areas",
@@ -186,22 +186,22 @@
     "logos": [
       {
         "label": "ANDROLAB primary",
-        "file": "/products/Androlab/logos/logo_androlab_primary.svg",
+        "file": "/products/androlab/logos/logo_androlab_primary.svg",
         "use": "Default lockup"
       },
       {
         "label": "ANDROLAB secondary",
-        "file": "/products/Androlab/logos/logo_androlab_secondary.svg",
+        "file": "/products/androlab/logos/logo_androlab_secondary.svg",
         "use": "Compact lockup"
       },
       {
         "label": "ANDROLAB Alpha",
-        "file": "/products/Androlab/sub-products/androlab-alpha/logos/logo_androlab_alpha_primary.svg",
+        "file": "/products/androlab/sub-products/androlab-alpha/logos/logo_androlab_alpha_primary.svg",
         "use": "Alpha sub-brand"
       },
       {
         "label": "ANDROLAB RX",
-        "file": "/products/Androlab/sub-products/androlab-rx/logos/logo_androlab_rx_primary.svg",
+        "file": "/products/androlab/sub-products/androlab-rx/logos/logo_androlab_rx_primary.svg",
         "use": "RX programme (clinic use)"
       }
     ],
@@ -226,27 +226,27 @@
   "downloads": [
     {
       "label": "ANDROLAB primary logo",
-      "file": "/products/Androlab/logos/logo_androlab_primary.svg",
+      "file": "/products/androlab/logos/logo_androlab_primary.svg",
       "format": "SVG"
     },
     {
       "label": "ANDROLAB secondary logo",
-      "file": "/products/Androlab/logos/logo_androlab_secondary.svg",
+      "file": "/products/androlab/logos/logo_androlab_secondary.svg",
       "format": "SVG"
     },
     {
       "label": "Brand pattern",
-      "file": "/products/Androlab/pattern.svg",
+      "file": "/products/androlab/pattern.svg",
       "format": "SVG"
     },
     {
       "label": "Alpha sachet artwork (BM)",
-      "file": "/products/Androlab/sub-products/androlab-alpha/downloads/Androlab_Alpha_Proto_0104-BKKM.pdf",
+      "file": "/products/androlab/sub-products/androlab-alpha/downloads/Androlab_Alpha_Proto_0104-BKKM.pdf",
       "format": "PDF"
     },
     {
       "label": "Alpha sachet artwork (English)",
-      "file": "/products/Androlab/sub-products/androlab-alpha/downloads/Androlab_Alpha_Proto_0104-ENG.pdf",
+      "file": "/products/androlab/sub-products/androlab-alpha/downloads/Androlab_Alpha_Proto_0104-ENG.pdf",
       "format": "PDF"
     }
   ]

@@ -2,7 +2,7 @@
   "schema": 2,
   "slug": "isterisihat",
   "name": "Isteri Sihat",
-  "folder": "IsteriSihat",
+  "folder": "isterisihat",
   "status": "Partner",
   "tagline": "Women's health companion platform",
   "entity": "Partner network",
@@ -32,7 +32,7 @@
   },
   "images": [
     {
-      "src": "/products/IsteriSihat/gallery/isterisihat-brand-card.jpg",
+      "src": "/products/isterisihat/gallery/isterisihat-brand-card.jpg",
       "alt": "Isteri Sihat logo on a white card over a plum petal pattern",
       "caption": "Brand card (photography pending)",
       "placeholder": true
@@ -135,7 +135,7 @@
   },
   "pattern": {
     "name": "Orchid Petals",
-    "file": "/products/IsteriSihat/pattern.svg",
+    "file": "/products/isterisihat/pattern.svg",
     "description": "Soft Orchid petals on Plum.",
     "usage": [
       "Use on plum backgrounds",
@@ -147,7 +147,7 @@
     "logos": [
       {
         "label": "Isteri Sihat logo",
-        "file": "/products/Partner-Brands/logos/logo_isterisihat.svg",
+        "file": "/products/partner-brands/logos/logo_isterisihat.svg",
         "use": "Light backgrounds"
       }
     ],
@@ -172,12 +172,12 @@
   "downloads": [
     {
       "label": "Isteri Sihat logo",
-      "file": "/products/Partner-Brands/logos/logo_isterisihat.svg",
+      "file": "/products/partner-brands/logos/logo_isterisihat.svg",
       "format": "SVG"
     },
     {
       "label": "Brand pattern",
-      "file": "/products/IsteriSihat/pattern.svg",
+      "file": "/products/isterisihat/pattern.svg",
       "format": "SVG"
     }
   ]

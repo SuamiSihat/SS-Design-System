@@ -27,10 +27,10 @@ The seven sections are: what the product is, pictures, how the brand is position
 
 ## Where the data lives
 
-Each brand has one file: `static/products/<Brand>/metadata.json` with `"schema": 2`. The page template is `src/routes/products/[slug]/+page.svelte`; it contains no brand-specific content.
+Each brand has one file: `static/products/<slug>/metadata.json` with `"schema": 2`. The page template is `src/routes/products/[slug]/+page.svelte`; it contains no brand-specific content.
 
 ```text
-static/products/Rejal/
+static/products/rejal/
   metadata.json        All seven sections
   pattern.svg          Brand pattern tile
   logos/               Logo files
@@ -46,14 +46,14 @@ static/products/Rejal/
   "schema": 2,
   "slug": "rejal",
   "name": "REJAL",
-  "folder": "Rejal",
+  "folder": "rejal",
   "status": "Active",
   "tagline": "Heritage superfoods from Malaysian forests, made for today's table",
   "entity": "05-SSE · SuamiSihat E-Commerce",
   "category": "Heritage functional food",
   "hero": { "from": "#1C1C1C", "to": "#3A2E14", "accent": "#C8A14A" },
   "definition": { "summary": "...", "facts": [], "range": [], "claimsReview": "..." },
-  "images": [{ "src": "/products/Rejal/...jpeg", "alt": "...", "caption": "..." }],
+  "images": [{ "src": "/products/rejal/...jpeg", "alt": "...", "caption": "..." }],
   "positioning": { "statement": "...", "pillars": [], "voice": [], "avoid": [] },
   "colorScheme": {
     "foundation": { "share": 60, "role": "...", "colors": [{ "name": "Rejal Black", "hex": "#1C1C1C", "use": "..." }] },
@@ -62,9 +62,9 @@ static/products/Rejal/
     "pairings": [{ "text": "#FCFAF6", "background": "#1C1C1C", "use": "Body text on black" }],
     "note": "..."
   },
-  "pattern": { "name": "...", "file": "/products/Rejal/pattern.svg", "description": "...", "usage": [] },
+  "pattern": { "name": "...", "file": "/products/rejal/pattern.svg", "description": "...", "usage": [] },
   "guideline": { "logos": [], "clearSpace": "...", "minimumSize": "...", "do": [], "dont": [], "typography": { "display": "...", "body": "..." } },
-  "downloads": [{ "label": "...", "file": "/products/Rejal/...pdf", "format": "PDF" }]
+  "downloads": [{ "label": "...", "file": "/products/rejal/...pdf", "format": "PDF" }]
 }
 ```
 

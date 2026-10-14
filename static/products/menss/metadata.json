@@ -2,7 +2,7 @@
   "schema": 2,
   "slug": "menss",
   "name": "MENSS",
-  "folder": "MENSS",
+  "folder": "menss",
   "status": "Active",
   "tagline": "Modern intimate wellness for men",
   "entity": "05-SSE · SuamiSihat E-Commerce, with 02-SSC SS Clinic",
@@ -57,17 +57,17 @@
   },
   "images": [
     {
-      "src": "/products/MENSS/sub-products/penile-pump/gallery/Render_Mockup_1920_1080_2025-10-14.jpg",
+      "src": "/products/menss/sub-products/penile-pump/gallery/Render_Mockup_1920_1080_2025-10-14.jpg",
       "alt": "MENSS vacuum pump studio render, horizontal",
       "caption": "Pump studio render"
     },
     {
-      "src": "/products/MENSS/sub-products/penile-pump/gallery/menss-penile-pump-packaging-d0062-v1-web.jpg",
+      "src": "/products/menss/sub-products/penile-pump/gallery/menss-penile-pump-packaging-d0062-v1-web.jpg",
       "alt": "MENSS black drawer box packaging for the vacuum pump",
       "caption": "Drawer box packaging"
     },
     {
-      "src": "/products/MENSS/sub-products/penile-pump/gallery/MENSS-PP-Box-web.jpg",
+      "src": "/products/menss/sub-products/penile-pump/gallery/MENSS-PP-Box-web.jpg",
       "alt": "MENSS pump retail box, front view",
       "caption": "Retail box"
     }
@@ -169,7 +169,7 @@
   },
   "pattern": {
     "name": "Precision Lines",
-    "file": "/products/MENSS/pattern.svg",
+    "file": "/products/menss/pattern.svg",
     "description": "Fine diagonal Precision Cyan lines on Carbon Obsidian.",
     "usage": [
       "Use on black panels and box interiors",
@@ -181,12 +181,12 @@
     "logos": [
       {
         "label": "MENSS wordmark",
-        "file": "/products/MENSS/logos/logo_menss.svg",
+        "file": "/products/menss/logos/logo_menss.svg",
         "use": "Default"
       },
       {
         "label": "MENSS Pump sub-brand",
-        "file": "/products/MENSS/sub-products/penile-pump/logos/logo-menss-penile-pump.svg",
+        "file": "/products/menss/sub-products/penile-pump/logos/logo-menss-penile-pump.svg",
         "use": "Pump packaging"
       }
     ],
@@ -211,22 +211,22 @@
   "downloads": [
     {
       "label": "MENSS wordmark",
-      "file": "/products/MENSS/logos/logo_menss.svg",
+      "file": "/products/menss/logos/logo_menss.svg",
       "format": "SVG"
     },
     {
       "label": "Brand pattern",
-      "file": "/products/MENSS/pattern.svg",
+      "file": "/products/menss/pattern.svg",
       "format": "SVG"
     },
     {
       "label": "Pump retail box artwork",
-      "file": "/products/MENSS/sub-products/penile-pump/downloads/MENSS-PP-Box.pdf",
+      "file": "/products/menss/sub-products/penile-pump/downloads/MENSS-PP-Box.pdf",
       "format": "PDF"
     },
     {
       "label": "Pump silhouette",
-      "file": "/products/MENSS/sub-products/penile-pump/downloads/pump-silhouette.svg",
+      "file": "/products/menss/sub-products/penile-pump/downloads/pump-silhouette.svg",
       "format": "SVG"
     }
   ]

@@ -2,7 +2,7 @@
   "schema": 2,
   "slug": "drmitring",
   "name": "Dr. MIT Ring®",
-  "folder": "DrMitRing",
+  "folder": "drmitring",
   "status": "Active",
   "tagline": "Condom fastener · Designed by SuamiSihat",
   "entity": "05-SSE · SuamiSihat Ecommerce Sdn Bhd",
@@ -54,17 +54,17 @@
   },
   "images": [
     {
-      "src": "/products/DrMitRing/gallery/drmitring-packs-flatlay.jpg",
+      "src": "/products/drmitring/gallery/drmitring-packs-flatlay.jpg",
       "alt": "Two green Dr Mit Ring boxes and a lime ring on a foil sachet lying on weathered concrete",
       "caption": "Current packs and ring (2026)"
     },
     {
-      "src": "/products/DrMitRing/gallery/drmitring-box.jpg",
+      "src": "/products/drmitring/gallery/drmitring-box.jpg",
       "alt": "Front of the green Dr Mit Ring box with the white 'dr mit ring' wordmark on a black pill and the CONDOM FASTENER descriptor",
       "caption": "Current box front"
     },
     {
-      "src": "/products/DrMitRing/gallery/drmitring-ring-sachet.jpg",
+      "src": "/products/drmitring/gallery/drmitring-ring-sachet.jpg",
       "alt": "Lime green Dr Mit Ring silicone ring on a silver foil sachet printed 'Dr. Mit Asian Size Best Before 2028'",
       "caption": "Ring and sachet"
     }
@@ -193,7 +193,7 @@
   },
   "pattern": {
     "name": "Ring Ripple",
-    "file": "/products/DrMitRing/pattern.svg",
+    "file": "/products/drmitring/pattern.svg",
     "description": "Offset concentric rings in Lime and Deep Green with a soft black halo on Dr Mit Green, abstracted from the ring's shape.",
     "usage": [
       "Use as a background on green panels, banners and box sides",
@@ -206,7 +206,7 @@
     "logos": [
       {
         "label": "Dr. MIT Ring wordmark pill",
-        "file": "/products/DrMitRing/logos/logo_drmitring.svg",
+        "file": "/products/drmitring/logos/logo_drmitring.svg",
         "use": "White outline pill and letters on black; on lime, always on a filled black pill"
       }
     ],
@@ -238,12 +238,12 @@
     },
     {
       "label": "Dr. MIT Ring wordmark",
-      "file": "/products/DrMitRing/logos/logo_drmitring.svg",
+      "file": "/products/drmitring/logos/logo_drmitring.svg",
       "format": "SVG"
     },
     {
       "label": "Brand pattern",
-      "file": "/products/DrMitRing/pattern.svg",
+      "file": "/products/drmitring/pattern.svg",
       "format": "SVG"
     },
     {

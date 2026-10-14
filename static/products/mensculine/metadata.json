@@ -2,7 +2,7 @@
   "schema": 2,
   "slug": "mensculine",
   "name": "Mensculine",
-  "folder": "Mensculine",
+  "folder": "mensculine",
   "status": "Active",
   "tagline": "SuamiSihat's men's care brand for export markets",
   "entity": "05-SSE · SuamiSihat E-Commerce (international)",
@@ -42,7 +42,7 @@
   },
   "images": [
     {
-      "src": "/products/Mensculine/gallery/mensculine-brand-card.jpg",
+      "src": "/products/mensculine/gallery/mensculine-brand-card.jpg",
       "alt": "Mensculine logo on a white card over the blue chevron pattern",
       "caption": "Brand card (product photography pending)",
       "placeholder": true
@@ -145,7 +145,7 @@
   },
   "pattern": {
     "name": "Chevron Drive",
-    "file": "/products/Mensculine/pattern.svg",
+    "file": "/products/mensculine/pattern.svg",
     "description": "Stacked Vivid Blue chevrons on Obsidian, pointing forward.",
     "usage": [
       "Use on dark bands and packaging sides",
@@ -157,22 +157,22 @@
     "logos": [
       {
         "label": "Primary (light backgrounds)",
-        "file": "/products/Mensculine/logos/logo_mensculine_primary_light.svg",
+        "file": "/products/mensculine/logos/logo_mensculine_primary_light.svg",
         "use": "Light"
       },
       {
         "label": "Primary (dark backgrounds)",
-        "file": "/products/Mensculine/logos/logo_mensculine_primary_dark.svg",
+        "file": "/products/mensculine/logos/logo_mensculine_primary_dark.svg",
         "use": "Dark"
       },
       {
         "label": "Secondary",
-        "file": "/products/Mensculine/logos/logo_mensculine_secondary.svg",
+        "file": "/products/mensculine/logos/logo_mensculine_secondary.svg",
         "use": "Compact"
       },
       {
         "label": "Text lockup",
-        "file": "/products/Mensculine/logos/logo_mensculine_text.svg",
+        "file": "/products/mensculine/logos/logo_mensculine_text.svg",
         "use": "Wordmark only"
       }
     ],
@@ -197,17 +197,17 @@
   "downloads": [
     {
       "label": "Logo pack",
-      "file": "/products/Mensculine/downloads/logo_mensculine.zip",
+      "file": "/products/mensculine/downloads/logo_mensculine.zip",
       "format": "ZIP"
     },
     {
       "label": "Primary logo",
-      "file": "/products/Mensculine/logos/logo_mensculine_primary.svg",
+      "file": "/products/mensculine/logos/logo_mensculine_primary.svg",
       "format": "SVG"
     },
     {
       "label": "Brand pattern",
-      "file": "/products/Mensculine/pattern.svg",
+      "file": "/products/mensculine/pattern.svg",
       "format": "SVG"
     }
   ]

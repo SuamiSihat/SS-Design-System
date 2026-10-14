@@ -2,7 +2,7 @@
   "schema": 2,
   "slug": "nucaffe",
   "name": "nuCaffe®",
-  "folder": "nuCaffe",
+  "folder": "nucaffe",
   "status": "While stocks last",
   "tagline": "Instant coffee with Physta® Tongkat Ali",
   "entity": "05-SSE · SuamiSihat E-Commerce",
@@ -47,7 +47,7 @@
   },
   "images": [
     {
-      "src": "/products/nuCaffe/gallery/nucaffe-brand-card.jpg",
+      "src": "/products/nucaffe/gallery/nucaffe-brand-card.jpg",
       "alt": "nu-caffe logo on a white card over a pattern of coffee beans",
       "caption": "Brand card (product photography pending)",
       "placeholder": true
@@ -150,7 +150,7 @@
   },
   "pattern": {
     "name": "Bean Scatter",
-    "file": "/products/nuCaffe/pattern.svg",
+    "file": "/products/nucaffe/pattern.svg",
     "description": "Crema and cherry-red coffee beans on Dark Roast Black.",
     "usage": [
       "Use on dark promotional panels",
@@ -162,12 +162,12 @@
     "logos": [
       {
         "label": "nu-caffe logo",
-        "file": "/products/nuCaffe/logos/logo_nuCaffe.svg",
+        "file": "/products/nucaffe/logos/logo_nuCaffe.svg",
         "use": "Light backgrounds"
       },
       {
         "label": "nu-caffe logo (white)",
-        "file": "/products/nuCaffe/logos/logo_nucaffeWhite.svg",
+        "file": "/products/nucaffe/logos/logo_nucaffeWhite.svg",
         "use": "Dark backgrounds"
       }
     ],
@@ -192,17 +192,17 @@
   "downloads": [
     {
       "label": "Logo (light backgrounds)",
-      "file": "/products/nuCaffe/logos/logo_nuCaffe.svg",
+      "file": "/products/nucaffe/logos/logo_nuCaffe.svg",
       "format": "SVG"
     },
     {
       "label": "Logo (dark backgrounds)",
-      "file": "/products/nuCaffe/logos/logo_nucaffeWhite.svg",
+      "file": "/products/nucaffe/logos/logo_nucaffeWhite.svg",
       "format": "SVG"
     },
     {
       "label": "Brand pattern",
-      "file": "/products/nuCaffe/pattern.svg",
+      "file": "/products/nucaffe/pattern.svg",
       "format": "SVG"
     }
   ]
