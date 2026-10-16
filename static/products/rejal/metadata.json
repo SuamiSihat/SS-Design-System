@@ -5,6 +5,9 @@
   "folder": "rejal",
   "status": "Active",
   "tagline": "Heritage superfoods · Kesihatan itu satu pelaburan",
+  "ownership": [
+    "SS Ecom"
+  ],
   "entity": "05-SSE · SuamiSihat Ecommerce Sdn Bhd",
   "category": "Heritage functional food",
   "hero": {
@@ -214,6 +217,18 @@
         "use": "Heritage Gold Deep text on white"
       }
     ],
+    "forbidden": [
+      {
+        "text": "#C9A24A",
+        "background": "#FFFFFF",
+        "use": "Heritage Gold on white is 2.40:1 (fails WCAG AA min 4.5:1). Use Heritage Gold Deep (#8A6A1F) for text on light."
+      },
+      {
+        "text": "#4480C2",
+        "background": "#231F20",
+        "use": "Rejal Blue on Rejal Black is 3.90:1. Use Rejal Blue Light (#7FAEE0) for links and small text on dark."
+      }
+    ],
     "note": "Heritage Gold (#C9A24A, foil ≈ PANTONE 871 C) is a finish only: gold caps, the QUALITY SEAL band and optional foil on premium runs. Never flat yellow, never a UI fill. No green (implies 'organic'; green belongs to Dr. MIT Ring). Tokens: static/assets/tokens/product-brands.tokens.json."
   },
   "pattern": {
@@ -267,9 +282,14 @@
   },
   "downloads": [
     {
-      "label": "Brand guidelines: Rejal and Dr. MIT Ring v1.0",
-      "file": "/brand-guidelines/rejal-drmitring-brand-guidelines-v1.0.pdf",
+      "label": "Brand guidelines: Rejal and Dr. MIT Ring v1.1",
+      "file": "/brand-guidelines/rejal-drmitring-brand-guidelines-v1.1.pdf",
       "format": "PDF"
+    },
+    {
+      "label": "All logos (ZIP)",
+      "file": "/products/rejal/downloads/rejal-logos.zip",
+      "format": "ZIP"
     },
     {
       "label": "REJAL wordmark (white)",

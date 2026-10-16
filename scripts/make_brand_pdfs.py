@@ -468,6 +468,18 @@ def main():
         return
 
     chrome_exec = os.environ.get('CHROME_PATH')
+    if not chrome_exec or not os.path.exists(chrome_exec):
+        candidates = [
+            r"C:\Program Files\Google\Chrome\Application\chrome.exe",
+            r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
+            r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
+            r"C:\Program Files\Microsoft\Edge\Application\msedge.exe",
+        ]
+        for c in candidates:
+            if os.path.exists(c):
+                chrome_exec = c
+                break
+
     with sync_playwright() as p:
         launch_opts = {'args': ['--allow-file-access-from-files']}
         if chrome_exec and os.path.exists(chrome_exec):

@@ -54,6 +54,7 @@
   <meta name="description" content={p.definition.summary} />
 </svelte:head>
 
+<div class="product-page-root" data-brand={p.slug}>
 <!-- Hero -->
 <header class="pb-hero" style="--hero-from:{p.hero.from}; --hero-to:{p.hero.to}; --pattern:{p.pattern.file ? `url('${p.pattern.file}')` : 'none'};">
   <div class="pb-hero-pattern" aria-hidden="true"></div>
@@ -79,6 +80,9 @@
         <p class="pb-hero-entity">
           <iconify-icon icon="fluent:organization-16-regular" aria-hidden="true"></iconify-icon>
           {p.entity}
+          {#if p.ownership?.length}
+            <span class="pb-ownership">({p.ownership.join(', ')})</span>
+          {/if}
         </p>
       </div>
     </div>
@@ -113,7 +117,7 @@
           <iconify-icon icon="fluent:folder-zip-24-regular" aria-hidden="true"></iconify-icon> All logos (ZIP)
         </a>
       {/if}
-      <a class="ss-btn ss-btn-secondary ss-btn-sm" href="/brand-guidelines/pdf/{p.slug}-brand-guideline-v1.0.pdf" download>
+      <a class="ss-btn ss-btn-secondary ss-btn-sm" href={p.slug === 'rejal' || p.slug === 'drmitring' ? '/brand-guidelines/rejal-drmitring-brand-guidelines-v1.1.pdf' : `/brand-guidelines/pdf/${p.slug}-brand-guideline-v1.0.pdf`} download>
         <iconify-icon icon="fluent:document-pdf-24-regular" aria-hidden="true"></iconify-icon> Guideline (PDF)
       </a>
       {#if p.pattern.file}
@@ -151,19 +155,96 @@
       {/each}
     </dl>
 
+    {#if p.doctor}
+      <div class="pb-doctor-panel pb-card" class:pb-pending={p.doctor.status === 'pending_consent' || !p.doctor.name}>
+        <div class="pb-doctor-header">
+          <iconify-icon icon="fluent:stethoscope-24-regular" aria-hidden="true"></iconify-icon>
+          <div>
+            <h3>
+              {#if p.doctor.name}
+                Clinical Endorsement & Lineage
+              {:else}
+                Clinical Endorsement & Lineage (Update in progress)
+              {/if}
+            </h3>
+            <p class="pb-muted">{p.doctor.clinic || 'SuamiSihat Clinic'}</p>
+          </div>
+        </div>
+        {#if p.doctor.name}
+          <div class="pb-doctor-content">
+            {#if p.doctor.photo}
+              <img src={p.doctor.photo} alt={p.doctor.name} class="pb-doctor-photo" />
+            {/if}
+            <div>
+              <strong>{p.doctor.name}</strong>
+              <p>{p.doctor.clinic}</p>
+              {#if p.doctor.consentRef}<p class="pb-consent-ref">Consent ref: {p.doctor.consentRef}</p>{/if}
+            </div>
+          </div>
+        {:else}
+          <p class="pb-doctor-note">
+            <iconify-icon icon="fluent:clock-16-regular" aria-hidden="true"></iconify-icon>
+            {p.doctor.note || 'Doctor endorsement and clinical lineage are in progress pending written consent on file.'}
+          </p>
+        {/if}
+      </div>
+    {/if}
+
+    <div class="pb-compliance-callout pb-card">
+      <div class="pb-compliance-header">
+        <iconify-icon icon="fluent:shield-checkmark-24-filled" aria-hidden="true"></iconify-icon>
+        <div>
+          <h3>Claims & Compliance Standard</h3>
+          {#if p.slug === 'drmitring'}
+            <p class="pb-muted">Medical Device Act 2012 (Act 737) · MDA-registered intended use</p>
+          {:else if p.slug === 'rejal'}
+            <p class="pb-muted">Food Regulations 1985 · Heritage Superfood Standard</p>
+          {:else}
+            <p class="pb-muted">SuamiSihat Regulatory & Legal Compliance Standard</p>
+          {/if}
+        </div>
+      </div>
+      {#if p.slug === 'drmitring'}
+        <p>
+          All efficacy, sexual-function, and clinical claims for Dr Mit Ring® strictly adhere to the MDA-registered intended use under Act 737. Unapproved mechanical or physiological performance claims are strictly prohibited across all marketing funnels.
+        </p>
+        <p class="pb-compliance-link">
+          <a class="ss-btn ss-btn-secondary ss-btn-sm" href="/brand-guidelines/rejal-drmitring-brand-guidelines-v1.1.pdf#page=22" target="_blank" rel="noopener noreferrer">
+            <iconify-icon icon="fluent:document-pdf-16-regular" aria-hidden="true"></iconify-icon> View approved claims register (Guideline Page B8)
+          </a>
+        </p>
+      {:else if p.slug === 'rejal'}
+        <p>
+          Rejal™ products are traditional food superfoods (SSE). Health, therapeutic, medical, and physiological performance claims are strictly prohibited across all packaging, funnels, and marketing copy.
+        </p>
+        <p class="pb-compliance-link">
+          <a class="ss-btn ss-btn-secondary ss-btn-sm" href="/brand-guidelines/rejal-drmitring-brand-guidelines-v1.1.pdf#page=11" target="_blank" rel="noopener noreferrer">
+            <iconify-icon icon="fluent:document-pdf-16-regular" aria-hidden="true"></iconify-icon> View food regulatory compliance rules (Guideline Page A10)
+          </a>
+        </p>
+      {:else}
+        <p>
+          All marketing and educational materials must adhere to the verified claims register in the official product brand guideline.
+        </p>
+      {/if}
+    </div>
+
     {#if p.definition.range.length}
-      <h3>Range</h3>
+      <h3>Range & Specifications</h3>
       <ul class="pb-range">
         {#each p.definition.range as r}
           <li class="pb-card">
-            <span class="pb-tag">{r.type}</span>
+            {#if r.code}<span class="pb-tag">{r.code}</span>{:else if r.type}<span class="pb-tag">{r.type}</span>{/if}
             <strong>{r.name}</strong>
-            <p>{r.desc}</p>
+            {#if r.pack}<p class="pb-range-spec"><span>Format / Pack:</span> {r.pack}</p>{/if}
+            {#if r.net}<p class="pb-range-spec"><span>Net Content:</span> {r.net}</p>{/if}
+            {#if r.file}<p class="pb-range-spec"><span>Artwork File:</span> <code>{r.file}</code></p>{/if}
+            {#if r.cert}<p class="pb-range-spec"><span>Regulatory:</span> {r.cert}</p>{/if}
+            {#if r.desc}<p>{r.desc}</p>{/if}
           </li>
         {/each}
       </ul>
     {/if}
-
   </section>
 
   <!-- 2. Images -->
@@ -257,7 +338,11 @@
                   <span class="pb-swatch-chip" style="background:{col.hex};" aria-hidden="true"></span>
                   <span class="pb-swatch-text">
                     <strong>{col.name}</strong>
-                    <code>{col.hex}</code>
+                    <span class="pb-swatch-meta">
+                      <code>{col.hex}</code>
+                      {#if col.rgb}<span class="pb-swatch-rgb">{col.rgb}</span>{/if}
+                      {#if col.pantone}<span class="pb-swatch-pantone">{col.pantone} {#if col.deltaE}(ΔE {col.deltaE}){/if}</span>{/if}
+                    </span>
                     <span class="pb-muted">{col.use}</span>
                   </span>
                   <span class="pb-swatch-copy">
@@ -275,7 +360,7 @@
       {/each}
     </div>
 
-    <h3>Text colours that are easy to read</h3>
+    <h3>Approved text colours (WCAG 2.2 AA)</h3>
     <div class="pb-table-wrap">
       <table class="pb-table">
         <caption class="visually-hidden">Text and background pairings with WCAG contrast ratio</caption>
@@ -295,6 +380,33 @@
         </tbody>
       </table>
     </div>
+
+    {#if p.colorScheme.forbidden?.length}
+      <h3>Forbidden text & background pairings (Accessibility violations)</h3>
+      <div class="pb-table-wrap">
+        <table class="pb-table">
+          <caption class="visually-hidden">Forbidden pairings that fail accessibility</caption>
+          <thead>
+            <tr><th scope="col">Sample</th><th scope="col">Text / background</th><th scope="col">Status</th><th scope="col">Why forbidden</th></tr>
+          </thead>
+          <tbody>
+            {#each p.colorScheme.forbidden as pair}
+              {@const r = ratioLabel(pair)}
+              <tr>
+                <td>
+                  <span class="pb-sample" style="background:{pair.background}; display: inline-flex; align-items: center; justify-content: center;" aria-hidden="true">
+                    <iconify-icon icon="fluent:prohibited-16-regular" style="color:{pair.text}; font-size: 1.25rem;" aria-hidden="true"></iconify-icon>
+                  </span>
+                </td>
+                <td><code>{pair.text}</code> on <code>{pair.background}</code></td>
+                <td><span class="pb-tag pb-tag-warn">Fails · {r.value}:1</span></td>
+                <td>{pair.use}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+      </div>
+    {/if}
     {#if p.colorScheme.note}
       <p class="pb-note"><iconify-icon icon="fluent:info-16-regular" aria-hidden="true"></iconify-icon> {p.colorScheme.note}</p>
     {/if}
@@ -364,7 +476,7 @@
   <section id="downloads" class="pb-section" aria-labelledby="h-downloads">
     <h2 id="h-downloads"><span class="pb-num">7</span> Downloads</h2>
     <ul class="pb-downloads">
-      {#each [{ label: `${p.name} brand guideline (all seven sections)`, file: `/brand-guidelines/pdf/${p.slug}-brand-guideline-v1.0.pdf`, format: 'PDF' }, ...p.downloads] as f}
+      {#each [{ label: `${p.name} brand guideline (all seven sections)`, file: (p.slug === 'rejal' || p.slug === 'drmitring') ? '/brand-guidelines/rejal-drmitring-brand-guidelines-v1.1.pdf' : `/brand-guidelines/pdf/${p.slug}-brand-guideline-v1.0.pdf`, format: 'PDF' }, ...p.downloads] as f}
         <li>
           <a href={f.file} download={fileName(f.file)} class="pb-download">
             <span class="pb-download-icon" aria-hidden="true">
@@ -412,8 +524,33 @@
     </button>
   </div>
 </dialog>
+</div>
 
 <style>
+  .product-page-root { width: 100%; min-height: 100vh; }
+  .pb-ownership { font-size: 0.8rem; opacity: 0.9; margin-left: 0.25rem; font-weight: normal; }
+
+  /* Doctor Endorsement & Compliance */
+  .pb-doctor-panel { margin-top: 1.5rem; border-left: 4px solid var(--color-brand-primary); }
+  .pb-doctor-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+  .pb-doctor-header h3 { margin: 0; }
+  .pb-doctor-header iconify-icon { font-size: 1.75rem; color: var(--color-brand-primary); }
+  .pb-doctor-content { display: flex; gap: 1rem; align-items: center; margin-top: 0.75rem; }
+  .pb-doctor-photo { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-brand-primary); }
+  .pb-doctor-note { display: flex; align-items: center; gap: 0.5rem; margin: 0; color: var(--color-neutral-fg-2); font-size: 0.9rem; }
+  .pb-consent-ref { font-size: 0.75rem; color: var(--color-neutral-fg-3); margin-top: 0.25rem; }
+
+  .pb-compliance-callout { margin-top: 1.5rem; border-left: 4px solid var(--color-action-bg); background: var(--color-brand-subtle); }
+  .pb-compliance-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+  .pb-compliance-header h3 { margin: 0; color: var(--text-strong); }
+  .pb-compliance-header iconify-icon { font-size: 1.75rem; color: var(--color-brand-primary); }
+  .pb-compliance-link { margin-top: 1rem; margin-bottom: 0; }
+
+  .pb-range-spec { font-size: 0.85rem; margin: 0.25rem 0 0; color: var(--color-neutral-fg-2); }
+  .pb-range-spec span { font-weight: 600; color: var(--color-neutral-fg-1); }
+  .pb-swatch-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 0.2rem 0; font-size: 0.75rem; }
+  .pb-swatch-rgb, .pb-swatch-pantone { color: var(--color-neutral-fg-2); }
+
   /* Quick kit */
   .pb-kit { background: var(--color-neutral-bg-2); border-bottom: 1px solid var(--color-neutral-stroke-1); }
   .pb-kit-inner { max-width: 1200px; margin: 0 auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }

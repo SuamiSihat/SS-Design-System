@@ -4,24 +4,38 @@
   "name": "Dr. MIT Ring®",
   "folder": "drmitring",
   "status": "Active",
-  "tagline": "Condom fastener · Designed by SuamiSihat",
+  "tagline": "Male Intimacy Technology · Direka oleh SuamiSihat",
+  "ownership": [
+    "SS Ecom"
+  ],
   "entity": "05-SSE · SuamiSihat Ecommerce Sdn Bhd",
-  "category": "Condom accessory (condom fastener)",
+  "category": "Male Intimacy Technology",
   "hero": {
     "from": "#1C1C1C",
     "to": "#1A7A30",
     "accent": "#6AB845"
   },
+  "doctor": {
+    "name": null,
+    "photo": null,
+    "consentRef": null,
+    "status": "pending_consent",
+    "note": "Update in progress: doctor endorsement (Dr Amir, SS Clinic) and sexual-function claim sign-off pending written consent on file and MDA certificate wording."
+  },
   "definition": {
-    "summary": "Dr. MIT Ring® is a reusable soft silicone condom fastener (alat penahan kondom). It is slipped on after a condom is in place and helps keep the condom from slipping. Designed by SuamiSihat and sold through SuamiSihat channels.",
+    "summary": "Dr. MIT Ring® is an MDA-registered male intimacy technology device (Male Intimacy Technology · M.I.T.). Designed by SuamiSihat and distributed through SuamiSihat channels. (Update in progress: doctor block and claims sign-off pending written consent and final certificate reference).",
     "facts": [
       {
         "label": "What it is",
-        "value": "Condom accessory: rounded lime silicone ring, worn over a condom"
+        "value": "Male Intimacy Technology (M.I.T.): precision silicone ring designed by SuamiSihat"
       },
       {
         "label": "What it is not",
-        "value": "Not a medical device, treatment or performance product"
+        "value": "Not an ingestible medicine; not an unapproved mechanical intervention"
+      },
+      {
+        "label": "Regulatory status",
+        "value": "MDA-registered medical device (Act 737, Path B) · Update in progress"
       },
       {
         "label": "Pack contents",
@@ -37,7 +51,7 @@
       },
       {
         "label": "Credit line",
-        "value": "Designed by SuamiSihat"
+        "value": "Direka oleh SuamiSihat"
       },
       {
         "label": "Trademark",
@@ -47,8 +61,8 @@
     "range": [
       {
         "name": "Dr. MIT Ring® (2 rings)",
-        "type": "Condom fastener",
-        "desc": "Retail box with two reusable rings in foil sachets and bilingual instructions."
+        "type": "Male Intimacy Technology",
+        "desc": "Retail box with two reusable rings in foil sachets and bilingual instructions. Direka oleh SuamiSihat."
       }
     ]
   },
@@ -70,31 +84,31 @@
     }
   ],
   "positioning": {
-    "statement": "Aksesori kondom yang discreet, boleh guna semula, direka di Malaysia. For couples who want protection that stays in place, Dr. MIT Ring® is a simple, reusable condom fastener, presented with discretion.",
+    "statement": "Teknologi intim lelaki yang discreet, boleh guna semula, direka di Malaysia. Dr. MIT Ring® brings Male Intimacy Technology (M.I.T.) to couples with clinical authority, discretion, and Malaysian design.",
     "pillars": [
       {
-        "title": "Discreet",
-        "text": "Calm, respectful, product-only imagery. Discretion is what reads as premium in this category."
+        "title": "Male Intimacy Technology",
+        "text": "Precision engineered ergonomic ring (M.I.T.), designed for comfortable intimacy and confidence."
       },
       {
-        "title": "Simple and reusable",
-        "text": "A physical accessory: slip on after the condom, rinse, dry, reuse 3 to 5 times. Explain in plain steps."
+        "title": "Clinical authority & discretion",
+        "text": "Positioned with clinical authority under SS Clinic medical oversight, presented with total discretion."
       },
       {
-        "title": "Designed by SuamiSihat",
-        "text": "Sign off with 'Designed by SuamiSihat'. No individual doctor endorsement."
+        "title": "Direka oleh SuamiSihat",
+        "text": "Proudly signed off with 'Direka oleh SuamiSihat'. Engineered locally for Malaysian men."
       }
     ],
     "voice": [
-      "Calm and clean, never crude",
+      "Calm and clean, clinical and confident, never crude",
       "Instructional: short steps, clear care advice",
       "Bahasa Malaysia first; respectful of both partners"
     ],
     "avoid": [
-      "Erection, hardness, stamina, 'tahan lama', ejaculation or 'pancut / muntah' wording",
-      "Doctor names, photos or 'doctor recommended'",
-      "Unverified badges: 'Andrologically tested', 'patented', 'clinically proven'",
-      "Explicit or suggestive imagery"
+      "Unapproved claims: erection, hardness, stamina, 'tahan lama', or ejaculation wording NOT matching the MDA-registered intended use",
+      "Doctor endorsement without written consent on file (Dr Amir consentRef pending)",
+      "Vulgar or suggestive slang: 'pancut / muntah' wording",
+      "Retired lineage references or unverified patent / medical claims"
     ]
   },
   "colorScheme": {
@@ -189,6 +203,18 @@
         "largeTextOnly": true
       }
     ],
+    "forbidden": [
+      {
+        "text": "#FFFFFF",
+        "background": "#6AB845",
+        "use": "White text on Lime is 2.45:1 (fails WCAG AA min 4.5:1). Never use white text on lime."
+      },
+      {
+        "text": "#FFE53B",
+        "background": "#6AB845",
+        "use": "Yellow count sticker on Lime is 1.93:1. Yellow highlights belong on black only."
+      }
+    ],
     "note": "Never white on lime (2.45:1) or yellow on lime (1.93:1). The premium update moves the box to matte off-white or black with lime as the signal colour only. Tokens: static/assets/tokens/product-brands.tokens.json."
   },
   "pattern": {
@@ -214,14 +240,14 @@
     "minimumSize": "20 mm / 80 px wide",
     "do": [
       "Place the pill on black, or as a filled black pill on lime",
-      "Set 'CONDOM FASTENER' above the pill on packs and listings",
-      "Sign off 'Dr. MIT Ring® · Designed by SuamiSihat'"
+      "Set 'MALE INTIMACY TECHNOLOGY' (or 'M.I.T.') above the pill on packs and listings",
+      "Sign off 'Dr. MIT Ring® · Direka oleh SuamiSihat'"
     ],
     "dont": [
       "Do not place the transparent pill directly on lime or white",
-      "Do not add a doctor's name or photo",
+      "Do not publish doctor name or photo without written consent on file",
       "Do not retype, recolour or stretch the wordmark",
-      "Do not add unapproved badges or performance claims"
+      "Do not use sexual-function claims outside the MDA-registered intended use"
     ],
     "typography": {
       "display": "Poppins ExtraBold / Black headlines; Poppins SemiBold caps, tracked +240, for the descriptor",
@@ -232,9 +258,14 @@
   },
   "downloads": [
     {
-      "label": "Brand guidelines: Rejal and Dr. MIT Ring v1.0",
-      "file": "/brand-guidelines/rejal-drmitring-brand-guidelines-v1.0.pdf",
+      "label": "Brand guidelines: Rejal and Dr. MIT Ring v1.1",
+      "file": "/brand-guidelines/rejal-drmitring-brand-guidelines-v1.1.pdf",
       "format": "PDF"
+    },
+    {
+      "label": "All logos (ZIP)",
+      "file": "/products/drmitring/downloads/drmitring-logos.zip",
+      "format": "ZIP"
     },
     {
       "label": "Dr. MIT Ring wordmark",

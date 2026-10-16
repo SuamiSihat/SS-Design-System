@@ -5,7 +5,7 @@
   },
   "drmitring": {
     "source": "static/products/drmitring/metadata.json",
-    "sha256": "0715375519fd6d020f59302de104415b122fe9c45c5ef7873f433f300e4a69a2"
+    "sha256": "9339afb6d285e825259266cf345ce4ed2f1d3754f6cbc55b72179183fa8a63fa"
   },
   "husbandclinic": {
     "source": "static/products/husbandclinic/metadata.json",
@@ -33,7 +33,7 @@
   },
   "rejal": {
     "source": "static/products/rejal/metadata.json",
-    "sha256": "4c8f9507d92972408172cb8d9d6b6960151e1cc6caf02a061be2c931a6151206"
+    "sha256": "eac968af2ceab3cf61c561671353eaf96a0146192045b9ea4bb38908708acf58"
   },
   "ssclinic": {
     "source": "static/products/ssclinic/metadata.json",

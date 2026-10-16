@@ -89,6 +89,7 @@ checkFileExists('build/assets/css/fluent.css', 5000);
 checkFileExists('build/assets/css/ss_theme.css', 2000);
 checkFileExists('build/assets/css/style.css', 5000);
 checkFileExists('build/assets/tokens/tokens.json', 500);
+checkFileExists('build/assets/tokens/product-brands.tokens.json', 500);
 checkFileExists('build/public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_dark.svg', 100);
 checkFileExists('build/public/brand/logos/00_logo_suamisihat/logo_suamisihat_primary_light.svg', 100);
 checkFileExists('build/public/brand/logos/ss-logomark-light.svg', 100);
@@ -120,6 +121,15 @@ try {
     assert(Boolean(json.color?.semantic?.light?.['text-strong'] || json.color?.semantic?.light?.['fg-primary']), 'tokens.json contains 4-tier text color definitions');
   } else {
     assert(false, 'tokens.json exists for parsing');
+  }
+
+  const pbTokenPath = join(ROOT, 'build/assets/tokens/product-brands.tokens.json');
+  if (existsSync(pbTokenPath)) {
+    const pbJson = JSON.parse(readFileSync(pbTokenPath, 'utf8'));
+    assert(typeof pbJson === 'object' && pbJson !== null, 'product-brands.tokens.json is valid parseable JSON');
+    assert(Boolean(pbJson.color?.product?.rejal && pbJson.color?.product?.drmitring), 'product-brands.tokens.json contains rejal and drmitring');
+  } else {
+    assert(false, 'product-brands.tokens.json exists for parsing');
   }
 } catch (e) {
   assert(false, `tokens.json JSON parse error: ${e.message}`);

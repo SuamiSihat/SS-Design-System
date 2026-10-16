@@ -116,6 +116,54 @@ function check(themeName, theme) {
 check('light', light);
 check('dark', dark);
 
+// Brand-scoped tokens in fluent.css (Step 2 of Site Update Plan)
+function findBlock(selector) {
+  const i = css.indexOf(selector);
+  return i >= 0 ? vars(blockAt(i)) : {};
+}
+
+const rejalLight = { ...light, ...findBlock('[data-brand="rejal"] {') };
+const rejalDark = { ...dark, ...findBlock('[data-brand="rejal"][data-theme="dark"]') };
+const dmrLight = { ...light, ...findBlock('[data-brand="drmitring"] {') };
+const dmrDark = { ...dark, ...findBlock('[data-brand="drmitring"][data-theme="dark"]') };
+
+const BRAND_SCOPED_PAIRS = {
+  rejal: [
+    ['--fg-primary', '--bg-canvas', 4.5],
+    ['--fg-secondary', '--bg-canvas', 4.5],
+    ['--link', '--bg-canvas', 4.5],
+    ['--on-brand', '--brand-fill', 4.5],
+    ['--focus-ring', '--bg-canvas', 3.0]
+  ],
+  drmitring: [
+    ['--fg-primary', '--bg-canvas', 4.5],
+    ['--fg-secondary', '--bg-canvas', 4.5],
+    ['--link', '--bg-canvas', 4.5],
+    ['--on-brand', '--brand-fill', 4.5],
+    ['--on-brand-strong', '--brand-fill-strong', 4.5],
+    ['--focus-ring', '--bg-canvas', 3.0]
+  ]
+};
+
+function checkBrandScope(brandSlug, themeName, theme) {
+  const canvas = resolve(theme, theme['--bg-canvas'] || theme['--surface-canvas']);
+  for (const [fgTok, bgTok, min] of BRAND_SCOPED_PAIRS[brandSlug] || []) {
+    total++;
+    const bgRaw = resolve(theme, theme[bgTok] ?? `var(${bgTok})`);
+    const bg = flatten(bgRaw, canvas);
+    const fg = flatten(resolve(theme, theme[fgTok] ?? `var(${fgTok})`), bg);
+    const ratio = contrastRatio(fg, bg);
+    const ok = ratio >= min;
+    if (!ok) failed++;
+    console.log(`${ok ? 'PASS' : 'FAIL'} [brand:${brandSlug}:${themeName}] ${fgTok} on ${bgTok}: ${fg} / ${bg} = ${ratio.toFixed(2)} (min ${min})`);
+  }
+}
+
+checkBrandScope('rejal', 'light', rejalLight);
+checkBrandScope('rejal', 'dark', rejalDark);
+checkBrandScope('drmitring', 'light', dmrLight);
+checkBrandScope('drmitring', 'dark', dmrDark);
+
 // Product brand pairings
 for (const p of loadProducts()) {
   for (const pair of p.data.colorScheme?.pairings ?? []) {

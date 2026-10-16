@@ -319,6 +319,169 @@ body.dark-mode,
 }
 
 /* ==========================================================================
+   Product Brand Scoped Tokens (Rejal & Dr Mit Ring)
+   Source: static/assets/tokens/product-brands.tokens.json
+   ========================================================================== */
+
+/* -- Rejal Brand Scope (Light Mode) --------------------------------------- */
+[data-brand="rejal"] {
+  --bg-canvas: #FFFFFF;
+  --bg-surface: #FFFFFF;
+  --bg-inverse: #231F20;
+  --fg-primary: #231F20;
+  --fg-secondary: rgba(35, 31, 32, 0.70);
+  --fg-inverse: #FFFFFF;
+  --brand-fill: #2F6DB0;
+  --on-brand: #FFFFFF;
+  --link: #2F6DB0;
+  --accent-graphic: #4480C2;
+  --accent-text-gold: #8A6A1F;
+  --finish-gold: #C9A24A;
+  --focus-ring: #2F6DB0;
+  --stroke-1: rgba(35, 31, 32, 0.12);
+
+  /* Semantic aliases for components */
+  --surface-canvas: var(--bg-canvas);
+  --surface-elevated: var(--bg-surface);
+  --color-neutral-bg-1: var(--bg-canvas);
+  --color-neutral-bg-2: var(--bg-surface);
+  --text-strong: #000000;
+  --text-primary: var(--fg-primary);
+  --text-secondary: var(--fg-secondary);
+  --color-neutral-fg-strong: var(--text-strong);
+  --color-neutral-fg-1: var(--fg-primary);
+  --color-neutral-fg-2: var(--fg-secondary);
+  --color-neutral-stroke-1: var(--stroke-1);
+  --color-brand-primary: var(--brand-fill);
+  --color-action-bg: var(--brand-fill);
+  --color-on-action: var(--on-brand);
+  --color-link: var(--link);
+  --color-focus-ring: var(--focus-ring);
+  --color-text-accent: var(--brand-fill);
+  --color-text-warm: var(--accent-text-gold);
+}
+
+/* -- Rejal Brand Scope (Dark Mode) ---------------------------------------- */
+body.dark-mode [data-brand="rejal"],
+[data-theme="dark"] [data-brand="rejal"],
+[data-brand="rejal"][data-theme="dark"] {
+  --bg-canvas: #231F20;
+  --bg-surface: #2E2A2B;
+  --bg-inverse: #FFFFFF;
+  --fg-primary: #FFFFFF;
+  --fg-secondary: rgba(255, 255, 255, 0.72);
+  --fg-inverse: #231F20;
+  --brand-fill: #2F6DB0;
+  --on-brand: #FFFFFF;
+  --link: #7FAEE0;
+  --accent-graphic: #4480C2;
+  --accent-text-gold: #C9A24A;
+  --finish-gold: #C9A24A;
+  --focus-ring: #7FAEE0;
+  --stroke-1: rgba(255, 255, 255, 0.14);
+
+  /* Semantic aliases for components */
+  --surface-canvas: var(--bg-canvas);
+  --surface-elevated: var(--bg-surface);
+  --color-neutral-bg-1: var(--bg-canvas);
+  --color-neutral-bg-2: var(--bg-surface);
+  --text-strong: #FFFFFF;
+  --text-primary: var(--fg-primary);
+  --text-secondary: var(--fg-secondary);
+  --color-neutral-fg-strong: var(--text-strong);
+  --color-neutral-fg-1: var(--fg-primary);
+  --color-neutral-fg-2: var(--fg-secondary);
+  --color-neutral-stroke-1: var(--stroke-1);
+  --color-brand-primary: var(--link);
+  --color-action-bg: var(--brand-fill);
+  --color-on-action: var(--on-brand);
+  --color-link: var(--link);
+  --color-focus-ring: var(--focus-ring);
+  --color-text-accent: var(--link);
+  --color-text-warm: var(--accent-text-gold);
+}
+
+/* -- Dr Mit Ring Brand Scope (Light Mode) --------------------------------- */
+[data-brand="drmitring"] {
+  --bg-canvas: #FBFBFB;
+  --bg-surface: #FFFFFF;
+  --bg-inverse: #1C1C1C;
+  --fg-primary: #1C1C1C;
+  --fg-secondary: rgba(28, 28, 28, 0.70);
+  --fg-inverse: #FBFBFB;
+  --brand-fill: #6AB845;
+  --on-brand: #1C1C1C;
+  --brand-fill-strong: #1A7A30;
+  --on-brand-strong: #FFFFFF;
+  --link: #1A7A30;
+  --accent-graphic: #6AB845;
+  --highlight: #FFE53B;
+  --focus-ring: #1A7A30;
+  --stroke-1: rgba(28, 28, 28, 0.12);
+
+  /* Semantic aliases for components */
+  --surface-canvas: var(--bg-canvas);
+  --surface-elevated: var(--bg-surface);
+  --color-neutral-bg-1: var(--bg-canvas);
+  --color-neutral-bg-2: var(--bg-surface);
+  --text-strong: #000000;
+  --text-primary: var(--fg-primary);
+  --text-secondary: var(--fg-secondary);
+  --color-neutral-fg-strong: var(--text-strong);
+  --color-neutral-fg-1: var(--fg-primary);
+  --color-neutral-fg-2: var(--fg-secondary);
+  --color-neutral-stroke-1: var(--stroke-1);
+  --color-brand-primary: var(--brand-fill-strong);
+  --color-action-bg: var(--brand-fill-strong);
+  --color-on-action: var(--on-brand-strong);
+  --color-link: var(--link);
+  --color-focus-ring: var(--focus-ring);
+  --color-text-accent: var(--brand-fill-strong);
+  --color-brand-subtle: rgba(106, 184, 69, 0.12);
+}
+
+/* -- Dr Mit Ring Brand Scope (Dark Mode) ---------------------------------- */
+body.dark-mode [data-brand="drmitring"],
+[data-theme="dark"] [data-brand="drmitring"],
+[data-brand="drmitring"][data-theme="dark"] {
+  --bg-canvas: #1C1C1C;
+  --bg-surface: #262626;
+  --bg-inverse: #FBFBFB;
+  --fg-primary: #FBFBFB;
+  --fg-secondary: rgba(251, 251, 251, 0.72);
+  --fg-inverse: #1C1C1C;
+  --brand-fill: #6AB845;
+  --on-brand: #1C1C1C;
+  --brand-fill-strong: #1A7A30;
+  --on-brand-strong: #FFFFFF;
+  --link: #6AB845;
+  --accent-graphic: #6AB845;
+  --highlight: #FFE53B;
+  --focus-ring: #6AB845;
+  --stroke-1: rgba(251, 251, 251, 0.14);
+
+  /* Semantic aliases for components */
+  --surface-canvas: var(--bg-canvas);
+  --surface-elevated: var(--bg-surface);
+  --color-neutral-bg-1: var(--bg-canvas);
+  --color-neutral-bg-2: var(--bg-surface);
+  --text-strong: #FFFFFF;
+  --text-primary: var(--fg-primary);
+  --text-secondary: var(--fg-secondary);
+  --color-neutral-fg-strong: var(--text-strong);
+  --color-neutral-fg-1: var(--fg-primary);
+  --color-neutral-fg-2: var(--fg-secondary);
+  --color-neutral-stroke-1: var(--stroke-1);
+  --color-brand-primary: var(--brand-fill);
+  --color-action-bg: var(--brand-fill-strong);
+  --color-on-action: var(--on-brand-strong);
+  --color-link: var(--link);
+  --color-focus-ring: var(--focus-ring);
+  --color-text-accent: var(--brand-fill);
+  --color-brand-subtle: rgba(106, 184, 69, 0.16);
+}
+
+/* ==========================================================================
    TIER 3 — Global Reset & Base (Fluent-aligned)
    ========================================================================== */
 

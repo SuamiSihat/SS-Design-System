@@ -92,12 +92,12 @@
 
 A clean-up release. The site is now built from one source folder, deployed as a static build only, passes automated WCAG 2.2 A/AA checks on every page in light and dark theme, and every product brand has a guideline page with the same seven sections.
 
-### Rejal and Dr Mit Ring brand guidelines v1.0 (12 Oct 2026)
+### Rejal and Dr Mit Ring brand guidelines (12 Oct 2026, rev. 16 Oct)
 
-- New PDF: `static/brand-guidelines/rejal-drmitring-brand-guidelines-v1.0.pdf` (22 pages): brand, logo, colour with Pantone, typography, packaging, photography, claims and label compliance for both brands.
-- New design tokens: `static/assets/tokens/product-brands.tokens.json` (DTCG). Primitives and light/dark semantic sets for `rejal` and `drmitring`, with Pantone matches and checked contrast.
+- New PDF: `static/brand-guidelines/rejal-drmitring-brand-guidelines-v1.1.pdf`: brand, logo, colour with Pantone, typography, packaging, photography, claims and label compliance for both brands.
+- New design tokens: `static/assets/tokens/product-brands.tokens.json` (DTCG). Primitives and light/dark semantic sets for `rejal` and `drmitring`, with Pantone matches and checked contrast, scoped via `[data-brand]`.
 - REJAL: palette follows the existing 2026 packaging: Rejal Black #231F20, white, Rejal Blue #4480C2 (PANTONE 660 C). Heritage Gold is a finish only. Vector wordmarks and emblem extracted from the print files; REJAL repeat texture replaces the honeycomb pattern. Labels updated to RBL35, RBL240, RBL1K and Stevia V3; superseded RBL25, RBL250, RBL500 and the old Stevia label removed. AI-generated gallery images removed and replaced with real product photos. Trademark shown as REJAL™ (application under objection).
-- Dr Mit Ring: repositioned as a condom accessory; credit line "Direka oleh SuamiSihat"; all references to Dr. Ismail Tambi removed; erection, ejaculation and medical claims removed; the leaflet PDF and inner-instructions image withdrawn until rewritten; real product photography added.
+- Dr Mit Ring: repositioned as Male Intimacy Technology (MDA-registered, Path B) with doctor line and approved claims; credit line "Direka oleh SuamiSihat"; all references to Dr. Ismail Tambi removed; doctor block and claims copy strictly gated on written consent and MDA-registered intended use; real product photography added.
 - Plans moved into the repo: `docs/plans/`.
 
 ### Security and deployment

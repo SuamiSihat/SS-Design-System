@@ -1,6 +1,6 @@
 # Rejal + Dr Mit Ring — Brand Master Specification
 
-Rev. 6 · 12 Oct 2026 · Owner: SS Ecom (SSE) · v3.6.0 Phase 4 · Branch `release/v3.6.0`
+Rev. 7 · 16 Oct 2026 · Owner: SS Ecom (SSE) · v3.6.0 Phase 4 · Branch `release/v3.6.0`
 This is the master spec for both product brands. Actions, regulatory risks and rollout are in `rejal-drmitring-fix-plan.md`.
 
 ## 1. Decisions log
@@ -10,14 +10,15 @@ This is the master spec for both product brands. Actions, regulatory risks and r
 | 12 Oct | Rejal and Dr Mit Ring both sit under **SS Ecom (SSE)**; distributor SuamiSihat Ecommerce Sdn Bhd. |
 | 12 Oct | Rejal palette follows the packaging: black, white, Rejal Blue. **Heritage Gold is a finish only** (foil, cap, seal). **No green** (would imply "organic" without certification; green belongs to Dr Mit Ring). No flat yellow. |
 | 12 Oct | Rejal foil: **gold** (replaces silver; matches the gold caps and quality-seal band). |
-| 12 Oct | Dr Mit Ring = **condom accessory (Path A)**; all erection/ejaculation claims removed. |
+| 12 Oct | Dr Mit Ring = condom accessory (Path A); all erection/ejaculation claims removed. *(Superseded on 16 Oct)* |
 | 12 Oct | Dr Ismail Tambi removed from all assets; no individual doctor endorsement. |
 | 12 Oct | Official house brand: **SuamiSihat®** (TM2023038418); symbol rules in fix plan §7. |
 | 12 Oct | Unverified health/spec claims are excluded until evidenced. |
 | 12 Oct | **Rejal keeps the existing packaging design**; only compliance fixes. Gold foil = optional premium finish. |
 | 12 Oct | Dr Mit Ring credit line: **"Direka oleh SuamiSihat"**. |
 | 12 Oct | REJAL trademark objection handled by HR. |
-| 12 Oct | **Brand Guidelines v1.0 PDF** published: `static/brand-guidelines/rejal-drmitring-brand-guidelines-v1.0.pdf`. Site work: `site-update-plan.md`. |
+| 12 Oct | **Brand Guidelines v1.0 PDF** published: `static/brand-guidelines/rejal-drmitring-brand-guidelines-v1.0.pdf`. |
+| 16 Oct | **Dr Mit Ring Path B (MDA-registered medical device):** Repositioned from condom accessory to **Male Intimacy Technology**. Dr Amir (name, photo) and SS Clinic doctors (endorsement) allowed once written consent is on file; claims (erection, hardness, stamina, ejaculation) strictly restricted to MDA-approved intended use wording. Credit line "Direka oleh SuamiSihat" stays. Brand Guidelines v1.1 PDF to replace v1.0. |
 
 ## 2. Trademarks
 | Mark | Status | Symbol |
@@ -78,11 +79,11 @@ Ratio (packaging): Black 60 · White 30 · Blue 10 · Gold = finish accent, not 
 ## 4. Dr Mit Ring
 
 ### 4.1 Product
-Condom accessory ("Condom Fastener"), 2 rings per pack, lime silicone ring in a foil sachet ("Asian Size"), reusable 3–5 times. Credit line: "Direka oleh SuamiSihat" (approved). Leaflet: `Dr MIT RING PACKAGING_20260520.pdf` (to be rewritten without medical claims). Box artwork file still needed.
+Male Intimacy Technology (MDA-registered medical device under Act 737, Path B), 2 rings per pack, lime silicone ring in a foil sachet ("Asian Size"), reusable 3–5 times. Credit line: "Direka oleh SuamiSihat" (approved). Doctor endorsement (Dr Amir, SS Clinic doctors) and sexual function claims permitted strictly in accordance with approved MDA-registered intended use copy upon written consent sign-off. Leaflet: `Dr MIT RING PACKAGING_20260520.pdf` (rewritten to MDA compliance). Box artwork file still needed.
 
 ### 4.2 Visual system
-- **Wordmark:** lowercase rounded "dr mit ring", white on a black pill with a white outline; "CONDOM FASTENER" eyebrow.
-- **Premium direction:** discreet matte off-white or black box, lime as the signal colour only; clean ring line drawing or macro photo replaces the cartoon fist and camouflage blobs; "2 Rings" as a small lime chip.
+- **Wordmark:** lowercase rounded "dr mit ring", white on a black pill with a white outline; "MALE INTIMACY TECHNOLOGY" eyebrow.
+- **Premium direction:** discreet matte off-white or black box, lime as the signal colour only; clean ring line drawing or macro photo replaces the cartoon fist and camouflage blobs; "2 Rings" as a small lime chip; doctor panel with consent reference.
 - **Ads:** Poppins Black headlines, black or deep-green type on off-white, real photography, pill CTAs. No brush script, no red cross layout, no yellow on lime.
 
 ### 4.3 Colour — primitives
